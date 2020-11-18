@@ -10,16 +10,19 @@ ms.date: 11/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 09622adc269027b589a7345a7d4411c3dcecbf0c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4ab09546bb2a1dcbc221f3819bc891ce096ce569
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136644"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373971"
 ---
 # <a name="summary-of-chapter-24-page-navigation"></a>第 24 章の概要: ページのナビゲーション
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24)
+
+> [!NOTE]
+> この本は 2016 年春に発行されて以降、改訂されていません。 多くの情報はまだ価値がありますが、一部の資料は古くなっており、トピックの中にはまったく正しくないものまたは不完全なものもあります。
 
 多くのアプリケーションは、ユーザーが移動する複数のページで構成されています。 アプリケーションには、必ず *main* ページまたは *home* ページがあり、元の場所に戻るためにスタックに保持されている他のページに、ユーザーはそのページから移動します。 その他のナビゲーション オプションについては、「[**第 25 章:ページの変数**](chapter25.md)」を参照してください。
 
@@ -164,7 +167,7 @@ Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) クラス�
 
 スリープ状態になる複数ページのプログラムでは、一般的に復元時に同じページに移動する必要があります。 つまり、このようなプログラムでは、ナビゲーション スタックの内容が保存される必要があります。 このセクションでは、この目的のために設計されたクラスで、このプロセスを自動化する方法について説明します。 また、このクラスでは個々のページを呼び出して、それらのページの状態を保存および復元できるようにします。
 
-[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリには、`Properties` ディクショナリに項目を保存および復元するためにクラスで実装できる [`IPersistantPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/IPersistentPage.cs) という名前のインターフェイスが定義されています。
+[ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリには、`Properties` ディクショナリに項目を保存および復元するためにクラスで実装できる [`IPersistantPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/IPersistentPage.cs) という名前のインターフェイスが定義されています。
 
 **Xamarin.FormsBook.Toolkit** ライブラリの [`MultiPageRestorableApp`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MultiPageRestorableApp.cs) クラスは `Application` から派生しています。 その後、`MultiPageRestorableApp` から使用する `App` クラスを派生させ、いくつかのハウスキープ処理を実行できます。
 

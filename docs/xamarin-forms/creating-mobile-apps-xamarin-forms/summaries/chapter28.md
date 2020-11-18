@@ -10,19 +10,19 @@ ms.date: 07/19/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 301dc65c7909603e117717a993959e3c73fa2d32
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 25b5ad1ef7b1d5d3c545d7977ad735c18affef8e
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84133407"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375113"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>第 28 章の概要: 位置情報と地図
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28)
 
 > [!NOTE]
-> このページの注記では、Xamarin.Forms が書籍に記載されている資料と異なる部分が示されています。
+> この本は 2016 年春に発行されて以降、改訂されていません。 多くの情報はまだ価値がありますが、一部の資料は古くなっており、トピックの中にはまったく正しくないものまたは不完全なものもあります。
 
 Xamarin.Forms では、`View` から派生した [`Map`](xref:Xamarin.Forms.Maps.Map) 要素がサポートされています。 地図の使用に関する特別なプラットフォーム要件のため、これらは別のアセンブリ ( **Xamarin.Forms.Maps**) に実装され、別の名前空間 (`Xamarin.Forms.Maps`) が使用されています。
 
@@ -61,7 +61,7 @@ Xamarin.Forms の `Map` クラスには、ユーザーの地理的な位置情�
 
 ### <a name="the-location-tracker-api"></a>位置情報トラッカー API
 
-[**Xamarin.FormsBook.Platform**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform) ソリューションには、位置情報トラッカー API のコードが含まれています。 [`GeographicLocation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/GeographicLocation.cs) 構造体により、緯度と経度がカプセル化されます。 [`ILocationTracker`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/ILocationTracker.cs) インターフェイスでは、位置情報トラッカーを開始および一時停止する 2 つのメソッドと、新しい位置情報が利用可能になったときのイベントが定義されています。
+[ **Xamarin.FormsBook.Platform**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform) ソリューションには、位置情報トラッカー API のコードが含まれています。 [`GeographicLocation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/GeographicLocation.cs) 構造体により、緯度と経度がカプセル化されます。 [`ILocationTracker`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/ILocationTracker.cs) インターフェイスでは、位置情報トラッカーを開始および一時停止する 2 つのメソッドと、新しい位置情報が利用可能になったときのイベントが定義されています。
 
 #### <a name="the-ios-location-manager"></a>iOS 位置情報マネージャー
 
@@ -81,7 +81,7 @@ Xamarin.Forms の `Map` クラスには、ユーザーの地理的な位置情�
 
 ### <a name="the-required-overhead"></a>必要なオーバーヘッド
 
-**WhereAmI** で位置情報トラッカーを使用するためには、いくらかのオーバーヘッドが必要です。 まず、**WhereAmI** ソリューション内のすべてのプロジェクトが、**Xamarin.FormsBook.Platform** 内の対応するプロジェクトに対する参照を持っている必要があります。また、各 **WhereAmI** プロジェクトで `Toolkit.Init` メソッドを呼び出す必要があります。
+**WhereAmI** で位置情報トラッカーを使用するためには、いくらかのオーバーヘッドが必要です。 まず、**WhereAmI** ソリューション内のすべてのプロジェクトが、 **Xamarin.FormsBook.Platform** 内の対応するプロジェクトに対する参照を持っている必要があります。また、各 **WhereAmI** プロジェクトで `Toolkit.Init` メソッドを呼び出す必要があります。
 
 位置情報のアクセス許可という形で、さらにいくらかのプラットフォーム固有のオーバーヘッドが必要です。
 
@@ -97,7 +97,7 @@ iOS の場合、**info.plist** ファイルには、ユーザーにそのユー�
 
 ユニバーサル Windows プラットフォーム アプリケーションの場合は、Package.appxmanifest ファイルで `location` デバイス機能がマークされている必要があります。
 
-## <a name="working-with-xamarinformsmaps"></a>Xamarin.Forms.Maps の使用
+## <a name="working-with-no-locxamarinformsmaps"></a>Xamarin.Forms.Maps の使用
 
 `Map` クラスの使用には、いくつかの要件が関係しています。
 
@@ -141,7 +141,7 @@ Google Map サービスを使用するには、承認キーが必要です。 �
 - [`Satellite`](xref:Xamarin.Forms.Maps.MapType.Satellite)
 - [`Hybrid`](xref:Xamarin.Forms.Maps.MapType.Hybrid)
 
-[MapTypesPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapTypesPage.xaml) ファイルでは、ラジオ ボタンを使用してマップの種類を選択する方法が示されています。 ここでは、[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリの [`RadioButtonManager`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/RadioButtonManager.cs) クラスと、[MapTypeRadioButton.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapTypeRadioButton.xaml) ファイルに基づくクラスが使用されています。
+[MapTypesPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapTypesPage.xaml) ファイルでは、ラジオ ボタンを使用してマップの種類を選択する方法が示されています。 ここでは、[ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリの [`RadioButtonManager`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/RadioButtonManager.cs) クラスと、[MapTypeRadioButton.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/MapTypeRadioButton.xaml) ファイルに基づくクラスが使用されています。
 
 ### <a name="map-coordinates"></a>地図の座標
 
@@ -176,7 +176,7 @@ Google Map サービスを使用するには、承認キーが必要です。 �
 
 ### <a name="position-extensions"></a>Position の拡張機能
 
-[**Xamarin.FormsBook.Toolkit.Maps**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit.Maps) という名前の、この書籍用の新しいライブラリには、地図に固有で、プラットフォームに依存しない型が含まれています。 [`PositionExtensions`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit.Maps/Xamarin.FormsBook.Toolkit.Maps/PositionExtensions.cs) クラスには、`Position` 用の `ToString` メソッドと、2 つの `Position` 値の間の距離を計算するメソッドが含まれています。
+[ **Xamarin.FormsBook.Toolkit.Maps**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit.Maps) という名前の、この書籍用の新しいライブラリには、地図に固有で、プラットフォームに依存しない型が含まれています。 [`PositionExtensions`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit.Maps/Xamarin.FormsBook.Toolkit.Maps/PositionExtensions.cs) クラスには、`Position` 用の `ToString` メソッドと、2 つの `Position` 値の間の距離を計算するメソッドが含まれています。
 
 ### <a name="setting-an-initial-location"></a>初期位置情報を設定する
 

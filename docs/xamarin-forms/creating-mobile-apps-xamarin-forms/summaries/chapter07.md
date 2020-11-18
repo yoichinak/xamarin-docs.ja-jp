@@ -10,19 +10,19 @@ ms.date: 07/19/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0b92988e1e838072fca0d8a284455a62db05e757
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d69c5c96138024f6a45d71013b259b2c47a20da3
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136861"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370183"
 ---
 # <a name="summary-of-chapter-7-xaml-vs-code"></a>第 7 章の概要: XAML とコードの比較
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07)
 
 > [!NOTE]
-> このページの注記では、Xamarin.Forms が書籍に記載されている資料と異なる部分が示されています。
+> この本は 2016 年春に発行されて以降、改訂されていません。 多くの情報はまだ価値がありますが、一部の資料は古くなっており、トピックの中にはまったく正しくないものまたは不完全なものもあります。
 
 Xamarin.Forms では、Extensible Application Markup Language (XAML) ("ザムル" と読みます) と呼ばれる XML ベースのマークアップ言語がサポートされています。 C# の代わりに XAML を使用して、Xamarin.Forms アプリケーションのユーザー インターフェイスのレイアウトを定義したり、ユーザー インターフェイス要素と基になるデータの間のバインディングを定義したりできます。
 

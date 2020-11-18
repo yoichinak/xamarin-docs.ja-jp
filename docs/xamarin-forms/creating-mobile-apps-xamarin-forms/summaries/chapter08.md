@@ -10,16 +10,19 @@ ms.date: 07/19/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 90db8b4f11095a2a56c82c3f563844efbcf7e2b1
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a88f0ef4e04bf6884f1b49811663f611d3e54a0a
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136826"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366218"
 ---
 # <a name="summary-of-chapter-8-code-and-xaml-in-harmony"></a>第 8 章の概要: コードと XAML の調和
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08)
+
+> [!NOTE]
+> この本は 2016 年春に発行されて以降、改訂されていません。 多くの情報はまだ価値がありますが、一部の資料は古くなっており、トピックの中にはまったく正しくないものまたは不完全なものもあります。
 
 この章では、XAML をより深く掘り下げ、特にコードと XAML の連携方法について説明します。
 

@@ -10,16 +10,19 @@ ms.date: 11/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e66fb50b8d537ee0267457d5b0ab0f417813e676
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 05b7821a08140dda411842c5f978be2027fcc033
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136618"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373976"
 ---
 # <a name="summary-of-chapter-25-page-varieties"></a>第 25 章の概要: さまざまなページ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25)
+
+> [!NOTE]
+> この本は 2016 年春に発行されて以降、改訂されていません。 多くの情報はまだ価値がありますが、一部の資料は古くなっており、トピックの中にはまったく正しくないものまたは不完全なものもあります。
 
 ここまで、`Page` から派生した 2 つのクラス `ContentPage` と `NavigationPage` を見てきました。 この章では、他の 2 つを紹介します。
 
@@ -111,7 +114,7 @@ Xamarin.Forms には、マスター ビューと詳細ビューを切り替え�
 
 ### <a name="using-an-itemtemplate"></a>ItemTemplate の使用
 
-[**MultiTabbedColor**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/MultiTabbedColors) サンプルでは、[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリの [`NamedColor`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NamedColor.cs) クラスが使用されています。 [MultiTabbedColorsPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/MultiTabbedColors/MultiTabbedColors/MultiTabbedColors/MultiTabbedColorsPage.xaml) ファイルでは、`TabbedPage` の `DataTemplate` プロパティが、`NamedColor` のプロパティへのバインドが含まれる (`Title` プロパティへのバインディングを含む) `ContentPage` で始まるビジュアル ツリーに設定されます。
+[**MultiTabbedColor**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/MultiTabbedColors) サンプルでは、[ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリの [`NamedColor`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NamedColor.cs) クラスが使用されています。 [MultiTabbedColorsPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/MultiTabbedColors/MultiTabbedColors/MultiTabbedColors/MultiTabbedColorsPage.xaml) ファイルでは、`TabbedPage` の `DataTemplate` プロパティが、`NamedColor` のプロパティへのバインドが含まれる (`Title` プロパティへのバインディングを含む) `ContentPage` で始まるビジュアル ツリーに設定されます。
 
 ただし、これは iOS では問題になります。 いくつかの項目しか表示できず。アイコンを表示する適切な方法はありません。
 

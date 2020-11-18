@@ -10,19 +10,19 @@ ms.date: 07/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 78da3ed91acea0c056074d712d368de70b251392
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 49b7a049444fe87f9237afb18935b74638fa9ebf
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136917"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370508"
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>第 2 章の概要 アプリの構造
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)
 
 > [!NOTE]
-> このページの注記では、Xamarin.Forms が書籍に記載されている資料と異なる部分が示されています。
+> この本は 2016 年春に発行されて以降、改訂されていません。 多くの情報はまだ価値がありますが、一部の資料は古くなっており、トピックの中にはまったく正しくないものまたは不完全なものもあります。
 
 Xamarin.Forms アプリケーションでは、画像の領域を占有するオブジェクトは、"*ビジュアル要素*" と呼ばれ、[`VisualElement`](xref:Xamarin.Forms.VisualElement) クラスでカプセル化されています。 ビジュアル要素は、以下のクラスに対応する 3 つのカテゴリに分割できます。
 

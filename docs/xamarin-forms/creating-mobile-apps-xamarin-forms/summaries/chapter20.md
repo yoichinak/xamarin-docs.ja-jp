@@ -10,21 +10,21 @@ ms.date: 07/18/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ad71dc5f5389f1676698a761a138b3f76ffa9fa0
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 75c79c7a5300cf5708bb46740bec11f84b59c786
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136683"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374021"
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>第 20 章の概要: 非同期およびファイル I/O
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20)
 
-> [!NOTE] 
-> このページの注記では、Xamarin.Forms が本に記載されている資料と異なる部分が示されています。
+> [!NOTE]
+> この本は 2016 年春に発行されて以降、改訂されていません。 多くの情報はまだ価値がありますが、一部の資料は古くなっており、トピックの中にはまったく正しくないものまたは不完全なものもあります。
 
- グラフィカル ユーザー インターフェイスは、ユーザー入力イベントに順番に応答する必要があります。 これは、ユーザー入力イベントのすべての処理が、1 つのスレッド ("*メイン スレッド*" または "*UI スレッド*" と呼ばれることが多い) 内で発生する必要があることを示しています。
+グラフィカル ユーザー インターフェイスは、ユーザー入力イベントに順番に応答する必要があります。 これは、ユーザー入力イベントのすべての処理が、1 つのスレッド ("*メイン スレッド*" または "*UI スレッド*" と呼ばれることが多い) 内で発生する必要があることを示しています。
 
 ユーザーは、グラフィカル ユーザー インターフェイスがレスポンシブであることを期待しています。 これは、プログラムで迅速にユーザー入力イベントを処理する必要があることを意味しています。 これが不可能な場合、処理は実行のセカンダリ スレッドに回される必要があります。
 
@@ -102,15 +102,15 @@ Windows ランタイムの下で実行されているプログラムでは、フ
 
 再利用可能なコードをライブラリに保存しておくと便利です。 これは当然、再利用可能なコードのさまざまな部分がまったく異なるオペレーティング システム用である場合、より困難になります。
 
-[**Xamarin.FormsBook.Platform**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform) ソリューションは、1 つの方法を示しています。 このソリューションには、7 つの異なるプロジェクトが含まれています。
+[ **Xamarin.FormsBook.Platform**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform) ソリューションは、1 つの方法を示しています。 このソリューションには、7 つの異なるプロジェクトが含まれています。
 
-- [**Xamarin.FormsBook.Platform**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform) (通常の Xamarin.Forms PCL)
-- [**Xamarin.FormsBook.Platform.iOS**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS) (iOS クラス ライブラリ)
-- [**Xamarin.FormsBook.Platform.Android**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android) (Android クラス ライブラリ)
-- [**Xamarin.FormsBook.Platform.UWP**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.UWP) (ユニバーサル Windows クラス ライブラリ)
-- [**Xamarin.FormsBook.Platform.WinRT**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT) (すべての Windows プラットフォームに共通するコード用の共有プロジェクト)
+- [ **Xamarin.FormsBook.Platform**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform) (通常の Xamarin.Forms PCL)
+- [ **Xamarin.FormsBook.Platform.iOS**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS) (iOS クラス ライブラリ)
+- [ **Xamarin.FormsBook.Platform.Android**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android) (Android クラス ライブラリ)
+- [ **Xamarin.FormsBook.Platform.UWP**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.UWP) (ユニバーサル Windows クラス ライブラリ)
+- [ **Xamarin.FormsBook.Platform.WinRT**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT) (すべての Windows プラットフォームに共通するコード用の共有プロジェクト)
 
-すべての個別のプラットフォーム用のプロジェクト (**Xamarin.FormsBook.Platform.WinRT** を除く) には、**Xamarin.FormsBook.Platform** への参照が含まれています。 3 つの Windows プロジェクトには、**Xamarin.FormsBook.Platform.WinRT** への参照が含まれています。
+すべての個別のプラットフォーム用のプロジェクト ( **Xamarin.FormsBook.Platform.WinRT** を除く) には、 **Xamarin.FormsBook.Platform** への参照が含まれています。 3 つの Windows プロジェクトには、 **Xamarin.FormsBook.Platform.WinRT** への参照が含まれています。
 
 ライブラリが、Xamarin.Forms アプリケーション ソリューション内のプロジェクトによって直接参照されていない場合に読み込まれるように、すべてのプロジェクトには静的な `Toolkit.Init` メソッドが含まれています。
 
@@ -126,7 +126,7 @@ Windows ランタイムの下で実行されているプログラムでは、フ
 
 これらのライブラリを使用するには、アプリケーション ソリューションに **Xamarin.FormsBook.Platform** ソリューション内のすべてのプロジェクトを含め、また各アプリケーション プロジェクトに **Xamarin.FormsBook.Platform** 内の対応するライブラリへの参照を含める必要があります。
 
-[**TextFileAsync**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/TextFileAsync) ソリューションは、**Xamarin.FormsBook.Platform** ライブラリの使用方法を示しています。 各プロジェクトには `Toolkit.Init` の呼び出しが含まれています。 アプリケーションでは、非同期ファイル I/O 関数が使用されます。
+[**TextFileAsync**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20/TextFileAsync) ソリューションは、 **Xamarin.FormsBook.Platform** ライブラリの使用方法を示しています。 各プロジェクトには `Toolkit.Init` の呼び出しが含まれています。 アプリケーションでは、非同期ファイル I/O 関数が使用されます。
 
 ### <a name="keeping-it-in-the-background"></a>これをバックグラウンドに保持する
 

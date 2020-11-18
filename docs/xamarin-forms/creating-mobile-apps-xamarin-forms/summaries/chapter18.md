@@ -10,16 +10,19 @@ ms.date: 11/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b2309d6ec6712be32f6e972fab130a542fbec857
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 15342144a080f3056c1aaa3441f6d1ec850f4dc2
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557427"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374057"
 ---
 # <a name="summary-of-chapter-18-mvvm"></a>第 18 章の概要。 MVVM
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18)
+
+> [!NOTE]
+> この本は 2016 年春に発行されて以降、改訂されていません。 多くの情報はまだ価値がありますが、一部の資料は古くなっており、トピックの中にはまったく正しくないものまたは不完全なものもあります。
 
 アプリケーションを設計する最良の方法の 1 つは、基になるコード ("*ビジネス ロジック*" とも呼ばれます) からユーザー インターフェイスを分離することです。 いくつかの手法がありますが、XAML ベースの環境に合った手法は Model-View-ViewModel または MVVM と呼ばれます。
 

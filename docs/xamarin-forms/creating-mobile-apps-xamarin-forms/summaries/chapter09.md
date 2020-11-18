@@ -10,19 +10,19 @@ ms.date: 07/19/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e8feb636057f1e11c7df90236dee44697203d51c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 6dec0c3e3fc4d25aecfe4e4141c4cc285fd7f8d8
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136858"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366192"
 ---
 # <a name="summary-of-chapter-9-platform-specific-api-calls"></a>第 9 章の概要: プラットフォーム固有の API 呼び出し
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09)
 
-> [!NOTE] 
-> このページの注記では、Xamarin.Forms が本に記載されている資料と異なる部分が示されています。
+> [!NOTE]
+> この本は 2016 年春に発行されて以降、改訂されていません。 多くの情報はまだ価値がありますが、一部の資料は古くなっており、トピックの中にはまったく正しくないものまたは不完全なものもあります。
 
 プラットフォームによって異なるコードを実行することが必要になる場合があります。 この章では、その手法について説明します。
 
@@ -40,7 +40,7 @@ SAP でプラットフォーム固有のコードを実行するためのより�
 
 ## <a name="dependencyservice-and-the-portable-class-library"></a>DependencyService とポータブル クラス ライブラリ
 
-> [!NOTE] 
+> [!NOTE]
 > ポータブル クラス ライブラリは、.NET Standard ライブラリに置き換えられています。 本書のすべてのサンプル コードは、.NET Standard ライブラリを使用するように変換されています。
 
 通常、ライブラリでアプリケーション プロジェクト内のクラスにアクセスすることはできません。 この制限により、**PlatInfoSap2** で示されている手法はライブラリでは使用できないように見えます。 しかし、Xamarin.Forms に含まれる [`DependencyService`](xref:Xamarin.Forms.DependencyService) という名前のクラスは、.NET リフレクションを使用して、ライブラリからアプリケーション プロジェクトのパブリック クラスにアクセスします。

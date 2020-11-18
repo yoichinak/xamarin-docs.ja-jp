@@ -10,23 +10,26 @@ ms.date: 11/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: deb46d1a70e7c707c998be8669b4af3b8e8d7ead
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 377de0ff7e48971f9214cf86aec19ce14859139e
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136605"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366231"
 ---
 # <a name="summary-of-chapter-26-custom-layouts"></a>第 26 章の概要: カスタム レイアウト
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26)
 
+> [!NOTE]
+> この本は 2016 年春に発行されて以降、改訂されていません。 多くの情報はまだ価値がありますが、一部の資料は古くなっており、トピックの中にはまったく正しくないものまたは不完全なものもあります。
+
 Xamarin.Forms には、[`Layout<View>`](xref:Xamarin.Forms.Layout`1) から派生した複数のクラスが含まれます。
 
-- `StackLayout`、
-- `Grid`、
+- `StackLayout`,
+- `Grid`,
 - `AbsoluteLayout`、および
-- `RelativeLayout`。
+- `RelativeLayout`.
 
 この章では、`Layout<View>` から派生する独自のクラスの作成方法について説明します。
 
@@ -156,13 +159,13 @@ Xamarin.Forms レイアウトを処理する集中管理型システムはあり
 
 ### <a name="a-layout-with-properties"></a>プロパティが設定されたレイアウト
 
-[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) にある [`WrapLayout`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/WrapLayout.cs) クラスでは、すべての子が同じサイズであることを前提とし、1 つの行 (または列) から次へと子を折り返します。 `StackLayout` のような `Orientation` プロパティと、`Grid` のような `ColumnSpacing` および `RowSpacing` プロパティを定義し、子のサイズをキャッシュします。
+[ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) にある [`WrapLayout`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/WrapLayout.cs) クラスでは、すべての子が同じサイズであることを前提とし、1 つの行 (または列) から次へと子を折り返します。 `StackLayout` のような `Orientation` プロパティと、`Grid` のような `ColumnSpacing` および `RowSpacing` プロパティを定義し、子のサイズをキャッシュします。
 
 [**PhotoWrap**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/PhotoWrap) サンプルでは、ストックされた写真を表示するために、`ScrollView` 内に `WrapLayout` を配置します。
 
 ### <a name="no-unconstrained-dimensions-allowed"></a>制約のないディメンションは許可されない
 
-[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリにある [`UniformGridLayout`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/UniformGridLayout.cs) は、その中にあるすべての子を表示することを目的としています。 したがって、制約のないディメンションを処理することはできず、その状況に遭遇した場合には、例外が発生します。
+[ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリにある [`UniformGridLayout`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/UniformGridLayout.cs) は、その中にあるすべての子を表示することを目的としています。 したがって、制約のないディメンションを処理することはできず、その状況に遭遇した場合には、例外が発生します。
 
 [**PhotoGrid**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/PhotoGrid) サンプルでは、`UniformGridLayout` のデモを示しています。
 
@@ -179,13 +182,13 @@ Xamarin.Forms レイアウトを処理する集中管理型システムはあり
 
 子が重複している場合、コレクションの末尾にある子は、コレクションの先頭にある子より優先して、視覚的に表示されます。
 
-[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリにある [`OverlapLayout`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/OverlapLayout.cs) クラスでは、アタッチされたプロパティを定義してレンダリング順序を指示し、これによって子のうちの 1 つをそれ以外よりも優先して表示できるようにします。 [**StudentCardFile**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/StudentCardFile) サンプルでは、以下のデモを示しています。
+[ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリにある [`OverlapLayout`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/OverlapLayout.cs) クラスでは、アタッチされたプロパティを定義してレンダリング順序を指示し、これによって子のうちの 1 つをそれ以外よりも優先して表示できるようにします。 [**StudentCardFile**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/StudentCardFile) サンプルでは、以下のデモを示しています。
 
 [![Student Card File Grid のトリプル スクリーンショット](images/ch26fg10-small.png "レイアウトの子の重複")](images/ch26fg10-large.png#lightbox "レイアウトの子の重複")
 
 ### <a name="more-attached-bindable-properties"></a>その他のアタッチされたバインド可能なプロパティ
 
-[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリにある [`CartesianLayout`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CartesianLayout.cs) クラスでは、アタッチされたバインド可能なプロパティを定義して 2 つの `Point` 値と太さの値を指定し、`BoxView` 要素を操作して行のようにします。
+[ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリにある [`CartesianLayout`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CartesianLayout.cs) クラスでは、アタッチされたバインド可能なプロパティを定義して 2 つの `Point` 値と太さの値を指定し、`BoxView` 要素を操作して行のようにします。
 
 [**UnitCube**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26/UnitCube) サンプルでは、それを使用して 3 次元のキューブを描画しています。
 

@@ -10,16 +10,19 @@ ms.date: 11/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9bb930c2d0e4b6281b1aa48589ea5245eedc1a60
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 08c5152c5618b7edcfe22bc288a1a0354e3e5fed
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136748"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374252"
 ---
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>第 15 章の概要: 対話型インターフェイス
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15)
+
+> [!NOTE]
+> この本は 2016 年春に発行されて以降、改訂されていません。 多くの情報はまだ価値がありますが、一部の資料は古くなっており、トピックの中にはまったく正しくないものまたは不完全なものもあります。
 
 この章では、ユーザーとの対話を可能にする 8 つの `View` 派生型について説明します。
 
@@ -40,8 +43,8 @@ Xamarin.Forms には、`View` から派生するが `Layout` からは派生し�
 |--- |--- |
 |`Double`|[`Slider`](xref:Xamarin.Forms.Slider)、[`Stepper`](xref:Xamarin.Forms.Stepper)|
 |`Boolean`|[`Switch`](xref:Xamarin.Forms.Switch)|
-|`String`|[`Entry`](xref:Xamarin.Forms.Entry)、[`Editor`](xref:Xamarin.Forms.Editor)、[`SearchBar`](xref:Xamarin.Forms.SearchBar)|
-|`DateTime`|[`DatePicker`](xref:Xamarin.Forms.DatePicker)、[`TimePicker`](xref:Xamarin.Forms.TimePicker)|
+|`String`|[`Entry`](xref:Xamarin.Forms.Entry), [`Editor`](xref:Xamarin.Forms.Editor), [`SearchBar`](xref:Xamarin.Forms.SearchBar)|
+|`DateTime`|[`DatePicker`](xref:Xamarin.Forms.DatePicker), [`TimePicker`](xref:Xamarin.Forms.TimePicker)|
 
 これらのビューは、基になるデータ型を視覚的に対話形式で表現したものと考えることができます。 この概念については、次の章「[**第 16 章: データ バインディング**](chapter16.md)」で詳しく説明します。
 
@@ -119,7 +122,7 @@ Xamarin.Forms には、`View` から派生するが `Layout` からは派生し�
 
 ### <a name="a-traditional-checkbox"></a>従来のチェックボックス
 
-開発者によっては、`Switch` よりも従来の `CheckBox` が好まれる場合があります。 [**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリには、`ContentView` から派生する `CheckBox` クラスが含まれています。 `CheckBox` は [CheckBox.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CheckBox.xaml) ファイルと [CheckBox.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CheckBox.xaml.cs) ファイルによって実装されます。 `CheckBox` では 3 つのプロパティ (`Text`、`FontSize`、`IsChecked`) と `CheckedChanged` イベントが定義されます。
+開発者によっては、`Switch` よりも従来の `CheckBox` が好まれる場合があります。 [ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリには、`ContentView` から派生する `CheckBox` クラスが含まれています。 `CheckBox` は [CheckBox.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CheckBox.xaml) ファイルと [CheckBox.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CheckBox.xaml.cs) ファイルによって実装されます。 `CheckBox` では 3 つのプロパティ (`Text`、`FontSize`、`IsChecked`) と `CheckedChanged` イベントが定義されます。
 
 [**CheckBoxDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15/CheckBoxDemo) サンプルに、この `CheckBox` が示されています。
 

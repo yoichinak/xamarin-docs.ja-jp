@@ -10,16 +10,19 @@ ms.date: 07/18/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5423a9f716f384eca107003bdeca69615f8b459f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: abe8161ea8536f5fb8b13c71fe49ebad57460ca1
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136904"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370417"
 ---
 # <a name="summary-of-chapter-3-deeper-into-text"></a>第 3 章の概要。 テキストの詳細
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03)
+
+> [!NOTE]
+> この本は 2016 年春に発行されて以降、改訂されていません。 多くの情報はまだ価値がありますが、一部の資料は古くなっており、トピックの中にはまったく正しくないものまたは不完全なものもあります。
 
 この章では、色、フォント、書式設定など、[`Label`](xref:Xamarin.Forms.Label) ビューの詳細について説明します。
 
@@ -103,7 +106,7 @@ ms.locfileid: "84136904"
 `Color.Default` は、プラットフォームの配色を適用するためのものなので、プラットフォームごとに異なるコンテキストで異なる意味を持ちます。 既定では、プラットフォームの配色は次のとおりです。
 
 - iOS:明るい背景に暗いテキスト
-- Android:暗い背景に明るいテキスト (本書)、または明るい背景に暗いテキスト (サンプル コード リポジトリの**マスター** ブランチの AppCompat によるマテリアル デザインの場合)
+- Android:暗い背景に明るいテキスト (本書)、または明るい背景に暗いテキスト (サンプル コード リポジトリの **マスター** ブランチの AppCompat によるマテリアル デザインの場合)
 - UWP:明るい背景に暗いテキスト
 
 `Color.Accent` 値により、暗い背景または明るい背景に表示されるプラットフォーム固有の (場合によってはユーザーが選択可能な) 色になります。

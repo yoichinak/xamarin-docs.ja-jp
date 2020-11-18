@@ -10,19 +10,19 @@ ms.date: 07/18/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0eafdeffb6783a0ed54fdf23e6d10de24e2b4c6f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 9bdab5d64f1edc60ca58993b7848f97b7125023b
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136696"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374044"
 ---
 # <a name="summary-of-chapter-19-collection-views"></a>第 19 章の概要: コレクション ビュー
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19)
 
-> [!NOTE] 
-> このページの注記では、Xamarin.Forms が書籍に記載されている資料と異なる部分が示されています。
+> [!NOTE]
+> この本は 2016 年春に発行されて以降、改訂されていません。 多くの情報はまだ価値がありますが、一部の資料は古くなっており、トピックの中にはまったく正しくないものまたは不完全なものもあります。
 
 Xamarin.Forms では、コレクションを保持し、その要素を表示する 3 つのビューが定義されています。
 
@@ -46,9 +46,9 @@ MVVM アプリケーションの場合、オブジェクトの選択可能なコ
 
 ### <a name="data-binding-the-picker"></a>Picker のデータ バインディング
 
-`SelectedIndex` プロパティは、バインド可能プロパティによってサポートされますが、`Items` はサポートされないため、`Picker` でデータ バインディングを使用するのは困難です。 1 つのソリューションとして、[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリで見られるように、`Picker` を [`ObjectToIndexConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ObjectToIndexConverter.cs) と組み合わせて使用する方法があります。 [**PickerBinding**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/PickerBinding) は、これがどのように動作するかを示しています。
+`SelectedIndex` プロパティは、バインド可能プロパティによってサポートされますが、`Items` はサポートされないため、`Picker` でデータ バインディングを使用するのは困難です。 1 つのソリューションとして [ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリで見られるように、`Picker` を [`ObjectToIndexConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ObjectToIndexConverter.cs) と組み合わせて使用する方法があります。 [**PickerBinding**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/PickerBinding) は、これがどのように動作するかを示しています。
 
-> [!NOTE] 
+> [!NOTE]
 > Xamarin.Forms `Picker` には、データ バインディングをサポートする `ItemsSource` プロパティと `SelectedItem` プロパティが含まれるようになりました。 [Picker](~/xamarin-forms/user-interface/picker/index.md)に関するページを参照してください。
 
 ## <a name="rendering-data-with-listview"></a>ListView によるデータのレンダリング
@@ -88,7 +88,7 @@ iOS および Android の表示では、細い線によって行が区切られ�
 
 既定では、`ListView` は、各項目の `ToString` メソッドを使用して、コレクション内の項目を表示します。 これよりも優れた手法は、項目を表示するためのテンプレートを定義することです。
 
-この機能を試すには、[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリ内の [`NamedColor`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NamedColor.cs) クラスを使用することができます。 このクラスは、`IList<NamedColor>` 型の静的な `All` プロパティを定義します。これには、`Color` 構造体のパブリック フィールドに対応する 141 個の `NamedColor` オブジェクトが含まれます。
+この機能を試すには、[ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリ内の [`NamedColor`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NamedColor.cs) クラスを使用することができます。 このクラスは、`IList<NamedColor>` 型の静的な `All` プロパティを定義します。これには、`Color` 構造体のパブリック フィールドに対応する 141 個の `NamedColor` オブジェクトが含まれます。
 
 [**NaiveNamedColorList**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/NaiveNamedColorList) サンプルでは、`ListView` の `ItemsSource` をこの `NamedColor.All` プロパティに設定しますが、`NamedColor` オブジェクトの完全修飾クラス名のみが表示されます。
 
@@ -118,7 +118,7 @@ XAML では、[`ViewCell`](xref:Xamarin.Forms.ViewCell) を `DataTemplate` に�
 
 `ListView` では、項目のグループ化とそれらのグループ間での移動がサポートされます。 `ItemsSource` プロパティをコレクションのコレクションに設定する必要があります。`ItemsSource` を設定するオブジェクトは、`IEnumerable` を実装する必要があり、コレクション内の各アイテムも `IEnumerable` を実装する必要があります。 各グループには、2 つのプロパティ (グループのテキスト説明と 3 文字の省略形) を含める必要があります。
 
-[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリ内の [`NamedColorGroup`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NamedColorGroup.cs) クラスは、`NamedColor` オブジェクトの 7 つのグループを作成します。 [**ColorGroupList**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ColorGroupList) サンプルは、`ListView` の [`IsGroupingEnabled`](xref:Xamarin.Forms.ListView.IsGroupingEnabled) プロパティを `true` に設定し、[`GroupDisplayBinding`](xref:Xamarin.Forms.ListView.GroupDisplayBinding) プロパティと [`GroupShortNameBinding`](xref:Xamarin.Forms.ListView.GroupShortNameBinding) プロパティを各グループのプロパティにバインドしたグループの使用方法を示しています。
+[ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリ内の [`NamedColorGroup`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NamedColorGroup.cs) クラスは、`NamedColor` オブジェクトの 7 つのグループを作成します。 [**ColorGroupList**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ColorGroupList) サンプルは、`ListView` の [`IsGroupingEnabled`](xref:Xamarin.Forms.ListView.IsGroupingEnabled) プロパティを `true` に設定し、[`GroupDisplayBinding`](xref:Xamarin.Forms.ListView.GroupDisplayBinding) プロパティと [`GroupShortNameBinding`](xref:Xamarin.Forms.ListView.GroupShortNameBinding) プロパティを各グループのプロパティにバインドしたグループの使用方法を示しています。
 
 ### <a name="custom-group-headers"></a>カスタム グループ ヘッダー
 
@@ -126,7 +126,7 @@ XAML では、[`ViewCell`](xref:Xamarin.Forms.ViewCell) を `DataTemplate` に�
 
 ### <a name="listview-and-interactivity"></a>ListView と対話機能
 
-一般に、アプリケーションでは、ハンドラーを `ItemSelected` イベントまたは [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) イベントにアタッチするか、`SelectedItem` プロパティに対してデータ バインディングを設定することにより、`ListView` のユーザー操作を取得します。 しかし、一部のセルの種類 (`EntryCell` および `SwitchCell`) ではユーザー操作が許可されます。また、自身でユーザーと対話するカスタム セルを作成することもできます。 [**InteractiveListView**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/InteractiveListView) では、[`ColorViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ColorViewModel.cs) の 100 個のインスタンスが作成され、ユーザーは、3 つ 1 組の `Slider` 要素を使用して各色を変更できます。 このプログラムでは、[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 内の [`ColorToContrastColorConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ColorToContrastColorConverter.cs) も使用されます。
+一般に、アプリケーションでは、ハンドラーを `ItemSelected` イベントまたは [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) イベントにアタッチするか、`SelectedItem` プロパティに対してデータ バインディングを設定することにより、`ListView` のユーザー操作を取得します。 しかし、一部のセルの種類 (`EntryCell` および `SwitchCell`) ではユーザー操作が許可されます。また、自身でユーザーと対話するカスタム セルを作成することもできます。 [**InteractiveListView**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/InteractiveListView) では、[`ColorViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ColorViewModel.cs) の 100 個のインスタンスが作成され、ユーザーは、3 つ 1 組の `Slider` 要素を使用して各色を変更できます。 このプログラムでは、[ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) 内の [`ColorToContrastColorConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ColorToContrastColorConverter.cs) も使用されます。
 
 ## <a name="listview-and-mvvm"></a>ListView と MVVM
 
@@ -167,7 +167,7 @@ XAML では、[`ViewCell`](xref:Xamarin.Forms.ViewCell) を `DataTemplate` に�
 ### <a name="varying-the-visuals"></a>ビジュアルのバリエーション
 
 プロパティによっては、`ListView` 内の項目のビジュアルを多少変化させることが必要になる場合があります。 たとえば、学生の成績評価の平均値が 2.0 を下回る場合、[**ColorCodedStudents**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ColorCodedStudents) サンプルは、その学生の名前を赤色で表示します。
-これは、[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリ内のバインド データ コンバーター [`ThresholdToObjectConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ThresholdToObjectConverter.cs)を使用することによって実現されます。
+これは、[ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリ内のバインド データ コンバーター [`ThresholdToObjectConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ThresholdToObjectConverter.cs) を使用することによって実現されます。
 
 ### <a name="refreshing-the-content"></a>コンテンツの更新
 
@@ -217,7 +217,7 @@ XAML では、[`ViewCell`](xref:Xamarin.Forms.ViewCell) を `DataTemplate` に�
 
 ### <a name="custom-cells"></a>カスタム セル
 
-[**ConditionalCells**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ConditionalCells) は、**EntryForm** を拡張します。 [`ProgrammerInformation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter19/EntryForm/EntryForm/EntryForm/PersonalInformation.cs) クラスには、2 つの追加プロパティの適用性を制御するブール型プロパティが含まれます。 これら 2 つの追加プロパティについて、プログラムでは、[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリ内の [PickerCell.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/PickerCell.xaml) および [PickerCell.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/PickerCell.xaml.cs) に基づいてカスタムの `PickerCell` を使用します。
+[**ConditionalCells**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/ConditionalCells) は、**EntryForm** を拡張します。 [`ProgrammerInformation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter19/EntryForm/EntryForm/EntryForm/PersonalInformation.cs) クラスには、2 つの追加プロパティの適用性を制御するブール型プロパティが含まれます。 これら 2 つの追加プロパティについて、プログラムでは、 [ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリ内の [PickerCell.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/PickerCell.xaml) および [PickerCell.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/PickerCell.xaml.cs) に基づいてカスタムの `PickerCell` を使用します。
 
 2 つの `PickerCell` 要素の `IsEnabled` プロパティは `ProgrammerInformation`内のブール型プロパティにバインドされますが、この手法は機能しないようで、次のサンプルを要求します。
 

@@ -10,16 +10,19 @@ ms.date: 11/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6dd13c0f592831c6488afac6727bcac734e9136a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d2904270b601b6602457873e8b0180c13a0d6d95
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136722"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373459"
 ---
 # <a name="summary-of-chapter-17-mastering-the-grid"></a>第 17 章の概要: グリッドのマスター
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17)
+
+> [!NOTE]
+> この本は 2016 年春に発行されて以降、改訂されていません。 多くの情報はまだ価値がありますが、一部の資料は古くなっており、トピックの中にはまったく正しくないものまたは不完全なものもあります。
 
 [`Grid`](xref:Xamarin.Forms.Grid) は、その子をセルの行と列に配置する優れたレイアウト メカニズムです。 よく似た HTML の `table` 要素とは異なり、`Grid` はプレゼンテーションではなく、レイアウトのみを目的としています。
 
@@ -103,7 +106,7 @@ XAML では、これらの値を設定するために、次の属性を使用し
 
 `Grid` では、向きの変化に対応するためのプログラムを構成できます。 [**GridRgbSliders**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter17/GridRgbSliders) サンプルでは、縦向きのスマートフォンの 2 番目の行と横向きのスマートフォンの 2 番目の列間で要素を移動する技法を示しています。
 
-プログラムでは、`Slider` 要素を 0 から 255 の範囲に初期化し、データ バインディングを使用して 16 進数でスライダーの値を表示します。 `Slider` 値は浮動小数点型であり、16 進数用の .NET 書式設定の文字列は整数のみで有効なため、[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリにある [`DoubleToIntConvert`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/DoubleToIntConverter.cs) クラスが利用されます。
+プログラムでは、`Slider` 要素を 0 から 255 の範囲に初期化し、データ バインディングを使用して 16 進数でスライダーの値を表示します。 `Slider` 値は浮動小数点型であり、16 進数用の .NET 書式設定の文字列は整数のみで有効なため、[ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリにある [`DoubleToIntConvert`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/DoubleToIntConverter.cs) クラスが利用されます。
 
 ## <a name="related-links"></a>関連リンク
 

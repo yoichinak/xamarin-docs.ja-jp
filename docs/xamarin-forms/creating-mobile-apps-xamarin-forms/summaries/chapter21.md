@@ -10,16 +10,19 @@ ms.date: 11/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 32393108f84ea3a57079c86b6a9a8e628ceca03a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cb822c7ac2a05dc9f0d51f51e9737add4395b84d
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136670"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374031"
 ---
 # <a name="summary-of-chapter-21-transforms"></a>第 21 章の概要: 変換
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21)
+
+> [!NOTE]
+> この本は 2016 年春に発行されて以降、改訂されていません。 多くの情報はまだ価値がありますが、一部の資料は古くなっており、トピックの中にはまったく正しくないものまたは不完全なものもあります。
 
 Xamarin.Forms ビューは、通常は `Layout` または `Layout<View>` の派生クラスであるその親によって決定された場所とサイズで、画面に表示されます。 "*変換*" は、該当の場所、サイズ、または向きさえも変更できる Xamarin.Forms の機能です。
 
@@ -42,7 +45,7 @@ Xamarin.Forms では、スケーリングは等方性であり、幅と高さに
 - [`AnchorX`](xref:Xamarin.Forms.VisualElement.AnchorX)
 - [`AnchorY`](xref:Xamarin.Forms.VisualElement.AnchorY)
 
-これらのプロパティはすべて、バインド可能なプロパティによってサポートされています。 また、データ バインディングとスタイル設定のターゲットにすることができます。 「[**第 22 章: アニメーション**](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter22.md)」では、これらのプロパティをアニメーション化する方法を示していますが、この章のいくつかのサンプルでは、Xamarin.Forms の[タイマー](~/xamarin-forms/platform/device.md#devicestarttimer)を使ってアニメーション化する方法を示しています。
+これらのプロパティはすべて、バインド可能なプロパティによってサポートされています。 また、データ バインディングとスタイル設定のターゲットにすることができます。 「[**第 22 章: アニメーション**](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter22.md)」では、これらのプロパティをアニメーション化する方法を示していますが、この章のいくつかのサンプルでは、Xamarin.Forms の [タイマー](~/xamarin-forms/platform/device.md#devicestarttimer)を使ってアニメーション化する方法を示しています。
 
 変換のプロパティは、要素のレンダリング方法のみに影響を与え、要素がレイアウト内で認識される方法に影響を与えることは "*ありません*"。
 
@@ -100,9 +103,9 @@ iOS では、`AnchorX` および `AnchorY` プロパティの既定値以外の�
 
 ### <a name="an-analog-clock"></a>アナログ時計
 
-[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリには、時計に対応させて角度を計算する [`AnalogClockViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AnalogClockViewModel.cs) クラスがあります。 クラスでは、ViewModel でのプラットフォームの依存関係を回避するために、新しい `DateTime` 値の検索にタイマーではなく `Task.Delay` が使用されます。
+[ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリには、時計の針の角度を計算する [`AnalogClockViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AnalogClockViewModel.cs) クラスがあります。 クラスでは、ViewModel でのプラットフォームの依存関係を回避するために、新しい `DateTime` 値の検索にタイマーではなく `Task.Delay` が使用されます。
 
-また、**Xamarin.FormsBook.Toolkit** には、`IValueConverter` を実装して 1 秒の角度を最も近い秒に丸めて提示する [`SecondTickConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/SecondTickConverter.cs) クラスもあります。
+また、 **Xamarin.FormsBook.Toolkit** には、`IValueConverter` を実装して 1 秒の角度を最も近い秒に丸めて提示する [`SecondTickConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/SecondTickConverter.cs) クラスもあります。
 
 [**MinimalBoxViewClock**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/MinimalBoxViewClock) では、3 つの回転する `BoxView` 要素を使用して、アナログ時計を描画します。
 
@@ -110,7 +113,7 @@ iOS では、`AnchorX` および `AnchorY` プロパティの既定値以外の�
 
 [![BoxView Clock のトリプル スクリーンショット](images/ch21fg17-small.png "アナログ時計のフェイス")](images/ch21fg17-large.png#lightbox "アナログ時計のフェイス")
 
-加えて、**Xamarin.FormsBook.Toolkit** の [`SecondBackEaseConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/SecondBackEaseConverter.cs) クラスでは、先へ進む前にわずかに引き戻してから適切な位置に移動するように、秒針を表示します。
+加えて、 **Xamarin.FormsBook.Toolkit** の [`SecondBackEaseConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/SecondBackEaseConverter.cs) クラスでは、先へ進む前にわずかに引き戻してから適切な位置に移動するように、秒針を表示します。
 
 ### <a name="vertical-sliders"></a>垂直のスライダーになるか
 

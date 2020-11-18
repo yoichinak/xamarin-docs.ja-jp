@@ -10,19 +10,19 @@ ms.date: 07/18/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ece93730100001e8339a5f50cdb7ac437d96fa62
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 721d68db48843ee614f16d4c4237f2c753319561
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136735"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373485"
 ---
 # <a name="summary-of-chapter-16-data-binding"></a>第 16 章の概要: データ バインディング
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16)
 
-> [!NOTE] 
-> このページの注記では、Xamarin.Forms が書籍に記載されている資料と異なる部分が示されています。
+> [!NOTE]
+> この本は 2016 年春に発行されて以降、改訂されていません。 多くの情報はまだ価値がありますが、一部の資料は古くなっており、トピックの中にはまったく正しくないものまたは不完全なものもあります。
 
 プログラマーは、あるオブジェクトのプロパティが変更されたことを検出するイベント ハンドラーを作成し、それを使って別のオブジェクトのプロパティの値を変更することがよくあります。 このプロセスは、"*データ バインディング*" の手法を使用して自動化できます。 データ バインディングは、通常、XAML で定義され、ユーザー インターフェイスの定義の一部になります。
 
@@ -128,7 +128,7 @@ MVVM シナリオにおいてデータ バインディングのターゲット�
 
 バインディングのソース プロパティとターゲット プロパティが異なる型である場合は、バインディング コンバーターを使用して型の間で変換を行うことができます。 これは、[`IValueConverter`](xref:Xamarin.Forms.IValueConverter) インターフェイスを実装したクラスであり、2 つのメソッドが含まれています。ソースをターゲットに変換するための [`Convert`](xref:Xamarin.Forms.IValueConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)) と、ターゲットをソースに変換するための [`ConvertBack`](xref:Xamarin.Forms.IValueConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)) です。
 
-[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリの [`IntToBoolConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/IntToBoolConverter.cs) クラスは、`int` を `bool` に変換する 1 つの例です。 これは [**ButtonEnabler**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/ButtonEnabler) サンプルで示されています。そこでは、少なくとも 1 つの文字が `Entry` に入力された場合にのみ、`Button` が有効になります。
+[ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリの [`IntToBoolConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/IntToBoolConverter.cs) クラスは、`int` を `bool` に変換する 1 つの例です。 これは [**ButtonEnabler**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/ButtonEnabler) サンプルで示されています。そこでは、少なくとも 1 つの文字が `Entry` に入力された場合にのみ、`Button` が有効になります。
 
 [`BoolToStringConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BoolToStringConverter.cs) クラスでは、`bool` が `string` に変換され、`false` と `true` の値に対して返されるテキストを指定するために、2 つのプロパティが定義されています。
 [`BoolToColorConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BoolToColorConverter.cs) も似ています。 [**SwitchText**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/SwitchText) サンプルでは、これら 2 つのコンバーターを使用して、`Switch` 設定に基づいてさまざまなテキストをさまざまな色で表示する方法が示されています。

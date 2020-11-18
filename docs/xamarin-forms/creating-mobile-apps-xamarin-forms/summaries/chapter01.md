@@ -10,19 +10,19 @@ ms.date: 07/19/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 48b2fb429d206f6582886c94d4d99839d790dc8d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1af4b990d388436c04a2feb0abe3d4e3a8bc6756
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136930"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370456"
 ---
-# <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>第 1 章の概要。 Xamarin.Forms はどのように適合するか
+# <a name="summary-of-chapter-1-how-does-no-locxamarinforms-fit-in"></a>第 1 章の概要。 Xamarin.Forms はどのように適合するか
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01)
 
 > [!NOTE]
-> このページの注記では、Xamarin.Forms が本に記載されている資料と異なる部分が示されています。
+> この本は 2016 年春に発行されて以降、改訂されていません。 多くの情報はまだ価値がありますが、一部の資料は古くなっており、トピックの中にはまったく正しくないものまたは不完全なものもあります。
 
 プログラミングにおいて最も好ましくないジョブの 1 つは、特にプラットフォームで異なるプログラミング言語を使用する場合に、プラットフォーム間でコード ベースを移植することです。 また、コードを移植する際にリファクタリングしがちですが、両方のプラットフォームを並列して維持する必要がある場合、2 つのコード ベースに違いがあると、将来のメンテナンスがより困難になります。
 
@@ -43,7 +43,7 @@ Xamarin では、現在、C# と .NET を使用するネイティブの Mac、iO
 > [!NOTE]
 > ポータブル クラス ライブラリは、.NET Standard ライブラリに置き換えられています。 本のすべてのサンプル コードは、.NET Standard ライブラリを使用するように変換されています。
 
-## <a name="introducing-xamarinforms"></a>Xamarin.Forms の概要
+## <a name="introducing-no-locxamarinforms"></a>Xamarin.Forms の概要
 
 複数のモバイル プラットフォームをターゲットとする場合、Xamarin.Forms ではさらに多くのコード共有を行うことができます。 Xamarin.Forms 用に作成された単一プログラムでは、これらのプラットフォームをターゲットにすることができます。
 
@@ -58,7 +58,7 @@ Xamarin.Forms プログラムの大部分は、ライブラリまたは SAP に�
 
 Xamarin.Forms API は各プラットフォーム上のネイティブ コントロールにマップされるため、各プラットフォームでその特性のルック アンド フィールが維持されます。
 
-[![プラットフォームの視覚エフェクト共有のトリプル スクリーンショット](images/ch01fg03-small.png "各プラットフォームの Xamarin.Forms コントロール")](images/ch01fg03-large.png#lightbox "各プラットフォームの Xamarin.Forms コントロール")
+[![プラットフォームの視覚エフェクト共有のトリプル スクリーンショット](images/ch01fg03-small.png "Xamarin.Forms各プラットフォームのコントロール")](images/ch01fg03-large.png#lightbox "Xamarin.Forms各プラットフォームのコントロール")
 
 スクリーンショットの左から右に、iPhone と Android フォンが示されています。
 

@@ -10,16 +10,19 @@ ms.date: 07/19/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6b86bfe1e343cd50f4a133726d16364b3efb8bee
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 26b9aa33267c56a82edfd38a1d7eefa6a5cd82a2
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84198274"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370365"
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>第 4 章の概要: スタックのスクロール
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04)
+
+> [!NOTE]
+> この本は 2016 年春に発行されて以降、改訂されていません。 多くの情報はまだ価値がありますが、一部の資料は古くなっており、トピックの中にはまったく正しくないものまたは不完全なものもあります。
 
 この章では、主に、"*レイアウト*" の概念を紹介します。これは、Xamarin.Forms でページ上の複数のビューの視覚的な表示を整理するために使用されるクラスと手法を表す包括的な用語です。
 

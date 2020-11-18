@@ -10,16 +10,19 @@ ms.date: 11/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9a0206354254f79756e29f834c85837240736eca
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: bdbc795c0669115f822e6908590a3754af31a2d0
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136657"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373992"
 ---
 # <a name="summary-of-chapter-23-triggers-and-behaviors"></a>第 23 章の概要。 トリガーと動作
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23)
+
+> [!NOTE]
+> この本は 2016 年春に発行されて以降、改訂されていません。 多くの情報はまだ価値がありますが、一部の資料は古くなっており、トピックの中にはまったく正しくないものまたは不完全なものもあります。
 
 トリガーと動作は、両方とも XAML ファイルで使用して、データ バインディングの使用を超えた要素の相互作用を簡略化し、XAML 要素の機能を拡張することが意図されているという点で似ています。 トリガーと動作は、ほとんどの場合、ビジュアル ユーザーインターフェイス オブジェクトと共に使用されます。
 
@@ -73,7 +76,7 @@ ms.locfileid: "84136657"
 
 これを使用するには、[`TriggerAction<T>`](xref:Xamarin.Forms.TriggerAction`1) から派生したクラスを記述する必要があります (通常は `TriggerAction<VisualElement>`)。 このクラスでは、プロパティを定義できます。 これらは、`TriggerAction` が `BindableObject` から派生しないため、連結可能なプロパティではなく、プレーンな CLR プロパティです。 アクションが呼び出されたときに呼び出される [`Invoke`](xref:Xamarin.Forms.TriggerAction`1.Invoke*) メソッドをオーバーライドする必要があります。 引数は対象の要素です。
 
-[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリの [`ScaleAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ScaleAction.cs) クラスが 1 つの例です。 これにより `ScaleTo` プロパティが呼び出され、要素の `Scale` プロパティがアニメーション化されます。 このプロパティの 1 つは `Easing` 型であるため、[`EasingConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/EasingConverter.cs) クラスを使用すると、XAML で標準の `Easing` 静的フィールドを使用できます。
+[ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリの [`ScaleAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ScaleAction.cs) クラスが 1 つの例です。 これにより `ScaleTo` プロパティが呼び出され、要素の `Scale` プロパティがアニメーション化されます。 このプロパティの 1 つは `Easing` 型であるため、[`EasingConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/EasingConverter.cs) クラスを使用すると、XAML で標準の `Easing` 静的フィールドを使用できます。
 
 [**EntrySwell**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/EntrySwell) サンプルは、`Focused`イベントと `Unfocused` イベントを監視する `EventTrigger` オブジェクトから `ScaleAction` を呼び出す方法を示します。
 
@@ -88,7 +91,7 @@ ms.locfileid: "84136657"
 
 ### <a name="more-event-triggers"></a>その他のイベント トリガー
 
-[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリの [`ScaleUpAndDownAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ScaleUpAndDownAction.cs) クラスでは、スケールアップおよびスケールダウンのため `ScaleTo` が 2 回呼び出されます。 [**ButtonGrowth**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/ButtonGrowth) サンプルでは、スタイル設定された `EventTrigger` 内でこれを使用して、`Button` が押されたときに視覚的なフィードバックが提供されます。 このダブル アニメーションは、型 [`DelayedScaleAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/DelayedScaleAction.cs) のコレクション内の 2 つのアクションを使用して実現することもできます。
+[ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリの [`ScaleUpAndDownAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ScaleUpAndDownAction.cs) クラスでは、スケールアップおよびスケールダウンのため `ScaleTo` が 2 回呼び出されます。 [**ButtonGrowth**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/ButtonGrowth) サンプルでは、スタイル設定された `EventTrigger` 内でこれを使用して、`Button` が押されたときに視覚的なフィードバックが提供されます。 このダブル アニメーションは、型 [`DelayedScaleAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/DelayedScaleAction.cs) のコレクション内の 2 つのアクションを使用して実現することもできます。
 
 **Xamarin.FormsBook.Toolkit** ライブラリ内の [`ShiverAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ShiverAction.cs) クラスでは、カスタマイズ可能な Shiver アクションが定義されます。 これは、[**ShiverButtonDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/ShiverButtonDemo) サンプルで示されています。
 
@@ -137,13 +140,13 @@ AND と OR の組み合わせはそれほど簡単ではなく、通常、途中
 
 引数は、動作のアタッチ先の要素です。 一般に、`OnAttachedTo` メソッドにより一部のイベント ハンドラーがアタッチされ、`OnDetachingFrom` によってそれらがデタッチされます。 このようなクラスにより一部の状態が保存されるため、通常、これを `Style` で共有することはできません。
 
-[**BehaviorEntryValidation**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/BehaviorEntryValidation) サンプルは **TriggerEntryValidation** に似ていますが、ここでは動作 &mdash; が使用されます ([**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリの [`NumericValidationBehavior`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NumericValidationBehavior.cs) クラス)。
+[**BehaviorEntryValidation**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/BehaviorEntryValidation) サンプルは **TriggerEntryValidation** に似ていますが、ここでは動作 &mdash; が使用されます ([ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリの [`NumericValidationBehavior`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NumericValidationBehavior.cs) クラス)。
 
 ### <a name="behaviors-with-properties"></a>プロパティを持つ動作
 
 `Behavior<T>` は (`BindableObject` から派生する) `Behavior` から派生するため、連結可能なプロパティを動作に対して定義できます。 これらのプロパティは、データ バインディングでアクティブにできます。
 
-これは、[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリで [`ValidEmailBehavior`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ValidEmailBehavior.cs) クラスを利用する [**EmailValidationDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/EmailValidationDemo) プログラムに示されています。 `ValidEmailBehavior` には、読み取り専用の連結可能なプロパティがあります。また、これはデータ バインディングでのソースとしての役割を果たします。
+これは、[ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリで [`ValidEmailBehavior`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ValidEmailBehavior.cs) クラスを利用する [**EmailValidationDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/EmailValidationDemo) プログラムに示されています。 `ValidEmailBehavior` には、読み取り専用の連結可能なプロパティがあります。また、これはデータ バインディングでのソースとしての役割を果たします。
 
 [**EmailValidationConv**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/EmailValidationConv) サンプルでは、この同じ動作を使用して電子メール アドレスが有効であることを知らせる別の種類のインジケーターが表示されます。
 
@@ -151,7 +154,7 @@ AND と OR の組み合わせはそれほど簡単ではなく、通常、途中
 
 ### <a name="toggles-and-check-boxes"></a>トグルとチェック ボックス
 
-トグル ボタンの動作を [**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリ内の [`ToggleBehavior`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ToggleBehavior.cs) などのクラスにカプセル化して、すべてのビジュアルを XAML での完全なトグル用に定義できます。
+トグル ボタンの動作を [ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリ内の [`ToggleBehavior`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ToggleBehavior.cs) などのクラスにカプセル化して、すべてのビジュアルを XAML での完全なトグル用に定義できます。
 
 [**ToggleLabel**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/ToggleLabel) サンプルでは、`ToggleBehavior` を `DataTrigger` と共に使用して、トグル用に 2 つのテキスト文字列を持つ `Label` を使用します。
 
@@ -161,11 +164,11 @@ AND と OR の組み合わせはそれほど簡単ではなく、通常、途中
 
 [**SwitchCloneDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/SwitchCloneDemo) には `ToggleBase` から派生した [`SwitchClone`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter23/SwitchCloneDemo/SwitchCloneDemo/SwitchCloneDemo/SwitchClone.cs) クラスが含まれていて、[`TranslateAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/TranslateAction.cs) クラスを使用して、Xamarin.Forms `Switch` に似たトグル ボタンが構築されます。
 
-**Xamarin.FormsBook.Toolkit** の [`RotateAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/RotateAction.cs) により、[**LeverToggle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/LeverToggle) サンプルでアニメーション化されたレバーを作成するために使用されるアニメーションが提供されます。
+**Xamarin.FormsBook.Toolkit** の [`RotateAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/RotateAction.cs) では、[**LeverToggle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/LeverToggle) サンプルでアニメーション化されたレバーを作成するために使用されるアニメーションが提供されます。
 
 ### <a name="responding-to-taps"></a>タップへの応答
 
-`EventTrigger` の欠点の 1 つは、これを `TapGestureRecognizer` にアタッチしてタップに応答できないことです。 この問題を回避することが、[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) の [`TapBehavior`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/TapBehavior.cs) の目的です。
+`EventTrigger` の欠点の 1 つは、これを `TapGestureRecognizer` にアタッチしてタップに応答できないことです。 この問題を回避することが、[ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) の [`TapBehavior`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/TapBehavior.cs) の目的です。
 
 [**BoxViewTapShiver**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/BoxViewTapShiver) サンプルでは `TapBehavior` を使用して、タップされた `BoxView` 要素用に前の `ShiverAction` を使用します。
 
@@ -173,7 +176,7 @@ AND と OR の組み合わせはそれほど簡単ではなく、通常、途中
 
 ### <a name="radio-buttons"></a>ラジオ ボタン
 
-[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリには、`string` グループ名でグループ化されたラジオ ボタンを作成するための [`RadioBehavior`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/RadioBehavior.cs) クラスもあります。
+[ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリには、`string` グループ名でグループ化されたラジオ ボタンを作成するための [`RadioBehavior`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/RadioBehavior.cs) クラスもあります。
 
 [**RadioLabels**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/RadioLabels) プログラムでは、ラジオ ボタン用にテキスト文字列が使用されます。 [**RadioStyle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/RadioStyle) サンプルでは、checked ボタンと unchecked ボタンの外観の違いに `Style` を使用します。 [**RadioImages**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/RadioImages) サンプルでは、ラジオ ボタン用にボックス化されたイメージが使用されます。
 
@@ -183,9 +186,9 @@ AND と OR の組み合わせはそれほど簡単ではなく、通常、途中
 
 ### <a name="fades-and-orientation"></a>フェードと向き
 
-最後のサンプル [**MultiColorSliders**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/MultiColorSliders) を使用すると、ラジオ ボタンを使用して、3 つの異なる色選択ビュー間を切り替えることができます。 これら 3 つのビューは、[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリの [`FadeEnableAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/FadeEnableAction.cs) を使用してフェードインおよびフェードアウトします。
+最後のサンプル [**MultiColorSliders**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/MultiColorSliders) を使用すると、ラジオ ボタンを使用して、3 つの異なる色選択ビュー間を切り替えることができます。 これら 3 つのビューは、[ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリの [`FadeEnableAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/FadeEnableAction.cs) を使用してフェードインおよびフェードアウトします。
 
-また、プログラムは、**Xamarin.FormsBook.Toolkit** ライブラリの [`GridOrientationBehavior`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/GridOrientationBehavior.cs) を使用して、縦と横の向きの変化にも対応します。
+また、プログラムは、 **Xamarin.FormsBook.Toolkit** ライブラリの [`GridOrientationBehavior`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/GridOrientationBehavior.cs) を使用して、縦と横の向きの変化にも対応します。
 
 ## <a name="related-links"></a>関連リンク
 

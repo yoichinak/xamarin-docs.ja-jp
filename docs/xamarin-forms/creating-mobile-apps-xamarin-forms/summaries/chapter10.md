@@ -10,16 +10,19 @@ ms.date: 07/19/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8f23034df684e778677e4f2e480e1c41807536fb
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b2083a8dd17749074258c8bd5e6d1a7374c758f9
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136813"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368493"
 ---
 # <a name="summary-of-chapter-10-xaml-markup-extensions"></a>第 10 章の概要: XAML マークアップ拡張
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10)
+
+> [!NOTE]
+> この本は 2016 年春に発行されて以降、改訂されていません。 多くの情報はまだ価値がありますが、一部の資料は古くなっており、トピックの中にはまったく正しくないものまたは不完全なものもあります。
 
 通常、XAML パーサーでは、基本的な .NET データ型の標準変換に基づいて、あるいはプロパティまたはその型に [`TypeConverterAttribute`](xref:Xamarin.Forms.TypeConverterAttribute) でアタッチされている [`TypeConverter`](xref:Xamarin.Forms.TypeConverter) 派生物に基づいて、属性値として設定されている文字列が、プロパティの型に変換されます。
 
@@ -92,7 +95,7 @@ XAML パーサーでは、`StaticResource` が検出されると、ビジュア�
 
 [`IMarkupExtension`](xref:Xamarin.Forms.Xaml.IMarkupExtension) インターフェイスと [`ProvideValue`](xref:Xamarin.Forms.Xaml.IMarkupExtension.ProvideValue(System.IServiceProvider)) メソッドを実装するクラスを記述することで、独自の XAML マークアップ拡張を作成できます。
 
-それらの要件は、[`HslColorExtension`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/HslColorExtension.cs) クラスによって満たされます。 それでは、`H`、`S`、`L`、`A` という名前のプロパティの値に基づいて、`Color` 型の値が作成されます。 このクラスは、本書を通して構築されて使用される [**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) という名前の Xamarin.Forms ライブラリの最初の項目です。
+それらの要件は、[`HslColorExtension`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/HslColorExtension.cs) クラスによって満たされます。 それでは、`H`、`S`、`L`、`A` という名前のプロパティの値に基づいて、`Color` 型の値が作成されます。 このクラスは、本書を通して構築されて使用される [ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) という名前の Xamarin.Forms ライブラリの最初の項目です。
 
 [**CustomExtensionDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/CustomExtensionDemo) サンプルでは、このライブラリを参照し、カスタム マークアップ拡張を使用する方法が示されています。
 

@@ -10,22 +10,25 @@ ms.date: 07/19/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: edc3dfd97457fe93a04edd82574f6ed419f5fdc1
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e2858d0606cf9c5c97a3457b5b29f620e7da2bad
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136800"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375136"
 ---
 # <a name="summary-of-chapter-11-the-bindable-infrastructure"></a>第 11 章の概要: バインド可能なインフラストラクチャ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11)
 
+> [!NOTE]
+> この本は 2016 年春に発行されて以降、改訂されていません。 多くの情報はまだ価値がありますが、一部の資料は古くなっており、トピックの中にはまったく正しくないものまたは不完全なものもあります。
+
 すべての C# プログラマは、C# の "*プロパティ*" について理解しています。 プロパティには、*set* アクセサーと *get* アクセサーのどちらか一方または両方が含まれます。 それらは、共通言語ランタイムの "*CLR プロパティ*" と呼ばれることがよくあります。
 
 Xamarin.Forms では、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) クラスによってカプセル化され、[`BindableObject`](xref:Xamarin.Forms.BindableObject) クラスによってサポートされる、"*バインド可能プロパティ*" と呼ばれる拡張プロパティ定義が定義されています。 これらのクラスは関連してはいますが、非常に異なります。`BindableProperty` は、プロパティ自体を定義するために使用されます。`BindableObject` は、バインド可能プロパティを定義するクラスの基底クラスであるという点で `object` に似ています。
 
-## <a name="the-xamarinforms-class-hierarchy"></a>Xamarin.Forms のクラス階層
+## <a name="the-no-locxamarinforms-class-hierarchy"></a>Xamarin.Forms のクラス階層
 
 [**ClassHierarchy**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/ClassHierarchy) サンプルでは、リフレクションを使用して Xamarin.Forms のクラス階層が表示され、この階層において `BindableObject` によって果たされる重要な役割が示されています。 `BindableObject` は、`Object` から派生し、それを親クラスとする [`Element`](xref:Xamarin.Forms.Element) から、[`VisualElement`](xref:Xamarin.Forms.VisualElement) が派生します。 さらにこれを親として [`Page`](xref:Xamarin.Forms.Page) と [`View`](xref:Xamarin.Forms.View) が派生し、それは [`Layout`](xref:Xamarin.Forms.Layout) に対する親クラスです。
 
@@ -63,7 +66,7 @@ Xamarin.Forms では、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)
 
 静的な [`BindableProperty.Create`](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate)) メソッドを使用して独自のバインド可能プロパティを定義し、`BindableProperty` 型の静的な読み取り専用フィールドを作成できます。
 
-これについては、[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリの [`AltLabel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AltLabel.cs) クラスで示されています。 そのクラスは `Label` から派生し、フォント サイズをポイント単位で指定できます。 [**PointSizedText**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/PointSizedText) サンプルを参照してください。
+これについては、[ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリの [`AltLabel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AltLabel.cs) クラスで示されています。 そのクラスは `Label` から派生し、フォント サイズをポイント単位で指定できます。 [**PointSizedText**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/PointSizedText) サンプルを参照してください。
 
 `BindableProperty.Create` メソッドの 4 つの引数は必須です。
 
@@ -80,7 +83,7 @@ Xamarin.Forms では、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)
 
 `BindableProperty.Create` に対する他の引数は、一般的ではありません。
 
-- `defaultBindingMode`: データ バインディングとの関係で使用されます (「[**第 16 章「データ バインディング」** ](chapter16.md)を参照)。
+- `defaultBindingMode`: データ バインディングとの関係で使用されます (「[**第 16 章「データ バインディング」**](chapter16.md)を参照)。
 - `validateValue`: 有効な値を確認するためのコールバック
 - `propertyChanging`: プロパティが変更されようとしていることを示すコールバック
 - `coerceValue`: set 値を別の値に強制的に変換するためのコールバック

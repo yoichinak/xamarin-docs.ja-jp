@@ -10,19 +10,19 @@ ms.date: 07/18/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4b0a3e14126dc8c92a1d1b60db7dbb2afd8e8c12
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 6b117688e1bf85266c274a44e6a4b1fda1ef5134
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136592"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375149"
 ---
 # <a name="summary-of-chapter-27-custom-renderers"></a>第 27 章カスタム レンダラーの概要 カスタム レンダラー
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27)
 
-> [!NOTE] 
-> このページの注記では、Xamarin.Forms が本に記載されている資料と異なる部分が示されています。
+> [!NOTE]
+> この本は 2016 年春に発行されて以降、改訂されていません。 多くの情報はまだ価値がありますが、一部の資料は古くなっており、トピックの中にはまったく正しくないものまたは不完全なものもあります。
 
 `Button` などの Xamarin.Forms 要素は、`ButtonRenderer` という名前のクラスにカプセル化されたプラットフォーム固有のボタンを使ってレンダリングされます。  [iOS バージョンの `ButtonRenderer`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.iOS/Renderers/ButtonRenderer.cs)、[Android バージョンの `ButtonRenderer`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.Android/Renderers/ButtonRenderer.cs)、および [UWP バージョンの `ButtonRenderer`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.UAP/ButtonRenderer.cs) をご確認ください。
 
@@ -39,7 +39,7 @@ Xamarin.Forms のプラットフォーム固有のコードを含むアセンブ
 - [ **Xamarin.Forms.Platform.UAP**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform.UAP)
 
 > [!NOTE]
-> 本書に記載されている `WinRT` アセンブリは、このソリューションの一部ではなくなりました。 
+> 本書に記載されている `WinRT` アセンブリは、このソリューションの一部ではなくなりました。
 
 [**PlatformClassHierarchy**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/PlatformClassHierarchy) サンプルでは、実行中のプラットフォームに対して有効なアセンブリのクラス階層を表示しています。
 
@@ -80,9 +80,9 @@ UWP [`ViewRenderer<TElement, TNativeElement>`](https://github.com/xamarin/Xamari
 
 ## <a name="renderers-and-properties"></a>レンダラーとプロパティ
 
-次のレンダラーのセットは楕円描画を実装しており、[**Xamarin.FormsBook.Platform**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform) ソリューションのさまざまなプロジェクトに配置されています。
+次のレンダラーのセットは楕円描画を実装しており、[ **Xamarin.FormsBook.Platform**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform) ソリューションのさまざまなプロジェクトに配置されています。
 
-[`EllipseView`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/EllipseView.cs) クラスは、**Xamarin.FormsBook.Platform** プラットフォームにあります。 このクラスは `BoxView` に似ており、単一のプロパティ、`Color` 型の `Color` のみを定義します。
+[`EllipseView`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/EllipseView.cs) クラスは、 **Xamarin.FormsBook.Platform** プラットフォームにあります。 このクラスは `BoxView` に似ており、単一のプロパティ、`Color` 型の `Color` のみを定義します。
 
 レンダラーは、レンダラーの `OnElementPropertyChanged` メソッドをオーバーライドすることにより、`View` に設定されたプロパティ値をネイティブ オブジェクトに転送できます。 このメソッド内 (およびほとんどのレンダラー内) で、次の 2 つのプロパティを使用できます。
 

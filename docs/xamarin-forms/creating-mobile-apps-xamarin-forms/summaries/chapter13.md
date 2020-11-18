@@ -10,19 +10,19 @@ ms.date: 07/18/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 43caf088ad6cb816f049e7862a287c17839c2170
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 011ef7c73e756c938589124676fa3d9c14a3b556
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136774"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374844"
 ---
 # <a name="summary-of-chapter-13-bitmaps"></a>第 13 章の概要: ビットマップ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13)
 
 > [!NOTE]
-> このページの注記では、Xamarin.Forms が書籍に記載されている資料と異なる部分が示されています。
+> この本は 2016 年春に発行されて以降、改訂されていません。 多くの情報はまだ価値がありますが、一部の資料は古くなっており、トピックの中にはまったく正しくないものまたは不完全なものもあります。
 
 Xamarin.Forms [`Image`](xref:Xamarin.Forms.Image) 要素により、ビットマップが表示されます。 すべての Xamarin.Forms プラットフォームは、JPEG、PNG、GIF、および BMP ファイル形式をサポートしています。
 

@@ -10,16 +10,19 @@ ms.date: 07/19/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 22f7272751c30bed350fe7aada8d5dacf0acc809
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 2f4fedcae3942f1662ec5102ae6c42191f65f888
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136787"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374863"
 ---
 # <a name="summary-of-chapter-12-styles"></a>第 12 章の概要: スタイル
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter12)
+
+> [!NOTE]
+> この本は 2016 年春に発行されて以降、改訂されていません。 多くの情報はまだ価値がありますが、一部の資料は古くなっており、トピックの中にはまったく正しくないものまたは不完全なものもあります。
 
 Xamarin.Forms では、スタイルを使用して、複数のビューでプロパティ設定のコレクションを共有できます。 これにより、マークアップが減少し、一貫したビジュアル テーマを維持できます。
 
