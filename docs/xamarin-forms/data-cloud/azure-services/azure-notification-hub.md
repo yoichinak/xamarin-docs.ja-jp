@@ -11,12 +11,12 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 - Firebase
-ms.openlocfilehash: 498e3b0bd2cb88df3e04dc19c66dbe671a8378dd
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: b560eedb1968db791c57620686c4ddb854153b1c
+ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93374447"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94590403"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-no-locxamarinforms"></a>Azure Notification Hubs と Xamarin.Forms を使用してプッシュ通知を送受信する
 
@@ -44,7 +44,7 @@ Azure Notification Hubs と Xamarin.Forms モバイル アプリの統合は、A
 1. Android パッケージ名を定義します。たとえば、サンプルでは `com.xamarin.notifysample` を使用しています。
 1. Firebase コンソールから `google-services.json` をダウンロードします。 このファイルは、後の手順で Android アプリケーションに追加します。
 1. Azure Notification Hub インスタンスを作成して名前を付けます。 この記事とサンプルでは、ハブ名として `xdocsnotificationhub` を使用します。
-1. FCM **サーバー キー** をコピーして、 **API キー** として Azure Notification Hub の **Google (GCM/FCM)** の下に保存します。
+1. FCM **サーバー キー** をコピーして、**API キー** として Azure Notification Hub の **Google (GCM/FCM)** の下に保存します。
 
 次のスクリーンショットは、Azure Notification Hub の Google プラットフォーム構成を示しています。
 
@@ -142,8 +142,10 @@ public static class AppConstants
 1. `FirebaseMessagingService` を[オーバーライド](#override-firebasemessagingservice-to-handle-messages)してメッセージを処理します。
 1. 受信通知を Xamarin.Forms UI に[追加](#add-incoming-notifications-to-the-xamarinforms-ui)します。
 
-> [!NOTE]
-> `GoogleServicesJson` ビルド アクションは、`Xamarin.GooglePlayServices.Base` NuGet パッケージの一部です。 Visual Studio 2019 では、起動時に使用可能なビルド アクションが設定されます。 ビルド アクションとして `GoogleServicesJson` が表示されない場合は、NuGet パッケージのインストール後に Visual Studio 2019 を再起動します。
+`GoogleServicesJson` ビルド アクションは、`Xamarin.GooglePlayServices.Base` NuGet パッケージの一部です。 Visual Studio 2019 では、起動時に使用可能なビルド アクションが設定されます。 ビルド アクションとして `GoogleServicesJson` が表示されない場合は、NuGet パッケージのインストール後に Visual Studio 2019 を再起動します。
+
+> [!IMPORTANT]
+> アプリがスリープ状態にあるときにプッシュ通知を配信するには、AndroidX の使用が必要になりました。 AndroidX への移行の詳細については、「[Xamarin.Forms での AndroidX への移行](~/xamarin-forms/platform/android/androidx-migration.md)」を参照してください。
 
 ### <a name="configure-android-manifest"></a>Android マニフェストを構成する
 

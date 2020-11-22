@@ -6,16 +6,16 @@ ms.assetid: C946057F-C77C-412D-82A0-DAF475A24EF5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/07/2019
+ms.date: 11/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d5c380a5ce6e76b0f9275b09d2943be479ef09e4
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: ef4c8717b419d1be4c4050f86b183385d6c10072
+ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93370898"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94590338"
 ---
 # <a name="no-locxamarinforms-tabbedpage"></a>Xamarin.Forms の TabbedPage
 
@@ -27,15 +27,17 @@ Xamarin.Forms の [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) は、タブの�
 
 iOS では、タブのリストが画面の下部に表示され、その上に詳細エリアが表示されます。 各タブは、タイトルとアイコンで構成されます。これは、アルファ チャネルを含む PNG ファイルです。 縦長の向きでは、タブ バーのアイコンがタブ タイトルの上に表示されます。 横長の向きでは、アイコンとタイトルが横に並んで表示されます。 また、デバイスと向きに応じて、ノーマルまたはコンパクトなタブ バーが表示される場合があります。 6 個以上のタブがある場合、 **[その他]** タブが表示され、これを使用して追加のタブにアクセスできます。 アイコン要件の詳細については、developer.apple.com で[タブ バーのアイコン サイズ](https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/custom-icons#tab-bar-icon-size)に関するページを参照してください。
 
-> [!TIP]
-> iOS 用の `TabbedRenderer` には、指定されたソースからタブ アイコンを読み込むために使用できるオーバーライド可能な `GetIcon` メソッドがあります。 このオーバーライドにより、SVG イメージを `TabbedPage` のアイコンとして使用することができます。 さらに、アイコンの選択バージョンと未選択バージョンも提供することができます。
-
 Android では、タブのリストが画面の上部に表示され、その下に詳細エリアが表示されます。 各タブは、タイトルとアイコンで構成されます。これは、アルファ チャネルを含む PNG ファイルです。 タブは、プラットフォーム固有で画面の下部に移動できます。 6 個以上のタブがあり、画面の下部にタブ リストがある場合、 *[その他]* タブが表示され、これを使用して追加のタブにアクセスできます。 アイコン要件の詳細については、material.io の[タブ](https://material.io/components/tabs/#)に関するページと、developer.android.com の「[各種のセル密度をサポートする](https://developer.android.com/training/multiscreen/screendensities)」を参照してください。 タブを画面の下部に移動する方法については、[TabbedPage ツール バーの配置と色の設定](~/xamarin-forms/platform/android/tabbedpage-toolbar-placement-color.md)に関する記事を参照してください。
 
-> [!TIP]
-> Android AppCompat 用の `TabbedPageRenderer` には、カスタム `Drawable` からタブ アイコンを読み込むために使用できるオーバーライド可能な `SetTabIconImageSource` メソッドがあります。 このオーバーライドは、SVG イメージを `TabbedPage` のアイコンとして使用できるようにし、上部のタブ バーと下部のタブ バーの両方で機能します。
-
 Universal Windows Platform (UWP) では、タブのリストが画面の上部に表示され、その下に詳細エリアが表示されます。 各タブは、タイトルで構成されます。 ただし、各タブにはプラットフォーム固有のアイコンを追加できます。 詳細については、「[Windows 上の TabbedPage アイコン](~/xamarin-forms/platform/windows/tabbedpage-icons.md)」を参照してください。
+
+> [!TIP]
+> スケーラブル ベクター グラフィック (SVG) ファイルは、[`TabbedPage`](xref:Xamarin.Forms.TabbedPage) にタブ アイコンとして表示することができます。
+>
+> - iOS の `TabbedRenderer` クラスには、指定されたソースからタブ アイコンを読み込むために使用できるオーバーライド可能な `GetIcon` メソッドがあります。 さらに、必要に応じて、アイコンの選択バージョンと未選択バージョンも提供することができます。
+> - Android AppCompat の `TabbedPageRenderer` クラスには、カスタム `Drawable` からタブ アイコンを読み込むために使用できるオーバーライド可能な `SetTabIconImageSource` メソッドがあります。 また、SVG ファイルをベクター ドローアブル リソースに変換して、Xamarin.Forms で自動的に表示されるようにすることもできます。 SVG ファイルをドローアブル リソースに変換する方法の詳細については、developer.android.com にある 「[さまざまな密度に適用可能なベクター グラフィックの追加](https://developer.android.com/studio/write/vector-asset-studio)」を参照してください。
+>
+> 詳細については、[SVG タブ アイコンを含む Xamarin.Forms TabbedPage](/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithsvgtabicons) に関するページを参照してください。
 
 ## <a name="create-a-tabbedpage"></a>TabbedPage の作成
 
@@ -109,7 +111,7 @@ public class MainPageCS : TabbedPage
 
 [![iOS と Android 上のタブを含む TabbedPage のスクリーンショット](tabbed-page-images/tabbedpage-week.png "タブがある TabbedPage")](tabbed-page-images/tabbedpage-week-large.png#lightbox "タブがある TabbedPage")
 
-**[スケジュール]** タブで、 [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトが [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) オブジェクト内にラップされます。
+**[スケジュール]** タブで、[`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトが [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) オブジェクト内にラップされます。
 
 > [!WARNING]
 > [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) を [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) に配置することはできますが、`TabbedPage` を `NavigationPage` に配置することはお勧めしません。 これは、iOS では、`UITabBarController` が常に `UINavigationController` のラッパーとして機能するためです。 詳細については、iOS 開発者ライブラリの「[Combined View Controller Interfaces](https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/ViewControllerCatalog/Chapters/CombiningViewControllers.html)」 (View Controller インターフェイスの結合) を参照してください。
@@ -240,6 +242,7 @@ public class TabbedPageDemoPageCS : TabbedPage
 
 - [ナビゲーション ページを含むタブ付きページ (サンプル)](/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
 - [タブ付きページ (サンプル)](/samples/xamarin/xamarin-forms-samples/navigation-tabbedpage)
+- [SVG タブ アイコンを含む TabbedPage](/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithsvgtabicons)
 - [階層ナビゲーション](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md)
 - [ページの変数](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
 - [TabbedPage API](xref:Xamarin.Forms.TabbedPage)

@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/07/2018
+ms.date: 11/05/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 05f5e79f9df59859c4514150ec591e0a96912ed5
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 676e0f062d3ed83cf433188e646f1e96f84a77cc
+ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93368779"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94590268"
 ---
 # <a name="right-to-left-localization"></a>右から左へのローカライズ
 
@@ -101,7 +101,7 @@ this.FlowDirection = Device.FlowDirection;
 
 ### <a name="universal-windows-platform-uwp"></a>ユニバーサル Windows プラットフォーム (UWP)
 
-必要な言語リソースは、 **Package.appxmanifest** ファイルの `<Resources>` ノードで指定する必要があります。 次の例では、`<Resources>` ノードに追加されているアラビア語を示します。
+必要な言語リソースは、**Package.appxmanifest** ファイルの `<Resources>` ノードで指定する必要があります。 次の例では、`<Resources>` ノードに追加されているアラビア語を示します。
 
 ```xml
 <Resources>
@@ -187,7 +187,10 @@ Xamarin.Android アプリケーションには、次の行を含むように **M
 Window.DecorView.LayoutDirection = LayoutDirection.Rtl;
 ```
 
-この方法は、常に右から左へのレイアウトを必要とするアプリケーションの場合に役立ち、[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティを設定する必要がなくなります。
+> [!NOTE]
+> この方法を使用するには、右から左へのレイアウトをサポートするようにアプリケーションをセットアップする必要があります。 詳細については、[Android プラットフォームのセットアップ](#android)に関するページを参照してください。
+
+この方法は、常に右から左へのレイアウトを必要とするアプリケーションの場合に役立ち、大部分のコントロールに対して [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティを設定する必要がなくなります。 ただし、[`CollectionView`](xref:Xamarin.Forms.CollectionView) などの一部のコントロールには、`LayoutDirection` プロパティを考慮するのでなく、引き続き `FlowDirection` プロパティを設定する必要があります。
 
 ## <a name="right-to-left-language-support-with-xamarinuniversity"></a>Xamarin.University での右から左方向の言語のサポート
 
