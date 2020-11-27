@@ -6,18 +6,18 @@ ms.assetid: EBBBB886-1CEF-4DF4-AFDD-CA96049F878E
 author: davidortinau
 ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: a8b63638861e8d44deb4ea72959d7461190f7713
-ms.sourcegitcommit: 6266ef043ae0289f174e901f204f2a280a53c071
+ms.openlocfilehash: 2fbd42efcdb3de10a7f094db2197a75d88d27b66
+ms.sourcegitcommit: 8fa0cb9ccbc107d697aa5b9113a4e5d1e75d6eb9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/30/2019
-ms.locfileid: "75545807"
+ms.lasthandoff: 11/27/2020
+ms.locfileid: "96303027"
 ---
 # <a name="net-embedding-limitations"></a>.NET 埋め込みの制限事項
 
 このドキュメントでは、.NET 埋め込みの制限事項について説明し、可能であれば、それらの回避策を示します。
 
-## <a name="general"></a>[全般]
+## <a name="general"></a>全般
 
 ### <a name="use-more-than-one-embedded-library-in-a-project"></a>1つのプロジェクトで複数の埋め込みライブラリを使用する
 
@@ -29,7 +29,7 @@ ms.locfileid: "75545807"
 
 .NET 埋め込みにより、ターゲット言語およびプラットフォーム用のすぐに使用可能な Api のセットを公開することにより、アプリケーション内で Mono ランタイムの統合が容易になります。
 
-ただし、これは双方向の統合ではありません。たとえば、マネージ型をサブクラス化して、マネージコードがネイティブコード内でコールバックすることを想定することはできません。これは、マネージコードがこの併置を認識しないためです。
+ただし、これは双方向の統合ではありません。たとえば、マネージ型をサブクラス化して、マネージコードがネイティブコード内でコールバックすることを想定することはできません。これは、マネージコードがこの共存を認識しないためです。
 
 必要に応じて、この制限の回避策として、
 
@@ -41,9 +41,9 @@ ms.locfileid: "75545807"
 
 ### <a name="nullability"></a>NULL 値の許容
 
-.NET には、API に対して null 参照が許容できるかどうかを通知するメタデータはありません。 ほとんどの Api は、`null` 引数を扱うことができない場合に `ArgumentNullException` をスローします。 この問題が発生するのは、例外を C で処理することが、推奨される回避方法であるためです。
+.NET には、API に対して null 参照が許容できるかどうかを通知するメタデータはありません。 ほとんどの Api は `ArgumentNullException` 、引数を扱うことができない場合にスロー `null` します。 この問題が発生するのは、例外を C で処理することが、推奨される回避方法であるためです。
 
-ヘッダーファイルで正確な null 値を許容する注釈を生成することはできず、マネージ例外を最小限に抑える必要があるため、既定では null 以外の引数 (`NS_ASSUME_NONNULL_BEGIN`) が使用されます。また、有効桁数が許容される場合は、null 値を許容する注釈が追加されます。
+ヘッダーファイル内で正確な null 値を許容する注釈を生成することはできず、マネージ例外を最小限に抑える必要があるため、既定では null 以外の引数 ( `NS_ASSUME_NONNULL_BEGIN` ) が使用されます。また、有効桁数が許容される場合は、null 値の許容属性を追加します。
 
 ### <a name="bitcode-ios"></a>Bitcode (iOS)
 
