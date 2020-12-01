@@ -7,19 +7,20 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/31/2018
-ms.openlocfilehash: 3a58fc58b429a8a16437773289cd4d7286bbff81
-ms.sourcegitcommit: d2aa3a8bf9a60b6708db55b10b0c6893c06d3256
+ms.openlocfilehash: 07226b22243f3d463ce2630e1f12a94f83ddd64a
+ms.sourcegitcommit: d1f0e0a9100548cfe0960ed2225b979cc1d7c28f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93331487"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96439434"
 ---
 # <a name="building-user-interfaces-with-the-ios-designer"></a>IOS Designer を使用したユーザーインターフェイスの構築
 
 _Xamarin Designer for iOS は、Visual Studio for Mac および Visual Studio と完全に統合された iOS ストーリーボードと Interface Builder 形式のビジュアルデザイナーです。IOS デザイナーは、ストーリーボードと xib 形式との完全な互換性を維持し、Xcode の Interface Builder に加えて、Visual Studio for Mac または Visual Studio でファイルを編集できるようにします。さらに、Xamarin Designer for iOS は、エディターでデザイン時にレンダリングするカスタムコントロールなどの高度な機能をサポートしています。_
 
 > [!WARNING]
-> IOS ユーザーインターフェイスを作成するための推奨される方法は、Xcode を実行している Mac に直接なりました。 詳細については、 [こちらを参照](~/ios/user-interface/ios-use-xcode.md)してください。
+> IOS Designer は、Visual Studio 2019 バージョン16.8 と Visual Studio 2019 for Mac バージョン8.8 で段階的に廃止される予定です。
+> IOS ユーザーインターフェイスを構築する場合は、Xcode を実行している Mac 上で直接作成することをお勧めします。 詳細については、「 [Xcode を使用したユーザーインターフェイスの設計](../storyboards/index.md)」を参照してください。 
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 

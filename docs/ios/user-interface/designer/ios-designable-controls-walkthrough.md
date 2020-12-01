@@ -7,14 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: ad07d6e7381c646273eae8fe6aaecb2d487027f7
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: f4b161159423bc7e5d6d99e9dfd4407532106979
+ms.sourcegitcommit: d1f0e0a9100548cfe0960ed2225b979cc1d7c28f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91436807"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96439445"
 ---
 # <a name="using-custom-controls-with-the-ios-designer"></a>iOS Designer でのカスタム コントロールの使用
+
+> [!WARNING]
+> IOS Designer は、Visual Studio 2019 バージョン16.8 と Visual Studio 2019 for Mac バージョン8.8 で段階的に廃止される予定です。
+> IOS ユーザーインターフェイスを構築する場合は、Xcode を実行している Mac 上で直接作成することをお勧めします。 詳細については、「 [Xcode を使用したユーザーインターフェイスの設計](../storyboards/index.md)」を参照してください。 
 
 ## <a name="requirements"></a>必要条件
 
@@ -156,17 +160,17 @@ Xamarin Designer for iOS は Visual Studio for Mac と Visual Studio 2017 以降
     }
     ```
 
-1. `FillTexture.png`、、 `FillTexture2.png` および `Monkey.png` ( [GitHub から](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)入手できる) ファイルを**Resources**フォルダーに追加します。
+1. `FillTexture.png`、、 `FillTexture2.png` および `Monkey.png` ( [GitHub から](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)入手できる) ファイルを **Resources** フォルダーに追加します。
 
 1. ファイルをダブルクリックし `Main.storyboard` て、デザイナーで開きます。
 
     [![iOS Designer](ios-designable-controls-walkthrough-images/03new.png)](ios-designable-controls-walkthrough-images/03new.png#lightbox)
 
-1. [**ツールボックス**] から**イメージビュー**をストーリーボードのビューにドラッグアンドドロップします。
+1. [**ツールボックス**] から **イメージビュー** をストーリーボードのビューにドラッグアンドドロップします。
 
     [![レイアウトに追加されたイメージビュー](ios-designable-controls-walkthrough-images/04new.png)](ios-designable-controls-walkthrough-images/04new.png#lightbox)
 
-1. **イメージビュー**を選択し、その**イメージ**プロパティをに変更し `Monkey.png` ます。
+1. **イメージビュー** を選択し、その **イメージ** プロパティをに変更し `Monkey.png` ます。
 
     [![Image View Image プロパティを Monkey.pngに設定しています ](ios-designable-controls-walkthrough-images/05new.png)](ios-designable-controls-walkthrough-images/05new.png#lightbox)
 
@@ -182,11 +186,11 @@ Xamarin Designer for iOS は Visual Studio for Mac と Visual Studio 2017 以降
 
     [![[制約] ツールバー](ios-designable-controls-walkthrough-images/08new.png)](ios-designable-controls-walkthrough-images/08new.png#lightbox)
 
-1. 次に、プロジェクトをビルドして、[ツールボックス] の [**カスタムコンポーネント**] の下に [**スクラッチチケット] ビュー**が表示されるようにします。
+1. 次に、プロジェクトをビルドして、[ツールボックス] の [**カスタムコンポーネント**] の下に [**スクラッチチケット] ビュー** が表示されるようにします。
 
     [![カスタムコンポーネントツールボックス](ios-designable-controls-walkthrough-images/09new.png)](ios-designable-controls-walkthrough-images/09new.png#lightbox)
 
-1. **スクラッチチケットビュー**をドラッグアンドドロップして、サル画像の上に表示されるようにします。 次に示すように、スクラッチチケットビューがサルを完全にカバーするように、ドラッグハンドルを調整します。
+1. **スクラッチチケットビュー** をドラッグアンドドロップして、サル画像の上に表示されるようにします。 次に示すように、スクラッチチケットビューがサルを完全にカバーするように、ドラッグハンドルを調整します。
 
     [![イメージビューに対するスクラッチチケットビュー](ios-designable-controls-walkthrough-images/10new.png)](ios-designable-controls-walkthrough-images/10new.png#lightbox)
 
@@ -198,7 +202,7 @@ Xamarin Designer for iOS は Visual Studio for Mac と Visual Studio 2017 以降
 
     [![サンプルアプリの実行](ios-designable-controls-walkthrough-images/10-app.png)](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
 
-## <a name="adding-design-time-properties"></a>デザイン時プロパティの追加
+## <a name="adding-design-time-properties"></a>Design-Time プロパティの追加
 
 このデザイナーには、numeric、enumeration、string、bool、CGSize、UIColor、および UIImage の各プロパティ型のカスタムコントロールのデザイン時サポートも含まれています。 例として、にプロパティを追加して、 `ScratchTicketView` "傷のあるイメージ" を設定してみましょう。
 
@@ -262,7 +266,7 @@ public override void Draw(CGRect rect)
 
 ## <a name="summary"></a>まとめ
 
-この記事では、iOS デザイナーを使用して、カスタムコントロールを作成し、iOS アプリケーションで使用する方法について説明します。 デザイナーの **ツールボックス**で、コントロールを作成してビルドし、アプリケーションで使用できるようにする方法を説明しました。 また、デザイン時と実行時の両方で適切にレンダリングされるようにコントロールを実装する方法についても説明しました。また、デザイナーでカスタムコントロールのプロパティを公開する方法についても説明しました。
+この記事では、iOS デザイナーを使用して、カスタムコントロールを作成し、iOS アプリケーションで使用する方法について説明します。 デザイナーの **ツールボックス** で、コントロールを作成してビルドし、アプリケーションで使用できるようにする方法を説明しました。 また、デザイン時と実行時の両方で適切にレンダリングされるようにコントロールを実装する方法についても説明しました。また、デザイナーでカスタムコントロールのプロパティを公開する方法についても説明しました。
 
 ## <a name="related-links"></a>関連リンク
 

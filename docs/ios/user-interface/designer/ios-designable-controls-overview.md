@@ -7,16 +7,20 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 5c8a852a37e2cd5c679283bc4d078f19e6e5d241
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 593f03588d691071d4a231d9ed788391530d5608
+ms.sourcegitcommit: d1f0e0a9100548cfe0960ed2225b979cc1d7c28f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939686"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96439425"
 ---
 # <a name="custom-controls-in-the-xamarin-designer-for-ios"></a>Xamarin Designer for iOS 内のカスタムコントロール
 
 _Xamarin Designer for iOS は、プロジェクトで作成されたカスタムコントロールの表示、または Xamarin コンポーネントストアなどの外部ソースからの参照をサポートします。_
+
+> [!WARNING]
+> IOS Designer は、Visual Studio 2019 バージョン16.8 と Visual Studio 2019 for Mac バージョン8.8 で段階的に廃止される予定です。
+> IOS ユーザーインターフェイスを構築する場合は、Xcode を実行している Mac 上で直接作成することをお勧めします。 詳細については、「 [Xcode を使用したユーザーインターフェイスの設計](../storyboards/index.md)」を参照してください。 
 
 Xamarin Designer for iOS は、アプリケーションのユーザーインターフェイスを視覚化するための強力なツールであり、ほとんどの iOS ビューおよびビューコントローラーに対して WYSIWYG での編集がサポートされています。 アプリには、iOS に組み込まれているものを拡張するカスタムコントロールが含まれている場合もあります。 これらのカスタムコントロールは、いくつかのガイドラインを考慮して記述されている場合、iOS デザイナーでもレンダリングできるため、さらに充実した編集エクスペリエンスが提供されます。 このドキュメントでは、これらのガイドラインについて説明します。
 
@@ -24,12 +28,12 @@ Xamarin Designer for iOS は、アプリケーションのユーザーインタ�
 
 次のすべての要件を満たすコントロールがデザインサーフェイスに表示されます。
 
-1. これは、 [Uiview](xref:UIKit.UIView)または[uiviewcontroller](xref:UIKit.UIViewController)の直接または間接のサブクラスです。 他の[NSObject](xref:Foundation.NSObject)サブクラスは、デザイン画面にアイコンとして表示されます。
-2. これは、目的の C に公開する[Registerattribute](xref:Foundation.RegisterAttribute)を持っています。
-3. これには[、必要な IntPtr コンストラクター](~/ios/internals/api-design/index.md)があります。
+1. これは、  [Uiview](xref:UIKit.UIView) または  [uiviewcontroller](xref:UIKit.UIViewController)の直接または間接のサブクラスです。 他の [NSObject](xref:Foundation.NSObject) サブクラスは、デザイン画面にアイコンとして表示されます。
+2. これは、目的の C に公開する  [Registerattribute](xref:Foundation.RegisterAttribute) を持っています。
+3. これには  [、必要な IntPtr コンストラクター](~/ios/internals/api-design/index.md)があります。
 4. [IComponent](xref:System.ComponentModel.IComponent)インターフェイスを実装しているか、 [DesignTimeVisibleAttribute](xref:System.ComponentModel.DesignTimeVisibleAttribute)が True に設定されています。
 
-上記の要件を満たすコードで定義されたコントロールは、コンテナーに含まれるプロジェクトがシミュレーター用にコンパイルされるときに、デザイナーに表示されます。 既定では、すべてのカスタムコントロールは、**ツールボックス**の [**カスタムコンポーネント**] セクションに表示されます。 ただし、[カテゴリ属性](xref:System.ComponentModel.CategoryAttribute)をカスタムコントロールのクラスに適用して、別のセクションを指定することもできます。
+上記の要件を満たすコードで定義されたコントロールは、コンテナーに含まれるプロジェクトがシミュレーター用にコンパイルされるときに、デザイナーに表示されます。 既定では、すべてのカスタムコントロールは、**ツールボックス** の [**カスタムコンポーネント**] セクションに表示されます。 ただし、 [カテゴリ属性](xref:System.ComponentModel.CategoryAttribute) をカスタムコントロールのクラスに適用して、別のセクションを指定することもできます。
 
 デザイナーでは、サードパーティの目標 C ライブラリの読み込みはサポートされていません。
 
@@ -38,14 +42,14 @@ Xamarin Designer for iOS は、アプリケーションのユーザーインタ�
 次の条件が満たされている場合、カスタムコントロールによって宣言されたプロパティが [プロパティ] パネルに表示されます。
 
 1. プロパティは、パブリック getter および setter を持ちます。
-1. プロパティには[Exportattribute](xref:Foundation.ExportAttribute)と[BrowsableAttribute](xref:System.ComponentModel.BrowsableAttribute)が True に設定されています。
-1. プロパティの型は、数値型、列挙型、文字列、ブール値、 [SizeF](xref:System.Drawing.SizeF)、 [UIColor](xref:UIKit.UIColor)、または[uiimage](xref:UIKit.UIImage)です。 サポートされている種類のこの一覧は、今後拡張される可能性があります。
+1. プロパティには  [Exportattribute](xref:Foundation.ExportAttribute) と  [BrowsableAttribute](xref:System.ComponentModel.BrowsableAttribute) が True に設定されています。
+1. プロパティの型は、数値型、列挙型、文字列、ブール値、 [SizeF](xref:System.Drawing.SizeF)、 [UIColor](xref:UIKit.UIColor)、または [uiimage](xref:UIKit.UIImage)です。 サポートされている種類のこの一覧は、今後拡張される可能性があります。
 
-プロパティは[Displaynameattribute](xref:System.ComponentModel.DisplayNameAttribute)で修飾して、プロパティパネルに表示されるラベルを指定することもできます。
+プロパティは [Displaynameattribute](xref:System.ComponentModel.DisplayNameAttribute) で修飾して、プロパティパネルに表示されるラベルを指定することもできます。
 
 ## <a name="initialization"></a>初期化
 
-サブクラスの場合は、 `UIViewController` デザイナーで作成したビューに依存するコードに[ViewDidLoad](xref:UIKit.UIViewController.ViewDidLoad)メソッドを使用する必要があります。
+サブクラスの場合は、 `UIViewController` デザイナーで作成したビューに依存するコードに [ViewDidLoad](xref:UIKit.UIViewController.ViewDidLoad) メソッドを使用する必要があります。
 
 `UIView`およびその他の `NSObject` サブクラスの場合、 [AwakeFromNib](xref:Foundation.NSObject.AwakeFromNib)メソッドは、レイアウトファイルから読み込まれた後にカスタムコントロールの初期化を実行するために推奨される場所です。 これは、プロパティパネルで設定されたカスタムプロパティは、コントロールのコンストラクターの実行時には設定されませんが、が呼び出される前に設定されるためです `AwakeFromNib` 。
 
@@ -124,8 +128,8 @@ public class CustomView : UIView {
 
 コンポーネントは、 `CustomView` `Counter` iOS デザイナー内で開発者が設定できるプロパティを公開します。 ただし、デザイナー内でどのような値が設定されていても、プロパティの値は `Counter` 常にゼロ (0) になります。 その理由を説明します。
 
-- のインスタンスは、 `CustomControl` ストーリーボードファイルから大きくなっています。
-- IOS designer で変更されたすべてのプロパティが設定されます (たとえば、の値 `Counter` を2に設定するなど)。
+- のインスタンスは、  `CustomControl` ストーリーボードファイルから大きくなっています。
+- IOS designer で変更されたすべてのプロパティが設定されます (たとえば、の値  `Counter` を2に設定するなど)。
 - `AwakeFromNib`メソッドが実行され、コンポーネントのメソッドが呼び出され `Initialize` ます。
 - `Initialize`プロパティの値の中で、 `Counter` ゼロ (0) にリセットされています。
 
@@ -135,10 +139,10 @@ public class CustomView : UIView {
 
 デザイン画面では、カスタムコントロールはいくつかの制限に従う必要があります。
 
-- アプリバンドルリソースはデザインモードでは使用できません。 画像は、 [uiimage メソッド](xref:UIKit.UIImage)を使用して読み込まれるときに使用できます。
+- アプリバンドルリソースはデザインモードでは使用できません。 画像は、  [uiimage メソッド](xref:UIKit.UIImage) を使用して読み込まれるときに使用できます。
 - Web 要求などの非同期操作は、デザインモードでは実行できません。 デザインサーフェイスでは、コントロールの UI に対するアニメーションまたはその他の非同期更新はサポートされていません。
 
-カスタムコントロールは[IComponent](xref:System.ComponentModel.IComponent)を実装し、 [designmode](xref:System.ComponentModel.ISite.DesignMode)プロパティを使用して、デザインサーフェイス上にあるかどうかを確認できます。 この例では、ラベルのデザイン画面に "デザインモード" が表示され、実行時には "Runtime" と表示されます。
+カスタムコントロールは [IComponent](xref:System.ComponentModel.IComponent) を実装し、 [designmode](xref:System.ComponentModel.ISite.DesignMode) プロパティを使用して、デザインサーフェイス上にあるかどうかを確認できます。 この例では、ラベルのデザイン画面に "デザインモード" が表示され、実行時には "Runtime" と表示されます。
 
 ```csharp
 [Register ("DesignerAwareLabel")]
