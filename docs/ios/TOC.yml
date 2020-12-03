@@ -140,9 +140,11 @@
       items:
         - name: 概要
           href: user-interface/index.md
-        - name: ストーリーボード
+        - name: Xcode を使用したデザイン
           href: user-interface/storyboards/index.md
           items:
+            - name: ストーリーボード
+              href: user-interface/storyboards/indepth-storyboard.md
             - name: 統合ストーリーボード
               href: user-interface/storyboards/unified-storyboards.md
         - name: iOS Designer
