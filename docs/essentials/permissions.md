@@ -9,12 +9,12 @@ ms.date: 09/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 01902942c750a3cd278d648fa82499af4c5d3ab6
-ms.sourcegitcommit: dac04cec56290fb19034f3e135708f6966a8f035
+ms.openlocfilehash: 25677d79b29902ed0cdd0b2ed08da021d7ef9e6f
+ms.sourcegitcommit: d2daaa6ca5fe630f80d5a8151985d9f96a2fc93b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92169970"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "96513019"
 ---
 # <a name="no-locxamarinessentials-permissions"></a>Xamarin.Essentials:アクセス許可
 
@@ -108,7 +108,8 @@ Xamarin.Essentials では、可能な限り多くのアクセス許可を抽象�
 アクセス許可に ![サポートされていません](~/media/shared/no.png "サポート外")マークが付いている場合は、確認または要求されたときに常に `Granted` が返されます。
 
 ## <a name="general-usage"></a>一般的な使用法
-アクセス許可を処理するための一般的な使用パターンを次に示します。
+
+次のコードは、アクセス許可が付与されているかどうかを判断し、付与されていない場合は要求するための一般的な使用パターンを示しています。 このコードは、Xamarin.Essentials バージョン 1.6.0 以降で使用できる機能を使用しています。
 
 ```csharp
 public async Task<PermissionStatus> CheckAndRequestLocationPermission()
@@ -116,8 +117,7 @@ public async Task<PermissionStatus> CheckAndRequestLocationPermission()
     var status = await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>();
     
     if (status == PermissionStatus.Granted)
-        return status;
-        
+        return status;        
     
     if (status == PermissionStatus.Denied && DeviceInfo.Platform == DevicePlatform.iOS)
     {
