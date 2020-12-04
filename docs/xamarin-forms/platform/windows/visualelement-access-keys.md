@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7df914ae5b6de38b5179f5b1139b9c41e9559198
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 3cd4a9078a22c1f002cbc414490455c716ba884a
+ms.sourcegitcommit: 342cfbd2502ad92cadada4fa9aec669b99d7830a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93367453"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96604587"
 ---
 # <a name="visualelement-access-keys-on-windows"></a>Windows 上の VisualElement アクセスキー
 
@@ -103,7 +103,10 @@ button4.On<Windows>()
 
 ユーザーがアクセスキーをアクティブにすると、Alt キーを押した後にアクセスキーを押すと、の既定のアクションが `VisualElement` 実行されます。 たとえば、ユーザーがでアクセスキーをアクティブ化すると、 [`Switch`](xref:Xamarin.Forms.Switch) `Switch` が切り替わります。 ユーザーがでアクセスキーをアクティブ化すると、に [`Entry`](xref:Xamarin.Forms.Entry) よって `Entry` フォーカスが得られます。 ユーザーがでアクセスキーをアクティブ化すると [`Button`](xref:Xamarin.Forms.Button) 、イベントのイベントハンドラー [`Clicked`](xref:Xamarin.Forms.Button.Clicked) が実行されます。
 
-アクセスキーの詳細については、「 [アクセスキー](/windows/uwp/design/input/access-keys#key-tip-positioning)」を参照してください。
+> [!WARNING]
+> 既定では、アクセスキーはモーダルダイアログが表示されたときにアクティブにすることができ `DisplayAlert` ます。たとえば、メソッドとメソッドを使用 `DisplayPromptAsync` します。 ただし、このシナリオでは、アクセスキーを無効にするためにカスタムロジックを記述することができます。 これは、 `Dispatcher.AcceleratorKeyActivated` `MainPage` UWP プロジェクトのクラスでイベントを処理し、 `Handled` `true` モーダルダイアログが表示されたときにイベント引数のプロパティをに設定することによって実現できます。
+
+アクセスキーの詳細については、「 [アクセスキー](/windows/uwp/design/input/access-keys)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

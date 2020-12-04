@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidortinau
 ms.author: daortin
 ms.date: 02/02/2018
-ms.openlocfilehash: a001cabae5e137cda4b31e15d3e75401575b96a7
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 2fc6c7fcd1c255e1cfd87e2e7cf91c92f17d8465
+ms.sourcegitcommit: 342cfbd2502ad92cadada4fa9aec669b99d7830a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91435030"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96604444"
 ---
 # <a name="introduction-to-tvos-in-xamarin"></a>Xamarin での tvOS の概要
 
@@ -35,7 +35,7 @@ TvOS の詳細については、 [はじめに](~/ios/tvos/get-started/index.md)
 
 - [TvOS 11 の概要](~/ios/tvos/platform/introduction-to-tvos11.md) -この記事では、tvOS 11 で使用できる tvOS 開発者向けの新機能について説明します。
 - [TvOS 10 の概要](~/ios/tvos/platform/introduction-to-tvos10/index.md) -この記事では、tvOS 10 で使用できるすべての新しい api と変更された api と機能について、tvOS 開発者向けに紹介します。
-- [TvOS 9 の概要](~/ios/tvos/platform/tvos9.md) –この記事では、tvOS 9 で使用できるすべての新しい api と変更された api と機能について、tvOS 開発者向けに紹介します。 
+- [TvOS 9 の概要](~/ios/tvos/platform/tvos9.md) –この記事では、tvOS 9 で使用できるすべての新しい api と変更された api と機能について、tvOS 開発者向けに紹介します。
 - [Hello, tvOS クイックスタートガイド](~/ios/tvos/get-started/hello-tvos.md) –このガイドでは、最初の tvOS アプリを作成する手順について説明します。このプロセスでは、Visual Studio for Mac、Xcode、Interface Builder などの開発ツールチェーンが導入されています。 また、UI コントロールをコードに公開するアウトレットとアクションについても説明します。最後に、tvOS アプリケーションをビルド、実行、テストする方法についても説明します。
 - [アイコンとイメージの操作](~/ios/tvos/app-fundamentals/icons-images.md) -この記事では、tvOS アプリ内のアイコンとイメージのデザインと操作について説明します。
 - [ナビゲーションとフォーカスの操作](~/ios/tvos/app-fundamentals/navigation-focus.md) -この記事では、フォーカスの概念と、tvOS アプリ内でのナビゲーションの表示と処理に使用する方法について説明します。
@@ -71,6 +71,10 @@ Xamarin でビルドされた tvOS アプリのサンプル:
 Xamarin で tvOS を構築するときに問題が発生した場合は、 [リリースノート](/xamarin/ios/release-notes/)、 [Xamarin、iOS フォーラム](https://forums.xamarin.com/categories/ios)、 [xamarin Bugzilla Tracker](https://bugzilla.xamarin.com/query.cgi?product=iOS)、 [GitHub](https://github.com/xamarin/xamarin-macios/issues) で既存の問題を確認してください。
 
 [GitHub で](https://github.com/xamarin/xamarin-macios/issues)新しい問題と提案を報告します。
+
+## <a name="xamarintvos-on-qa"></a>Q&A の tvOS 
+
+TvOS アプリケーションのビルドとデプロイについて質問するには、Xamarin を使用した [q&a&A](/answers/topics/dotnet-tvos.html)をご覧ください。
 
 ## <a name="related-links"></a>関連リンク
 

@@ -11,12 +11,12 @@ ms.custom: contperfq2
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c6fdbaf8d218044de9a4fe30ffe7e3df05619bdb
-ms.sourcegitcommit: f920ac0724f09e5c9b4f36be1995a5a17a6d9f95
+ms.openlocfilehash: 271c6c5e510a892919b5d87c4dbc38ad8e9d657d
+ms.sourcegitcommit: 342cfbd2502ad92cadada4fa9aec669b99d7830a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94591074"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96604574"
 ---
 # <a name="fonts-in-no-locxamarinforms"></a>フォント Xamarin.Forms
 
@@ -24,7 +24,7 @@ ms.locfileid: "94591074"
 
 既定では、は、 Xamarin.Forms 各プラットフォームで定義されたシステムフォントを使用します。 ただし、テキストを表示するコントロールは、このフォントを変更するために使用できるプロパティを定義します。
 
-- `FontAttributes`型の `FontAttributes` 。これは、、、およびの3つのメンバーを持つ列挙体です `None` `Build` `Italic` 。 このプロパティの既定値は `None` です。
+- `FontAttributes`型の `FontAttributes` 。これは、、、およびの3つのメンバーを持つ列挙体です `None` `Bold` `Italic` 。 このプロパティの既定値は `None` です。
 - `double` 型の `FontSize`。
 - `string` 型の `FontFamily`。
 
@@ -41,7 +41,7 @@ ms.locfileid: "94591074"
        FontAttributes="Bold, Italic" />
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 Label label1 = new Label
@@ -68,7 +68,7 @@ Label label2 = new Label
        FontSize="Large" />
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 Label label1 = new Label
@@ -107,7 +107,7 @@ myLabel.FontSize = Device.GetNamedSize(NamedSize.Large, myLabel);
 
 カスタムフォントは、共有プロジェクトに追加することができ Xamarin.Forms ます。追加の作業を行わなくても、プラットフォームプロジェクトによって使用されます。 その手順は次のとおりです。
 
-1. Xamarin.Forms埋め込みリソースとして共有プロジェクトにフォントを追加します ( **ビルドアクション: EmbeddedResource** )。
+1. Xamarin.Forms埋め込みリソースとして共有プロジェクトにフォントを追加します (**ビルドアクション: EmbeddedResource**)。
 1. 属性を使用して、 **AssemblyInfo.cs** などのファイル内のアセンブリにフォントファイルを登録し `ExportFont` ます。 オプションのエイリアスを指定することもできます。
 
 次の例は、アセンブリに登録されている Lobster-Regular フォントとエイリアスを示しています。
@@ -121,7 +121,7 @@ using Xamarin.Forms;
 > [!NOTE]
 > フォントは、共有プロジェクト内の任意のフォルダーに置くことができます。フォントをアセンブリに登録するときにフォルダー名を指定する必要はありません。
 >
-> Windows では、フォントファイル名とフォント名が異なる場合があります。 Windows でフォント名を検出するには、[ファイル] を右クリックし、[ **プレビュー** ] を選択します。 その後、[プレビュー] ウィンドウからフォント名を決定できます。
+> Windows では、フォントファイル名とフォント名が異なる場合があります。 Windows でフォント名を検出するには、[ファイル] を右クリックし、[ **プレビュー**] を選択します。 その後、[プレビュー] ウィンドウからフォント名を決定できます。
 
 このフォントは、ファイル拡張子のない名前を参照することで、各プラットフォームで使用できます。
 
@@ -139,7 +139,7 @@ using Xamarin.Forms;
        FontFamily="Lobster" />
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 // Use font name
@@ -245,7 +245,7 @@ Xamarin.Forms[`NamedSize`](xref:Xamarin.Forms.NamedSize)特定のフォントサ
 </Image>
 ```
 
-このコードは、Ionicons フォントファミリの XBox アイコンをビューに表示 [`Image`](xref:Xamarin.Forms.Image) します。 このアイコンの unicode 文字はであるのに対し `\uf30c` 、XAML でエスケープする必要があるため、になり `&#xf30c;` ます。 これに相当する C# コードを次に示します。
+このコードは、Ionicons フォントファミリの XBox アイコンをビューに表示 [`Image`](xref:Xamarin.Forms.Image) します。 このアイコンの unicode 文字はであるのに対し `\uf30c` 、XAML でエスケープする必要があるため、になり `&#xf30c;` ます。 同等の C# コードを次に示します。
 
 ```csharp
 Image image = new Image { BackgroundColor = Color.FromHex("#D1D1D1") };

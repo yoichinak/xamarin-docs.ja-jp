@@ -10,12 +10,12 @@ ms.date: 03/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5f70420690a9d81e5697c2e0bfefdf107aed9c86
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: f1caf08cf0fc2fdba6c9a9156280f9d3dafe0322
+ms.sourcegitcommit: 342cfbd2502ad92cadada4fa9aec669b99d7830a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93375422"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96604561"
 ---
 # <a name="display-pop-ups"></a>ポップアップを表示する
 
@@ -46,6 +46,9 @@ async void OnAlertYesNoClicked (object sender, EventArgs e)
 ```
 
 [![DisplayAlert](pop-ups-images/alert2-sml.png "2つのボタンを含むアラートダイアログ")](pop-ups-images/alert2.png#lightbox "2つのボタンを含むアラートダイアログ")
+
+> [!WARNING]
+> 既定では、警告が表示されたときに UWP アクセスキーをアクティブにすることができます。 詳細については、「 [Windows の Visualelement アクセスキー](~/xamarin-forms/platform/windows/visualelement-access-keys.md)」を参照してください。
 
 ## <a name="guide-users-through-tasks"></a>タスクを通じてユーザーをガイドする
 
@@ -109,6 +112,9 @@ string result = await DisplayPromptAsync("Question 2", "What's 5 + 5?", initialV
 このコードは、定義済みの10の応答を表示し、2に入力できる文字数を制限し、ユーザー入力用の数値キーボードを表示します。
 
 [![IOS と Android でのモーダルプロンプトのスクリーンショット](pop-ups-images/keyboard-prompt.png "モーダルプロンプト")](pop-ups-images/keyboard-prompt-large.png#lightbox "モーダルプロンプト")
+
+> [!WARNING]
+> 既定では、プロンプトが表示されたときに UWP アクセスキーをアクティブにすることができます。 詳細については、「 [Windows の Visualelement アクセスキー](~/xamarin-forms/platform/windows/visualelement-access-keys.md)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
