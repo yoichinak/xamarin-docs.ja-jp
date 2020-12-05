@@ -35,12 +35,12 @@
           href: profiler/troubleshooting.md
         - name: リリース ノート
           href: /xamarin/tools/profiler/release-notes/
-    - name: ブック
+    - name: Workbooks
       href: workbooks/index.md
       items:
         - name: インストールと要件
           href: workbooks/install.md
-        - name: 対話型 Workbooks
+        - name: 対話型ブック
           href: workbooks/workbook.md
         - name: エディターのキーボード ショートカット
           href: workbooks/keybindings.md
@@ -96,7 +96,7 @@
         - name: Objective-C
           href: dotnet-embedding/objective-c/index.md
           items:
-            - name: ベスト プラクティス
+            - name: 推奨する運用方法
               href: dotnet-embedding/objective-c/best-practices.md
             - name: プラットフォーム
               href: dotnet-embedding/objective-c/platforms.md
