@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/05/2017
-ms.openlocfilehash: 07b39f87b6eeb0fc24486be83573a721abc07966
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: a54a0012f7b5ed3d147242e3ee02b2ed6fe890bf
+ms.sourcegitcommit: 0a41c4aa6db72cd2d0cecbe0dc893024cecac71d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572404"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96749879"
 ---
 # <a name="exception-marshaling-in-xamarinios"></a>Xamarin での例外のマーシャリング
 
@@ -24,7 +24,7 @@ _Xamarin. iOS には、例外 (特にネイティブコード) に応答する�
 
 このドキュメントでは、発生する可能性がある問題と、考えられる解決策について説明します。
 
-また、サンプルプロジェクトと例外の[マーシャリング](https://github.com/xamarin/mac-ios-samples/tree/master/ExceptionMarshaling)も含まれており、さまざまなシナリオとそのソリューションをテストするために使用できます。
+また、サンプルプロジェクトと例外の [マーシャリング](https://github.com/xamarin/mac-ios-samples/tree/master/ExceptionMarshaling)も含まれており、さまざまなシナリオとそのソリューションをテストするために使用できます。
 
 ## <a name="problem"></a>問題
 
@@ -39,8 +39,8 @@ _Xamarin. iOS には、例外 (特にネイティブコード) に応答する�
 次のコード例について考えてみます。
 
 ``` csharp
-var dict = new NSMutableDictionary ();
-dict.LowLevelSetObject (IntPtr.Zero, IntPtr.Zero); 
+var dict = new NSMutableDictionary ();
+dict.LowlevelSetObject (IntPtr.Zero, IntPtr.Zero); 
 ```
 
 これにより、ネイティブコードで目的の C NSInvalidArgumentException がスローされます。
@@ -61,9 +61,9 @@ NSInvalidArgumentException *** setObjectForKey: key cannot be nil
 6   TestApp                 ExceptionMarshaling.Exceptions.ThrowObjectiveCException ()
 ```
 
-フレーム0-3 はネイティブフレームであり、アンワインダーランタイムの stack のスタックは、これらのフレームをアンワインド_することができ_ます。 特に、すべての目的 C または句が実行され `@catch` `@finally` ます。
+フレーム0-3 はネイティブフレームであり、アンワインダーランタイムの stack のスタックは、これらのフレームをアンワインド _することができ_ ます。 特に、すべての目的 C または句が実行され `@catch` `@finally` ます。
 
-ただし、目標 C スタックアンワインダーは、フレームがアンワインドされるのに、マネージフレーム (フレーム 4-6) を適切にアンワインドすることはでき_ません_が、マネージ例外ロジックは実行されません。
+ただし、目標 C スタックアンワインダーは、フレームがアンワインドされるのに、マネージフレーム (フレーム 4-6) を適切にアンワインドすることはでき _ません_ が、マネージ例外ロジックは実行されません。
 
 つまり、通常、次のような例外をキャッチすることはできません。
 
@@ -80,7 +80,7 @@ try {
 
 これは、アンワインダー stack がマネージ句を認識しておらず、句が実行されないためです `catch` `finally` 。
 
-上記のコードサンプル_が_有効になっている場合、これは、目的 c の例外 (Xamarin. IOS と Xamarin. Mac が使用) を通知するメソッドがあるためです [`NSSetUncaughtExceptionHandler`][2] 。その時点で、目的の c の例外をマネージ例外に変換しようとします。
+上記のコードサンプル _が_ 有効になっている場合、これは、目的 c の例外 (Xamarin. IOS と Xamarin. Mac が使用) を通知するメソッドがあるためです [`NSSetUncaughtExceptionHandler`][2] 。その時点で、目的の c の例外をマネージ例外に変換しようとします。
 
 ## <a name="scenarios"></a>シナリオ
 
@@ -98,10 +98,10 @@ try {
 Xamarin. iOS の "キャッチされていない目標-C" 例外のコールバックが呼び出されると、スタックは次のようになります。
 
 ```
- 0 libxamarin-debug.dylib   exception_handler(exc=name: "NSInvalidArgumentException" - reason: "*** setObjectForKey: key cannot be nil")
+ 0 libxamarin-debug.dylib   exception_handler(exc=name: "NSInvalidArgumentException" - reason: "**_ setObjectForKey: key cannot be nil")
  1 CoreFoundation           __handleUncaughtException + 809
  2 libobjc.A.dylib          _objc_terminate() + 100
- 3 libc++abi.dylib          std::__terminate(void (*)()) + 14
+ 3 libc++abi.dylib          std::__terminate(void (_)()) + 14
  4 libc++abi.dylib          __cxa_throw + 122
  5 libobjc.A.dylib          objc_exception_throw + 337
  6 CoreFoundation           -[__NSDictionaryM setObject:forKey:] + 1015
@@ -188,7 +188,7 @@ class AppDelegate : UIApplicationDelegate {
 
 ### <a name="scenario-2---not-able-to-catch-objective-c-exceptions"></a>シナリオ 2-目的 C の例外をキャッチできない
 
-次のシナリオでは、目的 C の例外が別の方法で処理されたため、マネージハンドラーを使用して目的の C の例外をキャッチすることはでき_ません_ `catch` 。
+次のシナリオでは、目的 C の例外が別の方法で処理されたため、マネージハンドラーを使用して目的の C の例外をキャッチすることはでき _ません_ `catch` 。
 
 1. 目的 C の例外がスローされます。
 2. 目的の C ランタイムはスタックにステップインし (ただし、アンワインドしません)、 `@catch` 例外を処理できるネイティブハンドラーを探します。
@@ -217,7 +217,7 @@ void UIApplicationMain ()
 
 まとめると、目的の C ランタイムまたは処理用にプログラミングされていない Mono ランタイムアンワインドフレームを持つと、クラッシュ、メモリリーク、その他の種類の予測できない (mis) 動作などの未定義の動作が発生する可能性があります。
 
-## <a name="solution"></a>ソリューション
+## <a name="solution"></a>解決策
 
 Xamarin. iOS 10 と Xamarin 2.10 では、マネージネイティブ境界でマネージ例外と目的 C 例外の両方をキャッチし、その例外を他の型に変換するためのサポートが追加されました。
 
@@ -303,9 +303,9 @@ Runtime.MarshalObjectiveCException += (object sender, MarshalObjectiveCException
 
 <a name="build_time_flags"></a>
 
-## <a name="build-time-flags"></a>ビルド時のフラグ
+## <a name="build-time-flags"></a>Build-Time フラグ
 
-次のオプションを**mtouch**に渡すことができます (xamarin アプリの場合)。また、 **mmp**アプリの場合は、例外のインターセプトが有効になっているかどうかを判断し、既定のアクションを設定します。
+次のオプションを **mtouch** に渡すことができます (xamarin アプリの場合)。また、 **mmp** アプリの場合は、例外のインターセプトが有効になっているかどうかを判断し、既定のアクションを設定します。
 
 - `--marshal-managed-exceptions=`
   - `default`
@@ -323,7 +323,7 @@ Runtime.MarshalObjectiveCException += (object sender, MarshalObjectiveCException
 
 を除き `disable` 、これらの値は `ExceptionMode` `MarshalManagedException` イベントおよびイベントに渡される値と同じです `MarshalObjectiveCException` 。
 
-`disable`このオプションは、_ほとんど_の場合、インターセプトを無効にします。ただし、実行のオーバーヘッドが追加されない場合でも例外を受け取ることになります。 これらの例外に対してマーシャリングイベントが発生しても、既定のモードは実行中のプラットフォームの既定のモードになります。
+`disable`このオプションは、_ほとんど_ の場合、インターセプトを無効にします。ただし、実行のオーバーヘッドが追加されない場合でも例外を受け取ることになります。 これらの例外に対してマーシャリングイベントが発生しても、既定のモードは実行中のプラットフォームの既定のモードになります。
 
 ## <a name="limitations"></a>制限事項
 
