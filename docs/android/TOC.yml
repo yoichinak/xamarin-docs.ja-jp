@@ -483,6 +483,8 @@
           href: /xamarin/essentials/release-notes/
         - name: トラブルシューティング
           href: ~/essentials/troubleshooting.md?context=xamarin/android
+        - name: Xamarin.Essentials の Q&A
+          href: /answers/topics/dotnet-xamarinessentials.html
     - name: データとクラウド サービス
       href: data-cloud/index.md
       items:
@@ -694,6 +696,8 @@
               href: wear/deploy-test/debug-on-device.md
             - name: 梱包
               href: wear/deploy-test/packaging.md
+    - name: Xamarin.Android の Q&A
+      href: /answers/topics/dotnet-android.html
     - name: リリース ノート
       href: /xamarin/android/release-notes/
     - name: サンプル

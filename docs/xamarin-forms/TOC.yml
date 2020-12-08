@@ -145,6 +145,8 @@ items:
             href: xaml/field-modifiers.md
           - name: 実行時の XAML の読み込み
             href: xaml/runtime-load.md
+      - name: Xamarin.Forms XAML の Q&A
+        href: /answers/topics/dotnet-xamarinforms-xaml.html
   - name: アプリケーションの基礎
     items:
       - name: 概要
@@ -922,6 +924,8 @@ items:
         href: /xamarin/essentials/release-notes/
       - name: トラブルシューティング
         href: ~/essentials/troubleshooting.md?context=xamarin/xamarin-forms
+      - name: Xamarin.Essentials の Q&A
+        href: /answers/topics/dotnet-xamarinessentials.html
   - name: データと Azure Cloud Services
     items:
       - name: 概要
@@ -1030,6 +1034,8 @@ items:
             href: troubleshooting/questions/android-linkassemblies-error.md
           - name: 'Xamarin.Forms.Maps Android プロジェクトが COMPILETODALVIK : UNEXPECTED TOP-LEVEL ERROR で失敗するのはなぜですか。'
             href: troubleshooting/questions/maps-compiletodalvik-error.md
+  - name: Xamarin.Forms の Q&A
+    href: /answers/topics/dotnet-xamarinforms.html
   - name: リリース ノート
     href: /xamarin/xamarin-forms/release-notes/
   - name: サンプル

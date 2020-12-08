@@ -2,7 +2,7 @@
   href: index.yml
   expanded: true
   items:
-    - name: はじめに
+    - name: 作業を開始する
       href: get-started/index.md
       expanded: true
       items:
@@ -46,7 +46,7 @@
           href: user-interface/window.md
         - name: ダイアログ
           href: user-interface/dialog.md
-        - name: アラート
+        - name: 警告
           href: user-interface/alert.md
         - name: メニュー
           href: user-interface/menu.md
@@ -210,7 +210,7 @@
           href: internals/architecture.md
         - name: Xamarin.Mac のしくみ
           href: internals/how-it-works.md
-        - name: Frameworks
+        - name: フレームワーク
           href: internals/frameworks.md
         - name: レジストラー
           href: internals/registrar.md
@@ -221,6 +221,8 @@
           href: troubleshooting/troubleshooting.md
         - name: エラー メッセージ (mmp)
           href: troubleshooting/mmp-errors.md
+    - name: Xamarin.Mac の Q&A
+      href: /answers/topics/dotnet-macos.html
     - name: リリース ノート
       href: /xamarin/mac/release-notes/
     - name: サンプル

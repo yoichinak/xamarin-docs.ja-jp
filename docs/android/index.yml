@@ -10,14 +10,14 @@ metadata:
   author: davidbritch
   ms.author: dabritch
   ms.date: 01/27/2020
-  ms.openlocfilehash: 593d8d20433222e1b18fd65b86a7586aa5560933
-  ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+  ms.openlocfilehash: 4cd192b0580067a24b497febda2e843a7c997b62
+  ms.sourcegitcommit: 342cfbd2502ad92cadada4fa9aec669b99d7830a
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/29/2020
-  ms.locfileid: "91454287"
+  ms.lasthandoff: 12/04/2020
+  ms.locfileid: "96604249"
 landingContent:
-- title: はじめに
+- title: 作業開始
   linkLists:
   - linkListType: concept
     links:
@@ -31,11 +31,15 @@ landingContent:
       url: ~/android/get-started/hello-android-multiscreen/index.md
     - text: Java 開発者向け Xamarin
       url: ~/android/get-started/java-developers.md
+  - linkListType: get-started
+    links:
+    - text: Xamarin.Android の Q&A
+      url: /answers/topics/dotnet-android.html
 - title: アプリケーションの基礎
   linkLists:
   - linkListType: concept
     links:
-    - text: ユーザー補助
+    - text: アクセシビリティ
       url: ~/android/app-fundamentals/accessibility.md
     - text: Android API レベル
       url: ~/android/app-fundamentals/android-api-levels.md
@@ -53,7 +57,7 @@ landingContent:
       url: ~/android/app-fundamentals/permissions.md
     - text: タッチとジェスチャ
       url: ~/android/app-fundamentals/touch/index.md
-    - text: 詳細表示 >
+    - text: 詳細を表示 >
       url: ~/android/app-fundamentals/index.md
 - title: ユーザー インターフェイス
   linkLists:
@@ -63,7 +67,7 @@ landingContent:
       url: ~/android/user-interface/android-designer/index.md
     - text: 素材のテーマ
       url: ~/android/user-interface/material-theme.md
-    - text: User Profile
+    - text: ユーザー プロファイル
       url: ~/android/user-interface/user-profile.md
     - text: スプラッシュ スクリーン
       url: ~/android/user-interface/splash-screen.md
@@ -93,7 +97,7 @@ landingContent:
       url: ~/android/platform/android-job-scheduler.md
     - text: マップと位置情報
       url: ~/android/platform/maps-and-location/index.md
-    - text: 詳細表示 >
+    - text: 詳細を表示 >
       url: ~/android/platform/index.md
 - title: Xamarin.Essentials
   linkLists:
@@ -145,7 +149,7 @@ landingContent:
       url: ~/android/deploy-test/signing/index.md
     - text: アプリの発行
       url: ~/android/deploy-test/publishing/index.md
-    - text: 詳細表示 >
+    - text: 詳細を表示 >
       url: ~/android/deploy-test/index.md
 - title: 高度な概念と内部構造
   linkLists:
@@ -165,7 +169,7 @@ landingContent:
   linkLists:
   - linkListType: concept
     links:
-    - text: はじめに
+    - text: 作業開始
       url: ~/android/wear/get-started/index.md
     - text: ユーザー インターフェイス
       url: ~/android/wear/user-interface/index.md

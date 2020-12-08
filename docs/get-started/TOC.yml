@@ -82,3 +82,5 @@
           href: ~/xamarin-forms/data-cloud/index.yml
     - name: 開発ガイダンス
       href: ~/cross-platform/index.yml
+    - name: Xamarin.Forms の Q&A
+      href: /answers/topics/dotnet-xamarinforms.html

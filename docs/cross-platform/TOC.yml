@@ -6,7 +6,7 @@
       href: get-started/index.md
       expanded: true
       items:
-        - name: 必要条件
+        - name: 要件
           displayName: System requirements
           href: get-started/requirements.md
         - name: モバイル ソフトウェア開発ライフ サイクル
@@ -57,21 +57,21 @@
           href: app-fundamentals/nuget-manual.md
         - name: クロス プラットフォーム アプリで C/C++ ライブラリを使用する
           href: cpp/index.md
-    - name: 言語サポート
+    - name: 言語のサポート
       href: platform/index.md
       items:
-        - name: 'C#'
+        - name: C#
           items:
             - name: 非同期サポートの概要
               href: platform/async.md
-            - name: 'C# 6 の言語機能'
+            - name: C# 6 の言語機能
               href: platform/csharp-six.md
-        - name: 'F#'
+        - name: F#
           href: platform/fsharp/index.md
           items:
             - name: 作業開始
               href: platform/fsharp/overview.md
-            - name: 'F# のサンプル'
+            - name: F# のサンプル
               href: platform/fsharp/samples.md
         - name: Visual Basic
           href: platform/visual-basic/index.md
@@ -172,5 +172,7 @@
               href: troubleshooting/questions/vs-config-manager.md
         - name: NuGet へのコンポーネント参照の更新
           href: troubleshooting/component-nuget.md
+    - name: プラットフォーム間の開発の Q&A
+      href: /answers/topics/dotnet-crossplatform-general.html
     - name: サンプル
       href: samples/index.md
