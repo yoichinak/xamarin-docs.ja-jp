@@ -10,12 +10,12 @@ ms.date: 05/09/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 011ef1fcb2de53cb1f1aa6f0b2c3953e9240d132
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: bdc26b0745e48295c2040440d5eab90b7850b145
+ms.sourcegitcommit: 342cfbd2502ad92cadada4fa9aec669b99d7830a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93374499"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96604483"
 ---
 # <a name="keyboard-accessibility-in-no-locxamarinforms"></a>Xamarin.Forms でのキーボード アクセシビリティ
 
@@ -75,6 +75,9 @@ ms.locfileid: "93374499"
 - `TabIndex` が競合する場合は、宣言の順序によって解決されます。
 
 タブ オーダーが定義された後、Tab キーを押すと、フォーカスは `TabIndex` の昇順でコントロール間を移動し、最後のコントロールに達すると先頭に戻ります。
+
+> [!WARNING]
+> ユニバーサル Windows プラットフォームでは、タブ オーダーがコントロール宣言の順序と同じになるように、各コントロールの `TabIndex` プロパティを `int.MaxValue` に設定する必要があります。
 
 次の XAML の例では、列優先のナビゲーションになるように入力コントロールに設定された `TabIndex` プロパティを示します。
 

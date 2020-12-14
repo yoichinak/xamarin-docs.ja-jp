@@ -8,12 +8,12 @@ ms.date: 09/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: bd239a8dcf192c0bdbc6265769208f4fc989bbbe
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 19c9929706b7cf285b22562b094d2de2a25ff77d
+ms.sourcegitcommit: 0a41c4aa6db72cd2d0cecbe0dc893024cecac71d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91434488"
+ms.lasthandoff: 12/07/2020
+ms.locfileid: "96749892"
 ---
 # <a name="no-locxamarinessentials-contacts"></a>Xamarin.Essentials: 連絡先
 
@@ -64,7 +64,7 @@ ms.locfileid: "91434488"
 
 -----
 
-## <a name="picking-a-contact"></a>Contact の選択
+## <a name="pick-a-contact"></a>連絡先を選択する
 
 `Contacts.PickContactAsync()` を呼び出すと、[連絡先] ダイアログが表示され、ユーザーはユーザーに関する情報を受信できるようになります。
 
@@ -77,17 +77,61 @@ try
     if(contact == null)
         return;
 
-    var name = contact.Name;
-    var contactType = contact.ContactType; // Unknown, Personal, Work
-    var numbers = contact.Numbers; // List of phone numbers
-    var emails = contact.Emails; // List of email addresses 
-    
+    var id = contact.Id;
+    var namePrefix = contact.NamePrefix;
+    var givenName = contact.GivenName;
+    var middleName = contact.MiddleName;
+    var familyName = contact.FamilyName;
+    var nameSuffix = contact.NameSuffix;
+    var displayName = contact.DisplayName;
+    var phones = contact.Phones; // List of phone numbers
+    var emails = contact.Emails; // List of email addresses
 }
 catch (Exception ex)
 {
     // Handle exception here.
 }
 ```
+
+## <a name="get-all-contacts"></a>すべての連絡先を取得する
+
+```csharp
+ObservableCollection<Contact> contactsCollect = new ObservableCollection<Contact>();
+
+try
+{
+    // cancellationToken parameter is optional
+    var cancellationToken = default(CancellationToken);
+    var contacts = await Contacts.GetAllAsync(cancellationToken);
+
+    if (contacts == null)
+        return;
+
+    foreach (var contact in contacts)
+        contactsCollect.Add(contact);
+}
+catch (Exception ex)
+{
+    // Handle exception here.
+}
+```
+
+## <a name="platform-differences"></a>プラットフォームによる違い
+
+# <a name="android"></a>[Android](#tab/android)
+
+- `GetAllAsync` メソッドの `cancellationToken` パラメーターは、UWP でのみ使用されます。
+
+# <a name="ios"></a>[Android](#tab/ios)
+
+- `GetAllAsync` メソッドの `cancellationToken` パラメーターは、UWP でのみ使用されます。
+- iOS プラットフォームでは、`DisplayName` プロパティがネイティブにサポートされていないため、`DisplayName` 値は "GivenName FamilyName" として構成されます。
+
+# <a name="uwp"></a>[UWP](#tab/uwp)
+
+プラットフォームによる違いはありません。
+
+-----
 
 
 ## <a name="api"></a>API

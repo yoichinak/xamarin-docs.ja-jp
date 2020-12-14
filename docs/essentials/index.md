@@ -8,12 +8,12 @@ ms.date: 02/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0910c6467cb0efdf9477e245d138528852f81166
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 17ba7e111381da78166a85099939cc2bab68dbd9
+ms.sourcegitcommit: 342cfbd2502ad92cadada4fa9aec669b99d7830a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91432287"
+ms.lasthandoff: 12/04/2020
+ms.locfileid: "96604457"
 ---
 # Xamarin.Essentials
 
@@ -75,6 +75,10 @@ Android、iOS、UWP では独自のオペレーティング システムとプ�
 ## <a name="troubleshooting"></a>[トラブルシューティング](troubleshooting.md?context=xamarin/xamarin-forms)
 
 問題が発生する場合は、ヘルプを検索してください。
+
+## <a name="no-locxamarinessentials-on-qa"></a>[Xamarin.Essentials の Q&A](/answers/topics/dotnet-xamarinessentials.html)
+
+Xamarin.Essentials によるネイティブ機能へのアクセスについて質問できます。
 
 ## <a name="release-notes"></a>[リリース ノート](/xamarin/essentials/release-notes/)
 
