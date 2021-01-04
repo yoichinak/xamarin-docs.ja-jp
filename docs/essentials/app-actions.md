@@ -8,12 +8,12 @@ ms.date: 09/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: add9143ff1a9546d3d2c8cfb851f621083bf356d
-ms.sourcegitcommit: 744f977b0595f489c592e29c8a3ba548fde02b6f
+ms.openlocfilehash: e85206d8e48db1a6f168c6f89ca494519a0fe95c
+ms.sourcegitcommit: 4bb12419da2547c0afc17903ae46052b29cd0dc4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91414671"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97628184"
 ---
 # <a name="no-locxamarinessentials-app-actions"></a>Xamarin.Essentials: アプリの操作
 
@@ -29,7 +29,18 @@ ms.locfileid: "91414671"
 
 # <a name="android"></a>[Android](#tab/android)
 
-`MainActivity` では、次のロジックを追加して、アクションを処理します。
+インテント フィルターを `MainActivity` クラスに追加します。
+
+```csharp
+[IntentFilter(
+        new[] { Xamarin.Essentials.Platform.Intent.ActionAppAction },
+        Categories = new[] { Intent.CategoryDefault })]
+public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+{
+    ...
+```
+
+次に、次のロジックを追加して、アクションを処理します。
 
 ```csharp
 protected override void OnResume()
