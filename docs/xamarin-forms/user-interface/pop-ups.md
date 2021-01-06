@@ -6,16 +6,16 @@ ms.assetid: 46AB0D5E-0025-4A8A-9D00-3E66C3D0BA2E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/10/2020
+ms.date: 12/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4af29f2df797aea4bbd0655fc0564e289f2c2a3b
-ms.sourcegitcommit: 1d19ee87e317a72de05f3f0fa73dfcaeb767cbd1
+ms.openlocfilehash: 09cffb4e5c7d8f6b78d5ab1de6ec9839c3969e87
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96755020"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940115"
 ---
 # <a name="display-pop-ups"></a>ポップアップを表示する
 
@@ -47,6 +47,8 @@ async void OnAlertYesNoClicked (object sender, EventArgs e)
 
 [![2つのボタンを含むアラートダイアログ](pop-ups-images/alert2-sml.png)](pop-ups-images/alert2.png#lightbox)
 
+[`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*)また、メソッドには、 [`FlowDirection`](xref:Xamarin.Forms.FlowDirection) 警告内で UI 要素がフローする方向を指定する引数を受け取るオーバーロードもあります。 フローの方向の詳細については、「 [右から左へのローカライズ](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)」を参照してください。
+
 > [!WARNING]
 > UWP の既定では、警告が表示されている場合でも、警告の背後にあるページで定義されているアクセスキーはアクティブにすることができます。 詳細については、「 [Windows の Visualelement アクセスキー](~/xamarin-forms/platform/windows/visualelement-access-keys.md)」を参照してください。
 
@@ -77,6 +79,8 @@ async void OnActionSheetCancelDeleteClicked (object sender, EventArgs e)
 ```
 
 [![DisplayActionSheet](pop-ups-images/action2-sml.png "[破棄] ボタンがある操作シートダイアログ")](pop-ups-images/action2.png#lightbox "[破棄] ボタンがある操作シートダイアログ")
+
+[`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*)また、メソッドには、 [`FlowDirection`](xref:Xamarin.Forms.FlowDirection) アクションシート内で UI 要素がフローする方向を指定する引数を受け取るオーバーロードもあります。 フローの方向の詳細については、「 [右から左へのローカライズ](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)」を参照してください。
 
 ## <a name="display-a-prompt"></a>プロンプトの表示
 
@@ -119,3 +123,4 @@ string result = await DisplayPromptAsync("Question 2", "What's 5 + 5?", initialV
 ## <a name="related-links"></a>関連リンク
 
 - [PopupsSample](/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
+- [右から左へのローカライズ](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)

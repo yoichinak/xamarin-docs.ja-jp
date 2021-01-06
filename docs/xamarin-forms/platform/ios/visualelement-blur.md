@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f02de8bc2bf0ed1091c73c3a91f748400f8615b7
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 4c688e6f2e4ac29eea9298f5e0f3c58403cd2ec1
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93367583"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940305"
 ---
 # <a name="visualelement-blur-on-ios"></a>IOS での VisualElement のぼかし
 
@@ -27,10 +27,8 @@ ms.locfileid: "93367583"
 <ContentPage ...
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core">
   ...
-  <AbsoluteLayout HorizontalOptions="Center">
-      <Image Source="monkeyface.png" />
-      <BoxView x:Name="boxView" ios:VisualElement.BlurEffect="ExtraLight" HeightRequest="300" WidthRequest="300" />
-  </AbsoluteLayout>
+  <Image Source="monkeyface.png"
+         ios:VisualElement.BlurEffect="ExtraLight" />
   ...
 </ContentPage>
 ```
@@ -42,12 +40,17 @@ using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 ...
 
-boxView.On<iOS>().UseBlurEffect(BlurEffectStyle.ExtraLight);
+image.On<iOS>().UseBlurEffect(BlurEffectStyle.ExtraLight);
 ```
 
-メソッドは、 `BoxView.On<iOS>` このプラットフォーム固有のが iOS 上でのみ実行されることを指定します。 [ `VisualElement.UseBlurEffect` ] (Xref: Xamarin.FormsPlatformConfiguration. iOSSpecific ( Xamarin.Forms .IPlatformElementConfiguration { Xamarin.Forms .PlatformConfiguration。 iOS、 Xamarin.Forms 。VisualElement}、 Xamarin.Forms 。BlurEffectStyle)) メソッドは、名前空間で、、、 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) [`BlurEffectStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle) [`None`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.None) [`ExtraLight`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.ExtraLight) [`Light`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.Light) 、およびの4つの値を提供する列挙体と共に、ぼかし効果を適用するために使用さ [`Dark`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.Dark) れます。
+メソッドは、 `Image.On<iOS>` このプラットフォーム固有のが iOS 上でのみ実行されることを指定します。 [ `VisualElement.UseBlurEffect` ] (Xref: Xamarin.FormsPlatformConfiguration. iOSSpecific ( Xamarin.Forms .IPlatformElementConfiguration { Xamarin.Forms .PlatformConfiguration。 iOS、 Xamarin.Forms 。VisualElement}、 Xamarin.Forms 。BlurEffectStyle)) メソッド [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) は、名前空間で、次の4つの値を提供する列挙体を使用して、ぼかし効果を適用するために使用され [`BlurEffectStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle) ます。
 
-結果として、指定されたが [`BlurEffectStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle) インスタンスに適用され [`BoxView`](xref:Xamarin.Forms.BoxView) 、その下の層がぼかしられ [`Image`](xref:Xamarin.Forms.Image) ます。
+- [`None`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.None)
+- [`ExtraLight`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.ExtraLight)
+- [`Light`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.Light)
+- [`Dark`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle.Dark)
+
+結果として、指定されたが [`BlurEffectStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle) に適用され [`Image`](xref:Xamarin.Forms.Image) ます。
 
 ![ぼかし効果 Platform-Specific](applying-blur-images/blur-effect.png)
 

@@ -6,20 +6,18 @@ ms.assetid: 07DE3D66-1820-4642-BDDF-84146D40C99D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/02/2020
+ms.date: 09/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e8e41ef3b17c253132668ac7be5ed448695f3685
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: f66ae6e6947b5dade5302def5a7f89904bf701fe
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93373862"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940006"
 ---
 # <a name="no-locxamarinforms-shapes-path-transforms"></a>Xamarin.Forms 図形: パスの変換
-
-![プレリリース API](~/media/shared/preview.png)
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
@@ -60,7 +58,6 @@ Xamarin.Forms には、より複雑な変換を作成するための次のクラ
 
 ```xaml
 <Path Stroke="Black"
-      StrokeThickness="1"
       Aspect="Uniform"
       HorizontalOptions="Center"
       HeightRequest="100"
@@ -105,7 +102,6 @@ Xamarin.Forms には、より複雑な変換を作成するための次のクラ
 
 ```xaml
 <Path Stroke="Black"
-      StrokeThickness="1"
       Aspect="Uniform"
       HorizontalOptions="Center"
       HeightRequest="100"
@@ -144,7 +140,6 @@ Xamarin.Forms には、より複雑な変換を作成するための次のクラ
 
 ```xaml
 <Path Stroke="Black"
-      StrokeThickness="1"
       Aspect="Uniform"
       HorizontalOptions="Center"
       HeightRequest="100"
@@ -178,7 +173,6 @@ Xamarin.Forms には、より複雑な変換を作成するための次のクラ
 
 ```xaml
 <Path Stroke="Black"
-      StrokeThickness="1"
       Aspect="Uniform"
       HorizontalOptions="Center"
       HeightRequest="100"
@@ -209,7 +203,6 @@ Xamarin.Forms には、オブジェクトへの複数の変換の適用をサポ
 
 ```xaml
 <Path Stroke="Black"
-      StrokeThickness="1"
       Aspect="Uniform"
       HorizontalOptions="Center"
       HeightRequest="100"
@@ -261,7 +254,6 @@ Xamarin.Forms には、オブジェクトへの複数の変換の適用をサポ
 
 ```xaml
 <Path Stroke="Black"
-      StrokeThickness="1"
       Aspect="Uniform"
       HorizontalOptions="Center"
       HeightRequest="100"
@@ -351,7 +343,6 @@ Xamarin.Forms には、オブジェクトへの複数の変換の適用をサポ
 
 ```xaml
 <Path Stroke="Black"
-      StrokeThickness="1"
       Aspect="Uniform"
       HorizontalOptions="Center"
       Data="M13.908992,16.207977L32.000049,16.207977 32.000049,31.999985 13.908992,30.109983z">
@@ -375,7 +366,6 @@ Xamarin.Forms には、オブジェクトへの複数の変換の適用をサポ
 
 ```xaml
 <Path Stroke="Black"
-      StrokeThickness="1"
       Aspect="Uniform"
       HorizontalOptions="Center"
       Data="M13.908992,16.207977L32.000049,16.207977 32.000049,31.999985 13.908992,30.109983z">
@@ -391,7 +381,6 @@ Xamarin.Forms には、オブジェクトへの複数の変換の適用をサポ
 
 ```xaml
 <Path Stroke="Black"
-      StrokeThickness="1"
       Aspect="Uniform"
       HorizontalOptions="Center"
       RenderTransform="1.5 1 0 1 10 100"

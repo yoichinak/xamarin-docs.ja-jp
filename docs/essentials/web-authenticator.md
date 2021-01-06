@@ -8,12 +8,12 @@ ms.date: 03/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 04090a2e9d97f1a5f4dae8fa850a39c3465ba05b
-ms.sourcegitcommit: 0c31f1398ec1de1a2b18ec7f25f30630df968db1
+ms.openlocfilehash: f05868bbf8da9597c4290ba687f767f3995ba437
+ms.sourcegitcommit: 07ee6a95f77f9a12fadb857e549cdcdb1928c7d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96544670"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97904985"
 ---
 # <a name="no-locxamarinessentials-web-authenticator"></a>Xamarin.Essentials:Web Authenticator
 
@@ -46,9 +46,6 @@ ms.locfileid: "96544670"
 
 Android では、コールバック URI を処理するためにインテント フィルターの設定が必要です。 これは、`WebAuthenticatorCallbackActivity` クラスをサブクラス化することで簡単に実現できます。
 
-> [!NOTE]
-> コールバック URI を処理するための [Android アプリ リンク](https://developer.android.com/training/app-links/)を実装することを検討し、アプリケーションがコールバック URI を処理するために登録できる唯一のものであることを確認してください。
-
 ```csharp
 const string CALLBACK_SCHEME = "myapp";
 
@@ -58,17 +55,6 @@ const string CALLBACK_SCHEME = "myapp";
     DataScheme = CALLBACK_SCHEME)]
 public class WebAuthenticationCallbackActivity : Xamarin.Essentials.WebAuthenticatorCallbackActivity
 {
-}
-```
-
-また、`MainActivity` の `OnResume` オーバーライドから Essentials にコールバックする必要もあります。
-
-```csharp
-protected override void OnResume()
-{
-    base.OnResume();
-
-    Xamarin.Essentials.Platform.OnResume();
 }
 ```
 
@@ -91,9 +77,6 @@ iOS では、アプリのコールバック URI パターンを次のような I
     </dict>
 </array>
 ```
-
-> [!NOTE]
-> ベスト プラクティスとして、[ユニバーサル アプリ リンク](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content)を使用してアプリのコールバック URI を登録することを検討してください。
 
 また、Essentials を呼び出すために `AppDelegate` の `OpenUrl` および `ContinueUserActivity` メソッドをオーバーライドする必要があります。
 

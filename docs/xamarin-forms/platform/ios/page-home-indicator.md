@@ -10,12 +10,12 @@ ms.date: 05/09/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 49fd8c563509d88b80fcb91b5e6298b8a5bb3363
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 20d8bb1140599b5b858c52fde1e54393e66d7bd1
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93372302"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940552"
 ---
 # <a name="home-indicator-visibility-on-ios"></a>IOS でのホームインジケーターの可視性
 
@@ -48,7 +48,7 @@ On<iOS>().SetPrefersHomeIndicatorAutoHidden(true);
 ![IOS ページでのホームインジケーターの表示のスクリーンショット](page-home-indicator-images/home-indicator-visibility.png "ページのホーム インジケーターの表示")
 
 > [!NOTE]
-> このプラットフォーム固有のは、、、、およびの各オブジェクトに適用でき [`ContentPage`](xref:Xamarin.Forms.ContentPage) [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) ます。
+> このプラットフォーム固有のは、、、、およびの各オブジェクトに適用でき [`ContentPage`](xref:Xamarin.Forms.ContentPage) [`FlyoutPage`](xref:Xamarin.Forms.FlyoutPage) [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) ます。
 
 ## <a name="related-links"></a>関連リンク
 

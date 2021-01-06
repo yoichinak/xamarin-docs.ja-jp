@@ -6,22 +6,22 @@ ms.assetid: F6EA9E49-FB3E-442F-AF13-B7AD0C80D11F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/16/2020
+ms.date: 12/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0cdbd39f0217b0e4d175eb2443250eb3df8dd046
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: d5f65deaad97bd69641fa4cc577d9a476106ac3a
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936176"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940357"
 ---
 # <a name="windows-platform-features"></a>Windows プラットフォームの機能
 
-Xamarin.FormsWindows プラットフォーム用のアプリケーションを開発するには、Visual Studio が必要です。 [[サポートされているプラットフォーム] ページ](~/get-started/supported-platforms.md)には、前提条件に関する詳細情報が表示されます。
+Xamarin.FormsWindows プラットフォーム用のアプリケーションを開発するには、Visual Studio が必要です。 [ [サポートされているプラットフォーム] ページ](~/get-started/supported-platforms.md) には、前提条件に関する詳細情報が表示されます。
 
-![Xamarin.FormsWindows で実行されているアプリケーション](images/allhanselman.png)
+![::: no-loc (Xamarin. Forms)::: Windows で実行されているアプリケーション](images/allhanselman.png)
 
 ## <a name="platform-specifics"></a>プラットフォーム固有設定
 
@@ -38,11 +38,12 @@ UWP のビューには、次のプラットフォーム固有の機能が用意�
 - で tap ジェスチャのサポートを有効に [`ListView`](xref:Xamarin.Forms.ListView) します。 詳細については、「 [ListView SelectionMode On Windows](listview-selectionmode.md)」を参照してください。
 - のプル方向の `RefreshView` 変更を有効にします。 詳細については、「 [Windows 上の Refreshview Pull Direction](refreshview-pulldirection.md)」を参照してください。
 - が [`SearchBar`](xref:Xamarin.Forms.SearchBar) スペルチェックエンジンと対話できるようにします。 詳細については、「 [Windows での Searchbar Spell Check](searchbar-spell-check.md)」を参照してください。
+- がそのコンテンツをホストするスレッドを設定 [`WebView`](xref:Xamarin.Forms.WebView) します。 詳細については、「 [Windows の WebView 実行モード](webview-executionmode.md)」を参照してください。
 - を有効にして、 [`WebView`](xref:Xamarin.Forms.WebView) UWP メッセージダイアログに JavaScript の警告を表示します。 詳細については、「 [Windows での WebView JavaScript Alerts](webview-javascript-alert.md)」を参照してください。
 
 UWP のページには、次のプラットフォーム固有の機能が用意されてい Xamarin.Forms ます。
 
-- [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)ナビゲーションバーを折りたたみます。 詳細については、 [Windows の Master詳細ページナビゲーションバーに関するページ](masterdetailpage-navigation-bar.md)を参照してください。
+- [`FlyoutPage`](xref:Xamarin.Forms.FlyoutPage)ナビゲーションバーを折りたたみます。 詳細については、「 [FlyoutPage Navigation Bar On Windows](flyoutpage-navigation-bar.md)」を参照してください。
 - ツールバーの配置オプションを設定します。 詳細については、「 [Windows 上のページツールバーの配置](page-toolbar-placement.md)」を参照してください。
 - ツールバーにページアイコンを表示できるように [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) します。 詳細については、「[Windows 上の TabbedPage アイコン](tabbedpage-icons.md)」を参照してください。
 
@@ -55,17 +56,17 @@ UWP のクラスには、次のプラットフォーム固有の機能が用意�
 Xamarin.FormsVisual Studio で使用できるテンプレートには、ユニバーサル Windows プラットフォーム (UWP) プロジェクトが含まれています。
 
 > [!NOTE]
-> Xamarin.Forms1.x と2.x のサポート_Windows Phone 8 Silverlight_、 _Windows Phone 8.1_、 _Windows 8.1_アプリケーション開発。 ただし、これらのプロジェクトの種類は非推奨とされます。
+> Xamarin.Forms 1.x と2.x のサポート _Windows Phone 8 Silverlight_、 _Windows Phone 8.1_、 _Windows 8.1_ アプリケーション開発。 ただし、これらのプロジェクトの種類は非推奨とされます。
 
 ## <a name="getting-started"></a>作業の開始
 
-Visual Studio で [**ファイル] > [新しい > プロジェクト**] の順に選択し、[**クロスプラットフォーム > 空のアプリ ( Xamarin.Forms )** ] テンプレートの1つを選択して開始します。
+Visual Studio で [ **ファイル] > [新しい > プロジェクト** ] の順に選択し、[ **クロスプラットフォーム > 空のアプリ ( Xamarin.Forms )** ] テンプレートの1つを選択して開始します。
 
-以前の Xamarin.Forms ソリューション、または macOS で作成されたソリューションには、上記のすべての Windows プロジェクトが含まれているわけではありません (ただし、手動で追加する必要があります)。 対象とする Windows プラットフォームがまだソリューションに含まれていない場合は、[セットアップの指示に従っ](installation/index.md)て、必要な windows プロジェクトの種類/s を追加します。
+以前の Xamarin.Forms ソリューション、または macOS で作成されたソリューションには、上記のすべての Windows プロジェクトが含まれているわけではありません (ただし、手動で追加する必要があります)。 対象とする Windows プラットフォームがまだソリューションに含まれていない場合は、 [セットアップの指示に従っ](installation/index.md) て、必要な windows プロジェクトの種類/s を追加します。
 
 ## <a name="samples"></a>サンプル
 
-[*Mobile Apps を作成 Xamarin.Forms する*](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)チャールズ petzold 著) の書籍のすべてのサンプルには[、](https://github.com/xamarin/xamarin-forms-book-preview-2)ユニバーサル Windows プラットフォーム (Windows 10) プロジェクトが含まれています。
+[*Mobile Apps を作成 Xamarin.Forms する*](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)チャールズ petzold 著) の書籍のすべてのサンプルには [、](https://github.com/xamarin/xamarin-forms-book-preview-2)ユニバーサル Windows プラットフォーム (Windows 10) プロジェクトが含まれています。
 
 ["Scott サバイバル selman" デモアプリ](https://github.com/jamesmontemagno/Hanselman.Forms)は個別に利用できます。また、Apple Watch および Android の磨耗プロジェクトも含まれています (Xamarin および xamarin android を使用して、 Xamarin.Forms これらのプラットフォームでは実行されません)。
 

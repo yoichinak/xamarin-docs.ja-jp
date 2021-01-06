@@ -6,16 +6,16 @@ ms.assetid: E6F124C7-A161-4C1F-AF40-52F0935E54DE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/14/2016
+ms.date: 09/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 50b64b394314ae2f63ab1f756f1cc73ba29e59e7
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 6ec4c16249aadce668b9fe33dad661e1f7e7ee9e
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93372848"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97939018"
 ---
 # <a name="easing-functions-in-no-locxamarinforms"></a>イージング関数 Xamarin.Forms
 
@@ -54,6 +54,9 @@ await image.TranslateTo(0, -200, 2000, Easing.BounceOut);
 ```
 
 アニメーションのイージング関数を指定することにより、アニメーションベロシティが非線形になり、イージング関数によって提供される効果が生成されます。 アニメーションを作成するときにイージング関数を省略すると、アニメーションは既定の [`Linear`](xref:Xamarin.Forms.Easing.Linear) イージング関数を使用します。これにより、線形速度が生成されます。
+
+> [!NOTE]
+> Xamarin.Forms 5.0 には、イージング関数の文字列形式を適切な列挙メンバーに変換する型コンバーターが含まれてい [`Easing`](xref:Xamarin.Forms.Easing) ます。 この型コンバーターは、 `Easing` XAML で設定されている型のプロパティに対して自動的に呼び出されます。
 
 クラスでアニメーション拡張メソッドを使用する方法の詳細については [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) 、「 [単純なアニメーション](~/xamarin-forms/user-interface/animation/simple.md)」を参照してください。 イージング関数は、クラスでも使用でき [`Animation`](xref:Xamarin.Forms.Animation) ます。 詳細については、「 [カスタムアニメーション](~/xamarin-forms/user-interface/animation/custom.md)」を参照してください。
 

@@ -6,16 +6,16 @@ ms.assetid: 4A6FAE5A-848F-4CE0-BFA1-22A6309B5225
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/05/2019
+ms.date: 09/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: db7101d5e50dc6ee7840023f6ec4efeb2c52150b
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: ce3dd92c09fb40ea1b864e0c613223ce8bf99e36
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93370196"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940370"
 ---
 # <a name="simple-animations-in-no-locxamarinforms"></a>単純なアニメーション Xamarin.Forms
 
@@ -25,20 +25,19 @@ _ViewExtensions クラスは、単純なアニメーションを構築するた�
 
 クラスには、 [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) 単純なアニメーションを作成するために使用できる次の拡張メソッドが用意されています。
 
-- [ `TranslateTo` ] (xref: Xamarin.Forms 。ViewExtensions Xamarin.Forms . TranslateTo ()VisualElement, system.string, system.string, system.string, Xamarin.Forms です。イージング)) [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) のプロパティとプロパティをアニメーション化し [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) [`VisualElement`](xref:Xamarin.Forms.VisualElement) ます。
-- [`ScaleTo`](xref:Xamarin.Forms.ViewExtensions.ScaleTo*)[`Scale`](xref:Xamarin.Forms.VisualElement.Scale)のプロパティをアニメーション化 [`VisualElement`](xref:Xamarin.Forms.VisualElement) します。
-- `ScaleXTo`[`ScaleX`](xref:Xamarin.Forms.VisualElement.ScaleX)のプロパティをアニメーション化 [`VisualElement`](xref:Xamarin.Forms.VisualElement) します。
-- `ScaleYTo`[`ScaleY`](xref:Xamarin.Forms.VisualElement.ScaleY)のプロパティをアニメーション化 [`VisualElement`](xref:Xamarin.Forms.VisualElement) します。
+- [ `CancelAnimations` ] (xref: Xamarin.Forms 。ViewExtensions。 CancelAnimations ( Xamarin.Forms .VisualElement)) アニメーションをキャンセルします。
+- [ `FadeTo` ] (xref: Xamarin.Forms 。ViewExtensions. FadeTo ( Xamarin.Forms .VisualElement、system.string、system.string、 Xamarin.Forms 。イージング)) [`Opacity`](xref:Xamarin.Forms.VisualElement.Opacity) のプロパティをアニメーション化 [`VisualElement`](xref:Xamarin.Forms.VisualElement) します。
 - [ `RelScaleTo` ] (xref: Xamarin.Forms 。ViewExtensions. Rel拡張性 ( Xamarin.Forms .VisualElement、system.string、system.string、 Xamarin.Forms 。イージング) を適用すると、アニメーションのインクリメントがのプロパティに適用さ [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) [`VisualElement`](xref:Xamarin.Forms.VisualElement) れます。
 - [ `RotateTo` ] (xref: Xamarin.Forms 。ViewExtensions Xamarin.Forms . RotateTo ()VisualElement、system.string、system.string、 Xamarin.Forms 。イージング)) [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation) のプロパティをアニメーション化 [`VisualElement`](xref:Xamarin.Forms.VisualElement) します。
 - [ `RelRotateTo` ] (xref: Xamarin.Forms 。ViewExtensions Xamarin.Forms . RelRotateTo ()VisualElement、system.string、system.string、 Xamarin.Forms 。イージング) を適用すると、アニメーションのインクリメントがのプロパティに適用さ [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation) [`VisualElement`](xref:Xamarin.Forms.VisualElement) れます。
 - [ `RotateXTo` ] (xref: Xamarin.Forms 。ViewExtensions Xamarin.Forms . RotateXTo ()VisualElement、system.string、system.string、 Xamarin.Forms 。イージング)) [`RotationX`](xref:Xamarin.Forms.VisualElement.RotationX) のプロパティをアニメーション化 [`VisualElement`](xref:Xamarin.Forms.VisualElement) します。
 - [ `RotateYTo` ] (xref: Xamarin.Forms 。ViewExtensions Xamarin.Forms . RotateYTo ()VisualElement、system.string、system.string、 Xamarin.Forms 。イージング)) [`RotationY`](xref:Xamarin.Forms.VisualElement.RotationY) のプロパティをアニメーション化 [`VisualElement`](xref:Xamarin.Forms.VisualElement) します。
-- [ `FadeTo` ] (xref: Xamarin.Forms 。ViewExtensions. FadeTo ( Xamarin.Forms .VisualElement、system.string、system.string、 Xamarin.Forms 。イージング)) [`Opacity`](xref:Xamarin.Forms.VisualElement.Opacity) のプロパティをアニメーション化 [`VisualElement`](xref:Xamarin.Forms.VisualElement) します。
+- [`ScaleTo`](xref:Xamarin.Forms.ViewExtensions.ScaleTo*)[`Scale`](xref:Xamarin.Forms.VisualElement.Scale)のプロパティをアニメーション化 [`VisualElement`](xref:Xamarin.Forms.VisualElement) します。
+- `ScaleXTo`[`ScaleX`](xref:Xamarin.Forms.VisualElement.ScaleX)のプロパティをアニメーション化 [`VisualElement`](xref:Xamarin.Forms.VisualElement) します。
+- `ScaleYTo`[`ScaleY`](xref:Xamarin.Forms.VisualElement.ScaleY)のプロパティをアニメーション化 [`VisualElement`](xref:Xamarin.Forms.VisualElement) します。
+- [ `TranslateTo` ] (xref: Xamarin.Forms 。ViewExtensions Xamarin.Forms . TranslateTo ()VisualElement, system.string, system.string, system.string, Xamarin.Forms です。イージング)) [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) のプロパティとプロパティをアニメーション化し [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY) [`VisualElement`](xref:Xamarin.Forms.VisualElement) ます。
 
 既定では、各アニメーションは250ミリ秒かかります。 ただし、アニメーションの作成時には、各アニメーションの継続時間を指定できます。
-
-クラスには [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) 、[ `CancelAnimations` ] (xref: も含まれます Xamarin.Forms 。ViewExtensions。 CancelAnimations ( Xamarin.Forms .VisualElement)) 任意のアニメーションを取り消すために使用できるメソッド。
 
 > [!NOTE]
 > クラスには [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) 、[ `LayoutTo` ] (xref: が用意されて Xamarin.Forms います。ViewExtensions。 LayoutTo ( Xamarin.Forms .VisualElement、 Xamarin.Forms 。四角形、system.string、 Xamarin.Forms 。イージング)) 拡張メソッド。 ただし、このメソッドは、サイズと位置の変更を含むレイアウト状態間の遷移をアニメーション化するためにレイアウトで使用されることを意図しています。 したがって、サブクラスでのみ使用する必要があり [`Layout`](xref:Xamarin.Forms.Layout) ます。
@@ -85,7 +84,7 @@ await image.RelRotateTo (360, 2000);
 
 ![相対回転アニメーション](simple-images/relrotateto.png)
 
-### <a name="scaling"></a>Scaling
+### <a name="scaling"></a>スケーリング
 
 次のコード例は、メソッドを使用して [`ScaleTo`](xref:Xamarin.Forms.ViewExtensions.ScaleTo*) のプロパティをアニメーション化する方法を示してい [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) [`Image`](xref:Xamarin.Forms.Image) ます。
 
@@ -222,10 +221,10 @@ await Task.WhenAll (
 
 ## <a name="canceling-animations"></a>アニメーションの取り消し
 
-アプリケーションでは、 `static` [ `ViewExtensions.CancelAnimations` ] (xref: を呼び出して1つ以上のアニメーションをキャンセルできます Xamarin.Forms 。ViewExtensions。 CancelAnimations ( Xamarin.Forms .VisualElement)) メソッド。コード例を次に示します。
+アプリケーションでは、[CancelAnimations] を呼び出すことによって1つ以上のアニメーションをキャンセルできます (xref: Xamarin.Forms 。ViewExtensions。 CancelAnimations ( Xamarin.Forms .VisualElement)): 次のコード例に示すように、拡張メソッドを使用します。
 
 ```csharp
-ViewExtensions.CancelAnimations (image);
+image.CancelAnimations();
 ```
 
 これにより、インスタンスで現在実行中のすべてのアニメーションが直ちにキャンセルされ [`Image`](xref:Xamarin.Forms.Image) ます。

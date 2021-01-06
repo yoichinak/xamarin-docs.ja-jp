@@ -10,12 +10,12 @@ ms.date: 12/11/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cce3fbf6f80b8a0fddff2ed2b2af027721faf59d
-ms.sourcegitcommit: bfe713c038a0d6c4362da4c3221d7aee9ab03d2b
+ms.openlocfilehash: 76b0d9eff175755d6fc13178a864ae99b345efd3
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91805610"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940201"
 ---
 # <a name="android-platform-features"></a>Android プラットフォーム機能
 
@@ -64,8 +64,6 @@ Android のクラスには、次のプラットフォーム固有の機能が用
 
 Xamarin.Forms Android プロジェクトは、 `FormsAppCompatActivity` メインアクティビティの基本クラスとしてを使用するようになりました。 このクラスは、Android によって提供される **AppCompat** 機能を使用して、マテリアルデザインテーマを実装します。
 
-素材デザインのテーマを Android プロジェクトに追加するには Xamarin.Forms 、 [AppCompat サポートのインストール手順](appcompat-material-design.md)に従ってください。
-
 既定値を使用した **Todo** サンプルを次に示し `FormsApplicationActivity` ます。
 
 [![アプリケーションを使用しないサンプルアプリケーション](images/before-appcompat-sml.png)](images/before-appcompat.png#lightbox "アプリケーションを使用しないサンプルアプリケーション")
@@ -80,7 +78,3 @@ Xamarin.Forms Android プロジェクトは、 `FormsAppCompatActivity` メイ�
 ## <a name="androidx-migration"></a>AndroidX への移行
 
 AndroidX は、Android サポートライブラリを置き換えます。 AndroidX と、AndroidX ライブラリを使用するようにアプリを移行する方法の詳細について Xamarin.Forms は、「 [」の「androidx Xamarin.Forms の移行](~/xamarin-forms/platform/android/androidx-migration.md)」を参照してください。
-
-## <a name="related-links"></a>関連リンク
-
-- [マテリアルデザインサポートの追加](appcompat-material-design.md)

@@ -10,12 +10,12 @@ ms.date: 05/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9b22b46cb5452e558328c383ed97e66a60cfc166
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 05de8c554864108b90433c335074c61fc3def8cf
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93374135"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97939954"
 ---
 # <a name="no-locxamarinforms-webview"></a>Xamarin.Forms WebView
 
@@ -25,7 +25,7 @@ ms.locfileid: "93374135"
 
 ![アプリブラウザーで](webview-images/in-app-browser.png)
 
-## <a name="content"></a>Content
+## <a name="content"></a>コンテンツ
 
 `WebView` では、次の種類のコンテンツをサポートしています。
 
@@ -245,7 +245,7 @@ using (var streamReader = new StreamReader (assetManager.Open ("local.html")))
 
 #### <a name="universal-windows-platform"></a>ユニバーサル Windows プラットフォーム
 
-ユニバーサル Windows プラットフォーム (UWP) プロジェクトで、[ビルドアクション] を [ *コンテンツ* ] に設定して、HTML、CSS、およびイメージをプロジェクトルートに配置します。
+ユニバーサル Windows プラットフォーム (UWP) プロジェクトで、[ビルドアクション] を [ *コンテンツ*] に設定して、HTML、CSS、およびイメージをプロジェクトルートに配置します。
 
 は、次のよう `BaseUrl` に設定する必要があり `"ms-appx-web:///"` ます。
 
@@ -263,7 +263,7 @@ namespace WorkingWithWebview.UWP
 }
 ```
 
-## <a name="navigation"></a>移動
+## <a name="navigation"></a>［ナビゲーション］
 
 WebView では、使用できるようにするいくつかのメソッドとプロパティによるナビゲーションがサポートされています。
 
@@ -329,7 +329,7 @@ public partial class InAppBrowserXaml : ContentPage
 }
 ```
 
-これで完了です。
+以上で作業は終了です。
 
 ![WebView ナビゲーションボタン](webview-images/in-app-browser.png)
 
@@ -417,6 +417,9 @@ webView.Reload();
 // Opt-in to using UIWebView instead of WkWebView.
 [assembly: ExportRenderer(typeof(Xamarin.Forms.WebView), typeof(Xamarin.Forms.Platform.iOS.WebViewRenderer))]
 ```
+
+> [!NOTE]
+> 5.0 では、 Xamarin.Forms `WebViewRenderer` クラスは削除されています。 したがって、5.0 には、 Xamarin.Forms コントロールへの参照が含まれていません `UIWebView` 。
 
 `WebView` 既定では、Android では、組み込みのブラウザーほど高速です。
 
@@ -553,12 +556,15 @@ webView.Source = new UrlWebViewSource { Url = uri.ToString() };
 
 2020年4月以降、 [Apple は](https://developer.apple.com/news/?id=12232019b) 非推奨の API をまだ使用しているアプリを拒否し `UIWebView` ます。 Xamarin.Formsは `WKWebView` 既定値としてに切り替えられていますが、バイナリに以前の SDK への参照があり Xamarin.Forms ます。 現在の [iOS リンカー](~/ios/deploy-test/linker.md) の動作では、これは削除されません。そのため、アプリストアに送信するときに、非推奨の `UIWebView` API はアプリから参照されているように見えます。
 
+> [!IMPORTANT]
+> 5.0 では、 Xamarin.Forms `WebViewRenderer` クラスは削除されています。 したがって、5.0 には、 Xamarin.Forms コントロールへの参照が含まれていません `UIWebView` 。
+
 この問題を解決するには、リンカーのプレビューバージョンを使用できます。 プレビューを有効にするには、リンカーに追加の引数を指定する必要があり `--optimize=experimental-xforms-product-type` ます。
 
 これを行うための前提条件は次のとおりです。
 
-- **Xamarin.Forms 4.5 以上** 。 Xamarin.Forms アプリで素材ビジュアルを使用する場合は、4.6 以上が必要です。
-- **13.10.0.17 以上** 。 [Visual Studio で](~/cross-platform/troubleshooting/questions/version-logs.md#version-information)Xamarin iOS のバージョンを確認します。 このバージョンの Xamarin. iOS は Visual Studio for Mac dbms-guide-8.4.1 と Visual Studio 16.4.3 に含まれています。
+- **Xamarin.Forms 4.5 以上**。 Xamarin.Forms アプリで素材ビジュアルを使用する場合は、4.6 以上が必要です。
+- **13.10.0.17 以上**。 [Visual Studio で](~/cross-platform/troubleshooting/questions/version-logs.md#version-information)Xamarin iOS のバージョンを確認します。 このバージョンの Xamarin. iOS は Visual Studio for Mac dbms-guide-8.4.1 と Visual Studio 16.4.3 に含まれています。
 - **への参照 `UIWebView` を削除** します。 コードには、またはを使用するクラスへの参照を含めることはできません `UIWebView` `UIWebView` 。
 
 参照の検出と削除の詳細について `UIWebView` は、「 [uiwebview の廃止](~/ios/user-interface/controls/webview.md#uiwebview-deprecation)」を参照してください。
@@ -569,9 +575,9 @@ webView.Source = new UrlWebViewSource { Url = uri.ToString() };
 
 リンカーで参照を削除するには、次の手順に従い `UIWebView` ます。
 
-1. **IOS プロジェクトのプロパティ** &ndash; を開くIOS プロジェクトを右クリックし、[ **プロパティ** ] を選択します。
+1. **IOS プロジェクトのプロパティ** &ndash; を開くIOS プロジェクトを右クリックし、[ **プロパティ**] を選択します。
 1. **IOS のビルドセクション** &ndash; に移動します。[ **IOS ビルド** ] セクションを選択します。
-1. **追加の mtouch 引数** &ndash; を更新する追加の **mtouch 引数** で、このフラグ `--optimize=experimental-xforms-product-type` を追加します (既に存在している可能性がある値に加えて)。 注: このフラグは、SDK に対して **のみ** 設定される **リンカーの動作** 、またはすべてを **リンク** します。 何らかの理由で、リンカーの動作を All に設定したときにエラーが発生した場合は、おそらく、アプリケーションコードまたはリンカーセーフではないサードパーティ製のライブラリ内で問題が発生している可能性があります。 リンカーの詳細については、「 [Xamarin IOS アプリのリンク](~/ios/deploy-test/linker.md)」を参照してください。
+1. **追加の mtouch 引数** &ndash; を更新する追加の **mtouch 引数** で、このフラグ `--optimize=experimental-xforms-product-type` を追加します (既に存在している可能性がある値に加えて)。 注: このフラグは、SDK に対して **のみ** 設定される **リンカーの動作**、またはすべてを **リンク** します。 何らかの理由で、リンカーの動作を All に設定したときにエラーが発生した場合は、おそらく、アプリケーションコードまたはリンカーセーフではないサードパーティ製のライブラリ内で問題が発生している可能性があります。 リンカーの詳細については、「 [Xamarin IOS アプリのリンク](~/ios/deploy-test/linker.md)」を参照してください。
 1. **すべてのビルド構成** &ndash; を更新するウィンドウの上部にある [ **構成** ] と [ **プラットフォーム** ] の一覧を使用して、すべてのビルド構成を更新します。 更新する最も重要な構成は、 **リリース/iPhone** の構成です。通常、これは、App Store の送信用にビルドを作成するために使用されるためです。
 
 このスクリーンショットでは、新しいフラグが設定されたウィンドウが表示されます。
@@ -582,9 +588,9 @@ webView.Source = new UrlWebViewSource { Url = uri.ToString() };
 
 リンカーで参照を削除するには、次の手順に従い `UIWebView` ます。
 
-1. **IOS プロジェクトオプション** &ndash; を開くIOS プロジェクトを右クリックし、[ **オプション** ] を選択します。
+1. **IOS プロジェクトオプション** &ndash; を開くIOS プロジェクトを右クリックし、[ **オプション**] を選択します。
 1. **IOS のビルドセクション** &ndash; に移動します。[ **IOS ビルド** ] セクションを選択します。
-1. **_mtouch_** 追加の Mtouch 引数の追加の mtouch 引数を更新し &ndash; ます。このフラグ **_mtouch_** `--optimize=experimental-xforms-product-type` は、既に存在している可能性がある値に加えて追加します。 注: このフラグは、SDK に対して **のみ** 設定される **リンカーの動作** 、またはすべてを **リンク** します。 何らかの理由で、リンカーの動作を All に設定したときにエラーが発生した場合は、おそらく、アプリケーションコードまたはリンカーセーフではないサードパーティ製のライブラリ内で問題が発生している可能性があります。 リンカーの詳細については、「 [Xamarin IOS アプリのリンク](~/ios/deploy-test/linker.md)」を参照してください。
+1. **** 追加の Mtouch 引数の追加の mtouch 引数を更新し &ndash; ます。このフラグ **** `--optimize=experimental-xforms-product-type` は、既に存在している可能性がある値に加えて追加します。 注: このフラグは、SDK に対して **のみ** 設定される **リンカーの動作**、またはすべてを **リンク** します。 何らかの理由で、リンカーの動作を All に設定したときにエラーが発生した場合は、おそらく、アプリケーションコードまたはリンカーセーフではないサードパーティ製のライブラリ内で問題が発生している可能性があります。 リンカーの詳細については、「 [Xamarin IOS アプリのリンク](~/ios/deploy-test/linker.md)」を参照してください。
 1. **すべてのビルド構成** &ndash; を更新するウィンドウの上部にある [ **構成** ] と [ **プラットフォーム** ] の一覧を使用して、すべてのビルド構成を更新します。 更新する最も重要な構成は、 **リリース/iPhone** の構成です。通常、これは、App Store の送信用にビルドを作成するために使用されるためです。
 
 このスクリーンショットでは、新しいフラグが設定されたウィンドウが表示されます。

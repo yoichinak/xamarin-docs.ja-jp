@@ -1,30 +1,25 @@
 ---
-title: Xamarin.Formsブラシ
+title: Xamarin.Forms ブラシ
 description: Xamarin.FormsBrush クラスは、出力を使用して領域を塗りつぶす抽象クラスです。
 ms.prod: xamarin
 ms.assetid: 44420FC2-304C-4175-8654-76769F79A813
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/28/2020
+ms.date: 09/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4f1f56103b20eac84ce6106c0955acebf974cfe3
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: e0bb8b5e1668e683fa8b15f752b77d865cb317b5
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87919108"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940396"
 ---
-# <a name="no-locxamarinforms-brushes"></a>Xamarin.Formsブラシ
-
-![プレビュー API](~/media/shared/preview.png "この API は現在プレリリースです")
+# <a name="no-locxamarinforms-brushes"></a>Xamarin.Forms ブラシ
 
 ブラシを使用すると、さまざまな方法を使用して、コントロールの背景などの領域を塗りつぶすことができます。 でのブラシのサポート Xamarin.Forms は、 `Xamarin.Forms` IOS、Android、macOS、ユニバーサル WINDOWS プラットフォーム (UWP)、および WINDOWS PRESENTATION FOUNDATION (WPF) の名前空間で利用できます。
-
-> [!IMPORTANT]
-> でのブラシのサポート Xamarin.Forms は現在試験段階であり、フラグを設定することによってのみ使用でき `Brush_Experimental` ます。 詳細については、「試験的な[フラグ](~/xamarin-forms/internals/experimental-flags.md)」を参照してください。
 
 クラスは、 `Brush` 出力を使用して領域を塗りつぶす抽象クラスです。 から派生するクラスは `Brush` 、領域を塗りつぶすさまざまな方法を記述します。 で使用できるさまざまなブラシの種類を次の一覧に示し Xamarin.Forms ます。
 

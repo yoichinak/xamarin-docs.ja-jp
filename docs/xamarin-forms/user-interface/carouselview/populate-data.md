@@ -10,16 +10,14 @@ ms.date: 10/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: dd3672141382c4b68ccaa90511f184b3ad875411
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: b47c810f26dad6c1f6b58eb82bdd234d5cd3f6aa
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93365763"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940435"
 ---
 # <a name="no-locxamarinforms-carouselview-data"></a>Xamarin.Forms データの CarouselView
-
-![プレリリース API](~/media/shared/preview.png)
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
@@ -48,7 +46,7 @@ ms.locfileid: "93365763"
 <CarouselView ItemsSource="{Binding Monkeys}" />
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView();
@@ -104,7 +102,7 @@ carouselView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 </CarouselView>
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView();
@@ -184,7 +182,7 @@ public class Monkey
 </ContentPage>
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView
@@ -293,7 +291,7 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 </CarouselView>
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView();
@@ -357,7 +355,7 @@ carouselView.ItemTemplate = new DataTemplate(() =>
 </RefreshView>
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 RefreshView refreshView = new RefreshView();
@@ -391,7 +389,7 @@ refreshView.Content = carouselView;
 
 - `RemainingItemsThreshold`型の、 `int` イベントが発生するリストにまだ表示されていない項目のしきい値 `RemainingItemsThresholdReached` 。
 - `RemainingItemsThresholdReachedCommand`に `ICommand` 到達したときに実行される、型の `RemainingItemsThreshold` 。
-- `RemainingItemsThresholdReachedCommandParameter`: `object` 型、`RemainingItemsThresholdReachedCommand` に渡されるパラメーター。
+- `RemainingItemsThresholdReachedCommandParameter`: `object` 型、`RemainingItemsThresholdReachedCommand`に渡されるパラメーターです。
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView) また、は `RemainingItemsThresholdReached` 、 `CarouselView` 項目が表示されていない大きさまでスクロールしたときに発生するイベントも定義し `RemainingItemsThreshold` ます。 このイベントを処理して、さらに多くの項目を読み込むことができます。 さらに、 `RemainingItemsThresholdReached` イベントが発生すると、 `RemainingItemsThresholdReachedCommand` が実行され、増分データの読み込みがビューモデルで行われるようになります。
 
@@ -411,7 +409,7 @@ refreshView.Content = carouselView;
 </CarouselView>
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView

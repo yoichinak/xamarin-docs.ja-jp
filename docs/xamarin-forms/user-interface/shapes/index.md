@@ -6,27 +6,22 @@ ms.assetid: 4E749FE8-852C-46DA-BB1E-652936106357
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/30/2020
+ms.date: 09/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 07765fdb9f67f21415db495da1b635b0507b7ed1
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 6db938f01e4ac1f886149145046668202b119431
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91559208"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97939759"
 ---
 # <a name="no-locxamarinforms-shapes"></a>Xamarin.Forms 図形
-
-![プレリリース API](~/media/shared/preview.png)
 
 は、 `Shape` [`View`](xref:Xamarin.Forms.View) 画面に図形を描画できるようにするの型です。 `Shape` オブジェクトは、クラスがクラスから派生するため、レイアウトクラスやほとんどのコントロール内で使用でき `Shape` `View` ます。
 
 Xamarin.Forms 図形は、 `Xamarin.Forms.Shapes` iOS、Android、macOS、ユニバーサル Windows プラットフォーム (UWP)、および Windows Presentation Foundation (WPF) の名前空間で使用できます。
-
-> [!IMPORTANT]
-> Xamarin.Forms 図形は現在試験段階であり、フラグを設定することによってのみ使用でき `Shapes_Experimental` ます。 詳しくは、[試験的なフラグ](~/xamarin-forms/internals/experimental-flags.md)に関する記事を参照してください。
 
 `Shape` は次の特性を定義します。
 
@@ -38,7 +33,7 @@ Xamarin.Forms 図形は、 `Xamarin.Forms.Shapes` iOS、Android、macOS、ユニ
 - `StrokeLineCap`型のは、 `PenLineCap` 直線またはセグメントの開始位置と終了位置にある図形を記述します。 このプロパティの既定値は `PenLineCap.Flat` です。
 - `StrokeLineJoin`型のは、 `PenLineJoin` 図形の頂点で使用される結合の種類を指定します。 このプロパティの既定値は `PenLineJoin.Miter` です。
 - `StrokeMiterLimit`型のは、 `double` 図形の半分に対するマイタの長さの比率の制限を指定し `StrokeThickness` ます。 このプロパティの既定値は10.0 です。
-- `StrokeThickness`型のは、 `double` 図形のアウトラインの幅を示します。 このプロパティの既定値は0.0 です。
+- `StrokeThickness`型のは、 `double` 図形のアウトラインの幅を示します。 このプロパティの既定値は1.0 です。
 
 これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトが基になっています。つまり、これらは、データ バインディングの対象にすることができ、スタイルを設定できます。
 
@@ -84,7 +79,6 @@ Xamarin.Forms クラスから派生するオブジェクトの数を定義 `Shap
 ```xaml
 <Path Aspect="Uniform"
       Stroke="Yellow"
-      StrokeThickness="1"
       Fill="Red"
       BackgroundColor="LightGray"
       HorizontalOptions="Start"

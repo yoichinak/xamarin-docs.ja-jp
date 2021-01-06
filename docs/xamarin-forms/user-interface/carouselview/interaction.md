@@ -6,16 +6,16 @@ ms.assetid: 854D97E5-D119-4BE2-AE7C-BD428792C992
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/11/2020
+ms.date: 09/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c6b6a5a538d69d396f8b30381fd1d0b73d3f0e9f
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: d8187c82033a872752a314b03950793cad4ac0d1
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93373823"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97939161"
 ---
 # <a name="no-locxamarinforms-carouselview-interaction"></a>Xamarin.Forms CarouselView の相互作用
 
@@ -25,15 +25,16 @@ ms.locfileid: "93373823"
 
 - `CurrentItem`型の、 `object` 現在表示されている項目。 このプロパティの既定のバインディングモードは `TwoWay` で、 `null` 表示するデータがない場合は値が設定されます。
 - `CurrentItemChangedCommand``ICommand`現在の項目が変更されたときに実行される、型の。
-- `CurrentItemChangedCommandParameter`: `object` 型、`CurrentItemChangedCommand` に渡されるパラメーター。
+- `CurrentItemChangedCommandParameter`: `object` 型、`CurrentItemChangedCommand`に渡されるパラメーターです。
 - `IsBounceEnabled`が `bool` `CarouselView` コンテンツ境界でバウンスするかどうかを指定する型の。 既定値は `true` です。
 - `IsSwipeEnabled`の型の `bool` 。スワイプジェスチャによって表示項目が変更されるかどうかを決定します。 既定値は `true` です。
+- `Loop`型の。 `bool` これは、が `CarouselView` 項目のコレクションへのループアクセスを提供するかどうかを決定します。 既定値は `true` です。
 - `Position`型の、 `int` 基になるコレクション内の現在の項目のインデックス。 このプロパティの既定のバインディングモードは `TwoWay` であり、表示するデータがない場合は0の値が設定されます。
 - `PositionChangedCommand``ICommand`位置が変更されたときに実行される、型の。
-- `PositionChangedCommandParameter`: `object` 型、`PositionChangedCommand` に渡されるパラメーター。
+- `PositionChangedCommandParameter`: `object` 型、`PositionChangedCommand`に渡されるパラメーターです。
 - `VisibleViews`型の `ObservableCollection<View>` 。現在表示されている項目のオブジェクトを格納する読み取り専用のプロパティ。
 
-これらのプロパティはすべて、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトを基盤としています。つまり、プロパティはデータ バインディングの対象にすることができます。
+これらのプロパティはすべて、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトによって支持されています。つまり、プロパティがデータ バインディングの対象になる場合があります。
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)`CurrentItemChanged` `CurrentItem` ユーザーのスクロールによって、またはアプリケーションによってプロパティが設定されたときに、プロパティが変更されたときに発生するイベントを定義します。 `CurrentItemChangedEventArgs`イベントに付随するオブジェクトに `CurrentItemChanged` は、次の2種類のプロパティがあり `object` ます。
 
@@ -52,7 +53,7 @@ ms.locfileid: "93373823"
 > [!IMPORTANT]
 > プロパティが変更さ `Position` れると、プロパティが変更され `CurrentItem` ます。 これにより、が実行され、イベントが発生し `PositionChangedCommand` `PositionChanged` ます。
 
-### <a name="event"></a>event
+### <a name="event"></a>イベント
 
 次の XAML の例は、 [`CarouselView`](xref:Xamarin.Forms.CarouselView) イベントハンドラーを使用して、変更中の現在の項目に応答するを示しています。
 
@@ -63,7 +64,7 @@ ms.locfileid: "93373823"
 </CarouselView>
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView();
@@ -97,7 +98,7 @@ void OnCurrentItemChanged(object sender, CurrentItemChangedEventArgs e)
 </CarouselView>
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView();
@@ -125,7 +126,7 @@ public ICommand ItemChangedCommand => new Command<Monkey>((item) =>
 > [!NOTE]
 > プロパティを `Position` 0 に設定すると、基になるコレクションの最初の項目が表示されます。
 
-### <a name="event"></a>event
+### <a name="event"></a>イベント
 
 次の XAML の例は、 [`CarouselView`](xref:Xamarin.Forms.CarouselView) イベントハンドラーを使用してプロパティの変更に応答するを示してい `Position` ます。
 
@@ -136,7 +137,7 @@ public ICommand ItemChangedCommand => new Command<Monkey>((item) =>
 </CarouselView>
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView();
@@ -170,7 +171,7 @@ void OnPositionChanged(object sender, PositionChangedEventArgs e)
 </CarouselView>
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView();
@@ -202,7 +203,7 @@ public ICommand PositionChangedCommand => new Command<int>((position) =>
 </CarouselView>
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView();
@@ -247,7 +248,7 @@ public class MonkeysViewModel : INotifyPropertyChanged
 </CarouselView>
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView();
@@ -355,6 +356,10 @@ public class MonkeysViewModel : INotifyPropertyChanged
 ## <a name="disable-bounce"></a>バウンスを無効にする
 
 既定では、 [`CarouselView`](xref:Xamarin.Forms.CarouselView) コンテンツの境界で項目がバウンスされます。 これは、プロパティをに設定することによって無効にすることができ `IsBounceEnabled` `false` ます。
+
+## <a name="disable-loop"></a>ループの無効化
+
+既定では、は、 [`CarouselView`](xref:Xamarin.Forms.CarouselView) 項目のコレクションへのループアクセスを提供します。 したがって、コレクション内の最初の項目から後ろにスワイプすると、コレクションの最後の項目が表示されます。 同様に、コレクション内の最後の項目からのスワイプ転送は、コレクションの最初の項目に戻ります。 この動作は、プロパティをに設定することによって無効にすることができ `Loop` `false` ます。
 
 ## <a name="disable-swipe-interaction"></a>スワイプ操作を無効にする
 

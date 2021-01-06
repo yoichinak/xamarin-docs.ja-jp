@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9459ce5e8b8f167f94d1f88e79d9acb32e4788bf
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 6aa435cebe1976897f8165d1e645179b1ca4aa9f
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93370612"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940318"
 ---
 # <a name="navigationpage-bar-text-color-mode-on-ios"></a>IOS の NavigationPage バーテキストカラーモード
 
@@ -24,14 +24,14 @@ ms.locfileid: "93370612"
 このプラットフォーム固有の設定は、のステータスバーのテキストの色を、 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ナビゲーションバーの明るさに合わせて調整するかどうかを制御します。 これは、 [`NavigationPage.StatusBarTextColorMode`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.StatusBarTextColorModeProperty) 添付プロパティを列挙体の値に設定することによって XAML で使用され [`StatusBarTextColorMode`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode) ます。
 
 ```xaml
-<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+<FlyoutPage xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     x:Class="PlatformSpecifics.iOSStatusBarTextColorModePage">
-    <MasterDetailPage.Master>
-        <ContentPage Title="Master Page Title" />
-    </MasterDetailPage.Master>
-    <MasterDetailPage.Detail>
+    <FlyoutPage.Flyout>
+        <ContentPage Title="Flyout Page Title" />
+    </FlyoutPage.Flyout>
+    <FlyoutPage.Detail>
         <NavigationPage BarBackgroundColor="Blue" BarTextColor="White"
                         ios:NavigationPage.StatusBarTextColorMode="MatchNavigationBarTextLuminosity">
             <x:Arguments>
@@ -40,8 +40,8 @@ ms.locfileid: "93370612"
                 </ContentPage>
             </x:Arguments>
         </NavigationPage>
-    </MasterDetailPage.Detail>
-</MasterDetailPage>
+    </FlyoutPage.Detail>
+</FlyoutPage>
 
 ```
 
@@ -54,13 +54,13 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 IsPresentedChanged += (sender, e) =>
 {
-    var mdp = sender as MasterDetailPage;
-    if (mdp.IsPresented)
-        ((Xamarin.Forms.NavigationPage)mdp.Detail)
+    var flyoutPage = sender as FlyoutPage;
+    if (flyoutPage.IsPresented)
+        ((Xamarin.Forms.NavigationPage)flyoutPage.Detail)
           .On<iOS>()
           .SetStatusBarTextColorMode(StatusBarTextColorMode.DoNotAdjust);
     else
-        ((Xamarin.Forms.NavigationPage)mdp.Detail)
+        ((Xamarin.Forms.NavigationPage)flyoutPage.Detail)
           .On<iOS>()
           .SetStatusBarTextColorMode(StatusBarTextColorMode.MatchNavigationBarTextLuminosity);
 };
@@ -73,7 +73,7 @@ IsPresentedChanged += (sender, e) =>
 
 また、[ `GetStatusBarTextColorMode` ] (xref: Xamarin.FormsPlatformConfiguration. Xamarin.Forms GetStatusBarTextColorMode () を指定します。IPlatformElementConfiguration { Xamarin.Forms .PlatformConfiguration。 iOS、 Xamarin.Forms 。NavigationPage})) メソッドを使用して [`StatusBarTextColorMode`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode) 、に適用されている列挙体の現在の値を取得でき [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ます。
 
-結果として、ナビゲーションバーの明るさに合わせて、のステータスバーのテキストの色を [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 調整できます。 この例では、ユーザーがのページとページを切り替えると、ステータスバーのテキストの色が変わり [`Master`](xref:Xamarin.Forms.MasterDetailPage.Master) [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) ます。
+結果として、ナビゲーションバーの明るさに合わせて、のステータスバーのテキストの色を [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 調整できます。 この例では、ユーザーがのページとページを切り替えると、ステータスバーのテキストの色が変わり [`Flyout`](xref:Xamarin.Forms.FlyoutPage.Flyout) [`Detail`](xref:Xamarin.Forms.FlyoutPage.Detail) [`FlyoutPage`](xref:Xamarin.Forms.FlyoutPage) ます。
 
 ![ステータスバーのテキストの色モード Platform-Specific](status-bar-text-color-images/status-bar-text-color-mode.png)
 

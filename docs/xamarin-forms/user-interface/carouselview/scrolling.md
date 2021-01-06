@@ -6,20 +6,18 @@ ms.assetid: 92D7B618-07FA-4343-9D0F-212525E92C39
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/28/2020
+ms.date: 09/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 58d0da21c81586a2cee2268c5d2df668eab0515a
-ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
+ms.openlocfilehash: 4c05e6fef969e002befe2afadb8e7db9e477aaba
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94590299"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940513"
 ---
 # <a name="no-locxamarinforms-carouselview-scrolling"></a>Xamarin.Forms CarouselView スクロール
-
-![プレリリース API](~/media/shared/preview.png)
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
@@ -57,7 +55,7 @@ ms.locfileid: "94590299"
 </CarouselView>
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView();
@@ -181,7 +179,7 @@ carouselViewView.ScrollTo(monkey, position: ScrollToPosition.End);
 </CarouselView>
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView
@@ -247,7 +245,7 @@ CarouselView carouselView = new CarouselView
 </CarouselView>
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView
@@ -283,7 +281,7 @@ CarouselView carouselView = new CarouselView
 </CarouselView>
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView
@@ -317,7 +315,7 @@ CarouselView carouselView = new CarouselView
 </CarouselView>
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView

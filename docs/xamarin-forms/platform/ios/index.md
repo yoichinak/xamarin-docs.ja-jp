@@ -1,5 +1,5 @@
 ---
-title: の iOS プラットフォーム機能Xamarin.Forms
+title: の iOS プラットフォーム機能 Xamarin.Forms
 description: IOS 固有の機能をアプリケーションに追加する Xamarin.Forms 。
 ms.prod: xamarin
 ms.assetid: 634AB62E-68C8-454C-838B-F1CC4E4E21BC
@@ -10,16 +10,16 @@ ms.date: 03/05/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f11100b6e13a3ace2ae3a56bcfc279294089d842
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: b9c000f0a30aba0e5ed8cc1d1458355770a26ffc
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939036"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940266"
 ---
-# <a name="ios-platform-features-in-xamarinforms"></a>の iOS プラットフォーム機能Xamarin.Forms
+# <a name="ios-platform-features-in-no-locxamarinforms"></a>の iOS プラットフォーム機能 Xamarin.Forms
 
-Xamarin.FormsIOS 用アプリケーションの開発には、Visual Studio が必要です。 [[サポートされているプラットフォーム] ページ](~/get-started/supported-platforms.md)には、前提条件に関する詳細情報が表示されます。
+Xamarin.FormsIOS 用アプリケーションの開発には、Visual Studio が必要です。 [ [サポートされているプラットフォーム] ページ](~/get-started/supported-platforms.md) には、前提条件に関する詳細情報が表示されます。
 
 ## <a name="platform-specifics"></a>プラットフォーム固有設定
 
@@ -49,7 +49,7 @@ IOS のビューには、次のプラットフォーム固有の機能が用意�
 
 IOS のページには、次のプラットフォーム固有の機能が用意されてい Xamarin.Forms ます。
 
-- マスターページを公開するときに、の詳細ページ [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) に影が適用されているかどうかを制御します。 詳細については、「 [Masterのページシャドウ](masterdetailpage-shadow.md)」を参照してください。
+- の詳細ページに影が適用されているかどうかを制御する [`FlyoutPage`](xref:Xamarin.Forms.FlyoutPage) (ポップアップページが公開されている場合)。 詳細については、「 [FlyoutPage Shadow](flyoutpage-shadow.md)」を参照してください。
 - でナビゲーションバーの区切り記号を非表示にする [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 。 詳細については、「 [iOS の Navigationpage バーの区切り記号](navigation-bar-separator.md)」を参照してください。
 - ナビゲーションバーを半透明にするかどうかを制御します。 詳細については、「 [iOS でのナビゲーションバーの透明](navigation-bar-translucent.md)度」を参照してください。
 - ナビゲーションバーの明るさに合わせて、のステータスバーのテキストの色を調整するかどうか [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) を制御します。 詳細については、「 [iOS の Navigationpage バーテキストカラーモード](status-bar-text-color.md)」を参照してください。
@@ -57,7 +57,7 @@ IOS のページには、次のプラットフォーム固有の機能が用意�
 - でのホームインジケーターの表示を設定し [`Page`](xref:Xamarin.Forms.Page) ます。 詳細については、「 [iOS でのホームインジケーターの表示](page-home-indicator.md)」を参照してください。
 - でステータスバーの可視性を設定し [`Page`](xref:Xamarin.Forms.Page) ます。 詳細については、「 [iOS でのページステータスバーの表示](page-status-bar-visibility.md)」を参照してください。
 - すべての iOS デバイスに安全なページコンテンツが画面上に配置されていることを確認します。 詳細については、「 [iOS の安全な領域レイアウトガイド](page-safe-area-layout.md)」を参照してください。
-- モーダルページのプレゼンテーションスタイルを設定します。 詳細については、「[モーダルページプレゼンテーションスタイル](page-presentation-style.md)」を参照してください。
+- モーダルページのプレゼンテーションスタイルを設定します。 詳細については、「 [モーダルページプレゼンテーションスタイル](page-presentation-style.md)」を参照してください。
 - のタブバーの透明度モードを設定 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) します。 詳細については、「 [TabbedPage 半透明 TabBar On iOS](tabbedpage-translucent-tabbar.md)」を参照してください。
 
 IOS のレイアウトには、次のプラットフォーム固有の機能が用意されてい Xamarin.Forms ます。
@@ -72,9 +72,9 @@ IOS のクラスには、次のプラットフォーム固有の機能が用意�
 
 ## <a name="ios-specific-formatting"></a>iOS 固有の書式設定
 
-Xamarin.Formsクロスプラットフォームのユーザーインターフェイスのスタイルと色を設定できますが、ios プロジェクトでプラットフォーム Api を使用して iOS のテーマを設定するためのオプションが他にもあります。
+Xamarin.Forms クロスプラットフォームのユーザーインターフェイスのスタイルと色を設定できますが、ios プロジェクトでプラットフォーム Api を使用して iOS のテーマを設定するためのオプションが他にもあります。
 
-[詳細](formatting.md)については、「**情報 plist**構成」や「Api」など、iOS 固有の api を使用したユーザーインターフェイスの書式設定に関する説明を参照して `UIAppearance` ください。
+[詳細](formatting.md) については、「 **情報 plist** 構成」や「Api」など、iOS 固有の api を使用したユーザーインターフェイスの書式設定に関する説明を参照して `UIAppearance` ください。
 
 ![iOS のテーマ](images/status-white-sml.png)
 

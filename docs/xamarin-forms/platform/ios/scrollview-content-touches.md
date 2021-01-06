@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e028c506745bfd61aaff8e530a4f13d2429864ff
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 072f5db9115069fad547bb363865a609e5167ce8
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93373914"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97939941"
 ---
 # <a name="scrollview-content-touches-on-ios"></a>IOS での ScrollView コンテンツへの触れる
 
@@ -24,12 +24,12 @@ ms.locfileid: "93373914"
 IOS のでタッチジェスチャが開始されると、暗黙的なタイマーがトリガーされ [`ScrollView`](xref:Xamarin.Forms.ScrollView) `ScrollView` ます。これは、タイマースパン内のユーザー操作に基づいて、ジェスチャを処理するか、そのコンテンツに渡すかどうかを決定します。 既定では、iOS はコンテンツにタッチしますが、これにより、 `ScrollView` コンテンツが `ScrollView` 必要になったときにジェスチャに優先されない状況が発生する可能性があります。 したがって、このプラットフォーム固有のは、がタッチジェスチャを処理するか、そのコンテンツに渡すかを制御し `ScrollView` ます。 添付プロパティを値に設定することにより、XAML で使用 `ScrollView.ShouldDelayContentTouches` され `boolean` ます。
 
 ```xaml
-<MasterDetailPage ...
+<FlyoutPage ...
                   xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core">
-    <MasterDetailPage.Master>
+    <FlyoutPage.Flyout>
         <ContentPage Title="Menu" BackgroundColor="Blue" />
-    </MasterDetailPage.Master>
-    <MasterDetailPage.Detail>
+    </FlyoutPage.Flyout>
+    <FlyoutPage.Detail>
         <ContentPage>
             <ScrollView x:Name="scrollView" ios:ScrollView.ShouldDelayContentTouches="false">
                 <StackLayout Margin="0,20">
@@ -38,8 +38,8 @@ IOS のでタッチジェスチャが開始されると、暗黙的なタイマ�
                 </StackLayout>
             </ScrollView>
         </ContentPage>
-    </MasterDetailPage.Detail>
-</MasterDetailPage>
+    </FlyoutPage.Detail>
+</FlyoutPage>
 ```
 
 または、fluent API を使用して C# から使用することもできます。
@@ -58,7 +58,7 @@ scrollView.On<iOS>().SetShouldDelayContentTouches(false);
 scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDelayContentTouches());
 ```
 
-結果として、は、 [`ScrollView`](xref:Xamarin.Forms.ScrollView) コンテンツの受信遅延を無効にすることができます。このシナリオでは、はの [`Slider`](xref:Xamarin.Forms.Slider) ページではなくジェスチャを受け取り [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) ます。
+結果として、は、 [`ScrollView`](xref:Xamarin.Forms.ScrollView) コンテンツの受信遅延を無効にすることができます。このシナリオでは、はの [`Slider`](xref:Xamarin.Forms.Slider) ページではなくジェスチャを受け取り [`Detail`](xref:Xamarin.Forms.FlyoutPage.Detail) [`FlyoutPage`](xref:Xamarin.Forms.FlyoutPage) ます。
 
 [![ScrollView Delay コンテンツはプラットフォーム固有のものに触れる](scrollview-content-touches-images/scrollview-delay-content-touches.png)](scrollview-content-touches-images/scrollview-delay-content-touches-large.png#lightbox "ScrollView Delay コンテンツに対するタッチ Platform-Specific")
 

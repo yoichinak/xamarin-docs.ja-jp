@@ -6,20 +6,18 @@ ms.assetid: 07DE3D66-1820-4642-BDDF-84146D40C99D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/24/2020
+ms.date: 09/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6fe7ce75af14e25fa3dc213f0fb5ed99a2e70a87
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: f3a89e0c5c49ec790cf35443030d50d3ddef9ed4
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93374824"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97939811"
 ---
 # <a name="no-locxamarinforms-shapes-geometries"></a>Xamarin.Forms 図形: ジオメトリ
-
-![プレリリース API](~/media/shared/preview.png)
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
@@ -32,6 +30,9 @@ ms.locfileid: "93374824"
 - `LineGeometry`。線のジオメトリを表します。
 - `PathGeometry`。円弧、曲線、楕円、線、および四角形で構成できる複雑な図形のジオメトリを表します。
 - `RectangleGeometry`。四角形または正方形のジオメトリを表します。
+
+> [!NOTE]
+> `RoundedRectangleGeometry`クラスから派生するクラスもあり `GeometryGroup` ます。 詳細については、「 [RoundRectangleGeometry](#roundrectanglegeometry)」を参照してください。
 
 `Geometry`クラスと `Shape` クラスは、どちらも2d 図形を記述しますが、重要な違いがあると思われます。 クラスはクラスから派生し、クラスはクラスから派生し `Geometry` [`BindableObject`](xref:Xamarin.Forms.BindableObject) `Shape` [`View`](xref:Xamarin.Forms.View) ます。 そのため、 `Shape` オブジェクトは、自身をレンダリングしてレイアウトシステムに参加させることができますが、 `Geometry` オブジェクトは使用できません。 オブジェクト `Shape` はオブジェクトよりも簡単に使用 `Geometry` `Geometry` できますが、オブジェクトの方が汎用性があります。 オブジェクトを使用して2D グラフィックスをレンダリングしている間に、 `Shape` オブジェクトを使用して `Geometry` 2d グラフィックスのジオメトリック領域を定義し、領域をクリッピング用に定義できます。
 
@@ -62,8 +63,7 @@ ms.locfileid: "93374824"
 
 ```xaml
 <Path Fill="Blue"
-      Stroke="Red"
-      StrokeThickness="1">
+      Stroke="Red">
   <Path.Data>
     <EllipseGeometry Center="50,50"
                      RadiusX="50"
@@ -90,8 +90,7 @@ ms.locfileid: "93374824"
 次の例は、オブジェクトでを作成して表示する方法を示してい `LineGeometry` `Path` ます。
 
 ```xaml
-<Path Stroke="Black"
-      StrokeThickness="1">
+<Path Stroke="Black">
   <Path.Data>
     <LineGeometry StartPoint="10,20"
                   EndPoint="100,130" />
@@ -116,8 +115,7 @@ ms.locfileid: "93374824"
 
 ```xaml
 <Path Fill="Blue"
-      Stroke="Red"
-      StrokeThickness="1">
+      Stroke="Red">
   <Path.Data>
     <RectangleGeometry Rect="10,10,150,100" />
   </Path.Data>
@@ -159,8 +157,7 @@ ms.locfileid: "93374824"
 `PathFigure` 内のセグメントは 1 つの幾何学図形に結合されて、各セグメントの終点が次のセグメントの始点になります。 `PathFigure` の `StartPoint` プロパティでは、最初のセグメントが描画される開始点を指定します。 後続の各セグメントは、前のセグメントの終点から始まります。 たとえば、からへの垂直線を定義するには、 `10,50` `10,150` プロパティを `StartPoint` に設定し、プロパティ設定を使用して `10,50` を作成し `LineSegment` `Point` `10,150` ます。
 
 ```xaml
-<Path Stroke="Black"
-      StrokeThickness="1">
+<Path Stroke="Black">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
@@ -206,13 +203,12 @@ ms.locfileid: "93374824"
 次の例は、オブジェクトでを作成して表示する方法を示してい `ArcSegment` `Path` ます。
 
 ```xaml
-<Path Stroke="Black"
-      StrokeThickness="1">
+<Path Stroke="Black">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
                 <PathFigureCollection>
-                    <PathFigure StartPoint="10,100">
+                    <PathFigure StartPoint="10,10">
                         <PathFigure.Segments>
                             <PathSegmentCollection>
                                 <ArcSegment Size="100,50"
@@ -230,7 +226,7 @@ ms.locfileid: "93374824"
 </Path>
 ```
 
-この例では、楕円弧は (10100) から (200100) に描画されます。
+この例では、楕円弧は (10, 10) から (200100) に描画されます。
 
 ### <a name="create-a-beziersegment"></a>System.windows.media.beziersegment> を作成する
 
@@ -252,8 +248,7 @@ ms.locfileid: "93374824"
 次の例は、オブジェクトでを作成して表示する方法を示してい `BezierSegment` `Path` ます。
 
 ```xaml
-<Path Stroke="Black"
-      StrokeThickness="1">
+<Path Stroke="Black">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
@@ -290,8 +285,7 @@ ms.locfileid: "93374824"
 次の例では、オブジェクト内のオブジェクトを作成および表示する方法を示し `LineSegment` `Path` ます。
 
 ```xaml
-<Path Stroke="Black"
-      StrokeThickness="1"
+<Path Stroke="Black"      
       Aspect="Uniform"
       HorizontalOptions="Start">
     <Path.Data>
@@ -330,8 +324,7 @@ ms.locfileid: "93374824"
 次の例は、オブジェクトでを作成して表示する方法を示してい `PolyBezierSegment` `Path` ます。
 
 ```xaml
-<Path Stroke="Black"
-      StrokeThickness="1">
+<Path Stroke="Black">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
@@ -366,8 +359,7 @@ ms.locfileid: "93374824"
 次の例は、オブジェクトでを作成して表示する方法を示してい `PolyLineSegment` `Path` ます。
 
 ```xaml
-<Path Stroke="Black"
-      StrokeThickness="1">
+<Path Stroke="Black">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
@@ -398,8 +390,7 @@ ms.locfileid: "93374824"
 次の例では、オブジェクトでを作成およびレンダリングする方法を示し `PolyQuadraticBezierSegment` `Path` ます。
 
 ```xaml
-<Path Stroke="Black"
-      StrokeThickness="1">
+<Path Stroke="Black">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
@@ -439,8 +430,7 @@ ms.locfileid: "93374824"
 次の例は、オブジェクトでを作成して表示する方法を示してい `QuadraticBezierSegment` `Path` ます。
 
 ```xaml
-<Path Stroke="Black"
-      StrokeThickness="1">
+<Path Stroke="Black">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
@@ -469,8 +459,7 @@ ms.locfileid: "93374824"
 より複雑なジオメトリは、 `PathSegment` オブジェクトの組み合わせを使用して作成できます。 次の例では、、、およびを使用して図形を作成し `BezierSegment` `LineSegment` `ArcSegment` ます。
 
 ```xaml
-<Path Stroke="Black"
-      StrokeThickness="1">
+<Path Stroke="Black">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
@@ -595,6 +584,34 @@ ms.locfileid: "93374824"
 この例では、 `EllipseGeometry` x 半径が同じで、中心座標が異なる4つのオブジェクトが結合されています。 これにより、既定の塗りつぶしルールにより、内側がオレンジ色になる4つの重なり合う円が作成され `EvenOdd` ます。
 
 ![System.windows.media.geometrygroup>](geometry-images/geometrygroup.png "System.windows.media.geometrygroup>")
+
+### <a name="roundrectanglegeometry"></a>RoundRectangleGeometry
+
+丸い四角形のジオメトリは、四角形のジオメトリ (角が丸い四角形) を表し、角の半径と、 [`Rect`](xref:Xamarin.Forms.Rect) その相対位置と高さと幅を指定する構造体で定義されます。
+
+クラス `RoundRectangleGeometry` から派生したクラスは、 `GeometryGroup` 次のプロパティを定義します。
+
+- `CornerRadius`型の。 [`CornerRadius`](xref:Xamarin.Forms.CornerRadius) これは、ジオメトリの角の半径です。
+- `Rect`[`Rect`](xref:Xamarin.Forms.Rect)四角形の大きさを表す型の。
+
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトが基になっています。つまり、これらは、データ バインディングの対象にすることができ、スタイルを設定できます。
+
+> [!NOTE]
+> によって使用される塗りつぶしルール `RoundRectangleGeometry` が `FillRule.Nonzero` です。 塗りつぶしルールの詳細については、「 [ Xamarin.Forms 図形: 塗りつぶしルール](fillrules.md)」を参照してください。
+
+次の例は、オブジェクトでを作成して表示する方法を示してい `RoundRectangleGeometry` `Path` ます。
+
+```xaml
+<Path Fill="Blue"
+      Stroke="Red">
+    <Path.Data>
+        <RoundRectangleGeometry CornerRadius="5"
+                                Rect="10,10,150,100" />
+    </Path.Data>
+</Path>
+```
+
+四角形の位置と大きさは、構造体によって定義され [`Rect`](xref:Xamarin.Forms.Rect) ます。 この例では、位置は (10, 10)、幅は150、高さは100デバイスに依存しない単位です。 さらに、四角形のコーナーは、デバイスに依存しない5つの単位の半径で丸められます。
 
 ## <a name="clip-with-a-geometry"></a>Geometry を使用してクリップする
 

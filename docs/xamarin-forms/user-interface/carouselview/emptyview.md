@@ -6,20 +6,18 @@ ms.assetid: C6DEE1A9-63FC-4889-BC77-F401D5D7DF32
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/03/2019
+ms.date: 09/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5aa20e29e22df9de1d6cdd6208e56fa2e0fe0325
-ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
+ms.openlocfilehash: 26db8044111741c7198eb1b125986e20f55b6add
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94590351"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940539"
 ---
 # <a name="no-locxamarinforms-carouselview-emptyview"></a>Xamarin.Forms CarouselView EmptyView
-
-![プレリリース API](~/media/shared/preview.png)
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
@@ -46,7 +44,7 @@ ms.locfileid: "94590351"
               EmptyView="No items to display." />
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView
@@ -95,7 +93,7 @@ carouselView.SetBinding(ItemsView.ItemsSourceProperty, "EmptyMonkeys");
 
 この例では、冗長のようなもの [`ContentView`](xref:Xamarin.Forms) がのルート要素として追加されてい [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) ます。 これは、内部的には、 `EmptyView` レイアウトのコンテキストを提供しないネイティブコンテナーにが追加されるためです Xamarin.Forms 。 したがって、を構成するビューを配置するには、ルートレイアウトを `EmptyView` 追加する必要があります。その子は、ルートレイアウト内に配置できるレイアウトです。
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 SearchBar searchBar = new SearchBar { ... };
@@ -149,7 +147,7 @@ carouselView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 </StackLayout>
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 SearchBar searchBar = new SearchBar { ... };
@@ -291,7 +289,7 @@ void ToggleEmptyView(bool isToggled)
 </ContentPage>
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 SearchBar searchBar = new SearchBar { ... };

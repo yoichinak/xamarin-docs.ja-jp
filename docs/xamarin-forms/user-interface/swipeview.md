@@ -6,20 +6,18 @@ ms.assetId: 602456B5-701B-4948-B454-B1F31283F1CF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/26/2020
+ms.date: 10/05/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c9ebee7914d8d2ccfb284910f31d87999b22701f
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: de3d7df922a0b6bdc6644e2684c6f01176abbe42
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93369650"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940500"
 ---
 # <a name="no-locxamarinforms-swipeview"></a>Xamarin.Forms SwipeView
-
-![プレリリース API](~/media/shared/preview.png)
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-swipeviewdemos/)
 
@@ -27,18 +25,13 @@ ms.locfileid: "93369650"
 
 [![IOS と Android の CollectionView の SwipeView スワイプ項目のスクリーンショット](swipeview-images/swipeview-collectionview.png "SwipeView スワイプ項目")](swipeview-images/swipeview-collectionview-large.png#lightbox "SwipeView スワイプ項目")
 
-`SwipeView` は4.4 で使用でき Xamarin.Forms ます。 ただし、現在は実験的であり、次のコード行を `AppDelegate` iOS 上のクラス、Android 上のクラス、 `MainActivity` または UWP のクラスに追加してからを呼び出す必要があり `App` `Forms.Init` ます。
-
-```csharp
-Forms.SetFlags("SwipeView_Experimental");
-```
-
 `SwipeView` は次の特性を定義します。
 
 - `LeftItems`型の `SwipeItems` 。これは、コントロールが左側からスワイプたときに呼び出すことができるスワイプ項目を表します。
 - `RightItems`型の `SwipeItems` 。コントロールが右側からスワイプたときに呼び出すことができるスワイプ項目を表します。
 - `TopItems``SwipeItems`コントロールが上からスワイプされたときに呼び出すことができるスワイプ項目を表す、型の。
 - `BottomItems``SwipeItems`コントロールが下からスワイプされたときに呼び出すことができるスワイプ項目を表す、型の。
+- `Threshold`型の。これは、スワイプ `double` ジェスチャを発生させてスワイプ項目を完全に表示するデバイスに依存しない単位の数を表します。
 
 これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトが基になっています。つまり、これらは、データ バインディングの対象にすることができ、スタイルを設定できます。
 
@@ -87,7 +80,7 @@ Forms.SetFlags("SwipeView_Experimental");
 </SwipeView>
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 // SwipeItems
@@ -186,7 +179,7 @@ SwipeView swipeView = new SwipeView
 
 [![IOS と Android の SwipeView スワイプ項目のスクリーンショット](swipeview-images/swipeview-swipeitems.png "SwipeView スワイプ項目")](swipeview-images/swipeview-swipeitems-large.png#lightbox "SwipeView スワイプ項目")
 
-`SwipeItem`がタップされると、その `Invoked` イベントが発生し、登録されているイベントハンドラーによって処理されます。 または、 `Command` `ICommand` が呼び出されたときに実行される実装にプロパティを設定することもでき `SwipeItem` ます。
+`SwipeItem`がタップされると、その `Invoked` イベントが発生し、登録されているイベントハンドラーによって処理されます。 さらに、 `MenuItem.Clicked` イベントが発生します。 または、 `Command` `ICommand` が呼び出されたときに実行される実装にプロパティを設定することもでき `SwipeItem` ます。
 
 > [!NOTE]
 > の外観 `SwipeItem` がプロパティまたはプロパティを使用してのみ定義されている場合 `Text` `IconImageSource` 、コンテンツは常に中央揃えになります。
@@ -234,6 +227,30 @@ SwipeView swipeView = new SwipeView
 - `Left` 左スワイプが発生したことを示します。
 - `Up` 上向きのスワイプが発生したことを示します。
 - `Down` 下方向のスワイプが発生したことを示します。
+
+## <a name="swipe-threshold"></a>スワイプのしきい値
+
+`SwipeView` には、型のプロパティが含まれてい `Threshold` `double` ます。これは、スワイプジェスチャをトリガーしてスワイプ項目を完全に表示する、デバイスに依存しない単位の数を表します。
+
+次の例は、プロパティを設定するを示してい `SwipeView` `Threshold` ます。
+
+```xaml
+<SwipeView Threshold="200">
+    <SwipeView.LeftItems>
+        <SwipeItems>
+            <SwipeItem Text="Favorite"
+                       IconImageSource="favorite.png"
+                       BackgroundColor="LightGreen" />
+        </SwipeItems>
+    </SwipeView.LeftItems>
+    <!-- Content -->
+</SwipeView>
+```
+
+この例では、 `SwipeView` が完全に公開される前に、がデバイスに依存しない200のスワイプである必要があり `SwipeItem` ます。
+
+> [!NOTE]
+> 現時点で `Threshold` は、プロパティは iOS と Android にのみ実装されています。
 
 ## <a name="swipe-mode"></a>スワイプモード
 
