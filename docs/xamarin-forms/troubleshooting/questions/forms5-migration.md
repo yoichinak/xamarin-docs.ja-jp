@@ -1,5 +1,6 @@
 ---
 title: アプリを5.0 に移行操作方法 Xamarin.Forms ますか?
+description: UWP で Android に重点を置いて、アプリを5.0 に移行する方法につい Xamarin.Forms て説明します。
 ms.assetid: AD04FEE9-B8F5-4CA5-AB31-EF1225867E4B
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -10,12 +11,12 @@ ms.date: 10/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a97cd62906ea7a75609d957e3a85a268807c4f46
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: 8f93d20dac789abed57f8f41bf41778ad50a5fb5
+ms.sourcegitcommit: 995ee23d93e08dceb8754cc6c682cd2f4594345b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97940841"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97972319"
 ---
 # <a name="how-do-i-migrate-my-app-to-no-locxamarinforms-50"></a>アプリを5.0 に移行操作方法 Xamarin.Forms ますか?
 
@@ -111,10 +112,10 @@ ToolbarResource = Resource.Layout.Toolbar;
 
 ## <a name="uwp"></a>UWP
 
-Xamarin.Forms 5.0 は、UWP プロジェクト用の >= 10.0.17763.0 のターゲットプラットフォームバージョンを推奨します。 ターゲットプラットフォームのバージョンは、Visual Studio または UWP ファイルで設定できます。
+Xamarin.Forms 5.0 は、UWP プロジェクト用の >= 10.0.18362.0 のターゲットプラットフォームバージョンを推奨します。 ターゲットプラットフォームのバージョンは、Visual Studio または UWP ファイルで設定できます。
 
 ```xml
-<TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17763.0</TargetPlatformVersion>
+<TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.18362.0</TargetPlatformVersion>
 ```
 
 UWP プロジェクトが下位のターゲットプラットフォームバージョンを使用している場合は、ビルド警告が生成されます。
