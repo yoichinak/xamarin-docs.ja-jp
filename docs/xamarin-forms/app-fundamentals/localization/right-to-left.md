@@ -11,12 +11,12 @@ ms.date: 11/05/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 676e0f062d3ed83cf433188e646f1e96f84a77cc
-ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
+ms.openlocfilehash: 5d06b0467a5029fec6d0c92a683114b9e0d04685
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94590268"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940188"
 ---
 # <a name="right-to-left-localization"></a>右から左へのローカライズ
 
@@ -128,7 +128,6 @@ Xamarin.Forms での右から左へのローカライズには、現在いくつ
 - [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) のボタンの場所、ツール バー項目の場所、および切り替えアニメーションは、[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティではなく、デバイスのロケールによって制御されます。
 - [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) のスワイプ方向は反転されません。
 - [`Image`](xref:Xamarin.Forms.Image) のビジュアル コンテンツは反転されません。
-- [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert(System.String,System.String,System.String)) と [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet(System.String,System.String,System.String,System.String[])) の向きは、[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティではなく、デバイスのロケールによって制御されます。
 - [`WebView`](xref:Xamarin.Forms.WebView) のコンテンツでは [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティを優先しません。
 - テキストの配置を制御するには、`TextDirection` プロパティを追加する必要があります。
 
@@ -146,7 +145,7 @@ Xamarin.Forms での右から左へのローカライズには、現在いくつ
 ### <a name="uwp"></a>UWP
 
 - [`Editor`](xref:Xamarin.Forms.Editor) のテキストの配置は、[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティではなく、デバイスのロケールによって制御されます。
-- [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティは子の [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) に継承されません。
+- [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティは子の [`FlyoutPage`](xref:Xamarin.Forms.FlyoutPage) に継承されません。
 - [`ContextActions`](xref:Xamarin.Forms.Cell.ContextActions) のテキストの配置は、[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティではなく、デバイスのロケールによって制御されます。
 
 ## <a name="force-right-to-left-layout"></a>右から左へのレイアウトを強制する

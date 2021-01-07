@@ -10,12 +10,12 @@ ms.date: 11/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 05b7821a08140dda411842c5f978be2027fcc033
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: f37006e15ad4cc2c6c8d03f3c88c1c8f57fe4fd5
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93373976"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940071"
 ---
 # <a name="summary-of-chapter-25-page-varieties"></a>第 25 章の概要: さまざまなページ
 
@@ -122,5 +122,5 @@ Xamarin.Forms には、マスター ビューと詳細ビューを切り替え�
 
 - [第 25 章の全文 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch25-Apr2016.pdf)
 - [第 25 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25)
-- [マスター - 詳細ページ](~/xamarin-forms/app-fundamentals/navigation/master-detail-page.md)
+- [マスター - 詳細ページ](~/xamarin-forms/app-fundamentals/navigation/flyoutpage.md)
 - [タブ付きページ](~/xamarin-forms/app-fundamentals/navigation/tabbed-page.md)

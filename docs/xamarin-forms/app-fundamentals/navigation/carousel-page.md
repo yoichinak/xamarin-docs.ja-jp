@@ -10,12 +10,12 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e8dd18caf7ab6730c8529660d83511cf8c65edcf
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 289f2637b10e1ad163b0c3693176625f3bd82e6f
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93375162"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940097"
 ---
 # <a name="no-locxamarinforms-carousel-page"></a>Xamarin.Forms のカルーセル ページ
 
@@ -43,7 +43,7 @@ _Xamarin.Forms の CarouselPage は、ギャラリーのように、ユーザー
 > [!NOTE]
 > [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) では、UI の仮想化はサポートされません。 したがって、`CarouselPage` に含まれる子要素が多すぎると、パフォーマンスに影響する可能性があります。
 
-[`CarouselPage`](xref:Xamarin.Forms.CarouselPage) を [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) の [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) ページに埋め込む場合は、`CarouselPage` と `MasterDetailPage` の間でジェスチャが競合するのを防ぐため、[`MasterDetailPage.IsGestureEnabled`](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabledProperty) プロパティを `false` に設定する必要があります。
+[`CarouselPage`](xref:Xamarin.Forms.CarouselPage) を [`FlyoutPage`](xref:Xamarin.Forms.FlyoutPage) の [`Detail`](xref:Xamarin.Forms.FlyoutPage.Detail) ページに埋め込む場合は、`CarouselPage` と `FlyoutPage` の間でジェスチャが競合するのを防ぐため、[`FlyoutPage.IsGestureEnabled`](xref:Xamarin.Forms.FlyoutPage.IsGestureEnabledProperty) プロパティを `false` に設定する必要があります。
 
 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) の詳細については、Charles Petzold 氏著作の Xamarin.Forms ブックの[第 25 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)を参照してください。
 

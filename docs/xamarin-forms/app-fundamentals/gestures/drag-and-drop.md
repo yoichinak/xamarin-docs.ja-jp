@@ -10,27 +10,23 @@ ms.date: 10/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 30e77d4978e9a191c1ba19e80109f9854cc46f8f
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 4bd8715d7eb4fa593d62021721f9403672652754
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93375240"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940461"
 ---
 # <a name="add-drag-and-drop-gesture-recognizers"></a>ドラッグ アンド ドロップ ジェスチャ認識エンジンを追加する
-
-![プレリリース API](~/media/shared/preview.png)
 
 [![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture/)
 
 ドラッグ アンド ドロップ ジェスチャを使用すると、項目とそれに関連付けられているデータ パッケージを、連続するジェスチャを使用して、画面上のある位置から別の位置にドラッグできます。 ドラッグ アンド ドロップは 1 つのアプリケーション内で行うことも、あるアプリケーションで開始して別で終了することもできます。
 
 > [!IMPORTANT]
-> Xamarin.Forms のドラッグ アンド ドロップ ジェスチャ認識エンジンは現在試験段階であり、`DragAndDrop_Experimental` フラグを設定することによってのみ使用できます。 詳しくは、[試験的なフラグ](~/xamarin-forms/internals/experimental-flags.md)に関する記事を参照してください。
->
 > ドラッグ アンド ドロップ ジェスチャの認識は、iOS、Android、およびユニバーサル Windows プラットフォーム (UWP) でサポートされています。 ただし、iOS では、iOS 11 以降のプラットフォームが必要です。
 
-ドラッグ ジェスチャが開始される要素である " *ドラッグ ソース* " では、データ パッケージ オブジェクトを設定することにより、転送されるデータを提供できます。 ドラッグ ソースが解放されると、ドロップが発生します。 その後、ドラッグ ソースの下にある要素である " *ドロップ ターゲット* " により、データ パッケージが処理されます。
+ドラッグ ジェスチャが開始される要素である "*ドラッグ ソース*" では、データ パッケージ オブジェクトを設定することにより、転送されるデータを提供できます。 ドラッグ ソースが解放されると、ドロップが発生します。 その後、ドラッグ ソースの下にある要素である "*ドロップ ターゲット*" により、データ パッケージが処理されます。
 
 アプリケーションでドラッグ アンド ドロップを有効にするプロセスは次のとおりです。
 

@@ -10,12 +10,12 @@ ms.date: 09/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 374444307ef0b6cc6354d2f660834762bb566434
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 4df1afb80cc8b261d9bc6d022fe814fd411c0c3c
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93367960"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940084"
 ---
 # <a name="introduction-to-no-locxamarinforms-data-templates"></a>Xamarin.Forms データ テンプレートの概要
 
@@ -118,18 +118,7 @@ public class Person
 
 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) はデータの外観を指定するために使用され、通常はデータを表示するためにデータ バインディングが使用されます。 一般的な使用シナリオは、[`ListView`](xref:Xamarin.Forms.ListView) でオブジェクトのコレクションのデータを表示する場合です。 たとえば、`ListView` が `Person` オブジェクトのコレクションにバインドされている場合、`ListView.ItemTemplate` プロパティは `ListView` 内の各 `Person` オブジェクトの外観を定義する `DataTemplate` に設定されます。 `DataTemplate` には、各 `Person` オブジェクトのプロパティ値にバインドされる要素が含まれます。 データ バインディングの詳細については、「[Data Binding Basics](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)」 (データ バインディングの基礎) を参照してください。
 
-[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) は、次のプロパティの値として使用できます。
-
-- [`ListView.HeaderTemplate`](xref:Xamarin.Forms.ListView.HeaderTemplate)
-- [`ListView.FooterTemplate`](xref:Xamarin.Forms.ListView.FooterTemplate)
-- [`ListView.GroupHeaderTemplate`](xref:Xamarin.Forms.ListView.GroupHeaderTemplate)
-- [`ItemsView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1)。これは [`ListView`](xref:Xamarin.Forms.ListView) によって継承されます。
-- [`MultiPage.ItemTemplate`](xref:Xamarin.Forms.MultiPage`1)。これは [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)、[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage)、[`TabbedPage`](xref:Xamarin.Forms.TabbedPage) によって継承されます。
-
-> [!NOTE]
-> [`TableView`](xref:Xamarin.Forms.TableView) は [`Cell`](xref:Xamarin.Forms.Cell) オブジェクトを利用しますが、[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) は使用しない点に注意してください。 これは、データ バインディングは常に `Cell` オブジェクトに直接設定されるためです。
-
-前述のプロパティの直接の子として配置された [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) は、 *インライン テンプレート* と呼ばれます。 また、`DataTemplate` は、コントロールレベル、ページレベル、またはアプリケーションレベルのリソースとして定義できます。 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) を定義する場所の選択は、使用できる場所に影響があります。
+前述のプロパティの直接の子として配置された [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) は、*インライン テンプレート* と呼ばれます。 また、`DataTemplate` は、コントロールレベル、ページレベル、またはアプリケーションレベルのリソースとして定義できます。 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) を定義する場所の選択は、使用できる場所に影響があります。
 
 - コントロール レベルで定義された [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) は、コントロールにのみ適用できます。
 - ページ レベルで定義された [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) は、ページ上の複数の有効なコントロールに適用できます。
