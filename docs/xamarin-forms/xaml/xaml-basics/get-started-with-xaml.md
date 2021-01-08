@@ -43,25 +43,25 @@ Windows で Visual Studio 2019 を起動し、[スタート] ウィンドウで 
 
 [ **新しいプロジェクトの構成** ] ウィンドウで、 **プロジェクト名** を **xamlsamples** (または任意のもの) に設定し、[ **作成** ] ボタンをクリックします。
 
-[ **新しいクロスプラットフォームアプリ** ] ダイアログで、[ **空白** ] をクリックし、[ **OK** ] ボタンをクリックします。
+[ **新しいクロスプラットフォームアプリ** ] ダイアログで、[ **空白**] をクリックし、[ **OK** ] ボタンをクリックします。
 
 ![新しいアプリダイアログ](get-started-with-xaml-images/win/new-cross-platform-app.png)
 
-このソリューションには、次の4つのプロジェクトが作成されます。 **xamlsamples** .NET Standard library、Xamlsamples **.** **IOS** 、ユニバーサル WINDOWS プラットフォームソリューション、 **xamlsamples。 UWP** 。
+このソリューションには、次の4つのプロジェクトが作成されます。 **xamlsamples** .NET Standard library、Xamlsamples **.** **IOS**、ユニバーサル WINDOWS プラットフォームソリューション、 **xamlsamples。 UWP**。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-Visual Studio for Mac で、メニューから [ **ファイル > 新しいソリューション** ] を選択します。 [ **新しいプロジェクト** ] ダイアログボックスで、左側にある [ **マルチプラットフォーム > アプリ** ] を選択し、テンプレートの一覧から **空のフォームアプリ** ( **フォームアプリ** では *ありません* ) を選択します。
+Visual Studio for Mac で、メニューから [ **ファイル > 新しいソリューション** ] を選択します。 [**新しいプロジェクト**] ダイアログボックスで、左側にある [**マルチプラットフォーム > アプリ**] を選択し、テンプレートの一覧から **空のフォームアプリ**(**フォームアプリ** では *ありません*) を選択します。
 
 ![[新しいプロジェクト] ダイアログ1](get-started-with-xaml-images/mac/newprojectdialog1.png)
 
-[ **次へ** ] をクリックします。
+[ **次へ**] をクリックします。
 
 次のダイアログボックスで、プロジェクトに **Xamlsamples** の名前 (または任意のもの) を指定します。 [ **.NET Standard を使用** する] オプションボタンが選択されていることを確認します。
 
 ![[新しいプロジェクト] ダイアログ2](get-started-with-xaml-images/mac/newprojectdialog2.png)
 
-[ **次へ** ] をクリックします。
+[ **次へ**] をクリックします。
 
 次のダイアログボックスで、プロジェクトの場所を選択できます。
 
@@ -69,7 +69,7 @@ Visual Studio for Mac で、メニューから [ **ファイル > 新しいソ�
 
 [ **作成**
 
-ソリューション内に3つのプロジェクトが作成されます。 **xamlsamples** .NET Standard Library、 **Xamlsamples. Android** 、および **xamlsamples です。**
+ソリューション内に3つのプロジェクトが作成されます。 **xamlsamples** .NET Standard Library、 **Xamlsamples. Android**、および **xamlsamples です。**
 
 -----
 
@@ -82,7 +82,7 @@ Visual Studio for Mac で、メニューから [ **ファイル > 新しいソ�
 **Xamlsamples** .NET Standard ライブラリには、次の名前を持つファイルのペアが含まれています。
 
 - App.xaml **、xaml ファイル、** そして
-- **App.xaml.cs** 。 xaml ファイルに関連付けられている C# *分離コード* ファイルです。
+- **App.xaml.cs**。 xaml ファイルに関連付けられている C# *分離コード* ファイルです。
 
 [ **App.xaml** ] の横にある矢印をクリックすると、分離コードファイルが表示されます。
 
@@ -156,13 +156,13 @@ Visual Studio によってプロジェクトがビルドされると、XAML フ�
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-他の XAML ベースのクラスをプロジェクトに追加するに `ContentPage` は、 **xamlsamples** .NET Standard ライブラリプロジェクトを選択し、右クリックして、[ **> 新しい項目の追加** ] を選択します。[ **新しい項目の追加** ] ダイアログボックスで、[ **Visual C# 項目 > Xamarin.Forms > コンテンツページ** ( **C#)** ] を選択します。このページでは、コードのみのページを作成するか、ページではない **コンテンツビュー** を作成します。 ページに名前を付けます。たとえば、 **HelloXamlPage** のように指定します。
+他の XAML ベースのクラスをプロジェクトに追加するに `ContentPage` は、 **xamlsamples** .NET Standard ライブラリプロジェクトを選択し、右クリックして、[ **> 新しい項目の追加**] を選択します。[ **新しい項目の追加** ] ダイアログボックスで、[ **Visual C# 項目 > Xamarin.Forms > コンテンツページ** ( **C#)**] を選択します。このページでは、コードのみのページを作成するか、ページではない **コンテンツビュー** を作成します。 ページに名前を付けます。たとえば、 **HelloXamlPage** のように指定します。
 
 ![[新しい項目の追加] ダイアログ](get-started-with-xaml-images/win/add-new-item-dialog-2019.png)
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-他の XAML ベースのクラスをプロジェクトに追加するには、 `ContentPage` **xamlsamples** .NET Standard ライブラリプロジェクトを選択し、[ **ファイル > 新しいファイル** ] メニュー項目を呼び出します。 [ **新しいファイル** ] ダイアログの左側で、左側にある [ **フォーム** ] を選択します。フォーム **ContentPage Xaml** (コードのみのページを作成するか、ページで **はない****コンテンツビュー** ) を選択します。 ページに名前を付けます。たとえば、 **HelloXamlPage** のように指定します。
+他の XAML ベースのクラスをプロジェクトに追加するには、 `ContentPage` **xamlsamples** .NET Standard ライブラリプロジェクトを選択し、[ **ファイル > 新しいファイル** ] メニュー項目を呼び出します。 [**新しいファイル**] ダイアログの左側で、左側にある [**フォーム**] を選択します。フォーム **ContentPage Xaml** (コードのみのページを作成するか、ページで **はない****コンテンツビュー**) を選択します。 ページに名前を付けます。たとえば、 **HelloXamlPage** のように指定します。
 
 ![[新しいファイル] ダイアログ](get-started-with-xaml-images/mac/newfiledialog.png)
 
@@ -186,7 +186,7 @@ Visual Studio によってプロジェクトがビルドされると、XAML フ�
 
 タグは、 `ContentPage.Content` XAML の一意の構文の一部です。 最初は無効な XML であるように見えるかもしれませんが、有効であると思われます。 ピリオドは XML の特殊文字ではありません。
 
-`ContentPage.Content`タグは、 *プロパティ要素* タグと呼ばれます。 `Content` はのプロパティであり `ContentPage` 、通常は1つのビューまたは子ビューを持つレイアウトに設定されます。 通常、プロパティは XAML の属性になりますが、 `Content` 複雑なオブジェクトに属性を設定するのは困難です。 そのため、プロパティは、クラス名とプロパティ名で構成される、ピリオドで区切られた XML 要素として表されます。 これで、次の `Content` ようにタグ間にプロパティを設定でき `ContentPage.Content` ます。
+`ContentPage.Content`タグは、*プロパティ要素* タグと呼ばれます。 `Content` はのプロパティであり `ContentPage` 、通常は1つのビューまたは子ビューを持つレイアウトに設定されます。 通常、プロパティは XAML の属性になりますが、 `Content` 複雑なオブジェクトに属性を設定するのは困難です。 そのため、プロパティは、クラス名とプロパティ名で構成される、ピリオドで区切られた XML 要素として表されます。 これで、次の `Content` ようにタグ間にプロパティを設定でき `ContentPage.Content` ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -287,7 +287,7 @@ public MainPage()
 
 [![回転したラベルのテキスト](get-started-with-xaml-images/helloxaml1.png)](get-started-with-xaml-images/helloxaml1-large.png#lightbox)
 
-`MainPage`IOS の [ **< 戻る** ] ボタンを使用して、ページの上部または Android の電話の下部にある左矢印を使用するか、Windows 10 のページの上部にある左矢印を使用すると、に戻ることができます。
+`MainPage`IOS の [ **< 戻る**] ボタンを使用して、ページの上部または Android の電話の下部にある左矢印を使用するか、Windows 10 のページの上部にある左矢印を使用すると、に戻ることができます。
 
 を表示するさまざまな方法について、XAML を自由に試してみて `Label` ください。 Unicode 文字をテキストに埋め込む必要がある場合は、標準の XML 構文を使用できます。 たとえば、あいさつをスマート引用符で囲むには、次のように入力します。
 
