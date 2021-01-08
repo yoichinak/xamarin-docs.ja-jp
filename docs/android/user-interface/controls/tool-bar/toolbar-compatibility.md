@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 8d5f5ff1cfe7876862371a9732f0ab8186bbeeba
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 8d5f0b06a804e9b9af7bb15111c70e4505c79fd0
+ms.sourcegitcommit: 40a56bbc1e038a9181101580ad18a4584edb5ab0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91457631"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98025514"
 ---
 # <a name="toolbar-compatibility"></a>ツール バーの互換性
 
@@ -41,7 +41,7 @@ AppCompat バージョンのツールバーを使用するようにアプリを�
 
 ## <a name="install-the-appcompat-nuget-package"></a>AppCompat NuGet パッケージをインストールする
 
-次に、 [Android Support Library V7 AppCompat](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) パッケージをプロジェクトに追加します。 Visual Studio で、[ **参照** ] を右クリックし、[ **NuGet パッケージの管理...**] を選択します。[ **参照** ] をクリックし、 **Android Support Library v7 AppCompat**を検索します。 **V7**を選択し、[**インストール**] をクリックします。 
+次に、 [Android Support Library V7 AppCompat](https://www.nuget.org/packages/Xamarin.Android.Support.v7.AppCompat/) パッケージをプロジェクトに追加します。 Visual Studio で、[ **参照** ] を右クリックし、[ **NuGet パッケージの管理...**] を選択します。[ **参照** ] をクリックし、 **Android Support Library v7 AppCompat** を検索します。 **V7** を選択し、[**インストール**] をクリックします。 
 
 [![[NuGet パッケージの管理」で選択した V7 Appcompat パッケージのスクリーンショット](toolbar-compatibility-images/01-appcompat-nuget-sml.png)](toolbar-compatibility-images/01-appcompat-nuget.png#lightbox)
 
@@ -53,7 +53,7 @@ AppCompat ライブラリには、 `Theme.AppCompat` appcompat ライブラリ�
 
 ### <a name="update-layouts"></a>レイアウトの更新
 
-**Resources/layout/Main**を編集し、 `Toolbar` 要素を次の xml に置き換えます。 
+**Resources/layout/Main** を編集し、 `Toolbar` 要素を次の xml に置き換えます。 
 
 ```xml
 <android.support.v7.widget.Toolbar
@@ -65,7 +65,7 @@ AppCompat ライブラリには、 `Theme.AppCompat` appcompat ライブラリ�
     android:layout_height="wrap_content" />
 ```
 
-**Resources/layout/toolbar.xml**を編集し、その内容を次の XML に置き換えます。 
+**Resources/layout/toolbar.xml** を編集し、その内容を次の XML に置き換えます。 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -82,7 +82,7 @@ AppCompat ライブラリには、 `Theme.AppCompat` appcompat ライブラリ�
 
 ### <a name="update-the-style"></a>スタイルを更新する
 
-**リソース/値/styles.xml**を編集し、その内容を次の XML に置き換えます。 
+**リソース/値/styles.xml** を編集し、その内容を次の XML に置き換えます。 
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -103,7 +103,7 @@ AppCompat ライブラリには、 `Theme.AppCompat` appcompat ライブラリ�
 
 以前のバージョンの Android をサポートするために、AppCompat ライブラリは、名前空間の属性を反映するカスタム属性を使用し `android:` ます。 ただし、一部の属性 ( `showAsAction` タグで使用される属性など `<menu>` ) は android &ndash; `showAsAction` api 11 で導入されましたが、android api 7 では使用できません。 このため、サポートライブラリによって定義されているすべての属性のプレフィックスとして、カスタム名前空間を使用する必要があります。 メニューリソースファイルでは、という名前空間 `local` が属性のプレフィックスとして定義されてい `showAsAction` ます。 
 
-**[リソース/メニュー/top_menus.xml**を編集し、その内容を次の XML に置き換えます。
+**[リソース/メニュー/top_menus.xml** を編集し、その内容を次の XML に置き換えます。
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -166,7 +166,7 @@ local:showAsAction="ifRoom"
 
 ## <a name="subclass-appcompatactivity"></a>サブクラス AppCompatActivity
 
-変換の最後の手順は、のサブクラスになるようにを変更する `MainActivity` ことです `AppCompactActivity` 。 **MainActivity.cs**を編集し、次のステートメントを追加し `using` ます。 
+変換の最後の手順は、のサブクラスになるようにを変更する `MainActivity` ことです `AppCompatActivity` 。 **MainActivity.cs** を編集し、次のステートメントを追加し `using` ます。 
 
 ```csharp
 using Android.Support.V7.App;
