@@ -308,8 +308,8 @@ items:
             href: app-fundamentals/navigation/tabbed-page.md
           - name: CarouselPage
             href: app-fundamentals/navigation/carousel-page.md
-          - name: MasterDetailPage
-            href: app-fundamentals/navigation/master-detail-page.md
+          - name: FlyoutPage
+            href: app-fundamentals/navigation/flyoutpage.md
           - name: モーダル ページ
             href: app-fundamentals/navigation/modal.md
       - name: Shell
@@ -354,8 +354,6 @@ items:
     items:
       - name: 概要
         href: user-interface/index.yml
-      - name: C# のマークアップ
-        href: user-interface/csharp-markup.md
       - name: コントロールのリファレンス
         items:
           - name: 概要
@@ -376,8 +374,6 @@ items:
         items:
           - name: BoxView
             href: user-interface/boxview.md
-          - name: Expander
-            href: user-interface/expander.md
           - name: Image
             href: user-interface/images.md
           - name: ラベル
@@ -400,8 +396,6 @@ items:
                 href: user-interface/map/geocoder.md
               - name: ネイティブ マップ アプリを起動する
                 href: user-interface/map/native-map-app.md
-          - name: MediaElement
-            href: user-interface/mediaelement.md
           - name: 図形
             items:
               - name: 概要
@@ -561,13 +555,6 @@ items:
                     href: user-interface/brushes/radialgradient.md
           - name: 色
             href: user-interface/colors.md
-          - name: DataPages
-            href: user-interface/datapages/index.md
-            items:
-              - name: はじめに
-                href: user-interface/datapages/get-started.md
-              - name: コントロールのリファレンス
-                href: user-interface/datapages/controls.md
           - name: ポップアップの表示
             href: user-interface/pop-ups.md
           - name: フォント
@@ -668,8 +655,6 @@ items:
             href: platform/android/index.md
           - name: AndroidX への移行
             href: platform/android/androidx-migration.md
-          - name: AppCompat と素材の設計
-            href: platform/android/appcompat-material-design.md
           - name: ボタンの余白とシャドウ
             href: platform/android/button-padding-shadow.md
           - name: エントリの入力方式のエディター オプション
@@ -716,6 +701,8 @@ items:
             href: platform/ios/entry-cursor-color.md
           - name: エントリのフォント サイズ
             href: platform/ios/entry-font-size.md
+          - name: FlyoutPage の影
+            href: platform/ios/flyoutpage-shadow.md
           - name: 書式設定
             href: platform/ios/formatting.md
           - name: モーダル ページのプレゼンテーション スタイル
@@ -730,8 +717,6 @@ items:
             href: platform/ios/listview-separator-style.md
           - name: メイン スレッドのコントロール更新
             href: platform/ios/main-thread-updates-ui.md
-          - name: MasterDetailPage のシャドウ
-            href: platform/ios/masterdetailpage-shadow.md
           - name: NavigationPage のバーの区切り記号
             href: platform/ios/navigation-bar-separator.md
           - name: NavigationPage のバーのテキストの色のモード
@@ -774,12 +759,12 @@ items:
             href: platform/windows/index.md
           - name: 既定の画像ディレクトリ
             href: platform/windows/default-image-directory.md
+          - name: FlyoutPage のナビゲーション バー
+            href: platform/windows/flyoutpage-navigation-bar.md
           - name: InputView 読み取り順序
             href: platform/windows/inputview-reading-order.md
           - name: ListView SelectionMode
             href: platform/windows/listview-selectionmode.md
-          - name: MasterDetailPage ナビゲーション バー
-            href: platform/windows/masterdetailpage-navigation-bar.md
           - name: ページのツールバーの配置
             href: platform/windows/page-toolbar-placement.md
           - name: プラットフォームのセットアップ
@@ -794,6 +779,8 @@ items:
             href: platform/windows/visualelement-access-keys.md
           - name: VisualElement レガシ カラー モード
             href: platform/windows/legacy-color-mode.md
+          - name: WebView の実行モード
+            href: platform/windows/webview-executionmode.md
           - name: WebView JavaScript アラート
             href: platform/windows/webview-javascript-alert.md
       - name: プラットフォーム固有設定の作成
@@ -1026,6 +1013,8 @@ items:
       - name: よく寄せられる質問
         href: troubleshooting/questions/index.md
         items:
+          - name: アプリを Xamarin.Forms 5.0 に移行する方法。
+            href: troubleshooting/questions/forms5-migration.md
           - name: Xamarin.Forms の既定のテンプレートを新しい NuGet パッケージに更新することはできますか。
             href: troubleshooting/questions/update-forms-template.md
           - name: Visual Studio XAML デザイナーが Xamarin.Forms XAML ファイルに有効でない理由を教えてください。
