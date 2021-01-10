@@ -10,12 +10,12 @@ ms.date: 12/18/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 98cf9f67188f67c4575823024106e100f6f22608
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 53f6a44ef28e00613ed0ee4e05a4e86a26bc7a6a
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93374512"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940578"
 ---
 # <a name="automation-properties-in-no-locxamarinforms"></a>Xamarin.Forms でのオートメーションのプロパティ
 
@@ -145,11 +145,11 @@ AutomationProperties.SetLabeledBy(entry, nameLabel);
 
 Android 上で、[`NavigationPage`](xref:Xamarin.Forms.NavigationPage) のアクション バー内の [戻る] 矢印に対して、スクリーン リーダーが読み上げるテキストを設定するには、[`Page`](xref:Xamarin.Forms.Page) 上で `AutomationProperties.Name` プロパティと `AutomationProperties.HelpText` プロパティを設定します。 ただし、これにより OS の [戻る] ボタンには影響しない点に注意してください。
 
-### <a name="masterdetailpage"></a>MasterDetailPage
+### <a name="flyoutpage"></a>FlyoutPage
 
-iOS およびユニバーサル Windows プラットフォーム (UWP) 上で、[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) のトグル ボタンに対してスクリーン リーダーが読み上げるテキストを設定するには、`MasterDetailPage` 上で `AutomationProperties.Name` プロパティおよび `AutomationProperties.HelpText` プロパティを設定するか、または `Master` ページの `IconImageSource` プロパティ上でそれらのプロパティを設定します。
+iOS およびユニバーサル Windows プラットフォーム (UWP) 上で、[`FlyoutPage`](xref:Xamarin.Forms.FlyoutPage) のトグル ボタンに対してスクリーン リーダーが読み上げるテキストを設定するには、`FlyoutPage` 上で `AutomationProperties.Name` プロパティおよび `AutomationProperties.HelpText` プロパティを設定するか、または `Flyout` ページの `IconImageSource` プロパティ上でそれらのプロパティを設定します。
 
-Android 上で、[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) のトグル ボタンに対してスクリーン リーダーが読み上げるテキストを設定するには、Android プロジェクトに次のように文字列リソースを追加します。
+Android 上で、[`FlyoutPage`](xref:Xamarin.Forms.FlyoutPage) のトグル ボタンに対してスクリーン リーダーが読み上げるテキストを設定するには、Android プロジェクトに次のように文字列リソースを追加します。
 
 ```xml
 <resources>
@@ -159,11 +159,11 @@ Android 上で、[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) の�
 </resources>
 ```
 
-次に、`Master` ページの `IconImageSource` プロパティの `AutomationId` プロパティを設定します。
+次に、`Flyout` ページの `IconImageSource` プロパティの `AutomationId` プロパティを設定します。
 
 ```csharp
-var master = new ContentPage { ... };
-master.IconImageSource.AutomationId = "btnMDPAutomationID";
+var flyout = new ContentPage { ... };
+flyout.IconImageSource.AutomationId = "btnMDPAutomationID";
 ```
 
 ### <a name="toolbaritem"></a>ToolbarItem

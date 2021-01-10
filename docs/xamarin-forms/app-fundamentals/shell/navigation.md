@@ -6,16 +6,16 @@ ms.assetid: 57079D89-D1CB-48BD-9FEE-539CEC29EABB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/02/2020
+ms.date: 10/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f29bacf3546b2148a3d97c3c1ccaa44e02872be8
-ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
+ms.openlocfilehash: 5fb215ea92035965b48fff85ef4ccc70edc65fdf
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94590312"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97939187"
 ---
 # <a name="no-locxamarinforms-shell-navigation"></a>Xamarin.Forms シェルのナビゲーション
 
@@ -27,6 +27,7 @@ Xamarin.Forms シェルには、設定されたナビゲーション階層に従
 
 - `BackButtonBehavior`: `BackButtonBehavior`型、戻るボタンの動作を定義する添付プロパティ。
 - `CurrentItem`: `FlyoutItem`型、現在選択されている `FlyoutItem`。
+- `CurrentPage`: `Page` 型、現在表示されているページ。
 - `CurrentState`: `ShellNavigationState`型、`Shell` の現在のナビゲーションの状態。
 - `Current`: `Shell` 型、`Application.Current.MainPage` の型キャストした別名。
 
@@ -153,7 +154,7 @@ await Shell.Current.GoToAsync("//animals/monkeys");
 
 次の相対ルート形式がサポートされます。
 
-| Format | 説明 |
+| 形式 | 説明 |
 | --- | --- |
 | *route* | 現在の位置から上位方向に、指定されたルートを求めてルート階層が検索されます。 一致するページがナビゲーション スタックにプッシュされます。 |
 | /*route* | 現在の位置から下位方向に、指定されたルートを求めてルート階層が検索されます。 一致するページがナビゲーション スタックにプッシュされます。 |
@@ -282,7 +283,7 @@ public class MyTab : Tab
 | `CanCancel`  | `bool` | ナビゲーションをキャンセルできるかどうかを示す値。 |
 | `Cancelled`  | `bool` | ナビゲーションがキャンセルされたかどうかを示す値。 |
 
-さらに、`ShellNavigatingEventArgs` クラスでは、ナビゲーションのキャンセルに使用できる `Cancel` メソッドを提供しています。
+さらに、`ShellNavigatingEventArgs` クラスには、ナビゲーションを取り消すために使用できる `Cancel` メソッドと、ナビゲーションを完了するために使用できる `ShellNavigatingDeferral` トークンを返す `GetDeferral` メソッドが用意されています。 ナビゲーションの遅延の詳細については、「[ナビゲーションの遅延](#navigation-deferral)」を参照してください。
 
 また、`Shell` クラスでは、ナビゲーションが完了したときに発生する `Navigated` イベントも定義しています。 `Navigating` イベントに伴う `ShellNavigatedEventArgs` オブジェクトでは、次のプロパティを提供しています。
 
@@ -316,6 +317,35 @@ void OnNavigating(object sender, ShellNavigatingEventArgs e)
     }
 }
 ```
+
+## <a name="navigation-deferral"></a>ナビゲーションの遅延
+
+シェルのナビゲーションは、インターセプトし、ユーザーの選択に基づいて完了することもキャンセルすることもできます。 これを実現するには、`Shell` サブクラス内の `OnNavigating` メソッドをオーバーライドし、`ShellNavigatingEventArgs` オブジェクト上の `GetDeferral` メソッドを呼び出します。 このメソッドからは、`Complete` メソッドを含む `ShellNavigatingDeferral` トークンが返され、ナビゲーション要求を完了するために使用できます。
+
+```csharp
+public MyShell : Shell
+{
+    // ...
+    protected override async void OnNavigating(ShellNavigatingEventArgs args)
+    {
+        base.OnNavigating(args);
+
+        ShellNavigatingDeferral token = args.GetDeferral();
+        var result = await DisplayActionSheet("Navigate?", "Cancel", "Yes", "No");
+
+        if (result != "Yes")
+        {
+            args.Cancel();
+        }
+        token.Complete();
+    }    
+}
+```
+
+この例では、ナビゲーション要求を完了またはキャンセルするユーザーを招待するアクション シートが表示されます。 `ShellNavigatingEventArgs` オブジェクト上の `Cancel` メソッドを呼び出すことによって、ナビゲーションは取り消されます。 `ShellNavigatingEventArgs` オブジェクト上の `GetDeferral` メソッドによって取得された `ShellNavigatingDeferral` トークン上で `Complete` メソッドを呼び出すことで、ナビゲーションは完了します。
+
+> [!IMPORTANT]
+> 保留中のナビゲーション遅延があるときにユーザーが移動しようとすると、`GoToAsync` メソッドから `InvalidOperationException` がスローされます。
 
 ## <a name="pass-data"></a>データを渡す
 

@@ -10,18 +10,18 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 65aa0f060e4d48834017a334d69b2f21645825f3
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: d976048b15c1fc545e1fbdc6c911e3cb4542d4f2
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937190"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97939096"
 ---
-# <a name="xamarinforms-navigation"></a>Xamarin.Forms のナビゲーション
+# <a name="no-locxamarinforms-navigation"></a>Xamarin.Forms のナビゲーション
 
 _Xamarin.Forms には、使用するページの種類に応じたさまざまなページ ナビゲーションのエクスペリエンスが用意されています。_
 
-![Xamarin.Forms ページの種類](images/page-types.png)
+![Xamarin.Formsページの種類](images/page-types.png)
 
 または、Xamarin.Forms シェル アプリケーションでは、設定されたナビゲーション階層を適用しない URI ベースのナビゲーション エクスペリエンスが使われます。 詳細については、「[Xamarin.Forms シェルのナビゲーション](~/xamarin-forms/app-fundamentals/shell/navigation.md)」を参照してください。
 
@@ -37,9 +37,9 @@ Xamarin.Forms の [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) は、タブの�
 
 Xamarin.Forms の [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) は、ギャラリーのように、ユーザーが端から端までスワイプしてコンテンツの各ページをナビゲートできるページです。
 
-## <a name="masterdetailpage"></a>[MasterDetailPage](master-detail-page.md)
+## <a name="flyoutpage"></a>[FlyoutPage](flyoutpage.md)
 
-Xamarin.Forms の [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) は、2 つの関連する情報ページ、つまり項目を表示するマスター ページと、マスター ページ上の項目に関する詳細を表示する詳細ページを管理するページです。
+Xamarin.Forms の [`FlyoutPage`](xref:Xamarin.Forms.FlyoutPage) は、2 つの関連する情報ページ、つまり項目を表示するポップアップ ページと、ポップアップ ページ上の項目に関する詳細を表示する詳細ページを管理するページです。
 
 ## <a name="modal-pages"></a>[モーダル ページ](modal.md)
 

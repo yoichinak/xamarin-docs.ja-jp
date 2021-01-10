@@ -10,18 +10,18 @@ ms.date: 07/30/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 90f06c0379cc40a946970ad4248dc8527ee34f3a
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 4faa0923e074460ef254db319dfcfd01cc832dce
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93372783"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940131"
 ---
 # <a name="no-locxamarinforms-shell-flyout"></a>Xamarin.Forms シェルのポップアップ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
-ポップアップは、シェル アプリケーションのルート メニューであり、アイコンから、または画面の横からスワイプして、アクセスすることが可能です。 ポップアップは、オプションのヘッダー、ポップアップ項目、およびオプションのメニュー項目から構成されています。
+ポップアップは、シェル アプリケーションのルート メニューであり、アイコンから、または画面の横からスワイプして、アクセスすることが可能です。 ポップアップは、オプションのヘッダー、ポップアップ項目、オプションのメニュー項目、およびオプションのフッターから構成されています。
 
 ![シェルの注釈付きポップアップのスクリーンショット](flyout-images/flyout-annotated.png "注釈付きフライアウト")
 
@@ -133,6 +133,59 @@ Shell.Current.FlyoutIsPresented = false;
     ...
 </Shell>
 ```
+
+## <a name="flyout-footer"></a>ポップアップのフッター
+
+ポップアップ フッターは、`Shell.FlyoutFooter` プロパティ値によって設定できる `object` で定義されている外観を持ち、必要に応じてポップアップの下部に表示されるコンテンツです。
+
+```xaml
+<Shell.FlyoutFooter>
+    <controls:FlyoutFooter />
+</Shell.FlyoutFooter>
+```
+
+`FlyoutFooter` の種類を次の例に示します。
+
+```xaml
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+             x:Class="Xaminals.Controls.FlyoutFooter">
+    <StackLayout>
+        <Label Text="Xaminals"
+               TextColor="GhostWhite"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+        <Label Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='{0:MMMM dd, yyyy}'}"
+               TextColor="GhostWhite"
+               HorizontalOptions="Center" />
+    </StackLayout>
+</ContentView>
+```
+
+これにより、次のポップアップ フッターが表示されます。
+
+![ポップアップ フッターのスクリーンショット](flyout-images/flyout-footer.png "ポップアップのフッター")
+
+または、`Shell.FlyoutFooterTemplate` プロパティを [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) に設定することでもポップアップ フッターの外観を定義できます。
+
+```xaml
+<Shell.FlyoutFooterTemplate>
+    <DataTemplate>
+        <StackLayout>
+            <Label Text="Xaminals"
+                   TextColor="GhostWhite"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+            <Label Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat='{0:MMMM dd, yyyy}'}"
+                   TextColor="GhostWhite"
+                   HorizontalOptions="Center" />
+        </StackLayout>
+    </DataTemplate>
+</Shell.FlyoutFooterTemplate>
+```
+
+ポップアップ フッターは、ポップアップの下部に固定され、任意の高さにすることができます。 また、フッターでメニュー項目が隠れることはありません。
 
 ## <a name="flyout-background-image"></a>ポップアップの背景画像
 

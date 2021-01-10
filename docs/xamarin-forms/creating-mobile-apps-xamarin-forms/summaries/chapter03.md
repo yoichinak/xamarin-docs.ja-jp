@@ -10,12 +10,12 @@ ms.date: 07/18/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: abe8161ea8536f5fb8b13c71fe49ebad57460ca1
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 6e53fdc689c15b3495af838f4788c1a50ad7a989
+ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93370417"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97940344"
 ---
 # <a name="summary-of-chapter-3-deeper-into-text"></a>第 3 章の概要。 テキストの詳細
 
@@ -115,7 +115,7 @@ ms.locfileid: "93370417"
 
 上記の一覧に示すように、プラットフォームによって既定の配色があります。
 
-Android を対象とする場合、Android.Manifest.xml ファイルで明るいテーマを指定するか、[AppCompat とマテリアル デザインを追加](~/xamarin-forms/platform/android/appcompat-material-design.md)することで、明るい背景に暗いテキストの配色に切り替えることができます。
+Android を対象とする場合、Android.Manifest.xml ファイル内で明るいテーマを指定することで、明るい背景に暗いテキストの配色に切り替えることができます。
 
 Windows プラットフォームの場合、通常、ユーザーが配色を選択しますが、プラットフォームの App.xaml ファイルで `Light` または `Dark` に設定した `RequestedTheme` 属性を追加できます。 既定では、UWP プロジェクトの App.xaml ファイルには、`Light` に設定された `RequestedTheme` 属性が含まれています。
 
