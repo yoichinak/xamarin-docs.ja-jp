@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: 207aac33101615a0a103176cd2bf5dd061e0d264
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 8a18bfe3a72334eab3304492da63e6ce8f889a72
+ms.sourcegitcommit: 3edcc63fcf86409b73cd6e5dc77f0093a99b3f87
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91430421"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98062616"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>Xamarin でのユーザー通知の強化
 
@@ -112,6 +112,7 @@ IOS 10 では、Apple は、前述の既存の方法を置き換える新しい�
 - **iOS** -通知の管理とスケジュール設定を完全にサポートします。
 - **tvOS** -ローカル通知とリモート通知のアプリアイコンをバッジする機能を追加します。
 - **watchOS** -ユーザーのペアリングされた iOS デバイスから Apple Watch に通知を転送する機能を追加します。 watch アプリは、ウォッチ自体でローカル通知を直接行うことができます。
+- **macOS** -通知の管理とスケジュール設定を完全にサポートします。
 
 詳細については、Apple の [Usernotifications フレームワークリファレンス](https://developer.apple.com/reference/usernotifications) と [UserNotificationsUI](https://developer.apple.com/reference/usernotificationsui) のドキュメントを参照してください。
 
@@ -129,22 +130,48 @@ IOS アプリからユーザーに通知を送信する前に、アプリケー�
 
 通知アクセス許可は、アプリが起動するとすぐに、のメソッドに次のコードを追加し、 `FinishedLaunching` `AppDelegate` 必要な通知の種類 () を設定することによって要求する必要があり `UNAuthorizationOptions` ます。
 
+> [!NOTE]
+> `UNUserNotificationCenter` は、iOS 10 以降でのみ使用できます。 そのため、要求を送信する前に macOS のバージョンを確認することをお勧めします。 
+
 ```csharp
 using UserNotifications;
 ...
 
 public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
 {
-    // Request notification permissions from the user
-    UNUserNotificationCenter.Current.RequestAuthorization (UNAuthorizationOptions.Alert, (approved, err) => {
-        // Handle approval
-    });
+    // Version check
+    if (UIDevice.CurrentDevice.CheckSystemVersion (10, 0)) {
+        // Request notification permissions from the user
+        UNUserNotificationCenter.Current.RequestAuthorization (UNAuthorizationOptions.Alert, (approved, err) => {
+            // Handle approval
+        });
+    }
 
     return true;
 }
 ```
 
-さらに、ユーザーは、デバイスの **設定** アプリを使用していつでも、いつでもアプリの通知特権をいつでも変更できます。 アプリは、次のコードを使用して通知を提示する前に、ユーザーの要求された通知特権を確認する必要があります。
+この API は統合されており、Mac 10.14 でも動作します。 macOS をターゲットにする場合は、できるだけ早く通知のアクセス許可を確認する必要があります。
+
+```csharp
+using UserNotifications;
+...
+
+public override void DidFinishLaunching (NSNotification notification)
+{
+    // Check we're at least v10.14
+    if (NSProcessInfo.ProcessInfo.IsOperatingSystemAtLeastVersion (new NSOperatingSystemVersion (10, 14, 0))) {
+        // Request notification permissions from the user
+        UNUserNotificationCenter.Current.RequestAuthorization (UNAuthorizationOptions.Alert | UNAuthorizationOptions.Badge | UNAuthorizationOptions.Sound, (approved, err) => {
+            // Handle approval
+        });
+    }
+}
+
+> [!NOTE]
+> With MacOS apps, for the permission dialog to appear, you must sign your macOS app, even if building locally in DEBUG mode. Therefore, **Project->Options->Mac Signing->Sign the application bundle** must be checked.
+
+Additionally, a user can always change the notification privileges for an app at any time using the **Settings** app on the device. The app should check for the user's requested notification privileges before presenting a notification using the following code:
 
 ```csharp
 // Get current notification settings
@@ -163,21 +190,21 @@ IOS 10 の新機能として、開発者は、どの環境プッシュ通知が�
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. Solution Pad 内のファイルをダブルクリックし `Entitlements.plist` て、編集用に**Solution Pad**開きます。
-2. **ソース**ビューに切り替えます。 
+1. Solution Pad 内のファイルをダブルクリックし `Entitlements.plist` て、編集用に開きます。
+2. **ソース** ビューに切り替えます。 
 
     [![ソースビュー](enhanced-user-notifications-images/setup01.png)](enhanced-user-notifications-images/setup01.png#lightbox)
 3. **+** 新しいキーを追加するには、このボタンをクリックします。
-4. プロパティとして「」と入力し、[型] をそのままにして、値として「 `aps-environment` **Property** **Type** `String` 」または「」を入力し `development` `production` ます。 **Value** 
+4. プロパティとして「」と入力し、[型] をそのままにして、値として「 `aps-environment`   `String` 」または「」を入力し `development` `production` ます。  
 
     [![Aps-environment プロパティ](enhanced-user-notifications-images/setup02.png)](enhanced-user-notifications-images/setup02.png#lightbox)
 5. 変更をファイルに保存します。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. ソリューションエクスプローラー内のファイルをダブルクリックし `Entitlements.plist` て、編集用に**Solution Explorer**開きます。
+1. ソリューションエクスプローラー内のファイルをダブルクリックし `Entitlements.plist` て、編集用に開きます。
 2. **+** 新しいキーを追加するには、このボタンをクリックします。
-3. プロパティとして「」と入力し、[型] をそのままにして、値として「 `aps-environment` **Property** **Type** `String` 」または「」を入力し `development` `production` ます。 **Value** 
+3. プロパティとして「」と入力し、[型] をそのままにして、値として「 `aps-environment`   `String` 」または「」を入力し `development` `production` ます。  
 
     [![Aps-environment プロパティ](enhanced-user-notifications-images/setup02w.png)](enhanced-user-notifications-images/setup02.png#lightbox)
 4. 変更をファイルに保存します。
@@ -210,7 +237,7 @@ UIApplication.SharedApplication.RegisterForRemoteNotifications ();
 
 ### <a name="providing-notification-content"></a>通知コンテンツの提供
 
-IOS 10 を初めて使用する場合、すべての通知には、通知コンテンツの**本文**と共に常に表示される**タイトル**と**サブタイトル**の両方が含まれます。 また、新しいは、通知コンテンツに **メディア添付ファイル** を追加する機能です。
+IOS 10 を初めて使用する場合、すべての通知には、通知コンテンツの **本文** と共に常に表示される **タイトル** と **サブタイトル** の両方が含まれます。 また、新しいは、通知コンテンツに **メディア添付ファイル** を追加する機能です。
 
 ローカル通知の内容を作成するには、次のコードを使用します。
 
@@ -239,7 +266,7 @@ content.Badge = 1;
 
 ### <a name="scheduling-when-a-notification-is-sent"></a>通知が送信されたときのスケジュール
 
-通知の内容を作成したら、 *トリガー*を設定してユーザーに通知を表示するタイミングをアプリでスケジュールする必要があります。 iOS 10 には、次の4種類のトリガーがあります。
+通知の内容を作成したら、 *トリガー* を設定してユーザーに通知を表示するタイミングをアプリでスケジュールする必要があります。 iOS 10 には、次の4種類のトリガーがあります。
 
 - **プッシュ通知** -リモート通知でのみ使用され、APNs がデバイスで実行されているアプリに通知パッケージを送信するときにトリガーされます。
 - [**時間間隔**]-現在から開始し、将来のある時点を終了するまでの時間間隔からローカル通知をスケジュールできます。 たとえば、 `var trigger =  UNTimeIntervalNotificationTrigger.CreateTrigger (5, false);` と記述します。
@@ -535,7 +562,7 @@ Xamarin iOS アプリでサービス拡張機能を実装するには、次の�
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. Visual Studio for Mac でアプリのソリューションを開きます。
-2. **Solution Pad**でソリューション名を右クリックし、[**追加**] [  >  **新しいプロジェクト**] の順に選択します。
+2. **Solution Pad** でソリューション名を右クリックし、[**追加**] [  >  **新しいプロジェクト**] の順に選択します。
 3. [ **IOS**  >  **extensions**  >  **Notification Service の拡張機能**] を選択し、[**次へ**] ボタンをクリックします。 
 
     [![Notification Service 拡張機能の選択](enhanced-user-notifications-images/extension02.png)](enhanced-user-notifications-images/extension02.png#lightbox)
@@ -549,7 +576,7 @@ Xamarin iOS アプリでサービス拡張機能を実装するには、次の�
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. Visual Studio でアプリのソリューションを開きます。
-2. **ソリューションエクスプローラー**でソリューション名を右クリックし、[ **> 新しいプロジェクトの追加**] を選択します。
+2. **ソリューションエクスプローラー** でソリューション名を右クリックし、[ **> 新しいプロジェクトの追加**] を選択します。
 3. [ **Visual C# > IOS 拡張機能 > Notification Service 拡張機能**] を選択します。
 
     [![Notification Service 拡張機能の選択](enhanced-user-notifications-images/extension01.w157-sml.png)](enhanced-user-notifications-images/extension01.w157.png#lightbox)
