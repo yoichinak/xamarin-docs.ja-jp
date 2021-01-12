@@ -6,16 +6,16 @@ ms.assetId: 602456B5-701B-4948-B454-B1F31283F1CF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/05/2020
+ms.date: 01/11/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: de3d7df922a0b6bdc6644e2684c6f01176abbe42
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: d0ebae93405cb115a0f1e87453ab9b438202ef30
+ms.sourcegitcommit: 1decf2c65dc4c36513f7dd459a5df01e170a036f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97940500"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98115250"
 ---
 # <a name="no-locxamarinforms-swipeview"></a>Xamarin.Forms SwipeView
 
@@ -37,12 +37,11 @@ ms.locfileid: "97940500"
 
 さらに、は、 `SwipeView` [`Content`](xref:Xamarin.Forms.ContentView.Content) クラスからプロパティを継承し [`ContentView`](xref:Xamarin.Forms.ContentView) ます。 `Content`プロパティはクラスの content プロパティである `SwipeView` ため、明示的に設定する必要はありません。
 
-クラスは、 `SwipeView` 次の4つのイベントも定義します。
+クラスでは、 `SwipeView` 次の3つのイベントも定義されています。
 
 - `SwipeStarted` スワイプが開始されたときに発生します。 `SwipeStartedEventArgs`このイベントに付随するオブジェクトには `SwipeDirection` 、型のプロパティがあり `SwipeDirection` ます。
 - `SwipeChanging` スワイプが移動したときに発生します。 `SwipeChangingEventArgs`このイベントに付随するオブジェクトには、 `SwipeDirection` 型のプロパティ `SwipeDirection` と `Offset` 型のプロパティがあり `double` ます。
-- `SwipeEnded` スワイプが終了したときに発生します。 `SwipeEndedEventArgs`このイベントに付随するオブジェクトには `SwipeDirection` 、型のプロパティがあり `SwipeDirection` ます。
-- `CloseRequested` スワイプ項目が閉じられたときに発生します。
+- `SwipeEnded` スワイプが終了したときに発生します。 `SwipeEndedEventArgs`このイベントに付随するオブジェクトには、 `SwipeDirection` 型のプロパティ `SwipeDirection` と `IsOpen` 型のプロパティがあり `bool` ます。
 
 さらに、に `SwipeView` はメソッドとメソッドが含まれており、プログラムを使用して `Open` `Close` スワイプ項目を開いたり閉じたりすることができます。
 
@@ -346,7 +345,7 @@ SwipeView swipeView = new SwipeView
 
 ## <a name="open-and-close-a-swipeview-programmatically"></a>プログラムによって SwipeView を開く/閉じる
 
-`SwipeView` にはメソッドとメソッドが含まれてい `Open` `Close` ます。これらのメソッドは、プログラムによってスワイプ項目を開いたり閉じたりします。
+`SwipeView` にはメソッドとメソッドが含まれてい `Open` `Close` ます。これらのメソッドは、プログラムによってスワイプ項目を開いたり閉じたりします。 既定では、これらのメソッドは、を `SwipeView` 開いたとき、または閉じたときにをアニメーション化します。
 
 メソッドには、を `Open` `OpenSwipeItem` 開く方向を指定するための引数が必要です `SwipeView` 。 `OpenSwipeItem`列挙体には、次の4つのメンバーがあります。
 
@@ -354,6 +353,8 @@ SwipeView swipeView = new SwipeView
 - `TopItems``SwipeView`。コレクション内のスワイプ項目を表示するために、上部からが開かれることを示し `TopItems` ます。
 - `RightItems``SwipeView`。コレクション内のスワイプ項目を表示するために、右側からが開かれることを示し `RightItems` ます。
 - `BottomItems``SwipeView`。コレクション内のスワイプ項目を表示するために、下部からが開かれることを示し `BottomItems` ます。
+
+また、メソッドは `Open` `bool` 、を開いたときにアニメーションをアニメーション化するかどうかを定義する省略可能な引数も受け入れ `SwipeView` ます。
 
 という名前のを指定した `SwipeView` `swipeView` 場合、次の例では、を開いてコレクション内のスワイプ項目を表示する方法を示してい `SwipeView` `LeftItems` ます。
 
@@ -368,7 +369,7 @@ swipeView.Close();
 ```
 
 > [!NOTE]
-> `Close`メソッドが呼び出されると、 `CloseRequested` イベントが発生します。
+> `Close`メソッドは `bool` 、を閉じるときにアニメーション化するかどうかを定義する省略可能な引数も受け入れ `SwipeView` ます。
 
 ## <a name="disable-a-swipeview"></a>SwipeView を無効にする
 

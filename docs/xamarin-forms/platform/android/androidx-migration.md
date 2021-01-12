@@ -1,5 +1,5 @@
 ---
-title: AndroidX の移行Xamarin.Forms
+title: AndroidX の移行 Xamarin.Forms
 description: この記事では、AndroidX が存在する理由と、アプリで AndroidX に移行する方法について説明し Xamarin.Forms ます。
 ms.prod: xamarin
 ms.assetid: 98884003-E65A-4EB4-842D-66CFE27344A4
@@ -10,16 +10,19 @@ ms.date: 01/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c2df309a8a12a05a4b492bb66977aa2411142850
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3ef1d0322018e5c404204fdaf9f4816891cc39f3
+ms.sourcegitcommit: 1decf2c65dc4c36513f7dd459a5df01e170a036f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138269"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98115133"
 ---
-# <a name="androidx-migration-in-xamarinforms"></a>AndroidX の移行Xamarin.Forms
+# <a name="androidx-migration-in-no-locxamarinforms"></a>AndroidX の移行 Xamarin.Forms
 
 AndroidX は、Android サポートライブラリを置き換えます。 この記事では、AndroidX が存在する理由、影響を受ける方法、 Xamarin.Forms および androidx ライブラリを使用するようにアプリケーションを移行する方法について説明します。
+
+> [!IMPORTANT]
+> アプリを5.0 に移行する場合は Xamarin.Forms 操作方法「 [アプリを Xamarin.Forms 5.0 に移行する](~/xamarin-forms/troubleshooting/questions/forms5-migration.md)には」を参照してください。
 
 ## <a name="history-of-androidx"></a>AndroidX の履歴
 
@@ -36,11 +39,11 @@ AndroidX はサポートライブラリに代わるものであり、これは�
 
 Google は、AndroidX と Jetifier という移行プロセスを作成しました。 Jetifier は、ビルドプロセス中に jar バイトコードを検査し、アプリコードと依存関係の両方で、サポートされているライブラリ参照を AndroidX と同等のものに再マップします。
 
-アプリでは Xamarin.Forms 、Android Java アプリと同様に、jar の依存関係を AndroidX に移行する必要があります。 ただし、適切な基になる jar ファイルを指すように Xamarin バインドも移行する必要があります。 Xamarin.Formsバージョン4.5 での自動 AndroidX 移行のサポートが追加されました。
+アプリでは Xamarin.Forms 、Android Java アプリと同様に、jar の依存関係を AndroidX に移行する必要があります。 ただし、適切な基になる jar ファイルを指すように Xamarin バインドも移行する必要があります。 Xamarin.Forms バージョン4.5 での自動 AndroidX 移行のサポートが追加されました。
 
-AndroidX の詳細については、developer.android.com の「 [Androidx の概要](https://developer.android.com/jetpack/androidx)」を参照してください。
+AndroidX の詳細については、developer.android.com の「 [Androidx の概要](https://developer.android.com/jetpack/androidx) 」を参照してください。
 
-## <a name="automatic-migration-in-xamarinforms"></a>での自動移行Xamarin.Forms
+## <a name="automatic-migration-in-no-locxamarinforms"></a>での自動移行 Xamarin.Forms
 
 AndroidX に自動的に移行するには、プロジェクトで次のことを Xamarin.Forms 行う必要があります。
 
@@ -76,5 +79,6 @@ You can also copy and paste the following snippit into your .csproj file:
 
 ## <a name="related-links"></a>関連リンク
 
+- [アプリを5.0 に移行操作方法 Xamarin.Forms ますか?](~/xamarin-forms/troubleshooting/questions/forms5-migration.md)
 - Developer.android.com の[Android サポートライブラリの概要](https://developer.android.com/topic/libraries/support-library/index)
 - Developer.android.com の[Androidx の概要](https://developer.android.com/jetpack/androidx)
