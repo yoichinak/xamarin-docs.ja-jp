@@ -6,16 +6,16 @@ ms.assetid: 98884003-E65A-4EB4-842D-66CFE27344A4
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
-ms.date: 01/22/2020
+ms.date: 01/13/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3ef1d0322018e5c404204fdaf9f4816891cc39f3
-ms.sourcegitcommit: 1decf2c65dc4c36513f7dd459a5df01e170a036f
+ms.openlocfilehash: b24ab21bf7ae5812916a968da3a59169b975e33a
+ms.sourcegitcommit: 86663f94f8eddb808eb4504cd32ddaf217b6406c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98115133"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98166629"
 ---
 # <a name="androidx-migration-in-no-locxamarinforms"></a>AndroidX の移行 Xamarin.Forms
 
@@ -45,15 +45,16 @@ AndroidX の詳細については、developer.android.com の「 [Androidx の�
 
 ## <a name="automatic-migration-in-no-locxamarinforms"></a>での自動移行 Xamarin.Forms
 
-AndroidX に自動的に移行するには、プロジェクトで次のことを Xamarin.Forms 行う必要があります。
+AndroidX に自動的に移行するには、 Xamarin.Forms Android プラットフォームプロジェクトで次のことを行う必要があります。
 
 - Android API バージョン29以上を対象とします。
 - Xamarin.Formsバージョン4.5 以上を使用します。
+- Android サポートライブラリに直接または推移性の依存関係がある。
 
 プロジェクトでこれらの設定を確認したら、Visual Studio 2019 で Android アプリをビルドします。 ビルドプロセス中に中間言語 (IL) が検査され、ライブラリの依存関係をサポートし、バインドが AndroidX 依存関係にスワップされます。 アプリケーションに、ビルドに必要なすべての AndroidX 依存関係がある場合、ビルドプロセスに違いはありません。
 
-> [!NOTE]
-> サポートライブラリへの参照をプロジェクトに保持する必要があります。 これらは、移行プロセスが結果の IL を検査して依存関係を変換する前に、アプリケーションをコンパイルするために使用されます。
+> [!IMPORTANT]
+> AndroidX に手動で移行すると、アプリのビルドプロセスが最速になります。 AndroidX の移行には、この方法が推奨されます。 これには、サポートライブラリの依存関係を AndroidX の依存関係に置き換え、AndroidX 型を使用するようにコードを更新する必要があります。 詳細については、「 [AndroidX 型の使用](~/xamarin-forms/troubleshooting/questions/forms5-migration.md#use-androidx-types)」を参照してください。
 
 プロジェクトに含まれていない AndroidX 依存関係が検出されると、ビルドエラーが報告され、どの AndroidX パッケージが不足しているかが示されます。 ビルドエラーの例を次に示します。
 
@@ -82,3 +83,5 @@ You can also copy and paste the following snippit into your .csproj file:
 - [アプリを5.0 に移行操作方法 Xamarin.Forms ますか?](~/xamarin-forms/troubleshooting/questions/forms5-migration.md)
 - Developer.android.com の[Android サポートライブラリの概要](https://developer.android.com/topic/libraries/support-library/index)
 - Developer.android.com の[Androidx の概要](https://developer.android.com/jetpack/androidx)
+- [AndroidX クラスのマッピング](https://github.com/xamarin/AndroidX/blob/master/mappings/androidx-class-mapping.csv)
+- [AndroidX アセンブリ](https://github.com/xamarin/AndroidX/blob/master/mappings/androidx-assemblies.csv)

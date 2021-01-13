@@ -11,12 +11,12 @@ ms.date: 10/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8f93d20dac789abed57f8f41bf41778ad50a5fb5
-ms.sourcegitcommit: 995ee23d93e08dceb8754cc6c682cd2f4594345b
+ms.openlocfilehash: 2a8aa964dd2f18998e15d68df72f3cee1bd0ac5a
+ms.sourcegitcommit: 86663f94f8eddb808eb4504cd32ddaf217b6406c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97972319"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98166642"
 ---
 # <a name="how-do-i-migrate-my-app-to-no-locxamarinforms-50"></a>アプリを5.0 に移行操作方法 Xamarin.Forms ますか?
 
@@ -96,7 +96,7 @@ AndroidX は Android サポートライブラリを置き換えます。その�
 | `Android.Support.V7.App` | `AndroidX.AppCompat.App` |
 | `Android.Support.V7.Widget` | `AndroidX.AppCompat.Widget` |
 
-サポートライブラリから AndroidX へのクラスマッピングの完全な一覧については、「 [support library class mappings](https://developer.android.com/jetpack/androidx/migrate/class-mappings) on developer.android.com」を参照してください。
+サポートライブラリから AndroidX へのクラスマッピングの完全な一覧については、github.com の「 [Androidx クラスのマッピング](https://github.com/xamarin/AndroidX/blob/master/mappings/androidx-class-mapping.csv) 」を参照してください。 サポートライブラリから AndroidX へのアセンブリマッピングの完全な一覧については、github.com の「 [Androidx アセンブリ](https://github.com/xamarin/AndroidX/blob/master/mappings/androidx-assemblies.csv) 」を参照してください。
 
 #### <a name="remove-axml-files"></a>AXML ファイルの削除
 
@@ -124,3 +124,5 @@ UWP プロジェクトが下位のターゲットプラットフォームバー�
 
 - [移動した機能 Xamarin.Forms](https://github.com/xamarin/XamarinCommunityToolkit/wiki/Features-moved-from-Xamarin.Forms)
 - [AndroidX の移行 Xamarin.Forms](~/xamarin-forms/platform/android/androidx-migration.md)
+- [AndroidX クラスのマッピング](https://github.com/xamarin/AndroidX/blob/master/mappings/androidx-class-mapping.csv)
+- [AndroidX アセンブリ](https://github.com/xamarin/AndroidX/blob/master/mappings/androidx-assemblies.csv)
