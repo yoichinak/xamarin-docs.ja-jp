@@ -10,12 +10,12 @@ ms.date: 09/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ce3dd92c09fb40ea1b864e0c613223ce8bf99e36
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: a2259d9784d9b55be636e92452562a13f0750b14
+ms.sourcegitcommit: c9f62ed4bab516be18606e87e89e01f57b4ad17e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97940370"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98163505"
 ---
 # <a name="simple-animations-in-no-locxamarinforms"></a>単純なアニメーション Xamarin.Forms
 
@@ -25,7 +25,7 @@ _ViewExtensions クラスは、単純なアニメーションを構築するた�
 
 クラスには、 [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) 単純なアニメーションを作成するために使用できる次の拡張メソッドが用意されています。
 
-- [ `CancelAnimations` ] (xref: Xamarin.Forms 。ViewExtensions。 CancelAnimations ( Xamarin.Forms .VisualElement)) アニメーションをキャンセルします。
+- [ `CancelAnimations` ] (xref: Xamarin.Forms 。ViewExtensions。 CancelAnimations ( Xamarin.Forms .VisualElement) すべてのアニメーションをキャンセルします。
 - [ `FadeTo` ] (xref: Xamarin.Forms 。ViewExtensions. FadeTo ( Xamarin.Forms .VisualElement、system.string、system.string、 Xamarin.Forms 。イージング)) [`Opacity`](xref:Xamarin.Forms.VisualElement.Opacity) のプロパティをアニメーション化 [`VisualElement`](xref:Xamarin.Forms.VisualElement) します。
 - [ `RelScaleTo` ] (xref: Xamarin.Forms 。ViewExtensions. Rel拡張性 ( Xamarin.Forms .VisualElement、system.string、system.string、 Xamarin.Forms 。イージング) を適用すると、アニメーションのインクリメントがのプロパティに適用さ [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) [`VisualElement`](xref:Xamarin.Forms.VisualElement) れます。
 - [ `RotateTo` ] (xref: Xamarin.Forms 。ViewExtensions Xamarin.Forms . RotateTo ()VisualElement、system.string、system.string、 Xamarin.Forms 。イージング)) [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation) のプロパティをアニメーション化 [`VisualElement`](xref:Xamarin.Forms.VisualElement) します。
@@ -84,7 +84,7 @@ await image.RelRotateTo (360, 2000);
 
 ![相対回転アニメーション](simple-images/relrotateto.png)
 
-### <a name="scaling"></a>スケーリング
+### <a name="scaling"></a>Scaling
 
 次のコード例は、メソッドを使用して [`ScaleTo`](xref:Xamarin.Forms.ViewExtensions.ScaleTo*) のプロパティをアニメーション化する方法を示してい [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) [`Image`](xref:Xamarin.Forms.Image) ます。
 
