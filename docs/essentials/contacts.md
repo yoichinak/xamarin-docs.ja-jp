@@ -4,22 +4,20 @@ description: Xamarin.Essentials の Contacts クラスを使用すると、ユ�
 ms.assetid: 02280c42-720a-44c3-979e-4818a20c9821
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 09/22/2020
+ms.date: 01/04/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 19c9929706b7cf285b22562b094d2de2a25ff77d
-ms.sourcegitcommit: 0a41c4aa6db72cd2d0cecbe0dc893024cecac71d
+ms.openlocfilehash: 8e47fd77bedb701e1953d903091c77af31cb6012
+ms.sourcegitcommit: 995ee23d93e08dceb8754cc6c682cd2f4594345b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96749892"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97972293"
 ---
 # <a name="no-locxamarinessentials-contacts"></a>Xamarin.Essentials: 連絡先
 
 **Contacts** クラスを使用すると、ユーザーは連絡先を選択して、それに関する情報を取得できます。
-
-![プレリリース API](~/media/shared/preview.png)
 
 ## <a name="get-started"></a>作業開始
 

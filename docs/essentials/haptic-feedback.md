@@ -4,22 +4,20 @@ description: このドキュメントでは、デバイスに対する haptic �
 ms.assetid: 4462936c-4018-443b-906d-d63da6d0ed7d
 author: dimonovdd
 ms.author: jamont
-ms.date: 09/22/2020
+ms.date: 01/04/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b1bf597874dc22a95ca9a3db239d9c7d2dd5658a
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 0b039a8ba7db7b98d30a49b74454b8c0c101f040
+ms.sourcegitcommit: 995ee23d93e08dceb8754cc6c682cd2f4594345b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91436728"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97972306"
 ---
 # <a name="no-locxamarinessentials-haptic-feedback"></a>Xamarin.Essentials: Haptic フィードバック
 
 **HapticFeedback** クラスを使用すると、デバイスに対して haptic フィードバックを制御できます。
-
-![プレリリース API](~/media/shared/preview.png)
 
 ## <a name="get-started"></a>作業開始
 

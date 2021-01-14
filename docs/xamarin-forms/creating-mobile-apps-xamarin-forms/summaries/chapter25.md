@@ -10,12 +10,12 @@ ms.date: 11/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f37006e15ad4cc2c6c8d03f3c88c1c8f57fe4fd5
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: d9d0d75a393cc30ffaf698625cd49cf0ce5b5741
+ms.sourcegitcommit: 1decf2c65dc4c36513f7dd459a5df01e170a036f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97940071"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98115263"
 ---
 # <a name="summary-of-chapter-25-page-varieties"></a>第 25 章の概要: さまざまなページ
 
@@ -33,7 +33,7 @@ ms.locfileid: "97940071"
 
 ## <a name="master-and-detail"></a>マスターと詳細
 
-[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) では、`Page` 型の 2 つのプロパティ [`Master`](xref:Xamarin.Forms.MasterDetailPage.Master) と [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) が定義されています。 通常、これらの各プロパティは `ContentPage` に設定します。 `MasterDetailPage` では、これら 2 つのページが表示され、切り替えられます。
+[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) では、`Page` 型の 2 つのプロパティ [`Master`](xref:Xamarin.Forms.MasterDetailPage.Master) と `Detail` が定義されています。 通常、これらの各プロパティは `ContentPage` に設定します。 `MasterDetailPage` では、これら 2 つのページが表示され、切り替えられます。
 
 これら 2 つのページを切り替えるには、次の 2 つの基本的な方法があります。
 
@@ -62,7 +62,7 @@ Windows 8.1 および Windows Phone 8.1 プラットフォームでは、マス�
 
 `Master` プロパティと `Detail` プロパティは、`MasterDetailPage` から派生した [SchoolAndDetailPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml) ファイルのビジュアル ツリーで定義されています。 このように配置することで、マスター ページと詳細ページの間にデータ バインディングを設定できます。
 
-その XAML ファイルでは、`MasterDetailPage` の [`IsPresented`](xref:Xamarin.Forms.MasterDetailPage.IsPresented) プロパティも `True` に設定されています。 これにより、起動時にマスター ページが表示されます。既定では、詳細ページが表示されます。 [SchoolAndDetailPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml.cs) ファイルでは、マスター ページの `ListView` から項目が選択されると、`IsPresented` が `false` に設定されます。 次に、詳細ページが表示されます。
+その XAML ファイルでは、`MasterDetailPage` の `IsPresented` プロパティも `True` に設定されています。 これにより、起動時にマスター ページが表示されます。既定では、詳細ページが表示されます。 [SchoolAndDetailPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter25/SchoolAndDetail/SchoolAndDetail/SchoolAndDetail/SchoolAndDetailPage.xaml.cs) ファイルでは、マスター ページの `ListView` から項目が選択されると、`IsPresented` が `false` に設定されます。 次に、詳細ページが表示されます。
 
 [![School And Detail のトリプル スクリーンショット](images/ch25fg09-small.png "MasterDetailPage からの詳細ページ")](images/ch25fg09-large.png#lightbox "MasterDetailPage からの詳細ページ")
 
@@ -70,8 +70,8 @@ Windows 8.1 および Windows Phone 8.1 プラットフォームでは、マス�
 
 Xamarin.Forms には、マスター ビューと詳細ビューを切り替えるためのユーザー インターフェイスが用意されていますが、独自のビューを提供することができます。 次の手順に従います。
 
-- [`IsGestureEnabled`](xref:Xamarin.Forms.MasterDetailPage.IsGestureEnabled) プロパティを `false` に設定して、スワイプを無効にします
-- [`ShouldShowToolbarButton`](xref:Xamarin.Forms.MasterDetailPage.ShouldShowToolbarButton) メソッドをオーバーライドし、`false` を返して Windows 8.1 と Windows Phone 8.1 でツール バー ボタンを非表示にします。
+- `IsGestureEnabled` プロパティを `false` に設定して、スワイプを無効にします
+- `ShouldShowToolbarButton` メソッドをオーバーライドし、`false` を返して Windows 8.1 と Windows Phone 8.1 でツール バー ボタンを非表示にします。
 
 次に、マスター ページと詳細ページを切り替える手段を提供する必要があります。[**ColorsDetail**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter25/ColorsDetails) サンプルで示されているようなものです。
 
