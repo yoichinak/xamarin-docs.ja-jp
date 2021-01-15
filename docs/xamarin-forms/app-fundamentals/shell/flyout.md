@@ -6,16 +6,16 @@ ms.assetid: FEDE51EB-577E-4B3E-9890-B7C1A5E52516
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/30/2020
+ms.date: 01/12/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4faa0923e074460ef254db319dfcfd01cc832dce
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: bad3a19de5a8feae2ca2fd02c1a454ac379e9f42
+ms.sourcegitcommit: 1decf2c65dc4c36513f7dd459a5df01e170a036f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97940131"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98115159"
 ---
 # <a name="no-locxamarinforms-shell-flyout"></a>Xamarin.Forms シェルのポップアップ
 
@@ -63,6 +63,20 @@ ms.locfileid: "97940131"
 ```csharp
 Shell.Current.FlyoutIsPresented = false;
 ```
+
+## <a name="flyout-width-and-height"></a>ポップアップの幅と高さ
+
+ポップアップの幅と高さは、`Shell.FlyoutWidth` と `Shell.FlyoutHeight` の添付プロパティを `double` 値に設定することによってカスタマイズできます。
+
+```xaml
+<Shell ...
+       FlyoutWidth="400"
+       FlyoutHeight="200">
+    ...
+</Shell>
+```
+
+これにより、画面全体でポップアップを展開したり、タブ バーが見えないようにポップアップの高さを下げたりするなどのシナリオが可能になります。
 
 ## <a name="flyout-header"></a>ポップアップのヘッダー
 
@@ -540,7 +554,23 @@ Shell.Current.FlyoutIsPresented = false;
 > [!NOTE]
 > これと同じテンプレートを、`MenuItem` オブジェクトにも使用できます。
 
-## <a name="flyoutitem-tab-order"></a>FlyoutItem のタブ オーダー
+## <a name="set-flyoutitem-visibility"></a>FlyoutItem の表示設定
+
+ポップアップ項目は、既定ではポップアップで表示されます。 ただし、ポップアップ項目をポップアップで非表示にするには、`Shell.FlyoutItemIsVisible` 添付プロパティ (既定では `true`) を `false` に設定します。
+
+```xaml
+<Shell ...>
+    <FlyoutItem ...
+                Shell.FlyoutItemIsVisible="False">
+        ...
+    </FlyoutItem>
+</Shell>
+```
+
+> [!NOTE]
+> `Shell.FlyoutItemIsVisible` 添付プロパティは、`FlyoutItem`、`MenuItem`、`Tab`、および `ShellContent` オブジェクトで設定できます。
+
+## <a name="set-flyoutitem-tab-order"></a>FlyoutItem のタブ オーダーの設定
 
 既定では、`FlyoutItem` オブジェクトのタブ オーダーは、XAML に記載されている順序、またはプログラムで子コレクションに追加された順序と同じです。 この順序は、キーボードを使って `FlyoutItem` オブジェクト間をナビゲートする際の順序であり、多くの場合、この既定の順序が最善の順序です。
 
@@ -588,6 +618,54 @@ CurrentItem = aboutItem;
 ```csharp
 Shell.Current.CurrentItem = aboutItem;
 ```
+
+## <a name="replace-flyout-content"></a>ポップアップ コンテンツの置換
+
+ポップアップ コンテンツを表すポップアップ項目は、必要に応じて `Shell.FlyoutContent` のバインド可能なプロパティを `object` に設定することによって、独自のコンテンツに置き換えることができます。
+
+```xaml
+<Shell.FlyoutContent>
+    <CollectionView BindingContext="{x:Reference shell}"
+                    IsGrouped="True"
+                    ItemsSource="{Binding FlyoutItems}">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Label Text="{Binding Title}"
+                       TextColor="White"
+                       FontSize="Large" />
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</Shell.FlyoutContent>
+```
+
+この例では、ポップアップ コンテンツは、`FlyoutItems` コレクション内の各項目のタイトルを表示する [`CollectionView`](xref:Xamarin.Forms.CollectionView) に置き換えられます。
+
+> [!NOTE]
+> `Shell` クラスの `FlyoutItems` プロパティは、ポップアップ項目の読み取り専用のコレクションです。
+
+`Shell.FlyoutContentTemplate` プロパティを [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) に設定することでポップアップ コンテンツを定義することもできます。
+
+```xaml
+<Shell.FlyoutContentTemplate>
+    <DataTemplate>
+        <CollectionView BindingContext="{x:Reference shell}"
+                        IsGrouped="True"
+                        ItemsSource="{Binding FlyoutItems}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding Title}"
+                           TextColor="White"
+                           FontSize="Large" />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </DataTemplate>
+</Shell.FlyoutContentTemplate>
+```
+
+> [!IMPORTANT]
+> ポップアップ ヘッダーを、必要に応じてポップアップ コンテンツの上に表示できます。また、ポップアップ コンテンツの下にポップアップ フッターを表示することもできます。 ポップアップ コンテンツがスクロール可能な場合、シェルはポップアップ ヘッダーのスクロール動作を受け入れようとします。
 
 ## <a name="menu-items"></a>メニュー項目
 
