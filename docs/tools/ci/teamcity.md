@@ -1,19 +1,19 @@
 ---
-title: Xamarin でのチーム City の使用
+title: Xamarin での TeamCity の使用
 description: このガイドでは、TeamCity を使用してモバイルアプリケーションをコンパイルし、App Center テストに送信する手順について説明します。
 ms.prod: xamarin
 ms.assetid: AC2626CB-28A7-4808-B2A9-789D67899546
 author: davidortinau
 ms.author: daortin
 ms.date: 04/01/2020
-ms.openlocfilehash: a7118cc3ce9c0a5c4254bb5921800fe38acd85a0
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 553f40a407fa8003a6545214a545f00b01fb0ed6
+ms.sourcegitcommit: b75c369adb8e02a429b6c0fed8ba4a855099bf01
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91458226"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98555036"
 ---
-# <a name="using-team-city-with-xamarin"></a>Xamarin でのチーム City の使用
+# <a name="using-teamcity-with-xamarin"></a>Xamarin での TeamCity の使用
 
 _このガイドでは、TeamCity を使用してモバイルアプリケーションをコンパイルし、App Center テストに送信する手順について説明します。_
 
@@ -39,7 +39,7 @@ TeamCity の設定には、次のようないくつかの手順が含まれま�
 
 - **TeamCity プロジェクトの作成** –前の3つの手順が完了したら、ソースコードを取得し、プロジェクトをコンパイルして、テストを App Center テストに送信するために必要なすべてのメタデータを含む teamcity プロジェクトを作成する必要があります。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 [App Center テスト](/appcenter/test-cloud/)の経験が必要です。
 
@@ -59,7 +59,7 @@ TeamCity 8.1 に関する知識が必要です。 TeamCity のインストール
 1. **Visual Studio for Mac** –これには、Xamarin と xamarin Android が含まれます。
 2. **Xamarin コンポーネントストアにログインする** –この手順は省略可能で、アプリケーションが Xamarin コンポーネントストアのコンポーネントを使用する場合にのみ必要です。 この時点でコンポーネントストアに事前にログインすると、TeamCity ビルドがアプリケーションのコンパイルを試行しても問題が発生しなくなります。
 3. **Xcode** – Xcode は、iOS アプリケーションをコンパイルして署名するために必要です。
-4. **Xcode コマンドラインツール** -この詳細については、「 [Ruby With rbenv の更新](https://github.com/calabash/calabash-ios/wiki) 」ガイドの「インストール」セクションの手順 1. で説明されています。
+4. **Xcode Command-Line ツール** –「 [Ruby With rbenv の更新](https://github.com/calabash/calabash-ios/wiki) 」ガイドの「インストール」セクションの手順 1. で説明されています。
 5. **& プロビジョニングプロファイルの署名 id** : XCode を使用して証明書とプロビジョニングプロファイルをインポートします。 詳細については [、「署名 id とプロビジョニングプロファイルのエクスポート](https://developer.apple.com/library/ios/recipes/xcode_help-accounts_preferences/articles/export_signing_assets.html) に関する Apple のガイド」を参照してください。
 6. **Android キーストア** –必要な android キーストアを、teamcity ユーザーがアクセスできるディレクトリにコピーし `~/Documents/keystores/MyAndroidApp1` ます。
 7. **Calabash** –アプリケーションに calabash を使用して記述されたテストがある場合は、これは省略可能な手順です。 詳細については、「 [OS X Mavericks に Calabash をインストールする](https://github.com/calabash/calabash-ios/wiki) 」および「 [Ruby With rbenv を更新](https://github.com/calabash/calabash-ios/wiki) する」ガイドを参照してください。
@@ -81,9 +81,9 @@ TeamCity は、モバイルアプリケーションのコンパイルと送信�
 
 ビルドスクリプトは、PowerShell ファイル (Windows の場合) または bash スクリプト (OS X の場合) のように簡単にできます。 ビルドスクリプトを作成する場合、スクリプト言語にはいくつかの選択肢があります。
 
-- [**Rake**](https://github.com/jimweirich/rake) : Ruby に基づいてプロジェクトをビルドするためのドメイン固有言語 (DSL) です。 Rake には、人気と豊富なライブラリのエコシステムの利点があります。
+- [**Rake**](https://github.com/jimweirich/rake) : Ruby に基づいてプロジェクトをビルドするための Domain-Specific 言語 (DSL) です。 Rake には、人気と豊富なライブラリのエコシステムの利点があります。
 
-- [**psake**](https://github.com/psake/psake)ソフトウェアを構築するための Windows PowerShell ライブラリです。
+- [](https://github.com/psake/psake)ソフトウェアを構築するための Windows PowerShell ライブラリです。
 
 - [**フェイク**](https://fsharp.github.io/FAKE/) –これは F # に基づく DSL で、必要に応じて既存の .net ライブラリを使用できます。
 
@@ -139,7 +139,7 @@ UITests は、次のスニペットに示すように [APP CENTER CLI](https://g
 appcenter test run uitest --app <TEAM-NAME/APP-NAME> --devices <DEVICE_SET> --token <API_KEY> --app-path <appname.APK-or-appname.IPA> --merge-nunit-xml report.xml --build-dir pathToUITestBuildDir
 ```
 
-テストを実行すると、 **report.xml**という名前の NUnit スタイルの XML ファイルの形式でテスト結果が返されます。 TeamCity によって、ビルドログに情報が表示されます。
+テストを実行すると、 **report.xml** という名前の NUnit スタイルの XML ファイルの形式でテスト結果が返されます。 TeamCity によって、ビルドログに情報が表示されます。
 
 App Center に UITests を送信する方法の詳細については、「 [Xamarin Android アプリを準備](/appcenter/test-cloud/uitest/preparing-for-upload-android) する」または「 [xamarin IOS アプリを準備](/appcenter/test-cloud/uitest/preparing-for-upload-ios)する」を参照してください。
 
