@@ -59,7 +59,7 @@ items:
           - name: Grid レイアウト
             href: ~/get-started/tutorials/grid/index.yml
           - name: 表示内容
-            href: ~/get-started/tutorials/listview/index.yml
+            href: ~/get-started/tutorials/collectionview/index.yml
           - name: ポップアップ
             href: ~/get-started/tutorials/pop-ups/index.yml
           - name: アプリのライフサイクル

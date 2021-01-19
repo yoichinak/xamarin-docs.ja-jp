@@ -60,7 +60,7 @@
         - name: Grid レイアウト
           href: tutorials/grid/index.yml
         - name: 表示内容
-          href: tutorials/listview/index.yml
+          href: tutorials/collectionview/index.yml
         - name: ポップアップ
           href: tutorials/pop-ups/index.yml
         - name: アプリのライフサイクル
