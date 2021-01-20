@@ -1,0 +1,41 @@
+### YamlMime:Tutorial
+title: Xamarin.Forms CollectionView のチュートリアル
+metadata:
+  title: Xamarin.Forms CollectionView のチュートリアル
+  description: Xamarin.Forms CollectionView を使用して、データを一覧表示する方法について説明します。
+  audience: Developer
+  level: Beginner
+  ms.topic: interactive-tutorial
+  ms.date: 01/15/2021
+  author: davidbritch
+  ms.author: dabritch
+  no-loc:
+  - Xamarin.Forms
+  - Xamarin.Essentials
+  ms.openlocfilehash: 36f481c6c8790725f797e51fbf1839a1981d741b
+  ms.sourcegitcommit: b75c369adb8e02a429b6c0fed8ba4a855099bf01
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 01/18/2021
+  ms.locfileid: "98558881"
+items:
+- durationInMinutes: 1
+  content: >
+    [!INCLUDE [](includes/intro.md)]
+- title: CollectionView を作成する
+  durationInMinutes: 2
+  content: >
+    [!INCLUDE [](includes/create.md)]
+- title: データを読み込む
+  durationInMinutes: 4
+  content: >
+    [!INCLUDE [](includes/populate-data.md)]
+- title: 項目の選択に応答する
+  durationInMinutes: 3
+  content: >
+    [!INCLUDE [](includes/item-selection.md)]
+- title: 項目の外観をカスタマイズする
+  durationInMinutes: 3
+  content: >
+    [!INCLUDE [](includes/customize-item-appearance.md)]
+- content: '[!INCLUDE [](includes/completed.md)]'

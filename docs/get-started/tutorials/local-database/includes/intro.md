@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 8f379e8639846d9a6424c4aaadf83ff89d7a8684
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 62706082496732f60136e4283d5ff7a087488dd3
+ms.sourcegitcommit: b75c369adb8e02a429b6c0fed8ba4a855099bf01
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71107283"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98557138"
 ---
 このチュートリアルを試行する前に、以下を正常に完了しておく必要があります。
 
@@ -12,9 +12,9 @@ ms.locfileid: "71107283"
 - [StackLayout](~/get-started/tutorials/stacklayout/index.yml) のチュートリアル。
 - [Button](~/get-started/tutorials/button/index.yml) のチュートリアル。
 - [Entry](~/get-started/tutorials/entry/index.yml) のチュートリアル。
-- [ListView](~/get-started/tutorials/listview/index.yml) のチュートリアル。
+- [CollectionView](~/get-started/tutorials/collectionview/index.yml) のチュートリアル。
 
-このチュートリアルでは、次の作業を行う方法について説明します。
+このチュートリアルでは、以下の内容を学習します。
 
 > [!div class="checklist"]
 >

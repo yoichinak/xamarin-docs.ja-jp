@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 4ee2326079ba9ddea6b0f4c5c4356412a3d5b492
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 7c0896c3674304275b284a482335cb397379a2a9
+ms.sourcegitcommit: b75c369adb8e02a429b6c0fed8ba4a855099bf01
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91451605"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98557118"
 ---
 これでこのチュートリアルは完了です。ここでは以下の方法を学習しました。
 
@@ -16,10 +16,10 @@ ms.locfileid: "91451605"
 
 ## <a name="next-steps"></a>次の手順
 
-Xamarin.Forms を使用してモバイル アプリケーションを作成する基本についてさらに学習するには、ListView のチュートリアルに進んでください。
+Xamarin.Forms を使用してモバイル アプリケーションを作成する基本についてさらに学習するには、CollectionView のチュートリアルに進んでください。
 
 > [!div class="nextstepaction"]
-> [ListView のチュートリアル](~/get-started/tutorials/listview/index.yml)
+> [ListView のチュートリアル](~/get-started/tutorials/collectionview/index.yml)
 
 ## <a name="related-links"></a>関連リンク
 
