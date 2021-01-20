@@ -10,12 +10,12 @@ ms.date: 01/29/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f447a89ca4b4f21554a75ec52c5771ee9f9d35fd
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 6bb9156c3f097b517474b70cdacc683d96423417
+ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562991"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98609119"
 ---
 # <a name="adding-ios-specific-formatting"></a>IOS 固有の書式設定の追加
 
@@ -23,14 +23,14 @@ IOS 固有の書式設定を行う1つの方法は、コントロールの [カ�
 
 IOS アプリの外観を制御する他のオプションは Xamarin.Forms 次のとおりです。
 
-- 情報の表示オプションの構成[ **Info.plist**](#customizing-infoplist)
+- 情報の表示オプションの構成[ ](#customizing-infoplist)
 - [ `UIAppearance` API](#uiappearance-api)を使用したコントロールスタイルの設定
 
 これらの代替方法については、以下で説明します。
 
 ## <a name="customizing-infoplist"></a>情報 plist のカスタマイズ
 
-**情報 plist**ファイルを使用すると、ステータスバーを表示する方法 (およびその有無) など、iOS アプリケーションのさまざまな機能を構成できます。
+**情報 plist** ファイルを使用すると、ステータスバーを表示する方法 (およびその有無) など、iOS アプリケーションのさまざまな機能を構成できます。
 
 たとえば、 [Todo サンプル](/samples/xamarin/xamarin-forms-samples/todo) では、次のコードを使用して、すべてのプラットフォームのナビゲーションバーの色とテキストの色を設定します。
 
@@ -42,7 +42,7 @@ nav.BarTextColor = Color.White;
 
 結果は、次の画面スニペットに示されています。 ステータスバーの項目は黒であることに注意してください (これ Xamarin.Forms はプラットフォーム固有の機能であるため、この項目を設定することはできません)。
 
-![iOS のテーマ](theme-images/status-default-sml.png)
+![スクリーンショットステータスバー項目が黒のテキストでの iOS のテーマを示します。](theme-images/status-default-sml.png)
 
 理想的には、ステータスバーは、iOS プロジェクトで直接実行できる問題でもあります。 次のエントリを **情報 plist** に追加して、ステータスバーを強制的に白にします。
 
@@ -59,15 +59,15 @@ nav.BarTextColor = Color.White;
 
 アプリを実行すると、ナビゲーションバーは緑色になり、テキストは (書式設定により) 白になり Xamarin.Forms ます。また、iOS 固有の構成により、ステータスバー *の* テキストも白になります。
 
-![iOS のテーマ](theme-images/status-white-sml.png)
+![スクリーンショットステータスバー項目を含む iOS のテーマをホワイトテキストで表示します。](theme-images/status-white-sml.png)
 
 ## <a name="uiappearance-api"></a>UIAppearance API
 
-[ `UIAppearance` API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md)を使用すると、[カスタムレンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)を作成し*なく*ても、多くの iOS コントロールでビジュアルプロパティを設定できます。
+[ `UIAppearance` API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md)を使用すると、[カスタムレンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)を作成し *なく* ても、多くの iOS コントロールでビジュアルプロパティを設定できます。
 
-**AppDelegate.cs**メソッドに1行のコードを追加すると、 `FinishedLaunching` そのプロパティを使用して、特定の種類のすべてのコントロールのスタイルを設定でき `Appearance` ます。 次のコードには、タブバーとスイッチコントロールをグローバルにスタイル設定するという2つの例が含まれています。
+**AppDelegate.cs** メソッドに1行のコードを追加すると、 `FinishedLaunching` そのプロパティを使用して、特定の種類のすべてのコントロールのスタイルを設定でき `Appearance` ます。 次のコードには、タブバーとスイッチコントロールをグローバルにスタイル設定するという2つの例が含まれています。
 
-IOS プロジェクトの**AppDelegate.cs**
+IOS プロジェクトの **AppDelegate.cs**
 
 ```csharp
 public override bool FinishedLaunching (UIApplication app, NSDictionary options)

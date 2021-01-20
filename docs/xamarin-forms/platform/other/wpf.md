@@ -11,16 +11,16 @@ ms.date: 05/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 17db86eb6e6c767498f1d8b550b923377b905364
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 948dd586a3b60897531cc96187f288687668f60b
+ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557440"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98609093"
 ---
 # <a name="wpf-platform-setup"></a>WPF プラットフォームのセットアップ
 
-![[プレビュー]](~/media/shared/preview.png)
+![ラベルのプレビュー](~/media/shared/preview.png)
 
 Xamarin.Forms では、Windows Presentation Foundation (WPF) のプレビューがサポートされており、.NET Core 3 で .NET Framework しています。 この記事では、.NET Framework を対象とする WPF プロジェクトをソリューションに追加する方法について説明し Xamarin.Forms ます。
 
@@ -37,7 +37,7 @@ Windows 7、8、および10のデスクトップで実行される WPF アプリ
 
 2. [**新しいプロジェクトの追加**] ウィンドウで、[**言語**] ボックスの一覧の [ **C#** ] を選択し、[**プラットフォーム**] ドロップダウンで [ **Windows** ] を選択し、[**プロジェクトの種類**] ドロップダウンで [**デスクトップ**] を選択します。 プロジェクトの種類の一覧で、[ **WPF アプリ (.NET Framework)**] を選択します。
 
-    ![新しい WPF プロジェクトを追加する](wpf-images/add-project.png "新しい WPF プロジェクトを追加する")
+    ![[新しいプロジェクトの追加] ダイアログボックスが選択された状態で、スクリーンショットが表示されます。](wpf-images/add-project.png "新しい WPF プロジェクトを追加する")
 
     [ **次へ** ] ボタンをクリックします。
 
@@ -46,17 +46,17 @@ Windows 7、8、および10のデスクトップで実行される WPF アプリ
 
 3. [ **新しいプロジェクトの構成** ] ウィンドウで、 **wpf** 拡張機能を含むプロジェクトの名前を入力します。たとえば、「 **boxviewclock. WPF**」と入力します。 [ **参照** ] ボタンをクリックし、[ **boxviewclock** ] フォルダーを選択し、 **[フォルダーの選択]** をクリックして、ソリューション内の他のプロジェクトと同じディレクトリに WPF プロジェクトを配置します。
 
-    ![新しい WPF プロジェクトを追加する](wpf-images/configure-project.png "新しい WPF プロジェクトを追加する")
+    ![[新しいプロジェクトの構成] ダイアログボックスに、プロジェクト名、場所、およびフレームワークの値が表示されます。](wpf-images/configure-project.png "新しい WPF プロジェクトを追加する")
 
     [ **作成** ] ボタンを押して、プロジェクトを作成します。
 
-4. **ソリューションエクスプローラー**で、新しい**BOXVIEWCLOCK. WPF**プロジェクトを右クリックし、[ **NuGet パッケージの管理...**] を選択します。[**参照**] タブを選択し、を検索し** Xamarin.Forms ます。Platform. WPF**:
+4. **ソリューションエクスプローラー** で、新しい **BOXVIEWCLOCK. WPF** プロジェクトを右クリックし、[ **NuGet パッケージの管理...**] を選択します。[**参照**] タブを選択し、を検索し **Xamarin.Forms ます。Platform. WPF**:
 
     ![NuGet パッケージを選択します](wpf-images/select-nuget-package.png "NuGet パッケージを選択します")
 
     パッケージを選択し、[ **インストール** ] ボタンをクリックします。
 
-5. **ソリューションエクスプローラー**でソリューション名を右クリックし、[**ソリューションの NuGet パッケージの管理...**] を選択します。[**更新**] タブを選択し、パッケージを選択し **Xamarin.Forms** ます。 すべてのプロジェクトを選択し、同じバージョンに更新し Xamarin.Forms ます。
+5. **ソリューションエクスプローラー** でソリューション名を右クリックし、[**ソリューションの NuGet パッケージの管理...**] を選択します。[**更新**] タブを選択し、パッケージを選択し **Xamarin.Forms** ます。 すべてのプロジェクトを選択し、同じバージョンに更新し Xamarin.Forms ます。
 
     ![NuGet パッケージを更新する](wpf-images/update-nuget-package.png "NuGet パッケージを更新する")
 
@@ -66,13 +66,13 @@ Windows 7、8、および10のデスクトップで実行される WPF アプリ
 
     **[OK** ] をクリックします。
 
-7. WPF プロジェクトの **mainwindow.xaml** ファイルを編集します。 タグに、の `Window` XML 名前空間宣言を追加し** Xamarin.Forms ます。Platform. WPF**アセンブリと名前空間:
+7. WPF プロジェクトの **mainwindow.xaml** ファイルを編集します。 タグに、の `Window` XML 名前空間宣言を追加し **Xamarin.Forms ます。Platform. WPF** アセンブリと名前空間:
 
     ```xaml
     xmlns:wpf="clr-namespace:Xamarin.Forms.Platform.WPF;assembly=Xamarin.Forms.Platform.WPF"
     ```
 
-    次に、 `Window` タグをに変更 `wpf:FormsApplicationPage` します。 設定を `Title` アプリケーションの名前 ( **Boxviewclock**など) に変更します。 完成した XAML ファイルは次のようになります。
+    次に、 `Window` タグをに変更 `wpf:FormsApplicationPage` します。 設定を `Title` アプリケーションの名前 ( **Boxviewclock** など) に変更します。 完成した XAML ファイルは次のようになります。
 
     ```xaml
     <wpf:FormsApplicationPage x:Class="BoxViewClock.WPF.MainWindow"
@@ -125,7 +125,7 @@ Windows 7、8、および10のデスクトップで実行される WPF アプリ
     }
     ```
 
-9. **ソリューションエクスプローラー**で WPF プロジェクトを右クリックし、[**スタートアッププロジェクトに設定**] を選択します。 F5 キーを押して、Windows デスクトップで Visual Studio デバッガーを使用してプログラムを実行します。
+9. **ソリューションエクスプローラー** で WPF プロジェクトを右クリックし、[**スタートアッププロジェクトに設定**] を選択します。 F5 キーを押して、Windows デスクトップで Visual Studio デバッガーを使用してプログラムを実行します。
 
     ![WPF BoxView Clock](wpf-images/wpf-boxviewclock.png "WPF BoxView Clock" )
 
@@ -154,7 +154,7 @@ WPF の **mainwindow.xaml** ファイルで、ウィンドウの初期サイズ�
 Title="BoxViewClock" Height="450" Width="800"
 ```
 
-## <a name="issues"></a>発行
+## <a name="issues"></a>issue
 
 これはプレビューなので、運用環境の準備ができているわけではありません。 のすべての NuGet パッケージ Xamarin.Forms が WPF 用に準備されているわけではありません。一部の機能が完全に動作していない可能性があります。
 

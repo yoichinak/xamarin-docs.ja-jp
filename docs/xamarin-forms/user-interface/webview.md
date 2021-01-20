@@ -10,12 +10,12 @@ ms.date: 05/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 05de8c554864108b90433c335074c61fc3def8cf
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: 3fe1b7d56e71cac0b7a5a7b4e2bc68710241f13f
+ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97939954"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98609158"
 ---
 # <a name="no-locxamarinforms-webview"></a>Xamarin.Forms WebView
 
@@ -25,7 +25,7 @@ ms.locfileid: "97939954"
 
 ![アプリブラウザーで](webview-images/in-app-browser.png)
 
-## <a name="content"></a>コンテンツ
+## <a name="content"></a>Content
 
 `WebView` では、次の種類のコンテンツをサポートしています。
 
@@ -263,7 +263,7 @@ namespace WorkingWithWebview.UWP
 }
 ```
 
-## <a name="navigation"></a>［ナビゲーション］
+## <a name="navigation"></a>ナビゲーション
 
 WebView では、使用できるようにするいくつかのメソッドとプロパティによるナビゲーションがサポートされています。
 
@@ -329,7 +329,7 @@ public partial class InAppBrowserXaml : ContentPage
 }
 ```
 
-以上で作業は終了です。
+これで完了です。
 
 ![WebView ナビゲーションボタン](webview-images/in-app-browser.png)
 
@@ -386,11 +386,11 @@ void webviewNavigated(object sender, WebNavigatedEventArgs e)
 
 この結果、次の出力 (読み込み) が行われます。
 
-![WebView ナビゲーションイベントの例](webview-images/loading-start.png)
+![読み込み中のスクリーンショットのナビゲーションイベントを示しています。](webview-images/loading-start.png)
 
 読み込みが完了しました:
 
-![WebView ナビゲーションイベントの例](webview-images/loading-end.png)
+![読み込み後の WebView ナビゲーションイベントをスクリーンショットに示します。](webview-images/loading-end.png)
 
 ## <a name="reloading-content"></a>コンテンツの再読み込み
 
@@ -433,7 +433,7 @@ webView.Reload();
 - **Android** &ndash;`INTERNET`ネットワークのコンテンツを表示する場合にのみ必要です。 ローカルコンテンツには特別なアクセス許可は必要ありません。
 - **iOS** &ndash; 特別なアクセス許可は必要ありません。
 
-## <a name="layout"></a>Layout
+## <a name="layout"></a>レイアウト
 
 他のほとんどのビューとは異なり Xamarin.Forms 、で `WebView` `HeightRequest` は、 `WidthRequest` Stacklayout または RelativeLayout に含まれるときにとが指定されている必要があります。 これらのプロパティを指定しなかった場合、は `WebView` 表示されません。
 

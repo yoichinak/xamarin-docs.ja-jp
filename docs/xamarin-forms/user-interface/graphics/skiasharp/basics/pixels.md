@@ -10,12 +10,12 @@ ms.date: 02/09/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5f12dbd4ef0cfea9d276fd8c939afab585541ece
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 04f0a056b83c3ebb298e284fefc93d83dfc57b52
+ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93373898"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98609002"
 ---
 # <a name="pixels-and-device-independent-units"></a>ピクセル、およびデバイスに依存しない単位
 
@@ -104,7 +104,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 実行中のプログラムを次に示します。
 
-[![[画面サイズ] ページのトリプルスクリーンショット](pixels-images/surfacesize-small.png)](pixels-images/surfacesize-large.png#lightbox "[画面サイズ] ページのトリプルスクリーンショット")
+[![スクリーンショットは、2つのモバイルデバイスで実行されている Surface Size アプリを示しています。](pixels-images/surfacesize-small.png)](pixels-images/surfacesize-large.png#lightbox "[画面サイズ] ページのトリプルスクリーンショット")
 
 ご覧のように、の `CanvasSize` プロパティ `SKCanvasView` と `Size` 値のプロパティは、 `SKImageInfo` ピクセルディメンションをレポートするときに一貫しています。 `Height`のプロパティと `Width` プロパティ `SKCanvasView` はプロパティであり、 Xamarin.Forms プラットフォームで定義されているデバイスに依存しない単位でビューのサイズを報告します。
 
@@ -114,7 +114,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 同じイメージの解像度を維持するには、2つの座標系の間で変換するための単純な関数を作成する方が適しています。
 
-`DrawCircle`では、メソッドに加え `SKCanvas` て、楕円を描画する2つのメソッドも定義されて `DrawOval` います。 楕円は、1つの半径ではなく2つの半径によって定義されます。 これらは、 *主要半径* と *補助半径* と呼ばれます。 この `DrawOval` メソッドは、X 軸と Y 軸に平行する2つの半径を持つ楕円を描画します。 (X 軸と Y 軸に平行になっていない軸を持つ楕円を描画する必要がある場合は、「 [**円弧を描画する3つの方法**](../curves/arcs.md)」の記事で説明されているように、 [**回転変換**](../transforms/rotate.md)またはグラフィックスパスに関する記事で説明されている回転変換を使用できます)。 このメソッドのオーバーロード [`DrawOval`](xref:SkiaSharp.SKCanvas.DrawOval(System.Single,System.Single,System.Single,System.Single,SkiaSharp.SKPaint)) は、2つの半径のパラメーターに名前を `rx` 指定し、 `ry` それらが X 軸と Y 軸に対して平行であることを示します。
+`DrawCircle`では、メソッドに加え `SKCanvas` て、楕円を描画する2つのメソッドも定義されて `DrawOval` います。 楕円は、1つの半径ではなく2つの半径によって定義されます。 これらは、 *主要半径* と *補助半径* と呼ばれます。 この `DrawOval` メソッドは、X 軸と Y 軸に平行する2つの半径を持つ楕円を描画します。 (X 軸と Y 軸に平行になっていない軸を持つ楕円を描画する必要がある場合は、「[**円弧を描画する3つの方法**](../curves/arcs.md)」の記事で説明されているように、[**回転変換**](../transforms/rotate.md)またはグラフィックスパスに関する記事で説明されている回転変換を使用できます)。 このメソッドのオーバーロード [`DrawOval`](xref:SkiaSharp.SKCanvas.DrawOval(System.Single,System.Single,System.Single,System.Single,SkiaSharp.SKPaint)) は、2つの半径のパラメーターに名前を `rx` 指定し、 `ry` それらが X 軸と Y 軸に対して平行であることを示します。
 
 ```csharp
 public void DrawOval (Single cx, Single cy, Single rx, Single ry, SKPaint paint)
@@ -147,7 +147,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 次のように実行されています。
 
-[![[画面サイズ] ページのトリプルスクリーンショット](pixels-images/ellipsefill-small.png)](pixels-images/ellipsefill-large.png#lightbox "[画面サイズ] ページのトリプルスクリーンショット")
+[![スクリーンショットは、2つのモバイルデバイスで実行されている楕円の塗りつぶしアプリを示しています。](pixels-images/ellipsefill-small.png)](pixels-images/ellipsefill-large.png#lightbox "[画面サイズ] ページのトリプルスクリーンショット")
 
 もう1つのメソッドには、 [`DrawOval`](xref:SkiaSharp.SKCanvas.DrawOval(SkiaSharp.SKRect,SkiaSharp.SKPaint)) 引数があります [`SKRect`](xref:SkiaSharp.SKRect) 。これは、左上隅と右下隅の X 座標と Y 座標の観点で定義された四角形です。 楕円はその四角形を塗りつぶします。これは、次のように楕円の **塗りつぶし** ページで使用できることを示しています。
 

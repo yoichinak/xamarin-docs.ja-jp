@@ -10,12 +10,12 @@ ms.date: 08/19/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d998ec31c6e10366409a89fa554a2d00ad2cb3e2
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: 241aa896cb66c4ff594c786ad484781adcddffa1
+ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97940292"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98609132"
 ---
 # <a name="no-locxamarinforms-in-xamarin-native-projects"></a>Xamarin.Forms Xamarin ネイティブプロジェクトで
 
@@ -91,7 +91,7 @@ public class AppDelegate : UIApplicationDelegate
 
 `FinishedLaunching`メソッドが実行されると、 Xamarin.Forms `NotesPage` 次のスクリーンショットに示すように、クラスで定義されている UI が表示されます。
 
-[![XAML で定義された UI を使用する Xamarin iOS アプリケーションのスクリーンショット](native-forms-images/ios-notespage.png "XAML UI を使用した Xamarin iOS アプリ")](native-forms-images/ios-notespage-large.png#lightbox "XAML UI を使用した Xamarin iOS アプリ")
+[![スクリーンショットは、モバイルデバイスのノート画面を示しています。](native-forms-images/ios-notespage.png "XAML UI を使用した Xamarin iOS アプリ")](native-forms-images/ios-notespage-large.png#lightbox "XAML UI を使用した Xamarin iOS アプリ")
 
 たとえばをタップするなど、UI と対話すると、実行中の **+** [`Button`](xref:Xamarin.Forms.Button) 分離コードに次のイベントハンドラーが生成され `NotesPage` ます。
 
@@ -118,7 +118,7 @@ public void NavigateToNoteEntryPage(Note note)
 
 メソッドは、の `NavigateToNoteEntryPage` Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) 派生ページを拡張メソッドを使用してに変換 `UIViewController` し、 `CreateViewController` のプロパティを設定し `Title` `UIViewController` ます。 次に、 `UIViewController` `AppNavigationController` メソッドによってがプッシュされ `PushViewController` ます。 したがって、 Xamarin.Forms 次のスクリーンショットに示すように、クラスで定義されている UI が `NoteEntryPage` 表示されます。
 
-[![XAML で定義された UI を使用する Xamarin iOS アプリケーションのスクリーンショット](native-forms-images/ios-noteentrypage.png "XAML UI を使用した Xamarin iOS アプリ")](native-forms-images/ios-noteentrypage-large.png#lightbox "XAML UI を使用した Xamarin iOS アプリ")
+[![スクリーンショットは、モバイルデバイス上のメモエントリを示しています。](native-forms-images/ios-noteentrypage.png "XAML UI を使用した Xamarin iOS アプリ")](native-forms-images/ios-noteentrypage-large.png#lightbox "XAML UI を使用した Xamarin iOS アプリ")
 
 が表示されると、戻るナビゲーションによって `NoteEntryPage` からクラスのがポップされ、 `UIViewController` `NoteEntryPage` `AppNavigationController` ユーザーがクラスのに返され `UIViewController` `NotesPage` ます。 ただし、 `UIViewController` iOS ネイティブナビゲーションスタックからをポップしても、 `UIViewController` アタッチされたオブジェクトとアタッチされたオブジェクトは自動的に破棄されません `Page` 。 したがって、クラスはメソッドをオーバーライドして、 `AppNavigationController` `PopViewController` 後方ナビゲーション時にビューコントローラーを破棄します。
 
@@ -193,7 +193,7 @@ public class MainActivity : AppCompatActivity
 
 `OnCreate`メソッドが実行されると、 Xamarin.Forms `NotesPage` 次のスクリーンショットに示すように、クラスで定義されている UI が表示されます。
 
-[![XAML で定義された UI を使用する Xamarin Android アプリケーションのスクリーンショット](native-forms-images/android-notespage.png "XAML UI を使用した Xamarin Android アプリ")](native-forms-images/android-notespage-large.png#lightbox "XAML UI を使用した Xamarin Android アプリ")
+[![スクリーンショットは、モバイルデバイス上の青いバナーと色分けされたノートテキストを含むノート画面を示しています。](native-forms-images/android-notespage.png "XAML UI を使用した Xamarin Android アプリ")](native-forms-images/android-notespage-large.png#lightbox "XAML UI を使用した Xamarin Android アプリ")
 
 たとえばをタップするなど、UI と対話すると、実行中の **+** [`Button`](xref:Xamarin.Forms.Button) 分離コードに次のイベントハンドラーが生成され `NotesPage` ます。
 
@@ -223,7 +223,7 @@ public void NavigateToNoteEntryPage(Note note)
 
 メソッドは、 `NavigateToNoteEntryPage` から派生したページを拡張メソッドを使用してに変換し、を Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) `Fragment` `CreateSupportFragment` `Fragment` フラグメントバックスタックに追加します。 したがって、 Xamarin.Forms `NoteEntryPage` 次のスクリーンショットに示すように、で定義されている UI が表示されます。
 
-[![XAML で定義された UI を使用する Xamarin Android アプリケーションのスクリーンショット](native-forms-images/android-noteentrypage.png "XAML UI を使用した Xamarin Android アプリ")](native-forms-images/android-noteentrypage-large.png#lightbox "XAML UI を使用した Xamarin Android アプリ")
+[![スクリーンショットは、モバイルデバイス上の青いバナー付きのノートエントリを示しています。](native-forms-images/android-noteentrypage.png "XAML UI を使用した Xamarin Android アプリ")](native-forms-images/android-noteentrypage-large.png#lightbox "XAML UI を使用した Xamarin Android アプリ")
 
 が表示されると、戻る矢印をタップすると、 `NoteEntryPage` `Fragment` `NoteEntryPage` フラグメントバックスタックからのがポップされ、クラスのにユーザーが返され `Fragment` `NotesPage` ます。
 
@@ -314,7 +314,7 @@ public sealed partial class MainPage : Page
 
 コンストラクターが実行されると `MainPage` 、 Xamarin.Forms `NotesPage` 次のスクリーンショットに示すように、クラスで定義されている UI が表示されます。
 
-[![::: No loc (Xamarin. Forms)::: XAML で定義された UI を使用する UWP アプリケーションのスクリーンショット](native-forms-images/uwp-notespage.png "::: No loc (Xamarin. Forms)::: XAML UI を使用した UWP アプリ")](native-forms-images/uwp-notespage-large.png#lightbox "::: No loc (Xamarin. Forms)::: XAML UI を使用した UWP アプリ")
+[![スクリーンショットには、メモと日付/時刻を含むノートページが表示されます。](native-forms-images/uwp-notespage.png "::: No loc (Xamarin. Forms)::: XAML UI を使用した UWP アプリ")](native-forms-images/uwp-notespage-large.png#lightbox "::: No loc (Xamarin. Forms)::: XAML UI を使用した UWP アプリ")
 
 たとえばをタップするなど、UI と対話すると、実行中の **+** [`Button`](xref:Xamarin.Forms.Button) 分離コードに次のイベントハンドラーが生成され `NotesPage` ます。
 
@@ -340,7 +340,7 @@ public void NavigateToNoteEntryPage(Note note)
 
 UWP でのナビゲーションは、通常、引数を受け取るメソッドを使用して実行され `Frame.Navigate` `Page` ます。 Xamarin.Forms`Frame.Navigate`派生ページインスタンスを受け取る拡張メソッドを定義 [`ContentPage`](xref:Xamarin.Forms.ContentPage) します。 このため、メソッドを実行すると、 `NavigateToNoteEntryPage` Xamarin.Forms `NoteEntryPage` 次のスクリーンショットに示すように、に定義されている UI が表示されます。
 
-[![::: No loc (Xamarin. Forms)::: XAML で定義された UI を使用する UWP アプリケーションのスクリーンショット](native-forms-images/uwp-noteentrypage.png "::: No loc (Xamarin. Forms)::: XAML UI を使用した UWP アプリ")](native-forms-images/uwp-noteentrypage-large.png#lightbox "::: No loc (Xamarin. Forms)::: XAML UI を使用した UWP アプリ")
+[![スクリーンショットには、メモが入力されたテキストボックスを含むノートページが表示されます。](native-forms-images/uwp-noteentrypage.png "::: No loc (Xamarin. Forms)::: XAML UI を使用した UWP アプリ")](native-forms-images/uwp-noteentrypage-large.png#lightbox "::: No loc (Xamarin. Forms)::: XAML UI を使用した UWP アプリ")
 
 が表示されると、戻る矢印をタップすると、 `NoteEntryPage` アプリ内のバックスタックからのがポップされ、その `FrameworkElement` `NoteEntryPage` ユーザーがクラスのに返され `FrameworkElement` `NotesPage` ます。
 
