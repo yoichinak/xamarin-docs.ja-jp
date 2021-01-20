@@ -10,12 +10,12 @@ ms.date: 05/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5f48300b6c974bbbb0106f1afaa6c863f8159c58
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 6aa52ff13dccbf6c7b65f7006195997971a7cac2
+ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93374642"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98609782"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>円弧を描画する 3 つの方法
 
@@ -257,7 +257,7 @@ public void ArcTo (Single x1, Single y1, Single x2, Single y2, Single radius)
 
 輪郭に追加される曲線は、メソッドで指定された点のいずれにも接していません `ArcTo` 。 これは、現在のポイントから最初の接点までの直線と、2番目の接点で終わる弧で構成されます。ここでは、赤で示されています。
 
-![2本の線の間の強調表示されたタンジェントの円弧](arcs-images/tangentarchighlight.png)
+![ダイアグラムには、前の図が示されています。この図は、2本の線の間の強調表示された接線の弧を示しています。](arcs-images/tangentarchighlight.png)
 
 次に、輪郭に追加される最後の直線と円弧を示します。
 
@@ -421,7 +421,7 @@ public partial class TangentArcPage : InteractivePage
 
 [![アークタンジェントページのトリプルスクリーンショット](arcs-images/tangentarc-small.png)](arcs-images/tangentarc-large.png#lightbox)
 
-アークタンジェントは、丸みのある四角形など、角を丸くする場合に最適です。 `SKPath`には既にメソッドが含まれているため、丸い Heptagon ページでは、を使用して、 `AddRoundedRect` **Rounded Heptagon** `ArcTo` 両側の多角形の角を丸める方法を示しています。 (コードは通常の多角形に対して一般化されています)。
+アークタンジェントは、丸みのある四角形など、角を丸くする場合に最適です。 `SKPath`には既にメソッドが含まれているため、丸い Heptagon ページでは、を使用して、 `AddRoundedRect`  `ArcTo` 両側の多角形の角を丸める方法を示しています。 (コードは通常の多角形に対して一般化されています)。
 
 `PaintSurface`クラスのハンドラーには [`RoundedHeptagonPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RoundedHeptagonPage.cs) `for` 、heptagon の7つの頂点の座標を計算するループが1つ含まれています。2番目のループでは、これらの頂点から7辺の中間点を計算します。 次に、これらの中間点を使用してパスを作成します。
 

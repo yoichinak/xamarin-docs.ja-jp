@@ -10,12 +10,12 @@ ms.date: 09/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e78acc88c9f159fdeb797663f1c90283ed0d803b
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: 3daf08c688be41652ae2573b0bf58e2ace2072c6
+ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97939785"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98609145"
 ---
 # <a name="no-locxamarinforms-shapes-fill-rules"></a>Xamarin.Forms 図形: 塗りつぶしルール
 
@@ -101,11 +101,11 @@ ms.locfileid: "97939785"
 
 この例では、一連の同心円リングで構成される複合図形が表示されます。
 
-![0以外の塗りつぶしルールのある複合図形](fillrule-images/nonzero.png "0以外の塗りつぶしルールのある複合図形")
+![図には、すべてが入力された4つの同心円円が示されています。](fillrule-images/nonzero.png "0以外の塗りつぶしルールのある複合図形")
 
 複合図形で、すべてのリングがいっぱいになっていることを確認します。 これは、すべてのセグメントが同じ方向で実行されているために、任意の点から描画された射線が1つ以上のセグメントをまたぐため、跨りの合計がゼロに等しくないためです。
 
-![0以外の塗りつぶしルールを持つ注釈付き複合図形](fillrule-images/nonzero-annotated.png "0以外の塗りつぶしルールを持つ注釈付き複合図形")
+![ダイアグラムには、前の図から、方向矢印と、交差する円ごとに + 1 で注釈が付けられた光線が示されています。](fillrule-images/nonzero-annotated.png "0以外の塗りつぶしルールを持つ注釈付き複合図形")
 
 上の図では、赤の矢印はセグメントが描画される方向を表し、黒い矢印は最も内側のリング内のポイントから実行されている任意の射線を表しています。 値 0 から開始し、セグメントは左から右に射線と交わるため、射線が交わるセグメントごとに値 1 が加算されます。
 
@@ -172,11 +172,11 @@ ms.locfileid: "97939785"
 
 この例では、閉じていない一連の円弧セグメントが描画されます。
 
-![0以外の塗りつぶしルールのある複合図形](fillrule-images/nonzero-gaps.png "0以外の塗りつぶしルールのある複合図形")
+![図は4つの同心円の円を示していますが、最も外側の部分は最も外側に入っています。](fillrule-images/nonzero-gaps.png "0以外の塗りつぶしルールのある複合図形")
 
 上の図では、中央の3番目の弧は塗りつぶされていません。 これは、指定された射線からパスのセグメントを越える値の合計が0であるためです。
 
-![0以外の塗りつぶしルールを持つ注釈付き複合図形](fillrule-images/nonzero-gaps-annotated.png "0以外の塗りつぶしルールを持つ注釈付き複合図形")
+![ダイアグラムには、前の図から、方向矢印が付いた円と、交差する円ごとに + 1 または-1 で注釈が付けられた2つの光線が表示されます。](fillrule-images/nonzero-gaps-annotated.png "0以外の塗りつぶしルールを持つ注釈付き複合図形")
 
 上の図では、赤い円はポイントを表し、黒い線は塗りつぶされていない領域の点から移動する任意の光線を表し、赤い矢印はセグメントが描画される方向を表します。 ご覧のように、セグメントを越える線の値の合計はゼロになります。
 
