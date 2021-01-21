@@ -1,20 +1,20 @@
 ---
-ms.openlocfilehash: 338b03ae5e52b06c6ddc225b418ee2bc7d5e5ffc
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: e46c86def8a22450cf8087cf36a6bb05dd24ef70
+ms.sourcegitcommit: 4d260b655cb52b990dda79c239a9721f2e964625
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71107287"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98570772"
 ---
 このチュートリアルを試行する前に、以下を正常に完了しておく必要があります。
 
 - [最初の Xamarin.Forms アプリのビルド](~/get-started/first-app/index.md)のクイック スタート。
-- [Grid](~/get-started/tutorials/grid/index.yml) のチュートリアル。
+- [StackLayout](~/get-started/tutorials/stacklayout/index.yml) のチュートリアル。
 - [Label](~/get-started/tutorials/label/index.yml) のチュートリアル。
 - [Button](~/get-started/tutorials/button/index.yml) のチュートリアル。
-- [Entry](~/get-started/tutorials/entry/index.yml) のチュートリアル。
+- [CollectionView](~/get-started/tutorials/collectionview/index.yml) のチュートリアル。
 
-このチュートリアルでは、次の作業を行う方法について説明します。
+このチュートリアルでは、以下の内容を学習します。
 
 > [!div class="checklist"]
 >
@@ -22,6 +22,6 @@ ms.locfileid: "71107287"
 > - Web サービス クラスを作成する。
 > - Web サービス クラスを使用する。
 
-[OpenWeatherMap](https://openweathermap.org/) Web サービスからデータを取得する方法を示す簡単なアプリケーションを作成するには、Visual Studio 2019 または Visual Studio for Mac を使用します。 次のスクリーンショットは、最終的なアプリケーションです。
+GitHub Web API から .NET リポジトリ データを取得する方法を示す簡単なアプリケーションを作成するには、Visual Studio 2019 または Visual Studio for Mac を使用します。 取得したデータは、[`CollectionView`](xref:Xamarin.Forms.CollectionView) に表示されます。 次のスクリーンショットは、最終的なアプリケーションです。
 
-[![iOS および Android での、Seattle の気象データのスクリーンショット](../images/consume-web-service.png "Seattle の気象データ")](../images/consume-web-service-large.png#lightbox "Seattle の気象データ")
+[![iOS と Android における GitHub .NET リポジトリのスクリーンショット](../images/consume-web-service.png)](../images/consume-web-service-large.png#lightbox)
