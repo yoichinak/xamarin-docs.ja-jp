@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: da0e3775f400c965ee59a762884e638e3379c8df
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: ab5b02e34afa4ff0c839f3f16cc9391e267c2f8a
+ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91454859"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98608755"
 ---
 # <a name="xamarinandroid-environment"></a>Xamarin.Android Environment
 
@@ -30,11 +30,11 @@ adb shell setprop debug.mono.env "'MONO_LOG_LEVEL=info|MONO_LOG_MASK=asm'"
 
 Android システムのプロパティは、ターゲット デバイス上のすべてのプロセスに対して設定されます。
 
-Xamarin.Android 4.6 以降、*環境ファイル* をプロジェクトに追加することで、アプリケーションごとにシステム プロパティと環境変数の両方を設定するか、オーバーライドすることができるようになりました。 環境ファイルは、[`AndroidEnvironment` の**ビルド アクション**](~/android/deploy-test/building-apps/build-process.md)を含む Unix 形式のプレーンテキスト ファイルです。
-環境ファイルには、*キー = 値*形式の行が含まれています。
+Xamarin.Android 4.6 以降、*環境ファイル* をプロジェクトに追加することで、アプリケーションごとにシステム プロパティと環境変数の両方を設定するか、オーバーライドすることができるようになりました。 環境ファイルは、[`AndroidEnvironment` の **ビルド アクション**](~/android/deploy-test/building-apps/build-process.md)を含む Unix 形式のプレーンテキスト ファイルです。
+環境ファイルには、*キー = 値* 形式の行が含まれています。
 コメントは `#` で始まる行です。 空白行は無視されます。
 
-*キー* が大文字で始まる場合、*キー* は環境変数として扱われます。**setenv** (3) は、プロセスの起動時に環境変数を指定された*値*に設定するために使用されます。
+*キー* が大文字で始まる場合、*キー* は環境変数として扱われます。**setenv** (3) は、プロセスの起動時に環境変数を指定された *値* に設定するために使用されます。
 
 "*キー*" が小文字で始まる場合、"*キー*" は Android のシステム プロパティとして扱われます。"*値*" は "*既定値*" です。Xamarin.Android の実行動作を制御する Android システムのプロパティは、まず Android システムのプロパティ ストアから検索され、値が存在しない場合は、環境ファイルに指定されている値が使用されます。 これは、診断のために、`adb shell setprop` を使用して環境ファイルの値をオーバーライドできるようにするためです。
 
@@ -49,7 +49,7 @@ Xamarin.Android は `XA_HTTP_CLIENT_HANDLER_TYPE` 変数をサポートしてい
 Xamarin.Android 6.1 では、この環境変数は既定では設定されておらず、[HttpClientHandler](/dotnet/api/system.net.http.httpclienthandler?view=xamarinandroid-7.1) が使用されます。
 
 または、値 `Xamarin.Android.Net.AndroidClientHandler` でネットワーク アクセスに [`java.net.URLConnection`](xref:Java.Net.URLConnection) を使用するよう指定できます。
-これでは、Android がサポートする場合、TLS 1.2 の使用を許可している*場合があります*。
+これでは、Android がサポートする場合、TLS 1.2 の使用を許可している *場合があります*。
 
 Xamarin.Android 6.1 で追加されました。
 
@@ -79,7 +79,7 @@ Xamarin.Android は以下のシステム プロパティをサポートしてい
 
 ### `debug.mono.gc`
 
-`debug.mono.debug` システム プロパティの値は整数です。
+`debug.mono.gc` システム プロパティの値は整数です。
 `1` の場合は、GC 情報がログに記録されます。
 
 これは、`debug.mono.log` システム プロパティに `gc` が含まれている場合に相当します。
@@ -95,15 +95,15 @@ Xamarin.Android が `adb logcat` にログを記録する追加情報を制御�
 - `gref`: JNI グローバル参照メッセージを出力します。
 - `lref`: JNI ローカル参照メッセージを出力します。
   > [!NOTE]
-  > これは*実際には*スパム `adb logcat` になります。
-  > Xamarin.Android 5.1 では、`.__override__/lrefs.txt` ファイルも作成され、*巨大*なサイズになる可能性があります。
+  > これは *実際には* スパム `adb logcat` になります。
+  > Xamarin.Android 5.1 では、`.__override__/lrefs.txt` ファイルも作成され、*巨大* なサイズになる可能性があります。
   > そのため、お勧めしません。
 - `timing`: いくつかのメソッド タイミング情報を出力します。 この処理で、ファイル `.__override__/methods.txt` と `.__override__/counters.txt` も作成されます。
 
 ### `debug.mono.max_grefc`
 
 `debug.mono.max_grefc` システム プロパティの値は整数です。
-この値で、ターゲット デバイスの既定の検出された最大 GREF カウントが*オーバーライド*されます。
+この値で、ターゲット デバイスの既定の検出された最大 GREF カウントが *オーバーライド* されます。
 
 *注:***environment.txt** ファイルで適時に値を取得できないので、`adb shell setprop
 debug.mono.max_grefc` でのみ使用できます。
@@ -122,7 +122,7 @@ debug.mono.max_grefc` でのみ使用できます。
 システム プロパティ `debug.mono.trace` でトレースが有効になります。
 これは `mono --trace` オプションに相当し、同じ値を使用します (詳細については、[**mono**(1)](http://docs.go-mono.com/?link=man%3amono(1)) のマニュアル ページを参照してください)。
 
-一般的には*使用しないでください*。 トレースを使用すると、スパム `adb logcat` が出力され、プログラムの動作が大幅に遅くなり、プログラムの動作が変わります (最大の変化でエラー条件の追加など)。
+一般的には *使用しないでください*。 トレースを使用すると、スパム `adb logcat` が出力され、プログラムの動作が大幅に遅くなり、プログラムの動作が変わります (最大の変化でエラー条件の追加など)。
 
 ただし、*場合によっては*、トレースを利用して何らかの追加調査を実行できることがあります。
 
