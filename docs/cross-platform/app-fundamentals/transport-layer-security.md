@@ -6,12 +6,12 @@ ms.assetid: 399F71C6-16A4-4ABC-B30D-AF17D066A5FA
 author: davidortinau
 ms.author: daortin
 ms.date: 04/20/2018
-ms.openlocfilehash: fda004fe32b8f7d047298608a500cf72c4e9f06c
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 2beb33915d1dd03184d784ea998f91fcb64f423f
+ms.sourcegitcommit: e27e29c14b783263e063baaa65d4eecb8dd31f57
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91453352"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98628905"
 ---
 # <a name="transport-layer-security-tls-12"></a>トランスポート層セキュリティ (TLS) 1.2
 
@@ -26,7 +26,7 @@ ms.locfileid: "91453352"
 
 ## <a name="update-xamarinandroid-to-tls-12"></a>Xamarin Android を TLS 1.2 に更新する
 
-**Httpclient**の実装オプションと**SSL/tls 実装**オプションを更新して、tls 1.2 のセキュリティを有効にします。
+**Httpclient** の実装オプションと **SSL/tls 実装** オプションを更新して、tls 1.2 のセキュリティを有効にします。
 
 > [!NOTE]
 > Android 5.0 以降が必要です。
@@ -35,7 +35,7 @@ ms.locfileid: "91453352"
 
 これらの設定は、[ **プロジェクトのプロパティ > Android オプション** ] にあり、[ **詳細** 設定] ボタンをクリックします。
 
-[![Visual Studio での HttpClient と TLS の構成](transport-layer-security-images/android-win-sml.png)](transport-layer-security-images/android-win.png#lightbox)
+[![Visual Studio for Android デバイスで HttpClient と TLS を構成します。](transport-layer-security-images/android-win-sml.png)](transport-layer-security-images/android-win.png#lightbox)
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -47,19 +47,19 @@ ms.locfileid: "91453352"
 
 ## <a name="update-xamarinios-to-tls-12"></a>Xamarin. iOS を TLS 1.2 に更新します。
 
-**Httpclient 実装**オプションを更新して、TSL 1.2 のセキュリティを有効にします。
+**Httpclient 実装** オプションを更新して、TSL 1.2 のセキュリティを有効にします。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 この設定は、[ **プロジェクトのプロパティ] > [IOS ビルド**] で確認できます。
 
-[![Visual Studio での HttpClient と TLS の構成](transport-layer-security-images/ios-win-sml.png)](transport-layer-security-images/ios-win.png#lightbox)
+[![Visual Studio for i O S デバイスで HttpClient と TLS を構成します。](transport-layer-security-images/ios-win-sml.png)](transport-layer-security-images/ios-win.png#lightbox)
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 この設定は、[ **プロジェクトオプション] > [ビルド > IOS ビルド** ] タブにあります。
 
-[![Visual Studio for Mac での HttpClient の構成](transport-layer-security-images/ios-mac-sml.png)](transport-layer-security-images/ios-mac.png#lightbox)
+[![I O S デバイスの Visual Studio for Mac で HttpClient を構成します。](transport-layer-security-images/ios-mac-sml.png)](transport-layer-security-images/ios-mac.png#lightbox)
 
 -----
 
@@ -101,7 +101,7 @@ Android プロジェクトのオプションを使用すると、サポートす
 新しい Xamarin プロジェクトでは、TLS 1.2 をサポートするネイティブ実装 (すべてのプロジェクトに推奨) が既定で使用されますが、互換性の理由から必要に応じて、マネージコードに戻すことができます。
 
 > [!IMPORTANT]
-> **Mono/Managed**オプションは、 [iOS および Mac のプロジェクトオプションから削除](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/xamarin.ios_10/xamarin.ios_10.8.md)されました。
+> **Mono/Managed** オプションは、 [iOS および Mac のプロジェクトオプションから削除](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/xamarin.ios_10/xamarin.ios_10.8.md)されました。
 >
 > ネイティブオプションは、iOS および Mac プラットフォームで常に使用されます。
 

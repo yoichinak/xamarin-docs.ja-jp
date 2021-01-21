@@ -7,17 +7,17 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: 82367d63d1cc7b52d69de52ee635e380cd68c382
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: ad237ae509170e8d43d583e87ddc5f7de6147ae1
+ms.sourcegitcommit: e27e29c14b783263e063baaa65d4eecb8dd31f57
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91435657"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98629022"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>チュートリアル: iOS の目的 C ライブラリのバインド
 
 > [!IMPORTANT]
-> 現在、Xamarin プラットフォームでのカスタム バインディングの使用を調査しています。 今後の開発作業の発展のために、この[**アンケート**](https://www.surveymonkey.com/r/KKBHNLT)にご回答ください。
+> 現在、Xamarin プラットフォームでのカスタム バインディングの使用を調査しています。 今後の開発作業の発展のために、この [**アンケート**](https://www.surveymonkey.com/r/KKBHNLT)にご回答ください。
 
 _この記事では、既存の目的 C ライブラリである InfColorPicker の作成に関する実践的なチュートリアルを提供します。ここでは、静的な目的 C ライブラリのコンパイル、バインド、および Xamarin. iOS アプリケーションでのバインディングの使用などのトピックについて説明します。_
 
@@ -59,11 +59,11 @@ Xamarin でこの特定の目標 C API を使用するために必要なすべ�
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-前述のように、このチュートリアルでは、Xcode コマンドラインツール (具体的にはと) を使用し `make` `lipo` ます。 `make`コマンドは、プログラムの構築方法を指定する_メイクファイル_を使用して、実行可能プログラムとライブラリのコンパイルを自動化する、非常に一般的な Unix ユーティリティです。 `lipo`コマンドは、マルチアーキテクチャファイルを作成するための OS X コマンドラインユーティリティです。これにより、複数のファイルが、 `.a` すべてのハードウェアアーキテクチャで使用できる1つのファイルに結合されます。
+前述のように、このチュートリアルでは、Xcode コマンドラインツール (具体的にはと) を使用し `make` `lipo` ます。 `make`コマンドは、プログラムの構築方法を指定する _メイクファイル_ を使用して、実行可能プログラムとライブラリのコンパイルを自動化する、非常に一般的な Unix ユーティリティです。 `lipo`コマンドは、マルチアーキテクチャファイルを作成するための OS X コマンドラインユーティリティです。これにより、複数のファイルが、 `.a` すべてのハードウェアアーキテクチャで使用できる1つのファイルに結合されます。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-前述のように、このチュートリアルでは、 **Mac ビルドホスト** (具体的にはと) で Xcode コマンドラインツールを使用し `make` `lipo` ます。 `make`コマンドは、_メイク_ファイルを使用してプログラムのビルド方法を指定することにより、実行可能プログラムおよびライブラリのコンパイルを自動化する、非常に一般的な Unix ユーティリティです。 `lipo`コマンドは、マルチアーキテクチャファイルを作成するための OS X コマンドラインユーティリティです。これにより、複数のファイルが、 `.a` すべてのハードウェアアーキテクチャで使用できる1つのファイルに結合されます。
+前述のように、このチュートリアルでは、 **Mac ビルドホスト** (具体的にはと) で Xcode コマンドラインツールを使用し `make` `lipo` ます。 `make`コマンドは、_メイク_ ファイルを使用してプログラムのビルド方法を指定することにより、実行可能プログラムおよびライブラリのコンパイルを自動化する、非常に一般的な Unix ユーティリティです。 `lipo`コマンドは、マルチアーキテクチャファイルを作成するための OS X コマンドラインユーティリティです。これにより、複数のファイルが、 `.a` すべてのハードウェアアーキテクチャで使用できる1つのファイルに結合されます。
 
 -----
 
@@ -124,16 +124,16 @@ Github で InfColorPicker のコードを調べる場合は、次のようにし
 1. Xcode を起動します。
 2. [**ファイル**] メニューの [**新しい**  >  **プロジェクト**] をクリックします。
 
-    [![新しいプロジェクトの開始](walkthrough-images/image04.png)](walkthrough-images/image04.png#lightbox)
+    [![[ファイル] メニューの [新規作成] メニューから選択したプロジェクトが表示されます。](walkthrough-images/image04.png)](walkthrough-images/image04.png#lightbox)
 3. [ **Framework & Library**]、[ **Cocoa タッチスタティックライブラリ** ] テンプレートの順に選択し、[ **次へ** ] ボタンをクリックします。
 
     [![Cocoa タッチスタティックライブラリテンプレートを選択します](walkthrough-images/image05.png)](walkthrough-images/image05.png#lightbox)
 
-4. `InfColorPicker`**プロジェクト名**として「」と入力し、[**次へ**] ボタンをクリックします。
+4. `InfColorPicker`**プロジェクト名** として「」と入力し、[**次へ**] ボタンをクリックします。
 
     [![プロジェクト名として「InfColorPicker」と入力します。](walkthrough-images/image06.png)](walkthrough-images/image06.png#lightbox)
 5. プロジェクトを保存する場所を選択し、[ **OK** ] ボタンをクリックします。
-6. 次に、ソースを InfColorPicker プロジェクトからスタティックライブラリプロジェクトに追加する必要があります。 (既定 **では) Xcode ファイルは** 、スタティックライブラリに既に存在するため、上書きすることはできません。 **Finder**から、GitHub から解凍した元のプロジェクトの infcolorpicker ソースコードに移動し、すべての infcolorpicker ファイルをコピーして、新しいスタティックライブラリプロジェクトに貼り付けます。
+6. 次に、ソースを InfColorPicker プロジェクトからスタティックライブラリプロジェクトに追加する必要があります。 (既定 **では) Xcode ファイルは** 、スタティックライブラリに既に存在するため、上書きすることはできません。 **Finder** から、GitHub から解凍した元のプロジェクトの infcolorpicker ソースコードに移動し、すべての infcolorpicker ファイルをコピーして、新しいスタティックライブラリプロジェクトに貼り付けます。
 
     [![すべての InfColorPicker ファイルをコピーする](walkthrough-images/image12.png)](walkthrough-images/image12.png#lightbox)
 
@@ -224,7 +224,7 @@ Mac でターミナルアプリケーションを開き、メイクファイル�
 
 [![メイクファイルの出力の例](walkthrough-images/lib01.png)](walkthrough-images/lib01.png#lightbox)
 
-Make を実行すると、によって多数のテキストスクロールが表示されます。 すべてが正常に動作した場合は、 **ビルドが成功** し、という語が表示さ `libInfColorPicker-armv7.a` れ、 `libInfColorPicker-i386.a` `libInfColorPickerSDK.a` ファイルは **メイク**ファイルと同じ場所にコピーされます。
+Make を実行すると、によって多数のテキストスクロールが表示されます。 すべてが正常に動作した場合は、 **ビルドが成功** し、という語が表示さ `libInfColorPicker-armv7.a` れ、 `libInfColorPicker-i386.a` `libInfColorPickerSDK.a` ファイルは **メイク** ファイルと同じ場所にコピーされます。
 
 [![LibInfColorPicker-armv7、libInfColorPicker-i386. a と libInfColorPickerSDK (メイクファイルによって生成されたファイル)](walkthrough-images/lib02.png)](walkthrough-images/lib02.png#lightbox)
 
@@ -246,7 +246,7 @@ Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 
 ## <a name="create-a-xamarinios-binding-project"></a>Xamarin. iOS バインドプロジェクトを作成する
 
-**マジックペン**を使用してバインドプロセスを自動化するには、まず、API 定義を格納するための Xamarin. IOS バインドプロジェクトを作成する必要があります (ここでは、**マジックペン**を使用してビルドを支援します)。また、C# バインドを作成する必要があります。
+**マジックペン** を使用してバインドプロセスを自動化するには、まず、API 定義を格納するための Xamarin. IOS バインドプロジェクトを作成する必要があります (ここでは、**マジックペン** を使用してビルドを支援します)。また、C# バインドを作成する必要があります。
 
 次の手順を実行してみましょう。
 
@@ -263,7 +263,7 @@ Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 
 1. **[次へ]** をクリックします。
 
-1. **プロジェクト名**として「InfColorPickerBinding」と入力し、[**作成**] ボタンをクリックしてソリューションを作成します。
+1. **プロジェクト名** として「InfColorPickerBinding」と入力し、[**作成**] ボタンをクリックしてソリューションを作成します。
 
     ![プロジェクト名として「InfColorPickerBinding」と入力します。](walkthrough-images/bind02a.png)
 
@@ -277,13 +277,13 @@ Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 
 1. [**ファイル**] メニューの [**新しい**  >  **プロジェクト**] をクリックします。
 
-    ![新しいプロジェクトの開始](walkthrough-images/bind01vs.png "新しいプロジェクトの開始")
+    ![スクリーンショット Visual Studio の [ファイル] メニューの [新規] メニューから選択されたプロジェクトを表示します。](walkthrough-images/bind01vs.png "新しいプロジェクトの開始")
 
 1. [新しいプロジェクト] ダイアログボックスで、[ **VISUAL C# > iPhone & iPad > IOS バインドライブラリ (Xamarin)**] を選択します。
 
     [![IOS バインドライブラリを選択します](walkthrough-images/bind02.w157-sml.png)](walkthrough-images/bind02.w157.png#lightbox)
 
-1. **名前**として「InfColorPickerBinding」と入力し、[ **OK** ] ボタンをクリックしてソリューションを作成します。
+1. **名前** として「InfColorPickerBinding」と入力し、[ **OK** ] ボタンをクリックしてソリューションを作成します。
 
 ソリューションが作成され、次の2つの既定のファイルが含まれます。
 
@@ -317,7 +317,7 @@ Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. `libInfColorPickerSDK.a` **Mac ビルドホスト**からをコピーし、バインドプロジェクトに貼り付けます。
+1. `libInfColorPickerSDK.a` **Mac ビルドホスト** からをコピーし、バインドプロジェクトに貼り付けます。
 
 1. プロジェクトを右クリックし、[ **既存の項目の追加 >**] を選択します。
 
@@ -331,7 +331,7 @@ Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 
 -----
 
-ファイルがプロジェクトに追加されると、Xamarin によってファイルの**ビルドアクション**が自動的に**Objcbindingてライブラリ**に設定され、という名前の特別なファイルが作成さ**れます。** `libInfColorPickerSDK.linkwith.cs`
+ファイルがプロジェクトに追加されると、Xamarin によってファイルの **ビルドアクション** が自動的に **Objcbindingてライブラリ** に設定され、という名前の特別なファイルが作成さ **れます。** `libInfColorPickerSDK.linkwith.cs`
 
 このファイルには、 `LinkWith` 追加したスタティックライブラリを処理する方法を示す属性が含まれています。 このファイルの内容を次のコードスニペットに示します。
 
@@ -343,7 +343,7 @@ using ObjCRuntime;
 
 属性は、 `LinkWith` プロジェクトのスタティックライブラリと、いくつかの重要なリンカーフラグを識別します。
 
-次に、InfColorPicker プロジェクトの API 定義を作成する必要があります。 このチュートリアルでは、目的のマジックペンを使用して、 **ApiDefinition.cs**ファイルを生成します。
+次に、InfColorPicker プロジェクトの API 定義を作成する必要があります。 このチュートリアルでは、目的のマジックペンを使用して、 **ApiDefinition.cs** ファイルを生成します。
 
 <a name="Using_Objective_Sharpie"></a>
 
@@ -426,7 +426,7 @@ sdk: watchos2.2      arch: armv7
 sharpie bind --output=InfColorPicker --namespace=InfColorPicker --sdk=[iphone-os] -scope [full-path-to-project]/InfColorPicker/InfColorPicker [full-path-to-project]/InfColorPicker/InfColorPicker/*.h
 ```
 
-ここで、 `[full-path-to-project]` は、コンピューター上の **Infcolorpicker** Xcode プロジェクトファイルが配置されているディレクトリへの完全パスです。また、[iphone-os] は、コマンドに示されているように、インストールされている iOS SDK です `sharpie xcode -sdks` 。 この例では、このディレクトリ内の*すべて*のヘッダーファイルが含まれているパラメーターとして .h を渡してい** \* ます。** 通常は、これを行わないでください。その代わりに、ヘッダーファイルを慎重に読み取って、他のすべての関連ファイルを参照する最上位の **.h**ファイルを検索し、それを目的のマジックペンに渡します。 
+ここで、 `[full-path-to-project]` は、コンピューター上の **Infcolorpicker** Xcode プロジェクトファイルが配置されているディレクトリへの完全パスです。また、[iphone-os] は、コマンドに示されているように、インストールされている iOS SDK です `sharpie xcode -sdks` 。 この例では、このディレクトリ内の *すべて* のヘッダーファイルが含まれているパラメーターとして .h を渡してい **\* ます。** 通常は、これを行わないでください。その代わりに、ヘッダーファイルを慎重に読み取って、他のすべての関連ファイルを参照する最上位の **.h** ファイルを検索し、それを目的のマジックペンに渡します。 
 
 > [!TIP] 
 > 引数として `-scope` 、バインドするヘッダーが含まれているフォルダーを渡します。 引数を指定しない場合、 `-scope` 目標マジックペンはインポートされたすべての IOS SDK ヘッダーのバインドを生成しようとします。たとえば `#import <UIKit.h>` 、バインドプロジェクトのコンパイル時にエラーが発生する可能性のある大きな定義ファイルが作成されます。 引数を `-scope` 設定した場合、目標マジックペンは、スコープが指定されたフォルダーの外部にあるヘッダーのバインドを生成しません。 
@@ -458,19 +458,19 @@ In file included from /Users/kmullins/Projects/InfColorPicker/InfColorPicker/Inf
 Europa:Resources kmullins$
 ```
 
-**InfColorPicker.enums.cs**ファイルと**InfColorPicker.cs**ファイルがディレクトリに作成されます。
+**InfColorPicker.enums.cs** ファイルと **InfColorPicker.cs** ファイルがディレクトリに作成されます。
 
 [![InfColorPicker.enums.cs ファイルと InfColorPicker.cs ファイル](walkthrough-images/os06.png)](walkthrough-images/os06.png#lightbox)
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-上記で作成したバインドプロジェクトで、これらの両方のファイルを開きます。 **InfColorPicker.cs**ファイルの内容をコピーし、 **ApiDefinition.cs**ファイルに貼り付けて、既存の `namespace ...` コードブロックを**InfColorPicker.cs**ファイルの内容に置き換えます (ステートメントはそのままにしておき `using` ます)。
+上記で作成したバインドプロジェクトで、これらの両方のファイルを開きます。 **InfColorPicker.cs** ファイルの内容をコピーし、 **ApiDefinition.cs** ファイルに貼り付けて、既存の `namespace ...` コードブロックを **InfColorPicker.cs** ファイルの内容に置き換えます (ステートメントはそのままにしておき `using` ます)。
 
 ![InfColorPickerControllerDelegate ファイル](walkthrough-images/os07.png)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-上記で作成したバインドプロジェクトで、これらの両方のファイルを開きます。 ( **Mac ビルドホスト**から) **InfColorPicker.cs**ファイルの内容をコピーし、 **ApiDefinition.cs**ファイルに貼り付けて、既存の `namespace ...` コードブロックを**InfColorPicker.cs**ファイルの内容に置き換えます (ステートメントはそのままにしておき `using` ます)。
+上記で作成したバインドプロジェクトで、これらの両方のファイルを開きます。 ( **Mac ビルドホスト** から) **InfColorPicker.cs** ファイルの内容をコピーし、 **ApiDefinition.cs** ファイルに貼り付けて、既存の `namespace ...` コードブロックを **InfColorPicker.cs** ファイルの内容に置き換えます (ステートメントはそのままにしておき `using` ます)。
 
 -----
 
@@ -521,15 +521,15 @@ Europa:Resources kmullins$
 
     ![識別子の設定](walkthrough-images/use01a.png)
 
-1. **バインドプロジェクトへの参照の追加**- **InfColorPickerBinding**プロジェクトへの参照が含まれるように**InfColorPickerSample**プロジェクトを更新します。
+1. **バインドプロジェクトへの参照の追加**- **InfColorPickerBinding** プロジェクトへの参照が含まれるように **InfColorPickerSample** プロジェクトを更新します。
 
     ![バインドプロジェクトへの参照の追加](walkthrough-images/use02.png)
 
-1. **IPhone ユーザーインターフェイスを作成**します。 **InfColorPickerSample**プロジェクトの**mainstoryboard.storyboard ファイル**ファイルをダブルクリックして、iOS Designer で編集します。 次に示すように、ビューに **ボタン** を追加し `ChangeColorButton` 、それを呼び出します。
+1. **IPhone ユーザーインターフェイスを作成** します。 **InfColorPickerSample** プロジェクトの **mainstoryboard.storyboard ファイル** ファイルをダブルクリックして、iOS Designer で編集します。 次に示すように、ビューに **ボタン** を追加し `ChangeColorButton` 、それを呼び出します。
 
     ![ビューへのボタンの追加](walkthrough-images/use03.png)
 
-1. **InfColorPickerView を追加** します。 xib ライブラリには、 **xib** ファイルが含まれています。 Xamarin では、この **xib** をバインドプロジェクトに含めることはできません。このため、サンプルアプリケーションでは実行時エラーが発生します。 これを回避するには、 **xib** ファイルを Xamarin. iOS プロジェクトに追加します。 Xib プロジェクトを選択し、右クリックして [ **> 追加**] を選択し、次のスクリーンショットに示すように **.xib**ファイルを追加します。
+1. **InfColorPickerView を追加** します。 xib ライブラリには、 **xib** ファイルが含まれています。 Xamarin では、この **xib** をバインドプロジェクトに含めることはできません。このため、サンプルアプリケーションでは実行時エラーが発生します。 これを回避するには、 **xib** ファイルを Xamarin. iOS プロジェクトに追加します。 Xib プロジェクトを選択し、右クリックして [ **> 追加**] を選択し、次のスクリーンショットに示すようにファイルを追加します。
 
     ![InfColorPickerView を追加します。 xib](walkthrough-images/use04.png)
 
@@ -537,21 +537,21 @@ Europa:Resources kmullins$
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. **Xamarin. Ios プロジェクトの作成**-**単一ビューアプリ**テンプレートを使用して、 **InfColorPickerSample**という名前の新しい Xamarin iOS プロジェクトを追加します。
+1. **Xamarin. Ios プロジェクトの作成**-**単一ビューアプリ** テンプレートを使用して、 **InfColorPickerSample** という名前の新しい Xamarin iOS プロジェクトを追加します。
 
     [![iOS アプリ (Xamarin) プロジェクト](walkthrough-images/use01.w157-sml.png)](walkthrough-images/use01.w157.png#lightbox)
 
     [![テンプレートの選択](walkthrough-images/use01-2.w157-sml.png)](walkthrough-images/use01-2.w157.png#lightbox)
 
-1. **バインドプロジェクトへの参照の追加**- **InfColorPickerBinding**プロジェクトへの参照が含まれるように**InfColorPickerSample**プロジェクトを更新します。
+1. **バインドプロジェクトへの参照の追加**- **InfColorPickerBinding** プロジェクトへの参照が含まれるように **InfColorPickerSample** プロジェクトを更新します。
 
     ![バインドプロジェクトへの参照の追加](walkthrough-images/use02vs.png)
 
-1. **IPhone ユーザーインターフェイスを作成**します。 **InfColorPickerSample**プロジェクトの**mainstoryboard.storyboard ファイル**ファイルをダブルクリックして、iOS Designer で編集します。 次に示すように、ビューに **ボタン** を追加し `ChangeColorButton` 、それを呼び出します。
+1. **IPhone ユーザーインターフェイスを作成** します。 **InfColorPickerSample** プロジェクトの **mainstoryboard.storyboard ファイル** ファイルをダブルクリックして、iOS Designer で編集します。 次に示すように、ビューに **ボタン** を追加し `ChangeColorButton` 、それを呼び出します。
 
     ![IPhone ユーザーインターフェイスを作成する](walkthrough-images/use03vs.png)
 
-1. **InfColorPickerView を追加** します。 xib ライブラリには、 **xib** ファイルが含まれています。 Xamarin では、この **xib** をバインドプロジェクトに含めることはできません。このため、サンプルアプリケーションでは実行時エラーが発生します。 これを回避するには、 **Mac ビルドホスト**から**Xib**ファイルを Xamarin. iOS プロジェクトに追加します。 Xamarin プロジェクトを選択し、右クリックして [既存項目の**追加**  >  **...**] を選択し、 **xib**ファイルを追加します。
+1. **InfColorPickerView を追加** します。 xib ライブラリには、 **xib** ファイルが含まれています。 Xamarin では、この **xib** をバインドプロジェクトに含めることはできません。このため、サンプルアプリケーションでは実行時エラーが発生します。 これを回避するには、 **Mac ビルドホスト** から **Xib** ファイルを Xamarin. iOS プロジェクトに追加します。 Xamarin プロジェクトを選択し、右クリックして [既存項目の **追加**  >  **...**] を選択し、 **xib** ファイルを追加します。
 
 -----
 
@@ -576,7 +576,7 @@ Europa:Resources kmullins$
 @end
 ```
 
-このプロトコルは、ユーザーが新しい色を選択したこと、および**InfColorPickerController**が終了したことをクライアントに通知するために、 **InfColorPickerController**によって使用されます。 目標マジックペンは、次のコードスニペットに示すように、このプロトコルをマップしています。
+このプロトコルは、ユーザーが新しい色を選択したこと、および **InfColorPickerController** が終了したことをクライアントに通知するために、 **InfColorPickerController** によって使用されます。 目標マジックペンは、次のコードスニペットに示すように、このプロトコルをマップしています。
 
 ```csharp
 [BaseType(typeof(NSObject))]
@@ -652,7 +652,7 @@ public override void ViewDidLoad ()
 }
 ```
 
-**HandleTouchUpInsideWithStrongDelegate メソッドを実装** します。次に、ユーザーが **colorchangebutton**に触れるときのイベントハンドラーを実装します。 `ViewController`を編集し、次のメソッドを追加します。
+**HandleTouchUpInsideWithStrongDelegate メソッドを実装** します。次に、ユーザーが **colorchangebutton** に触れるときのイベントハンドラーを実装します。 `ViewController`を編集し、次のメソッドを追加します。
 
 ```csharp
 using InfColorPicker;
@@ -673,7 +673,7 @@ private void HandleTouchUpInsideWithStrongDelegate (object sender, EventArgs e)
 
 [![アプリケーションの実行](walkthrough-images/run01.png)](walkthrough-images/run01.png#lightbox)
 
-おめでとうございます! この時点で、Xamarin iOS アプリケーションで使用するために、目的の C ライブラリを作成してバインドしました。 次に、弱いデリゲートの使用について説明します。
+おめでとうございます。 この時点で、Xamarin iOS アプリケーションで使用するために、目的の C ライブラリを作成してバインドしました。 次に、弱いデリゲートの使用について説明します。
 
 ### <a name="implementing-a-weak-delegate"></a>弱いデリゲートの実装
 
@@ -722,7 +722,7 @@ public void ColorPickerControllerDidFinish (InfColorPickerController controller)
 
 ## <a name="related-links"></a>関連リンク
 
-- [Objective-C ライブラリのバインド](~/cross-platform/macios/binding/objective-c-libraries.md)
+- [バインディングの目的 C ライブラリ](~/cross-platform/macios/binding/objective-c-libraries.md)
 - [バインディングの詳細](~/cross-platform/macios/binding/overview.md)
 - [バインディングの種類のリファレンスガイド](~/cross-platform/macios/binding/binding-types-reference.md)
 - [目標 C 開発者向けの Xamarin](~/ios/get-started/objective-c-developers/index.md)

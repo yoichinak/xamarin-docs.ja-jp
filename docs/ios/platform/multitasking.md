@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: e32042c4b7e7d67e219611014d3a06ad9ed17b9d
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 76ce375e611ddc8ee21d76e7947601319bf9dba8
+ms.sourcegitcommit: e27e29c14b783263e063baaa65d4eecb8dd31f57
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91432467"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98628944"
 ---
 # <a name="multitasking-for-ipad-in-xamarinios"></a>Xamarin の iPad のマルチタスキング
 
@@ -45,7 +45,7 @@ iOS 9 では、特定の iPad ハードウェアで同時に2つのアプリを�
 
 ## <a name="multitasking-quickstart"></a>マルチタスキングのクイックスタート
 
-**スライドオーバー**ビューまたは**分割ビュー**をサポートするには、アプリで次の操作を行う必要があります。
+**スライドオーバー** ビューまたは **分割ビュー** をサポートするには、アプリで次の操作を行う必要があります。
 
 - IOS 9 (またはそれ以降) に対してビルドされます。
 - イメージアセットではなく、その起動画面にストーリーボードを使用します。
@@ -56,7 +56,7 @@ iOS 9 では、特定の iPad ハードウェアで同時に2つのアプリを�
 
 ## <a name="about-multitasking-for-ipad"></a>IPad のマルチタスキングについて
 
-iOS 9 では、iPad での新しいマルチタスク機能を提供しています。これには、 _スライドオーバー_、 _分割ビュー_ (ipad Air 2、iPad ミニ4、ipad Pro のみ) と _画像の画像が含ま_れています。 これらの機能については、次のセクションで詳しく説明します。
+iOS 9 では、iPad での新しいマルチタスク機能を提供しています。これには、 _スライドオーバー_、 _分割ビュー_ (ipad Air 2、iPad ミニ4、ipad Pro のみ) と _画像の画像が含ま_ れています。 これらの機能については、次のセクションで詳しく説明します。
 
 <a name="Slide-Over"></a>
 
@@ -92,13 +92,13 @@ iOS 9 では、iPad での新しいマルチタスク機能を提供していま
 
 ### <a name="picture-in-picture"></a>画像の画像
 
-ピクチャの新しい画像機能 ( _PIP_とも呼ばれます) を使用すると、ユーザーは、実行中の他のアプリの上に画面上の任意の場所に配置できる小さなフローティングウィンドウでビデオを視聴できます。
+ピクチャの新しい画像機能 ( _PIP_ とも呼ばれます) を使用すると、ユーザーは、実行中の他のアプリの上に画面上の任意の場所に配置できる小さなフローティングウィンドウでビデオを視聴できます。
 
 [![Picture フローティングウィンドウの画像の例](multitasking-images/about03.png)](multitasking-images/about03.png#lightbox)
 
 スライドオーバービューおよび分割ビューの場合と同様に、ユーザーは画像内のビデオを画像モードで視聴する操作を完全に制御できます。 アプリの主要な機能がビデオを視聴する場合は、PIP モードで正しく動作するように変更を加える必要があります。 それ以外の場合、PIP をサポートするために変更は必要ありません。
 
-アプリでユーザーの要求に PIP ビデオを表示するには、 _Avkit_ または _AV Foundation api_を使用している必要があります。 Media Player framework は、iOS 9 では償却されており、PIP はサポートされていません。
+アプリでユーザーの要求に PIP ビデオを表示するには、 _Avkit_ または _AV Foundation api_ を使用している必要があります。 Media Player framework は、iOS 9 では償却されており、PIP はサポートされていません。
 
 画像の画像は、iPad Pro、iPad Air、iPad Air 2、iPad ミニ2、iPad ミニ3、iPad ミニ4でのみ使用できます。 詳細については、Picture [Inpicture サンプルアプリ](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS9) と Apple の [画像クイックスタートの](https://developer.apple.com/library/prerelease/ios/documentation/WindowsViews/Conceptual/AdoptingMultitaskingOniPad/QuickStartForPictureInPicture.html#//apple_ref/doc/uid/TP40015145-CH14) ドキュメントを参照してください。
 
@@ -124,7 +124,7 @@ IPad では、全画面アプリには、標準の水平方向と垂直方向の
 
 スライドオーバーおよび分割ビューをサポートする Ipad では、最終的に次の組み合わせを使用できます。
 
-| **方向** | **プライマリアプリ** | **セカンダリアプリ** |
+| **Orientation** | **プライマリアプリ** | **セカンダリアプリ** |
 |--- |--- |--- |
 | **縦** |画面の75%<br />水平方向に圧縮<br />標準縦|画面の25%<br />水平方向に圧縮<br />標準縦|
 | **横** |画面の75%<br />標準の水平方向<br />標準縦|画面の25%<br />水平方向に圧縮<br />標準縦|
@@ -152,13 +152,13 @@ IPad で実行されている iOS 9 では、Apple はハードウェアキー�
 
 IOS 9 では、アプリで独自のカスタムキーボードショートカットを作成できます。 また、基本的なキーボードショートカットの中には、 **コマンド C** (copy)、 **コマンド-X** (切り取り)、 **コマンド V** (貼り付け)、 **コマンドラインシフト-H** (ホーム) などのようなものもあります。このショートカットキーは、特にアプリケーションが応答しません。
 
-次の**コマンド**を実行すると、Mac OS のように、ユーザーがキーボードからアプリをすばやく切り替えることができるアプリスイッチャーが表示されます。
+次の **コマンド** を実行すると、Mac OS のように、ユーザーがキーボードからアプリをすばやく切り替えることができるアプリスイッチャーが表示されます。
 
 [![アプリスイッチャー](multitasking-images/keyboard01.png)](multitasking-images/keyboard01.png#lightbox)
 
 IOS 9 アプリにキーボードショートカットが含まれている場合、ユーザーは **コマンド**、 **オプション** 、または **制御** キーを押して、ポップアップに表示できます。
 
-[![キーボードショートカットのポップアップ](multitasking-images/keyboard02.png)](multitasking-images/keyboard02.png#lightbox)
+[![スクリーンショットには、アプリのキーボードショートカットが表示されます。](multitasking-images/keyboard02.png)](multitasking-images/keyboard02.png#lightbox)
 
 #### <a name="defining-custom-keyboard-shortcuts"></a>カスタムショートカットキーの定義
 
@@ -192,9 +192,9 @@ public void NewEntry() {
 
 次に、プロパティをオーバーライド `KeyCommands` し、 `UIKeyCommand` **コマンド N** キーストローク用に新しいを作成します。 キーストロークがアクティブになったら、 `NewEntry` (コマンドを使用して iOS 9 に公開する) メソッドを呼び出して、 `Export` 要求されたアクションを実行します。
 
-ハードウェアキーボードが接続されている iPad でこのアプリを実行し、ユーザーが **コマンド**を入力すると、新しいエントリが一覧に追加されます。 ユーザーが **コマンド** キーを押したままになっている場合は、ショートカットの一覧が表示されます。
+ハードウェアキーボードが接続されている iPad でこのアプリを実行し、ユーザーが **コマンド** を入力すると、新しいエントリが一覧に追加されます。 ユーザーが **コマンド** キーを押したままになっている場合は、ショートカットの一覧が表示されます。
 
-[![キーボードショートカットのポップアップ](multitasking-images/keyboard03.png)](multitasking-images/keyboard03.png#lightbox)
+[![スクリーンショットは、アプリの新しいエントリのショートカットを示しています。](multitasking-images/keyboard03.png)](multitasking-images/keyboard03.png#lightbox)
 
 実装の例については、サンプルのマルチ [タスキングアプリ](/samples/xamarin/ios-samples/ios9-multitask) を参照してください。
 
@@ -259,4 +259,4 @@ PIP ビデオの再生を無効にするには、アプリで次の操作を行�
 - [iOS 9 (開発者向け)](https://developer.apple.com/ios/pre-release/)
 - [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
 - [IPad でのマルチタスキング機能強化の採用](https://developer.apple.com/library/prerelease/ios/documentation/WindowsViews/Conceptual/AdoptingMultitaskingOniPad/index.html#//apple_ref/doc/uid/TP40015145)
-- [ブログ投稿](https://blog.xamarin.com/using-auto-layouts-for-ios-9-splitview/)
+- [ブログの投稿](https://blog.xamarin.com/using-auto-layouts-for-ios-9-splitview/)

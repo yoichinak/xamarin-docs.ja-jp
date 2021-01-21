@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/13/2017
-ms.openlocfilehash: 476c19f22755775f7b2b8b1d4205747b4bc6b313
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 797122d82f13a178986d7d19203a8f6eeddaf483
+ms.sourcegitcommit: e27e29c14b783263e063baaa65d4eecb8dd31f57
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91432520"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98628892"
 ---
 # <a name="app-transport-security-in-xamarinios"></a>Xamarin. iOS のアプリトランスポートセキュリティ
 
@@ -38,7 +38,7 @@ ATS は、すべてのインターネット接続に対して次の要件を適�
 
 - すべての接続暗号では、転送機密性を使用する必要があります。 受け入れられた暗号の一覧については、以下を参照してください。
 - トランスポート層セキュリティ (TLS) プロトコルは、バージョン1.2 以上である必要があります。
-- 少なくとも2048ビットまたはそれ以上の RSA キーを含む SHA256 フィンガープリント、またはすべての証明書に256ビットまたはそれ以上の楕円曲線 (ECC) キーを使用する必要があります。
+- 少なくとも2048ビットまたはそれ以上の RSA キーを使用した SHA256 指紋、またはすべての証明書に対して256ビット以上の Elliptic-Curve (ECC) キーを使用する必要があります。
 
 ここでも、ATS は iOS 9 で既定で有効になっているため、これらの要件を満たしていない接続を確立しようとすると、例外がスローされます。
 
@@ -81,11 +81,11 @@ TLS レベルは、使用している web サービスによって制御され�
 通信先のサーバー (特にサードパーティのサービスの場合) によっては、転送の機密性を無効にしたり、より低い TLS レベルを選択したりする必要があります。 詳細については、以下の「 [ATS オプションの構成](#configuring-ats-options) 」セクションを参照してください。
 
 > [!IMPORTANT]
-> アプリトランスポートセキュリティは、 **マネージ HTTPClient 実装**を使用した Xamarin アプリには適用されません。 これは、CFNetwork **Httpclient の実装** を使用した接続、または **Nn1 Lsession httpclient の実装** のみに適用されます。
+> アプリトランスポートセキュリティは、 **マネージ HTTPClient 実装** を使用した Xamarin アプリには適用されません。 これは、CFNetwork **Httpclient の実装** を使用した接続、または **Nn1 Lsession httpclient の実装** のみに適用されます。
 
 ### <a name="setting-the-httpclient-implementation"></a>HTTPClient 実装の設定
 
-IOS アプリで使用される HTTPClient 実装を設定するには、**ソリューションエクスプローラー**で**プロジェクト**をダブルクリックして、**プロジェクトオプション**を開きます。 [ **IOS ビルド** ] に移動し、[ **httpclient 実装** ] ドロップダウンで目的のクライアントの種類を選択します。
+IOS アプリで使用される HTTPClient 実装を設定するには、**ソリューションエクスプローラー** で **プロジェクト** をダブルクリックして、**プロジェクトオプション** を開きます。 [ **IOS ビルド** ] に移動し、[ **httpclient 実装** ] ドロップダウンで目的のクライアントの種類を選択します。
 
 ![IOS のビルドオプションの設定](ats-images/client01.png)
 
@@ -148,7 +148,7 @@ Apple では、コンパイル (または、必要に応じて Xamarin および
 
 ## <a name="configuring-ats-options"></a>ATS オプションの構成
 
-アプリの **情報の plist** ファイルで特定のキーの値を設定することによって、ATS の機能のいくつかを構成できます。 次のキーを使用して、ATS を制御できます (_入れ子になっていることを示すためにインデント_されています)。
+アプリの **情報の plist** ファイルで特定のキーの値を設定することによって、ATS の機能のいくつかを構成できます。 次のキーを使用して、ATS を制御できます (_入れ子になっていることを示すためにインデント_ されています)。
 
 ```
 NSAppTransportSecurity
@@ -184,7 +184,7 @@ NSAppTransportSecurity
 
 <a name="optout"></a>
 
-### <a name="opting-out-of-ats"></a>ATS のオプトアウト
+### <a name="opting-out-of-ats"></a>ATS の Opting-Out
 
 Apple はプロトコルを使用して `HTTPS` インターネットベースの情報へのセキュリティで保護された通信を推奨していますが、これが常に可能であるとは限りません。 たとえば、サードパーティの web サービスと通信している場合や、インターネットで配信された広告をアプリで使用している場合などです。
 
@@ -210,9 +210,9 @@ Xamarin iOS アプリがセキュリティで保護されていないドメイ�
 </dict>
 ```
 
-Visual Studio for Mac 内で、ソリューションエクスプローラー内のファイルをダブルクリックし、 `Info.plist` **ソース**ビューに切り替えて、上記のキーを追加します。 **Solution Explorer**
+Visual Studio for Mac 内で、ソリューションエクスプローラー内のファイルをダブルクリックし、 `Info.plist` **ソース** ビューに切り替えて、上記のキーを追加します。 
 
-[![情報 plist ファイルのソースビュー](ats-images/ats01.png)](ats-images/ats01.png#lightbox)
+[![指定されたキーを追加した後の情報の plist ファイルのソースビュー。](ats-images/ats01.png)](ats-images/ats01.png#lightbox)
 
 アプリでセキュリティで保護されていないサイトの web コンテンツを読み込んで表示する必要がある場合は、アプリの **情報 plist** ファイルに次の内容を追加して、web ページが正しく読み込まれるようにします。ただし、Apple Transport SECURITY (ATS) 保護はアプリの残りの部分でも有効になっています。
 
@@ -234,9 +234,9 @@ Visual Studio for Mac 内で、ソリューションエクスプローラー内�
 </dict>
 ```
 
-Visual Studio for Mac 内で、ソリューションエクスプローラー内のファイルをダブルクリックし、 `Info.plist` **ソース**ビューに切り替えて、上記のキーを追加します。 **Solution Explorer**
+Visual Studio for Mac 内で、ソリューションエクスプローラー内のファイルをダブルクリックし、 `Info.plist` **ソース** ビューに切り替えて、上記のキーを追加します。 
 
-[![情報 plist ファイルのソースビュー](ats-images/ats02.png)](ats-images/ats02.png#lightbox)
+[![NSAllowsArbitraryLoadsInWebContent と NSAllowsArbitraryLoads を指定した後の、情報の plist ファイルのソースビュー。](ats-images/ats02.png)](ats-images/ats02.png#lightbox)
 
 > [!IMPORTANT]
 > アプリケーションがセキュリティで保護されていない web サイトへの接続を必要とする場合は、を使用して完全にオフにするのではなく、 **常に** を使用してドメインを例外として入力してください `NSExceptionDomains` `NSAllowsArbitraryLoads` 。 `NSAllowsArbitraryLoads` 非常に緊急な状況でのみ使用してください。

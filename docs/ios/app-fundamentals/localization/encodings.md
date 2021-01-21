@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/28/2017
-ms.openlocfilehash: 88f95f797d1230c818a635376f7b17a2264afadf
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: b832bdd25b8449ce365f87e145812ec3db27f393
+ms.sourcegitcommit: e27e29c14b783263e063baaa65d4eecb8dd31f57
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930339"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98628749"
 ---
 # <a name="internationalization-encodings-in-xamarinios"></a>Xamarin の国際化エンコーディングエンコード
 
@@ -22,9 +22,9 @@ ms.locfileid: "86930339"
 
 これを行うには、Visual Studio for Mac または Visual Studio の iOS のビルド/詳細ウィンドウで追加のエンコーディングを選択します。
 
- [![追加のエンコーディングの選択](encodings-images/00.png)](encodings-images/00.png#lightbox)
+ [![スクリーンショットは Visual Studio for Mac で追加のエンコーディングを選択しています。](encodings-images/00.png)](encodings-images/00.png#lightbox)
 
- [![追加のエンコーディングの選択](encodings-images/00a.png)](encodings-images/00a.png#lightbox)
+ [![スクリーンショットでは、Visual Studio で追加のエンコードを選択しています。](encodings-images/00a.png)](encodings-images/00a.png#lightbox)
 
 次のいずれかを選択できます。
 
@@ -33,7 +33,7 @@ ms.locfileid: "86930339"
 - その他: キリル、バルト言語、ベトナム語、ウクライナ語、タイ語
 - まれ: EBCDIC エンコーディングおよびその他のまれなコードページ
 - 西ヨーロッパ: ラテン言語、イースター、西ヨーロッパ
-- all
+- すべて
 
  <a name="cjk"></a>
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/23/2018
-ms.openlocfilehash: 79dcab73c379cecb5108a88cc8bbb2eab33af05c
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 81dc3d23ea606a525fcc1bbffafa7d3bfdf6b332
+ms.sourcegitcommit: e27e29c14b783263e063baaa65d4eecb8dd31f57
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91457108"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98628866"
 ---
 # <a name="creating-a-watch-face"></a>ウォッチの文字盤を作成する
 
@@ -23,11 +23,11 @@ _このガイドでは、Android 用のカスタムウォッチフェイス1.0 �
 このチュートリアルでは、カスタムの Android 磨耗1.0 ウォッチ式の作成の要点を示すために、基本的な watch face service が作成されています。
 最初の watch face サービスには、現在の時間を時間と分で表示するシンプルなデジタルウォッチが表示されます。
 
-[![デジタルウォッチの顔](creating-a-watchface-images/01-initial-face.png "最初のデジタルウォッチ顔のスクリーンショットの例")](creating-a-watchface-images/01-initial-face.png#lightbox)
+[![スクリーンショットは、最初のデジタルウォッチの顔を示しています。](creating-a-watchface-images/01-initial-face.png "最初のデジタルウォッチ顔のスクリーンショットの例")](creating-a-watchface-images/01-initial-face.png#lightbox)
 
 このデジタルウォッチフェイスを開発してテストした後、次の3人のより洗練されたアナログウォッチ式にアップグレードするためのコードを追加します。
 
-[![アナログウォッチフェイス](creating-a-watchface-images/02-example-watchface.png "最後のアナログウォッチ式のスクリーンショットの例")](creating-a-watchface-images/02-example-watchface.png#lightbox)
+[![スクリーンショットは、最終的なアナログウォッチの表面を示しています。](creating-a-watchface-images/02-example-watchface.png "最後のアナログウォッチ式のスクリーンショットの例")](creating-a-watchface-images/02-example-watchface.png#lightbox)
 
 Watch face services は、摩耗1.0 アプリの一部としてバンドルされ、インストールされます。 次の例では、には、 `MainActivity` 摩耗1.0 アプリテンプレートのコードよりも多くのコードが含まれています。これにより、ウォッチフェイスサービスをパッケージ化して、アプリの一部としてスマートウォッチにデプロイできるようになります。 実際には、このアプリは、デバッグとテストのために watch のサービスを磨耗1.0 デバイス (エミュレーター) に読み込むための手段として純粋に機能します。
 
@@ -43,7 +43,7 @@ Android 5.0 は watch face service を実装するための最小 API レベル�
 
 ## <a name="start-an-app-project"></a>アプリプロジェクトを開始する
 
-**WatchFace**という名前の新しい Android の磨耗1.0 プロジェクトを作成します (新しい Xamarin Android プロジェクトの作成の詳細については、「 [Hello, android](~/android/get-started/hello-android/hello-android-quickstart.md)」を参照してください)。
+**WatchFace** という名前の新しい Android の磨耗1.0 プロジェクトを作成します (新しい Xamarin Android プロジェクトの作成の詳細については、「 [Hello, android](~/android/get-started/hello-android/hello-android-quickstart.md)」を参照してください)。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -82,13 +82,13 @@ Android の最小バージョンを **android 5.1 (API レベル 22)** に設定
 
 -----
 
-次に、 [preview.png](creating-a-watchface-images/preview.png)このチュートリアルで後述するように、このファイルをダウンロードして、この &ndash; ファイルを**drawables**実行可能フォルダーに追加preview.pngます。
+次に、 [](creating-a-watchface-images/preview.png)このチュートリアルで後述するように、このファイルをダウンロードして、この &ndash; ファイルを **drawables** 実行可能フォルダーに追加preview.pngます。
 
 ## <a name="add-the-xamarinandroid-wear-package"></a>Xamarin. Android の磨耗パッケージを追加する
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-NuGet パッケージマネージャーを起動します (Visual Studio で、**ソリューションエクスプローラー**の [**参照**] を右クリックし、[ **nuget パッケージの管理**] を選択します)。プロジェクトを最新の安定したバージョンの**Xamarin. Android. Android**に更新します。
+NuGet パッケージマネージャーを起動します (Visual Studio で、**ソリューションエクスプローラー** の [**参照**] を右クリックし、[ **nuget パッケージの管理**] を選択します)。プロジェクトを最新の安定したバージョンの **Xamarin. Android. Android** に更新します。
 
 [![NuGet パッケージマネージャーの追加](creating-a-watchface-images/06-add-wear-pkg-vs-sml.png "Xamarin. Android パッケージを追加する")](creating-a-watchface-images/06-add-wear-pkg-vs.png#lightbox)
 
@@ -98,7 +98,7 @@ NuGet パッケージマネージャーを起動します (Visual Studio で、*
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-NuGet パッケージマネージャーを起動します (Visual Studio for Mac で、[**ソリューション] ウィンドウ**の [**パッケージ**] を右クリックし、[**パッケージの追加...**] を選択します)。プロジェクトを最新の安定したバージョンの**Xamarin. Android. Android**に更新します。
+NuGet パッケージマネージャーを起動します (Visual Studio for Mac で、[**ソリューション] ウィンドウ** の [**パッケージ**] を右クリックし、[**パッケージの追加...**] を選択します)。プロジェクトを最新の安定したバージョンの **Xamarin. Android. Android** に更新します。
 
 [![NuGet パッケージマネージャーの追加](creating-a-watchface-images/06-add-wear-pkg-xs-sml.png "Xamarin. Android パッケージを追加する")](creating-a-watchface-images/06-add-wear-pkg-xs.png#lightbox)
 
@@ -130,7 +130,7 @@ Android 磨耗では、クラスを使用してウォッチフェイスを実装
 
 4. では、 `MyWatchFaceEngine` `OnCreate` ウォッチフェイススタイルを作成し、その他の初期化タスクを実行するメソッドを実装します。
 
-5. `OnDraw`のメソッドを実装 `MyWatchFaceEngine` します。 このメソッドは、ウォッチフェイスを再描画する必要がある (つまり、 *無効化*される) たびに呼び出されます。 `OnDraw` は、時間、分、2番目の針などの顔要素を描画 (および再描画) するメソッドです。
+5. `OnDraw`のメソッドを実装 `MyWatchFaceEngine` します。 このメソッドは、ウォッチフェイスを再描画する必要がある (つまり、 *無効化* される) たびに呼び出されます。 `OnDraw` は、時間、分、2番目の針などの顔要素を描画 (および再描画) するメソッドです。
 
 6. `OnTimeTick`のメソッドを実装 `MyWatchFaceEngine` します。
     `OnTimeTick` は、(アンビエントモードと対話モードの両方で) 1 分間に1回以上呼び出されるか、日付/時刻が変更されたときに呼び出されます。
@@ -142,11 +142,11 @@ Android 磨耗では、クラスを使用してウォッチフェイスを実装
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-**MyWatchFaceService.cs**という名前の新しいファイルを追加します (Visual Studio の場合は、**ソリューションエクスプローラー**で**WatchFace**を右クリックし、[**新しい項目の追加 >**]、[**クラス**の選択] の順にクリックします)。
+**MyWatchFaceService.cs** という名前の新しいファイルを追加します (Visual Studio の場合は、**ソリューションエクスプローラー** で **WatchFace** を右クリックし、[**新しい項目の追加 >**]、[**クラス** の選択] の順にクリックします)。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-**MyWatchFaceService.cs**という名前の新しいファイルを追加します (Visual Studio for Mac で**WatchFace**プロジェクトを右クリックし、[**新しいファイルの > 追加**] をクリックして [**空のクラス**] を選択します)。
+**MyWatchFaceService.cs** という名前の新しいファイルを追加します (Visual Studio for Mac で **WatchFace** プロジェクトを右クリックし、[**新しいファイルの > 追加**] をクリックして [**空のクラス**] を選択します)。
 
 -----
 
@@ -223,7 +223,7 @@ public override void OnCreate(ISurfaceHolder holder)
 
 これらおよびその他のウォッチフェイスのスタイルオプションの詳細については、Android [WatchFaceStyle](https://developer.android.com/reference/android/support/wearable/watchface/WatchFaceStyle.Builder.html) API のドキュメントを参照してください。
 
-`SetWatchFaceStyle`が完了 `OnCreate` すると、はオブジェクト () をインスタンス化し、 `Paint` `hoursPaint` その色を白に、テキストサイズ[TextSize](https://developer.android.com/reference/android/graphics/Paint.html#setTextSize%28float%29)を48ピクセルに設定します (高さはピクセル単位で指定する必要があります)。
+`SetWatchFaceStyle`が完了 `OnCreate` すると、はオブジェクト () をインスタンス化し、 `Paint` `hoursPaint` その色を白に、テキストサイズ[](https://developer.android.com/reference/android/graphics/Paint.html#setTextSize%28float%29)を48ピクセルに設定します (高さはピクセル単位で指定する必要があります)。
 
 ### <a name="implement-the-engine-ondraw-method"></a>エンジン OnDraw メソッドを実装する
 
@@ -305,7 +305,7 @@ Watch サービスを実行する前に、 **watch_face** リソースとプレ�
 <wallpaper xmlns:android="http://schemas.android.com/apk/res/android" />
 ```
 
-このファイルのビルドアクションを **Androidresource**に設定します。
+このファイルのビルドアクションを **Androidresource** に設定します。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -320,7 +320,7 @@ Watch サービスを実行する前に、 **watch_face** リソースとプレ�
 このリソースファイルは `wallpaper` 、ウォッチの顔に使用される単純な要素を定義します。
 
 まだ行っていない場合は、 [preview.png](creating-a-watchface-images/preview.png)をダウンロードしてください。
-**リソース/描画/preview.png**にインストールします。 必ずこのファイルをプロジェクトに追加してください `WatchFace` 。 このプレビューイメージは、磨耗デバイスの [ウォッチ盤ピッカーのユーザーに表示されます。 独自のウォッチ顔のプレビューイメージを作成するには、実行中にウォッチフェイスのスクリーンショットを撮影します。 (摩耗デバイスからスクリーンショットを取得する方法の詳細については、「 [スクリーンショットの撮影](~/android/wear/deploy-test/debug-on-device.md#screenshots)」を参照してください)。
+**リソース/描画/preview.png** にインストールします。 必ずこのファイルをプロジェクトに追加してください `WatchFace` 。 このプレビューイメージは、磨耗デバイスの [ウォッチ盤ピッカーのユーザーに表示されます。 独自のウォッチ顔のプレビューイメージを作成するには、実行中にウォッチフェイスのスクリーンショットを撮影します。 (摩耗デバイスからスクリーンショットを取得する方法の詳細については、「 [スクリーンショットの撮影](~/android/wear/deploy-test/debug-on-device.md#screenshots)」を参照してください)。
 
 ## <a name="try-it"></a>試してみる
 
@@ -332,15 +332,15 @@ Watch サービスを実行する前に、 **watch_face** リソースとプレ�
 
 3. さまざまなウォッチフェイスを参照するには、左から右にスワイプします。
 
-4. **Xamarin サンプル**ウォッチフェイス (右側に表示) を選択します。
+4. **Xamarin サンプル** ウォッチフェイス (右側に表示) を選択します。
 
     [![Watchface ピッカー](creating-a-watchface-images/11-watchface-picker.png "スワイプして Xamarin サンプルウォッチフェイスを見つける")](creating-a-watchface-images/11-watchface-picker.png#lightbox)
 
-5. **Xamarin サンプル**ウォッチフェイスをタップして選択します。
+5. **Xamarin サンプル** ウォッチフェイスをタップして選択します。
 
 これにより、これまでに実装されたカスタムウォッチフェイスサービスを使用するように、磨耗デバイスのウォッチ式が変更されます。
 
-[![デジタルウォッチの顔](creating-a-watchface-images/12-digital-watchface.png "摩耗デバイスで実行されているカスタムデジタルウォッチ")](creating-a-watchface-images/12-digital-watchface.png#lightbox)
+[![スクリーンショットは、磨耗デバイスで実行されているカスタムデジタルウォッチを示しています。](creating-a-watchface-images/12-digital-watchface.png "摩耗デバイスで実行されているカスタムデジタルウォッチ")](creating-a-watchface-images/12-digital-watchface.png#lightbox)
 
 これは、アプリの実装が非常に少ないため (たとえば、ウォッチフェイスの背景が含まれておらず、 `Paint` 外観を向上させるためにアンチエイリアスメソッドを呼び出さない)、比較的見やすい顔です。
 ただし、カスタムウォッチフェイスを作成するために必要なベアボーン機能が実装されています。
@@ -361,11 +361,11 @@ Watch サービスを実行する前に、 **watch_face** リソースとプレ�
 
 5. タイムゾーンの変更が行われる時刻を自動的に更新します。
 
-以下のコード変更を実装する前に、 [drawable.zip](https://github.com/xamarin/monodroid-samples/blob/master/wear/WatchFace/Resources/drawable.zip?raw=true)をダウンロードして解凍し、解凍した png ファイルを **リソース/ド** コードに移動します (前の **preview.png**を上書きします)。 新しい .png ファイルをプロジェクトに追加し `WatchFace` ます。
+以下のコード変更を実装する前に、 [drawable.zip](https://github.com/xamarin/monodroid-samples/blob/master/wear/WatchFace/Resources/drawable.zip?raw=true)をダウンロードして解凍し、解凍した png ファイルを **リソース/ド** コードに移動します (前の **preview.png** を上書きします)。 新しい .png ファイルをプロジェクトに追加し `WatchFace` ます。
 
 ### <a name="update-engine-features"></a>エンジン機能の更新
 
-次の手順では、 **MyWatchFaceService.cs** を、アナログウォッチ式を描画し、新機能をサポートする実装にアップグレードします。 **MyWatchFaceService.cs**の内容を[MyWatchFaceService.cs](https://github.com/xamarin/monodroid-samples/blob/master/wear/WatchFace/WatchFace/MyWatchFaceService.cs)のウォッチ盤コードのアナログバージョンに置き換えます (このソースを切り取って、既存の**MyWatchFaceService.cs**に貼り付けます)。
+次の手順では、 **MyWatchFaceService.cs** を、アナログウォッチ式を描画し、新機能をサポートする実装にアップグレードします。 **MyWatchFaceService.cs** の内容を [MyWatchFaceService.cs](https://github.com/xamarin/monodroid-samples/blob/master/wear/WatchFace/WatchFace/MyWatchFaceService.cs)のウォッチ盤コードのアナログバージョンに置き換えます (このソースを切り取って、既存の **MyWatchFaceService.cs** に貼り付けます)。
 
 このバージョンの **MyWatchFaceService.cs** では、既存のメソッドにコードを追加し、追加の機能を追加するためのオーバーライドされたメソッドが追加されています。 以下のセクションでは、ソースコードのガイドツアーについて説明します。
 
@@ -373,7 +373,7 @@ Watch サービスを実行する前に、 **watch_face** リソースとプレ�
 
 更新された **OnCreate** メソッドは、前と同じようにウォッチフェイススタイルを構成しますが、いくつかの追加の手順が含まれています。
 
-1. バックグラウンドイメージを、Resources/ **xamarin_background** リソース ( **hdpi/xamarin_background.png**に存在するリソースに設定します。
+1. バックグラウンドイメージを、Resources/ **xamarin_background** リソース ( **hdpi/xamarin_background.png** に存在するリソースに設定します。
 
 2. `Paint`時間、分、および秒の針を描画するためにオブジェクトを初期化します。
 
@@ -419,7 +419,7 @@ Watch サービスを実行する前に、 **watch_face** リソースとプレ�
 
 ### <a name="time-zone-feature"></a>タイムゾーン機能
 
-新しい **MyWatchFaceService.cs** には、タイムゾーンが変更されたとき (タイムゾーン間での移動中など) に現在の時刻を更新する機能も含まれています。 **MyWatchFaceService.cs**の末尾付近では、タイムゾーンの変更されたインテントオブジェクトを処理するタイムゾーンの変更 `BroadcastReceiver` が定義されています。
+新しい **MyWatchFaceService.cs** には、タイムゾーンが変更されたとき (タイムゾーン間での移動中など) に現在の時刻を更新する機能も含まれています。 **MyWatchFaceService.cs** の末尾付近では、タイムゾーンの変更されたインテントオブジェクトを処理するタイムゾーンの変更 `BroadcastReceiver` が定義されています。
 
 ```csharp
 public class TimeZoneReceiver: BroadcastReceiver
@@ -463,7 +463,7 @@ Application.Context.UnregisterReceiver (timeZoneReceiver);
 
 アプリをビルドして、もう一度アプリを磨耗デバイスに配置します。 前と同じように、[ウォッチ盤] ピッカーからウォッチフェイスを選択します。 ウォッチピッカーのプレビューが左側に表示され、新しいウォッチフェイスが右側に表示されます。
 
-[![アナログウォッチフェイス](creating-a-watchface-images/13-analog-watchface.png "ピッカーおよびデバイスでのアナログフェイスの向上")](creating-a-watchface-images/13-analog-watchface.png#lightbox)
+[![スクリーンショットは、ピッカーおよびデバイスでのアナログフェイスの向上を示しています。](creating-a-watchface-images/13-analog-watchface.png "ピッカーおよびデバイスでのアナログフェイスの向上")](creating-a-watchface-images/13-analog-watchface.png#lightbox)
 
 このスクリーンショットでは、2番目のハンドが1秒間に1回移動しています。 このコードを磨耗デバイスで実行すると、ウォッチがアンビエントモードになると2番目のハンドが消えます。
 

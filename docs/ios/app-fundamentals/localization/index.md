@@ -7,26 +7,26 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/28/2017
-ms.openlocfilehash: 1f5f9e13607d672a6fdec5ed8fb116466973a260
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 6171066c8a6ceed7314cc50510ce4813d5ce1c0c
+ms.sourcegitcommit: e27e29c14b783263e063baaa65d4eecb8dd31f57
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938035"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98628983"
 ---
 # <a name="localization-in-xamarinios"></a>Xamarin. iOS でのローカライズ
 
 _このドキュメントでは、iOS SDK のローカライズ機能と、Xamarin を使用してそれらにアクセスする方法について説明します。_
 
-Unicode 以外のデータを処理する必要があるアプリケーションに文字セットやコードページを含める方法については、「[国際化エンコーディング](encodings.md)」を参照してください。
+Unicode 以外のデータを処理する必要があるアプリケーションに文字セットやコードページを含める方法については、「 [国際化エンコーディング](encodings.md) 」を参照してください。
 
 ## <a name="ios-platform-features"></a>iOS プラットフォームの機能
 
-ここでは、iOS のローカライズ機能の一部について説明します。 特定のコードと例については、[次のセクション](#localization-basics-in-ios)に進んでください。
+ここでは、iOS のローカライズ機能の一部について説明します。 特定のコードと例については、 [次のセクション](#localization-basics-in-ios) に進んでください。
 
 ### <a name="language"></a>Language
 
-ユーザーは、**設定**アプリで言語を選択します。 この設定は、オペレーティングシステムおよびアプリによって表示される言語の文字列とイメージに影響します。
+ユーザーは、 **設定** アプリで言語を選択します。 この設定は、オペレーティングシステムおよびアプリによって表示される言語の文字列とイメージに影響します。
 
 アプリで使用されている言語を確認するには、の最初の要素を取得し `NSBundle.MainBundle.PreferredLocalizations` ます。
 
@@ -39,15 +39,15 @@ var lang = NSBundle.MainBundle.PreferredLocalizations[0];
 アプリケーションコードは常にこの値をチェックする必要はありません。 Xamarin と iOS は、ユーザーの言語に合った正しい文字列またはリソースを自動的に提供するのに役立つ機能を提供します。 これらの機能については、このドキュメントの残りの部分で説明します。
 
 > [!NOTE]
-> `NSLocale.PreferredLanguages`アプリでサポートされているローカライズに関係なく、ユーザーの言語設定を決定するには、を使用します。 IOS 9 では、このメソッドによって返された値が変更されています。詳細については、「[テクニカルノート TN2418](https://developer.apple.com/library/content/technotes/tn2418/_index.html) 」を参照してください。
+> `NSLocale.PreferredLanguages`アプリでサポートされているローカライズに関係なく、ユーザーの言語設定を決定するには、を使用します。 IOS 9 では、このメソッドによって返された値が変更されています。詳細については、「 [テクニカルノート TN2418](https://developer.apple.com/library/content/technotes/tn2418/_index.html) 」を参照してください。
 
 ### <a name="locale"></a>Locale
 
-ユーザーは、**設定**アプリでロケールを選択します。 この設定は、日付、時刻、数値、通貨の書式設定に影響します。
+ユーザーは、 **設定** アプリでロケールを選択します。 この設定は、日付、時刻、数値、通貨の書式設定に影響します。
 
 これにより、ユーザーは、12時間形式と24時間形式のどちらであるか、小数点区切り文字がコンマまたはポイントかどうか、および日付の日、月、年の順序を表示するかどうかを選択できます。
 
-Xamarin では、Apple の iOS クラス ( `NSNumberFormatter` ) と、System の .net クラスの両方にアクセスできます。 開発者は、それぞれの機能が異なるため、それぞれのニーズに適した方法を評価する必要があります。 特に、StoreKit を使用してアプリ内購入価格を取得して表示する場合、返される価格情報には Apple の書式設定クラスを使用する必要があります。
+Xamarin では、Apple の iOS クラス ( `NSNumberFormatter` ) と、System の .net クラスの両方にアクセスできます。 開発者は、それぞれの機能が異なるため、それぞれのニーズに適した方法を評価する必要があります。 特に、StoreKit を使用して In-App 購入価格を取得して表示する場合、返される価格情報には Apple の書式設定クラスを使用する必要があります。
 
 現在のロケールは、次の2つの方法のいずれかで照会できます。
 
@@ -58,7 +58,7 @@ Xamarin では、Apple の iOS クラス ( `NSNumberFormatter` ) と、System �
 
 > [!NOTE]
 > Mono (Xamarin のベースになっている .NET ランタイム) と Apple の iOS Api は、同一の言語とリージョンの組み合わせをサポートしていません。
-> このため、Mono の有効な値にマップされていない iOS**設定**アプリで言語/リージョンの組み合わせを選択することができます。 たとえば、iPhone の言語を英語に設定し、その地域をスペインに設定すると、次の Api によって異なる値が生成されます。
+> このため、Mono の有効な値にマップされていない iOS **設定** アプリで言語/リージョンの組み合わせを選択することができます。 たとえば、iPhone の言語を英語に設定し、その地域をスペインに設定すると、次の Api によって異なる値が生成されます。
 >
 > - `CurrentThead.CurrentCulture`: en-us (Mono API)
 > - `CurrentThread.CurrentUICulture`: en-us (Mono API)
@@ -72,27 +72,27 @@ iOS では、 `NSCurrentLocaleDidChangeNotification` ユーザーがロケール
 
 ## <a name="localization-basics-in-ios"></a>IOS でのローカライズの基礎
 
-IOS の次の機能は、Xamarin で簡単に使用して、ユーザーに表示するためのローカライズされたリソースを提供します。 これらのアイデアを実装する方法については、 [TaskyL10n サンプル](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n)を参照してください。
+IOS の次の機能は、Xamarin で簡単に使用して、ユーザーに表示するためのローカライズされたリソースを提供します。 これらのアイデアを実装する方法については、 [TaskyL10n サンプル](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n) を参照してください。
 
 ### <a name="specifying-default-and-supported-languages-in-infoplist"></a>情報 plist での既定の言語とサポートされる言語の指定
 
 [Technical Q&A QA1828: ios でアプリの言語がどのように決定される](https://developer.apple.com/library/content/qa/qa1828/_index.html)かについては、Apple では、アプリで使用する言語を ios が選択する方法について説明しています。 表示される言語には、次の要因が影響します。
 
-- ユーザーの優先言語 (**設定**アプリにあります)
+- ユーザーの優先言語 ( **設定** アプリにあります)
 - アプリにバンドルされているローカライズ (. lproj フォルダー)
-- `CFBundleDevelopmentRegion`(アプリケーションの既定の言語を指定する**情報 plist**値)
-- `CFBundleLocalizations`(サポートされているすべてのローカライズを指定する**情報 plist**配列)
+- `CFBundleDevelopmentRegion` (アプリケーションの既定の言語を指定する **情報 plist** 値)
+- `CFBundleLocalizations` (サポートされているすべてのローカライズを指定する **情報 plist** 配列)
 
 テクニカル Q&A で示されているように、は `CFBundleDevelopmentRegion` アプリの既定の地域と言語を表します。 アプリがユーザーの優先言語を明示的にサポートしていない場合は、このフィールドで指定された言語が使用されます。
 
 > [!IMPORTANT]
 > iOS 11 では、以前のバージョンのオペレーティングシステムよりも厳密にこの言語選択メカニズムが適用されます。 このため、サポートされているローカライズを明示的に宣言していない iOS 11 アプリは、lproj フォルダーを含めるか、値を設定することによって、ios 11 では ios `CFBundleLocalizations` 10 とは異なる言語を表示できます。
 
-`CFBundleDevelopmentRegion`が**情報**ファイルに指定されていない場合、Xamarin のビルドツールは現在、の既定値を使用します `en_US` 。 これは将来のリリースで変更される可能性がありますが、既定の言語が英語であることを意味します。
+`CFBundleDevelopmentRegion`が **情報** ファイルに指定されていない場合、Xamarin のビルドツールは現在、の既定値を使用します `en_US` 。 これは将来のリリースで変更される可能性がありますが、既定の言語が英語であることを意味します。
 
 アプリが期待される言語を選択できるようにするには、次の手順を実行します。
 
-- 既定の言語を指定します。 **情報 plist**を開き、**ソース**ビューを使用してキーの値を設定します。 XML では、 `CFBundleDevelopmentRegion` 次のようになります。
+- 既定の言語を指定します。 **情報 plist** を開き、**ソース** ビューを使用してキーの値を設定します。 XML では、 `CFBundleDevelopmentRegion` 次のようになります。
 
 ```xml
 <key>CFBundleDevelopmentRegion</key>
@@ -101,7 +101,7 @@ IOS の次の機能は、Xamarin で簡単に使用して、ユーザーに表�
 
 この例では、"es" を使用して、ユーザーの優先言語がサポートされていない場合に、既定でスペイン語を指定します。
 
-- サポートされているすべてのローカライズを宣言します。 **情報 plist**では、**ソース**ビューを使用してキーの配列を設定します `CFBundleLocalizations` 。 XML では、次のようになります。
+- サポートされているすべてのローカライズを宣言します。 **情報 plist** では、**ソース** ビューを使用してキーの配列を設定します `CFBundleLocalizations` 。 XML では、次のようになります。
 
 ```xml
 <key>CFBundleLocalizations</key>
@@ -112,27 +112,27 @@ IOS の次の機能は、Xamarin で簡単に使用して、ユーザーに表�
 </array>
 ```
 
-.Resx ファイルなどの .NET メカニズムを使用してローカライズされた Xamarin iOS アプリでは、これらの**情報**を提供する必要があります。
+.Resx ファイルなどの .NET メカニズムを使用してローカライズされた Xamarin iOS アプリでは、これらの **情報** を提供する必要があります。
 
-**これらの情報の**詳細については、Apple の[情報プロパティリストキーのリファレンスを参照](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html)してください。
+**これらの情報の** 詳細については、Apple の [情報プロパティリストキーのリファレンスを参照](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html)してください。
 
 ### <a name="getlocalizedstring-method"></a>GetLocalizedString メソッド
 
-メソッドは、 `NSBundle.MainBundle.GetLocalizedString` プロジェクト内の**文字列**ファイルに格納されているローカライズされたテキストを検索します。 これらのファイルは、言語別に、特別に指定さ**れ**たディレクトリ (拡張子は小文字の "L") で構成されます。
+メソッドは、 `NSBundle.MainBundle.GetLocalizedString` プロジェクト内の **文字列** ファイルに格納されているローカライズされたテキストを検索します。 これらのファイルは、言語別に、特別に指定さ **れ** たディレクトリ (拡張子は小文字の "L") で構成されます。
 
 #### <a name="strings-file-locations"></a>. 文字列ファイルの場所
 
-- **Base. lproj**は、既定の言語のリソースが格納されているディレクトリです。
-  多くの場合、プロジェクトのルートに配置されます (ただし、 **Resources**フォルダーに配置することもできます)。
-- ** &lt; language &gt; . lproj**ディレクトリは、サポートされている言語ごとに作成されます。通常は**Resources**フォルダーに作成されます。
+- **Base. lproj** は、既定の言語のリソースが格納されているディレクトリです。
+  多くの場合、プロジェクトのルートに配置されます (ただし、 **Resources** フォルダーに配置することもできます)。
+- **&lt; language &gt; . lproj** ディレクトリは、サポートされている言語ごとに作成されます。通常は **Resources** フォルダーに作成されます。
 
-各言語ディレクトリには、次のような複数の異なる**文字列**ファイルがあります。
+各言語ディレクトリには、次のような複数の異なる **文字列** ファイルがあります。
 
-- **ローカライズ**可能な文字列–ローカライズされたテキストのメインリスト。
-- **インフォ plist。文字列**–このファイルでは、アプリケーション名などを変換するために特定の特定のキーを使用できます。
-- ** \<storyboard-name> . 文字列**–ストーリーボード内のユーザーインターフェイス要素の翻訳を含む省略可能なファイルです。
+- **ローカライズ** 可能な文字列–ローカライズされたテキストのメインリスト。
+- **インフォ plist。文字列** –このファイルでは、アプリケーション名などを変換するために特定の特定のキーを使用できます。
+- **\<storyboard-name> . 文字列**–ストーリーボード内のユーザーインターフェイス要素の翻訳を含む省略可能なファイルです。
 
-これらのファイルの**ビルドアクション**は、**バンドルリソース**である必要があります。
+これらのファイルの **ビルドアクション** は、 **バンドルリソース** である必要があります。
 
 #### <a name="strings-file-format"></a>. strings ファイル形式
 
@@ -145,11 +145,11 @@ IOS の次の機能は、Xamarin で簡単に使用して、ユーザーに表�
 
 文字列の次の文字をエスケープする必要があります。
 
-- `\"`あらかじめ
-- `\\`逆
-- `\n`改行
+- `\"` あらかじめ
+- `\\` 逆
+- `\n` 改行
 
-これは、 **es/ローカライズ**可能な文字列 (ie の例です。スペイン語) サンプルのファイルを次に示します。
+これは、 **es/ローカライズ** 可能な文字列 (ie の例です。スペイン語) サンプルのファイルを次に示します。
 
 ```console
 "<new task>" = "<new task>";
@@ -163,7 +163,7 @@ IOS の次の機能は、Xamarin で簡単に使用して、ユーザーに表�
 "Delete" = "Eliminar";
 ```
 
-### <a name="images"></a>イメージ
+### <a name="images"></a>画像
 
 IOS でイメージをローカライズするには:
 
@@ -173,15 +173,15 @@ IOS でイメージをローカライズするには:
     UIImage.FromBundle("flag");
     ```
 
-2. 既定のイメージファイル**flag.png**を、**基本の lproj** (ネイティブ開発言語のディレクトリ) に配置します。
+2. 既定のイメージファイル **flag.png** を、 **基本の lproj** (ネイティブ開発言語のディレクトリ) に配置します。
 
-3. 必要に応じて、ローカライズされたバージョンのイメージを各言語の**lproj**フォルダーに配置します (例 **es**. lproj, **ja-jp**)。 各言語ディレクトリで同じファイル名**flag.png**を使用します。
+3. 必要に応じて、ローカライズされたバージョンのイメージを各言語の **lproj** フォルダーに配置します (例 **es**. lproj, **ja-jp**)。 各言語ディレクトリで同じファイル名 **flag.png** を使用します。
 
 特定の言語のイメージが存在しない場合、iOS は既定のネイティブ言語フォルダーに戻り、そこからイメージを読み込みます。
 
 #### <a name="launch-images"></a>起動イメージ
 
-各言語の**lproj**ディレクトリに配置する場合は、起動イメージ (および iPhone 6 モデルの XIB またはストーリーボード) に標準的な名前付け規則を使用します。
+各言語の **lproj** ディレクトリに配置する場合は、起動イメージ (および iPhone 6 モデルの XIB またはストーリーボード) に標準的な名前付け規則を使用します。
 
 ```console
 Default.png
@@ -192,7 +192,7 @@ LaunchScreen.xib
 
 ### <a name="app-name"></a>アプリの名前
 
-**. Lproj**ディレクトリに**インフォ plist 文字列**ファイルを配置すると、アプリケーション名を含む、アプリの**情報**の一部の値をオーバーライドできます。
+**. Lproj** ディレクトリに **インフォ plist 文字列** ファイルを配置すると、アプリケーション名を含む、アプリの **情報** の一部の値をオーバーライドできます。
 
 ```console
 "CFBundleDisplayName" = "LeónTodo";
@@ -240,7 +240,7 @@ Short,Short: 7/8/15 10:26
 Medium,None: 7/8/2015
 ```
 
-詳細については、Apple [Date フォーマッタ](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/DataFormatting/Articles/dfDateFormatting10_4.html)のドキュメントを参照してください。 ロケールを区別する日付と時刻の書式をテストする場合は、 **iPhone の言語**と**地域**の両方の設定を確認します。
+詳細については、Apple [Date フォーマッタ](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/DataFormatting/Articles/dfDateFormatting10_4.html) のドキュメントを参照してください。 ロケールを区別する日付と時刻の書式をテストする場合は、 **iPhone の言語** と **地域** の両方の設定を確認します。
 
 <a name="rtl"></a>
 
@@ -251,9 +251,9 @@ iOS には、RTL 対応アプリの構築に役立つさまざまな機能が用
 - 自動レイアウトのおよび属性を使用して `leading` `trailing` コントロールの配置を調整します (英語の場合は左および右に、RTL 言語では逆に対応します)。
   コントロールは、 [`UIStackView`](~/ios/user-interface/controls/uistackview.md) RTL を認識するようにコントロールをレイアウトする場合に特に便利です。
 - `TextAlignment = UITextAlignment.Natural`テキストの配置に使用します (ほとんどの言語に対して残されますが、RTL の場合は右側にあります)。
-- `UINavigationController`[戻る] ボタンを自動的に反転し、スワイプの方向を反転させます。
+- `UINavigationController` [戻る] ボタンを自動的に反転し、スワイプの方向を反転させます。
 
-次のスクリーンショットは、アラビア語とヘブライ語のローカライズされた[Tasky サンプル](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n)を示しています (ただし、フィールドには英語が入力されています)。
+次のスクリーンショットは、アラビア語とヘブライ語のローカライズされた [Tasky サンプル](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n) を示しています (ただし、フィールドには英語が入力されています)。
 
 [![アラビア語でのローカライズ](images/rtl-ar-sml.png)](images/rtl-ar.png#lightbox "アラビア語")
 
@@ -270,11 +270,11 @@ RTL テキストは、LTR テキストと同じように、文字列ファイル
 
 ### <a name="project-structure"></a>プロジェクト構造
 
-![リソースツリー](images/solution-code.png)
+![スクリーンショットには、ローカライズ可能な文字列の場所を含むサンプルのリソースツリーが表示されています。](images/solution-code.png)
 
 ### <a name="localizablestrings-file"></a>ローカライズ可能な文字列ファイル
 
-前述のように、**ローカライズ**可能な文字列ファイル形式は、キーと値のペアで構成されます。 キーは文字列の意図を表し、値はアプリで使用される翻訳されたテキストです。
+前述のように、 **ローカライズ** 可能な文字列ファイル形式は、キーと値のペアで構成されます。 キーは文字列の意図を表し、値はアプリで使用される翻訳されたテキストです。
 
 このサンプルのスペイン語 (**es**) ローカライズ版を以下に示します。
 
@@ -303,36 +303,36 @@ someControl.Text = localizedString;
 
 ## <a name="localizing-storyboard-uis"></a>ストーリーボード Ui のローカライズ
 
-サンプル[Tasky (ローカライズされたストーリーボード)](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10nStoryboard)は、ストーリーボードのコントロールのテキストをローカライズする方法を示しています。
+サンプル [Tasky (ローカライズされたストーリーボード)](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10nStoryboard) は、ストーリーボードのコントロールのテキストをローカライズする方法を示しています。
 
 ### <a name="project-structure"></a>プロジェクト構造
 
-**基本の lproj**ディレクトリにはストーリーボードが含まれており、アプリケーションで使用されるイメージも含まれている必要があります。
+**基本の lproj** ディレクトリにはストーリーボードが含まれており、アプリケーションで使用されるイメージも含まれている必要があります。
 
-他の言語ディレクトリには、コードで参照されている文字列リソースのローカライズ可能な**文字列**ファイルと、ストーリーボードのテキストの翻訳を含む**mainstoryboard.storyboard ファイル**ファイルが含まれています。
+他の言語ディレクトリには、コードで参照されている文字列リソースのローカライズ可能な **文字列** ファイルと、ストーリーボードのテキストの翻訳を含む **mainstoryboard.storyboard ファイル** ファイルが含まれています。
 
-![リソースツリー](images/solution-storyboard.png)
+![スクリーンショットには、Mainstoryboard.storyboard ファイル文字列の場所を含むサンプルのリソースツリーが表示されています。](images/solution-storyboard.png)
 
-言語ディレクトリには、ローカライズ済みのイメージのコピーが含まれていなければなり**ません。**
+言語ディレクトリには、ローカライズ済みのイメージのコピーが含まれていなければなり **ません。**
 
 ### <a name="object-id--localization-id"></a>オブジェクト ID/ローカライズ ID
 
 ストーリーボードでコントロールを作成および編集する場合は、各コントロールを選択し、ローカライズに使用する ID を確認します。
 
-- Visual Studio for Mac では、 **Properties Pad**にあり、**ローカライズ ID**と呼ばれます。
-- Xcode では、これは**オブジェクト ID**と呼ばれます。
+- Visual Studio for Mac では、 **Properties Pad** にあり、 **ローカライズ ID** と呼ばれます。
+- Xcode では、これは **オブジェクト ID** と呼ばれます。
 
 この文字列値は、次のスクリーンショットに示すように、"NF3-h8-xmR" のような形式になっていることがよくあります。
 
 ![ストーリーボードのローカライズの Xcode ビュー](images/xs-designer-localization-id.png)
 
-この値は、各コントロールに翻訳されたテキストを自動的に割り当てるために、文字列ファイルで使用され**ます。**
+この値は、各コントロールに翻訳されたテキストを自動的に割り当てるために、文字列ファイルで使用され **ます。**
 
 ### <a name="mainstoryboardstrings"></a>Mainstoryboard.storyboard ファイル
 
-ストーリーボード変換ファイルの形式は、ローカライズ可能な**文字列**ファイルに似ています。ただし、キー (左側の値) はユーザー定義にはできませんが、その代わりに、という形式を使用する必要が `ObjectID.property` あります。
+ストーリーボード変換ファイルの形式は、ローカライズ可能な **文字列** ファイルに似ています。ただし、キー (左側の値) はユーザー定義にはできませんが、その代わりに、という形式を使用する必要が `ObjectID.property` あります。
 
-次の**mainstoryboard.storyboard ファイル**の例では、 `UITextField` `placeholder` にローカライズ `UILabel` 可能な text プロパティがあることを確認できます。にはプロパティがあり、 `text` `UIButton` s の既定のテキストはを使用して設定され `normalTitle` ます。
+次の **mainstoryboard.storyboard ファイル** の例では、 `UITextField` `placeholder` にローカライズ `UILabel` 可能な text プロパティがあることを確認できます。にはプロパティがあり、 `text` `UIButton` s の既定のテキストはを使用して設定され `normalTitle` ます。
 
 ```console
 "SXg-TT-IwM.placeholder" = "nombre de la tarea";
@@ -345,7 +345,7 @@ someControl.Text = localizedString;
 ```
 
 > [!IMPORTANT]
-> サイズクラスのストーリーボードを使用すると、アプリケーションに表示されない翻訳が発生する可能性があります。 [Apple の Xcode のリリースノート](https://developer.apple.com/library/content/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html)では、ストーリーボードまたは XIB が、サイズクラスを使用していて、基本ローカリゼーションとビルドターゲットが Universal に設定されており、ビルドが iOS 7.0 を対象としている場合は、正しくローカライズされないことを示しています。 この問題を解決するには、次のスクリーンショットに示すように、ストーリーボード文字列ファイルを2つの同じファイル ( **mainstoryboard.storyboard ファイル ~ iphone**と**mainstoryboard.storyboard ファイル ~ ipad. 文字列**) に複製します。
+> サイズクラスのストーリーボードを使用すると、アプリケーションに表示されない翻訳が発生する可能性があります。 [Apple の Xcode のリリースノート](https://developer.apple.com/library/content/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html) では、ストーリーボードまたは XIB が、サイズクラスを使用していて、基本ローカリゼーションとビルドターゲットが Universal に設定されており、ビルドが iOS 7.0 を対象としている場合は、正しくローカライズされないことを示しています。 この問題を解決するには、次のスクリーンショットに示すように、ストーリーボード文字列ファイルを2つの同じファイル ( **mainstoryboard.storyboard ファイル ~ iphone** と **mainstoryboard.storyboard ファイル ~ ipad. 文字列**) に複製します。
 >
 > ![文字列ファイル](images/xs-dup-strings.png)
 
@@ -353,7 +353,7 @@ someControl.Text = localizedString;
 
 ## <a name="app-store-listing"></a>アプリストアの一覧
 
-[アプリストアのローカライズ](https://itunespartner.apple.com/en/apps/faq/App%20Store_Localization)に関する APPLE の FAQ に従って、アプリが販売されている各国の翻訳を入力します。 アプリに言語のローカライズされた**lproj**ディレクトリも含まれている場合にのみ、翻訳が表示されることを警告します。
+[アプリストアのローカライズ](https://itunespartner.apple.com/en/apps/faq/App%20Store_Localization)に関する APPLE の FAQ に従って、アプリが販売されている各国の翻訳を入力します。 アプリに言語のローカライズされた **lproj** ディレクトリも含まれている場合にのみ、翻訳が表示されることを警告します。
 
 ## <a name="summary"></a>まとめ
 
