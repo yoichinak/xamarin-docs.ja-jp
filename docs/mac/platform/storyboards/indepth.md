@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: c90a51d8d849dc95ca9465dd55910bcd5b50e43e
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 53f8dda128facc29a0bfbb67b2dfbd263504b3b4
+ms.sourcegitcommit: 513feb0e07558766e3de4a898e53d56b27c20559
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91430153"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98697684"
 ---
 # <a name="working-with-storyboards-in-xamarinmac"></a>Xamarin. Mac でストーリーボードを操作する
 
@@ -41,7 +41,7 @@ controller.ShowWindow(this);
 
 は、 `FromName` アプリのバンドルに含まれている指定された名前のストーリーボードファイルを読み込みます。 は、 `InstantiateControllerWithIdentifier` 指定された id を持つビューコントローラーのインスタンスを作成します。 UI をデザインするときに、Xcode の Interface Builder で Id を設定します。
 
-[![ストーリーボード ID の設定](indepth-images/sb02.png)](indepth-images/sb02.png#lightbox)
+[![Interface Builder でストーリーボード ID を設定しています。](indepth-images/sb02.png)](indepth-images/sb02.png#lightbox)
 
 必要に応じて、メソッドを使用し `InstantiateInitialController` て、Interface Builder に初期コントローラーが割り当てられているビューコントローラーを読み込むことができます。
 
@@ -74,7 +74,7 @@ controller.ShowWindow(this);
 
 ### <a name="the-responder-chain"></a>応答側チェーン
 
-さらに、 `NSViewControllers` はウィンドウの _応答側チェーン_の一部になりました。
+さらに、 `NSViewControllers` はウィンドウの _応答側チェーン_ の一部になりました。
 
 [![応答側チェーン](indepth-images/vc01.png)](indepth-images/vc01.png#lightbox)
 
@@ -84,7 +84,7 @@ controller.ShowWindow(this);
 
 ### <a name="containment"></a>Containment
 
-ストーリーボードでは、ビューコントローラー (分割ビューコントローラーやタブビューコントローラーなど) が _コンテインメント_を実装できるようになりました。これにより、他のサブビューコントローラーを "含める" ことができます。
+ストーリーボードでは、ビューコントローラー (分割ビューコントローラーやタブビューコントローラーなど) が _コンテインメント_ を実装できるようになりました。これにより、他のサブビューコントローラーを "含める" ことができます。
 
 [![ビューコントローラーのコンテインメントの例](indepth-images/vc02.png)](indepth-images/vc02.png#lightbox)
 
@@ -213,7 +213,7 @@ namespace OnCardMac
 - ウィンドウのコントローラーを、 `ContentViewController` セグエのターゲット (送信先) で定義されているコントローラーに置き換えます。
 - メソッドを使用して、元のビューコントローラーを削除してメモリを解放し `RemoveFromParentViewController` ます。
 
-この新しいセグエ type を Xcode の Interface Builder で使用するには、まずアプリをコンパイルし、次に Xcode に切り替えて、2つのシーン間に新しいセグエを追加する必要があります。 **スタイル**を**custom**に設定し、**セグエクラス**を `ReplaceViewSegue` (カスタムセグエクラスの名前) に設定します。
+この新しいセグエ type を Xcode の Interface Builder で使用するには、まずアプリをコンパイルし、次に Xcode に切り替えて、2つのシーン間に新しいセグエを追加する必要があります。 **スタイル** を **custom** に設定し、**セグエクラス** を `ReplaceViewSegue` (カスタムセグエクラスの名前) に設定します。
 
 [![セグエクラスの設定](indepth-images/sg01.png)](indepth-images/sg01.png#lightbox)
 
@@ -269,18 +269,18 @@ MacOS では、次のジェスチャレコグナイザーを利用できます�
 
 外部ストーリーボードへの参照を追加するには、次の手順を実行します。
 
-1. **ソリューションエクスプローラー**で、プロジェクト名を右クリックし、[新しいファイルの**追加**  >  **...**  >  ] を選択します。**Mac**  > **ストーリーボード**。 新しいストーリーボードの **名前** を入力し、[ **新規** ] ボタンをクリックします。 
+1. **ソリューションエクスプローラー** で、プロジェクト名を右クリックし、[新しいファイルの **追加**  >  **...**  >  ] を選択します。**Mac**  > **ストーリーボード**。 新しいストーリーボードの **名前** を入力し、[ **新規** ] ボタンをクリックします。 
 
     [![新しいストーリーボードの追加](indepth-images/ref01.png)](indepth-images/ref01.png#lightbox)
-2. **ソリューションエクスプローラー**で、新しいストーリーボードの名前をダブルクリックして、Xcode の Interface Builder で編集するために開きます。
+2. **ソリューションエクスプローラー** で、新しいストーリーボードの名前をダブルクリックして、Xcode の Interface Builder で編集するために開きます。
 3. 通常どおりに新しいストーリーボードのシーンのレイアウトをデザインし、変更を保存します。 
 
     [![インターフェイスの設計](indepth-images/ref02.png)](indepth-images/ref02.png#lightbox)
 4. Interface Builder に、参照を追加するストーリーボードに切り替えます。
-5. **オブジェクトライブラリ**からデザインサーフェイスに**ストーリーボード参照**をドラッグします。 
+5. **オブジェクトライブラリ** からデザインサーフェイスに **ストーリーボード参照** をドラッグします。 
 
     [![ライブラリ内のストーリーボード参照の選択](indepth-images/ref03.png)](indepth-images/ref03.png#lightbox)
-6. **属性インスペクター**で、上で作成した**ストーリーボード**の名前を選択します。 
+6. **属性インスペクター** で、上で作成した **ストーリーボード** の名前を選択します。 
 
     [![参照の構成](indepth-images/ref04.png)](indepth-images/ref04.png#lightbox)
 7. 既存のシーンで UI ウィジェット (ボタンなど) をコントロールクリックし、作成した **ストーリーボード参照** に新しいセグエを作成します。  ポップアップメニューから [ **表示** ] を選択して、セグエを完了します。 
@@ -297,20 +297,20 @@ MacOS では、次のジェスチャレコグナイザーを利用できます�
 
 特定のシーンへの参照を (最初のウィンドウコントローラーではなく) 外部ストーリーボードに追加するには、次の手順を実行します。
 
-1. **ソリューションエクスプローラー**で、外部ストーリーボードをダブルクリックして、Xcode の Interface Builder で編集するために開きます。
+1. **ソリューションエクスプローラー** で、外部ストーリーボードをダブルクリックして、Xcode の Interface Builder で編集するために開きます。
 2. 次のように、新しいシーンを追加し、そのレイアウトをデザインします。 
 
     [![Xcode でのレイアウトのデザイン](indepth-images/ref07.png)](indepth-images/ref07.png#lightbox)
-3. **Id インスペクター**で、新しいシーンのウィンドウコントローラーの**ストーリーボード ID**を入力します。 
+3. **Id インスペクター** で、新しいシーンのウィンドウコントローラーの **ストーリーボード ID** を入力します。 
 
-    [![ストーリーボード ID の設定](indepth-images/ref08.png)](indepth-images/ref08.png#lightbox)
+    [![Id でストーリーボード I D を AltScene に設定しています。](indepth-images/ref08.png)](indepth-images/ref08.png#lightbox)
 4. Interface Builder に参照を追加するストーリーボードを開きます。
-5. **オブジェクトライブラリ**からデザインサーフェイスに**ストーリーボード参照**をドラッグします。 
+5. **オブジェクトライブラリ** からデザインサーフェイスに **ストーリーボード参照** をドラッグします。 
 
     [![ライブラリからのストーリーボード参照の選択](indepth-images/ref03.png)](indepth-images/ref03.png#lightbox)
-6. **Id インスペクター**で、前の手順で作成したシーンの**ストーリーボード**の名前と**参照 ID** (ストーリーボード id) を選択します。 
+6. **Id インスペクター** で、前の手順で作成したシーンの **ストーリーボード** の名前と **参照 ID** (ストーリーボード id) を選択します。 
 
-    [![参照 ID の設定](indepth-images/ref09.png)](indepth-images/ref09.png#lightbox)
+    [![ストーリーボードリファレンスで、参照 I D を AltScene に設定します。](indepth-images/ref09.png)](indepth-images/ref09.png#lightbox)
 7. 既存のシーンで UI ウィジェット (ボタンなど) をコントロールクリックし、作成した **ストーリーボード参照** に新しいセグエを作成します。 ポップアップメニューから [ **表示** ] を選択して、セグエを完了します。 
 
     [![セグエ型の設定](indepth-images/ref06.png)](indepth-images/ref06.png#lightbox) 
@@ -325,19 +325,19 @@ MacOS では、次のジェスチャレコグナイザーを利用できます�
 
 同じストーリーボードに特定のシーンへの参照を追加するには、次の手順を実行します。
 
-1. **ソリューションエクスプローラー**で、ストーリーボードをダブルクリックして開き、編集します。
+1. **ソリューションエクスプローラー** で、ストーリーボードをダブルクリックして開き、編集します。
 2. 次のように、新しいシーンを追加し、そのレイアウトをデザインします。 
 
     [![Xcode でストーリーボードを編集する](indepth-images/ref11.png)](indepth-images/ref11.png#lightbox)
-3. **Id インスペクター**で、新しいシーンのウィンドウコントローラーの**ストーリーボード ID**を入力します。 
+3. **Id インスペクター** で、新しいシーンのウィンドウコントローラーの **ストーリーボード ID** を入力します。 
 
-    [![ストーリーボード ID の設定](indepth-images/ref12.png)](indepth-images/ref12.png#lightbox)
-4. **ツールボックス**からデザインサーフェイスに**ストーリーボード参照**をドラッグします。 
+    [![Id でストーリーボード I D を IntScene に設定しています。](indepth-images/ref12.png)](indepth-images/ref12.png#lightbox)
+4. **ツールボックス** からデザインサーフェイスに **ストーリーボード参照** をドラッグします。 
 
     [![ライブラリからのストーリーボード参照の選択](indepth-images/ref03.png)](indepth-images/ref03.png#lightbox)
-5. **属性インスペクター**で、前の手順で作成したシーンの [**参照 ID** (ストーリーボード id)] を選択します。 
+5. **属性インスペクター** で、前の手順で作成したシーンの [**参照 ID** (ストーリーボード id)] を選択します。 
 
-    [![参照 ID の設定](indepth-images/ref13.png)](indepth-images/ref13.png#lightbox)
+    [![ストーリーボードリファレンスで、参照 I D を IntScene に設定します。](indepth-images/ref13.png)](indepth-images/ref13.png#lightbox)
 6. 既存のシーンで UI ウィジェット (ボタンなど) をコントロールクリックし、作成した **ストーリーボード参照** に新しいセグエを作成します。 ポップアップメニューから [ **表示** ] を選択して、セグエを完了します。 
 
     [![セグエの種類の選択](indepth-images/ref06.png)](indepth-images/ref06.png#lightbox) 

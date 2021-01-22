@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 05/24/2017
-ms.openlocfilehash: 0d95ecb1997ba70a2994d74bacdedd334f2b4c61
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 78ae9a4dae15b65dbeaa884ebf7022e2787dc2a0
+ms.sourcegitcommit: 513feb0e07558766e3de4a898e53d56b27c20559
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91429725"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98697645"
 ---
 # <a name="collection-views-in-xamarinmac"></a>Xamarin. Mac のコレクションビュー
 
 _この記事では、Xamarin. Mac アプリでのコレクションビューの操作について説明します。Xcode と Interface Builder でのコレクションビューの作成と管理、およびプログラムによる操作について説明します。_
 
-Xamarin. Mac アプリで C# と .NET を使用する場合、開発者は同じ AppKit コレクションビューコントロールにアクセスできます。このコントロールは、 *Xcode および*で作業する開発者が*実行します*。 Xcode は直接統合されているため、開発者は Xcode の _Interface Builder_ を使用してコレクションビューを作成および管理します。
+Xamarin. Mac アプリで C# と .NET を使用する場合、開発者は同じ AppKit コレクションビューコントロールにアクセスできます。このコントロールは、 *Xcode および* で作業する開発者が *実行します*。 Xcode は直接統合されているため、開発者は Xcode の _Interface Builder_ を使用してコレクションビューを作成および管理します。
 
 は `NSCollectionView` 、を使用して整理されたサブビューのグリッドを表示 `NSCollectionViewLayout` します。 グリッド内の各サブビューは、 `NSCollectionViewItem` ファイルからのビューのコンテンツの読み込みを管理するによって表され `.xib` ます。
 
@@ -32,7 +32,7 @@ Xamarin. Mac アプリで C# と .NET を使用する場合、開発者は同じ
 
 ## <a name="about-collection-views"></a>コレクションビューについて
 
-コレクションビュー () の主な目的は、 `NSCollectionView` コレクションビューレイアウト () を使用して整理された方法でオブジェクトのグループを視覚的に配置することです `NSCollectionViewLayout` 。個々のオブジェクト () は、 `NSCollectionViewItem` より大きなコレクションで独自のビューを取得します。 コレクションビューはデータバインディングとキー値のコーディング手法によって動作するため、この記事を続行する前に、 [データバインディングとキー値のコーディング](~/mac/app-fundamentals/databinding.md) に関するドキュメントを読む必要があります。
+コレクションビュー () の主な目的は、 `NSCollectionView` コレクションビューレイアウト () を使用して整理された方法でオブジェクトのグループを視覚的に配置することです `NSCollectionViewLayout` 。個々のオブジェクト () は、 `NSCollectionViewItem` より大きなコレクションで独自のビューを取得します。 コレクションビューは、データバインディングと Key-Value コーディング手法によって機能します。そのため、この記事を続行する前に、 [データバインディングと Key-Value コーディング](~/mac/app-fundamentals/databinding.md) に関するドキュメントを参照してください。
 
 コレクションビューには、標準の組み込みコレクションビューアイテム (アウトラインやテーブルビューなど) がないため、開発者は、イメージフィールド、テキストフィールド、ラベルなどの他の AppKit コントロールを使用して、 _プロトタイプビュー_ をデザインおよび実装する責任があります。このプロトタイプビューは、コレクションビューによって管理され、ファイルに格納されている各項目を表示および操作するために使用され `.xib` ます。
 
@@ -42,7 +42,7 @@ Xamarin. Mac アプリで C# と .NET を使用する場合、開発者は同じ
 
 ## <a name="defining-the-data-model"></a>データモデルの定義
 
-Interface Builder でコレクションビューをデータバインドする前に、バインドの _データモデル_ として機能するように、キー値のコーディング (kvc)/Keyvalue 観測 (kvc) 準拠のクラスを Xamarin. Mac アプリで定義する必要があります。 データモデルは、コレクションに表示されるすべてのデータを提供し、アプリケーションの実行中にユーザーが UI で行ったデータへの変更を受け取ります。
+Interface Builder でコレクションビューをデータバインドする前に、バインドの _データモデル_ として機能するように、Key-Value コーディング (kvc)/Keyvalue 観測 (kvc) 準拠クラスを Xamarin. Mac アプリで定義する必要があります。 データモデルは、コレクションに表示されるすべてのデータを提供し、アプリケーションの実行中にユーザーが UI で行ったデータへの変更を受け取ります。
 
 従業員のグループを管理するアプリの例を見て、次のクラスを使用してデータモデルを定義できます。
 
@@ -197,10 +197,10 @@ namespace MacDatabinding
 
 コレクションビューには既定のセルプロトタイプが含まれていないため、開発者は1つ以上 `.xib` のファイルを Xamarin. Mac アプリに追加して、個々のセルのレイアウトとコンテンツを定義する必要があります。
 
-次の手順を実行します。
+次の操作を行います。
 
-1. **ソリューションエクスプローラー**で、プロジェクト名を右クリックし、[新しいファイルの**追加**  >  **...** ] を選択します。
-2. [ **Mac**  >  **ビューコントローラー**] を選択し、名前 ( `EmployeeItem` この例ではなど) を指定して、[**新規**作成] ボタンをクリックします。 
+1. **ソリューションエクスプローラー** で、プロジェクト名を右クリックし、[新しいファイルの **追加**  >  **...** ] を選択します。
+2. [ **Mac**  >  **ビューコントローラー**] を選択し、名前 ( `EmployeeItem` この例ではなど) を指定して、[**新規** 作成] ボタンをクリックします。 
 
     ![新しいビューコントローラーの追加](collection-view-images/proto01.png)
 
@@ -209,17 +209,17 @@ namespace MacDatabinding
 4. `NSBox` `NSImageView` ビューにとという2つのコントロールを追加し、次のように `NSLabel` レイアウトします。
 
     ![セルプロトタイプのレイアウトのデザイン](collection-view-images/proto02.png)
-5. **アシスタントエディター**を開き、の**アウトレット**を作成して、 `NSBox` セルの選択状態を示すために使用できるようにします。
+5. **アシスタントエディター** を開き、の **アウトレット** を作成して、 `NSBox` セルの選択状態を示すために使用できるようにします。
 
     ![アウトレットでの NSBox の公開](collection-view-images/proto03.png)
-6. **標準エディター**に戻り、[イメージ] ビューを選択します。
-7. **バインドインスペクター**で、[ファイルの所有者**にバインドする**] を選択  >  **File's Owner**し、**モデルキーのパス**を次のように入力し `self.Person.Icon` ます。
+6. **標準エディター** に戻り、[イメージ] ビューを選択します。
+7. **バインドインスペクター** で、[ファイルの所有者 **にバインドする**] を選択  >  し、**モデルキーのパス** を次のように入力し `self.Person.Icon` ます。
 
     ![アイコンのバインド](collection-view-images/proto04.png)
-8. 最初のラベルを選択し、**バインドインスペクター**で [ファイルの所有者**にバインドする**] を選択し、  >  **File's Owner**次のような**モデルキーパス**を入力し `self.Person.Name` ます。
+8. 最初のラベルを選択し、**バインドインスペクター** で [ファイルの所有者 **にバインドする**] を選択し、  >  次のような **モデルキーパス** を入力し `self.Person.Name` ます。
 
     ![名前のバインド](collection-view-images/proto05.png)
-9. 2番目のラベルを選択し、**バインドインスペクター**で [ファイルの所有者**にバインドする**] を選択し、  >  **File's Owner**次のような**モデルキーパス**を入力し `self.Person.Occupation` ます。
+9. 2番目のラベルを選択し、**バインドインスペクター** で [ファイルの所有者 **にバインドする**] を選択し、  >  次のような **モデルキーパス** を入力し `self.Person.Occupation` ます。
 
     ![職業のバインド](collection-view-images/proto06.png)
 10. 変更内容をファイルに保存 `.xib` し、Visual Studio に戻って変更を同期します。
@@ -573,18 +573,18 @@ namespace MacCollectionNew
 
 必要なすべてのサポートパーツが配置されているので、メインストーリーボードを編集し、コレクションビューを追加することができます。
 
-次の手順を実行します。
+次の操作を行います。
 
-1. ソリューションエクスプローラー内のファイルをダブルクリックし `Main.Storyboard` て、Xcode の Interface Builder で編集するために開きます。 **Solution Explorer**
+1. ソリューションエクスプローラー内のファイルをダブルクリックし `Main.Storyboard` て、Xcode の Interface Builder で編集するために開きます。 
 2. コレクションビューをメインビューにドラッグして、ビューに合わせてサイズを変更します。
 
     ![レイアウトへのコレクションビューの追加](collection-view-images/collection01.png)
 3. コレクションビューを選択した状態で、制約エディターを使用して、サイズを変更したときにビューにピン留めします。
 
-    ![制約の追加](collection-view-images/collection02.png)
-4. **デザインサーフェイス**でコレクションビューが選択されていることを確認し (これを含む、**境界スクロールビュー**または**クリップビュー**ではありません)、**アシスタントエディター**に切り替え、コレクションビューの**アウトレット**を作成します。
+    ![スクリーンショットに新しい制約の追加を示します。](collection-view-images/collection02.png)
+4. **デザインサーフェイス** でコレクションビューが選択されていることを確認し (これを含む、**境界スクロールビュー** または **クリップビュー** ではありません)、**アシスタントエディター** に切り替え、コレクションビューの **アウトレット** を作成します。
 
-    ![制約の追加](collection-view-images/collection03.png)
+    ![スクリーンショットには、アウトレットを作成できるアシスタントエディターが表示されています。](collection-view-images/collection03.png)
 5. 変更を保存し、Visual Studio に戻り、同期します。
 
 <a name="Bringing-it-all-Together"></a>
@@ -744,14 +744,14 @@ namespace MacCollectionNew
 EmployeeCollection.RegisterClassForItem(typeof(EmployeeItemController), "EmployeeCell");
 ```
 
-**Identifier** `EmployeeCell` プロトタイプの登録に使用された識別子 () が、上記で定義されているのメソッドで呼び出された識別子と一致していることに注意して `GetItem` `CollectionViewDataSource` ください。
+ `EmployeeCell` プロトタイプの登録に使用された識別子 () が、上記で定義されているのメソッドで呼び出された識別子と一致していることに注意して `GetItem` `CollectionViewDataSource` ください。
 
 ```csharp
 var item = collectionView.MakeItem("EmployeeCell", indexPath) as EmployeeItemController;
 ...
 ```
 
-また、ビューコントローラーの種類は、プロトタイプを正確に定義するファイルの名前と一致**する必要があり** `.xib` ます。 **exactly** この例の場合は、 `EmployeeItemController` と `EmployeeItemController.xib` です。
+また、ビューコントローラーの種類は、プロトタイプを正確に定義するファイルの名前と一致 **する必要があり** `.xib` ます。  この例の場合は、 `EmployeeItemController` と `EmployeeItemController.xib` です。
 
 コレクションビュー内の項目の実際のレイアウトは、コレクションビューレイアウトクラスによって制御され、新しいインスタンスをプロパティに割り当てることによって、実行時に動的に変更できます `CollectionViewLayout` 。 このプロパティを変更すると、変更をアニメーション化せずにコレクションビューの外観が更新されます。
 
@@ -813,7 +813,7 @@ public override void ViewDidLoad()
 
 ## <a name="summary"></a>まとめ
 
-この記事では、Xamarin. Mac アプリケーションでコレクションビューを使用する方法について詳しく説明しました。 まず、キー値のコード (KVC) とキー値の観測 (KVC) を使用して、C# クラスを目的の C に公開する方法を見てきました。 次に、KVO に準拠したクラスを使用し、データを Xcode の Interface Builder のコレクションビューにバインドする方法について説明しました。 最後に、C# コードでコレクションビューを操作する方法を示しました。
+この記事では、Xamarin. Mac アプリケーションでコレクションビューを使用する方法について詳しく説明しました。 まず、Key-Value コーディング (KVC) と Key-Value 観察 (KVC) を使用して C# クラスを目的の C に公開する方法を見てきました。 次に、KVO に準拠したクラスを使用し、データを Xcode の Interface Builder のコレクションビューにバインドする方法について説明しました。 最後に、C# コードでコレクションビューを操作する方法を示しました。
 
 ## <a name="related-links"></a>関連リンク
 
