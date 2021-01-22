@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/13/2018
-ms.openlocfilehash: 900a4bf3407b4a3d37f6102ff4b10292edf4bd25
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 2350c068b0a719e8d633c0f96712aec40e7865aa
+ms.sourcegitcommit: 513feb0e07558766e3de4a898e53d56b27c20559
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91434052"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98697476"
 ---
 # <a name="displaying-images-with-xamarinios"></a>Xamarin を使用したイメージの表示
 
@@ -22,7 +22,7 @@ ms.locfileid: "91434052"
 
 イメージは Visual Studio for Mac ソリューション内の任意のフォルダーに追加できます。また、[ **ビルド] アクション** が [ **コンテンツ** ] に設定されている場合、そのファイルはアプリに含まれ、表示できます。
 
-Visual Studio for Mac では、イメージファイルも格納できる **リソース** と呼ばれる特別なディレクトリもサポートされています。 Resources フォルダー内のファイルには、 **ビルドアクション** が **BundleResource**に設定されている必要があります。
+Visual Studio for Mac では、イメージファイルも格納できる **リソース** と呼ばれる特別なディレクトリもサポートされています。 Resources フォルダー内のファイルには、 **ビルドアクション** が **BundleResource** に設定されている必要があります。
 
 このスクリーンショットは、ファイルが右クリックされたときに表示される **ビルドアクション** オプションを示しています。
 
@@ -46,34 +46,34 @@ Visual Studio for Mac は通常、適切な **ビルドアクション** を自�
 
 ### <a name="what-is-the-resources-directory"></a>Resources ディレクトリとは何ですか。
 
-**Resources**ディレクトリに配置されたファイルは、通常のファイルとは異なる方法で扱われます。 **resources**フォルダーの内容はアプリケーションのルートにコピーされ、コード内でそこから参照できます。 これは、さまざまな理由で役に立ちます。
+**Resources** ディレクトリに配置されたファイルは、通常のファイルとは異なる方法で扱われます。 **resources** フォルダーの内容はアプリケーションのルートにコピーされ、コード内でそこから参照できます。 これは、さまざまな理由で役に立ちます。
 
 - 既定のスタートアップイメージやアプリケーションアイコンなど、アプリケーションのプロパティで構成されたイメージを格納する。
 - 他のイメージやファイルをコードとは別に格納すると、管理が容易になります (リソースディレクトリの内容がコピーされるときにサブディレクトリが保持されます)。
 
-**リソース**ディレクトリは、ライブラリプロジェクトで特に便利です。コードでは、それらのイメージが使用中のアプリケーションのルートにコピーされることを想定でき、イメージ、サウンド、ビデオ、XML などのファイルを必要とする共有コードライブラリを簡単に記述できるためです。
+**リソース** ディレクトリは、ライブラリプロジェクトで特に便利です。コードでは、それらのイメージが使用中のアプリケーションのルートにコピーされることを想定でき、イメージ、サウンド、ビデオ、XML などのファイルを必要とする共有コードライブラリを簡単に記述できるためです。
 
-**Resources**ディレクトリには名前を付ける必要があります。また、すべてのファイルにはビルドアクションを**BundleResource**に設定する必要があります。
+**Resources** ディレクトリには名前を付ける必要があります。また、すべてのファイルにはビルドアクションを **BundleResource** に設定する必要があります。
 
 ## <a name="displaying-the-image"></a>画像を表示する
 
 IOS デザイナーでイメージ **ビュー** を使用して、イメージまたはアニメーション化された一連のイメージを表示します。 ツールボックスの [ **イメージビュー** ] アイコンを次に示します。
 
- [![ツールボックスの ImageView](image-images/image35a.png)](image-images/image35.png#lightbox)
+ [![[ツールボックス] の [ImageView] アイコン。](image-images/image35a.png)](image-images/image35.png#lightbox)
 
-[**ツールボックス**] から**イメージビュー**をビューコントローラーにドラッグします。 次に、[ **イメージビュー > イメージ** ] で、プロジェクト内の使用可能なすべてのイメージファイルの一覧がドロップダウンリストに表示されます。 これらのいずれかを選択して、イメージビューに追加します。
+[**ツールボックス**] から **イメージビュー** をビューコントローラーにドラッグします。 次に、[ **イメージビュー > イメージ** ] で、プロジェクト内の使用可能なすべてのイメージファイルの一覧がドロップダウンリストに表示されます。 これらのいずれかを選択して、イメージビューに追加します。
 
  [![ツールボックスの ImageView](image-images/image36a.png)](image-images/image36.png#lightbox)
 
 ### <a name="displaying-the-image-programmatically"></a>プログラムによるイメージの表示
 
-**SF Monkey.jpg**は**Resources**ディレクトリのルートにあるため、アプリケーションバンドルのルートで実行時に使用できるようになります。 このイメージをイメージビューコントロールに表示するには、次のコードを使用します。
+**SF Monkey.jpg** は **Resources** ディレクトリのルートにあるため、アプリケーションバンドルのルートで実行時に使用できるようになります。 このイメージをイメージビューコントロールに表示するには、次のコードを使用します。
 
 ```csharp
 imageview1.Image = UIImage.FromBundle("SF Monkey.png");
 ```
 
-イメージを **/resources/Monkey.jpg**に配置した場合、コードにはパスに **Pics** フォルダーが含まれます。
+イメージを **/resources/Monkey.jpg** に配置した場合、コードにはパスに **Pics** フォルダーが含まれます。
 
 ```csharp
 imageview1.Image = UIImage.FromBundle("Pics/SF Monkey.png");

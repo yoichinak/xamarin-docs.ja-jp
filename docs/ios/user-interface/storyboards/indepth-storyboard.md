@@ -6,12 +6,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: e6bbc9d7d404136984e3d1ec93186dc85691c751
-ms.sourcegitcommit: d1f0e0a9100548cfe0960ed2225b979cc1d7c28f
+ms.openlocfilehash: b9e0f5d01d7843c25af3af3cddefbe0740f018a3
+ms.sourcegitcommit: 513feb0e07558766e3de4a898e53d56b27c20559
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96439741"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98697515"
 ---
 # <a name="storyboards-in-xamarinios"></a>Xamarin. iOS のストーリーボード
 
@@ -205,11 +205,11 @@ Visual Studio for Mac で開発した iOS アプリで使用するために、Xc
 
 6. このアプリは別のビューに移動します。そのため、前と同様に、ストーリーボードにもう1つビューを追加します。 このメソッド `PinkViewController` を呼び出し、と同じ方法で値を設定し `MainViewController` ます。
 
-    [![追加のビューコントローラーの追加](images/add-additional-view-controller.png)](images/add-additional-view-controller.png#lightbox)
+    [![スクリーンショットでは、ストーリーボードに3つのビューが表示されています。](images/add-additional-view-controller.png)](images/add-additional-view-controller.png#lightbox)
 
 7. ビューコントローラーの背景色はピンクなので、[属性] パネルでの横にあるドロップダウンを使用して、そのプロパティを設定し `Background` ます。
 
-    [![追加のビューコントローラーの追加](images/set-pink-background.png)](images/set-pink-background.png#lightbox)
+    [![スクリーンショットには、前の手順のストーリーボードが表示され、右端の画面はピンク色に変わりました。](images/set-pink-background.png)](images/set-pink-background.png#lightbox)
 
 8. がに移動するようにするため、前者には `MainViewController` `PinkViewController` と対話するためのボタンが必要です。 にボタンを追加するには、ライブラリを使用し `MainViewController` ます。
 

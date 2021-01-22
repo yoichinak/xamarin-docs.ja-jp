@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 04c33b59e2a1bab7fb401ffdc49d120bcfd679d0
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 53ffd71704201c87d5e30dea0f8da46189d6e75b
+ms.sourcegitcommit: 513feb0e07558766e3de4a898e53d56b27c20559
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91436829"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98697528"
 ---
 # <a name="manual-camera-controls-in-xamarinios"></a>Xamarin の手動カメラコントロール
 
@@ -332,7 +332,7 @@ Ios 7 以降で既に提供されている機能に加えて、次の機能を�
 
 レンズの位置を手動で制御するには、キャプチャデバイスがロックされたフォーカスモードになっている必要があります。 例:
 
- `CaptureDevice.FocusMode = AVCaptureFocusMode.Locked;`
+ `CaptureDevice.FocusMode = AVCaptureFocusMode.Locked;`
 
 `SetFocusModeLocked`キャプチャデバイスのメソッドは、カメラのレンズの位置を調整するために使用されます。 オプションのコールバックルーチンを使用して、変更が有効になったときに通知を受け取ることができます。 例:
 
@@ -348,7 +348,7 @@ ThisApp.CaptureDevice.UnlockForConfiguration();
 
 一般的な AV キャプチャセットアップコードを使用して、を `UIViewController` アプリケーションのストーリーボードに追加し、次のように構成することができます。
 
-[![次に示すように、UIViewController をアプリケーションのストーリーボードに追加し、構成することができます。](intro-to-manual-camera-controls-images/image5.png)](intro-to-manual-camera-controls-images/image5.png#lightbox)
+[![次に示すように、UIViewController をアプリケーションのストーリーボードに追加し、この例のように構成できます。](intro-to-manual-camera-controls-images/image5.png)](intro-to-manual-camera-controls-images/image5.png#lightbox)
 
 ビューには、次の主な要素が含まれています。
 
@@ -539,7 +539,7 @@ iOS 7 以降では、プロパティを使用して次の既存の露出コン�
 Ios 7 以降で既に提供されている機能に加えて、iOS 8 での公開を制御するために次の機能を使用できるようになりました。
 
 - 完全に手動でカスタム公開します。
-- Get、Set、およびキー値は、IOS とシャッタースピード (期間) を監視します。
+- IOS とシャッターの速度 (期間) を取得、設定、Key-Value 監視します。
 
 上記の機能を実装するために、新しい `AVCaptureExposureModeCustom` モードが追加されました。 のカメラがカスタムモードの場合は、次のコードを使用して露出期間と ISO を調整できます。
 
@@ -572,7 +572,7 @@ CaptureDevice.UnlockForConfiguration();
 
 一般的な AV キャプチャセットアップコードを使用して、を `UIViewController` アプリケーションのストーリーボードに追加し、次のように構成することができます。
 
-[![次に示すように、UIViewController をアプリケーションのストーリーボードに追加し、構成することができます。](intro-to-manual-camera-controls-images/image12.png)](intro-to-manual-camera-controls-images/image12.png#lightbox)
+[![次に示すように、UIViewController をアプリケーションのストーリーボードに追加し、この例のように構成することができます。](intro-to-manual-camera-controls-images/image12.png)](intro-to-manual-camera-controls-images/image12.png#lightbox)
 
 ビューには、次の主な要素が含まれています。
 
@@ -827,7 +827,7 @@ iOS 7 以降では、プロパティを使用して次の既存のホワイト�
 Ios 7 以降で既に提供されている機能に加えて、iOS 8 では、次の機能を使用して、ホワイトバランスを制御できるようになりました。
 
 - デバイスの RGB の向上を完全に手動で制御します。
-- Get、Set、およびキー値は、デバイスの RGB の向上を観察します。
+- デバイスの RGB の利点を取得、設定、Key-Value 監視します。
 - 灰色のカードを使用したホワイトバランスのサポート。
 - デバイスに依存しないカラースペースとの間の変換ルーチン。
 
@@ -872,7 +872,7 @@ Apple では、グレー表現という用語を使用して、iOS 8 に組み�
 
 一般的な AV キャプチャセットアップコードを使用して、を `UIViewController` アプリケーションのストーリーボードに追加し、次のように構成することができます。
 
-[![次に示すように、UIViewController をアプリケーションのストーリーボードに追加し、構成することができます。](intro-to-manual-camera-controls-images/image18.png)](intro-to-manual-camera-controls-images/image18.png#lightbox)
+[![次に示すように、UIViewController をアプリケーションのストーリーボードに追加し、ホワイトバランスの手動の例のように構成できます。](intro-to-manual-camera-controls-images/image18.png)](intro-to-manual-camera-controls-images/image18.png#lightbox)
 
 ビューには、次の主な要素が含まれています。
 
@@ -1152,7 +1152,7 @@ IOS 8 での角かっこで囲まれたキャプチャを使用する場合は�
 
 一般的な AV キャプチャセットアップコードを使用して、を `UIViewController` アプリケーションのストーリーボードに追加し、次のように構成することができます。
 
-[![次に示すように、UIViewController をアプリケーションのストーリーボードに追加し、構成することができます。](intro-to-manual-camera-controls-images/image23.png)](intro-to-manual-camera-controls-images/image23.png#lightbox)
+[![UIViewController をアプリケーションのストーリーボードに追加し、次の角かっこキャプチャの例のように構成できます。](intro-to-manual-camera-controls-images/image23.png)](intro-to-manual-camera-controls-images/image23.png#lightbox)
 
 ビューには、次の主な要素が含まれています。
 

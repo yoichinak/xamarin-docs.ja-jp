@@ -7,16 +7,16 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: f4d90960547fb43d6681667daadde1ce71fc105a
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 484a40aa744cae382fccca3698df0cb9344863fa
+ms.sourcegitcommit: 513feb0e07558766e3de4a898e53d56b27c20559
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91431755"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98697554"
 ---
 # <a name="dialogs-in-xamarinmac"></a>Xamarin. Mac のダイアログ
 
-Xamarin. Mac アプリケーションで C# と .NET を使用する場合、 *Xcode と**で作業している*開発者が同じダイアログとモーダルウィンドウにアクセスできます。 Xcode は直接統合されているため、Xcode の _Interface Builder_ を使用してモーダルウィンドウを作成および維持できます (または、必要に応じて C# コードで直接作成することもできます)。
+Xamarin. Mac アプリケーションで C# と .NET を使用する場合、 *Xcode と**で作業している* 開発者が同じダイアログとモーダルウィンドウにアクセスできます。 Xcode は直接統合されているため、Xcode の _Interface Builder_ を使用してモーダルウィンドウを作成および維持できます (または、必要に応じて C# コードで直接作成することもできます)。
 
 ユーザーの操作に応答してダイアログが表示され、通常、ユーザーがアクションを完了する方法が示されます。 ダイアログを閉じるには、ユーザーからの応答が必要です。
 
@@ -48,7 +48,7 @@ Apple によれば、ダイアログを表示するには次の3つの方法が�
 
 ### <a name="document-modal-dialog-sheets"></a>ドキュメントモーダルダイアログシート
 
-_シート_は、特定のドキュメントウィンドウに関連付けられたモーダルダイアログで、ユーザーがダイアログを閉じるまでウィンドウと対話できないようにします。 ウィンドウが表示されているウィンドウにシートが添付されており、一度に1つのウィンドウで開くことができるシートは1つだけです。
+_シート_ は、特定のドキュメントウィンドウに関連付けられたモーダルダイアログで、ユーザーがダイアログを閉じるまでウィンドウと対話できないようにします。 ウィンドウが表示されているウィンドウにシートが添付されており、一度に1つのウィンドウで開くことができるシートは1つだけです。
 
 [![モーダルシートの例](dialog-images/sheet08.png)](dialog-images/sheet08.png#lightbox)
 
@@ -90,7 +90,7 @@ macOS には、標準の印刷とページ設定のダイアログボックス�
 
 [![保存ダイアログ](dialog-images/save01.png)](dialog-images/save01.png#lightbox)
 
-**展開**された状態は次のようになります。
+**展開** された状態は次のようになります。
 
 [![拡張保存ダイアログ](dialog-images/save02.png)](dialog-images/save02.png#lightbox)
 
@@ -98,7 +98,7 @@ macOS には、標準の印刷とページ設定のダイアログボックス�
 
 [![最小保存シート](dialog-images/save03.png)](dialog-images/save03.png#lightbox)
 
-**展開**された [保存] ダイアログボックスは次のようになります。
+**展開** された [保存] ダイアログボックスは次のようになります。
 
 [![展開された保存シート](dialog-images/save04.png)](dialog-images/save04.png#lightbox)
 
@@ -112,21 +112,21 @@ macOS には、標準の印刷とページ設定のダイアログボックス�
 
 新しいウィンドウを追加するには、次の手順を実行します。
 
-1. **ソリューションエクスプローラー**で、 `Main.storyboard` Xcode の Interface Builder で編集するファイルを開きます。
+1. **ソリューションエクスプローラー** で、 `Main.storyboard` Xcode の Interface Builder で編集するファイルを開きます。
 2. 新しい **ビューコントローラー** をデザインサーフェイスにドラッグします。
 
     [![ライブラリからビューコントローラーを選択する](dialog-images/new01.png)](dialog-images/new01.png#lightbox)
-3. **Id インスペクター**で、 `CustomDialogController` **クラス名**として「」と入力します。 
+3. **Id インスペクター** で、 `CustomDialogController` **クラス名** として「」と入力します。 
 
-    [![クラス名の設定](dialog-images/new02.png)](dialog-images/new02.png#lightbox)
+    [![クラス名を Customて Controller に設定しています。](dialog-images/new02.png)](dialog-images/new02.png#lightbox)
 4. Visual Studio for Mac に戻り、Xcode との同期を許可して、ファイルを作成し `CustomDialogController.h` ます。
 5. Xcode に戻り、インターフェイスを設計します。 
 
     [![Xcode で UI を設計する](dialog-images/new03.png)](dialog-images/new03.png#lightbox)
-6. ダイアログボックスを開く UI 要素からコントロールをドラッグして、アプリのメインウィンドウから新しいビューコントローラーに **モーダルセグエ** を作成します。 **識別子**を割り当て `ModalSegue` ます。 
+6. ダイアログボックスを開く UI 要素からコントロールをドラッグして、アプリのメインウィンドウから新しいビューコントローラーに **モーダルセグエ** を作成します。 **識別子** を割り当て `ModalSegue` ます。 
 
     [![モーダルセグエ](dialog-images/new06.png)](dialog-images/new06.png#lightbox)
-7. すべての **アクション** と **アウトレット**を接続します。 
+7. すべての **アクション** と **アウトレット** を接続します。 
 
     [![アクションの構成](dialog-images/new04.png)](dialog-images/new04.png#lightbox)
 8. 変更を保存し Visual Studio for Mac に戻り、Xcode と同期します。
@@ -256,11 +256,11 @@ Xamarin. Mac アプリケーションで windows を使用する方法の詳細�
 
 ## <a name="creating-a-custom-sheet"></a>カスタムシートの作成
 
-_シート_は、特定のドキュメントウィンドウに関連付けられたモーダルダイアログで、ユーザーがダイアログを閉じるまでウィンドウと対話できないようにします。 ウィンドウが表示されているウィンドウにシートが添付されており、一度に1つのウィンドウで開くことができるシートは1つだけです。 
+_シート_ は、特定のドキュメントウィンドウに関連付けられたモーダルダイアログで、ユーザーがダイアログを閉じるまでウィンドウと対話できないようにします。 ウィンドウが表示されているウィンドウにシートが添付されており、一度に1つのウィンドウで開くことができるシートは1つだけです。 
 
 Xamarin. Mac でカスタムシートを作成するには、次の手順を実行します。
 
-1. **ソリューションエクスプローラー**で、 `Main.storyboard` Xcode の Interface Builder で編集するファイルを開きます。
+1. **ソリューションエクスプローラー** で、 `Main.storyboard` Xcode の Interface Builder で編集するファイルを開きます。
 2. 新しい **ビューコントローラー** をデザインサーフェイスにドラッグします。
 
     [![ライブラリからビューコントローラーを選択する](dialog-images/new01.png)](dialog-images/new01.png#lightbox)
@@ -270,10 +270,10 @@ Xamarin. Mac でカスタムシートを作成するには、次の手順を実�
 4. メインウィンドウから新しいビューコントローラーに **シートセグエ** を作成します。 
 
     [![シートのセグエの種類の選択](dialog-images/sheet02.png)](dialog-images/sheet02.png#lightbox)
-5. **Id インスペクター**で、ビューコントローラーの**クラス**にという名前を指定し `SheetViewController` ます。 
+5. **Id インスペクター** で、ビューコントローラーの **クラス** にという名前を指定し `SheetViewController` ます。 
 
-    [![クラス名の設定](dialog-images/sheet03.png)](dialog-images/sheet03.png#lightbox)
-6. 必要な **アウトレット** と **アクション**を定義します。 
+    [![クラス名を「sheet Viewcontroller」に設定します。](dialog-images/sheet03.png)](dialog-images/sheet03.png#lightbox)
+6. 必要な **アウトレット** と **アクション** を定義します。 
 
     [![必要なコンセントとアクションを定義する](dialog-images/sheet04.png)](dialog-images/sheet04.png#lightbox)
 7. 変更を保存し、Visual Studio for Mac に戻って同期します。
@@ -477,7 +477,7 @@ namespace MacWindows
 
 新しいウィンドウを追加するには、次の手順を実行します。
 
-1. **ソリューションエクスプローラー**で、 `Main.storyboard` Xcode の Interface Builder で編集するファイルを開きます。
+1. **ソリューションエクスプローラー** で、 `Main.storyboard` Xcode の Interface Builder で編集するファイルを開きます。
 2. 新しい **ウィンドウコントローラー** をデザインサーフェイスにドラッグします。
 
     [![ライブラリからウィンドウコントローラーを選択します](dialog-images/pref01.png)](dialog-images/pref01.png#lightbox)
@@ -487,7 +487,7 @@ namespace MacWindows
 4. 基本設定ビューにタブが表示されるように、アタッチされたビューコントローラーのコピーを作成します。
 
     [![必要なビューコントローラーの追加](dialog-images/pref03.png)](dialog-images/pref03.png#lightbox)
-5. 新しい **ツールバーコントローラー** を **ライブラリ**からドラッグします。
+5. 新しい **ツールバーコントローラー** を **ライブラリ** からドラッグします。
 
     [![ライブラリからツールバーコントローラーを選択します](dialog-images/pref04.png)](dialog-images/pref04.png#lightbox)
 6. 次のように、デザインサーフェイスのウィンドウにドロップします。
@@ -496,20 +496,20 @@ namespace MacWindows
 7. ツールバーのデザインをレイアウトします。
 
     [![ツールバーのレイアウト](dialog-images/pref06.png)](dialog-images/pref06.png#lightbox)
-8. コントロールをクリックし、 **ツールバー** の各ボタンから、前に作成したビューにドラッグします。 **カスタム**セグエの種類を選択してください:
+8. **ツールバー** の各ボタンから、前に作成したビューに Control-Click してドラッグします。 **カスタム** セグエの種類を選択してください:
 
-    [![セグエ型の設定](dialog-images/pref07.png)](dialog-images/pref07.png#lightbox)
+    [![カスタムのセグエ型を設定します。](dialog-images/pref07.png)](dialog-images/pref07.png#lightbox)
 9. 新しいセグエを選択し、 **クラス** を次のように設定し `ReplaceViewSegue` ます。
 
     [![セグエクラスの設定](dialog-images/pref08.png)](dialog-images/pref08.png#lightbox)
 10. デザインサーフェイスのメニュー **バーデザイナー** で、[アプリケーション] メニューの [ **基本設定...**] を選択し、コントロールをクリックして [基本設定] ウィンドウまでドラッグし、 **Show** セグエを作成します。
 
-    [![セグエ型の設定](dialog-images/pref09.png)](dialog-images/pref09.png#lightbox)
+    [![基本設定を [基本設定] ウィンドウにドラッグして、セグエの種類を設定します。](dialog-images/pref09.png)](dialog-images/pref09.png#lightbox)
 11. 変更を保存し、Visual Studio for Mac に戻って同期します。
 
-コードを実行し、[**アプリケーション] メニュー**の [**基本設定...** ] を選択すると、ウィンドウが表示されます。
+コードを実行し、[**アプリケーション] メニュー** の [**基本設定...** ] を選択すると、ウィンドウが表示されます。
 
-[![[基本設定] ウィンドウの例](dialog-images/pref10.png)](dialog-images/pref10.png#lightbox)
+[![[プロファイルの例] ウィンドウが表示されます。](dialog-images/pref10.png)](dialog-images/pref10.png#lightbox)
 
 Windows とツールバーの使用方法の詳細については、 [windows](~/mac/user-interface/window.md) と [ツールバー](~/mac/user-interface/toolbar.md) のドキュメントを参照してください。
 
@@ -519,7 +519,7 @@ Windows とツールバーの使用方法の詳細については、 [windows](~
 
 一般的な macOS アプリでは、ユーザーがアプリのユーザー設定を変更すると、それらの変更は自動的に保存されます。 Xamarin. Mac アプリでこれを処理する最も簡単な方法は、1つのクラスを作成して、すべてのユーザーの基本設定を管理し、システム全体を共有することです。
 
-まず、新しいクラスを `AppPreferences` プロジェクトに追加し、を継承し `NSObject` ます。 基本設定は、 [データバインディングとキー値のコード](~/mac/app-fundamentals/databinding.md) を使用するように設計されています。これにより、基本設定フォームを作成して維持するプロセスがより簡単になります。 基本設定は少量の単純なデータ型で構成されるため、組み込みのを使用して `NSUserDefaults` 値を格納および取得します。
+まず、新しいクラスを `AppPreferences` プロジェクトに追加し、を継承し `NSObject` ます。 基本設定は、 [データバインディングと Key-Value コーディング](~/mac/app-fundamentals/databinding.md) を使用するように設計されています。これにより、基本設定フォームを作成して維持するプロセスが非常に簡単になります。 基本設定は少量の単純なデータ型で構成されるため、組み込みのを使用して `NSUserDefaults` 値を格納および取得します。
 
 ファイルを編集 `AppPreferences.cs` し、次のように表示します。
 
@@ -716,7 +716,7 @@ namespace SourceWriter
 
 ### <a name="wiring-preferences-to-preference-views"></a>優先順位ビューへの設定の配線
 
-次に、[基本設定] ウィンドウと上で作成したビューの UI 要素に優先クラスを接続します。 Interface Builder で、基本設定ビューコントローラーを選択し、 **Id インスペクター**に切り替えて、コントローラーのカスタムクラスを作成します。 
+次に、[基本設定] ウィンドウと上で作成したビューの UI 要素に優先クラスを接続します。 Interface Builder で、基本設定ビューコントローラーを選択し、 **Id インスペクター** に切り替えて、コントローラーのカスタムクラスを作成します。 
 
 [![Id インスペクター](dialog-images/prefs12.png)](dialog-images/prefs12.png#lightbox)
 
@@ -902,7 +902,7 @@ namespace SourceWriter
 
 これらのすべての変更が適用され、ユーザーがアプリの設定を編集し、ユーザー設定ウィンドウを閉じると、すべての開いているウィンドウに変更が適用されます。
 
-[![[基本設定] ウィンドウの例](dialog-images/prefs14.png)](dialog-images/prefs14.png#lightbox)
+[![他のいくつかの開いているウィンドウと共に表示される [設定の例] ウィンドウ。](dialog-images/prefs14.png)](dialog-images/prefs14.png#lightbox)
 
 <a name="The_Open_Dialog"></a>
 
@@ -945,9 +945,9 @@ if (dlg.RunModal () == 1) {
 - [**ディレクトリ** `true` ]-ユーザーがディレクトリを選択できる場合は、
 - **Allows複数選択** - `true` ユーザーが一度に複数のファイルを選択できる場合。
 - **Resolvealiases** -を `true` 選択してエイリアスを選択すると、元のファイルのパスに解決されます。
-- **AllowedFileTypes** -拡張子または _UTI_のいずれかとしてユーザーが選択できるファイルの種類の文字列配列です。 既定値は `null` で、任意のファイルを開くことができます。
+- **AllowedFileTypes** -拡張子または _UTI_ のいずれかとしてユーザーが選択できるファイルの種類の文字列配列です。 既定値は `null` で、任意のファイルを開くことができます。
 
-メソッドは、[ `RunModal ()` 開く] ダイアログボックスを表示し、ユーザーが [開く] ボタンをクリックしたときに、ファイルまたはディレクトリを選択できるようにし `1` ます。 **Open**
+メソッドは、[ `RunModal ()` 開く] ダイアログボックスを表示し、ユーザーが [開く] ボタンをクリックしたときに、ファイルまたはディレクトリを選択できるようにし `1` ます。 
 
 [開く] ダイアログボックスでは、ユーザーが選択したファイルまたはディレクトリが、プロパティの Url の配列として返され `URL` ます。
 
@@ -1071,7 +1071,7 @@ void ShowSaveAs (NSObject sender)
 }
 ```
 
-プロパティは、 `AllowedFileTypes` ユーザーがファイルを保存するために選択できるファイルの種類の文字列配列です。 ファイルの種類は、拡張子または _UTI_として指定できます。 既定値は `null` で、任意のファイルの種類を使用できます。
+プロパティは、 `AllowedFileTypes` ユーザーがファイルを保存するために選択できるファイルの種類の文字列配列です。 ファイルの種類は、拡張子または _UTI_ として指定できます。 既定値は `null` で、任意のファイルの種類を使用できます。
 
 プロパティをに設定した場合は、 `ShowSaveAsSheet` `false` アプリケーションを実行し、[**ファイル**] メニューから [**名前を付けて保存...** ] を選択すると、次の内容が表示されます。
 

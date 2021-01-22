@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 01a09294d55490a723eb59b0365ac2dc516110c9
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 65fd825b6858efa02fcada196b4229cc69313b3e
+ms.sourcegitcommit: 513feb0e07558766e3de4a898e53d56b27c20559
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91434665"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98697489"
 ---
 # <a name="sliders-switches-and-segmented-controls-in-xamarinios"></a>Xamarin のスライダー、スイッチ、およびセグメント化されたコントロール
 
@@ -64,7 +64,7 @@ iOS では、 `UISwitch` 他のプラットフォームのラジオボタンで�
 
  [![Switch](slider-switch-segmented-controls-images/image28a.png)](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
-スイッチの外観は、デザイナーの **Properties Pad** でカスタマイズできます。これにより、既定の状態、 **オン/オフの濃淡** の色、 **オン/オフイメージ**を制御できます。 これを次の図に示します。
+スイッチの外観は、デザイナーの **Properties Pad** でカスタマイズできます。これにより、既定の状態、 **オン/オフの濃淡** の色、 **オン/オフイメージ** を制御できます。 これを次の図に示します。
 
  [![スイッチのプロパティ](slider-switch-segmented-controls-images/image29a.png)](slider-switch-segmented-controls-images/image29a.png#lightbox)
 
@@ -80,15 +80,15 @@ switch1.On = true;
 
 セグメント化されたコントロールは、ユーザーが少数のオプションと対話できるようにするための整理された方法です。 水平方向にレイアウトされ、各セグメントは個別のボタンとして機能します。 デザイナーを使用すると、セグメント化されたコントロールは [ **ツールボックス > コントロール**] の下にあり、次の図のようになります。
 
- [![セグメント化コントロール](slider-switch-segmented-controls-images/segmentedcontrol.png)](slider-switch-segmented-controls-images/segmentedcontrol.png#lightbox)
+ [![セグメント化コントロールアイコン。](slider-switch-segmented-controls-images/segmentedcontrol.png)](slider-switch-segmented-controls-images/segmentedcontrol.png#lightbox)
 
 デザイナーの固有の機能を使用すると、次に示すように、デザイン画面で各セグメントを個別に選択できます。
 
- [![セグメント化コントロール](slider-switch-segmented-controls-images/segmentedcontrolselection.png)](slider-switch-segmented-controls-images/segmentedcontrolselection.png#lightbox)
+ [![分割された制御セグメントを個別に選択します。](slider-switch-segmented-controls-images/segmentedcontrolselection.png)](slider-switch-segmented-controls-images/segmentedcontrolselection.png#lightbox)
 
 これにより、Properties Pad を使用して、各セグメントのプロパティをより厳密に制御できます。 編集可能なプロパティは、次のスクリーンショットで確認できます。
 
- [![セグメント化コントロール](slider-switch-segmented-controls-images/segmentedcontrolproperties.png)](slider-switch-segmented-controls-images/segmentedcontrolproperties.png#lightbox)
+ [![セグメント化コントロールのプロパティ。](slider-switch-segmented-controls-images/segmentedcontrolproperties.png)](slider-switch-segmented-controls-images/segmentedcontrolproperties.png#lightbox)
 
 セグメント化されたコントロールスタイルは iOS7 で非推奨とされているため、iOS7 アプリケーションでこのオプションを調整しても効果はありません。
 
