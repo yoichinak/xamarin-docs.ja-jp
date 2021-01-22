@@ -7,16 +7,16 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 07/02/2018
-ms.openlocfilehash: 44003e55ee88db727c26def56b3363dbf6c982e9
-ms.sourcegitcommit: 124d845f8d2768353e8b7fe1ab1d959a589367f7
+ms.openlocfilehash: 07c20be730d73b080d99b2fecb88b26115c37bc2
+ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91872278"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98609028"
 ---
 # <a name="signing-the-android-application-package"></a>Android アプリケーション パッケージに署名する
 
-「[リリースに向けてアプリケーションを準備する](~/android/deploy-test/release-prep/index.md)」では、**アーカイブ マネージャー**を使用してアプリをビルドし、署名および公開するためにそれをアーカイブに配置しました。 このセクションでは、Android の署名 ID を作成する方法、Android アプリケーション用の新しい署名証明書を作成する方法、アーカイブしたアプリの*アドホック*をディスクに公開する方法について説明します。 結果として得られる APK は、アプリ ストアを経由せずに Android デバイスにサイドロードすることができます。
+「[リリースに向けてアプリケーションを準備する](~/android/deploy-test/release-prep/index.md)」では、**アーカイブ マネージャー** を使用してアプリをビルドし、署名および公開するためにそれをアーカイブに配置しました。 このセクションでは、Android の署名 ID を作成する方法、Android アプリケーション用の新しい署名証明書を作成する方法、アーカイブしたアプリの *アドホック* をディスクに公開する方法について説明します。 結果として得られる APK は、アプリ ストアを経由せずに Android デバイスにサイドロードすることができます。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -28,7 +28,7 @@ ms.locfileid: "91872278"
 
 [公開のためのアーカイブ](~/android/deploy-test/release-prep/index.md#archive)では、 **[署名と配布...]** ダイアログに 2 種類の配布方法が表示されました。 **[アドホック]** を選択して **[次へ]** をクリックします。
 
-[![[署名と配布] ダイアログ](images/xs/01-select-ad-hoc-sml.png)](images/xs/01-select-ad-hoc.png#lightbox)
+[![[署名と配布] ダイアログ ボックスで、Android の配布チャネルを選択します。](images/xs/01-select-ad-hoc-sml.png)](images/xs/01-select-ad-hoc.png#lightbox)
 
 -----
 
@@ -99,7 +99,7 @@ ms.locfileid: "91872278"
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 **[作成]** をクリックすると、新しいキー ストア (新しい証明書を含む) が保存され、次のスクリーンショットに示すように、 **[署名 ID]** の下に一覧表示されます。 Google Play でアプリを公開するには、 **[キャンセル]** をクリックして「[Google Play に公開する](~/android/deploy-test/publishing/publishing-to-google-play/index.md)」に進みます。
-*アドホック*を公開するには、署名に使用する署名 ID を選択し、 **[名前を付けて保存]** をクリックして独立したディストリビューション用にアプリを公開します。 たとえば、このスクリーンショットでは、(以前に作成した) **chimp** 署名 ID が選択されています。
+*アドホック* を公開するには、署名に使用する署名 ID を選択し、 **[名前を付けて保存]** をクリックして独立したディストリビューション用にアプリを公開します。 たとえば、このスクリーンショットでは、(以前に作成した) **chimp** 署名 ID が選択されています。
 
 [![署名 ID の例](images/vs/05-save-as-vs-sml.png)](images/vs/05-save-as-vs.png#lightbox)
 
@@ -123,9 +123,9 @@ ms.locfileid: "91872278"
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 既に説明したように、新しい証明書がキー ストアに追加されました。 Google Play でアプリを公開するには、 **[キャンセル]** をクリックして「[Google Play に公開する](~/android/deploy-test/publishing/publishing-to-google-play/index.md)」に進みます。
-または、 **[次へ]** をクリックして、この例で示すように (独立したディストリビューション用に) アプリの*アドホック*を公開します。
+または、 **[次へ]** をクリックして、この例で示すように (独立したディストリビューション用に) アプリの *アドホック* を公開します。
 
-[![[署名と配布] ダイアログ](images/xs/04-select-identity-sml.png)](images/xs/04-select-identity.png#lightbox)
+[![[署名と配布] ダイアログ ボックスの [Android の署名の識別情報]。](images/xs/04-select-identity-sml.png)](images/xs/04-select-identity.png#lightbox)
 
 **[アドホックとして公開します]** ダイアログでは、公開前の署名済みアプリの概要を提供します。 この情報が正しければ、 **[公開]** をクリックします。
 

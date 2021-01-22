@@ -10,12 +10,12 @@ ms.date: 04/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1f2484fe7c6dee1f1b4df1318263624f3f50f604
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 6f54ec3afd3d53d4a7bee40159bccff2d23f44f6
+ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93367180"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98609049"
 ---
 # <a name="no-locxamarinforms-triggers"></a>Xamarin.Forms のトリガー
 
@@ -268,7 +268,7 @@ XAML を以下に示します。 最初のマルチ トリガーの例と次の�
 > [!NOTE]
 > `EnterActions` コレクションと `ExitActions` コレクションで定義されている [`TriggerAction`](xref:Xamarin.Forms.TriggerAction) オブジェクトは、[`EventTrigger`](xref:Xamarin.Forms.EventTrigger) クラスによって無視されます。    
 
-トリガーで `Setter` と共に `EnterActions` と `ExitActions` の " *両方* " を提供できますが、`Setter` はすぐに呼び出されることに注意してください (`EnterAction` または `ExitAction` が完了するのを待機しません)。 代わりに、コードですべてを実行し、`Setter` をまったく使用しないこともできます。
+トリガーで `Setter` と共に `EnterActions` と `ExitActions` の "*両方*" を提供できますが、`Setter` はすぐに呼び出されることに注意してください (`EnterAction` または `ExitAction` が完了するのを待機しません)。 代わりに、コードですべてを実行し、`Setter` をまったく使用しないこともできます。
 
 ```xaml
 <Entry Placeholder="enter job title">
@@ -521,8 +521,8 @@ Unchecked state active: True
 
 この例では、暗黙的な [`Style`](xref:Xamarin.Forms.Style) によって [`Grid`](xref:Xamarin.Forms.Grid) オブジェクトがターゲットにされています。 [`CheckBox`](xref:Xamarin.Forms.CheckBox) の [`IsChecked`](xref:Xamarin.Forms.CheckBox.IsChecked) プロパティが `false` の場合、`Grid` の背景色は白に設定されます。 `CheckBox.IsChecked` プロパティが `true` になると、[`VisualState`](xref:Xamarin.Forms.VisualState) の変更がトリガーされ、`Grid` の背景色が黒になります。
 
-[![トリガーされたビジュアルの状態の変更のスクリーンショット (iOS および Android)](triggers-images/comparestatetrigger-unchecked.png "CompareStateTrigger の例")](triggers-images/comparestatetrigger-unchecked-large.png#lightbox "CompareStateTrigger の例")
-[![トリガーされたビジュアルの状態の変更のスクリーンショット (iOS および Android)](triggers-images/comparestatetrigger-checked.png "CompareStateTrigger の例")](triggers-images/comparestatetrigger-unchecked-large.png#lightbox "CompareStateTrigger の例")
+[![iOS および Android の、トリガーされたビジュアルの状態の変更のスクリーンショット (トリガーがチェックされていない)](triggers-images/comparestatetrigger-unchecked.png "CompareStateTrigger の例")](triggers-images/comparestatetrigger-unchecked-large.png#lightbox "CompareStateTrigger の例")
+[![iOS および Android の、トリガーされたビジュアルの状態の変更のスクリーンショット (トリガーがチェックされている)](triggers-images/comparestatetrigger-checked.png "CompareStateTrigger の例")](triggers-images/comparestatetrigger-checked-large.png#lightbox "CompareStateTrigger の例")
 
 ### <a name="device-state-trigger"></a>デバイスの状態トリガー
 

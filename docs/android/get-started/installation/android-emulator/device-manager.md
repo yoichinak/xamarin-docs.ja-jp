@@ -9,12 +9,12 @@ author: davidortinau
 ms.author: daortin
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: fd1361f00bf10089f7a9dead5a5adaa1e7c29727
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 13b66f3484f274c04282ef1964107fcb53c62e38
+ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571585"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98609795"
 ---
 # <a name="managing-virtual-devices-with-the-android-device-manager"></a>Android Device Manager による仮想デバイスの管理
 
@@ -68,7 +68,7 @@ Android Device Manager を使用するには、次の項目が必要です。
 
 ## <a name="main-screen"></a>メイン画面
 
-Android Device Manager を初めて起動すると、現在構成されているすべての仮想デバイスが画面に表示されます。 仮想デバイスごとに**名前**、**OS** (Android バージョン)、**プロセッサ**、**メモリ** サイズ、および画面の**解像度**が表示されます。
+Android Device Manager を初めて起動すると、現在構成されているすべての仮想デバイスが画面に表示されます。 仮想デバイスごとに **名前**、**OS** (Android バージョン)、**プロセッサ**、**メモリ** サイズ、および画面の **解像度** が表示されます。
 
 [![インストールされているデバイスの一覧とそれらのパラメーター](device-manager-images/win/05-installed-list-sml.png)](device-manager-images/win/05-installed-list.png#lightbox)
 
@@ -100,7 +100,7 @@ Android Device Manager を初めて起動すると、現在構成されている
 
    [![エミュレートする物理デバイスの選択](device-manager-images/win/11-device-menu-sml.png)](device-manager-images/win/11-device-menu.png#lightbox)
 
-3. **[Processor]\(プロセッサ\)** プルダウン メニューをクリックして、この仮想デバイスのプロセッサの種類を選択します。 **[x86]** を選択すると、エミュレーターで[ハードウェア高速化](~/android/get-started/installation/android-emulator/hardware-acceleration.md)を使用できるので最高のパフォーマンスを達成できます。
+3. **[Processor]\(プロセッサ\)** プルダウン メニューをクリックして、この仮想デバイスのプロセッサの種類を選択します。 **[x86]** を選択すると、エミュレーターで [ハードウェア高速化](~/android/get-started/installation/android-emulator/hardware-acceleration.md)を使用できるので最高のパフォーマンスを達成できます。
    **[x86_64]** オプションでもハードウェア高速化を利用しますが、 **[x86]** よりやや遅くなります ( **[x86_64]** は通常 64 ビット アプリのテストに使用されます)。
 
    [![プロセッサの種類の選択](device-manager-images/win/12-processor-type-menu-sml.png)](device-manager-images/win/12-processor-type-menu.png#lightbox)
@@ -179,7 +179,7 @@ Android Device Manager を初めて起動すると、現在構成されている
 
   [![[Reveal in Explorer]\(エクスプローラーで表示\) をクリックした結果](device-manager-images/win/26-reveal-in-explorer-sml.png)](device-manager-images/win/26-reveal-in-explorer.png#lightbox)
 
-- **[Factory Reset]\(出荷時の設定にリセット\)** &ndash; 選択したデバイスをその既定の設定にリセットし、デバイスの実行中にユーザーが行ったデバイスの内部状態に対する変更を消去します (現在の[クイック ブート](~/android/deploy-test/debugging/debug-on-emulator.md#quick-boot)のスナップショットが存在する場合は、それも消去されます)。 仮想デバイスを作成または編集するときに行った変更は消去されません。 このリセットは元に戻すことができないという警告がダイアログ ボックスに表示されます。 **[Factory Reset]\(出荷時の設定にリセット\)** をクリックしてリセットを確定します。
+- **[Factory Reset]\(出荷時の設定にリセット\)** &ndash; 選択したデバイスをその既定の設定にリセットし、デバイスの実行中にユーザーが行ったデバイスの内部状態に対する変更を消去します (現在の [クイック ブート](~/android/deploy-test/debugging/debug-on-emulator.md#quick-boot)のスナップショットが存在する場合は、それも消去されます)。 仮想デバイスを作成または編集するときに行った変更は消去されません。 このリセットは元に戻すことができないという警告がダイアログ ボックスに表示されます。 **[Factory Reset]\(出荷時の設定にリセット\)** をクリックしてリセットを確定します。
 
   ![[Factory Reset]\(出荷時の設定にリセット\) ダイアログ](device-manager-images/win/27-factory-reset.png)
 
@@ -228,11 +228,11 @@ Android Device Manager を使用するには、次の項目が必要です。
 
 起動時に次のエラー ダイアログが表示される場合は、「[トラブルシューティング](#troubleshooting)」セクションの回避策の説明をご覧ください。
 
-![Android SDK インスタンスのエラー ダイアログ](device-manager-images/mac/04-sdk-instance-error.png)
+![スクリーンショットには、トラブルシューティング情報に関する Android SDK インスタンスのエラー ダイアログ ボックスが表示されています。](device-manager-images/mac/04-sdk-instance-error.png)
 
 ## <a name="main-screen"></a>メイン画面
 
-Android Device Manager を初めて起動すると、現在構成されているすべての仮想デバイスが画面に表示されます。 仮想デバイスごとに**名前**、**OS** (Android バージョン)、**プロセッサ**、**メモリ** サイズ、および画面の**解像度**が表示されます。
+Android Device Manager を初めて起動すると、現在構成されているすべての仮想デバイスが画面に表示されます。 仮想デバイスごとに **名前**、**OS** (Android バージョン)、**プロセッサ**、**メモリ** サイズ、および画面の **解像度** が表示されます。
 
 [![インストールされているデバイスの一覧とそれらのパラメーター](device-manager-images/mac/05-devices-list-sml.png)](device-manager-images/mac/05-devices-list.png#lightbox)
 
@@ -270,7 +270,7 @@ Android Device Manager を初めて起動すると、現在構成されている
 
    [![エミュレートする物理デバイスの選択](device-manager-images/mac/12-device-menu-m76-sml.png)](device-manager-images/mac/12-device-menu-m76.png#lightbox)
 
-3. **[Processor]\(プロセッサ\)** プルダウン メニューをクリックして、この仮想デバイスのプロセッサの種類を選択します。 **[x86]** を選択すると、エミュレーターで[ハードウェア高速化](~/android/get-started/installation/android-emulator/hardware-acceleration.md)を使用できるので最高のパフォーマンスを達成できます。
+3. **[Processor]\(プロセッサ\)** プルダウン メニューをクリックして、この仮想デバイスのプロセッサの種類を選択します。 **[x86]** を選択すると、エミュレーターで [ハードウェア高速化](~/android/get-started/installation/android-emulator/hardware-acceleration.md)を使用できるので最高のパフォーマンスを達成できます。
    **[x86_64]** オプションでもハードウェア高速化を利用しますが、 **[x86]** よりやや遅くなります ( **[x86_64]** は通常 64 ビット アプリのテストに使用されます)。
 
    [![プロセッサの種類の選択](device-manager-images/mac/13-processor-type-menu-m76-sml.png)](device-manager-images/mac/13-processor-type-menu-m76.png#lightbox)
@@ -347,7 +347,7 @@ Android Device Manager を初めて起動すると、現在構成されている
 
   [![[Reveal in Finder]\(Finder で表示\) をクリックした結果](device-manager-images/mac/26-reveal-in-finder-sml.png)](device-manager-images/mac/26-reveal-in-finder.png#lightbox)
 
-- **[Factory Reset]\(出荷時の設定にリセット\)** &ndash; 選択したデバイスをその既定の設定にリセットし、デバイスの実行中にユーザーが行ったデバイスの内部状態に対する変更を消去します (現在の[クイック ブート](~/android/deploy-test/debugging/debug-on-emulator.md#quick-boot)のスナップショットが存在する場合は、それも消去されます)。 仮想デバイスを作成または編集するときに行った変更は消去されません。 このリセットは元に戻すことができないという警告がダイアログ ボックスに表示されます。 **[Factory Reset]\(出荷時の設定にリセット\)** をクリックしてリセットを確定します。
+- **[Factory Reset]\(出荷時の設定にリセット\)** &ndash; 選択したデバイスをその既定の設定にリセットし、デバイスの実行中にユーザーが行ったデバイスの内部状態に対する変更を消去します (現在の [クイック ブート](~/android/deploy-test/debugging/debug-on-emulator.md#quick-boot)のスナップショットが存在する場合は、それも消去されます)。 仮想デバイスを作成または編集するときに行った変更は消去されません。 このリセットは元に戻すことができないという警告がダイアログ ボックスに表示されます。 **[Factory Reset]\(出荷時の設定にリセット\)** をクリックしてリセットを確定します。
 
   ![[Factory Reset]\(出荷時の設定にリセット\) ダイアログ](device-manager-images/mac/27-factory-reset-m76.png)
 
@@ -383,7 +383,7 @@ SDK がこの場所にインストールされていない場合、Android Devic
 
    ![Android Device Manager のログ ファイルの場所](device-manager-images/win/30-log-files.png)
 
-2. いずれかのログ ファイルをダブルクリックして開き、**構成ファイルのパス**を調べます。 次に例を示します。
+2. いずれかのログ ファイルをダブルクリックして開き、**構成ファイルのパス** を調べます。 次に例を示します。
 
    [![ログ ファイルでの構成ファイルのパス](device-manager-images/win/31-config-file-path-sml.png)](device-manager-images/win/31-config-file-path.png#lightbox)
 
@@ -401,7 +401,7 @@ SDK がこの場所にインストールされていない場合、Android Devic
 
 Android SDK Tools 26.1.1 以降がインストールされていない場合、起動時に次のエラー ダイアログが表示されることがあります。
 
-![Android SDK インスタンスのエラー ダイアログ](device-manager-images/win/32-sdk-instance-error.png)
+![スクリーンショットには、Android SDK インスタンスのエラー ダイアログ ボックスが表示されています。](device-manager-images/win/32-sdk-instance-error.png)
 
 このエラー ダイアログが表示された場合は、 **[SDK マネージャーを開く]** をクリックして Android SDK Manager を開きます。 Android SDK Manager で、 **[ツール]** タブをクリックして、以下のパッケージをインストールします。
 

@@ -10,12 +10,12 @@ ms.date: 11/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f4e0387b6b64c5a3bf801a31c6e333b6f514df1d
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 81a273091d14f8da908d1d52751f262b3a00027c
+ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93367370"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98609067"
 ---
 # <a name="customizing-a-map-pin"></a>マップ ピンのカスタマイズ
 
@@ -174,9 +174,9 @@ protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.
 
 次のスクリーンショットは、カスタマイズの前と後のマップを示しています。
 
-![カスタマイズの前と後のマップ コントロール](map-pin-images/map-layout-ios.png)
+![スクリーンショットには、通常のピンと注釈付きピンが付いたモバイル デバイスが表示されています。](map-pin-images/map-layout-ios.png)
 
-iOS では、ピンは *注釈* と呼ばれ、カスタム イメージまたはさまざまな色のシステム定義のピンにすることができます。 注釈では、必要に応じて、注釈を選択するユーザーへの応答として表示される、 *吹き出し* を示すことができます。 吹き出しでは、`Pin` インスタンスの `Label` および `Address` プロパティが表示され、オプションの左側と右側のアクセサリ ビューが示されます。 上記のスクリーンショットでは、左側のアクセサリ ビューはサルのイメージで、右側のアクセサリ ビューは *情報* ボタンとなっています。
+iOS では、ピンは *注釈* と呼ばれ、カスタム イメージまたはさまざまな色のシステム定義のピンにすることができます。 注釈では、必要に応じて、注釈を選択するユーザーへの応答として表示される、*吹き出し* を示すことができます。 吹き出しでは、`Pin` インスタンスの `Label` および `Address` プロパティが表示され、オプションの左側と右側のアクセサリ ビューが示されます。 上記のスクリーンショットでは、左側のアクセサリ ビューはサルのイメージで、右側のアクセサリ ビューは *情報* ボタンとなっています。
 
 次のコード例は、iOS プラットフォーム用のカスタム レンダラーを示しています。
 
@@ -347,7 +347,7 @@ void OnDidDeselectAnnotationView(object sender, MKAnnotationViewEventArgs e)
 
 次のスクリーンショットは、カスタマイズの前と後のマップを示しています。
 
-![カスタマイズの前と後のマップ コントロール](map-pin-images/map-layout-android.png)
+![スクリーンショットには、通常のマーカーとカスタマイズされたマーカーが付いたモバイル デバイスが表示されています。](map-pin-images/map-layout-android.png)
 
 Android では、ピンは *マーカー* と呼ばれ、カスタム イメージまたはさまざまな色のシステム定義のマーカーにすることができます。 マーカーでは *情報ウィンドウ* を表示することができます。このウィンドウは、マーカーをタップしたユーザーへの応答として表示されます。 情報ウィンドウには `Pin` インスタンスの `Label` および `Address` プロパティが表示されます。このウィンドウをカスタマイズして、他のコンテンツを含めることができます。 しかし、情報ウィンドウを表示できるのは一度に 1 つのみとなります。
 
@@ -510,7 +510,7 @@ void OnInfoWindowClick(object sender, GoogleMap.InfoWindowClickEventArgs e)
 
 次のスクリーンショットは、カスタマイズの前と後のマップを示しています。
 
-![カスタマイズの前と後のマップ コントロール](map-pin-images/map-layout-uwp.png)
+![スクリーンショットには、通常のマップ アイコンとカスタマイズされたマップ アイコンが付いたモバイル デバイスが表示されています。](map-pin-images/map-layout-uwp.png)
 
 UWP では、ピンは *マップ アイコン* と呼ばれ、カスタム イメージまたはシステム定義の既定のイメージにすることができます。 マップ アイコンでは、そのマップ アイコンをタップしたユーザーへの応答として表示される、`UserControl` を示すことができます。 `UserControl` では、`Pin` インスタンスの `Label` および `Address` プロパティを含む、すべてのコンテンツを表示できます。
 

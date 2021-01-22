@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e2d0173f23cfb43865038c330f40c3d5ebf60941
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 0917b991694b8b857d13d78e6eb087dca27db91e
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91451625"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98689664"
 ---
 これでこのチュートリアルは完了です。ここでは以下の方法を学習しました。
 

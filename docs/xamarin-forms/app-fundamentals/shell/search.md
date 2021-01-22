@@ -10,12 +10,12 @@ ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: bfac785e6bfa3dce698d5657d0be1079e675ecc6
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 7420c5883856379db98001fce2fd36bf576cc2fb
+ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93366348"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98609080"
 ---
 # <a name="no-locxamarinforms-shell-search"></a>Xamarin.Forms シェルでの検索
 
@@ -102,11 +102,11 @@ Shell.SetSearchHandler(this, new MonkeySearchHandler
 
 ユーザーが検索クエリを入力すると検索候補が表示されるように、`ShowsResults` プロパティは `true` に設定されます。
 
-[![iOS および Android 上の Shell SearchHandler での検索結果のスクリーンショット](search-images/search-results.png "Shell SearchHandler の検索結果")](search-images/search-results-large.png#lightbox "Shell SearchHandler の検索結果")
+[![iOS および Android 上の Shell SearchHandler での検索結果のスクリーンショット (部分文字列 M の結果)。](search-images/search-results.png "Shell SearchHandler の検索結果")](search-images/search-results-large.png#lightbox "Shell SearchHandler の検索結果")
 
 検索クエリが変更されると、検索候補領域が更新されます。
 
-[![iOS および Android 上の Shell SearchHandler での検索結果のスクリーンショット](search-images/search-results-change.png "Shell SearchHandler の検索結果")](search-images/search-results-change-large.png#lightbox "Shell SearchHandler の検索結果")
+[![iOS および Android 上の Shell SearchHandler での検索結果のスクリーンショット (部分文字列 M o n の結果)。](search-images/search-results-change.png "Shell SearchHandler の検索結果")](search-images/search-results-change-large.png#lightbox "Shell SearchHandler の検索結果")
 
 検索結果が選択されると、`MonkeyDetailPage` へナビゲートされ、選択されたサルに関するデータが表示されます。
 

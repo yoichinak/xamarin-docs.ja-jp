@@ -12,12 +12,12 @@ ms.date: 05/23/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d2bb00eeadb3862d25032da45860f1cc12e3aad2
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: beb3800b2b91c6c393b597ddb05042ea8cf92361
+ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93369884"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98609015"
 ---
 # <a name="build-your-first-no-locxamarinforms-app"></a>最初の Xamarin.Forms アプリをビルドする
 
@@ -149,7 +149,7 @@ _このビデオを視聴し、作業を進めて、_ による最初のモバ�
 
 7. Android 上のアプリのデバッグ:
 
-    ![Android アプリ](images/win/07-sml.png)
+    ![スクリーンショットには Android Emulator が表示されています。](images/win/07-sml.png)
 
     > [!TIP]
     > ネットワーク接続された Mac コンピューターで Visual Studio から iOS アプリをビルドし、デバッグすることができます。 詳細については、[セットアップ手順](~/ios/get-started/installation/windows/index.md)を参照してください。
@@ -175,7 +175,7 @@ _このビデオを視聴し、作業を進めて、_ による最初のモバ�
 
 3. ソリューションを右クリックして、NuGet パッケージを復元します。
 
-    ![Android アプリ](images/03-sml.png)
+    ![スクリーンショットでは、ソリューションのコンテキスト メニューから選択された [NuGet パッケージの復元] が表示されています。](images/03-sml.png)
 
 4. デバッグ ボタン (または **[実行]、[デバッグ開始]** ) をクリックして、Android エミュレーターを起動します。
 
@@ -198,7 +198,7 @@ _このビデオを視聴し、作業を進めて、_ による最初のモバ�
 
 7. Android 上のアプリのデバッグ:
 
-    ![Android アプリ](images/07-sml.png)
+    ![スクリーンショットには Android Emulator が表示されています。](images/07-sml.png)
 
 8. 右クリックして、iOS を **スタートアップ プロジェクト** に設定します。
 
