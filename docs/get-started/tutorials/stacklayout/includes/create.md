@@ -1,23 +1,25 @@
 ---
-ms.openlocfilehash: 45a387690792074af6a18fe3c639692863cdf4be
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+ms.openlocfilehash: 9d96f61b258691715ebdbfe0d4221eed240c1bdf
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83343407"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98634780"
 ---
+[`StackLayout`](xref:Xamarin.Forms.StackLayout) は、その子が 1 次元のスタックで水平方向または垂直方向に整理されるレイアウトです。 既定では、`StackLayout` は垂直方向に配置されます。
+
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
-このチュートリアルを完了するには、 **.NET によるモバイル開発**ワークロードがインストールされた、Visual Studio 2019 (最新リリース) が必要です。 さらに、iOS でチュートリアル アプリケーションを構築するには、ペアリング済みの Mac が必要になります。 Xamarin プラットフォームのインストールについては、「[Xamarin のインストール](~/get-started/installation/index.md)」を参照してください。 Mac ビルド ホストへの Visual Studio 2019 の接続については、「[Xamarin.iOS 開発のために Mac とペアリングする](~/ios/get-started/installation/windows/connecting-to-mac/index.md)」を参照してください。
+このチュートリアルを完了するには、 **.NET によるモバイル開発** ワークロードがインストールされた、Visual Studio 2019 (最新リリース) が必要です。 さらに、iOS でチュートリアル アプリケーションを構築するには、ペアリング済みの Mac が必要になります。 Xamarin プラットフォームのインストールについては、「[Xamarin のインストール](~/get-started/installation/index.md)」を参照してください。 Mac ビルド ホストへの Visual Studio 2019 の接続については、「[Xamarin.iOS 開発のために Mac とペアリングする](~/ios/get-started/installation/windows/connecting-to-mac/index.md)」を参照してください。
 
-1. Visual Studio を起動し、**StackLayoutTutorial** という名前の新しい空の Xamarin.Forms アプリを作成します。 共有コード メカニズムとして .NET Standard がアプリで使用されていることを確認します。
+1. Visual Studio を起動し、**StackLayoutTutorial** という名前の新しい空の Xamarin.Forms アプリを作成します。
 
     > [!IMPORTANT]
     > このチュートリアルの C# スニペットと XAML スニペットでは、**StackLayoutTutorial** という名前のソリューションが必要です。 別の名前を使用すると、コードをこのチュートリアルからソリューションにコピーするときに、ビルド エラーが発生します。
 
     作成される .NET Standard ライブラリの詳細については、[Xamarin.Forms クイック スタート Deep Dive](~/get-started/quickstarts/deepdive.md) の [Xamarin.Forms アプリケーションの構造](~/get-started/quickstarts/deepdive.md#anatomy-of-a-xamarinforms-application)に関するページを参照してください。
 
-1. **ソリューション エクスプローラー**の **[StackLayoutTutorial]** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。 次に、 **[MainPage.xaml]** のテンプレート コードをすべて削除し、次のコードに置き換えます。
+1. **ソリューション エクスプローラー** の **[StackLayoutTutorial]** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。 次に、 **[MainPage.xaml]** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -47,7 +49,7 @@ ms.locfileid: "83343407"
 
 このチュートリアルを完了するには、iOS と Android のプラットフォームのサポートがインストールされた Visual Studio for Mac (最新リリース) が必要です。 さらに、Xcode (最新リリース) も必要になります。 Xamarin プラットフォームのインストールについて詳しくは、「[Xamarin のインストール](~/get-started/installation/index.md)」を参照してください。
 
-1. Visual Studio for Mac を起動し、**StackLayoutTutorial** という名前の新しい空の Xamarin.Forms アプリを作成します。 共有コード メカニズムとして .NET Standard がアプリで使用されていることを確認します。
+1. Visual Studio for Mac を起動し、**StackLayoutTutorial** という名前の新しい空の Xamarin.Forms アプリを作成します。
 
     > [!IMPORTANT]
     > このチュートリアルの C# スニペットと XAML スニペットでは、**StackLayoutTutorial** という名前のソリューションが必要です。 別の名前を使用すると、コードをこのチュートリアルからソリューションにコピーするときに、ビルド エラーが発生します。

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a7c2aa15521b89e4930746dc5421ce67fa26b2b9
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: f205e97c11c6ae1c75b101ada57c10ef49a9c146
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "67560006"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98634775"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -21,7 +21,7 @@ ms.locfileid: "67560006"
 
     このコードでは、[`Orientation`](xref:Xamarin.Forms.StackLayout.Orientation) プロパティを [`Horizontal`](xref:Xamarin.Forms.StackOrientation.Horizontal) に設定します。
 
-1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
+1. アプリケーションがまだ実行されている場合は、変更内容をファイルに保存すると、アプリケーションのユーザー インターフェイスがシミュレーターまたはエミュレーターで自動的に更新されます。 もしくは、Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     [![iOS と Android で、StackLayout で水平方向に配置された子ビューのスクリーンショット](../images/orientation.png "水平方向に配置された Label インスタンスを含む StackLayout")](../images/orientation-large.png#lightbox "水平方向に配置された Label インスタンスを含む StackLayout")
 
@@ -42,7 +42,7 @@ ms.locfileid: "67560006"
 
     このコードでは、[`Orientation`](xref:Xamarin.Forms.StackLayout.Orientation) プロパティを [`Horizontal`](xref:Xamarin.Forms.StackOrientation.Horizontal) に設定します。
 
-1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
+1. アプリケーションがまだ実行されている場合は、変更内容をファイルに保存すると、アプリケーションのユーザー インターフェイスがシミュレーターまたはエミュレーターで自動的に更新されます。 もしくは、Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     [![iOS と Android で、StackLayout で水平方向に配置された子ビューのスクリーンショット](../images/orientation.png "水平方向に配置された Label インスタンスを含む StackLayout")](../images/orientation-large.png#lightbox "水平方向に配置された Label インスタンスを含む StackLayout")
 

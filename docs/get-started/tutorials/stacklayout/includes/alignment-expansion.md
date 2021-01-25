@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 97e52d593e2b59d127da324d8ad74ad7b2096cdd
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+ms.openlocfilehash: f9bacad9732a47a143aadb3efa9096b51a22f97a
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83343420"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98634779"
 ---
 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 内の子ビューのサイズと位置は、子ビューの [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) プロパティと [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) プロパティの値、および [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) プロパティと [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) プロパティの値によって異なります。
 
@@ -51,7 +51,7 @@ ms.locfileid: "83343420"
     > [!NOTE]
     > ビューの [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) プロパティと [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) プロパティの既定値は[`Fill`](xref:Xamarin.Forms.LayoutOptions.Fill) です。
 
-1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
+1. アプリケーションがまだ実行されている場合は、変更内容をファイルに保存すると、アプリケーションのユーザー インターフェイスがシミュレーターまたはエミュレーターで自動的に更新されます。 もしくは、Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     [![iOS および Android 上の、配置オプションと展開オプションを設定した StackLayout の子ビューのスクリーンショット](../images/alignment-expansion.png "配置と展開を設定した、Label インスタンスを含む StackLayout")](../images/alignment-expansion-large.png#lightbox "配置と展開を設定した、Label インスタンスを含む StackLayout")
 
@@ -66,6 +66,8 @@ ms.locfileid: "83343420"
 
     > [!IMPORTANT]
     > [`StackLayout`](xref:Xamarin.Forms.StackLayout) 内のすべてのスペースが使用されている場合、展開設定は無効になります。
+
+    Visual Studio で、アプリケーションを停止します。
 
     配置と展開の詳細については、「[Layout Options in Xamarin.Forms](~/xamarin-forms/user-interface/layouts/layout-options.md)」(Xamarin.Forms のレイアウト オプション) をご覧ください。
 
@@ -107,7 +109,7 @@ ms.locfileid: "83343420"
     > [!NOTE]
     > ビューの [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) プロパティと [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) プロパティの既定値は[`Fill`](xref:Xamarin.Forms.LayoutOptions.Fill) です。
 
-1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
+1. アプリケーションがまだ実行されている場合は、変更内容をファイルに保存すると、アプリケーションのユーザー インターフェイスがシミュレーターまたはエミュレーターで自動的に更新されます。 もしくは、Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     [![iOS および Android 上の、配置オプションと展開オプションを設定した StackLayout の子ビューのスクリーンショット](../images/alignment-expansion.png "配置と展開を設定した、Label インスタンスを含む StackLayout")](../images/alignment-expansion-large.png#lightbox "配置と展開を設定した、Label インスタンスを含む StackLayout")
 
@@ -122,5 +124,7 @@ ms.locfileid: "83343420"
 
     > [!IMPORTANT]
     > [`StackLayout`](xref:Xamarin.Forms.StackLayout) 内のすべてのスペースが使用されている場合、展開設定は無効になります。
+
+    Visual Studio for Mac で、アプリケーションを停止します。
 
     配置と展開の詳細については、「[Layout Options in Xamarin.Forms](~/xamarin-forms/user-interface/layouts/layout-options.md)」(Xamarin.Forms のレイアウト オプション) をご覧ください。

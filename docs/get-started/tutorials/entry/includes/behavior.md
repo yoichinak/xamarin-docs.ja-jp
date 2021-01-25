@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 48af50d31013f696879174a5cf108ab9fde92d0b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: f4fccbfe7e00a353682b0dfe787c291b38e5cd76
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "61343463"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98690006"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -23,9 +23,11 @@ ms.locfileid: "61343463"
     > [!NOTE]
     > パスワードの入力などの一部のテキスト入力シナリオの場合、スペルチェックと予測入力でネガティブなエクスペリエンスが提供されるため、これらは無効にする必要があります。
 
-1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 テキストを [`Entry`](xref:Xamarin.Forms.Entry) に入力し、各文字がパスワード マスク文字で置き換えられており、入力できる文字の最大数が 15 であることを確認します。
+1. アプリケーションがまだ実行されている場合は、変更内容をファイルに保存すると、アプリケーションのユーザー インターフェイスがシミュレーターまたはエミュレーターで自動的に更新されます。 もしくは、Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 テキストを [`Entry`](xref:Xamarin.Forms.Entry) に入力し、各文字がパスワード マスク文字で置き換えられており、入力できる文字の最大数が 15 であることを確認します。
 
     [![iOS および Android での、パスワード文字によってテキストがマスクされた Entry のスクリーンショット](../images/customize-behavior.png "マスクされたパスワード文字を使用した Entry")](../images/customize-behavior-large.png#lightbox "マスクされたパスワード文字を使用した Entry")
+
+    Visual Studio で、アプリケーションを停止します。
 
     [`Entry`](xref:Xamarin.Forms.Entry) 動作のカスタマイズの詳細については、「[Xamarin.Forms Entry](~/xamarin-forms/user-interface/text/entry.md)」 (Xamarin.Forms のエントリ) ガイドを参照してください。
 
@@ -46,8 +48,10 @@ ms.locfileid: "61343463"
     > [!NOTE]
     > パスワードの入力などの一部のテキスト入力シナリオの場合、スペルチェックと予測入力でネガティブなエクスペリエンスが提供されるため、これらは無効にする必要があります。
 
-1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 テキストを [`Entry`](xref:Xamarin.Forms.Entry) に入力し、各文字がパスワード マスク文字で置き換えられており、入力できる文字の最大数が 15 であることを確認します。
+1. アプリケーションがまだ実行されている場合は、変更内容をファイルに保存すると、アプリケーションのユーザー インターフェイスがシミュレーターまたはエミュレーターで自動的に更新されます。 もしくは、Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 テキストを [`Entry`](xref:Xamarin.Forms.Entry) に入力し、各文字がパスワード マスク文字で置き換えられており、入力できる文字の最大数が 15 であることを確認します。
 
     [![iOS および Android での、パスワード文字によってテキストがマスクされた Entry のスクリーンショット](../images/customize-behavior.png "マスクされたパスワード文字を使用した Entry")](../images/customize-behavior-large.png#lightbox "マスクされたパスワード文字を使用した Entry")
+
+    Visual Studio for Mac で、アプリケーションを停止します。
 
     [`Entry`](xref:Xamarin.Forms.Entry) 動作のカスタマイズの詳細については、「[Xamarin.Forms Entry](~/xamarin-forms/user-interface/text/entry.md)」 (Xamarin.Forms のエントリ) ガイドを参照してください。

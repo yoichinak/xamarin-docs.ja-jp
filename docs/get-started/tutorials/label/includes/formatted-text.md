@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 841dac9486097e27923ccfe582803b4ec50371cf
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 4352ff38e785a0a222cf8d2d64511ed14b3ae192
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "60896725"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98690005"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -30,9 +30,11 @@ ms.locfileid: "60896725"
     > [!NOTE]
     > [`FormattedText`](xref:Xamarin.Forms.Label.FormattedText) プロパティは、1 つ以上の [`Span`](xref:Xamarin.Forms.Span)インスタンスで構成される [`FormattedString`](xref:Xamarin.Forms.FormattedString) の型です。
 
-1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 [`Label`](xref:Xamarin.Forms.Label) の外観が変更されたことを確認します。
+1. アプリケーションがまだ実行されている場合は、変更内容をファイルに保存すると、アプリケーションのユーザー インターフェイスがシミュレーターまたはエミュレーターで自動的に更新されます。 もしくは、Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 [`Label`](xref:Xamarin.Forms.Label) の外観が変更されたことを確認します。
 
     [![iOS と Android で書式設定されたテキストを表示している Label のスクリーンショット](../images/label-formatted-text.png "書式設定されたテキストの Label")](../images/label-formatted-text-large.png#lightbox "書式設定されたテキストの Label")
+
+    Visual Studio で、アプリケーションを停止します。
 
     [`Span`](xref:Xamarin.Forms.Span) の設定の詳細については、「[Xamarin.Forms Label](~/xamarin-forms/user-interface/text/label.md)」ガイドの「[Formatted text](~/xamarin-forms/user-interface/text/label.md#formatted-text)」 (書式設定されたテキスト) を参照してください。
 
@@ -60,8 +62,10 @@ ms.locfileid: "60896725"
     > [!NOTE]
     > [`FormattedText`](xref:Xamarin.Forms.Label.FormattedText) プロパティは、1 つ以上の [`Span`](xref:Xamarin.Forms.Span)インスタンスで構成される [`FormattedString`](xref:Xamarin.Forms.FormattedString) の型です。
 
-1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 [`Label`](xref:Xamarin.Forms.Label) の外観が変更されたことを確認します。
+1. アプリケーションがまだ実行されている場合は、変更内容をファイルに保存すると、アプリケーションのユーザー インターフェイスがシミュレーターまたはエミュレーターで自動的に更新されます。 もしくは、Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 [`Label`](xref:Xamarin.Forms.Label) の外観が変更されたことを確認します。
 
     [![iOS と Android で書式設定されたテキストを表示している Label のスクリーンショット](../images/label-formatted-text.png "書式設定されたテキストの Label")](../images/label-formatted-text-large.png#lightbox "書式設定されたテキストの Label")
+
+    Visual Studio for Mac で、アプリケーションを停止します。
 
     [`Span`](xref:Xamarin.Forms.Span) の設定の詳細については、「[Xamarin.Forms Label](~/xamarin-forms/user-interface/text/label.md)」ガイドの「[Formatted text](~/xamarin-forms/user-interface/text/label.md#formatted-text)」 (書式設定されたテキスト) を参照してください。

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: bf46d8ab4ca124bc36dd971513a78147e71a0039
-ms.sourcegitcommit: 4d260b655cb52b990dda79c239a9721f2e964625
+ms.openlocfilehash: a642e34c5f49e63503b34c44f536f0428993335b
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98570701"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98634951"
 ---
 この演習では、`RestService` クラスを使用し、GitHub Web API から .NET リポジトリ データを取得するためのユーザー インターフェイスを作成します。 取得したデータは、[`CollectionView`](xref:Xamarin.Forms.CollectionView) によって表示されます。
 
@@ -80,6 +80,8 @@ ms.locfileid: "98570701"
 
     [![iOS と Android における GitHub .NET リポジトリのスクリーンショット](../images/consume-web-service.png)](../images/consume-web-service-large.png#lightbox)
 
+    Visual Studio で、アプリケーションを停止します。
+
     Xamarin.Forms での REST ベース Web サービスの使用について詳しくは、[RESTful Web サービスの使用 (ガイド)](~/xamarin-forms/data-cloud/web-services/rest.md) に関するページを参照してください。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
@@ -153,5 +155,7 @@ ms.locfileid: "98570701"
 1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 GitHub から .NET リポジトリ データを取得するには、[`Button`](xref:Xamarin.Forms.Button) をタップします。
 
     [![iOS と Android における GitHub .NET リポジトリのスクリーンショット](../images/consume-web-service.png)](../images/consume-web-service-large.png#lightbox)
+
+    Visual Studio for Mac で、アプリケーションを停止します。
 
     Xamarin.Forms での REST ベース Web サービスの使用について詳しくは、[RESTful Web サービスの使用 (ガイド)](~/xamarin-forms/data-cloud/web-services/rest.md) に関するページを参照してください。

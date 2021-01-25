@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: ff3a0477c6b8a2bf30693ff05a4a992ad053d2b9
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 4922151676190c9f79b640d9c32887b811c842b1
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71107282"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98689927"
 ---
 このチュートリアルを試行する前に、以下を正常に完了しておく必要があります。
 
@@ -22,3 +22,5 @@ ms.locfileid: "71107282"
 [`Label`](xref:Xamarin.Forms.Label) でテキストを表示する方法を示す簡単なアプリケーションを作成するには、Visual Studio 2019 または Visual Studio for Mac を使用します。 次のスクリーンショットは、最終的なアプリケーションです。
 
 [![iOS と Android で書式設定されたテキストを表示している Label のスクリーンショット](../images/label-formatted-text.png "書式設定されたテキストの Label")](../images/label-formatted-text-large.png#lightbox "書式設定されたテキストの Label")
+
+また、[Xamarin.Forms 向け XAML ホット リロード](~/xamarin-forms/xaml/hot-reload.md)を使用して、アプリケーションをリビルドせずに UI の変更を確認することもできます。

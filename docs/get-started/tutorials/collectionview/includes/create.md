@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: bd9d4bbd04f504400bd14bb3a18bf4c2b16a5849
-ms.sourcegitcommit: b75c369adb8e02a429b6c0fed8ba4a855099bf01
+ms.openlocfilehash: e2b6e6a6902fcf67e92f58da15771ce0ed8a6075
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98558904"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98690108"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -48,6 +48,8 @@ ms.locfileid: "98558904"
 
     [![iOS および Android 上の CollectionView のスクリーンショット](../images/create-collectionview.png "データを表示する CollectionView")](../images/create-collectionview-large.png#lightbox "データを表示する CollectionView")
 
+    Visual Studio で、アプリケーションを停止します。
+
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 このチュートリアルを完了するには、iOS と Android のプラットフォームのサポートがインストールされた Visual Studio for Mac (最新リリース) が必要です。 さらに、Xcode (最新リリース) も必要になります。 Xamarin プラットフォームのインストールについて詳しくは、「[Xamarin のインストール](~/get-started/installation/index.md)」を参照してください。
@@ -89,3 +91,5 @@ ms.locfileid: "98558904"
 1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     [![iOS および Android 上の CollectionView のスクリーンショット](../images/create-collectionview.png "データを表示する CollectionView")](../images/create-collectionview-large.png#lightbox "データを表示する CollectionView")
+
+    Visual Studio for Mac で、アプリケーションを停止します。

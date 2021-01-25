@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 4464b5cc4220072de3d55d76f568dab938d3d805
-ms.sourcegitcommit: b75c369adb8e02a429b6c0fed8ba4a855099bf01
+ms.openlocfilehash: 6118d4ee8d2fa56a3b14d3d280db4991a36874fc
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98558905"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98690098"
 ---
 以前は、データ バインディングを使用して [`CollectionView`](xref:Xamarin.Forms.CollectionView) にデータが取り込まれていました。 しかし、コレクション内の各オブジェクトが複数のデータ項目を定義しているコレクションへのデータ バインディングであるにもかかわらず、オブジェクトごとに単一のデータ項目のみ (`Monkey` オブジェクトの `Name` プロパティー) が表示されていました。
 
@@ -49,6 +49,8 @@ ms.locfileid: "98558905"
 
     [![項目がデータ テンプレートでテンプレート化された CollectionView のスクリーンショット](../images/customize-item-appearance.png "テンプレート化されたデータを表示する CollectionView")](../images/customize-item-appearance-large.png#lightbox "テンプレート化されたデータを表示する CollectionView")
 
+    Visual Studio で、アプリケーションを停止します。
+
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. **MainPage.xaml** で、[`CollectionView`](xref:Xamarin.Forms.CollectionView) 宣言を変更してデータの各項目の外観をカスタマイズします。
@@ -87,3 +89,5 @@ ms.locfileid: "98558905"
 1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     [![項目がデータ テンプレートでテンプレート化された CollectionView のスクリーンショット](../images/customize-item-appearance.png "テンプレート化されたデータを表示する CollectionView")](../images/customize-item-appearance-large.png#lightbox "テンプレート化されたデータを表示する CollectionView")
+
+    Visual Studio for Mac で、アプリケーションを停止します。

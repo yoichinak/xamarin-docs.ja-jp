@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 590acbe98b2d67a10bed0fc66de0350da888d319
-ms.sourcegitcommit: b75c369adb8e02a429b6c0fed8ba4a855099bf01
+ms.openlocfilehash: ff37327e1fd942382c3eb81b8c6bcc0041347b0e
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98558912"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98689965"
 ---
 `IEnumerable` 型の [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティを使用して、[`CollectionView`](xref:Xamarin.Forms.CollectionView) にデータが取り込まれます。 前の手順で、XAML の `CollectionView` に文字列の配列を取り込みました。 ただし、通常 `CollectionView` には、`IEnumerable` を実装するコードで定義されたコレクションからのデータが取り込まれます。
 
@@ -191,6 +191,8 @@ ms.locfileid: "98558912"
 
     [`CollectionView`](xref:Xamarin.Forms.CollectionView) は、`Monkeys` コレクション内の各 `Monkey` の `Name` プロパティを表示しています。 これは、`CollectionView` が既定では、 コレクションのオブジェクトを表示するときに (`Name` プロパティ値を返すために `Monkey` クラスでオーバーライドされている) `ToString` メソッドを呼び出すためです。
 
+    Visual Studio で、アプリケーションを停止します。
+
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. **Solution Pad** の **[CollectionViewTutorial]** プロジェクトで、次のコードが含まれた `Monkey` という名前のクラスを追加します。
@@ -371,3 +373,5 @@ ms.locfileid: "98558912"
     [![iOS および Android でコレクションのデータが取り込まれた CollectionView のスクリーンショット](../images/populate-data.png "コレクションのデータを表示する CollectionView")](../images/populate-data-large.png#lightbox "コレクションのデータを表示する CollectionView")
 
     [`CollectionView`](xref:Xamarin.Forms.CollectionView) は、`Monkeys` コレクション内の各 `Monkey` の `Name` プロパティを表示しています。 これは、`CollectionView` が既定では、 コレクションのオブジェクトを表示するときに (`Name` プロパティ値を返すために `Monkey` クラスでオーバーライドされている) `ToString` メソッドを呼び出すためです。
+
+    Visual Studio for Mac で、アプリケーションを停止します。

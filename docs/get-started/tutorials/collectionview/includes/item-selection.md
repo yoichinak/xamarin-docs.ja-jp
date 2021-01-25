@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 41c1c8ae97c62a3eb2a73681b215e7687d0e473c
-ms.sourcegitcommit: b75c369adb8e02a429b6c0fed8ba4a855099bf01
+ms.openlocfilehash: 456bc5fc0c30563c5950f4cacf3e3e7bdb177134
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98558909"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98689731"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -34,6 +34,8 @@ ms.locfileid: "98558909"
     [![iOS と Android で、項目の選択に応答する CollectionView のスクリーンショット](../images/item-selection.png "CollectionView の項目の選択")](../images/item-selection-large.png#lightbox "CollectionView の項目の選択")
 
     `OnSelectionChanged` イベント ハンドラーにブレークポイントを設定し、[`CollectionView`](xref:Xamarin.Forms.CollectionView) で項目を選択します。 `selectedItem` 変数の値を調べて、選択した項目のデータが含まれていることを確認します。
+
+    Visual Studio で、アプリケーションを停止します。
 
     項目の選択の詳細については、「[Xamarin.Forms CollectionView の選択](~/xamarin-forms/user-interface/collectionview/selection.md)」を参照してください。
 
@@ -65,5 +67,7 @@ ms.locfileid: "98558909"
     [![iOS と Android で、項目の選択に応答する CollectionView のスクリーンショット](../images/item-selection.png "CollectionView の項目の選択")](../images/item-selection-large.png#lightbox "CollectionView の項目の選択")
 
     `OnSelectionChanged` イベント ハンドラーにブレークポイントを設定し、[`CollectionView`](xref:Xamarin.Forms.CollectionView) で項目を選択します。 `selectedItem` 変数の値を調べて、選択した項目のデータが含まれていることを確認します。
+
+    Visual Studio for Mac で、アプリケーションを停止します。
 
     項目の選択の詳細については、「[Xamarin.Forms CollectionView の選択](~/xamarin-forms/user-interface/collectionview/selection.md)」を参照してください。

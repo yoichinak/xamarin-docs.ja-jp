@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 9e78d92bdd2d6b0b398ef30ba5f30f71ef64cfd3
-ms.sourcegitcommit: b75c369adb8e02a429b6c0fed8ba4a855099bf01
+ms.openlocfilehash: 6e546d85c87962b022f72c8c16cb0ece14e9bde6
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98557177"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98689678"
 ---
 この演習では、以前に作成したデータ アクセス クラスを使用するためのユーザー インターフェイスを作成します。
 
@@ -81,6 +81,8 @@ ms.locfileid: "98557177"
 
     [![iOS および Android での、ローカル SQLite.NET データベースのデータ永続化のスクリーンショット](../images/consume-data-access-classes.png "ローカル データベースのデータ永続化")](../images/consume-data-access-classes-large.png#lightbox "ローカル データベースのデータ永続化")
 
+    Visual Studio で、アプリケーションを停止します。
+
     Xamarin.Forms のローカル データベースの詳細については、[Xamarin.Forms のローカル データベース (ガイド)](~/xamarin-forms/data-cloud/data/databases.md) に関するページを参照してください
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
@@ -155,5 +157,7 @@ ms.locfileid: "98557177"
     データの各項目の [`Button`](xref:Xamarin.Forms.Button) をタップして、データのいくつかの項目を入力します。 これにより、データベースにデータが保存され、[`CollectionView`](xref:Xamarin.Forms.CollectionView) にデータベースのすべてのデータが再設定されます。
 
     [![iOS および Android での、ローカル SQLite.NET データベースのデータ永続化のスクリーンショット](../images/consume-data-access-classes.png "ローカル データベースのデータ永続化")](../images/consume-data-access-classes-large.png#lightbox "ローカル データベースのデータ永続化")
+
+    Visual Studio for Mac で、アプリケーションを停止します。
 
     Xamarin.Forms のローカル データベースの詳細については、[Xamarin.Forms のローカル データベース (ガイド)](~/xamarin-forms/data-cloud/data/databases.md) に関するページを参照してください

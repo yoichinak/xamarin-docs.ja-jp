@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e1705e9311d4875a5b866ac5acb7d20aa107a2bb
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+ms.openlocfilehash: 624d7f2866767bbb748988a3c486718d7691faf6
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83435407"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98634888"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -44,7 +44,7 @@ ms.locfileid: "83435407"
     > [!NOTE]
     > [`Grid`](xref:Xamarin.Forms.Grid) 内の列と行の間隔は、[`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) プロパティと [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) プロパティで設定できます。 詳しくは、「[Xamarin.Forms Grid](~/xamarin-forms/user-interface/layouts/grid.md)」ガイドの「[Spacing](~/xamarin-forms/user-interface/layouts/grid.md#space-between-rows-and-columns)」 (間隔) を参照してください。
 
-1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
+1. アプリケーションがまだ実行されている場合は、変更内容をファイルに保存すると、アプリケーションのユーザー インターフェイスがシミュレーターまたはエミュレーターで自動的に更新されます。 もしくは、Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     [![iOS と Android で、列と行にレイアウトされたコンテンツがある Grid のスクリーンショット](../images/columns-rows.png "列と行にコンテンツがある Grid")](../images/columns-rows-large.png#lightbox "列と行にコンテンツがある Grid")
 
@@ -86,6 +86,6 @@ ms.locfileid: "83435407"
     > [!NOTE]
     > [`Grid`](xref:Xamarin.Forms.Grid) 内の列と行の間隔は、[`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) プロパティと [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) プロパティで設定できます。 詳しくは、「[Xamarin.Forms Grid](~/xamarin-forms/user-interface/layouts/grid.md)」ガイドの「[Spacing](~/xamarin-forms/user-interface/layouts/grid.md#space-between-rows-and-columns)」 (間隔) を参照してください。
 
-1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
+1. アプリケーションがまだ実行されている場合は、変更内容をファイルに保存すると、アプリケーションのユーザー インターフェイスがシミュレーターまたはエミュレーターで自動的に更新されます。 もしくは、Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     [![iOS と Android で、列と行にレイアウトされたコンテンツがある Grid のスクリーンショット](../images/columns-rows.png "列と行にコンテンツがある Grid")](../images/columns-rows-large.png#lightbox "列と行にコンテンツがある Grid")

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 8820d52a2a41ce3c5de9cf1176d5a8a90a987900
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: d5acf27dfbda0dcd31b00600cee2f16b98aaa70a
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71107286"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98634778"
 ---
 このチュートリアルを試行する前に、以下を正常に完了しておく必要があります。
 
@@ -21,3 +21,5 @@ ms.locfileid: "71107286"
 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 内にコントロールを配置する方法を示す簡単なアプリケーションを作成するには、Visual Studio 2019 または Visual Studio for Mac を使用します。 次のスクリーンショットは、最終的なアプリケーションです。
 
 [![iOS および Android 上の、配置オプションと展開オプションを設定した StackLayout の子ビューのスクリーンショット](../images/alignment-expansion-reduced.png "配置と展開を設定した、Label インスタンスを含む StackLayout")](../images/alignment-expansion-large.png#lightbox "配置と展開を設定した、Label インスタンスを含む StackLayout")
+
+また、[Xamarin.Forms 向け XAML ホット リロード](~/xamarin-forms/xaml/hot-reload.md)を使用して、アプリケーションをリビルドせずに UI の変更を確認することもできます。

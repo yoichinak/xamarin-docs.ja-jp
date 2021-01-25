@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: cbf301b341f78ae8d8826580d30a13393716f56c
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 24fdf5849e94fb80cad40635a44cc8da434d83cc
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71059715"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98634886"
 ---
 このチュートリアルを試行する前に、以下を正常に完了しておく必要があります。
 
@@ -21,3 +21,5 @@ ms.locfileid: "71059715"
 [`Grid`](xref:Xamarin.Forms.Grid) 内にコントロールをレイアウトする方法を示す簡単なアプリケーションを作成するには、Visual Studio 2019 または Visual Studio for Mac を使用します。 次のスクリーンショットは、最終的なアプリケーションです。
 
 [![iOS と Android での、複数の列と行にまたがるコンテンツがある Grid のスクリーンショット](../images/span-columns-rows.png "列と行にまたがるコンテンツがある Grid")](../images/span-columns-rows-large.png#lightbox "列と行にまたがるコンテンツがある Grid")
+
+また、[Xamarin.Forms 向け XAML ホット リロード](~/xamarin-forms/xaml/hot-reload.md)を使用して、アプリケーションをリビルドせずに UI の変更を確認することもできます。

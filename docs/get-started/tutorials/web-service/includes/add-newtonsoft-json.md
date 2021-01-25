@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3d20c4f0149c632863eace633abb759eca49a786
-ms.sourcegitcommit: 4d260b655cb52b990dda79c239a9721f2e964625
+ms.openlocfilehash: 4517415e2431193e56728e3bb1a24e3c7d119ca4
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98570848"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98634952"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -40,11 +40,11 @@ ms.locfileid: "98570848"
 
     作成される .NET Standard ライブラリの詳細については、[Xamarin.Forms クイック スタート Deep Dive](~/get-started/first-app/index.md) の [Xamarin.Forms アプリケーションの構造](~/get-started/first-app/index.md)に関するページを参照してください。
 
-1. **Solution Pad** で、**[WebServiceTutorial]** プロジェクトを選び、右クリックして **[追加] > [Add NuGet Packages...]\(NuGet パッケージの追加...\)** の順に選択します。
+1. **Solution Pad** で、 **[WebServiceTutorial]** プロジェクトを選び、右クリックして **[NuGet パッケージの管理...]** を選択します。
 
     ![選択されている [Add NuGet Packages]\(NuGet パッケージの追加\) メニュー項目のスクリーンショット](../images/vsmac/add-nuget-packages.png "[Add NuGet Packages]\(NuGet パッケージの追加) メニュー項目")
 
-1. **[パッケージを追加]** ウィンドウで、**Newtonsoft.Json** NuGet パッケージを検索して選択し、**[パッケージを追加]** ボタンをクリックしてプロジェクトに追加します。
+1. **[NuGet パッケージの管理]** ウィンドウで、**Newtonsoft.Json** NuGet パッケージを検索して選択し、 **[パッケージを追加]** ボタンをクリックしてプロジェクトに追加します。
 
     ![NuGet パッケージ マネージャーの Newtonsoft.Json NuGet パッケージのスクリーンショット](../images/vsmac/add-package.png "Newtonsoft.Json NuGet パッケージ")
 

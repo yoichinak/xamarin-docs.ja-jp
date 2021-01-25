@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 58ed33adbc25e026431609370075c24c3b6ba690
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 42d1f79b22e25e46f81f7c5a77389fd578a4d894
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574639"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98689860"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -24,9 +24,11 @@ ms.locfileid: "84574639"
 
     また、[`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) プロパティでは、イメージが水平方向の中央に配置されるように指定します。
 
-1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
+1. アプリケーションがまだ実行されている場合は、変更内容をファイルに保存すると、アプリケーションのユーザー インターフェイスがシミュレーターまたはエミュレーターで自動的に更新されます。 もしくは、Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     [![iOS 上と Android 上とでサイズが異なる画像のスクリーンショット](../images/customize-appearance.png "プラットフォームによってサイズが異なる画像")](../images/customize-appearance-large.png#lightbox "プラットフォームによってサイズが異なる画像")
+
+    Visual Studio で、アプリケーションを停止します。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -46,6 +48,8 @@ ms.locfileid: "84574639"
 
     また、[`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) プロパティでは、イメージが水平方向の中央に配置されるように指定します。
 
-1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
+1. アプリケーションがまだ実行されている場合は、変更内容をファイルに保存すると、アプリケーションのユーザー インターフェイスがシミュレーターまたはエミュレーターで自動的に更新されます。 もしくは、Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     [![iOS 上と Android 上とでサイズが異なる画像のスクリーンショット](../images/customize-appearance.png "プラットフォームによってサイズが異なる画像")](../images/customize-appearance-large.png#lightbox "プラットフォームによってサイズが異なる画像")
+
+    Visual Studio for Mac で、アプリケーションを停止します。

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 87eb021e6cc571a9a5522697cde2aa11ee991308
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 9ff398b53e88f38589733b1caac623e564e1ed39
+ms.sourcegitcommit: a5a5c5de7d04f046a64e4875e180fc93227bf495
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "66193795"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98634833"
 ---
 
 Xamarin.Forms には、アクション シートとして知られるモーダル ポップアップが用意されており、タスクの完了までユーザーをガイドするのに使用できます。 この演習では、[`Page`](xref:Xamarin.Forms.Page) クラスから [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) メソッドを使用して、タスクの完了までユーザーをガイドするアクション シートを表示します。
@@ -20,7 +20,7 @@ Xamarin.Forms には、アクション シートとして知られるモーダ�
 
      [`Button.Text`](xref:Xamarin.Forms.Button.Text) プロパティは、`Button` に表示するテキストを指定します。 さらに、[`Clicked`](xref:Xamarin.Forms.Button.Clicked) イベントは、次の手順で作成する `OnDisplayActionSheetButtonClicked` という名前のイベント ハンドラーに設定されます。
 
-1. **ソリューション エクスプローラー**の **PopupsTutorial** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、**MainPage.xaml.cs** で、`OnDisplayActionSheetButtonClicked` イベント ハンドラーをクラスに追加します。
+1. **ソリューション エクスプローラー** の **PopupsTutorial** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、**MainPage.xaml.cs** で、`OnDisplayActionSheetButtonClicked` イベント ハンドラーをクラスに追加します。
 
     ```csharp
     async void OnDisplayActionSheetButtonClicked(object sender, EventArgs e)
@@ -39,7 +39,9 @@ Xamarin.Forms には、アクション シートとして知られるモーダ�
 
     [![iOS および Android 上のアクション シートのスクリーンショット](../images/actionsheet.png "ユーザーにタスクを案内する Actionsheet")](../images/actionsheet-large.png#lightbox "ユーザーにタスクを案内する Actionsheet")
 
-    アクション シート ダイアログで代替方法を選択した後、その選択が Visual Studio の **[出力]** ウィンドウに出力されることを確認します。
+    アクション シート ダイアログで代替方法を選択した後、その選択が Visual Studio の **[出力]** ウィンドウに出力されることを確認します。 このウィンドウが表示されていない場合は、 **[表示] > [出力]** メニュー オプションを選択すると表示されます。
+
+    Visual Studio で、アプリケーションを停止します。
 
     アクション シートの表示に関する詳細は、「[Display Pop-ups (ポップアップの表示)](~/xamarin-forms/user-interface/pop-ups.md)」ガイドの「[Guide users through tasks (タスクを通じたユーザーのガイド)](~/xamarin-forms/user-interface/pop-ups.md#guide-users-through-tasks)」をご覧ください。
 
@@ -54,7 +56,7 @@ Xamarin.Forms には、アクション シートとして知られるモーダ�
 
     [`Button.Text`](xref:Xamarin.Forms.Button.Text) プロパティは、`Button` に表示するテキストを指定します。 さらに、[`Clicked`](xref:Xamarin.Forms.Button.Clicked) イベントは、次の手順で作成する `OnDisplayActionSheetButtonClicked` という名前のイベント ハンドラーに設定されます。
 
-1. **Solution Pad** の **PopupsTutorial** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、**MainPage.xaml.cs** で、`OnDisplayActionSheetButtonClicked` イベント ハンドラーをクラスに追加します。
+1. **Solution Pad** の **PopupsTutorial** プロジェクトで **[MainPage.xaml]** を展開し、**[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、**MainPage.xaml.cs** で、`OnDisplayActionSheetButtonClicked` イベント ハンドラーをクラスに追加します。
 
     ```csharp
     async void OnDisplayActionSheetButtonClicked(object sender, EventArgs e)
@@ -73,6 +75,8 @@ Xamarin.Forms には、アクション シートとして知られるモーダ�
 
     [![iOS および Android 上のアクション シートのスクリーンショット](../images/actionsheet.png "ユーザーにタスクを案内する Actionsheet")](../images/actionsheet-large.png#lightbox "ユーザーにタスクを案内する Actionsheet")
 
-    アクション シート ダイアログで代替方法を選択した後、その選択が Visual Studio for Mac の **[出力]** ウィンドウに出力されることを確認します。
+    アクション シート ダイアログで代替方法を選択した後、その選択が Visual Studio for Mac の **[出力]** ウィンドウに出力されることを確認します。 このウィンドウが表示されていない場合は、 **[表示] > [その他のウィンドウ] > [アプリケーション出力]** メニュー オプションを選択すると表示されます。
+
+    Visual Studio for Mac で、アプリケーションを停止します。
 
     アクション シートの表示に関する詳細は、「[Display Pop-ups (ポップアップの表示)](~/xamarin-forms/user-interface/pop-ups.md)」ガイドの「[Guide users through tasks (タスクを通じたユーザーのガイド)](~/xamarin-forms/user-interface/pop-ups.md#guide-users-through-tasks)」をご覧ください。
