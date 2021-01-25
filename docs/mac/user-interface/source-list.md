@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: ae82918c1f87e47be9446e80f99ebc4dc967c078
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: fb9764acb23c40815ed4a95580e80a4ac63970df
+ms.sourcegitcommit: 424eaef56fd2933c98e72f1d3e7ac71730fe4835
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91431943"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98758046"
 ---
 # <a name="source-lists-in-xamarinmac"></a>Xamarin. Mac のソースリスト
 
 _この記事では、Xamarin. Mac アプリケーションでのソースリストの使用について説明します。Xcode と Interface Builder でのソースリストの作成と保守、および C# コードでのソースリストとの対話について説明します。_
 
-Xamarin. Mac アプリケーションで C# と .NET を使用する場合、 *Xcode と*で作業*している*開発者が同じソースリストにアクセスできます。 Xcode は直接統合されているため、Xcode の _Interface Builder_ を使用してソースリストを作成および管理できます (または、必要に応じて C# コードで直接作成することもできます)。
+Xamarin. Mac アプリケーションで C# と .NET を使用する場合、 *Xcode と* で作業 *している* 開発者が同じソースリストにアクセスできます。 Xcode は直接統合されているため、Xcode の _Interface Builder_ を使用してソースリストを作成および管理できます (または、必要に応じて C# コードで直接作成することもできます)。
 
 ソースリストは、Finder または iTunes のサイドバーのような、アクションのソースを表示するために使用される特殊な種類のアウトラインビューです。
 
@@ -48,7 +48,7 @@ Xamarin. Mac アプリケーションで C# と .NET を使用する場合、 *X
 
 ソースリストは、Finder または iTunes のサイドバーのような、アクションのソースを表示するために使用される特殊な種類のアウトラインビューです。 アウトライン表示とは異なり、Interface Builder でソースリストを定義する前に、Xamarin. Mac でバッキングクラスを作成してみましょう。
 
-まず、 `SourceListItem` ソースリストのデータを保持する新しいクラスを作成してみましょう。 **ソリューションエクスプローラー**で、プロジェクトを右クリックし、[新しいファイルの**追加**  >  **...** ] を選択します。[**汎用**空のクラス] を選択し、名前として「」  >  **Empty Class**と入力して `SourceListItem` 、[**新規**] ボタンをクリックします。 **Name**
+まず、 `SourceListItem` ソースリストのデータを保持する新しいクラスを作成してみましょう。 **ソリューションエクスプローラー** で、プロジェクトを右クリックし、[新しいファイルの **追加**  >  **...** ] を選択します。[**汎用** 空のクラス] を選択し、名前として「」  >  と入力して `SourceListItem` 、[**新規**] ボタンをクリックします。 
 
 [![空のクラスの追加](source-list-images/source01.png)](source-list-images/source01.png#lightbox)
 
@@ -270,7 +270,7 @@ namespace MacOutlines
 }
 ```
 
-**ソリューションエクスプローラー**で、プロジェクトを右クリックし、[新しいファイルの**追加**  >  **...** ] を選択します。[**汎用**空のクラス] を選択し、名前として「」  >  **Empty Class**と入力して `SourceListDataSource` 、[**新規**] ボタンをクリックします。 **Name** ファイルの `SourceListDataSource.cs` 外観を次のようにします。
+**ソリューションエクスプローラー** で、プロジェクトを右クリックし、[新しいファイルの **追加**  >  **...** ] を選択します。[**汎用** 空のクラス] を選択し、名前として「」  >  と入力して `SourceListDataSource` 、[**新規**] ボタンをクリックします。  ファイルの `SourceListDataSource.cs` 外観を次のようにします。
 
 ```csharp
 using System;
@@ -354,7 +354,7 @@ namespace MacOutlines
 
 これにより、ソースリストのデータが提供されます。
 
-**ソリューションエクスプローラー**で、プロジェクトを右クリックし、[新しいファイルの**追加**  >  **...** ] を選択します。[**汎用**空のクラス] を選択し、名前として「」  >  **Empty Class**と入力して `SourceListDelegate` 、[**新規**] ボタンをクリックします。 **Name** ファイルの `SourceListDelegate.cs` 外観を次のようにします。
+**ソリューションエクスプローラー** で、プロジェクトを右クリックし、[新しいファイルの **追加**  >  **...** ] を選択します。[**汎用** 空のクラス] を選択し、名前として「」  >  と入力して `SourceListDelegate` 、[**新規**] ボタンをクリックします。  ファイルの `SourceListDelegate.cs` 外観を次のようにします。
 
 ```csharp
 using System;
@@ -446,7 +446,7 @@ namespace MacOutlines
 
 これにより、ソースリストの動作が提供されます。
 
-最後に、**ソリューションエクスプローラー**でプロジェクトを右クリックし、[ **Add**  >  **新しいファイル**の追加] を選択します。[**汎用**空のクラス] を選択し、名前として「」  >  **Empty Class**と入力して `SourceListView` 、[**新規**] ボタンをクリックします。 **Name** ファイルの `SourceListView.cs` 外観を次のようにします。
+最後に、**ソリューションエクスプローラー** でプロジェクトを右クリックし、[   >  **新しいファイル** の追加] を選択します。[**汎用** 空のクラス] を選択し、名前として「」  >  と入力して `SourceListView` 、[**新規**] ボタンをクリックします。  ファイルの `SourceListView.cs` 外観を次のようにします。
 
 ```csharp
 using System;
@@ -532,13 +532,13 @@ namespace MacOutlines
 
 次に、Interface Builder でソースリストを設計しましょう。 ファイルをダブルクリックし `Main.storyboard` て編集するには Interface Builder で開き、[ **ライブラリインスペクター**] から分割ビューをドラッグして、ビューコントローラーに追加し、[ **制約エディター**] のビューでサイズを変更するように設定します。
 
-[![制約の編集](source-list-images/source00.png)](source-list-images/source00.png#lightbox)
+[![Interface Builder での制約の編集。](source-list-images/source00.png)](source-list-images/source00.png#lightbox)
 
-次に、 **ライブラリインスペクター**からソースリストをドラッグし、分割ビューの左側に追加して、 **制約エディター**のビューでサイズを変更するように設定します。
+次に、 **ライブラリインスペクター** からソースリストをドラッグし、分割ビューの左側に追加して、 **制約エディター** のビューでサイズを変更するように設定します。
 
-[![制約の編集](source-list-images/source02.png)](source-list-images/source02.png#lightbox)
+[![ソースリストを分割ビューにドラッグして、制約を編集します。](source-list-images/source02.png)](source-list-images/source02.png#lightbox)
 
-次に、 **Id ビュー**に切り替え、ソースリストを選択し、 **クラス** をに変更し `SourceListView` ます。
+次に、 **Id ビュー** に切り替え、ソースリストを選択し、 **クラス** をに変更し `SourceListView` ます。
 
 [![クラス名の設定](source-list-images/source03.png)](source-list-images/source03.png#lightbox)
 
@@ -591,7 +591,7 @@ public override void AwakeFromNib ()
 }
 ```
 
-メソッドは、 `Initialize ()` 項目が追加さ_れる前に_、ソースリストの**アウトレット**に対して呼び出す必要があります。 アイテムのグループごとに、親アイテムを作成し、そのグループアイテムにサブアイテムを追加します。 その後、各グループがソースリストのコレクションに追加され `SourceList.AddItem (...)` ます。 最後の2行は、ソースリストのデータを読み込み、すべてのグループを展開します。
+メソッドは、 `Initialize ()` 項目が追加さ _れる前に_、ソースリストの **アウトレット** に対して呼び出す必要があります。 アイテムのグループごとに、親アイテムを作成し、そのグループアイテムにサブアイテムを追加します。 その後、各グループがソースリストのコレクションに追加され `SourceList.AddItem (...)` ます。 最後の2行は、ソースリストのデータを読み込み、すべてのグループを展開します。
 
 ```csharp
 // Display side list

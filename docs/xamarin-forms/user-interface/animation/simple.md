@@ -10,12 +10,12 @@ ms.date: 09/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a2259d9784d9b55be636e92452562a13f0750b14
-ms.sourcegitcommit: c9f62ed4bab516be18606e87e89e01f57b4ad17e
+ms.openlocfilehash: 4078fa50e2e86d80e1e5b35321223deea5adeab7
+ms.sourcegitcommit: 424eaef56fd2933c98e72f1d3e7ac71730fe4835
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98163505"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98758059"
 ---
 # <a name="simple-animations-in-no-locxamarinforms"></a>単純なアニメーション Xamarin.Forms
 
@@ -25,7 +25,7 @@ _ViewExtensions クラスは、単純なアニメーションを構築するた�
 
 クラスには、 [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) 単純なアニメーションを作成するために使用できる次の拡張メソッドが用意されています。
 
-- [ `CancelAnimations` ] (xref: Xamarin.Forms 。ViewExtensions。 CancelAnimations ( Xamarin.Forms .VisualElement) すべてのアニメーションをキャンセルします。
+- [ `CancelAnimations` ] (xref: Xamarin.Forms 。ViewExtensions。 CancelAnimations ( Xamarin.Forms .VisualElement)) アニメーションをキャンセルします。
 - [ `FadeTo` ] (xref: Xamarin.Forms 。ViewExtensions. FadeTo ( Xamarin.Forms .VisualElement、system.string、system.string、 Xamarin.Forms 。イージング)) [`Opacity`](xref:Xamarin.Forms.VisualElement.Opacity) のプロパティをアニメーション化 [`VisualElement`](xref:Xamarin.Forms.VisualElement) します。
 - [ `RelScaleTo` ] (xref: Xamarin.Forms 。ViewExtensions. Rel拡張性 ( Xamarin.Forms .VisualElement、system.string、system.string、 Xamarin.Forms 。イージング) を適用すると、アニメーションのインクリメントがのプロパティに適用さ [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) [`VisualElement`](xref:Xamarin.Forms.VisualElement) れます。
 - [ `RotateTo` ] (xref: Xamarin.Forms 。ViewExtensions Xamarin.Forms . RotateTo ()VisualElement、system.string、system.string、 Xamarin.Forms 。イージング)) [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation) のプロパティをアニメーション化 [`VisualElement`](xref:Xamarin.Forms.VisualElement) します。
@@ -221,7 +221,7 @@ await Task.WhenAll (
 
 ## <a name="canceling-animations"></a>アニメーションの取り消し
 
-アプリケーションでは、[CancelAnimations] を呼び出すことによって1つ以上のアニメーションをキャンセルできます (xref: Xamarin.Forms 。ViewExtensions。 CancelAnimations ( Xamarin.Forms .VisualElement)): 次のコード例に示すように、拡張メソッドを使用します。
+アプリケーションでは、[ `CancelAnimations` ] (xref: を呼び出して1つ以上のアニメーションをキャンセルできます Xamarin.Forms 。ViewExtensions。 CancelAnimations ( Xamarin.Forms .VisualElement)): 次のコード例に示すように、拡張メソッドを使用します。
 
 ```csharp
 image.CancelAnimations();

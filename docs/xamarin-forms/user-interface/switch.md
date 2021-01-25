@@ -10,12 +10,12 @@ ms.date: 05/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b44a3fa34044327be6a928588397c3371f196336
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 760d6f6e6d57a1ab9a6537e8974e85e26195d8cb
+ms.sourcegitcommit: 424eaef56fd2933c98e72f1d3e7ac71730fe4835
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93371132"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98758020"
 ---
 # <a name="no-locxamarinforms-switch"></a>Xamarin.Forms 切り替わり
 
@@ -29,7 +29,7 @@ Xamarin.Forms [`Switch`](xref:Xamarin.Forms.Switch) コントロールは水平�
 
 コントロールは、 `Switch` 次のプロパティを定義します。
 
-- [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled)が `boolean` オンかどうかを示す値です `Switch` 。 **on**
+- [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled)が `boolean` オンかどうかを示す値です `Switch` 。 
 - [`OnColor`](xref:Xamarin.Forms.Switch.OnColor) は、が `Color` `Switch` 切り替えられるか、状態で表示さ **れるかに** 影響するです。
 - `ThumbColor` は、 `Color` スイッチのつまみのです。
 
@@ -68,7 +68,7 @@ Switch switch = new Switch { OnColor = Color.Orange, ThumbColor = Color.Green };
 
 次のスクリーンショットは、 `Switch` プロパティとプロパティが設定されている、 **オン** と **オフ** の切り替え状態のを示してい `OnColor` `ThumbColor` ます。
 
-![IOS と Android でのオンとオフの状態の切り替えのスクリーンショット](switch-images/switch-states-colors.png "IOS と Android でのスイッチ")
+![IOS と Android で色が変更された状態のオンとオフの切り替えのスクリーンショット。](switch-images/switch-states-colors.png "IOS と Android でのスイッチ")
 
 ## <a name="respond-to-a-switch-state-change"></a>スイッチの状態の変更に応答する
 
