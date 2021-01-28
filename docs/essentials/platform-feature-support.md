@@ -8,12 +8,12 @@ ms.date: 08/20/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9c21e4c746224902b4dcc317b53d751d33c45df1
-ms.sourcegitcommit: 86663f94f8eddb808eb4504cd32ddaf217b6406c
+ms.openlocfilehash: cb172ff7d86229d4ee0cebc2e3ea6bc326e7fa29
+ms.sourcegitcommit: 424eaef56fd2933c98e72f1d3e7ac71730fe4835
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98166668"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98758033"
 ---
 # <a name="platform-support"></a>プラットフォームのサポート
 
@@ -49,7 +49,7 @@ Xamarin.Essentials では、すべてのプラットフォームに機能を提�
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | [加速度計](accelerometer.md?context=xamarin/xamarin-forms) | ![Android はサポートされています](~/media/shared/yes.png "Android はサポートされています") | ![iOS はサポートされています](~/media/shared/yes.png "iOS はサポートされています") | ![UWP はサポートされています](~/media/shared/yes.png "UWP はサポートされています") | ![watchOS はサポートされています](~/media/shared/yes.png "watchOS はサポートされています") | ![tvOS はサポートされていません](~/media/shared/no.png "tvOS はサポートされていません") | ![Tizen はサポートされています](~/media/shared/yes.png "Tizen はサポートされています") | ![macOS はサポートされていません](~/media/shared/no.png "macOS はサポートされていません") |
 | [アプリの操作](app-actions.md?context=xamarin/xamarin-forms) | ![Android はサポートされています](~/media/shared/yes.png "Android はサポートされています") | ![iOS はサポートされています](~/media/shared/yes.png "iOS はサポートされています") | ![UWP はサポートされています](~/media/shared/yes.png "UWP はサポートされています") | ![watchOS はサポートされていません](~/media/shared/no.png "watchOS はサポートされていません") | ![tvOS はサポートされていません](~/media/shared/no.png "tvOS はサポートされていません") | ![Tizen はサポートされていません](~/media/shared/no.png "Tizen はサポートされていません") | ![macOS はサポートされていません](~/media/shared/no.png "macOS はサポートされていません") |
-| [アプリ情報](app-information.md?context=xamarin/xamarin-forms) | ![Android はサポートされています](~/media/shared/yes.png "Android はサポートされています") | ![iOS はサポートされています](~/media/shared/yes.png "iOS はサポートされています") | ![UWP はサポートされています](~/media/shared/yes.png "UWP はサポートされています") | ![watchOS はサポートされています](~/media/shared/no.png "watchOS はサポートされていません") | ![tvOS はサポートされています](~/media/shared/yes.png "tvOS はサポートされています") | ![Tizen はサポートされています](~/media/shared/yes.png "Tizen はサポートされています") | ![macOS はサポートされています](~/media/shared/yes.png "macOS はサポートされています") |
+| [アプリ情報](app-information.md?context=xamarin/xamarin-forms) | ![Android はサポートされています](~/media/shared/yes.png "Android はサポートされています") | ![iOS はサポートされています](~/media/shared/yes.png "iOS はサポートされています") | ![UWP はサポートされています](~/media/shared/yes.png "UWP はサポートされています") | ![watchOS はサポートされていません](~/media/shared/no.png "watchOS はサポートされていません") | ![tvOS はサポートされています](~/media/shared/yes.png "tvOS はサポートされています") | ![Tizen はサポートされています](~/media/shared/yes.png "Tizen はサポートされています") | ![macOS はサポートされています](~/media/shared/yes.png "macOS はサポートされています") |
 | [アプリのテーマ](app-theme.md?context=xamarin/xamarin-forms) | ![Android はサポートされています](~/media/shared/yes.png "Android はサポートされています") | ![iOS はサポートされています](~/media/shared/yes.png "iOS はサポートされています") | ![UWP はサポートされています](~/media/shared/yes.png "UWP はサポートされています") | ![watchOS はサポートされています](~/media/shared/yes.png "watchOS はサポートされています") | ![tvOS はサポートされていません](~/media/shared/no.png "tvOS はサポートされていません") | ![Tizen はサポートされています](~/media/shared/yes.png "Tizen はサポートされています") | ![macOS はサポートされています](~/media/shared/yes.png "macOS はサポートされています") |
 | [バロメーター](barometer.md?context=xamarin/xamarin-forms) | ![Android はサポートされています](~/media/shared/yes.png "Android はサポートされています") | ![iOS はサポートされています](~/media/shared/yes.png "iOS はサポートされています") | ![UWP はサポートされています](~/media/shared/yes.png "UWP はサポートされています") | ![watchOS はサポートされています](~/media/shared/yes.png "watchOS はサポートされています") | ![tvOS はサポートされていません](~/media/shared/no.png "tvOS はサポートされていません") | ![Tizen はサポートされています](~/media/shared/yes.png "Tizen はサポートされています") | ![macOS はサポートされていません](~/media/shared/no.png "macOS はサポートされていません") |
 | [バッテリ](battery.md?context=xamarin/xamarin-forms) | ![Android はサポートされています](~/media/shared/yes.png "Android はサポートされています") | ![iOS はサポートされています](~/media/shared/yes.png "iOS はサポートされています") | ![UWP はサポートされています](~/media/shared/yes.png "UWP はサポートされています") | ![watchOS は制限付きでサポートされています](~/media/shared/warn.png "watchOS は制限付きでサポートされています") | ![tvOS はサポートされていません](~/media/shared/no.png "tvOS はサポートされていません") | ![Tizen は制限付きでサポートされています](~/media/shared/warn.png "Tizen は制限付きでサポートされています") | ![macOS はサポートされています](~/media/shared/yes.png "macOS はサポートされています") |
