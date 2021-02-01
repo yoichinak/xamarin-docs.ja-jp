@@ -6,22 +6,22 @@ ms.assetid: f343fc21-dfb1-4364-a332-9da6705d36bc
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/19/2019
+ms.date: 02/01/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 241aa896cb66c4ff594c786ad484781adcddffa1
-ms.sourcegitcommit: 63029dd7ea4edb707a53ea936ddbee684a926204
+ms.openlocfilehash: 6d17f20babd11a58540306f146ee9dc2bf1a5da4
+ms.sourcegitcommit: 9ab5a1e346e20f54e8b7aa655fd3d117b43978cc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98609132"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99223556"
 ---
 # <a name="no-locxamarinforms-in-xamarin-native-projects"></a>Xamarin.Forms Xamarin ネイティブプロジェクトで
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/native2forms)
 
-通常、アプリケーションには Xamarin.Forms 、から派生した1つ以上のページが含まれ [`ContentPage`](xref:Xamarin.Forms.ContentPage) ます。これらのページは、.NET Standard ライブラリプロジェクトまたは共有プロジェクトのすべてのプラットフォームで共有されます。 ただし、ネイティブ形式では、 `ContentPage` ネイティブの xamarin、iOS、xamarin、および UWP アプリケーションに、の派生ページを直接追加できます。 ネイティブプロジェクトが `ContentPage` .NET Standard ライブラリプロジェクトまたは共有プロジェクトから派生したページを使用する場合と比較して、ネイティブプロジェクトにページを直接追加する利点は、ネイティブビューでページを拡張できることです。 その後、ネイティブビューを XAML で名前付けし `x:Name` 、分離コードから参照できます。 ネイティブビューの詳細については、「 [ネイティブビュー](~/xamarin-forms/platform/native-views/index.md)」を参照してください。
+通常、アプリケーションには Xamarin.Forms 、から派生した1つ以上のページが含まれ [`ContentPage`](xref:Xamarin.Forms.ContentPage) ます。これらのページは、.NET Standard ライブラリプロジェクトまたは共有プロジェクトのすべてのプラットフォームで共有されます。 ただし、ネイティブフォームでは、 `ContentPage` ネイティブの xamarin、iOS、xamarin、および UWP アプリケーションに、の派生ページを直接追加できます。 ネイティブプロジェクトが `ContentPage` .NET Standard ライブラリプロジェクトまたは共有プロジェクトから派生したページを使用する場合と比較して、ネイティブプロジェクトにページを直接追加する利点は、ネイティブビューでページを拡張できることです。 その後、ネイティブビューを XAML で名前付けし `x:Name` 、分離コードから参照できます。 ネイティブビューの詳細については、「 [ネイティブビュー](~/xamarin-forms/platform/native-views/index.md)」を参照してください。
 
 ネイティブプロジェクトでを派生したページを使用するプロセスは、次のとおり Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) です。
 
@@ -56,6 +56,10 @@ public class AppDelegate : UIApplicationDelegate
     {
         Forms.Init();
 
+        // Create app-level resource dictionary.
+        Xamarin.Forms.Application.Current = new Xamarin.Forms.Application();
+        Xamarin.Forms.Application.Current.Resources = new MyDictionary();
+
         Instance = this;
         _window = new UIWindow(UIScreen.MainScreen.Bounds);
 
@@ -65,13 +69,22 @@ public class AppDelegate : UIApplicationDelegate
         });
 
         FolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData));
-        UIViewController mainPage = new NotesPage().CreateViewController();
-        mainPage.Title = "Notes";
 
-        _navigation = new AppNavigationController(mainPage);
+        NotesPage notesPage = new NotesPage()
+        {
+            // Set the parent so that the app-level resource dictionary can be located.
+            Parent = Xamarin.Forms.Application.Current
+        };
+
+        UIViewController notesPageController = notesPage.CreateViewController();
+        notesPageController.Title = "Notes";
+
+        _navigation = new AppNavigationController(notesPageController);
+
         _window.RootViewController = _navigation;
         _window.MakeKeyAndVisible();
 
+        notesPage.Parent = null;
         return true;
     }
     // ...
@@ -81,17 +94,23 @@ public class AppDelegate : UIApplicationDelegate
 `FinishedLaunching` メソッドは、次のタスクを実行します。
 
 - Xamarin.Forms は、メソッドを呼び出すことによって初期化され `Forms.Init` ます。
+- 新しい `Xamarin.Forms.Application` is オブジェクトが作成され、そのアプリケーションレベルのリソースディクショナリは、 `ResourceDictionary` XAML で定義されたに設定されます。
 - クラスへの参照 `AppDelegate` は、フィールドに格納され `static` `Instance` ます。 これは、クラスで定義されているメソッドを他のクラスが呼び出すメカニズムを提供するためのものです `AppDelegate` 。
 - `UIWindow`ネイティブ iOS アプリケーションのビューのメインコンテナーであるが作成されます。
 - プロパティは、 `FolderPath` ノートデータが格納されるデバイス上のパスに初期化されます。
-- クラスは、 `NotesPage` Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) XAML で定義されている派生ページであり、 `UIViewController` 拡張メソッドを使用して構築され、に変換され `CreateViewController` ます。
+- `NotesPage`オブジェクトが作成されます。これは Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) XAML で定義された派生ページであり、その親は前に作成されたオブジェクトに設定され `Xamarin.Forms.Application` ます。
+- `NotesPage`オブジェクトは、 `UIViewController` 拡張メソッドを使用してに変換され `CreateViewController` ます。
 - の `Title` プロパティが設定され、 `UIViewController` に表示され `UINavigationBar` ます。
 - `AppNavigationController`階層ナビゲーションを管理するために、が作成されます。 これは、から派生するカスタムナビゲーションコントローラークラスです `UINavigationController` 。 `AppNavigationController`オブジェクトはビューコントローラーのスタックを管理し、 `UIViewController` コンストラクターに渡されたは、が読み込まれるときに最初に表示され `AppNavigationController` ます。
 - `AppNavigationController`オブジェクトがの最上位レベルとして設定され、 `UIViewController` `UIWindow` `UIWindow` がアプリケーションのキーウィンドウとして設定され、が表示されるようになります。
+- `Parent` `NotesPage` メモリリークを防ぐために、オブジェクトのプロパティはに設定されてい `null` ます。
 
 `FinishedLaunching`メソッドが実行されると、 Xamarin.Forms `NotesPage` 次のスクリーンショットに示すように、クラスで定義されている UI が表示されます。
 
 [![スクリーンショットは、モバイルデバイスのノート画面を示しています。](native-forms-images/ios-notespage.png "XAML UI を使用した Xamarin iOS アプリ")](native-forms-images/ios-notespage-large.png#lightbox "XAML UI を使用した Xamarin iOS アプリ")
+
+> [!IMPORTANT]
+> [`ContentPage`](xref:Xamarin.Forms.ContentPage) `ResourceDictionary` `Parent` ページのプロパティがオブジェクトに設定されていれば、すべての派生ページで、アプリケーションレベルで定義されたリソースを使用でき `Application` ます。
 
 たとえばをタップするなど、UI と対話すると、実行中の **+** [`Button`](xref:Xamarin.Forms.Button) 分離コードに次のイベントハンドラーが生成され `NotesPage` ます。
 
@@ -107,12 +126,18 @@ void OnNoteAddedClicked(object sender, EventArgs e)
 ```csharp
 public void NavigateToNoteEntryPage(Note note)
 {
-    var noteEntryPage = new NoteEntryPage
+    NoteEntryPage noteEntryPage = new NoteEntryPage
     {
-        BindingContext = note
-    }.CreateViewController();
-    noteEntryPage.Title = "Note Entry";
-    _navigation.PushViewController(noteEntryPage, true);
+        BindingContext = note,
+        // Set the parent so that the app-level resource dictionary can be located.
+        Parent = Xamarin.Forms.Application.Current
+    };
+
+    var noteEntryViewController = noteEntryPage.CreateViewController();
+    noteEntryViewController.Title = "Note Entry";
+
+    _navigation.PushViewController(noteEntryViewController, true);
+    noteEntryPage.Parent = null;
 }
 ```
 
@@ -160,6 +185,11 @@ public class MainActivity : AppCompatActivity
         base.OnCreate(bundle);
 
         Forms.Init(this, bundle);
+
+        // Create app-level resource dictionary.
+        Xamarin.Forms.Application.Current = new Xamarin.Forms.Application();
+        Xamarin.Forms.Application.Current.Resources = new MyDictionary();
+
         Instance = this;
 
         SetContentView(Resource.Layout.Main);
@@ -168,12 +198,21 @@ public class MainActivity : AppCompatActivity
         SupportActionBar.Title = "Notes";
 
         FolderPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData));
-        AndroidX.Fragment.App.Fragment mainPage = new NotesPage().CreateSupportFragment(this);
+
+        NotesPage notesPage = new NotesPage()
+        {
+            // Set the parent so that the app-level resource dictionary can be located.
+            Parent = Xamarin.Forms.Application.Current
+        };
+        AndroidX.Fragment.App.Fragment notesPageFragment = notesPage.CreateSupportFragment(this);
+
         SupportFragmentManager
             .BeginTransaction()
             .Replace(Resource.Id.fragment_frame_layout, mainPage)
             .Commit();
-        ...
+        //...
+
+        notesPage.Parent = null;
     }
     ...
 }
@@ -182,18 +221,24 @@ public class MainActivity : AppCompatActivity
 `OnCreate` メソッドは、次のタスクを実行します。
 
 - Xamarin.Forms は、メソッドを呼び出すことによって初期化され `Forms.Init` ます。
+- 新しい `Xamarin.Forms.Application` is オブジェクトが作成され、そのアプリケーションレベルのリソースディクショナリは、 `ResourceDictionary` XAML で定義されたに設定されます。
 - クラスへの参照 `MainActivity` は、フィールドに格納され `static` `Instance` ます。 これは、クラスで定義されているメソッドを他のクラスが呼び出すメカニズムを提供するためのものです `MainActivity` 。
 - `Activity`コンテンツはレイアウトリソースから設定されます。 サンプルアプリケーションでは、レイアウトは、、、 `LinearLayout` `Toolbar` および `FrameLayout` フラグメントコンテナーとして機能するを含むで構成されます。
 - `Toolbar`が取得され、の操作バーとして設定され、 `Activity` 操作バーのタイトルが設定されます。
 - プロパティは、 `FolderPath` ノートデータが格納されるデバイス上のパスに初期化されます。
-- クラスは、 `NotesPage` Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) XAML で定義されている派生ページであり、 `Fragment` 拡張メソッドを使用して構築され、に変換され `CreateSupportFragment` ます。
+- `NotesPage`オブジェクトが作成されます。これは Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) XAML で定義された派生ページであり、その親は前に作成されたオブジェクトに設定され `Xamarin.Forms.Application` ます。
+- `NotesPage`オブジェクトは、 `Fragment` 拡張メソッドを使用してに変換され `CreateSupportFragment` ます。
 - クラスは、 `SupportFragmentManager` インスタンスをクラスのに置き換えるトランザクションを作成し、コミットし `FrameLayout` `Fragment` `NotesPage` ます。
+- `Parent` `NotesPage` メモリリークを防ぐために、オブジェクトのプロパティはに設定されてい `null` ます。
 
 フラグメントの詳細については、「 [フラグメント](~/android/platform/fragments/index.md)」を参照してください。
 
 `OnCreate`メソッドが実行されると、 Xamarin.Forms `NotesPage` 次のスクリーンショットに示すように、クラスで定義されている UI が表示されます。
 
 [![スクリーンショットは、モバイルデバイス上の青いバナーと色分けされたノートテキストを含むノート画面を示しています。](native-forms-images/android-notespage.png "XAML UI を使用した Xamarin Android アプリ")](native-forms-images/android-notespage-large.png#lightbox "XAML UI を使用した Xamarin Android アプリ")
+
+> [!IMPORTANT]
+> [`ContentPage`](xref:Xamarin.Forms.ContentPage) `ResourceDictionary` `Parent` ページのプロパティがオブジェクトに設定されていれば、すべての派生ページで、アプリケーションレベルで定義されたリソースを使用でき `Application` ます。
 
 たとえばをタップするなど、UI と対話すると、実行中の **+** [`Button`](xref:Xamarin.Forms.Button) 分離コードに次のイベントハンドラーが生成され `NotesPage` ます。
 
@@ -209,15 +254,21 @@ void OnNoteAddedClicked(object sender, EventArgs e)
 ```csharp
 public void NavigateToNoteEntryPage(Note note)
 {
-    AndroidX.Fragment.App.Fragment noteEntryPage = new NoteEntryPage
+    NoteEntryPage noteEntryPage = new NoteEntryPage
     {
-        BindingContext = note
-    }.CreateSupportFragment(this);
+        BindingContext = note,
+        // Set the parent so that the app-level resource dictionary can be located.
+        Parent = Xamarin.Forms.Application.Current
+    };
+
+    AndroidX.Fragment.App.Fragment noteEntryFragment = noteEntryPage.CreateSupportFragment(this);
     SupportFragmentManager
         .BeginTransaction()
         .AddToBackStack(null)
-        .Replace(Resource.Id.fragment_frame_layout, noteEntryPage)
+        .Replace(Resource.Id.fragment_frame_layout, noteEntryFragment)
         .Commit();
+
+    noteEntryPage.Parent = null;
 }
 ```
 
@@ -278,7 +329,23 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 
 ## <a name="uwp"></a>UWP
 
-UWP の場合、ネイティブ `App` クラスは、通常、アプリケーションの起動に関連するタスクを実行する場所です。 Xamarin.Forms は通常、UWP アプリケーションでは、 Xamarin.Forms `OnLaunched` ネイティブクラスのオーバーライドで、 `App` メソッドに引数を渡すために初期化され `LaunchActivatedEventArgs` `Forms.Init` ます。 このため、から派生したページを使用するネイティブ UWP アプリケーション Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) は、メソッドからメソッドを呼び出すと最も簡単に呼び出すことができ `Forms.Init` `App.OnLaunched` ます。
+UWP の場合、ネイティブ `App` クラスは、通常、アプリケーションの起動に関連するタスクを実行する場所です。 Xamarin.Forms は通常、UWP アプリケーションでは、 Xamarin.Forms `OnLaunched` ネイティブクラスのオーバーライドで、 `App` メソッドに引数を渡すために初期化され `LaunchActivatedEventArgs` `Forms.Init` ます。 このため、から派生したページを使用するネイティブ UWP アプリケーション Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) は、メソッドからメソッドを最も簡単に呼び出すことができ `Forms.Init` `App.OnLaunched` ます。
+
+```csharp
+protected override void OnLaunched(LaunchActivatedEventArgs e)
+{
+    // ...
+    Xamarin.Forms.Forms.Init(e);
+
+    // Create app-level resource dictionary.
+    Xamarin.Forms.Application.Current = new Xamarin.Forms.Application();
+    Xamarin.Forms.Application.Current.Resources = new MyDictionary();
+
+    // ...
+}
+```
+
+また、メソッドは、 `OnLaunched` アプリケーションに必要なアプリケーションレベルのリソースディクショナリを作成することもできます。
 
 既定では、ネイティブクラスによって、 `App` `MainPage` クラスがアプリケーションの最初のページとして起動されます。 次のコード例は、サンプルアプリケーションのクラスを示してい `MainPage` ます。
 
@@ -293,13 +360,18 @@ public sealed partial class MainPage : Page
 
     public MainPage()
     {
-        this.InitializeComponent();
         this.NavigationCacheMode = NavigationCacheMode.Enabled;
         Instance = this;
         FolderPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData));
-        notesPage = new Notes.UWP.Views.NotesPage();
+
+        notesPage = new Notes.UWP.Views.NotesPage
+        {
+            // Set the parent so that the app-level resource dictionary can be located.
+            Parent = Xamarin.Forms.Application.Current
+        };
         this.Content = notesPage.CreateFrameworkElement();
-        // ...        
+        // ...
+        notesPage.Parent = null;    
     }
     // ...
 }
@@ -310,11 +382,16 @@ public sealed partial class MainPage : Page
 - ページに対してキャッシュが有効になっているので、 `MainPage` ユーザーがページに戻ったときに新しいが構築されることはありません。
 - クラスへの参照 `MainPage` は、フィールドに格納され `static` `Instance` ます。 これは、クラスで定義されているメソッドを他のクラスが呼び出すメカニズムを提供するためのものです `MainPage` 。
 - プロパティは、 `FolderPath` ノートデータが格納されるデバイス上のパスに初期化されます。
-- クラスは、 `NotesPage` Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) XAML で定義されている派生ページであり、拡張メソッドを使用して構築され、に変換された `FrameworkElement` 後、 `CreateFrameworkElement` クラスのコンテンツとして設定され `MainPage` ます。
+- `NotesPage`オブジェクトが作成されます。これは Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) XAML で定義された派生ページであり、その親は前に作成されたオブジェクトに設定され `Xamarin.Forms.Application` ます。
+- オブジェクトは、 `NotesPage` 拡張メソッドを使用してに変換され、 `FrameworkElement` `CreateFrameworkElement` クラスのコンテンツとして設定され `MainPage` ます。
+- `Parent` `NotesPage` メモリリークを防ぐために、オブジェクトのプロパティはに設定されてい `null` ます。
 
 コンストラクターが実行されると `MainPage` 、 Xamarin.Forms `NotesPage` 次のスクリーンショットに示すように、クラスで定義されている UI が表示されます。
 
 [![スクリーンショットには、メモと日付/時刻を含むノートページが表示されます。](native-forms-images/uwp-notespage.png "::: No loc (Xamarin. Forms)::: XAML UI を使用した UWP アプリ")](native-forms-images/uwp-notespage-large.png#lightbox "::: No loc (Xamarin. Forms)::: XAML UI を使用した UWP アプリ")
+
+> [!IMPORTANT]
+> [`ContentPage`](xref:Xamarin.Forms.ContentPage) `ResourceDictionary` `Parent` ページのプロパティがオブジェクトに設定されていれば、すべての派生ページで、アプリケーションレベルで定義されたリソースを使用でき `Application` ます。
 
 たとえばをタップするなど、UI と対話すると、実行中の **+** [`Button`](xref:Xamarin.Forms.Button) 分離コードに次のイベントハンドラーが生成され `NotesPage` ます。
 
@@ -332,9 +409,12 @@ public void NavigateToNoteEntryPage(Note note)
 {
     noteEntryPage = new Notes.UWP.Views.NoteEntryPage
     {
-        BindingContext = note
+        BindingContext = note,
+        // Set the parent so that the app-level resource dictionary can be located.
+        Parent = Xamarin.Forms.Application.Current
     };
     this.Frame.Navigate(noteEntryPage);
+    noteEntryPage.Parent = null;
 }
 ```
 

@@ -10,12 +10,12 @@ ms.date: 06/28/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3c75fc9add49e3754241c129a8243d33095c3abf
-ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
+ms.openlocfilehash: cc080b9c69614b2e743e32139622502250de3684
+ms.sourcegitcommit: 9ab5a1e346e20f54e8b7aa655fd3d117b43978cc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94590377"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99223699"
 ---
 # <a name="no-locxamarinforms-and-azure-services"></a>Xamarin.Forms および Azure サービス
 
@@ -23,7 +23,7 @@ ms.locfileid: "94590377"
 
 Azure Cosmos DB ドキュメントデータベースは、JSON ドキュメントへの低待機時間のアクセスを提供する NoSQL データベースであり、シームレスなスケールとグローバルレプリケーションを必要とするアプリケーション向けに、高速で可用性の高いスケーラブルなデータベースサービスを提供します。 この記事では、Azure Cosmos DB .NET Standard クライアントライブラリを使用して、Azure Cosmos DB ドキュメントデータベースをアプリケーションに統合する方法について説明し Xamarin.Forms ます。
 
-## <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-no-locxamarinforms"></a>[Azure Notification Hubs とでプッシュ通知を送受信する Xamarin.Forms](azure-notification-hub.md)
+## <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-no-locxamarinforms"></a>[Azure Notification Hubs とでプッシュ通知を送受信する Xamarin.Forms](/azure/developer/mobile-apps/notification-hubs-backend-service-xamarin-forms)
 
 Azure Notification Hubs を使用すると、バックエンドアプリケーションが1つのハブと通信できるように、プラットフォーム間で通知を一元化することができます。 Azure Notification Hubs は、複数のプラットフォームプロバイダーにプッシュ通知を配信します。 この記事では、Azure Notification Hubs をアプリケーションに統合する方法について説明し Xamarin.Forms ます。
 
