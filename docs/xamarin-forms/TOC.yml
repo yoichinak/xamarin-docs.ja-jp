@@ -196,23 +196,6 @@ items:
             href: app-fundamentals/custom-renderer/hybridwebview.md
           - name: ページの実装
             href: app-fundamentals/custom-renderer/view.md
-          - name: ビデオ プレーヤーの実装
-            href: app-fundamentals/custom-renderer/video-player/index.md
-            items:
-              - name: プラットフォーム ビデオ プレーヤーの作成
-                href: app-fundamentals/custom-renderer/video-player/player-creation.md
-              - name: Web ビデオの再生
-                href: app-fundamentals/custom-renderer/video-player/web-videos.md
-              - name: プレーヤーへのビデオ ソースのバインド
-                href: app-fundamentals/custom-renderer/video-player/source-bindings.md
-              - name: アプリケーション リソース ビデオの読み込み
-                href: app-fundamentals/custom-renderer/video-player/loading-resources.md
-              - name: デバイスのビデオ ライブラリへのアクセス
-                href: app-fundamentals/custom-renderer/video-player/accessing-library.md
-              - name: カスタムのビデオ トランスポート コントロール
-                href: app-fundamentals/custom-renderer/video-player/custom-transport.md
-              - name: ビデオのカスタム位置
-                href: app-fundamentals/custom-renderer/video-player/custom-positioning.md
       - name: データ バインディング
         href: app-fundamentals/data-binding/index.md
         items:
@@ -932,7 +915,7 @@ items:
           - name: Azure Cosmos DB ドキュメント データベース
             href: data-cloud/azure-services/azure-cosmosdb.md
           - name: Azure Notification Hubs
-            href: data-cloud/azure-services/azure-notification-hub.md
+            href: /azure/developer/mobile-apps/notification-hubs-backend-service-xamarin-forms
           - name: Azure ストレージ
             href: data-cloud/azure-services/azure-storage.md
           - name: Azure Search
