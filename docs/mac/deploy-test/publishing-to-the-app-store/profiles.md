@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 04/12/2017
-ms.openlocfilehash: 0bde2ee6451b7160ac7c1655e705984e53c82ff4
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: de87e650f68e5a327564c0a4216bee2b3e04fe2f
+ms.sourcegitcommit: 513feb0e07558766e3de4a898e53d56b27c20559
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939010"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98697606"
 ---
 # <a name="provisioning-profiles-for-xamarinmac-apps"></a>Xamarin.Mac アプリのプロビジョニング プロファイル
 
@@ -25,7 +25,7 @@ ms.locfileid: "86939010"
 開発プロビジョニング プロファイルを使用すると、そのプロファイルで設定されている特定のコンピューター上で、Mac App Store を対象としたアプリをテストすることができます。 これは、iCloud やプッシュ通知などの macOS の機能を使用する場合に特に関係します。
 
 > [!NOTE]
-> 開発者は、開発プロビジョニング プロファイルを作成する前に、Mac 開発証明書が既に作成されている必要があります。 このスクリーンショットに示すように詳細を完了し、ビルドを作成するために使用できる**開発プロビジョニング プロファイル**を生成します。 有効な Mac 開発証明書を **[証明書]** ボックスで選択できる必要があり、さらに少なくとも 1 つのシステムがテスト用に登録されている必要があります。
+> 開発者は、開発プロビジョニング プロファイルを作成する前に、Mac 開発証明書が既に作成されている必要があります。 このスクリーンショットに示すように詳細を完了し、ビルドを作成するために使用できる **開発プロビジョニング プロファイル** を生成します。 有効な Mac 開発証明書を **[証明書]** ボックスで選択できる必要があり、さらに少なくとも 1 つのシステムがテスト用に登録されている必要があります。
 
 次の手順で行います。
 
@@ -41,15 +41,15 @@ ms.locfileid: "86939010"
 4. このプロファイルを使用できるコンピューターを選択し、 **[続行]** をクリックします。
 
     [![許可するコンピューターの選択](profiles-images/certif17.png)](profiles-images/certif17.png#lightbox)
-5. 次に、**プロファイル名**を入力し、 **[生成]** ボタンをクリックします。
+5. 次に、**プロファイル名** を入力し、 **[生成]** ボタンをクリックします。
 
-    [![プロファイルの生成](profiles-images/certif18.png)](profiles-images/certif18.png#lightbox)
+    [![スクリーンショットには、プロビジョニング ウィンドウへのプロファイル名の入力が示されています。](profiles-images/certif18.png)](profiles-images/certif18.png#lightbox)
 6. **[ダウンロード]** ボタンをクリックし、新しいプロファイルをダウンロードします。
 
-    [![プロファイルのダウンロード](profiles-images/certif19.png)](profiles-images/certif19.png#lightbox)
-7. Mac の**システム環境設定**アプリケーションの [Profiles Preferences]\(プロファイルの設定\) ウィンドウに開発プロビジョニング プロファイルがインストールされます。
+    [![スクリーンショットには、プロファイルの [ダウンロード] ボタンが示されています。](profiles-images/certif19.png)](profiles-images/certif19.png#lightbox)
+7. Mac の **システム環境設定** アプリケーションの [Profiles Preferences]\(プロファイルの設定\) ウィンドウに開発プロビジョニング プロファイルがインストールされます。
 
-    [![プロファイルのインストール](profiles-images/certif20.png)](profiles-images/certif20.png#lightbox)
+    [![スクリーンショットには、インストールの確認ダイアログ ボックスが示されています。](profiles-images/certif20.png)](profiles-images/certif20.png#lightbox)
 8. [プロファイルの設定] ウィンドウにインストールされているすべてのプロファイルが表示されます。
 
     [![すべてのインストールされているプロファイルの表示](profiles-images/image47.png)](profiles-images/image47.png#lightbox)
@@ -74,13 +74,13 @@ Mac App Store に送信するパッケージをビルドするには、実稼働
 3. プロファイルに署名するための会社 ID を選択し、 **[続行]** ボタンをクリックします。
 
     [![会社 ID の選択](profiles-images/certif23.png)](profiles-images/certif23.png#lightbox)
-4. **プロファイル名**を入力し、 **[生成]** ボタンをクリックします。
+4. **プロファイル名** を入力し、 **[生成]** ボタンをクリックします。
 
     [![プロファイルの生成](profiles-images/certif24.png)](profiles-images/certif24.png#lightbox)
 5. **[ダウンロード]** をクリックして、プロビジョニング プロファイル ファイル (拡張子 `.provisionprofile`) を取得します。
 
     [![プロファイルのダウンロード](profiles-images/certif25.png)](profiles-images/certif25.png#lightbox)
-6. **Xcode オーガナイザー**にドラッグするか、ダブルクリックしてインストールします。 プロファイルは、Xcode オーガナイザーに表示されます。
+6. **Xcode オーガナイザー** にドラッグするか、ダブルクリックしてインストールします。 プロファイルは、Xcode オーガナイザーに表示されます。
 
     [![プロファイルのインストール](profiles-images/image51.png)](profiles-images/image51.png#lightbox)
 7. プロビジョニング プロファイルも一覧に表示されます。

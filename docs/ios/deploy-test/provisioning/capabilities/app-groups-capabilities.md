@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2017
-ms.openlocfilehash: f98603c2ffac35362c6697e4806bf4b2daf44710
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 3f4da85a02f4e5ae303363998858395238273813
+ms.sourcegitcommit: e27e29c14b783263e063baaa65d4eecb8dd31f57
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73030175"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98628957"
 ---
 # <a name="app-group-capabilities-in-xamarinios"></a>Xamarin.iOS のアプリ グループ機能
 
@@ -28,11 +28,11 @@ _アプリケーションに機能を追加するには、多くの場合、追�
 
 共有の場所は、[アプリ グループ](https://developer.apple.com/library/content/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19)を使用して構成します。アプリ グループは、[Apple Developer Center](https://developer.apple.com/account/) の **[Certificates, Identifiers & Profiles]** \(証明書、ID、プロファイル\) セクションで構成します。 また、この値は、各プロジェクトの各 Entitlements.plist で参照する必要があります。
 
-アプリ グループには識別子があります。通常、この識別子は、group. プレフィックスを含むバンドル ID です。 たとえば、バンドル ID `com.xamarin.WatchSettings` のアプリ グループは `group.com.xamarin.WatchSettings`です。
+アプリ グループには識別子があります。通常、この識別子は、group.  プレフィックスを含むバンドル ID です。 たとえば、バンドル ID `com.xamarin.WatchSettings` のアプリ グループは `group.com.xamarin.WatchSettings` です。
 
 新しいアプリ グループを作成するには、次の手順を実行します。
 
-1. Apple の  [iOS Developer Center](https://developer.apple.com/account/) にアクセスし、 **[Account]\(アカウント\)** を開いてログインします。
+1. Apple の [iOS Developer Center](https://developer.apple.com/account/) にアクセスし、**[Account]** \(アカウント\) を開いてログインします。
 2. **[Certificates, IDs & Profiles]** \(証明書、ID、およびプロファイル\) を選択します。
 3. **[Identifiers]** \(ID\) で **[App Groups]** \(アプリ グループ\) を選択し、 **+** ボタンをクリックして新しいグループを作成します。
 4. 新しいグループの **[Name]** \(名前\) と **[Identifier]** \(ID\) を入力し、 **[Continue]** \(続行\) ボタンをクリックします。 
@@ -47,7 +47,7 @@ _アプリケーションに機能を追加するには、多くの場合、追�
 
 次の手順で行います。
 
-1. Apple の  [iOS Developer Center](https://developer.apple.com/account/) にアクセスし、Apple Developer アカウントでログインします。
+1. Apple の [iOS Developer Center](https://developer.apple.com/account/) にアクセスし、Apple Developer アカウントでログインします。
 2. **[Program Resources]** \(プログラム リソース\) メニューから **[Certificates, IDs & Profiles]** \(証明書、ID、およびプロファイル\) を選択します。
 3. **[Identifiers]** \(ID\) で **[App ID]** \(アプリ ID\) を選択し、 **+** ボタンをクリックして新しい ID を作成します。
 4. App ID の [Name]\(名前\) を入力し、[Explicit App ID]\(明示的な App ID\) を指定します。
@@ -59,11 +59,11 @@ _アプリケーションに機能を追加するには、多くの場合、追�
 7. **[Done]** \(完了\) ボタンをクリックして登録したアプリ ID の一覧に戻ります。
 8. 新しく作成したアプリ ID を一覧から選択し、 **[Edit]** \(編集\) ボタンをクリックします。
 
-    ![一覧からアプリ ID を選択する](app-groups-capabilities-images/image54.png)
+    ![一覧からアプリ ID を選択して編集します。](app-groups-capabilities-images/image54.png)
 
 9. サービスの **[App Group]** \(アプリ グループ\) で **[Edit]** \(編集\) ボタンをクリックします。
 
-    ![一覧からアプリ ID を選択する](app-groups-capabilities-images/image55.png)
+    ![アプリ ID を選択して編集します。](app-groups-capabilities-images/image55.png)
 
 10. 上の手順で作成したアプリ グループを選択し、 **[Continue]** \(続行\) ボタンをクリックします。
 
@@ -78,6 +78,6 @@ _アプリケーションに機能を追加するには、多くの場合、追�
 
 * アプリでフレームワークの名前空間を使用します。
 * アプリに必要な権利を追加します。 必要な権利とその追加方法については、[権利の使用](~/ios/deploy-test/provisioning/entitlements.md)に関するガイドを参照してください。
-* アプリの **[iOS バンドル署名]** で、 **[カスタムの権利]** が **Entitlements.plist** に設定されていることを確認します。 これは、デバッグと iOS シミュレーターのビルドに対する既定の設定では _"ありません"_  。
+* アプリの **[iOS バンドル署名]** で、 **[カスタムの権利]** が **Entitlements.plist** に設定されていることを確認します。 これは、デバッグと iOS シミュレーターのビルドに対する既定の設定では _ありません_。
 
 App Services で問題が発生した場合は、メイン ガイドの[トラブルシューティング](~/ios/deploy-test/provisioning/capabilities/index.md)のセクションを参照してください。

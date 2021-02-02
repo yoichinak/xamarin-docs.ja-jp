@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/06/2018
-ms.openlocfilehash: bff3b2a7c1e273c7a03ae341dd663ebc722791eb
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 79e700f17f365895cd2cdaa015f4a8fe9e95bb79
+ms.sourcegitcommit: e27e29c14b783263e063baaa65d4eecb8dd31f57
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571741"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98628853"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>Xamarin.iOS の機能の使用
 
 _アプリケーションに機能を追加するには、多くの場合、追加のプロビジョニングの設定が必要です。このガイドでは、すべての機能に必要な設定について説明します。_
 
-Apple は、機能を拡張し、iOS アプリで実行可能な操作の範囲を広げる手段として、_アプリ サービス_としてよく知られる_機能_を開発者に提供しています。 この機能を使用して、開発者はアプリケーションにより緊密に統合されたプラットフォーム機能を追加することができます。これにより、Siri などのアプリの追加デバイス サービスからの金融取引の開始が可能になります。
+Apple は、機能を拡張し、iOS アプリで実行可能な操作の範囲を広げる手段として、_アプリ サービス_ としてよく知られる _機能_ を開発者に提供しています。 この機能を使用して、開発者はアプリケーションにより緊密に統合されたプラットフォーム機能を追加することができます。これにより、Siri などのアプリの追加デバイス サービスからの金融取引の開始が可能になります。
 これらの機能は、Xamarin.iOS プロジェクトで使用できます。 サービスの完全なリストを以下に示します。
 
 - アプリ グループ
@@ -76,13 +76,13 @@ Apple は、機能を拡張し、iOS アプリで実行可能な操作の範囲�
 
 機能は、Visual Studio for Mac の **Entitlements.plist** に追加されます。 機能を追加するには次の手順に従います。
 
-1. iOS アプリケーションの **Info.plist** ファイルを開き、コンボ ボックスから **[Automatically Provisioning]** スキームと自分の**チーム**を選択します。 不明な点がある場合は、「[Automatic Provisioning](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md)」(自動プロビジョニング) ガイドの手順を参照してください。
+1. iOS アプリケーションの **Info.plist** ファイルを開き、コンボ ボックスから **[Automatically Provisioning]** スキームと自分の **チーム** を選択します。 不明な点がある場合は、「[Automatic Provisioning](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md)」(自動プロビジョニング) ガイドの手順を参照してください。
 
     ![[Automatically manage signing] オプション](images/manage-signing.png)
 
 2. **Entitlements.plist** ファイルを開き、追加する機能を選択します。
 
-    ![entitlements.plist ファイルに機能を追加する](images/image17.png)
+    ![スクリーンショットには、Entitlements.plist ファイルの内容が示されています。](images/image17.png)
 
     機能を選択すると、次の 2 つが実行されます。
     - その機能をアプリ ID に追加する
@@ -90,7 +90,7 @@ Apple は、機能を拡張し、iOS アプリで実行可能な操作の範囲�
 
     Visual Studio for Mac では、これらのタスクが実行されたときに次の成功メッセージを表示して通知します。
 
-    ![entitlements.plist ファイルに機能を追加する](images/image18.png)
+    ![スクリーンショットには、自動プロビジョニングが完了したときの通知が示されています。](images/image18.png)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -100,7 +100,7 @@ Apple は、機能を拡張し、iOS アプリで実行可能な操作の範囲�
 
 2. **[プロジェクト]、[Provisioning Properties…]\(プロパティのプロビジョニング...\)** の順に選択し、プロビジョニング オプションを開きます。
 
-3. コンボ ボックスから **[Automatically Provisioning]\(自動プロビジョニング\)** と自分の**チーム**を選択します。 不明な点がある場合は、「[Automatic Provisioning](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md)」(自動プロビジョニング) ガイドの手順を参照してください。
+3. コンボ ボックスから **[Automatically Provisioning]\(自動プロビジョニング\)** と自分の **チーム** を選択します。 不明な点がある場合は、「[Automatic Provisioning](~/ios/get-started/installation/device-provisioning/automatic-provisioning.md)」(自動プロビジョニング) ガイドの手順を参照してください。
 
     ![[Automatically manage signing] オプション](images/manage-signing-vs.png)
 
@@ -208,7 +208,7 @@ Developer Center の使用には 2 ステップのプロセスがあります。
 - プロビジョニング プロファイルとアプリ ID がインストールされており、アプリの **Info.plist** (Xamarin プロジェクト内にある) で構成済みのアプリ ID のいずれかが使用されていることを確認します。
 - アプリの **Entitlements.plist** ファイル (Xamarin プロジェクト内にある) で正しいサービスが有効になっていることを確認します。
 - 適切な秘密キーが info.plist に設定されていることを確認します。
-- アプリの **[iOS バンドル署名]** で、 **[カスタムの権利]** が **Entitlements.plist** に設定されていることを確認します。 これは、デバッグと iOS シミュレーターのビルドに対する既定の設定では_ありません_。
+- アプリの **[iOS バンドル署名]** で、 **[カスタムの権利]** が **Entitlements.plist** に設定されていることを確認します。 これは、デバッグと iOS シミュレーターのビルドに対する既定の設定では _ありません_。
 
 <a name="summary"></a>
 

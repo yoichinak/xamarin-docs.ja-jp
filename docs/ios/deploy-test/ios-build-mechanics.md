@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 52a6c3c996e2d5df204b6d0df40368bc835e990f
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 90e14fdd81168563e105e62d9aefd81fdc5f0168
+ms.sourcegitcommit: e27e29c14b783263e063baaa65d4eecb8dd31f57
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936774"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98628801"
 ---
 # <a name="ios-build-mechanics"></a>iOS ビルドのしくみ
 
@@ -44,7 +44,7 @@ Visual Studio 内で診断 MSBuild 出力を有効にするには:
 
 1. **[ツール]、[出力]** の順にクリックします。
 2. 左側のツリー ビューで、 **[プロジェクトおよびソリューション]、[ビルド/実行]** の順に選択します。
-3. 右側のパネルで、*MSBuild ビルド出力の詳細度ドロップダウン*を **[診断]** に設定します。[![MSBuild ビルド出力の詳細度を設定する](ios-build-mechanics-images/image2-vs.png)](ios-build-mechanics-images/image2-vs.png#lightbox)
+3. 右側のパネルで、*MSBuild ビルド出力の詳細度ドロップダウン* を **[診断]** に設定します。[![MSBuild ビルド出力の詳細度を設定する](ios-build-mechanics-images/image2-vs.png)](ios-build-mechanics-images/image2-vs.png#lightbox)
 4. **[OK]** をクリックします。
 5. パッケージから不要な要素を取り除き、再ビルドします。
 6. 診断出力は [出力] パネルに表示されます。
@@ -67,7 +67,7 @@ Total time: 1554 ms
 
 Xamarin ツールは技術的には、OS X 10.10 Yosemite 以降を実行できるあらゆる Mac で動作します。 ただし、Mac の性能によってはビルドに時間がかかり、開発が遅れることがあります。
 
-接続のない状態では、Windows の Visual Studio は C# 段階のみを実行し、リンクも AOT コンパイルも実行せず、アプリを  _.app_  バンドルにパッケージ化せず、アプリ バンドルに署名しません。 (C# コンパイル段階がパフォーマンス上のボトルネックになることはまれです。)Visual Studio for Mac の Mac ビルド ホストで直接ビルドし、ビルドが遅くなっているパイプラインの場所を特定します。
+接続のない状態では、Windows の Visual Studio は C# 段階のみを実行し、リンクも AOT コンパイルも実行せず、アプリを _.app_ バンドルにパッケージ化せず、アプリ バンドルに署名しません。 (C# コンパイル段階がパフォーマンス上のボトルネックになることはまれです。)Visual Studio for Mac の Mac ビルド ホストで直接ビルドし、ビルドが遅くなっているパイプラインの場所を特定します。
 
 また、動作を遅くする一般的な原因の 1 つに、Windows コンピューターと Mac ビルド ホストの間のネットワーク接続があります。 この原因には、ネットワーク上の物理的妨害、無線接続の使用、飽和状態のコンピューターを通過すること (Mac-in-the-cloud サービスなど) などが挙げられます。
 
@@ -97,7 +97,7 @@ Apple は iOS 開発用のシミュレーターを提供しており、互換性
 
 次のスクリーンショットでは、iOS オプションでシミュレーターに前述のオプションを設定している様子を確認できます。
 
-[![オプションを設定する](ios-build-mechanics-images/image3.png)](ios-build-mechanics-images/image3.png#lightbox)
+[![スクリーンショットには、リンカーの動作、追加 mtouch 引数、PNG 画像の最適化などのプロジェクト オプションが示されています。](ios-build-mechanics-images/image3.png)](ios-build-mechanics-images/image3.png#lightbox)
 
 ## <a name="device-tricks"></a>デバイス関連のヒント
 
@@ -125,7 +125,7 @@ iOS アプリを配置するとき、さまざまなビルド構成が与えら�
   - 1 つのアーキテクチャ (ARM64 など) のビルドは FAT バイナリ (ARMv7 + ARM64 など) より速くなります。
   - デバッグ時は PNG ファイルの最適化を避けます。
   - すべてのアセンブリをリンクすることを検討します。 すべてのアセンブリを最適化します。 
-  -  `--dsym=false` を利用し、デバッグ シンボルの作成を無効にします。 ただし、これを無効にすると、アプリをビルドしたそのコンピューターでのみ、かつ、アプリが取り除かれなかった場合にのみ、クラッシュ レポートにシンボル名を付加できます。
+  - `--dsym=false` を利用し、デバッグ シンボルの作成を無効にします。 ただし、これを無効にすると、アプリをビルドしたそのコンピューターでのみ、かつ、アプリが取り除かれなかった場合にのみ、クラッシュ レポートにシンボル名を付加できます。
 
 避けるべきこと:
 
@@ -148,7 +148,7 @@ iOS アプリを配置するとき、さまざまなビルド構成が与えら�
 
 次のスクリーンショットでは、iOS オプションでシミュレーターに前述のオプションを設定している様子を確認できます。
 
-[![オプションを設定する](ios-build-mechanics-images/image4.png)](ios-build-mechanics-images/image4.png#lightbox)
+[![スクリーンショットには、リンカーの動作、サポートされているアーキテクチャ、その他の設定などのプロジェクト オプションが示されています。](ios-build-mechanics-images/image4.png)](ios-build-mechanics-images/image4.png#lightbox)
 
 ## <a name="using-the-linker"></a>リンカーを使用する
 

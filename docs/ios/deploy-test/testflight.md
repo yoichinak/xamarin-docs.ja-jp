@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 35adaf4a5cf9ce103cb36320692ad8307b9d1354
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f2aa56982df0a2ec27b677dbe7d12ec9c3289041
+ms.sourcegitcommit: 424eaef56fd2933c98e72f1d3e7ac71730fe4835
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91564122"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98758085"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>TestFlight を使用して Xamarin.iOS アプリを配布する
 
@@ -37,9 +37,14 @@ TestFlight でテストできるのは iOS 8.0 以降のアプリだけです。
 
 ## <a name="provisioning"></a>プロビジョニング
 
-TestFlight でビルドをテストするには、新しいベータ資格で "*App Store 配布プロファイル*" を作成する必要があります。 この資格により TestFlight でのベータ テストが可能になり、すべての**新しい** App Store 配布プロファイルにこの資格が自動的に組み込まれます。 新しいプロファイルの生成手順については、「[Creating a Distribution Profile](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#provisioningprofile)」(配布プロファイルの作成) ガイドをご覧ください。
+TestFlight でビルドをテストするには、新しいベータ資格で "**App Store 配布プロファイル**" を作成する必要があります。 この資格により TestFlight でのベータ テストが可能になり、すべての **新しい** App Store 配布プロファイルにこの資格が自動的に組み込まれます。 新しいプロファイルの生成手順については、「[Creating a Distribution Profile](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#provisioningprofile)」(配布プロファイルの作成) ガイドをご覧ください。
 
 [Xcode でビルドを検証する](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)ときに、配布プロファイルにベータ資格が含まれることを確認できます (下図参照)。
+
+1. アプリをアーカイブした後に Mac ビルド ホストで XCode を開きます
+2. **[ウィンドウ] > [オーガナイザー]** メニューを選択します
+3. 左側にある **[アーカイブ]** を選択します
+4. 検証するアーカイブを選択し、 **[検証]** ボタンをクリックします
 
 [![Apple へのアプリの提出](testflight-images/validate-build.png)](testflight-images/validate-build.png#lightbox)
 
@@ -78,10 +83,10 @@ TestFlight でビルドをテストするには、新しいベータ資格で "*
 [![アプリの Info.plist](testflight-images/infoplist.png)](testflight-images/infoplist.png#lightbox)
 [![iTunes Connect のフォーム](testflight-images/newiosapp.png)](testflight-images/newiosapp.png#lightbox)
 
-- **[Name]\(名前\)** — アプリ バンドルの設定に使われるわかりやすい名前。 `Info.plist` の**アプリケーション名**エントリと完全に一致する必要があります。
+- **[Name]\(名前\)** — アプリ バンドルの設定に使われるわかりやすい名前。 `Info.plist` の **アプリケーション名** エントリと完全に一致する必要があります。
 - **[Primary Language]\(第一言語\)** — アプリ内で使われるベース言語。 通常はユーザーが使っている言語です。
 - **[Bundle ID]\(バンドル ID\)** — 開発者アカウントに作成されているすべてのアプリ ID が一覧表示されるドロップダウン メニュー。
-  - **[Bundle ID Suffix]\(バンドル ID サフィックス\)** — ワイルド カード バンドル ID (上の例のように * で終わる ID) を選んだ場合、バンドル ID サフィックスの入力を求めるボックスが追加表示されます。 上の例では、**バンドル ID** が `mobi.chkn.*`、サフィックスが **PageView** です。 これらを合わせて、`Info.plist` の**バンドル ID** が作成されます。
+  - **[Bundle ID Suffix]\(バンドル ID サフィックス\)** — ワイルド カード バンドル ID (上の例のように * で終わる ID) を選んだ場合、バンドル ID サフィックスの入力を求めるボックスが追加表示されます。 上の例では、**バンドル ID** が `mobi.chkn.*`、サフィックスが **PageView** です。 これらを合わせて、`Info.plist` の **バンドル ID** が作成されます。
 - **[Version]\(バージョン\)** — アップロードされるアプリのバージョン番号。 これは開発者が選びます。
 - **[SKU]\(SKU\)** — SKU は、ユーザーには示されないアプリの一意 ID です。 製品 ID と同じようなものと考えることができます。 上の例では、日付とその日付のバージョン番号にしてあります。
 
@@ -105,7 +110,7 @@ iTunes Connect レコードが作成されたら、新しいビルドをアッ�
 
 ### <a name="sign-and-distribute-your-app"></a>アプリに署名して配布する
 
- アーカイブを作成すると**アーカイブ ビュー**が自動的に開き、アーカイブされているすべてのプロジェクトがソリューション別にグループ化されて表示されます。 アプリに署名して配布の準備をするには、 **[署名と配布...]** を選びます (下図参照)。
+ アーカイブを作成すると **アーカイブ ビュー** が自動的に開き、アーカイブされているすべてのプロジェクトがソリューション別にグループ化されて表示されます。 アプリに署名して配布の準備をするには、 **[署名と配布...]** を選びます (下図参照)。
 
 [![アーカイブを作成するとアーカイブ ビューが自動的に開きます](testflight-images/archive-view.png)](testflight-images/archive-view.png#lightbox)
 
@@ -163,7 +168,7 @@ TestFlight を使い始めるには、アプリの **[Prerelease]\(プレリリ�
 - プライバシー ポリシー URL — 会社のプライバシー ポリシーに関する情報を提供する URL。
 - フィードバック メール アドレス。
 
-このメタデータは、内部テスト担当者に対しては**必須ではありません**が、外部テスト担当者に対しては**必須である**ことに注意してください。
+このメタデータは、内部テスト担当者に対しては **必須ではありません** が、外部テスト担当者に対しては **必須である** ことに注意してください。
 
 <a name="beta-testing"></a>
 
@@ -173,7 +178,7 @@ TestFlight を使い始めるには、アプリの **[Prerelease]\(プレリリ�
 
 [![[TestFlight Beta Testing] スイッチをオンにします](testflight-images/turn-on-testing.png)](testflight-images/turn-on-testing.png#lightbox)
 
-各ビルドは、[TestFlight Beta Testing]\(TestFlight ベータ テスト\) をオンにしてから **60 日**間アクティブになります。 各ビルドの残り日数は、 **[Test Information]\(テスト情報\)** ページで確認できます。
+各ビルドは、[TestFlight Beta Testing]\(TestFlight ベータ テスト\) をオンにしてから **60 日** 間アクティブになります。 各ビルドの残り日数は、 **[Test Information]\(テスト情報\)** ページで確認できます。
 
 [![テスト情報ページ](testflight-images/daysleft.png)](testflight-images/daysleft.png#lightbox)
 

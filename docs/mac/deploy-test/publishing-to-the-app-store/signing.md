@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 84a764054567bc504b3432a503a1072362e374dd
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 7e2d676b577e835bafe5cdd8d6bc48229a1a1a06
+ms.sourcegitcommit: 513feb0e07558766e3de4a898e53d56b27c20559
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938490"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98697580"
 ---
 # <a name="signing-xamarinmac-apps-with-a-developer-id"></a>開発者 ID で Xamarin.Mac アプリに署名する
 
@@ -34,9 +34,9 @@ Apple の Web サイトで、「[Developer ID and Gatekeeper](https://developer.
 
 アプリを構築する際、開発者は両方の証明書を使用するよう求められます。
 
- [![キーチェーン アクセスの許可](signing-images/image57.png)](signing-images/image57.png#lightbox)
+ [![スクリーンショットには、codesign のアクセスの許可ダイアログ ボックスが示されています。](signing-images/image57.png)](signing-images/image57.png#lightbox)
 
- [![キーチェーン アクセスの許可](signing-images/image58.png)](signing-images/image58.png#lightbox)
+ [![スクリーンショットには、product build のアクセスの許可ダイアログ ボックスが示されています。](signing-images/image58.png)](signing-images/image58.png#lightbox)
 
 アプリケーションがビルドされると、開発者はプロジェクトを右クリックし、 **[Open Containing Folder]\(含まれているフォルダーを開く\)** を選択して、パッケージ ファイルを (`bin/Release` ディレクトリから) 検索することができます。 このパッケージ ファイルには、アプリケーションのインストーラーが含まれているので、任意の macOS ユーザーにインストール用に配布することができます。
 

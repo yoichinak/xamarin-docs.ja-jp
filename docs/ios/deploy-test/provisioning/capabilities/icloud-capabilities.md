@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2017
-ms.openlocfilehash: 1932bc8bf5362a284ed62aa241170264826baa9e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 22f047871d203aa8604dd3331c4397c7607e332e
+ms.sourcegitcommit: e27e29c14b783263e063baaa65d4eecb8dd31f57
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84567555"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98628879"
 ---
 # <a name="icloud-capabilities-in-xamarinios"></a>Xamarin.iOS の iCloud 機能
 
@@ -20,7 +20,7 @@ _アプリケーションに機能を追加するには、多くの場合、追�
 
 iCloud は、iOS ユーザーに自分のコンテンツを格納し、デバイス間で共有するための便利で簡単な方法を提供します。 開発者が iCloud を使用してユーザーにストレージの手段を提供するには、次の 4 つの方法があります:Key-Value ストレージ、UIDocument ストレージ、CoreData の各方法の他に、CloudKit を直接使用して個々のファイルおよびディレクトリ用にストレージを提供する方法。 これらの詳細については、[iCloud の概要](~/ios/data-cloud/introduction-to-icloud.md)に関するガイドを参照してください。
 
-_コンテナー_が原因で、iCloud 機能をアプリケーションに追加するのは、他の App Services よりも少し難しくなっています。 コンテナーは、iCloud でアプリに関する情報を格納するために使用され、1 つの iCloud アカウントに含まれているすべての情報を、ユーザーの iOS デバイス上でサンド ボックスのように分離することができます。 コンテナーの詳細については、[CloudKit の概要](~/ios/data-cloud/intro-to-cloudkit.md)に関するガイドを参照してください。
+_コンテナー_ が原因で、iCloud 機能をアプリケーションに追加するのは、他の App Services よりも少し難しくなっています。 コンテナーは、iCloud でアプリに関する情報を格納するために使用され、1 つの iCloud アカウントに含まれているすべての情報を、ユーザーの iOS デバイス上でサンド ボックスのように分離することができます。 コンテナーの詳細については、[CloudKit の概要](~/ios/data-cloud/intro-to-cloudkit.md)に関するガイドを参照してください。
 
 > [!IMPORTANT]
 > Apple からは、開発者が欧州連合の一般データ保護規則 (GDPR) を適切に処理するための[ツールが提供](https://developer.apple.com/support/allowing-users-to-manage-data/)されています。
@@ -45,13 +45,13 @@ Developer Center から新しいアプリをプロビジョニングするとき
     
     ![iCloud コンテナー画面](icloud-capabilities-images/image23.png)
 
-3. iCloud コンテナーの**説明**と一意の**識別子**を入力します。 
+3. iCloud コンテナーの **説明** と一意の **識別子** を入力します。 
     
-    ![iCloud コンテナーの登録画面](icloud-capabilities-images/image24.png)
+    ![スクリーンショットには、iCloud コンテナーの登録が示されています。](icloud-capabilities-images/image24.png)
 
 4. **[Continue]\(続行\)** を押して情報が正しいことを確認し、 **[Register]\(登録\)** を押して iCloud コンテナーを作成します。  
     
-    ![iCloud コンテナーの登録画面](icloud-capabilities-images/image25.png)
+    ![スクリーンショットには、iCloud コンテナーの確認が示されています。](icloud-capabilities-images/image25.png)
 
 新しい App ID を作成し、それにコンテナーを追加するには、次の操作を行います。
 
@@ -107,6 +107,6 @@ iCloud の使用に関する詳細は、次のガイドを参照してくださ�
 
 * アプリでフレームワークの名前空間を使用します。
 * アプリに必要な権利を追加します。 必要な権利とその追加方法については、[権利の使用](~/ios/deploy-test/provisioning/entitlements.md)に関するガイドを参照してください。
-* アプリの  **[iOS バンドル署名]** で、 **[カスタムの権利]** が **Entitlements.plist** に確実に設定されているようにします。 これは、デバッグと iOS シミュレーターのビルドに対する既定の設定では _"ありません"_  。
+* アプリの **[iOS バンドル署名]** で、 **[カスタムの権利]** が **Entitlements.plist** に設定されていることを確認します。 これは、デバッグと iOS シミュレーターのビルドに対する既定の設定では _ありません_。
 
 App Services で問題が発生した場合は、メイン ガイドの[トラブルシューティング](~/ios/deploy-test/provisioning/capabilities/index.md)のセクションを参照してください。

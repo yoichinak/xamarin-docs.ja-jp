@@ -7,24 +7,24 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 2f70dd3b18c36d478548672bb78d329cb2a4c9ab
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: cac0d9bc6d4ac2c07bcfd09275ff3f78e0e18b91
+ms.sourcegitcommit: e27e29c14b783263e063baaa65d4eecb8dd31f57
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938776"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98628840"
 ---
 # <a name="compiling-for-different-devices-in-xamarinios"></a>Xamarin.iOS の各種デバイス向けコンパイル
 
-実行可能ファイルのビルド プロパティは、プロジェクトの **iOS ビルド**のプロパティ ページから設定できます。このページは、プロジェクト名を右クリックし、 **[オプション]、[iOS ビルド]** の順に移動するか (Visual Studio for Mac)、 **[プロパティ]** に移動します (Visual Studio)。
+実行可能ファイルのビルド プロパティは、プロジェクトの **iOS ビルド** のプロパティ ページから設定できます。このページは、プロジェクト名を右クリックし、 **[オプション]、[iOS ビルド]** の順に移動するか (Visual Studio for Mac)、 **[プロパティ]** に移動します (Visual Studio)。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[![プロジェクト iOS ビルドのプロパティ ページ](compiling-for-different-devices-images/image1.png)](compiling-for-different-devices-images/image1.png#lightbox) 
+[![Visual Studio for Mac のプロジェクトのプロジェクト iOS ビルドのプロパティ ページ。](compiling-for-different-devices-images/image1.png)](compiling-for-different-devices-images/image1.png#lightbox) 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![プロジェクト iOS ビルドのプロパティ ページ](compiling-for-different-devices-images/image1a.png)](compiling-for-different-devices-images/image1a.png#lightbox)
+[![Visual Studio のプロジェクトのプロジェクト iOS ビルドのプロパティ ページ。](compiling-for-different-devices-images/image1a.png)](compiling-for-different-devices-images/image1a.png#lightbox)
 
 -----
 
@@ -38,7 +38,7 @@ iOS **SDK バージョン** オプションでは、Apple が公開している 
 
 [![オプション ウィンドウで SDK バージョンを選択する](compiling-for-different-devices-images/sdk-version-sml.png)](compiling-for-different-devices-images/sdk-version.png#lightbox)
 
-**配置ターゲット**設定では、アプリケーションを実行するオペレーティング システムの必要な最小バージョンを選択します。 これはプロジェクトの **Info.plist** ファイルで設定されます。 アプリケーションを実行するために必要なすべての API が含まれる最小のバージョンを選択してください。
+**配置ターゲット** 設定では、アプリケーションを実行するオペレーティング システムの必要な最小バージョンを選択します。 これはプロジェクトの **Info.plist** ファイルで設定されます。 アプリケーションを実行するために必要なすべての API が含まれる最小のバージョンを選択してください。
 
 [![Info.plist ファイルで配置ターゲットを設定する](compiling-for-different-devices-images/deployment-target-sml.png)](compiling-for-different-devices-images/deployment-target.png#lightbox)
 
@@ -58,9 +58,9 @@ LLVM 最適化バックエンド エンジンは、Mono エンジンより簡潔
 
 生成エンジンは、Visual Studio for Mac または Visual Studio の iOS ビルド オプションから有効にすることができます。
 
-[![LLVM を有効にする](compiling-for-different-devices-images/image2.png)](compiling-for-different-devices-images/image2.png#lightbox)
+[![Visual Studio for Mac での L L V M の有効化。](compiling-for-different-devices-images/image2.png)](compiling-for-different-devices-images/image2.png#lightbox)
 
-[![LLVM を有効にする](compiling-for-different-devices-images/image2a.png)](compiling-for-different-devices-images/image2a.png#lightbox)
+[![Visual Studio での L L V M の有効化。](compiling-for-different-devices-images/image2a.png)](compiling-for-different-devices-images/image2a.png#lightbox)
 
 ## <a name="architecture-support"></a>アーキテクチャ サポート
 

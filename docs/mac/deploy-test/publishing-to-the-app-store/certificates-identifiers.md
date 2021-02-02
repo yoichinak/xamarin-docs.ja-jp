@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 12/17/2019
-ms.openlocfilehash: 2b2bfe9925a99c2ba7f1366ea28d5c72e2e1da88
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: ae62a695670f50c5385b9279c6d6de79b6d59fb7
+ms.sourcegitcommit: 513feb0e07558766e3de4a898e53d56b27c20559
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76725542"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98697567"
 ---
 # <a name="certificates-and-identifiers-in-xamarinmac"></a>Xamarin.Mac の証明書と ID
 
@@ -35,7 +35,7 @@ _このガイドでは、Xamarin.Mac アプリを発行するのに必要な証�
 > [!div class="mx-imgBorder"]
 > [![[Certificates]\(証明書\) リンクを選択する](certificates-identifiers-images/devcenter03.png)](certificates-identifiers-images/devcenter03-large.png#lightbox)
 
-ここから、必要に応じて**中間証明書** (Worldwide Developer Relations Certificate Authority と Developer ID Certificate Authority) をダウンロードします (ページの下部にある最後の項目)。 ただし、これらは開発者用に Xcode によって自動設定されるはずです。
+ここから、必要に応じて **中間証明書** (Worldwide Developer Relations Certificate Authority と Developer ID Certificate Authority) をダウンロードします (ページの下部にある最後の項目)。 ただし、これらは開発者用に Xcode によって自動設定されるはずです。
 
 このセクションの残りの部分では、Mac 開発者に関連する次のセクションについて順に説明します。
 
@@ -51,12 +51,12 @@ _このガイドでは、Xamarin.Mac アプリを発行するのに必要な証�
 1. "+" (プラス記号) または **[Register an App ID]\(App ID を登録する\)** を押します。
 
     > [!div class="mx-imgBorder"]
-    > [![[Getting started with App IDs]\(App ID の概要\)](certificates-identifiers-images/appid01.png)](certificates-identifiers-images/appid01-large.png#lightbox)
+    > [![スクリーンショットには、[Certificates, Identifiers and Profiles]\(証明書、ID、プロファイル\) の [Getting started with App IDs]\(App ID の概要\) が示されています。](certificates-identifiers-images/appid01.png)](certificates-identifiers-images/appid01-large.png#lightbox)
 
 1. **[App IDs]** を選択します。
 
     > [!div class="mx-imgBorder"]
-    > [![[Getting started with App IDs]\(App ID の概要\)](certificates-identifiers-images/appid02.png)](certificates-identifiers-images/appid02-large.png#lightbox)
+    > [![スクリーンショットには、[Register a New Identifier]\(新しい識別子の登録\) オプションが示されています。](certificates-identifiers-images/appid02.png)](certificates-identifiers-images/appid02-large.png#lightbox)
 
 1. **[Description]\(説明\)** を入力し、アプリケーションで必要なすべての **[App Services]\(App サービス\)** を選択します。 a. プラットフォームは **macOS** である必要があります。a. **[Description]\(説明\)** を選択します (このポータルでのみ使用)。a. **Info.plist** と一致する **[Bundle ID]\(バンドル ID\)** を入力します。a. アプリで必要な機能を選択します。
 
@@ -97,12 +97,12 @@ _このガイドでは、Xamarin.Mac アプリを発行するのに必要な証�
 1. 追加するコンピューターの **[Name]\(名前\)** と **[UUID]** を入力し、 **[Continue]\(続行\)** ボタンをクリックします。 情報を確認して、 **[Register]\(登録\)** ボタンをクリックします。
 
     > [!div class="mx-imgBorder"]
-    > [![新しいコンピューターの情報を入力する](certificates-identifiers-images/device02.png)](certificates-identifiers-images/device02-large.png#lightbox)
+    > [![スクリーンショットには、名前と UUID を入力できる [Register a New Device]\(新しいデバイスの登録\) ページが示されています。](certificates-identifiers-images/device02.png)](certificates-identifiers-images/device02-large.png#lightbox)
 
 1. 入力したデータをレビューして確認します。
 
     > [!div class="mx-imgBorder"]
-    > [![新しいコンピューターの情報を入力する](certificates-identifiers-images/device03.png)](certificates-identifiers-images/device03-large.png#lightbox)
+    > [![スクリーンショットには、名前と UUID を確認できる [Register a New Device]\(新しいデバイスの登録\) ページが示されています。](certificates-identifiers-images/device03.png)](certificates-identifiers-images/device03-large.png#lightbox)
 
 ## <a name="create-certificates"></a>証明書を作成する
 
@@ -132,19 +132,19 @@ macOS の開発に関連する証明書には、主として次の 5 つの種�
     > [!div class="mx-imgBorder"]
     > [![開発証明書を追加する](certificates-identifiers-images/certif02.png)](certificates-identifiers-images/certif02-large.png#lightbox)
 
-1. _証明書署名リクエスト_をアップロードします。 証明書署名リクエスト ファイル (拡張子 `.certSigningRequest`) は、Mac にローカルに保存されます。 **[Choose file]\(ファイルを選択\)** をクリックして証明書リクエストを選択し、 **[Continue]\(続ける\)** を押します。
+1. _証明書署名リクエスト_ をアップロードします。 証明書署名リクエスト ファイル (拡張子 `.certSigningRequest`) は、Mac にローカルに保存されます。 **[Choose file]\(ファイルを選択\)** をクリックして証明書リクエストを選択し、 **[Continue]\(続ける\)** を押します。
 
     > [!div class="mx-imgBorder"]
     > [![証明書リクエスト ファイルをアップロードする](certificates-identifiers-images/certif03.png)](certificates-identifiers-images/certif03-large.png#lightbox)
 
-    **キーチェーン アクセス**を使用して証明書リクエスト ファイルを作成する方法については、「[証明書署名リクエストを作成する](https://help.apple.com/developer-account/#/devbfa00fef7)」を参照してください。
+    **キーチェーン アクセス** を使用して証明書リクエスト ファイルを作成する方法については、「[証明書署名リクエストを作成する](https://help.apple.com/developer-account/#/devbfa00fef7)」を参照してください。
 
 1. **[Download]\(ダウンロード\)** を押して証明書ファイルを取得し、それをダブルクリックしてインストールします。
 
     > [!div class="mx-imgBorder"]
     > [![証明書ファイルをダウンロードする](certificates-identifiers-images/certif04.png)](certificates-identifiers-images/certif04-large.png#lightbox)
 
-前述のとおり、Developer 証明書は、開発者が iCloud やプッシュ通知などの macOS 機能を実装しない限り不要です。 Mac App Store アプリをテストするのに必要な**開発用プロビジョニングプロファイル**の作成にも必要になります。
+前述のとおり、Developer 証明書は、開発者が iCloud やプッシュ通知などの macOS 機能を実装しない限り不要です。 Mac App Store アプリをテストするのに必要な **開発用プロビジョニングプロファイル** の作成にも必要になります。
 
 ### <a name="mac-app-store-certificates"></a>Mac App Store の証明書
 
@@ -163,12 +163,12 @@ App Store でアプリをリリースするには、次の 2 つの証明書が�
     > [!div class="mx-imgBorder"]
     > [![App Store の証明書を作成する](certificates-identifiers-images/certif05.png)](certificates-identifiers-images/certif05-large.png#lightbox)
 
-1. 次のページでは、**キーチェーン アクセス**を使用して証明書の要求ファイルを生成する方法を説明します。 次の手順に従ってください。
+1. 次のページでは、**キーチェーン アクセス** を使用して証明書の要求ファイルを生成する方法を説明します。 次の手順に従ってください。
 
     > [!div class="mx-imgBorder"]
     > [![証明書リクエストをアップロードする](certificates-identifiers-images/certif06.png)](certificates-identifiers-images/certif06-large.png#lightbox)
 
-    **キーチェーン アクセス**を使用して証明書リクエスト ファイルを作成する方法については、「[証明書署名リクエストを作成する](https://help.apple.com/developer-account/#/devbfa00fef7)」を参照してください。 証明書の_タイプ_ (アプリケーションまたはインストーラー) を反映する証明書名を選択してください。
+    **キーチェーン アクセス** を使用して証明書リクエスト ファイルを作成する方法については、「[証明書署名リクエストを作成する](https://help.apple.com/developer-account/#/devbfa00fef7)」を参照してください。 証明書の _タイプ_ (アプリケーションまたはインストーラー) を反映する証明書名を選択してください。
 
 1. **[Download]\(ダウンロード\)** をクリックして証明書を取得し、ダブルクリックしてそれを **[Keychain]\(キーチェーン\)** にインストールします。
 
@@ -189,7 +189,7 @@ Xamarin.Mac アプリケーションをセルフリリースするには (Apple 
 > [!TIP]
 > これらのキーの証明書の要求を命名する際、後で識別できるよう、`Application` と `Installer` のテキストを含むわかりやすい名前を使用します。
 
-証明書の作成、ダウンロード、インストールが完了したら、**キーチェーン アクセス**に表示されます。
+証明書の作成、ダウンロード、インストールが完了したら、**キーチェーン アクセス** に表示されます。
 
 [キーチェーン アクセスの証明書リスト](certificates-identifiers-images/certif09.png)
 

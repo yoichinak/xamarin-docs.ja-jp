@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: f5796ee17e947494d1e22f750bc43ff823d56d55
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 98855bb51552edcd567e3b99740f0be04034e388
+ms.sourcegitcommit: e27e29c14b783263e063baaa65d4eecb8dd31f57
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937281"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98628970"
 ---
 # <a name="unit-testing-xamarinios-apps"></a>Xamarin.iOS アプリの単体テスト
 
@@ -21,7 +21,7 @@ Xamarin.iOS での単体テストは、Touch.Unit フレームワークを使用
 
 ## <a name="setting-up-a-test-project-in-visual-studio-for-mac"></a>Visual Studio for Mac でのテスト プロジェクトの設定
 
-プロジェクトの単体テスト フレームワークを設定する場合、単に **iOS 単体テスト プロジェクト**という種類のプロジェクトをソリューションに追加するだけです。 その場合、ソリューションを右クリックし、 **[追加]、[新しいプロジェクトの追加]** の順に選択します。 リストから、 **[iOS]、[テスト]、[Unified API]、[iOS 単体テスト プロジェクト]** の順に選択します (C# または F# を選択できます)。
+プロジェクトの単体テスト フレームワークを設定する場合、単に **iOS 単体テスト プロジェクト** という種類のプロジェクトをソリューションに追加するだけです。 その場合、ソリューションを右クリックし、 **[追加]、[新しいプロジェクトの追加]** の順に選択します。 リストから、 **[iOS]、[テスト]、[Unified API]、[iOS 単体テスト プロジェクト]** の順に選択します (C# または F# を選択できます)。
 
 ![C# または F# を選択する](touch.unit-images/00.png)
 
@@ -112,7 +112,7 @@ namespace Fixtures {
 
 個々のテスト フィクスチャを実行する場合は、入れ子ビューからテスト フィクスチャを選択します。あるいは、"すべて実行" ですべてのテストを実行することもできます。 既定のテストを実行する場合、成功したテスト、失敗したテストおよび無視されたテストが 1 つずつ含まれることが想定されます。 そのレポートは次のようになり、失敗したテストに直接ドリルダウンして、失敗に関する詳細情報を見つけることができます。
 
-[![サンプル レポート](touch.unit-images/05-sml.png)](touch.unit-images/05.png#lightbox) [![サンプル レポート](touch.unit-images/06-sml.png)](touch.unit-images/06.png#lightbox) [![サンプル レポート](touch.unit-images/07-sml.png)](touch.unit-images/07.png#lightbox)
+[![スクリーンショットには、サンプル レポートのテスト ランナー画面が表示されています。](touch.unit-images/05-sml.png)](touch.unit-images/05.png#lightbox) [![スクリーンショットには、サンプル レポートのテスト画面が表示されています。](touch.unit-images/06-sml.png)](touch.unit-images/06.png#lightbox) [![スクリーンショットには、サンプル レポートのテスト画面とテストの状態が表示されています。](touch.unit-images/07-sml.png)](touch.unit-images/07.png#lightbox)
 
 IDE のアプリケーション出力ウィンドウで、実行中のテストとその現在の状態を確認することもできます。
 
