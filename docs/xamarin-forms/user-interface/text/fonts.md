@@ -11,14 +11,14 @@ ms.custom: contperf-fy21q2
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 146c67655c420611b2a0901efa6cc22ef780713e
-ms.sourcegitcommit: c5e72d2ca4152b62ab6583f0dbe84b3ba29d8283
+ms.openlocfilehash: 16da3964a565428f5e80924684ed073886c5386c
+ms.sourcegitcommit: 10c7dd16fe78226053d1d036492b6c9102fc421b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97677538"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99540975"
 ---
-# <a name="fonts-in-no-locxamarinforms"></a>フォント Xamarin.Forms
+# <a name="fonts-in-xamarinforms"></a>フォント Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/workingwithfonts)
 
@@ -41,7 +41,7 @@ ms.locfileid: "97677538"
        FontAttributes="Bold, Italic" />
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 Label label1 = new Label
@@ -68,7 +68,7 @@ Label label2 = new Label
        FontSize="Large" />
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 Label label1 = new Label
@@ -139,7 +139,7 @@ using Xamarin.Forms;
        FontFamily="Lobster" />
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 // Use font name
@@ -162,7 +162,7 @@ Label label2 = new Label
 [![IOS と Android でのカスタムフォント](fonts-images/custom-sml.png "カスタムフォントの例")](fonts-images/custom.png#lightbox "カスタムフォントの例")
 
 > [!IMPORTANT]
-> Windows でのリリースビルドの場合は、カスタムフォントを含むアセンブリがメソッドの呼び出しで引数として渡されることを確認し `Forms.Init` ます。 詳細については、「 [トラブルシューティング](~/xamarin-forms/platform/windows/installation/index.md#troubleshooting)」を参照してください。
+> Windows でのリリースビルドの場合は、カスタムフォントを含むアセンブリがメソッドの呼び出しで引数として渡されることを確認し `Forms.Init` ます。 詳細については、[トラブルシューティングのヒント](~/xamarin-forms/platform/windows/installation/index.md#troubleshooting)に関するページをご覧ください。
 
 ## <a name="set-font-properties-per-platform"></a>プラットフォームごとのフォントプロパティの設定
 
@@ -203,11 +203,11 @@ Xamarin.Forms[`NamedSize`](xref:Xamarin.Forms.NamedSize)特定のフォントサ
 
 | メンバー | iOS | Android | UWP |
 | --- | --- | --- | --- |
-| `Default` | 16 | 14 | 14 |
-| `Micro` | 11 | 10 | 15.667 |
-| `Small` | 13 | 14 | 18.667 |
-| `Medium` | 16 | 17 | 22.667 |
-| `Large` | 20 | 22 | 32 |
+| `Default` | 17 | 14 | 14 |
+| `Micro` | 12 | 10 | 15.667 |
+| `Small` | 14 | 14 | 18.667 |
+| `Medium` | 17 | 17 | 22.667 |
+| `Large` | 22 | 22 | 32 |
 | `Body` | 17 | 16 | 14 |
 | `Header` | 17 | 96 | 46 |
 | `Title` | 28 | 24 | 24 |
@@ -245,7 +245,7 @@ Xamarin.Forms[`NamedSize`](xref:Xamarin.Forms.NamedSize)特定のフォントサ
 </Image>
 ```
 
-このコードは、Ionicons フォントファミリの XBox アイコンをビューに表示 [`Image`](xref:Xamarin.Forms.Image) します。 このアイコンの unicode 文字はであるのに対し `\uf30c` 、XAML でエスケープする必要があるため、になり `&#xf30c;` ます。 同等の C# コードを次に示します。
+このコードは、Ionicons フォントファミリの XBox アイコンをビューに表示 [`Image`](xref:Xamarin.Forms.Image) します。 このアイコンの unicode 文字はであるのに対し `\uf30c` 、XAML でエスケープする必要があるため、になり `&#xf30c;` ます。 これに相当する C# コードを次に示します。
 
 ```csharp
 Image image = new Image { BackgroundColor = Color.FromHex("#D1D1D1") };

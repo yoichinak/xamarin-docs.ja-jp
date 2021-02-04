@@ -6,16 +6,16 @@ ms.assetid: B540910C-9C51-416A-AAB9-057BF76489C3
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/28/2020
+ms.date: 02/03/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3146d1c1de66c0b2bc2e9c2d86a7a50d406ecd7e
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: a3fd59ecbaf85f24515deba8562060aadc6d2165
+ms.sourcegitcommit: 10c7dd16fe78226053d1d036492b6c9102fc421b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93373368"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99540962"
 ---
 # <a name="consume-a-restful-web-service"></a>RESTful Web サービスを使用する
 
@@ -29,7 +29,7 @@ _Web サービスをアプリケーションに統合することは、一般的
 - **POST** -この操作は、web サービスでデータの新しい項目を作成するために使用されます。
 - **PUT** –この操作は、web サービス上のデータ項目を更新するために使用されます。
 - **PATCH** –この操作は、項目の変更方法に関する一連の命令を記述することによって、web サービス上のデータ項目を更新するために使用されます。 この動詞は、サンプルアプリケーションでは使用されません。
-- [ **削除** ] –この操作は、web サービス上のデータの項目を削除するために使用されます。
+- [**削除**] –この操作は、web サービス上のデータの項目を削除するために使用されます。
 
 REST に準拠する Web サービス Api は RESTful Api と呼ばれ、次のものを使用して定義されます。
 
@@ -211,8 +211,17 @@ REST サービスは、http `HttpResponseMessage.IsSuccessStatusCode` 要求が�
 - **400 (無効な要求)** -要求がサーバーで認識されません。
 - **404 (見つかりません)** -要求されたリソースがサーバーに存在しません。
 
+### <a name="local-development"></a>ローカル開発
+
+ASP.NET Core Web API などのフレームワークを使用して REST web サービスをローカルで開発している場合は、web サービスとモバイルアプリを同時にデバッグすることができます。 このシナリオでは、iOS の簡略化と Android エミュレーターでクリアテキストの HTTP トラフィックを有効にする必要があります。 通信を許可するようにプロジェクトを構成する方法については、「 [ローカル web サービスへの接続](~/cross-platform/deploy-test/connect-to-local-web-services.md)」を参照してください。
+
 ## <a name="related-links"></a>関連リンク
 
+- [Microsoft Learn: Xamarin アプリで REST web サービスを使用する](/learn/modules/consume-rest-services/)
+- [Microsoft Learn: ASP.NET Core で web API を作成する](/learn/modules/build-web-api-aspnet-core/)
 - [ネイティブモバイルアプリケーションのバックエンドサービスの作成](/aspnet/core/mobile/native-mobile-backend/)
 - [TodoREST (サンプル)](/samples/xamarin/xamarin-forms-samples/webservices-todorest)
-- [HttpClient](/dotnet/api/system.net.http.httpclient)
+- [HttpClient API](xref:System.Net.Http.HttpClient)
+- [Android ネットワークセキュリティの構成](https://devblogs.microsoft.com/xamarin/cleartext-http-android-network-security/)
+- [iOS アプリトランスポートセキュリティ](~/ios/app-fundamentals/ats.md)
+- [ローカル Web サービスに接続する](~/cross-platform/deploy-test/connect-to-local-web-services.md)
