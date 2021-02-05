@@ -6,18 +6,18 @@ ms.assetid: 5BF81E25-12E5-49F0-A40C-0CF4C5D63B9B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/24/2020
+ms.date: 02/05/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b4a905371b8bda93616fee0677cbd0932d8699e5
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: b3130fd4cb054799ca9e0a61d13cacb2629320b7
+ms.sourcegitcommit: 06701714021545eb5e932847829b876082194ffc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97939772"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99585833"
 ---
-# <a name="no-locxamarinforms-shapes-ellipse"></a>Xamarin.Forms 図形: 楕円
+# <a name="xamarinforms-shapes-ellipse"></a>Xamarin.Forms 図形: 楕円
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
@@ -27,7 +27,7 @@ ms.locfileid: "97939772"
 
 ## <a name="create-an-ellipse"></a>楕円を作成する
 
-楕円を描画するには、 `Ellipse` オブジェクトを作成し、その `WidthRequest` プロパティとプロパティを設定し `HeightRequest` ます。 楕円の内部を描画するには、そのプロパティをに設定 `Fill` [`Color`](xref:Xamarin.Forms.Color) します。 楕円に輪郭を付けるには、その `Stroke` プロパティをに設定し [`Color`](xref:Xamarin.Forms.Color) ます。 `StrokeThickness` プロパティは、楕円の輪郭の太さを指定します。
+楕円を描画するには、 `Ellipse` オブジェクトを作成し、その `WidthRequest` プロパティとプロパティを設定し `HeightRequest` ます。 楕円の内部を描画するには、その `Fill` プロパティをから派生したオブジェクトに設定し [`Brush`](xref:Xamarin.Forms.Brush) ます。 楕円に輪郭を付けるには、その `Stroke` プロパティをから派生したオブジェクトに設定し [`Brush`](xref:Xamarin.Forms.Brush) ます。 `StrokeThickness` プロパティは、楕円の輪郭の太さを指定します。 オブジェクトの詳細について `Brush` は、「 [ Xamarin.Forms ブラシ](~/xamarin-forms/user-interface/brushes/index.md)」を参照してください。
 
 円を描画するには、 `WidthRequest` `HeightRequest` オブジェクトのプロパティとプロパティを同じにし `Ellipse` ます。
 
@@ -56,7 +56,7 @@ ms.locfileid: "97939772"
 
 この例では、150x150 正方形 (デバイスに依存しない単位) という寸法を含む赤い円が描画されます。
 
-![Circle](ellipse-images/circle.png "Circle")
+![塗りつぶさない円](ellipse-images/circle.png "Circle")
 
 破線の楕円を描画する方法の詳細については、「 [破線の図形を描画](index.md#draw-dashed-shapes)する」を参照してください。
 
@@ -64,3 +64,4 @@ ms.locfileid: "97939772"
 
 - [図形のデモ (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms 図形](index.md)
+- [Xamarin.Forms ブラシ](~/xamarin-forms/user-interface/brushes/index.md)

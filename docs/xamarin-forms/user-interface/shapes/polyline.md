@@ -6,18 +6,18 @@ ms.assetid: 15D02690-AC03-457E-8815-8E4C17E4D642
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/24/2020
+ms.date: 02/05/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b331ea54e1ae0d5746090d155cb14465bcec0307
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: 95b60c4ab28200dd2bc2434396df0832532bdd7a
+ms.sourcegitcommit: 06701714021545eb5e932847829b876082194ffc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97939005"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99585872"
 ---
-# <a name="no-locxamarinforms-shapes-polyline"></a>Xamarin.Forms 図形: ポリライン
+# <a name="xamarinforms-shapes-polyline"></a>Xamarin.Forms 図形: ポリライン
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
@@ -36,10 +36,10 @@ ms.locfileid: "97939005"
 
 ## <a name="create-a-polyline"></a>ポリラインを作成する
 
-ポリラインを描画するには、 `Polyline` オブジェクトを作成し、その `Points` プロパティに図形の頂点を設定します。 ポリラインに輪郭を付けるには、その `Stroke` プロパティをに設定 [`Color`](xref:Xamarin.Forms.Color) します。 プロパティは、 `StrokeThickness` ポリラインの輪郭の太さを指定します。
+ポリラインを描画するには、 `Polyline` オブジェクトを作成し、その `Points` プロパティに図形の頂点を設定します。 ポリラインにアウトラインを付けるには、その `Stroke` プロパティをから派生したオブジェクトに設定し [`Brush`](xref:Xamarin.Forms.Brush) ます。 プロパティは、 `StrokeThickness` ポリラインの輪郭の太さを指定します。 オブジェクトの詳細について `Brush` は、「 [ Xamarin.Forms ブラシ](~/xamarin-forms/user-interface/brushes/index.md)」を参照してください。
 
 > [!IMPORTANT]
-> のプロパティをに設定すると、 `Fill` `Polyline` [`Color`](xref:Xamarin.Forms.Color) 始点と終点が交差しない場合でも、ポリラインの内部空間が描画されます。
+> のプロパティをから派生したオブジェクトに設定すると、 `Fill` `Polyline` [`Brush`](xref:Xamarin.Forms.Brush) 始点と終点が交差しない場合でも、ポリラインの内部空間が描画されます。
 
 次の XAML の例は、ポリラインを描画する方法を示しています。
 
@@ -100,3 +100,4 @@ ms.locfileid: "97939005"
 - [図形のデモ (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms 図形](index.md)
 - [Xamarin.Forms 図形: 塗りつぶしルール](fillrules.md)
+- [Xamarin.Forms ブラシ](~/xamarin-forms/user-interface/brushes/index.md)

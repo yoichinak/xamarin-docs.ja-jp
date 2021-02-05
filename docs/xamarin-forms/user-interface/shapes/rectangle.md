@@ -6,18 +6,18 @@ ms.assetid: 2DD663D3-DAEC-495C-AB6D-8A143FC97637
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/24/2020
+ms.date: 02/05/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6d70d850f0c51abfc75d15d6cefd6dc429de8c8a
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: 9080f509f9327f18f0cd66b0a497bdf03ac4975a
+ms.sourcegitcommit: 06701714021545eb5e932847829b876082194ffc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97939967"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99585859"
 ---
-# <a name="no-locxamarinforms-shapes-rectangle"></a>Xamarin.Forms 図形: 四角形
+# <a name="xamarinforms-shapes-rectangle"></a>Xamarin.Forms 図形: 四角形
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
@@ -34,7 +34,7 @@ ms.locfileid: "97939967"
 
 ## <a name="create-a-rectangle"></a>四角形を作成する
 
-四角形を描画するには、 `Rectangle` オブジェクトを作成し、その `WidthRequest` プロパティとプロパティを設定し `HeightRequest` ます。 四角形の内部を描画するには、そのプロパティをに設定 `Fill` [`Color`](xref:Xamarin.Forms.Color) します。 四角形に輪郭を付けるには、その `Stroke` プロパティをに設定し [`Color`](xref:Xamarin.Forms.Color) ます。 プロパティは、 `StrokeThickness` 四角形の輪郭の太さを指定します。
+四角形を描画するには、 `Rectangle` オブジェクトを作成し、その `WidthRequest` プロパティとプロパティを設定し `HeightRequest` ます。 四角形の内部を描画するには、その `Fill` プロパティをから派生したオブジェクトに設定し [`Brush`](xref:Xamarin.Forms.Brush) ます。 四角形に輪郭を付けるには、その `Stroke` プロパティをから派生したオブジェクトに設定し [`Brush`](xref:Xamarin.Forms.Brush) ます。 プロパティは、 `StrokeThickness` 四角形の輪郭の太さを指定します。 オブジェクトの詳細について `Brush` は、「 [ Xamarin.Forms ブラシ](~/xamarin-forms/user-interface/brushes/index.md)」を参照してください。
 
 四角形の角を丸くするには、 `RadiusX` プロパティとプロパティを設定し `RadiusY` ます。 これらのプロパティは、四角形の角を丸めるために使用される x 軸と y 軸の半径を設定します。
 
@@ -76,3 +76,4 @@ ms.locfileid: "97939967"
 
 - [図形のデモ (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms 図形](index.md)
+- [Xamarin.Forms ブラシ](~/xamarin-forms/user-interface/brushes/index.md)
