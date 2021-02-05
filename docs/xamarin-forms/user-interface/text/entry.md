@@ -11,13 +11,13 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 625dd57d1f84b95cef1c6513ae832af805bf565a
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.sourcegitcommit: 10c7dd16fe78226053d1d036492b6c9102fc421b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 02/05/2021
 ms.locfileid: "93375032"
 ---
-# <a name="no-locxamarinforms-entry"></a>Xamarin.Forms キー
+# <a name="xamarinforms-entry"></a>Xamarin.Forms キー
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
@@ -134,7 +134,7 @@ Entry entry = new Entry { CharacterSpacing = 10 };
 > [!NOTE]
 > `CharacterSpacing`プロパティ値は、プロパティおよびプロパティによって表示されるテキストに適用され `Text` `Placeholder` ます。
 
-## <a name="password-fields"></a>パスワードフィールド
+## <a name="password-fields"></a>パスワード フィールド
 
 `Entry` プロパティを提供 `IsPassword` します。 がの場合 `IsPassword` `true` 、フィールドの内容は黒の円として表示されます。
 

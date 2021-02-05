@@ -11,13 +11,13 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 6018946f280afa3f02d8f81bfc64338e561950fe
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.sourcegitcommit: 10c7dd16fe78226053d1d036492b6c9102fc421b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 02/05/2021
 ms.locfileid: "93375292"
 ---
-# <a name="colors-in-no-locxamarinforms"></a>色 Xamarin.Forms
+# <a name="colors-in-xamarinforms"></a>色 Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/workingwithcolors)
 
@@ -70,7 +70,7 @@ var accent = new Label      { Text = "Accent",     BackgroundColor = Color.Accen
 
 IOS および Android では、このインスタンスは、既定の背景に表示されるが、既定のテキストの色と同じではないコントラストの色に設定されます。
 
-## <a name="additional-methods"></a>その他のメソッド
+## <a name="additional-methods"></a>他の方法
 
 [`Color`](xref:Xamarin.Forms.Color) インスタンスには、次の追加メソッドが含まれます。
 

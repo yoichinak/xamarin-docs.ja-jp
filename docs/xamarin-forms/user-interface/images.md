@@ -11,13 +11,13 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 2ea65a646add3f42ee88e5cd884e80131b9964bf
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.sourcegitcommit: 10c7dd16fe78226053d1d036492b6c9102fc421b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 02/05/2021
 ms.locfileid: "93373836"
 ---
-# <a name="images-in-no-locxamarinforms"></a>画像 Xamarin.Forms
+# <a name="images-in-xamarinforms"></a>画像 Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/workingwithimages)
 
@@ -56,7 +56,7 @@ Xamarin.Forms[`Image`](xref:Xamarin.Forms.Image)ビューを使用して、ペ�
 すべてのアプリで1つのイメージを使用するには、すべての *プラットフォームで同じファイル名を使用する必要が* あります。また、有効な Android リソース名を指定する必要があります (つまり、小文字、数字、アンダースコア、ピリオドのみを使用できます)。
 
 - **ios** -ios 9 以降でイメージを管理およびサポートする場合は、 **資産カタログのイメージセット** を使用することをお勧めします。これには、アプリケーションのさまざまなデバイスとスケールファクターをサポートするために必要なイメージのすべてのバージョンが含まれている必要があります。 詳細については、「 [アセットカタログイメージセットへのイメージの追加](~/ios/app-fundamentals/images-icons/displaying-an-image.md)」を参照してください。
-- **Android** -ビルドアクションを使用して  **リソース/** 作成ディレクトリにイメージを配置します **: androidresource** 。 イメージの高および低 DPI バージョンも提供できます (適切な名前が付けられた **リソース** サブディレクトリ **(たとえば、** 描画可能 **な-ldpi** 、 **xhdpi** )。
+- **Android** -ビルドアクションを使用して  **リソース/** 作成ディレクトリにイメージを配置します **: androidresource**。 イメージの高および低 DPI バージョンも提供できます (適切な名前が付けられた **リソース** サブディレクトリ **(たとえば、** 描画可能 **な-ldpi**、 **xhdpi**)。
 - **ユニバーサル Windows プラットフォーム (UWP)** -既定では、イメージはアプリケーションのルートディレクトリに **ビルドアクション: コンテンツ** と共に配置する必要があります。 また、イメージを別のディレクトリに配置して、プラットフォーム固有ので指定することもできます。 詳細については、「 [Windows の既定のイメージディレクトリ](~/xamarin-forms/platform/windows/default-image-directory.md)」を参照してください。
 
 > [!IMPORTANT]
@@ -95,7 +95,7 @@ iOS、Android、UWP には、さまざまなイメージの解像度がサポー
 
 IOS 9 以降でイメージを管理する場合は、適切な資産カタログのイメージセットに必要な各解像度のイメージをドラッグすることをお勧めします。 詳細については、「 [アセットカタログイメージセットへのイメージの追加](~/ios/app-fundamentals/images-icons/displaying-an-image.md)」を参照してください。
 
-IOS 9 より前では、retina バージョンのイメージは、 **Resources** **@2x** **@3x** ファイル拡張子の前にファイル名にまたはサフィックスを付けて、リソースフォルダー-2 ~ 3 倍の解像度で配置できます。 **myimage@2x.png** ). ただし、iOS アプリでイメージを操作するこの方法は、Apple によって非推奨とされています。 詳細については、「 [イメージのサイズとファイル名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)」を参照してください。
+IOS 9 より前では、retina バージョンのイメージは、  **@2x** **@3x** ファイル拡張子の前にファイル名にまたはサフィックスを付けて、リソースフォルダー-2 ~ 3 倍の解像度で配置できます。 **myimage@2x.png**). ただし、iOS アプリでイメージを操作するこの方法は、Apple によって非推奨とされています。 詳細については、「 [イメージのサイズとファイル名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)」を参照してください。
 
 Android の代替解像度のイメージは、次のスクリーンショットに示すように、Android プロジェクトの [特別に名前が付け](https://developer.android.com/guide/practices/screens_support.html) られたディレクトリに配置する必要があります。
 
@@ -128,7 +128,7 @@ UWP イメージファイル名は、 [ `.scale-xxx` ファイル拡張子の前
 
 [![ビルドアクションを埋め込みリソースに設定](images-images/vs-buildaction-sml.png)](images-images/vs-buildaction.png#lightbox)
 
-**ビルドアクション** は、ファイルの [ **プロパティ** ] ウィンドウで表示および変更できます。
+**ビルドアクション** は、ファイルの [**プロパティ**] ウィンドウで表示および変更できます。
 
 この例では、リソース ID は **WorkingWithImages.beach.jpg** です。
 IDE では、このプロジェクトの既定の **名前空間** とファイル名を連結することによって、この既定の名前空間を生成しました。各値の間にピリオド (.) を使用します。

@@ -11,13 +11,13 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: db32d4250bf5ba63761c59f67b64b59fa565e651
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.sourcegitcommit: 10c7dd16fe78226053d1d036492b6c9102fc421b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 02/05/2021
 ms.locfileid: "93371015"
 ---
-# <a name="no-locxamarinforms-text-styles"></a>Xamarin.Forms テキストスタイル
+# <a name="xamarinforms-text-styles"></a>Xamarin.Forms テキストスタイル
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
@@ -126,7 +126,7 @@ C# では、組み込みのスタイルは次のものから選択され `Device
 label.Style = Device.Styles.TitleStyle;
 ```
 
-## <a name="accessibility"></a>アクセシビリティ
+## <a name="accessibility"></a>ユーザー補助
 
 組み込みスタイルは、ユーザー補助の設定を容易にするために用意されています。 組み込みのスタイルのいずれかを使用する場合、ユーザーがそれに応じてユーザー補助の設定を設定すると、フォントサイズが自動的に増加します。
 
