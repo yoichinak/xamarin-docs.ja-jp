@@ -6,18 +6,18 @@ ms.assetid: 384F1A72-6D3B-4FD3-BC40-E00A73A463EC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/24/2020
+ms.date: 02/05/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5d5ecd7804c6cd8321827cd8aef98245124beca0
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: 962800c5deb546ddf6a74d1f52ffaf60734ae463
+ms.sourcegitcommit: 06701714021545eb5e932847829b876082194ffc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97939114"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99585846"
 ---
-# <a name="no-locxamarinforms-shapes-line"></a>Xamarin.Forms 図形: 線
+# <a name="xamarinforms-shapes-line"></a>Xamarin.Forms 図形: 線
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
@@ -36,7 +36,7 @@ ms.locfileid: "97939114"
 
 ## <a name="create-a-line"></a>線を作成する
 
-線を描画するには、 `Line` オブジェクトを作成し、そのプロパティとプロパティをその開始点に設定し、そのプロパティと `X1` プロパティを終点に設定し `Y1` `X2` `Y` ます。 また、 `Stroke` ストロークのない線が非表示になっているため、プロパティをに設定し [`Color`](xref:Xamarin.Forms.Color) ます。
+線を描画するには、 `Line` オブジェクトを作成し、そのプロパティとプロパティをその開始点に設定し、そのプロパティと `X1` プロパティを終点に設定し `Y1` `X2` `Y` ます。 また、 `Stroke` ストロークのない線が非表示になっているため、プロパティをの派生オブジェクトに設定し [`Brush`](xref:Xamarin.Forms.Brush) ます。 オブジェクトの詳細について `Brush` は、「 [ Xamarin.Forms ブラシ](~/xamarin-forms/user-interface/brushes/index.md)」を参照してください。
 
 > [!NOTE]
 > 行に `Fill` は内部がないため、のプロパティを設定して `Line` も効果はありません。
@@ -53,7 +53,7 @@ ms.locfileid: "97939114"
 
 この例では、赤い斜線が (40, 0) から (0120) に描画されます。
 
-![Line](line-images/line.png "行")
+![斜線](line-images/line.png "行")
 
 、、 `X1` `Y1` 、およびの各プロパティの `X2` `Y2` 既定値は0であるため、最小限の構文でいくつかの行を描画することができます。
 
@@ -86,3 +86,4 @@ ms.locfileid: "97939114"
 
 - [図形のデモ (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms 図形](index.md)
+- [Xamarin.Forms ブラシ](~/xamarin-forms/user-interface/brushes/index.md)
