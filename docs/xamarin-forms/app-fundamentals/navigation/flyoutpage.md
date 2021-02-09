@@ -10,14 +10,14 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ea0be2136b354ef7a613904799481079bcae52ad
-ms.sourcegitcommit: 1decf2c65dc4c36513f7dd459a5df01e170a036f
+ms.openlocfilehash: 8a2947ef2c326c57bc646cd980109ed9a1b97347
+ms.sourcegitcommit: 9ab5a1e346e20f54e8b7aa655fd3d117b43978cc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98115237"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99223712"
 ---
-# <a name="no-locxamarinforms-flyoutpage"></a>Xamarin.Forms FlyoutPage
+# <a name="xamarinforms-flyoutpage"></a>Xamarin.Forms FlyoutPage
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/navigation-flyoutpage)
 
@@ -27,7 +27,7 @@ ms.locfileid: "98115237"
 
 項目の一覧の場所は各プラットフォームで同じであり、いずれかの項目を選択すると対応する詳細ページに移動します。 さらに、ポップアップ ページのナビゲーション バーに含まれるボタンを使用してアクティブな詳細ページに移動することもできます。
 
-- iOS では、ナビゲーション バーはページの上部にあり、詳細ページに移動するボタンが含まれます。 さらに、マスター ページを左にスワイプすることで、アクティブな詳細ページに移動できます。
+- iOS では、ナビゲーション バーはページの上部にあり、詳細ページに移動するボタンが含まれます。 さらに、ポップアップを左にスワイプすることで、アクティブな詳細ページに移動できます。
 - Android では、ナビゲーション バーはページの上部にあり、タイトル、アイコン、詳細ページに移動するボタンが表示されます。 アイコンは、Android プラットフォーム固有プロジェクトにおいて `MainActivity` クラスを修飾する `[Activity]` 属性で定義されています。 さらに、ポップアップ ページを左にスワイプするか、画面右端の詳細ページをタップするか、画面の下部にある *[戻る]* ボタンをタップすることによって、アクティブな詳細ページに移動できます。
 - ユニバーサル Windows プラットフォーム (UWP) では、ナビゲーション バーはページの上部にあり、詳細ページに移動するボタンが含まれます。
 
@@ -214,7 +214,7 @@ public class FlyoutMenuPageCS : ContentPage
 
 次のスクリーンショットでは、各プラットフォームでのポップアップ ページを示します。
 
-![マスター ページの例](flyoutpage-images/flyoutpage.png)
+![ポップアップ ページの例](flyoutpage-images/flyoutpage.png)
 
 ### <a name="create-and-display-the-detail-page"></a>詳細ページを作成して表示する
 

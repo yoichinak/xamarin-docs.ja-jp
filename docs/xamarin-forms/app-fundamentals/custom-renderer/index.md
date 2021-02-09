@@ -10,16 +10,16 @@ ms.date: 12/03/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: be281f9b7987a8d23ba6ac93f0771e432f277d45
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 21fc2c5ba042a19c68961bd969084aed0a8a4f18
+ms.sourcegitcommit: 9ab5a1e346e20f54e8b7aa655fd3d117b43978cc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138919"
+ms.lasthandoff: 02/01/2021
+ms.locfileid: "99223686"
 ---
 # <a name="xamarinforms-custom-renderers"></a>Xamarin.Forms のカスタム レンダラー
 
-_Xamarin.Forms ユーザー インターフェイスは、ターゲット プラットフォームのネイティブ コントロールを使用してレンダリングされるため、Xamarin.Forms アプリケーションでは各プラットフォームの外観を維持できます。カスタム レンダラーにより、開発者はこのプロセスをオーバーライドして、各プラットフォーム上で Xamarin.Forms コントロールの外観とビヘイビアーをカスタマイズできるようになります。_
+_Xamarin.Forms ユーザー インターフェイスは、ターゲット プラットフォームのネイティブ コントロールを使用してレンダリングされるため、Xamarin.Forms アプリケーションでは各プラットフォームに適した外観を維持できます。カスタム レンダラーにより、開発者はこのプロセスをオーバーライドして、各プラットフォーム上で Xamarin.Forms コントロールの外観とビヘイビアーをカスタマイズできるようになります。_
 
 ## <a name="introduction-to-custom-renderers"></a>[カスタム レンダラーの概要](introduction.md)
 
@@ -56,7 +56,3 @@ Xamarin.Forms の [`WebView`](xref:Xamarin.Forms.WebView) は、アプリに Web
 ## <a name="implementing-a-view"></a>[ページの実装](view.md)
 
 Xamarin.Forms のカスタム ユーザー インターフェイス コントロールは、[`View`](xref:Xamarin.Forms.View) クラスから派生させる必要があります。これは画面上にレイアウトとコントロールを配置するために使われます。 この記事では、デバイスのカメラからビデオ ストリームのプレビューを表示するために使う、Xamarin.Forms のカスタム コントロール用のカスタム レンダラーを作成する方法を示します。
-
-## <a name="implementing-a-video-player"></a>[ビデオ プレーヤーの実装](video-player/index.md)
-
-この記事では、レンダラーを記述して、Web のビデオ、アプリケーションのリソースとして埋め込まれたビデオ、またはユーザーのデバイス上のビデオ ライブラリに格納されているビデオを再生できる `VideoPlayer` のカスタム コントロールを実装する方法を示します。 メソッドの実装や、バインド可能な読み取り専用プロパティなど、いくつかの手法を示します。
