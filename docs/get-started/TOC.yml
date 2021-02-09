@@ -32,9 +32,9 @@
       expanded: true
       items:
         - name: ファイル > 新規
-          href: quickstarts/single-page.md
-        - name: マルチページ
-          href: quickstarts/multi-page.md
+          href: quickstarts/app.md
+        - name: ［ナビゲーション］
+          href: quickstarts/navigation.md
         - name: データベース
           href: quickstarts/database.md
         - name: スタイル

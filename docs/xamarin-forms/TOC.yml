@@ -32,9 +32,9 @@ items:
         href: ~/get-started/quickstarts/index.md
         items:
           - name: ファイル > 新規
-            href: ~/get-started/quickstarts/single-page.md
+            href: ~/get-started/quickstarts/app.md
           - name: マルチページ
-            href: ~/get-started/quickstarts/multi-page.md
+            href: ~/get-started/quickstarts/navigation.md
           - name: データベース
             href: ~/get-started/quickstarts/database.md
           - name: スタイル
