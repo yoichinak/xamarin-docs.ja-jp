@@ -11,13 +11,13 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: f4b15911f48b4260da8839f376800e95c63bf0e4
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.sourcegitcommit: 0a6b19004932c1ac82e16c95d5d3d5eb35a5b17f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 02/12/2021
 ms.locfileid: "93373628"
 ---
-# <a name="create-a-no-locxamarinforms-shell-application"></a>Xamarin.Forms シェル アプリケーションを作成する
+# <a name="create-a-xamarinforms-shell-application"></a>Xamarin.Forms シェル アプリケーションを作成する
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
@@ -30,7 +30,7 @@ Xamarin.Forms シェル アプリケーションを作成するプロセスは�
 
 ## <a name="subclass-the-shell-class"></a>Shell クラスをサブクラス化する
 
-Xamarin.Forms シェル アプリケーションを作成する最初の手順は、`Shell` クラスをサブクラス化する XAML ファイルを共有コード プロジェクトに追加することです。 このファイルには任意の名前を付けることができますが、 **AppShell** がお勧めです。 次のコード例は、新しく作成した **AppShell.xaml** ファイルを示しています。
+Xamarin.Forms シェル アプリケーションを作成する最初の手順は、`Shell` クラスをサブクラス化する XAML ファイルを共有コード プロジェクトに追加することです。 このファイルには任意の名前を付けることができますが、**AppShell** がお勧めです。 次のコード例は、新しく作成した **AppShell.xaml** ファイルを示しています。
 
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"

@@ -10,12 +10,12 @@ ms.date: 12/13/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c710328426590322f60f482708931c160b2100ca
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 9b22297fe06211b550ac2fdd62ee934b4ba849ee
+ms.sourcegitcommit: 0a6b19004932c1ac82e16c95d5d3d5eb35a5b17f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93372653"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100255325"
 ---
 # <a name="layout-compression"></a>レイアウト圧縮
 
@@ -58,7 +58,7 @@ Xamarin.Forms 2つの一連の再帰メソッド呼び出しを使用してレ�
 </ContentView>
 ```
 
-結果として生成される入れ子になったビュー階層は、 [Xamarin Inspector](~/tools/inspector/index.md)で調べることができます。 Android では、入れ子になったビュー階層に17個のビューが含まれています。
+生成された入れ子になったビュー階層は、ライブビジュアルツリーで調べることができます。 Android では、入れ子になったビュー階層に17個のビューが含まれています。
 
 ![Facebook ボタンの階層を表示する](layout-compression-images/no-compression.png)
 
