@@ -10,7 +10,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 01/28/2021
 ms.locfileid: "98950958"
 ---
-iPadOS で共有を要求したりランチャーを開いたりする場合、コントロール上にポップアップを表示することができます。 これにより、ポップオーバーを表示し、矢印を直接向ける場所を指定できます。 多くの場合、この場所はアクションを起動したコントロールになります。 `PresentationSourceBounds` プロパティを使用して位置を指定できます。
+iPadOS で共有を要求したりランチャーを開いたりする場合、コントロール上にポップオーバーを表示することができます。 これにより、ポップオーバーを表示し、矢印を直接向ける場所を指定できます。 多くの場合、この場所はアクションを起動したコントロールになります。 `PresentationSourceBounds` プロパティを使用して位置を指定できます。
 
 ```csharp
 await Share.RequestAsync(new ShareFileRequest
