@@ -10,14 +10,14 @@ ms.date: 09/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f3a89e0c5c49ec790cf35443030d50d3ddef9ed4
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: 2798ee872e9db86a31beb6021f6bf4c3d82caaa2
+ms.sourcegitcommit: a0de974875f8fa1a29f7abc990137246789ad85a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97939811"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100630255"
 ---
-# <a name="no-locxamarinforms-shapes-geometries"></a>Xamarin.Forms 図形: ジオメトリ
+# <a name="xamarinforms-shapes-geometries"></a>Xamarin.Forms 図形: ジオメトリ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
@@ -271,7 +271,7 @@ ms.locfileid: "97939811"
 
 この例では、3次ベジエ曲線を (10, 10) から (300, 10) に描画します。 曲線には、(100, 0) と (200200) の2つの制御点があります。
 
-![System.windows.media.beziersegment>](geometry-images/beziersegment.png "System.windows.media.beziersegment>")
+![折れ線グラフは、ベジエ曲線を示します。](geometry-images/beziersegment.png "System.windows.media.beziersegment>")
 
 ### <a name="create-a-linesegment"></a>LineSegment を作成する
 
@@ -310,7 +310,7 @@ ms.locfileid: "97939811"
 
 この例では、(10100) から (100100)、および (100100) から (100, 50) までの線分が描画されます。 さらに、 `PathFigure` `IsClosed` プロパティがに設定されているため、は閉じられ `true` ます。 この結果、三角形が描画されます。
 
-![LineSegments](geometry-images/linesegments.png "LineSegments")
+![線のグラフィックは三角形を示します。](geometry-images/linesegments.png "LineSegments")
 
 ### <a name="create-a-polybeziersegment"></a>PolyBezierSegment を作成する
 
@@ -345,7 +345,7 @@ ms.locfileid: "97939811"
 
 この例では、によって `PolyBezierSegment` 2 つの3次ベジエ曲線が指定されています。 最初の曲線は、(10, 10) から (150100) までの制御ポイント (0, 0) と、(100, 0) の別の制御ポイントです。 2番目の曲線は、(150100) から (300, 10) の制御ポイント (150, 0) と、(200, 0) の別の制御ポイントです。
 
-![PolyBezierSegment](geometry-images/polybeziersegment.png "PolyBezierSegment")
+![折れ線グラフは、2つの接続されたベジエ曲線を示しています。](geometry-images/polybeziersegment.png "PolyBezierSegment")
 
 ### <a name="create-a-polylinesegment"></a>System.windows.media.polylinesegment> を作成する
 
@@ -376,7 +376,7 @@ ms.locfileid: "97939811"
 
 この例では、は `PolyLineSegment` 2 行を指定しています。 最初の行は (10, 10) ~ (50, 10) で、2行目は (50, 10) から (50, 50) までです。
 
-![System.windows.media.polylinesegment>](geometry-images/polylinesegment.png "System.windows.media.polylinesegment>")
+![折れ線グラフでは、直角に2本の線が表示されます。](geometry-images/polylinesegment.png "System.windows.media.polylinesegment>")
 
 ### <a name="create-a-polyquadraticbeziersegment"></a>PolyQuadraticBezierSegment を作成する
 
@@ -411,7 +411,7 @@ ms.locfileid: "97939811"
 
 この例では、は `PolyQuadraticBezierSegment` 2 つのベジエ曲線を指定しています。 最初の曲線は (10, 10) から (150, 50) で、制御ポイントは (100100) です。 2番目の曲線は (100100) から (15200) で、制御ポイントは (0100) です。
 
-![PolyQuadraticBezierSegment](geometry-images/polyquadraticbeziersegment.png "PolyQuadraticBezierSegment")
+![折れ線グラフは、結合された2つの重複するベジエ曲線を示しています。](geometry-images/polyquadraticbeziersegment.png "PolyQuadraticBezierSegment")
 
 ### <a name="create-a-quadraticbeziersegment"></a>System.windows.media.quadraticbeziersegment> を作成する
 
@@ -452,7 +452,7 @@ ms.locfileid: "97939811"
 
 この例では、2次ベジエ曲線を (10, 10) から (300, 10) に描画します。 曲線の制御点は (200200) です。
 
-![System.windows.media.quadraticbeziersegment>](geometry-images/quadraticbeziersegment.png "System.windows.media.quadraticbeziersegment>")
+![線のグラフィックは2次ベジエ曲線を示しています。](geometry-images/quadraticbeziersegment.png "System.windows.media.quadraticbeziersegment>")
 
 ### <a name="create-complex-geometries"></a>複雑なジオメトリを作成する
 
@@ -583,7 +583,7 @@ ms.locfileid: "97939811"
 
 この例では、 `EllipseGeometry` x 半径が同じで、中心座標が異なる4つのオブジェクトが結合されています。 これにより、既定の塗りつぶしルールにより、内側がオレンジ色になる4つの重なり合う円が作成され `EvenOdd` ます。
 
-![System.windows.media.geometrygroup>](geometry-images/geometrygroup.png "System.windows.media.geometrygroup>")
+![折れ線グラフは、領域が塗りつぶされた4つの重なり合う円を示しています。](geometry-images/geometrygroup.png "System.windows.media.geometrygroup>")
 
 ### <a name="roundrectanglegeometry"></a>RoundRectangleGeometry
 

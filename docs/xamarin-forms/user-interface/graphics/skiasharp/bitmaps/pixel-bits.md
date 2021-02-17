@@ -10,12 +10,12 @@ ms.date: 07/11/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6e3edf7d0e7630429f8f1c76009987ee8a4b737a
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 0797829a566ddd71311cb701dbc4d6b1f7bb1c2e
+ms.sourcegitcommit: a0de974875f8fa1a29f7abc990137246789ad85a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93375331"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100630242"
 ---
 # <a name="accessing-skiasharp-bitmap-pixel-bits"></a>SkiaSharp ビットマップピクセルビットへのアクセス
 
@@ -520,7 +520,7 @@ BB GG RR AA
 
 ## <a name="random-access-of-pixels"></a>ピクセルのランダムアクセス
 
-`FillBitmapBytePtr`[ `FillBitmapUintPtr` **グラデーションビットマップ** ] ページのメソッドとメソッドは、ビットマップを順番に、 `for` 先頭行から末尾の行に、各行を左から右に設定するように設計されたループから効果を持ちます。 ピクセルは、ポインターをインクリメントしたのと同じステートメントを使用して設定できます。
+`FillBitmapBytePtr`[ `FillBitmapUintPtr` **グラデーションビットマップ**] ページのメソッドとメソッドは、ビットマップを順番に、 `for` 先頭行から末尾の行に、各行を左から右に設定するように設計されたループから効果を持ちます。 ピクセルは、ポインターをインクリメントしたのと同じステートメントを使用して設定できます。
 
 場合によっては、順番にではなく、ランダムにピクセルにアクセスする必要があります。 この方法を使用している場合は、 `GetPixels` 行と列に基づいてポインターを計算する必要があります。 これについては、「 **レインボーサイン** 」ページで説明されています。これは、サイン曲線の1サイクルの形でレインボーを示すビットマップを作成します。
 
@@ -792,7 +792,7 @@ public class PosterizePage : ContentPage
 
 コンストラクター内のコードは、各ピクセルにアクセスし、値が0xE0E0E0FF のビットごとの AND 演算を実行してから、結果をビットマップに格納します。 値0xE0E0E0FF は、各カラーコンポーネントの上位3ビットを保持し、下位5ビットを0に設定します。 2 ~ 16777216 色<sup>ではなく</sup> 、ビットマップが 2<sup>9</sup> または512色に縮小されます。
 
-[![ポスタリゼーション](pixel-bits-images/Posterize.png "ポスタリゼーション")](pixel-bits-images/Posterize-Large.png#lightbox)
+[![スクリーンショットは、2つのモバイルデバイスとデスクトップウィンドウにあるおもちゃのサルの画像を示しています。](pixel-bits-images/Posterize.png "ポスタリゼーション")](pixel-bits-images/Posterize-Large.png#lightbox)
 
 ## <a name="related-links"></a>関連リンク
 

@@ -11,16 +11,16 @@ ms.date: 05/03/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 11897d2d3b8b7ba0a62956f1dbe4d8b873352e7a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5a5d26813719bfe807fff6745683fa13bde4429e
+ms.sourcegitcommit: a0de974875f8fa1a29f7abc990137246789ad85a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139556"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100630151"
 ---
 # <a name="mac-platform-setup"></a>Mac プラットフォームのセットアップ
 
-![プレビュー](~/media/shared/preview.png)
+:::image type="icon" source="~/media/shared/preview.png" border="false":::
 
 開始する前に、プロジェクトを作成するか、既存のプロジェクトを使用 Xamarin.Forms します。 Visual Studio for Mac を使用して追加できるのは Mac アプリのみです。
 
@@ -34,21 +34,21 @@ ms.locfileid: "84139556"
 
 1. Visual Studio for Mac で、既存のソリューションを右クリックし、 Xamarin.Forms [**追加] > [新しいプロジェクトの追加**] の順に選択します。
 
-2. [**新しいプロジェクト**] ウィンドウで、[ **Mac > アプリ > cocoa アプリ**] を選択し、[**次へ**] をクリックします。
+2. [ **新しいプロジェクト** ] ウィンドウで、[ **Mac > アプリ > cocoa アプリ** ] を選択し、[ **次へ**] をクリックします。
 
-3. **アプリ名**を入力し (必要に応じて、Dock 項目に別の名前を選択します)、[**次へ**] をクリックします。
+3. **アプリ名** を入力し (必要に応じて、Dock 項目に別の名前を選択します)、[**次へ**] をクリックします。
 
-4. 構成を確認し、[**作成**] を押します。 これらの手順を次に示します。
+4. 構成を確認し、[ **作成**] を押します。 これらの手順を次に示します。
 
     ![Cocoa アプリを追加する方法を示すアニメーション化された手順](mac-images/add-macos-proj.gif)
 
 5. Mac プロジェクトで、[パッケージ] を右クリックし、[**パッケージの追加**] を > て NuGet を追加します。 [Xamarin.Forms](https://www.nuget.org/packages/Xamarin.Forms/) また、同じバージョンの NuGet パッケージを使用するように、他のプロジェクトを更新する必要があり Xamarin.Forms ます。
 
-6. Mac プロジェクトで、[**参照**] を右クリックし、プロジェクトへの参照を追加し Xamarin.Forms ます ([共有プロジェクト] または [.NET Standard ライブラリプロジェクト])。
+6. Mac プロジェクトで、[ **参照** ] を右クリックし、プロジェクトへの参照を追加し Xamarin.Forms ます ([共有プロジェクト] または [.NET Standard ライブラリプロジェクト])。
 
-    ![共有コードプロジェクトへの参照を追加する Xamarin.Forms](mac-images/references-sml.png)
+    ![::: No loc (Xamarin. Forms)::: shared code プロジェクトへの参照を追加します。](mac-images/references-sml.png)
 
-7. **Main.cs**を更新してを初期化し `AppDelegate` ます。
+7. **Main.cs** を更新してを初期化し `AppDelegate` ます。
 
     ```csharp
     static class MainClass
@@ -97,7 +97,7 @@ ms.locfileid: "84139556"
     }
     ```
 
-9. Xcode で [**メインのストーリーボード**] をダブルクリックして編集します。 **ウィンドウ**を選択し、[**初期コントローラーがある**] チェックボックスを_オフ_にします (これは、上記のコードによってウィンドウが作成されるためです)。
+9. Xcode で [ **メインのストーリーボード** ] をダブルクリックして編集します。 **ウィンドウ** を選択し、[**初期コントローラーがある**] チェックボックスを _オフ_ にします (これは、上記のコードによってウィンドウが作成されるためです)。
 
     [![Xcode の [Initial Controller] チェックボックスをオフにします。](mac-images/xcode-init-controller-sml.png)](mac-images/xcode-init-controller.png#lightbox)
 
@@ -133,7 +133,7 @@ ms.locfileid: "84139556"
 var rect = new CoreGraphics.CGRect(200, 1000, 1024, 768);  // x, y, width, height
 ```
 
-## <a name="known-issues"></a>の既知の問題
+## <a name="known-issues"></a>既知の問題
 
 これはプレビューなので、運用環境の準備ができているわけではありません。 MacOS をプロジェクトに追加するときに発生する可能性があるいくつかの事項を次に示します。
 
