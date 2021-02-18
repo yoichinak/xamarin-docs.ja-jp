@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 53ffd71704201c87d5e30dea0f8da46189d6e75b
-ms.sourcegitcommit: 513feb0e07558766e3de4a898e53d56b27c20559
+ms.openlocfilehash: 9162754dd41190a14ce1b385d63e94f7c8c1ced7
+ms.sourcegitcommit: e7a5d1ec9e50a09b3b24f4c57850a4763c3406d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98697528"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101087492"
 ---
 # <a name="manual-camera-controls-in-xamarinios"></a>Xamarin の手動カメラコントロール
 
@@ -37,12 +37,6 @@ IOS 8 に用意されている新しい Api を使用して、アプリケーシ
 - **手動のホワイトバランス** –画像の色を調整するために使用されます。これは、多くの場合、現実的に見えるようにします。 光源の色温度は異なるため、イメージのキャプチャに使用されるカメラの設定は、これらの違いを補うために調整されます。 この場合も、ユーザーがホワイトバランスを制御できるようにすることで、自動的には実行できない調整を行うことができます。
 
 iOS 8 では、既存の iOS Api の拡張機能と拡張機能を使用して、イメージキャプチャプロセスをきめ細かく制御できるようになっています。
-
-## <a name="bracketed-capture"></a>かっこで囲まれるキャプチャ
-
-かっこで囲まれたキャプチャは、上に示した手動カメラコントロールの設定に基づいており、アプリケーションはさまざまな方法で時間をキャプチャできます。
-
-単に説明したように、角かっこで囲まれたキャプチャとは、画像から画像へのさまざまな設定で撮影された静止画像のバーストです。
 
 ## <a name="requirements"></a>必要条件
 

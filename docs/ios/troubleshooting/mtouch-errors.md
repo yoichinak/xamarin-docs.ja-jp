@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2018
-ms.openlocfilehash: 4064b5561569124ab15f77b9614eea5b91eadad4
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: b0acf65a2f570f0b55c5dde022e789d2f338026d
+ms.sourcegitcommit: e7a5d1ec9e50a09b3b24f4c57850a4763c3406d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91429982"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101087418"
 ---
 # <a name="xamarinios-errors"></a>Xamarin. iOS エラー
 
@@ -32,7 +32,7 @@ ms.locfileid: "91429982"
 
 予期しないエラー状態が発生しました。 以下を含む、できるだけ多くの情報を使用して、 [GitHub](https://github.com/xamarin/xamarin-macios/issues/new) で新しい問題を報告してください。
 
-- 最大冗長性を持つ完全なビルドログ ( `-v -v -v -v` **追加の mtouch 引数**など)。
+- 最大冗長性を持つ完全なビルドログ ( `-v -v -v -v` **追加の mtouch 引数** など)。
 - エラーを再現する最小限のテストケースそして
 - すべてのバージョンの解説
 
@@ -583,7 +583,7 @@ Xamarin iOS では、エラーメッセージに示されている SDK バージ
 
 エラーメッセージに示されているアセンブリのビルドターゲットが競合しています。
 
-次に例を示します。
+例:
 
 ```
   --assembly-build-target:Assembly1.dll=framework=MyBinary --assembly-build-target:Assembly2.dll=dynamiclibrary=MyBinary
@@ -597,7 +597,7 @@ Xamarin iOS では、エラーメッセージに示されている SDK バージ
 
 エラーメッセージに示されているアセンブリはすべて、1つの静的オブジェクトにコンパイルされます。 これは許可されていません。すべてのアセンブリを別の静的オブジェクトにコンパイルする必要があります。
 
-次に例を示します。
+例:
 
 ```
 --assembly-build-target:Assembly1.dll=staticobject=MyBinary --assembly-build-target:Assembly2.dll=staticobject=MyBinary
@@ -883,8 +883,6 @@ class Program {
 
 ### <a name="mt1004-could-not-get-the-list-of-installed-applications"></a>MT1004: インストールされているアプリケーションの一覧を取得できませんでした。
 
-## <a name="mt1xxx-project-related-error-messages"></a>MT1xxx: プロジェクト関連のエラーメッセージ
-
 <a name="MT1005"></a>
 
 ### <a name="mt1005-could-not-kill-the-application--on-the-device----you-may-have-to-kill-the-application-manually"></a>MT1005: デバイス ' ' でアプリケーション ' ' を強制終了できませんでした \* \* : *-アプリケーションを手動で強制終了する必要がある場合があります。
@@ -974,11 +972,11 @@ sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/m
 これは次の場合に発生する可能性があります。
 
 - アプリケーションには、現在のプロビジョニングプロファイルでサポートされていない権限があります。
-  考えられる解答:
+  考えられる解決策:
   - アプリケーションに必要な権利をサポートする別のプロビジョニングプロファイルを指定します。
   - 現在のプロビジョニングプロファイルでサポートされていない権利を削除します。
 - 展開しようとしているデバイスは、使用しているプロビジョニングプロファイルに含まれていません。
-  考えられる解答:
+  考えられる解決策:
   - Xcode のテンプレートから新しいアプリを作成し、同じプロビジョニングプロファイルを選択して、同じデバイスにデプロイします。 場合によっては、Xcode が新しいデバイスでプロビジョニングプロファイルを自動的に更新することがあります (その他の場合、Xcode は何をするかをたずねます)。
   -IOS デベロッパーセンターにアクセスし、プロビジョニングプロファイルを新しいデバイスで更新してから、更新されたプロビジョニングプロファイルをコンピューターにダウンロードします。
 
@@ -1595,7 +1593,7 @@ Parameter name: instruction
 
 ### <a name="mt202x-binding-optimizer-failed-processing-"></a>MT202x: バインドオプティマイザーは処理に失敗しました `...` 。
 
-生成されたバインドコードを最適化しようとしたときに、予期しない問題が発生しました。 問題の原因となっている要素の名前は、エラーメッセージで示されます。 この問題を解決するには、(またはという名前の型またはメソッドを含む) という名前のアセンブリを [github](https://github.com/xamarin/xamarin-macios/issues/new) の新しい問題に追加し、詳細を有効にした完全なビルドログ ( `-v -v -v -v` 追加の **mtouch 引数**など) を提供する必要があります。
+生成されたバインドコードを最適化しようとしたときに、予期しない問題が発生しました。 問題の原因となっている要素の名前は、エラーメッセージで示されます。 この問題を解決するには、(またはという名前の型またはメソッドを含む) という名前のアセンブリを [github](https://github.com/xamarin/xamarin-macios/issues/new) の新しい問題に追加し、詳細を有効にした完全なビルドログ ( `-v -v -v -v` 追加の **mtouch 引数** など) を提供する必要があります。
 
 最後の桁は `x` 次のようになります。
 
@@ -1607,7 +1605,7 @@ Parameter name: instruction
 
 ### <a name="mt2030-remove-user-resources-failed-processing-"></a>MT2030: ユーザーリソースの削除に失敗しました `...` 。
 
-ユーザーリソースを削除しようとしたときに予期しない問題が発生しました。 問題の原因となっているアセンブリの名前は、エラーメッセージで示されます。 この問題を解決するには、 [github](https://github.com/xamarin/xamarin-macios/issues/new) の新しい問題にアセンブリを提供し、詳細を有効にした完全なビルドログ ( `-v -v -v -v` 追加の **mtouch 引数**など) を指定する必要があります。
+ユーザーリソースを削除しようとしたときに予期しない問題が発生しました。 問題の原因となっているアセンブリの名前は、エラーメッセージで示されます。 この問題を解決するには、 [github](https://github.com/xamarin/xamarin-macios/issues/new) の新しい問題にアセンブリを提供し、詳細を有効にした完全なビルドログ ( `-v -v -v -v` 追加の **mtouch 引数** など) を指定する必要があります。
 
 ユーザーリソースは、アプリケーションバンドルを作成するために、ビルド時に抽出する必要があるアセンブリ (リソースとして) 内に含まれるファイルです。 これには次のものが含まれます
 
@@ -1618,37 +1616,37 @@ Parameter name: instruction
 
 ### <a name="mt2040-default-httpmessagehandler-setter-failed-processing-"></a>MT2040: 既定の HttpMessageHandler setter は処理に失敗しました `...` 。
 
-アプリケーションの既定値を設定しようとしたときに、予期しない問題が発生しました `HttpMessageHandler` 。 詳細が有効になって[github](https://github.com/xamarin/xamarin-macios/issues/new)いる完全なビルドログ ( `-v -v -v -v` 追加の**mtouch 引数**など) を使用して、github で新しい問題を作成してください。
+アプリケーションの既定値を設定しようとしたときに、予期しない問題が発生しました `HttpMessageHandler` 。 詳細が有効になって [](https://github.com/xamarin/xamarin-macios/issues/new)いる完全なビルドログ ( `-v -v -v -v` 追加の **mtouch 引数** など) を使用して、github で新しい問題を作成してください。
 
 <a name="MT2050"></a>
 
 ### <a name="mt2050-code-remover-failed-processing-"></a>MT2050: Code 人は処理に失敗しました `...` 。
 
-アプリケーションで BCL 配布からコードを削除しようとしたときに、予期しない問題が発生しました。 詳細が有効になって[github](https://github.com/xamarin/xamarin-macios/issues/new)いる完全なビルドログ ( `-v -v -v -v` 追加の**mtouch 引数**など) を使用して、github で新しい問題を作成してください。
+アプリケーションで BCL 配布からコードを削除しようとしたときに、予期しない問題が発生しました。 詳細が有効になって [](https://github.com/xamarin/xamarin-macios/issues/new)いる完全なビルドログ ( `-v -v -v -v` 追加の **mtouch 引数** など) を使用して、github で新しい問題を作成してください。
 
 <a name="MT2060"></a>
 
 ### <a name="mt2060-sealer-failed-processing-"></a>MT2060: シーラーは処理に失敗しました `...` 。
 
-型またはメソッド (final) を封印しようとしたとき、または一部のメソッドを仮想化するときに、予期しない問題が発生しました。 問題の原因となっているアセンブリの名前は、エラーメッセージで示されます。 この問題を解決するには、 [github](https://github.com/xamarin/xamarin-macios/issues/new) の新しい問題にアセンブリを提供し、詳細を有効にした完全なビルドログ ( `-v -v -v -v` 追加の **mtouch 引数**など) を指定する必要があります。
+型またはメソッド (final) を封印しようとしたとき、または一部のメソッドを仮想化するときに、予期しない問題が発生しました。 問題の原因となっているアセンブリの名前は、エラーメッセージで示されます。 この問題を解決するには、 [github](https://github.com/xamarin/xamarin-macios/issues/new) の新しい問題にアセンブリを提供し、詳細を有効にした完全なビルドログ ( `-v -v -v -v` 追加の **mtouch 引数** など) を指定する必要があります。
 
 <a name="MT2070"></a>
 
 ### <a name="mt2070-metadata-reducer-failed-processing-"></a>MT2070: Metadata Reducer は処理に失敗しました `...` 。
 
-アプリケーションからメタデータを縮小しようとしたときに、予期しない問題が発生しました。 問題の原因となっているアセンブリの名前は、エラーメッセージで示されます。 この問題を解決するには、 [github](https://github.com/xamarin/xamarin-macios/issues/new) の新しい問題にアセンブリを提供し、詳細を有効にした完全なビルドログ ( `-v -v -v -v` 追加の **mtouch 引数**など) を指定する必要があります。
+アプリケーションからメタデータを縮小しようとしたときに、予期しない問題が発生しました。 問題の原因となっているアセンブリの名前は、エラーメッセージで示されます。 この問題を解決するには、 [github](https://github.com/xamarin/xamarin-macios/issues/new) の新しい問題にアセンブリを提供し、詳細を有効にした完全なビルドログ ( `-v -v -v -v` 追加の **mtouch 引数** など) を指定する必要があります。
 
 <a name="MT2080"></a>
 
 ### <a name="mt2080-marknsobjects-failed-processing-"></a>MT2080: MarkNSObjects は処理に失敗しました `...` 。
 
-アプリケーションからサブクラスをマークしようとしたときに、予期しない問題が発生しました `NSObject` 。 問題の原因となっているアセンブリの名前は、エラーメッセージで示されます。 この問題を解決するには、 [github](https://github.com/xamarin/xamarin-macios/issues/new) の新しい問題にアセンブリを提供し、詳細を有効にした完全なビルドログ ( `-v -v -v -v` 追加の **mtouch 引数**など) を指定する必要があります。
+アプリケーションからサブクラスをマークしようとしたときに、予期しない問題が発生しました `NSObject` 。 問題の原因となっているアセンブリの名前は、エラーメッセージで示されます。 この問題を解決するには、 [github](https://github.com/xamarin/xamarin-macios/issues/new) の新しい問題にアセンブリを提供し、詳細を有効にした完全なビルドログ ( `-v -v -v -v` 追加の **mtouch 引数** など) を指定する必要があります。
 
 <a name="MT2090"></a>
 
 ### <a name="mt2090-inliner-failed-processing-"></a>MT2090: Inliner 処理に失敗しました `...` 。
 
-アプリケーションからコードをインライン化しようとしたときに、予期しない問題が発生しました。 問題の原因となっているアセンブリの名前は、エラーメッセージで示されます。 この問題を解決するには、アセンブリを [github](https://github.com/xamarin/xamarin-macios/issues/new) の新しい問題に追加し、詳細が有効になっている完全なビルドログ ( `-v -v -v -v` 追加の **mtouch 引数**など) を指定する必要があります。
+アプリケーションからコードをインライン化しようとしたときに、予期しない問題が発生しました。 問題の原因となっているアセンブリの名前は、エラーメッセージで示されます。 この問題を解決するには、アセンブリを [github](https://github.com/xamarin/xamarin-macios/issues/new) の新しい問題に追加し、詳細が有効になっている完全なビルドログ ( `-v -v -v -v` 追加の **mtouch 引数** など) を指定する必要があります。
 
 <!-- MT21xx: more linker errors -->
 
@@ -1658,7 +1656,7 @@ Parameter name: instruction
 
 ### <a name="mt2100-smart-enum-conversion-preserver-failed-processing-"></a>MT2100: スマート Enum 変換順序は処理に失敗しました `...` 。
 
-アプリケーションからスマート列挙の変換メソッドをマークしようとしたときに、予期しない問題が発生しました。 問題の原因となっているアセンブリの名前は、エラーメッセージで示されます。 この問題を解決するには、アセンブリを [github](https://github.com/xamarin/xamarin-macios/issues/new) の新しい問題に追加し、詳細が有効になっている完全なビルドログ ( `-v -v -v -v` 追加の **mtouch 引数**など) を指定する必要があります。
+アプリケーションからスマート列挙の変換メソッドをマークしようとしたときに、予期しない問題が発生しました。 問題の原因となっているアセンブリの名前は、エラーメッセージで示されます。 この問題を解決するには、アセンブリを [github](https://github.com/xamarin/xamarin-macios/issues/new) の新しい問題に追加し、詳細が有効になっている完全なビルドログ ( `-v -v -v -v` 追加の **mtouch 引数** など) を指定する必要があります。
 
 <a name="MT2101"></a>
 
@@ -1666,7 +1664,7 @@ Parameter name: instruction
 
 エラーメッセージに示されているメソッドを処理するときに、無効なアセンブリ参照が見つかりました。
 
-問題の原因となっているアセンブリの名前は、エラーメッセージで示されます。 この問題を解決するには、 [github](https://github.com/xamarin/xamarin-macios/issues/new) の新しい問題にアセンブリを提供し、詳細を有効にした完全なビルドログ ( `-v -v -v -v` 追加の **mtouch 引数**など) を指定する必要があります。
+問題の原因となっているアセンブリの名前は、エラーメッセージで示されます。 この問題を解決するには、 [github](https://github.com/xamarin/xamarin-macios/issues/new) の新しい問題にアセンブリを提供し、詳細を有効にした完全なビルドログ ( `-v -v -v -v` 追加の **mtouch 引数** など) を指定する必要があります。
 
 <a name="MT2102"></a>
 
@@ -1674,7 +1672,7 @@ Parameter name: instruction
 
 エラーメッセージに示されているメソッドをマークしようとしたときに、予期しない問題が発生しました。
 
-問題の原因となっているアセンブリの名前は、エラーメッセージで示されます。 この問題を解決するには、 [github](https://github.com/xamarin/xamarin-macios/issues/new) の新しい問題にアセンブリを提供し、詳細を有効にした完全なビルドログ ( `-v -v -v -v` 追加の **mtouch 引数**など) を指定する必要があります。
+問題の原因となっているアセンブリの名前は、エラーメッセージで示されます。 この問題を解決するには、 [github](https://github.com/xamarin/xamarin-macios/issues/new) の新しい問題にアセンブリを提供し、詳細を有効にした完全なビルドログ ( `-v -v -v -v` 追加の **mtouch 引数** など) を指定する必要があります。
 
 <a name="MT2103"></a>
 
@@ -1682,7 +1680,7 @@ Parameter name: instruction
 
 アセンブリの処理中に予期しないエラーが発生しました。
 
-問題の原因となっているアセンブリの名前は、エラーメッセージで示されます。 この問題を解決するには、 [github](https://github.com/xamarin/xamarin-macios/issues/new) の新しい問題にアセンブリを提供し、詳細を有効にした完全なビルドログ ( `-v -v -v -v` 追加の **mtouch 引数**など) を指定する必要があります。
+問題の原因となっているアセンブリの名前は、エラーメッセージで示されます。 この問題を解決するには、 [github](https://github.com/xamarin/xamarin-macios/issues/new) の新しい問題にアセンブリを提供し、詳細を有効にした完全なビルドログ ( `-v -v -v -v` 追加の **mtouch 引数** など) を指定する必要があります。
 
 <a name="MT2104"></a>
 
@@ -1789,7 +1787,7 @@ Xamarin では、問題の種類をサポートする必要がある場合は、
 
 <a name="MT4102"></a>
 
-### <a name="mt4102-the-registrar-found-an-invalid-type--in-signature-for-method--use--instead"></a>MT4102: レジストラーは、 `*` メソッドのシグネチャに無効な型を見つけました `*` 。 代わりに `*` を使用してください
+### <a name="mt4102-the-registrar-found-an-invalid-type--in-signature-for-method--use--instead"></a>MT4102: レジストラーは、 `*` メソッドのシグネチャに無効な型を見つけました `*` 。 代わりに、`*` を使用してください。
 
 現在は、1つの型 (system.string) でのみ発生します。 代わりに、目的の C と同等の (NSDate) を使用してください。
 
@@ -2350,7 +2348,7 @@ BindAs 属性の型が、それがアタッチされているメンバーの型�
 
 ### <a name="mt5214-native-linking-failed-undefined-symbol--this-symbol-was-referenced-the-managed-member--please-verify-that-all-the-necessary-frameworks-have-been-referenced-and-native-libraries-linked"></a>MT5214: ネイティブリンクに失敗しました。未定義のシンボル: *。 このシンボルはマネージドメンバー * を参照しました。 必要なすべてのフレームワークが参照されていて、ネイティブライブラリがリンクされていることを確認してください。
 
-このエラーは、マネージコードに、存在しないネイティブメソッドへの P/Invoke が含まれている場合に報告されます。 次に例を示します。
+このエラーは、マネージコードに、存在しないネイティブメソッドへの P/Invoke が含まれている場合に報告されます。 例:
 
 ```csharp
 using System.Runtime.InteropServices;
@@ -2396,7 +2394,7 @@ class MyImports {
 - バインドプロジェクト (属性) からの静的にリンクされたライブラリ内のメモリ位置へのフィールド参照 `[Field]` 。
 - バインドプロジェクトから静的にリンクされたライブラリで参照される (インクリメンタルビルドを使用している場合、または静的レジスタを使用していない場合)、目的の C クラス。
 
-考えられる解答:
+考えられる解決策:
 
 - マネージリンカーを有効にします (SDK アセンブリだけではなく、すべてのアセンブリで可能な場合)。 これにより、リンカーのコマンドラインが最大値を超えないように、動的シンボルのソースが不足する可能性があります。
 - P/Invoke、フィールド参照、または目標 C クラスの数を減らします。
@@ -2780,7 +2778,7 @@ class MyImports {
 - dict
 - [bool]
 - real
-- 整数
+- 整数 (integer)
 - date
 - data
 
@@ -2971,7 +2969,7 @@ class MyImports {
 
 <a name="MT8011"></a>
 
-### <a name="mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8011: メソッドの戻り値の変換属性 ([DelegateProxy]) をブロックするデリゲートが見つかりませ*ん。。* でバグをファイルに登録してください http://bugzilla.xamarin.com 。
+### <a name="mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8011: メソッドの戻り値の変換属性 ([DelegateProxy]) をブロックするデリゲートが見つかりませ *ん。。* でバグをファイルに登録してください http://bugzilla.xamarin.com 。
 
 Xamarin. iOS は、実行時に必要なメソッドを見つけることができませんでした (デリゲートをブロックに変換するため)。
 

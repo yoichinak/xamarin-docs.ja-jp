@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: chamons
 ms.author: chhamo
 ms.date: 04/16/2019
-ms.openlocfilehash: 6c6a0491f7989f2f76afabc3412e38be74a06da4
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 509f50d26818af09c4d664f27f2ae17a73430991
+ms.sourcegitcommit: e7a5d1ec9e50a09b3b24f4c57850a4763c3406d2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91431580"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101087439"
 ---
 # <a name="can-i-use-an-older-version-of-xcode-or-xamarinios"></a>古いバージョンの Xcode または Xamarin を使用できますか。
 
@@ -34,7 +34,7 @@ Microsoft では、アプリケーションを開発および送信するとき�
 
 最新の Xcode を使用しても、アプリケーションで古いバージョンの iOS を対象にすることはできないことに注意してください。 サポートされている iOS のバージョンは、お使いのアプリケーションで使用する **情報 plist** エントリと api に基づいています。
 
-Xcode の複数のバージョンをサイドバイサイドでインストールすることができます。 **Xcode101** や **Xcode102**などの名前が異なります。 複数のバージョンを使用する場合は、 [Visual Studio for Mac 設定](~/ios/troubleshooting/questions/ios-sdk.md) で active Xcode を、 [`xcode-select`](https://developer.apple.com/library/archive/technotes/tn2339/_index.html#//apple_ref/doc/uid/DTS40014588-CH1-HOW_DO_I_SELECT_THE_DEFAULT_VERSION_OF_XCODE_TO_USE_FOR_MY_COMMAND_LINE_TOOLS_) [コマンドラインツール](https://developer.apple.com/library/archive/technotes/tn2339/_index.html#//apple_ref/doc/uid/DTS40014588-CH1-HOW_DO_I_SELECT_THE_DEFAULT_VERSION_OF_XCODE_TO_USE_FOR_MY_COMMAND_LINE_TOOLS_)で必ず設定してください。
+Xcode の複数のバージョンをサイドバイサイドでインストールすることができます。 **Xcode101** や **Xcode102** などの名前が異なります。 複数のバージョンを使用する場合は、 [Visual Studio for Mac 設定](~/ios/troubleshooting/questions/ios-sdk.md) で active Xcode を、 [`xcode-select`](https://developer.apple.com/library/archive/technotes/tn2339/_index.html#//apple_ref/doc/uid/DTS40014588-CH1-HOW_DO_I_SELECT_THE_DEFAULT_VERSION_OF_XCODE_TO_USE_FOR_MY_COMMAND_LINE_TOOLS_) [コマンドラインツール](https://developer.apple.com/library/archive/technotes/tn2339/_index.html#//apple_ref/doc/uid/DTS40014588-CH1-HOW_DO_I_SELECT_THE_DEFAULT_VERSION_OF_XCODE_TO_USE_FOR_MY_COMMAND_LINE_TOOLS_)で必ず設定してください。
 
 ただし、まれな状況では、古いコンポーネントの使用が必要になる場合があります。 このドキュメントでは、最新バージョンより古いバージョンを使用する場合に直面する可能性がある一般的な課題について説明します。
 
@@ -53,7 +53,7 @@ Xamarin を更新していません。少なくともしばらくの間、iOS �
 Xamarin. iOS は一般に、可能な限り古い Xcode のリリースをサポートしています。 次のようないくつかの問題が考えられます。
 
 - 新しい Xamarin. iOS では、選択した Xcode に存在しない一部の機能と Api がサポートされている場合があります。 
-- **静的レジストラー**では、アプリケーションをビルドするために Xcode headers ファイルが必要です [`MT0091`](~/ios/troubleshooting/mtouch-errors.md#MT0091) [`MT4109`](~/ios/troubleshooting/mtouch-errors.md#MT4109) 。 api がない場合は、エラーまたはエラーが発生します。
+- **静的レジストラー** では、アプリケーションをビルドするために Xcode headers ファイルが必要です [`MT0091`](~/ios/troubleshooting/mtouch-errors.md#MT0091) [`MT4109`](~/ios/troubleshooting/mtouch-errors.md#MT4109) 。 api がない場合は、エラーまたはエラーが発生します。
   - ほとんどの場合、マネージリンカーを有効にすると (新しい API のマネージバインドを削除することによって)、使用されなくなった場合に役立ちます。
 - Xcode 9.0 + ツールチェーンが使用されていない場合、bitcode ビルド (tvOS と watchOS の場合) は、App Store への送信に失敗する可能性があります。
 
@@ -76,7 +76,7 @@ Xamarin. iOS は一般に、可能な限り古い Xcode のリリースをサポ
 
 Apple は、いつでも AppStore の提出ルールを更新する権利を留保します。 これらの規則の変更は、事前に発表されている場合があります。 これらの変更の一部では、のサポートに対するツールの変更が必要になります。そのためには、更新された Xamarin. iOS コンポーネントが必要です。
 
-Apple では、ルールの変更に加えて、送信されたアプリまたは既存の強化に対して、追加の検証が追加されることがよくあります。 これらの一部は、ツールの変更を必要とします (たとえば、新しいブラックリストシンボル)。 これらの多くは、ルールのアナウンス (または一覧) がないため、お客様がを送信するときに最初に検出されます。
+Apple では、ルールの変更に加えて、送信されたアプリまたは既存の強化に対して、追加の検証が追加されることがよくあります。 これらの一部は、ツールの変更を必要とします (たとえば、新しいブロックリストシンボル)。 これらの多くは、ルールのアナウンス (または一覧) がないため、お客様がを送信するときに最初に検出されます。
 
 ## <a name="summary"></a>まとめ
 

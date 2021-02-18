@@ -7,12 +7,12 @@ ms.custom: xamu-video
 author: davidortinau
 ms.author: daortin
 ms.date: 04/10/2017
-ms.openlocfilehash: da3148022f1280a18fd398e7c960c1a8440c0200
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: eb59d86582b50b5b0c166f2b5672422b481db048
+ms.sourcegitcommit: 1f391667869a4541dd9b42d78862dc01d69ed160
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91456809"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99818034"
 ---
 # <a name="building-mobile-apps"></a>モバイル アプリの構築
 
@@ -21,7 +21,7 @@ ms.locfileid: "91456809"
 ## <a name="build-your-first-app"></a>最初のアプリをビルドする
 
 > [!div class="nextstepaction"]
-> [Xamarin.Forms のクイック スタート](~/get-started/quickstarts/single-page.md)
+> [Xamarin.Forms のクイック スタート](~/get-started/quickstarts/app.md)
 
 ネイティブの UI テクノロジ (Android XML や Xcode のストーリーボードなど) を使用してアプリをビルドする場合は、次のプラットフォーム固有のガイドを参照してみてください。
 
