@@ -11,13 +11,13 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: d5b0cc2bb4617a0f093971dfca69e8352779c088
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.sourcegitcommit: 10c7dd16fe78226053d1d036492b6c9102fc421b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 02/05/2021
 ms.locfileid: "93373654"
 ---
-# <a name="create-no-locxamarinforms-behaviors"></a>Xamarin.Forms ビヘイビアーの作成
+# <a name="create-xamarinforms-behaviors"></a>Xamarin.Forms ビヘイビアーの作成
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
 
@@ -59,7 +59,7 @@ public class CustomBehavior : Behavior<View>
 
 その後、適切なコントロールの [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) コレクションにアタッチすることで、ビヘイビアーを使用できます。
 
-## <a name="creating-a-no-locxamarinforms-behavior"></a>Xamarin.Forms ビヘイビアーの作成
+## <a name="creating-a-xamarinforms-behavior"></a>Xamarin.Forms ビヘイビアーの作成
 
 サンプル アプリケーションでは、`NumericValidationBehavior` を示します。ここでは、ユーザーが [`Entry`](xref:Xamarin.Forms.Entry) コントロールに入力した値が `double` でない場合に、その値を赤色で強調表示します。 このビヘイビアーを次のコード例に示します。
 
@@ -92,7 +92,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 > [!NOTE]
 > ビヘイビアーはスタイルを利用して共有し、複数のコントロールに適用できるため、Xamarin.Forms では、ビヘイビアーの `BindingContext` は設定されません。
 
-## <a name="consuming-a-no-locxamarinforms-behavior"></a>Xamarin.Forms ビヘイビアーの使用
+## <a name="consuming-a-xamarinforms-behavior"></a>Xamarin.Forms ビヘイビアーの使用
 
 次の XAML のコード例に示すように、すべての Xamarin.Forms コントロールには、1 つまたは複数のビヘイビアーを追加できる [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) コレクションがあります。
 
@@ -118,7 +118,7 @@ entry.Behaviors.Add (new NumericValidationBehavior ());
 > [!NOTE]
 > ビヘイビアーは特定のコントロールの種類 (または複数のコントロールに適用できるスーパークラス) に対して記述され、互換性のあるコントロールにのみ追加する必要があります。 互換性のないコントロールにビヘイビアーをアタッチしようとすると、例外がスローされます。
 
-### <a name="consuming-a-no-locxamarinforms-behavior-with-a-style"></a>スタイルによる Xamarin.Forms ビヘイビアーの使用
+### <a name="consuming-a-xamarinforms-behavior-with-a-style"></a>スタイルによる Xamarin.Forms ビヘイビアーの使用
 
 明示的または暗黙的なスタイルによってビヘイビアーを使用することもできます。 ただし、コントロールの [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) プロパティは読み取り専用であるため、このプロパティを設定するスタイルを作成することはできません。 解決策は、ビヘイビアーの追加と削除を制御する添付プロパティをビヘイビアー クラスに追加することです。 プロセスは、次のとおりです。
 
@@ -167,7 +167,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 
 `NumericValidationBehavior` クラスには、`static` ゲッターとセッターがある `AttachBehavior` という名前の添付プロパティが含まれています。このプロパティにより、それが添付されるコントロールへのビヘイビアーの追加または削除が制御されます。 この添付プロパティにより、プロパティの値が変更されたときに実行される `OnAttachBehaviorChanged` デリゲートが登録されます。 このメソッドでは、`AttachBehavior` 添付プロパティの値に基づいて、ビヘイビアーの追加または削除が行われます。
 
-次のコード例で、`AttachBehavior` 添付プロパティを使用する `NumericValidationBehavior` 用の " *明示的な* " スタイルで、 [`Entry`](xref:Xamarin.Forms.Entry) コントロールに適用できるものを示します。
+次のコード例で、`AttachBehavior` 添付プロパティを使用する `NumericValidationBehavior` 用の "*明示的な*" スタイルで、[`Entry`](xref:Xamarin.Forms.Entry) コントロールに適用できるものを示します。
 
 ```xaml
 <Style x:Key="NumericValidationStyle" TargetType="Entry">

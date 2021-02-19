@@ -11,10 +11,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 10e794dba276ed9d67b0e947d203cce0b62b7353
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.sourcegitcommit: 10c7dd16fe78226053d1d036492b6c9102fc421b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 02/05/2021
 ms.locfileid: "93374486"
 ---
 # <a name="customizing-a-contentpage"></a>ContentPage のカスタマイズ
@@ -37,7 +37,7 @@ _ContentPage は、単一ビューを表示し、画面の大部分を占める�
 
 ライブ カメラのフィードと写真をキャプチャする機能を提供する `CameraPage` を実装する各項目について順番に説明します。
 
-## <a name="creating-the-no-locxamarinforms-page"></a>Xamarin.Forms ページを作成する
+## <a name="creating-the-xamarinforms-page"></a>Xamarin.Forms ページを作成する
 
 次の XAML コード例に示すように、変更されていない [`ContentPage`](xref:Xamarin.Forms.ContentPage) を共有 Xamarin.Forms プロジェクトに追加できます。
 
@@ -76,7 +76,7 @@ public class CameraPageCS : ContentPage
 
 `CameraPage` のインスタンスは、各プラットフォームでライブ カメラ フィードを表示するために使用されます。 コントロールのカスタマイズはカスタム レンダラーで実行されるため、`CameraPage` クラスに追加の実装は必要ありません。
 
-## <a name="consuming-the-no-locxamarinforms-page"></a>Xamarin.Forms ページを使用する
+## <a name="consuming-the-xamarinforms-page"></a>Xamarin.Forms ページを使用する
 
 Xamarin.Forms アプリケーションには、必ず空の `CameraPage` が表示されます。 これは、次のコード例に示すように、`MainPage` インスタンスのボタンがタップされてから `OnTakePhotoButtonClicked` メソッドが実行されたときに起こります。
 
