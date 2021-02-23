@@ -1,34 +1,34 @@
 ---
 title: Xamarin.Forms クイック スタート Deep Dive
-description: この記事では、Xamarin.Forms を使用したアプリケーション開発の基礎について説明します。 取り上げたテーマには、Xamarin.Forms アプリケーションの構造、アーキテクチャとアプリケーションの基礎、ユーザー インターフェイスが含まれていました。
+description: この記事では、Xamarin.Forms シェルを使用したアプリケーション開発の基礎について説明します。 Xamarin.Forms シェル アプリケーションの構造、アーキテクチャとアプリケーションの基礎、ユーザー インターフェイスなどのトピックが含まれます。
 zone_pivot_groups: platform
 ms.topic: quickstart
 ms.prod: xamarin
 ms.custom: video
-ms.assetid: 7B2340A1-6883-41D8-860C-0BB6C4E0C316
+ms.assetid: F65C83B7-BC9F-425F-8662-931B652A2946
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/27/2018
+ms.date: 01/25/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8bfa78ef334829ab228d691368ec44ac71d415ad
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 723ea0f3c6703824bfbfca51f4ecfc8c5ab0b83a
+ms.sourcegitcommit: 0a6b19004932c1ac82e16c95d5d3d5eb35a5b17f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91433520"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100255299"
 ---
-# <a name="no-locxamarinforms-quickstart-deep-dive"></a>Xamarin.Forms クイック スタート Deep Dive
+# <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.Forms クイック スタート Deep Dive
 
-[Xamarin.Forms クイック スタート](~/get-started/index.yml)では、Notes アプリケーションをビルドしました。 この記事では、Xamarin.Forms アプリケーションのしくみの基礎を理解するために、構築された内容を確認します。
+[Xamarin.Forms クイック スタート](~/get-started/index.yml)では、Notes アプリケーションをビルドしました。 この記事では、Xamarin.Forms シェル アプリケーションのしくみの基礎を理解するために構築された内容を確認します。
 
 ::: zone pivot="windows"
 
 ## <a name="introduction-to-visual-studio"></a>Visual Studio の概要
 
-Visual Studio は、コードを*ソリューション*と*プロジェクト*に分けて整理しています。 ソリューションとは、1 つまたは複数のプロジェクトを保持できるコンテナーです。 プロジェクトは、アプリケーション、サポートするライブラリ、テスト アプリケーションなどの場合があります。 Notes アプリケーションは、次のスクリーンショットに示されているように、4 つのプロジェクトを含む 1 つのソリューションで構成されています。
+Visual Studio は、コードを *ソリューション* と *プロジェクト* に分けて整理しています。 ソリューションとは、1 つまたは複数のプロジェクトを保持できるコンテナーです。 プロジェクトは、アプリケーション、サポートするライブラリ、テスト アプリケーションなどの場合があります。 Notes アプリケーションは、次のスクリーンショットに示されているように、3 つのプロジェクトを含む 1 つのソリューションで構成されています。
 
 ![Visual Studio ソリューション エクスプローラー](deepdive-images/vs/solution.png)
 
@@ -37,9 +37,8 @@ Visual Studio は、コードを*ソリューション*と*プロジェクト*�
 - Notes - このプロジェクトは、すべての共有コードと共有 UI を保持する .NET Standard ライブラリ プロジェクトです。
 - Notes.Android: このプロジェクトは、Android 固有のコードを保持しており、Android アプリケーションのエントリ ポイントです。
 - Notes.iOS: このプロジェクトは、iOS 固有のコードを保持しており、iOS アプリケーションのエントリ ポイントです。
-- Notes.UWP: このプロジェクトは、ユニバーサル Windows プラットフォーム (UWP) 固有のコードを保持保持しており、UWP アプリケーションのエントリ ポイントです。
 
-## <a name="anatomy-of-a-no-locxamarinforms-application"></a>Xamarin.Forms アプリケーションの構造
+## <a name="anatomy-of-a-xamarinforms-application"></a>Xamarin.Forms アプリケーションの構造
 
 次のスクリーンショットは、Visual Studio の Notes .NET Standard プロジェクトの内容です。
 
@@ -47,7 +46,7 @@ Visual Studio は、コードを*ソリューション*と*プロジェクト*�
 
 このプロジェクトには、**NuGet** ノードと **SDK** ノードを含む **Dependencies** ノードがあります。
 
-- **NuGet** &ndash; プロジェクトに追加されている Xamarin.Forms と sqlite-net-pcl NuGet パッケージ。
+- **NuGet** &ndash; プロジェクトに追加されている Xamarin.Forms、Xamarin.Essentials、Newtonsoft.Json、sqlite-net-pcl の各 NuGet パッケージ。
 - **SDK** &ndash; .NET Standard を定義する NuGet パッケージの完全なセットを参照する `NETStandard.Library` メタパッケージ。
 
 ::: zone-end
@@ -55,7 +54,7 @@ Visual Studio は、コードを*ソリューション*と*プロジェクト*�
 
 ## <a name="introduction-to-visual-studio-for-mac"></a>Visual Studio for Mac の概要
 
-[Visual Studio for Mac ](/visualstudio/mac/)は、コードを*ソリューション*と*プロジェクト*に分けて整理するという Visual Studio の方法に従っています。 ソリューションとは、1 つまたは複数のプロジェクトを保持できるコンテナーです。 プロジェクトは、アプリケーション、サポートするライブラリ、テスト アプリケーションなどの場合があります。 Notes アプリケーションは、次のスクリーンショットに示されているように、3 つのプロジェクトを含む 1 つのソリューションで構成されています。
+[Visual Studio for Mac](/visualstudio/mac/)は、コードを *ソリューション* と *プロジェクト* に分けて整理するという Visual Studio の方法に従っています。 ソリューションとは、1 つまたは複数のプロジェクトを保持できるコンテナーです。 プロジェクトは、アプリケーション、サポートするライブラリ、テスト アプリケーションなどの場合があります。 Notes アプリケーションは、次のスクリーンショットに示されているように、3 つのプロジェクトを含む 1 つのソリューションで構成されています。
 
 ![Visual Studio for Mac ソリューション ウィンドウ](deepdive-images/vsmac/solution.png)
 
@@ -65,7 +64,7 @@ Visual Studio は、コードを*ソリューション*と*プロジェクト*�
 - Notes.Android: このプロジェクトは、Android 固有のコードを保持した、Android アプリケーションのエントリ ポイントです。
 - Notes.iOS: このプロジェクトは、iOS 固有のコードを保持しており、iOS アプリケーションのエントリ ポイントです。
 
-## <a name="anatomy-of-a-no-locxamarinforms-application"></a>Xamarin.Forms アプリケーションの構造
+## <a name="anatomy-of-a-xamarinforms-application"></a>Xamarin.Forms アプリケーションの構造
 
 次のスクリーンショットは、Visual Studio for Mac の Notes .NET Standard プロジェクトの内容を示しています。
 
@@ -73,22 +72,26 @@ Visual Studio は、コードを*ソリューション*と*プロジェクト*�
 
 このプロジェクトには、**NuGet** ノードと **SDK** ノードを含む **Dependencies** ノードがあります。
 
-- **NuGet** &ndash; プロジェクトに追加されている Xamarin.Forms と sqlite-net-pcl NuGet パッケージ。
+- **NuGet** &ndash; プロジェクトに追加されている Xamarin.Forms、Xamarin.Essentials、Newtonsoft.Json、sqlite-net-pcl の各 NuGet パッケージ。
 - **SDK** &ndash; .NET Standard を定義する NuGet パッケージの完全なセットを参照する `NETStandard.Library` メタパッケージ。
 
 ::: zone-end
 
-このプロジェクトには、以下の複数のファイルも含まれています。
+このプロジェクトには、複数のファイルも含まれています。
 
 - **Data\NoteDatabase.cs** – このクラスには、データベースを作成し、それに対してデータの読み込み、データの書き込み、データの削除を行うためのコードが含まれます。
 - **Models\Note.cs** – このクラスにより、`Note` モデルが定義されます。このインスタンスにアプリケーション内の各メモに関するデータが格納されます。
+- **Views\AboutPage.xaml** – `AboutPage` クラスの XAML マークアップ。About ページの UI が定義されています。
+- **Views\AboutPage.xaml.cs** – `AboutPage` クラスのコードビハインド。ユーザーがページを操作するときに実行されるビジネス ロジックが含まれています。
+- **Views\NotesPage.xaml** – `NotesPage` クラスの XAML マークアップ。アプリケーションの起動時に表示されるページの UI が定義されています。
+- **Views\NotesPage.xaml.cs** – `NotesPage` クラスのコードビハインド。ユーザーがページを操作したときに実行されるビジネス ロジックが含まれています。
+- **Views\NoteEntryPage.xaml** – `NoteEntryPage` クラスの XAML マークアップ。ユーザーがメモを入力するときに表示されるページの UI が定義されています。
+- **Views\NoteEntryPage.xaml.cs** – `NoteEntryPage` クラスのコードビハインド。ユーザーがページを操作するときに実行されるビジネス ロジックが含まれています。
 - **App.xaml**: `App` クラスの XAML マークアップ。アプリケーションのリソース ディクショナリを定義します。
-- **App.xaml.cs**: `App` クラスの分離コード。各プラットフォーム上のアプリケーションで表示される最初のページのインスタンス化と、アプリケーションのライフサイクル イベント処理を担当します。
+- **App.xaml.cs** – `App` クラスのコードビハインド。シェル アプリケーションのインスタンス化と、アプリケーションのライフサイクル イベントの処理が行われます。
+- **AppShell.xaml** – `AppShell` クラスの XAML マークアップ。アプリケーションのビジュアル階層が定義されています。
+- **AppShell.xaml.cs** – `AppShell` クラスのコードビハインド。プログラムによって移動できるように、`NoteEntryPage` のルートが作成されます。
 - **AssemblyInfo.cs** – このファイルには、アセンブリ レベルで適用されるプロジェクトに関するアプリケーション属性が含まれています。
-- **NotesPage.xaml**: `NotesPage` クラスの XAML マークアップ。アプリケーションの起動時に表示されるページの UI を定義します。
-- **NotesPage.xaml.cs**: `NotesPage` クラスの分離コード。ユーザーがページを操作したときに実行されるビジネス ロジックが含まれています。
-- **NoteEntryPage.xaml**: `NoteEntryPage` クラスの XAML マークアップ。ユーザーがメモを入力するときに表示されるページの UI を定義します。
-- **NoteEntryPage.xaml.cs**: `NoteEntryPage` クラスの分離コード。ユーザーがページを操作するときに実行されるビジネス ロジックが含まれています。
 
 Xamarin.iOS アプリケーションの構造については、「[Anatomy of a Xamarin.iOS Application](~/ios/get-started/hello-ios/hello-ios-deepdive.md#anatomy-of-a-xamarinios-application)」(Xamarin.iOS アプリケーションの構造) を参照してください。 Xamarin.Android アプリケーションの構造については、「[Anatomy of a Xamarin.Android Application](~/android/get-started/hello-android/hello-android-deepdive.md#anatomy)」(Xamarin.Android アプリケーションの構造) を参照してください。
 
@@ -96,18 +99,9 @@ Xamarin.iOS アプリケーションの構造については、「[Anatomy of a 
 
 Xamarin.Forms アプリケーションは、従来のクロスプラットフォーム アプリケーションと同じ方法で設計されています。 通常、共有コードは .NET Standard ライブラリに配置され、プラットフォーム固有のアプリケーションは共有コードを使用します。 次の図は、Notes アプリケーションのこの関係の概要を示しています。
 
-::: zone pivot="windows"
+![Notes アーキテクチャ](deepdive-images/architecture.png)
 
-![Notes アーキテクチャ](deepdive-images/vs/architecture.png)
-
-::: zone-end
-::: zone pivot="macos"
-
-![Notes アーキテクチャ](deepdive-images/vsmac/architecture.png)
-
-::: zone-end
-
-スタートアップ コードを最大限に再利用するために、Xamarin.Forms アプリケーションには `App` という名前の 1 つのクラスがあります。このクラスは、各プラットフォーム上のアプリケーションが表示する最初のページのインスタンス化を担当しています。次にコード例を示します。
+スタートアップ コードを最大限に再利用するため、Xamarin.Forms アプリケーションには `App` という名前の 1 つのクラスがあり、各プラットフォームでのアプリケーションのインスタンス化が行われます。次にコード例を示します。
 
 ```csharp
 using Xamarin.Forms;
@@ -119,14 +113,14 @@ namespace Notes
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new NotesPage());
+            MainPage = new AppShell();
         }
-        ...
+        // ...
     }
 }
 ```
 
-このコードは、`App` クラスの `MainPage` プロパティを、コンテンツが `NotesPage` インスタンスの [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) インスタンスに設定します。
+このコードにより、`App` クラスの `MainPage` プロパティが `AppShell` オブジェクトに設定されます。 `AppShell` クラスにより、アプリケーションのビジュアル階層が定義されます。 シェルによってこのビジュアル階層が取得されて、そのユーザー インターフェイスが生成されます。 アプリケーションのビジュアル階層を定義する方法の詳細については、「[アプリケーションのビジュアル階層](#application-visual-hierarchy)」を参照してください。
 
 さらに、**AssemblyInfo.cs** ファイルには、アセンブリ レベルで適用される単一のアプリケーション属性が含まれています。
 
@@ -138,7 +132,9 @@ using Xamarin.Forms.Xaml;
 
 [`XamlCompilation`](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute) 属性により XAML コンパイラが有効になるため、XAML は中間言語に直接コンパイルされます。 詳細については、「[XAML Compilation](~/xamarin-forms/xaml/xamlc.md)」(XAML のコンパイル) を参照してください。
 
-## <a name="launching-the-application-on-each-platform"></a>各プラットフォームでのアプリケーションの起動
+## <a name="launch-the-application-on-each-platform"></a>各プラットフォームでアプリケーションを起動する
+
+各プラットフォームでのアプリケーションの起動方法は、プラットフォームによって異なります。
 
 ### <a name="ios"></a>iOS
 
@@ -191,52 +187,42 @@ namespace Notes.Droid
 
 `OnCreate` オーバーライドは、`Init` メソッドを呼び出すことで Xamarin.Forms フレームワークを初期化します。 それにより、Xamarin.Forms の Android 固有の実装がアプリケーションに読み込まれ、次に Xamarin.Forms アプリケーションが読み込まれます。
 
-::: zone pivot="windows"
+## <a name="application-visual-hierarchy"></a>アプリケーションのビジュアル階層
 
-### <a name="universal-windows-platform"></a>ユニバーサル Windows プラットフォーム
+Xamarin.Forms シェル アプリケーションでは、`Shell` クラスをサブクラス化するクラスで、アプリケーションのビジュアル階層が定義されています。 Notes アプリケーションの場合、これは `Appshell` クラスです。
 
-ユニバーサル Windows プラットフォーム (UWP) アプリケーションでは、`Init` フレームワークを初期化する Xamarin.Forms メソッドが `App` クラスから呼び出されます。
-
-```csharp
-Xamarin.Forms.Forms.Init (e);
-
-if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
-{
-  ...
-}
+```xaml
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:Notes.Views"
+       x:Class="Notes.AppShell">
+    <TabBar>
+        <ShellContent Title="Notes"
+                      Icon="icon_feed.png"
+                      ContentTemplate="{DataTemplate views:NotesPage}" />
+        <ShellContent Title="About"
+                      Icon="icon_about.png"
+                      ContentTemplate="{DataTemplate views:AboutPage}" />
+    </TabBar>
+</Shell>
 ```
 
-それにより、Xamarin.Forms の UWP 固有の実装がアプリケーションに読み込まれます。 最初の Xamarin.Forms ページは `MainPage` クラスによって起動されます。
+この XAML は、次の 2 つの主要なオブジェクトで構成されます。
 
-```csharp
-namespace Notes.UWP
-{
-    public sealed partial class MainPage
-    {
-        public MainPage()
-        {
-            this.InitializeComponent();
-            this.LoadApplication(new Notes.App());
-        }
-    }
-}
-```
+- `TabBar`. `TabBar` は下部のタブ バーを表し、アプリケーションのナビゲーション パターンで下部のタブを使用する場合は、これを使用する必要があります。 `TabBar` オブジェクトは、`Shell` オブジェクトの子です。
+- `ShellContent` は、`TabBar` の各タブの `ContentPage` オブジェクトを表します。 各 `ShellContent` オブジェクトは、`TabBar` オブジェクトの子です。
 
-Xamarin.Forms アプリケーションは `LoadApplication` メソッドを使用して読み込まれます。
+これらのオブジェクトは、ユーザー インターフェイスではなく、アプリケーションのビジュアル階層の編成を表しています。 シェルでは、これらのオブジェクトを取得して、コンテンツのナビゲーション ユーザー インターフェイスを生成します。 したがって、`AppShell` クラスにより、下部のタブから移動できる 2 つのページが定義されています。 ページは、ユーザーのナビゲーションに応じて、オンデマンドで作成されます。
 
-> [!NOTE]
-> ユニバーサル Windows プラットフォーム アプリは Xamarin.Forms を使用してビルドできますが、Windows で Visual Studio を使用する必要があります。
-
-::: zone-end
+シェル アプリケーションの詳細については、「[Xamarin.Forms シェル](~/xamarin-forms/app-fundamentals/shell/index.md)」を参照してください。
 
 ## <a name="user-interface"></a>ユーザー インターフェイス
 
-Xamarin.Forms アプリケーションのユーザー インターフェイスを作成するために、主に 4 つのコントロール グループが使用されます。
+Xamarin.Forms アプリケーションのユーザー インターフェイスを作成するには、複数のコントロール グループが使用されます。
 
 1. **ページ**: Xamarin.Forms のページは、クロスプラットフォーム モバイル アプリケーション画面を表しています。 Notes アプリケーションでは、1 つの画面を表示するために [`ContentPage`](xref:Xamarin.Forms.ContentPage) クラスが使用されます。 ページの詳細については、「[Xamarin.Forms のページ](~/xamarin-forms/user-interface/controls/pages.md)」を参照してください。
-1. **ビュー**: Xamarin.Forms のビューは、ユーザー インターフェイスに表示されるコントロールで、ラベル、ボタン、テキスト入力ボックスなどです。 完成した Notes アプリケーションでは、[`ListView`](xref:Xamarin.Forms.ListView)、[`Editor`](xref:Xamarin.Forms.Editor)、[`Button`](xref:Xamarin.Forms.Button) のビューが使用されます。 ビューの詳細については、「[Xamarin.Forms のビュー](~/xamarin-forms/user-interface/controls/views.md)」を参照してください。
+1. **ビュー**: Xamarin.Forms のビューは、ユーザー インターフェイスに表示されるコントロールで、ラベル、ボタン、テキスト入力ボックスなどです。 完成した Notes アプリケーションでは、[`CollectionView`](xref:Xamarin.Forms.CollectionView)、[`Editor`](xref:Xamarin.Forms.Editor)、[`Button`](xref:Xamarin.Forms.Button) のビューが使用されます。 ビューの詳細については、「[Xamarin.Forms のビュー](~/xamarin-forms/user-interface/controls/views.md)」を参照してください。
 1. **レイアウト**: Xamarin.Forms のレイアウトは、ビューを論理構造にまとめるために使用されるコンテナーです。 Notes アプリケーションでは、ビューを垂直方向に並べて配置するために [`StackLayout`](xref:Xamarin.Forms.StackLayout) クラスが使用され、ボタンを水平方向に配置するために [`Grid`](xref:Xamarin.Forms.Grid) クラスが使用されます。 レイアウトの詳細については、「[Xamarin.Forms のレイアウト](~/xamarin-forms/user-interface/controls/layouts.md)」を参照してください。
-1. **セル**: Xamarin.Forms のセルは、一覧内の項目に使用される特殊な要素です。一覧内の各項目を描画する方法を示しています。 Notes アプリケーションでは、リスト内の行ごとに 2 つの項目を表示するために [`TextCell`](xref:Xamarin.Forms.TextCell) が使用されます。 セルの詳細については、「[Xamarin.Forms のセル](~/xamarin-forms/user-interface/controls/cells.md)」を参照してください。
 
 実行時に、各コントロールはネイティブの同等のものにマップされます。そしてそれがレンダリングされます。
 
@@ -250,7 +236,7 @@ Notes アプリケーションでは、[`StackLayout`](xref:Xamarin.Forms.StackL
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Notes.NoteEntryPage"
+             x:Class="Notes.Views.NoteEntryPage"
              Title="Note Entry">
     ...    
     <StackLayout Margin="{StaticResource PageMargin}">
@@ -269,7 +255,7 @@ Notes アプリケーションでは、[`StackLayout`](xref:Xamarin.Forms.StackL
 > [!NOTE]
 > ビューのサイズは、`HeightRequest` と `WidthRequest` のプロパティを使用して設定できます。
 
-[`StackLayout`](xref:Xamarin.Forms.StackLayout) クラスの詳細については、「[StackLayout](~/xamarin-forms/user-interface/layouts/stacklayout.md)」を参照してください。
+[`StackLayout`](xref:Xamarin.Forms.StackLayout) クラスの詳細については、「[Xamarin.Forms StackLayout](~/xamarin-forms/user-interface/layouts/stacklayout.md)」を参照してください。
 
 ### <a name="responding-to-user-interaction"></a>ユーザー操作に対する応答
 
@@ -280,12 +266,15 @@ async void OnSaveButtonClicked(object sender, EventArgs e)
 {
     var note = (Note)BindingContext;
     note.Date = DateTime.UtcNow;
-    await App.Database.SaveNoteAsync(note);
-    await Navigation.PopAsync();
+    if (!string.IsNullOrWhiteSpace(note.Text))
+    {
+        await App.Database.SaveNoteAsync(note);
+    }
+    await Shell.Current.GoToAsync("..");
 }
 ```
 
-`OnSaveButtonClicked` メソッドは、データベースにメモを保存し、前のページに戻ります。
+`OnSaveButtonClicked` メソッドは、データベースにメモを保存し、前のページに戻ります。 ナビゲーションの詳細については、「[ナビゲーション](#navigation)」を参照してください。
 
 > [!NOTE]
 > XAML クラスの分離コード ファイルは、`x:Name` 属性を指定して割り当てられた名前を使用して、XAML に定義されているオブジェクトにアクセスできます。 この属性に割り当てられている値は、C# 変数と同じルールを持っています。つまり、英字またはアンダースコアから始まり、埋め込みスペースが含まれる必要があります。
@@ -299,143 +288,222 @@ async void OnSaveButtonClicked(object sender, EventArgs e)
 
 ### <a name="lists"></a>表示内容
 
-[`ListView`](xref:Xamarin.Forms.ListView) は、リストに項目のコレクションを垂直方向に表示します。 `ListView` の各項目が 1 つのセルに含まれます。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) により、項目のコレクションがリストに表示されます。 既定では、リスト項目は垂直方向に表示され、各項目が 1 つの行に表示されます。
 
-次のコード例は、`NotesPage` からの [`ListView`](xref:Xamarin.Forms.ListView) を示しています。
+次のコード例は、`NotesPage` からの [`CollectionView`](xref:Xamarin.Forms.CollectionView) を示しています。
 
 ```xaml
-<ListView x:Name="listView"
-          Margin="{StaticResource PageMargin}"
-          ItemSelected="OnListViewItemSelected">
-    <ListView.ItemTemplate>
+<CollectionView x:Name="collectionView"
+                Margin="{StaticResource PageMargin}"
+                SelectionMode="Single"
+                SelectionChanged="OnSelectionChanged">
+    <CollectionView.ItemsLayout>
+        <LinearItemsLayout Orientation="Vertical"
+                           ItemSpacing="10" />
+    </CollectionView.ItemsLayout>
+    <CollectionView.ItemTemplate>
         <DataTemplate>
-            <TextCell Text="{Binding Text}"
-                      Detail="{Binding Date}" />
+            <StackLayout>
+                <Label Text="{Binding Text}"
+                       FontSize="Medium" />
+                <Label Text="{Binding Date}"
+                       TextColor="{StaticResource TertiaryColor}"
+                       FontSize="Small" />
+            </StackLayout>
         </DataTemplate>
-    </ListView.ItemTemplate>
-</ListView>
+    </CollectionView.ItemTemplate>
+</CollectionView>
 ```
 
-[`ListView`](xref:Xamarin.Forms.ListView) の各行のレイアウトは [`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) 要素内で定義され、データ バインディングを使用して、アプリケーションによって取得されたすべてのメモが表示されます。 [`ListView.ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティは、`NotesPage.xaml.cs` でデータ ソースに設定されます。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) の各行のレイアウトは [`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) 要素内で定義され、データ バインディングを使用して、アプリケーションによって取得されたすべてのメモが表示されます。 [`CollectionView.ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティは、**NotesPage.xaml.cs** でデータ ソースに設定されています。
 
 ```csharp
 protected override async void OnAppearing()
 {
     base.OnAppearing();
 
-    listView.ItemsSource = await App.Database.GetNotesAsync();
+    collectionView.ItemsSource = await App.Database.GetNotesAsync();
 }
 ```    
 
-このコードにより、データベースに格納されているすべてのメモが [`ListView`](xref:Xamarin.Forms.ListView) に取り込まれます。
+このコードにより、データベースに格納されているすべてのメモが [`CollectionView`](xref:Xamarin.Forms.CollectionView) に設定され、これはページが表示されるときに実行されます。
 
-[`ListView`](xref:Xamarin.Forms.ListView) で行を選択すると、[`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) イベントが発生します。 イベントが発生すると、`OnListViewItemSelected` という名前のイベント ハンドラーが実行されます。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) で項目が選択されると、`SelectionChanged` イベントが発生します。 イベントが発生すると、`OnSelectionChanged` という名前のイベント ハンドラーが実行されます。
 
 ```csharp
-async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
+async void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
 {
-    if (e.SelectedItem != null)
+    if (e.CurrentSelection != null)
     {
-        ...
+        // ...
     }
 }
 ```
 
-[`e.SelectedItem`](xref:Xamarin.Forms.SelectedItemChangedEventArgs.SelectedItem) プロパティを使用することで、[`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) イベントがセルに関連付けられているオブジェクトにアクセスできます。
+`SelectionChanged` イベントでは、`e.CurrentSelection` プロパティを使用することで、項目に関連付けられているオブジェクトにアクセスできます。
 
-[`ListView`](xref:Xamarin.Forms.ListView) クラスの詳細については、「[ListView](~/xamarin-forms/user-interface/listview/index.md)」を参照してください。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) クラスの詳細については、「[Xamarin.Forms CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)」を参照してください。
 
 ## <a name="navigation"></a>ナビゲーション
 
-Xamarin.Forms では、使用されている [`Page`](xref:Xamarin.Forms.Page) 型に応じて、多数の異なるページ ナビゲーション エクスペリエンスが提供されます。 [`ContentPage`](xref:Xamarin.Forms.ContentPage) インスタンスでは、ナビケーションを階層的、またはモーダルにすることができます。 モーダル ナビゲーションの詳細については、「[Xamarin.Forms のモーダル ページ](~/xamarin-forms/app-fundamentals/navigation/modal.md)」を参照してください。
+ナビゲーションは、移動先の URI を指定して、シェル アプリケーション内で実行されます。 ナビゲーション URI には、3 つのコンポーネントがあります。
+
+- "*ルート*"。シェルの視覚階層の一部として存在するコンテンツへのパスを定義します。
+- "*ページ*"。 シェルの視覚階層に存在しないページは、シェル アプリケーション内の任意の場所からナビゲーション スタック上にプッシュできます。 たとえば、`NoteEntryPage` は、シェルのビジュアル階層では定義されていませんが、必要に応じてナビゲーション スタックにプッシュできます。
+- 1 つまたは複数の "*クエリ パラメーター*"。 クエリ パラメーターは、ナビゲーション中に移動先ページに渡すことができるパラメーターです。
+
+ナビゲーション URI に 3 つのコンポーネントがすべて含まれる必要はありませんが、含まれている場合は //route/page?queryParameters という構造になります
 
 > [!NOTE]
-> [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) クラス、[`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) クラスおよび [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) クラスは別のナビゲーション エクスペリエンスを提供します。 詳細については、「[ナビゲーション](~/xamarin-forms/app-fundamentals/navigation/index.md)」を参照してください。
+> ルートは、`Route` プロパティを使用して、シェルのビジュアル階層内の要素で定義できます。 ただし、`Route` プロパティが設定されていない場合は (Notes アプリケーションなど)、実行時にルートが生成されます。
 
-階層ナビゲーションでは、[`NavigationPage`](xref:Xamarin.Forms.NavigationPage) クラスは [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトのスタック間を (必要に応じて前後に) ナビゲートするために使用されます。 このクラスは、[`Page`](xref:Xamarin.Forms.Page) オブジェクトの後入れ先出し (LIFO) スタックとしてナビゲーションを提供します。 1 つのページから別のページに移動するには、アプリケーションは新しいページを、そこでアクティブなページとなるナビゲーション スタックにプッシュします。 前のページに戻るには、アプリケーションは現在のページをナビゲーション スタックからポップします。そして新しい最上位のページがアクティブ ページになります。
+シェルのナビゲーションの詳細については、「[Xamarin.Forms シェルのナビゲーション](~/xamarin-forms/app-fundamentals/shell/navigation.md)」を参照してください。
 
-`NavigationPage` クラスはまた、ページの最上部にナビゲーション バーを追加します。このバーには、タイトルと、前にページに戻るための **[戻る]** ボタンが表示されます。このボタンはプラットフォーム固有です。
+### <a name="register-routes"></a>ルートを登録する
 
-ナビゲーション スタックに追加された最初のページが、アプリケーションの "*ルート*" ページとなります。次のコード例は、Notes アプリケーションでこれを実現する方法を示しています。
+シェルのビジュアル階層に存在しないページに移動するには、最初にシェルのルーティング システムに登録する必要があります。 `Routing.RegisterRoute` メソッドを使用します。 Notes アプリケーションの場合、これは `AppShell` コンストラクターで行われます。
 
 ```csharp
-public App ()
+public partial class AppShell : Shell
 {
-    ...
-    MainPage = new NavigationPage (new NotesPage ());
+    public AppShell()
+    {
+        // ...
+        Routing.RegisterRoute(nameof(NoteEntryPage), typeof(NoteEntryPage));
+    }
 }
 ```
 
-すべての [`ContentPage`](xref:Xamarin.Forms.ContentPage) インスタンスに、ページ スタックを変更するメソッドを公開する [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) プロパティがあります。 このメソッドは、アプリケーションに [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) が含まれる場合にのみ呼び出します。 `NoteEntryPage` に移動するには、下のコード例で示すように、[`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync(Xamarin.Forms.Page)) メソッドを呼び出す必要があります。
+この例では、`NoteEntryPage` という名前のルートが、`NoteEntryPage` 型に登録されています。 このページには、URI ベースのナビゲーションを使用して、アプリケーション内の任意の場所から移動できます。
+
+### <a name="perform-navigation"></a>ナビゲーションを実行する
+
+ナビゲーションは、移動先のルートを表す引数を受け取る `GoToAsync` メソッドによって実行されます。
 
 ```csharp
-await Navigation.PushAsync(new NoteEntryPage());
+await Shell.Current.GoToAsync("NoteEntryPage");
 ```
 
-これにより新しい `NoteEntryPage` オブジェクトがナビゲーション スタックにプッシュされ、アクティブ ページとなります。
+この例では、`NoteEntryPage` に移動します。
 
-アクティブ ページは、これが物理的なボタンであるか画面上のボタンであるかどうかにかかわらず、デバイスの *[戻る]* ボタンを押すことによってナビゲーション スタックからポップすることができます。 元のページにプログラムを使用して戻るには、`NoteEntryPage` オブジェクトが次のコード例のように [`PopAsync`](xref:Xamarin.Forms.NavigationPage.PopAsync) メソッドを呼び出す必要があります。
+> [!IMPORTANT]
+> シェルのビジュアル階層にないページに移動するときは、ナビゲーション スタックが作成されます。
+
+ページに移動するときに、クエリ パラメーターとしてデータをページに渡すことができます。
 
 ```csharp
-await Navigation.PopAsync();
+async void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+{
+    if (e.CurrentSelection != null)
+    {
+        // Navigate to the NoteEntryPage, passing the ID as a query parameter.
+        Note note = (Note)e.CurrentSelection.FirstOrDefault();
+        await Shell.Current.GoToAsync($"{nameof(NoteEntryPage)}?{nameof(NoteEntryPage.ItemId)}={note.ID.ToString()}");
+    }
+}
 ```
 
-階層ナビゲーションの詳細については、「[階層ナビゲーション](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md)」を参照してください。
+この例では、[`CollectionView`](xref:Xamarin.Forms.CollectionView) で現在選択されている項目を取得し、`NoteEntryPage` に移動します。`Note` オブジェクトの `ID` プロパティの値が、クエリ パラメーターとして `NoteEntryPage.ItemId` プロパティに渡されます。
+
+渡されたデータを受け取るため、`NoteEntryPage` クラスは `QueryPropertyAttribute` で修飾されています
+
+```csharp
+[QueryProperty(nameof(ItemId), nameof(ItemId))]
+public partial class NoteEntryPage : ContentPage
+{
+    public string ItemId
+    {
+        set
+        {
+            LoadNote(value);
+        }
+    }
+    // ...
+}
+```
+
+`QueryPropertyAttribute` の最初の引数では、渡されたデータを `ItemId` プロパティで受け取ることが指定され、2 番目の引数ではクエリ パラメーター ID が指定されています。そのため、上の例にある `QueryPropertyAttribute`では、`GoToAsync` メソッドの呼び出しにおいて URI から `ItemId`クエリ パラメータ―に渡されたデータを `ItemId` プロパティが受信するように、指定しています。 その後、`ItemId` プロパティによって `LoadNote` メソッドが呼び出されて、デバイスからメモが取得されます。
+
+".." を `GoToAsync` メソッドへの引数として指定すると、後方ナビゲーションが実行されます。
+
+```csharp
+await Shell.Current.GoToAsync("..");
+```
+
+後方ナビゲーションの詳細については、「[後方ナビゲーション](~/xamarin-forms/app-fundamentals/shell/navigation.md#backwards-navigation)」を参照してください。
 
 ## <a name="data-binding"></a>データ バインディング
 
 Xamarin.Forms アプリケーションがデータを表示し、相互作用するしくみを簡素化するために、データ バインディングが使用されます。 データ バインディングはユーザー インターフェイスと基礎アプリケーションの間で接続を確立します。 [`BindableObject`](xref:Xamarin.Forms.BindableObject) クラスには、データ バインディングをサポートするためのインフラストラクチャの大部分が含まれています。
 
-データ バインディングでは、*ソース*と*ターゲット*と呼ばれる 2 つのオブジェクトを接続します。 *ソース* オブジェクトはデータを提供します。 *ターゲット* オブジェクトは、ソース オブジェクトのデータを使用し (またしばしば表示し) ます。 たとえば、[`Editor`](xref:Xamarin.Forms.Editor) ("*ターゲット*" オブジェクト) は一般的にその [`Text`](xref:Xamarin.Forms.InputView.Text) プロパティを "*ソース*" オブジェクトのパブリック プロパティ `string` にバインドします。 次の図では、バインドの関係を示します。
+データ バインディングでは、*ソース* と *ターゲット* と呼ばれる 2 つのオブジェクトを接続します。 *ソース* オブジェクトはデータを提供します。 *ターゲット* オブジェクトは、ソース オブジェクトのデータを使用し (またしばしば表示し) ます。 たとえば、[`Editor`](xref:Xamarin.Forms.Editor) ("*ターゲット*" オブジェクト) は一般的にその [`Text`](xref:Xamarin.Forms.InputView.Text) プロパティを "*ソース*" オブジェクトのパブリック プロパティ `string` にバインドします。 次の図では、バインドの関係を示します。
 
 ![データ バインディング](deepdive-images/data-binding.png)
 
-データ バインディングの主な利点は、ビューとデータ ソース間でデータを同期する心配がないことです。 *ソース* オブジェクトの変更は、バインディング フレームワークによって背後で自動的に*ターゲット* オブジェクトにプッシュされます。そして、ターゲット オブジェクトの変更は、オプションで*ソース* オブジェクトに戻されます。
+データ バインディングの主な利点は、ビューとデータ ソース間でデータを同期する心配がないことです。 *ソース* オブジェクトの変更は、バインディング フレームワークによって背後で自動的に *ターゲット* オブジェクトにプッシュされます。そして、ターゲット オブジェクトの変更は、オプションで *ソース* オブジェクトに戻されます。
 
 データ バインディングを確立するには、次の 2 つの手順を実行します。
 
-- *ターゲット* オブジェクトの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) プロパティは、*ソース*に設定する必要があります。
-- バインディングは*ターゲット*と*ソース*間で確立する必要があります。 XAML でこれは、[`Binding`](xref:Xamarin.Forms.Xaml.BindingExtension) マークアップ拡張を使用して実現できます。
+- *ターゲット* オブジェクトの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) プロパティは、*ソース* に設定する必要があります。
+- バインディングは *ターゲット* と *ソース* 間で確立する必要があります。 XAML でこれは、[`Binding`](xref:Xamarin.Forms.Xaml.BindingExtension) マークアップ拡張を使用して実現できます。
 
-Notes アプリケーションでは、`NoteEntryPage` の [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) として設定された `Note` インスタンスがバインディング ソースであるのに対し、バインディング ターゲットはメモを表示する [`Editor`](xref:Xamarin.Forms.Editor) です。
-
-`NoteEntryPage` の `BindingContext` は、次のコード例に示すように、ページ ナビゲーション中に設定されます。
+Notes アプリケーションでは、`NoteEntryPage` の [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) として設定された `Note` インスタンスがバインディング ソースであるのに対し、バインディング ターゲットはメモを表示する [`Editor`](xref:Xamarin.Forms.Editor) です。 最初、ページ コンストラクターが実行されるときに、`NoteEntryPage` の `BindingContext` が設定されます。
 
 ```csharp
-async void OnNoteAddedClicked(object sender, EventArgs e)
+public NoteEntryPage()
 {
-    await Navigation.PushAsync(new NoteEntryPage
-    {
-        BindingContext = new Note()
-    });
+    // ...
+    BindingContext = new Note();
 }
+```
 
-async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
+この例では、`NoteEntryPage` が作成されるときに、ページの `BindingContext` に新しい `Note` が設定されます。 これにより、アプリケーションに新しいメモを追加するシナリオが処理されます。
+
+さらに、`NotesPage` で既存のメモが選択されている場合は、`NoteEntryPage` へのナビゲーションが発生したときにも、ページの `BindingContext` を設定できます。
+
+```csharp
+[QueryProperty(nameof(ItemId), nameof(ItemId))]
+public partial class NoteEntryPage : ContentPage
 {
-    if (e.SelectedItem != null)
+    public string ItemId
     {
-        await Navigation.PushAsync(new NoteEntryPage
+        set
         {
-            BindingContext = e.SelectedItem as Note
-        });
+            LoadNote(value);
+        }
+
+        async void LoadNote(string itemId)
+        {
+            try
+            {
+                int id = Convert.ToInt32(itemId);
+                // Retrieve the note and set it as the BindingContext of the page.
+                Note note = await App.Database.GetNoteAsync(id);
+                BindingContext = note;
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Failed to load note.");
+            }
+        }    
+        // ...    
     }
 }
 ```
 
-アプリケーションに新しいメモが追加されたときに実行される `OnNoteAddedClicked` メソッドでは、`NoteEntryPage` の [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) が新しい `Note` インスタンスに設定されます。 [`ListView`](xref:Xamarin.Forms.ListView) で既存のメモが選択されたときに実行される `OnListViewItemSelected` メソッドでは、`NoteEntryPage` の `BindingContext` が選択された `Note` インスタンスに設定されます。これには、[`e.SelectedItem`](xref:Xamarin.Forms.SelectedItemChangedEventArgs.SelectedItem) プロパティを通じてアクセスします。
+この例では、ページ ナビゲーションが発生すると、選択されている `Note` オブジェクトがデータベースから取得されて、ページの `BindingContext` に設定されます。
 
 > [!IMPORTANT]
-> 各*ターゲット* オブジェクトの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) プロパティは個々に設定できますが、これは必ずしも行う必要はありません。 `BindingContext` は、その子がすべて継承する特殊なプロパティです。 したがって、[`ContentPage`](xref:Xamarin.Forms.ContentPage) の `BindingContext` が `Note` インスタンスに設定された場合、`ContentPage` のすべての子は同じ `BindingContext` を持ち、`Note` オブジェクトのパブリック プロパティにバインドすることができます。
+> 各 *ターゲット* オブジェクトの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) プロパティは個々に設定できますが、これは必ずしも行う必要はありません。 `BindingContext` は、その子がすべて継承する特殊なプロパティです。 したがって、[`ContentPage`](xref:Xamarin.Forms.ContentPage) の `BindingContext` が `Note` インスタンスに設定された場合、`ContentPage` のすべての子は同じ `BindingContext` を持ち、`Note` オブジェクトのパブリック プロパティにバインドすることができます。
 
 その後、`NoteEntryPage` 内の [`Editor`](xref:Xamarin.Forms.Editor) が `Note` オブジェクトの `Text` プロパティにバインドされます。
 
 ```xaml
 <Editor Placeholder="Enter your note"
-        Text="{Binding Text}"
-        ... />
+        Text="{Binding Text}" />
 ```
 
-*ソース* オブジェクトの [`Editor.Text`](xref:Xamarin.Forms.InputView.Text) プロパティと `Text` プロパティ間のバインディングが確立されました。 `Editor` での変更は `Note` オブジェクトに自動的に伝達されます。 同様に、`Note.Text` プロパティが変更された場合、Xamarin.Forms のバインド エンジンによって `Editor` のコンテンツも更新されます。 これは、*双方向のバインド*とも呼ばれています。
+*ソース* オブジェクトの [`Editor.Text`](xref:Xamarin.Forms.InputView.Text) プロパティと `Text` プロパティ間のバインディングが確立されました。 `Editor` での変更は `Note` オブジェクトに自動的に伝達されます。 同様に、`Note.Text` プロパティが変更された場合、Xamarin.Forms のバインド エンジンによって `Editor` のコンテンツも更新されます。 これは、*双方向のバインド* とも呼ばれています。
 
 データ バインディングの詳細については、「[Xamarin.Forms のデータ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)」を参照してください。
 
@@ -450,14 +518,14 @@ Xamarin.Forms アプリケーションには、多くの場合、同じ外観を
 - ビュー レベルで定義された [`Style`](xref:Xamarin.Forms.Style) インスタンスは、ビューとその子に適用できます。
 
 > [!IMPORTANT]
-> アプリケーション全体で使用されるスタイルは、重複を回避するために、アプリケーションのリソース ディクショナリに保存されます。 ただし、あるページに固有の XAML は、アプリケーションのリソース ディクショナリに含めるべきではありません。アプリのリソースは、ページが必要とするときではなく、アプリケーションの起動時に解析されるためです。
+> アプリケーション全体で使用されるスタイルは、重複を回避するために、アプリケーションのリソース ディクショナリに保存されます。 ただし、あるページに固有の XAML は、アプリケーションのリソース ディクショナリに含めるべきではありません。アプリのリソースは、ページが必要とするときではなく、アプリケーションの起動時に解析されるためです。 詳細については、「[アプリケーション リソース ディクショナリのサイズを減らす](~/xamarin-forms/deploy-test/performance.md#reduce-the-application-resource-dictionary-size)」を参照してください。
 
 各 [`Style`](xref:Xamarin.Forms.Style) インスタンスには、1 つ以上の [`Setter`](xref:Xamarin.Forms.Setter) オブジェクトのコレクションが含まれています。各 `Setter` には、[`Property`](xref:Xamarin.Forms.Setter.Property)と[`Value`](xref:Xamarin.Forms.Setter.Value)があります。 `Property` は、スタイルが適用される要素のバインド可能なプロパティの名前で、`Value` はプロパティに適用される値です。 次のコード例は、`NoteEntryPage` のスタイルを示しています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Notes.NoteEntryPage"
+             x:Class="Notes.Views.NoteEntryPage"
              Title="Note Entry">
     <ContentPage.Resources>
         <!-- Implicit styles -->
@@ -480,39 +548,7 @@ Xamarin.Forms アプリケーションには、多くの場合、同じ外観を
 
 XAML スタイルの詳細については、「[XAML スタイルを使用した Xamarin.Forms アプリのスタイル設定](~/xamarin-forms/user-interface/styles/xaml/index.md)」を参照してください。
 
-### <a name="providing-platform-specific-styles"></a>プラットフォーム固有のスタイルの提供
-
-`OnPlatform` マークアップ拡張では、プラットフォームごとに UI の外観をカスタマイズできます。
-
-```xaml
-<Application xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Notes.App">
-    <Application.Resources>
-        ...
-        <Color x:Key="iOSNavigationBarColor">WhiteSmoke</Color>
-        <Color x:Key="AndroidNavigationBarColor">#2196F3</Color>
-        <Color x:Key="iOSNavigationBarTextColor">Black</Color>
-        <Color x:Key="AndroidNavigationBarTextColor">White</Color>
-
-        <Style TargetType="{x:Type NavigationPage}">
-            <Setter Property="BarBackgroundColor"
-                    Value="{OnPlatform iOS={StaticResource iOSNavigationBarColor},
-                                       Android={StaticResource AndroidNavigationBarColor}}" />
-             <Setter Property="BarTextColor"
-                    Value="{OnPlatform iOS={StaticResource iOSNavigationBarTextColor},
-                                       Android={StaticResource AndroidNavigationBarTextColor}}" />           
-        </Style>
-        ...
-    </Application.Resources>
-</Application>
-```
-
-この [`Style`](xref:Xamarin.Forms.Style) により、[`NavigationPage`](xref:Xamarin.Forms.NavigationPage) の [`BarBackgroundColor`](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor) プロパティと [`BarTextColor`](xref:Xamarin.Forms.NavigationPage.BarTextColor) プロパティに、使用されているプラットフォームに応じて異なる [`Color`](xref:Xamarin.Forms.Color) 値が設定されます。
-
-XAML マークアップ拡張機能の詳細については、「[XAML マークアップ拡張機能](~/xamarin-forms/xaml/markup-extensions/index.md)」を参照してください。 `OnPlatform` マークアップ拡張機能の詳細については、「[OnPlatform マークアップ拡張機能](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension)」を参照してください。
-
-## <a name="testing-and-deployment"></a>テストと展開
+## <a name="test-and-deployment"></a>テストと展開
 
 Visual Studio for Mac と Visual Studio のいずれも、アプリケーションをテストおよび展開するためのオプションを多数用意しています。 アプリケーションのデバッグは、アプリケーション開発ライフサイクルの一般的な部分であり、コードの問題を診断するときに役立ちます。 詳細については、「[Set a Breakpoint](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint)」(ブレークポイントの設定)、「[Step Through Code](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/step_through_code)」(コードのステップ スルー)、「[Output Information to the Log Window](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/output_information_to_log_window)」(ログ ウィンドウへの出力情報) を参照してください。
 
@@ -520,30 +556,27 @@ Visual Studio for Mac と Visual Studio のいずれも、アプリケーショ�
 
 ## <a name="next-steps"></a>次の手順
 
-この詳細では、Xamarin.Forms を使用したアプリケーション開発の基礎について説明しました。 推奨される次の手順としては、次の機能の説明を読んでください。
+この詳細では、Xamarin.Forms シェルを使用したアプリケーション開発の基礎について説明しました。 推奨される次の手順としては、次の機能の説明を読んでください。
 
-- Xamarin.Forms アプリケーションのユーザー インターフェイスを作成するために、主に 4 つのコントロール グループが使用されます。 詳細については、「[Controls Reference](~/xamarin-forms/user-interface/controls/index.md)」 (コントロールのリファレンス) を参照してください。
+- Xamarin.Forms シェルでは、ほとんどのモバイル アプリケーションが必要としている基本機能を提供することで、モバイル アプリケーション開発の複雑さが軽減されます。 詳細は、「[Xamarin.Forms シェル](~/xamarin-forms/app-fundamentals/shell/index.md)」を参照してください。
+- Xamarin.Forms アプリケーションのユーザー インターフェイスを作成するには、複数のコントロール グループが使用されます。 詳細については、「[Controls Reference](~/xamarin-forms/user-interface/controls/index.md)」 (コントロールのリファレンス) を参照してください。
 - データ バインディングは、2 つのオブジェクトのプロパティをリンクして、片方のプロパティでの変更が自動的にもう片方のプロパティに反映されるようにする手法です。 詳細については、[データ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)に関するページを参照してください。
-- Xamarin.Forms には、使用するページの種類に応じたさまざまなページ ナビゲーションのエクスペリエンスが用意されています。 詳細については、「[ナビゲーション](~/xamarin-forms/app-fundamentals/navigation/index.md)」を参照してください。
+- Xamarin.Forms には、使用されるページの種類に応じて、複数のページ ナビゲーション エクスペリエンスが用意されています。 詳細については、「[ナビゲーション](~/xamarin-forms/app-fundamentals/navigation/index.md)」を参照してください。
 - スタイルは、繰り返されるマークアップを減らすのに役立ち、アプリケーションの外観をより簡単に変更できるようにします。 詳細については、「[Xamarin.Forms アプリのスタイル設定](~/xamarin-forms/user-interface/styles/index.md)」を参照してください。
-- XAML マークアップ拡張では、要素属性をリテラル テキスト文字列ではなく、ソースから設定できるようにすることで、XAML をより強力かつ柔軟なものにします。 詳細については、「[XAML Markup Extensions](~/xamarin-forms/xaml/markup-extensions/index.md)」 (XAML マークアップ拡張) を参照してください。
 - データ テンプレートでは、サポートされているビューでのデータの表現方法を定義する機能が提供されます。 詳細については、「[Data Templates](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)」 (データ テンプレート) を参照してください。
-- 各ページ、レイアウト、およびビューは `Renderer` クラスを使用して、プラットフォームごとに異なる方法でレンダリングされます。その後、ネイティブ コントロールが作成され、画面に配置され、共有コードで指定された動作が追加されます。 開発者は独自の `Renderer` クラスを実装して、コントロールの外観や動作をカスタマイズできます。 詳細については、「[Custom Renderers](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)」 (カスタム レンダラー) を参照してください。
 - エフェクトでは、各プラットフォームのネイティブ コントロールのカスタマイズを可能にします。 エフェクトは、プラットフォーム固有のプロジェクトで [`PlatformEffect`](xref:Xamarin.Forms.PlatformEffect`2) クラスをサブクラス化することによって作成され、適切な Xamarin.Forms コントロールに添付することによって使用されます。 詳細については、「[Effects](~/xamarin-forms/app-fundamentals/effects/index.md)」 (エフェクト) を参照してください。
+- 各ページ、レイアウト、およびビューは `Renderer` クラスを使用して、プラットフォームごとに異なる方法でレンダリングされます。その後、ネイティブ コントロールが作成され、画面に配置され、共有コードで指定された動作が追加されます。 開発者は独自の `Renderer` クラスを実装して、コントロールの外観や動作をカスタマイズできます。 詳細については、「[Custom Renderers](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)」 (カスタム レンダラー) を参照してください。
 - 共有コードはネイティブ機能に [`DependencyService`](xref:Xamarin.Forms.DependencyService) クラスを介してアクセスできます。 詳細については、「[Accessing Native Features with DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md)」 (DependencyService を使用したネイティブ機能へのアクセス) を参照してください。
-
-または、「[ _Xamarin.Forms でモバイル アプリを作成する_](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)」 (Charles Petzold 著) でも Xamarin.Forms の詳細を学習できます。 この書籍は、PDF またはさまざまな形式の電子ブックとして入手可能です。
 
 ## <a name="related-links"></a>関連リンク
 
+- [Xamarin.Forms のシェル](~/xamarin-forms/app-fundamentals/shell/index.md)
 - [eXtensible Application Markup Language (XAML)](~/xamarin-forms/xaml/index.yml)
 - [データ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - [コントロールのリファレンス](~/xamarin-forms/user-interface/controls/index.md)
-- [XAML マークアップ拡張](~/xamarin-forms/xaml/markup-extensions/index.md)
-- [Xamarin.Forms サンプル](/samples/browse/?products=xamarin&term=Xamarin.Forms)
 - [入門サンプル](/samples/browse/?products=xamarin&term=Xamarin.Forms%2bget%2bstarted)
+- [Xamarin.Forms サンプル](/samples/browse/?products=xamarin&term=Xamarin.Forms)
 - [Xamarin.Forms API リファレンス](xref:Xamarin.Forms)
-- [無料のセルフ ガイド学習 (ビデオ)](https://university.xamarin.com/self-guided/)
 
 ## <a name="related-video"></a>関連ビデオ
 

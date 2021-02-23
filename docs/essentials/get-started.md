@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Essentials の使用を開始する
-description: Xamarin.Essentials には、任意の iOS、Android、または UWP アプリケーションと連携する単一のクロスプラットフォーム API が用意されていて、ユーザー インターフェイスがどのように作成されたかを問わず共有コードからアクセスできます。
+description: iOS、Android、または UWP アプリケーションで動作する単一のクロスプラットフォーム API を提供する Xamarin.Essentials の使用を開始します。
 ms.assetid: B2669C48-B659-4854-BD80-FEB0E876F5B9
 author: jamesmontemagno
 ms.author: jamont
@@ -9,14 +9,14 @@ ms.date: 05/11/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f8a65c7bd3476114b849bb0e9383227e2ec78c7c
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 8bf7b03cb7bb211d0e25e0f75e527ad4c5c1dbd2
+ms.sourcegitcommit: e7a5d1ec9e50a09b3b24f4c57850a4763c3406d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91432615"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101087299"
 ---
-# <a name="get-started-with-no-locxamarinessentials"></a>Xamarin.Essentials の使用を開始する
+# <a name="get-started-with-xamarinessentials"></a>Xamarin.Essentials の使用を開始する
 
 Xamarin.Essentials には、任意の iOS、Android、または UWP アプリケーションと連携する単一のクロスプラットフォーム API が用意されていて、ユーザー インターフェイスがどのように作成されたかを問わず共有コードからアクセスできます。 サポートされているオペレーティング システムについて詳しくは、[プラットフォームと機能のサポート ガイド](platform-feature-support.md)に関するページをご覧ください。
 
@@ -31,16 +31,16 @@ Xamarin.Essentials は、NuGet パッケージとして入手でき、Visual Stu
     > [!IMPORTANT]
     > UWP プロジェクトに追加する場合、プロジェクトのプロパティにビルド 16299 以上が設定されていることを確認します。
 
-3. 各プロジェクトに [ **Xamarin.Essentials** ](https://www.nuget.org/packages/Xamarin.Essentials/) NuGet パッケージを追加します。
+3. 各プロジェクトに [ **Xamarin.Essentials**](https://www.nuget.org/packages/Xamarin.Essentials/) NuGet パッケージを追加します。
 
     <!--markdownlint-disable MD023 -->
     # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-    ソリューション エクスプローラー パネルでソリューション名を右クリックし、 **[NuGet パッケージの管理]** を選択します。 **Xamarin.Essentials** を検索し、Android、iOS、UWP、.NET Standard の各ライブラリを含め、**すべて**のプロジェクトにパッケージをインストールします。
+    ソリューション エクスプローラー パネルでソリューション名を右クリックし、 **[NuGet パッケージの管理]** を選択します。 **Xamarin.Essentials** を検索し、Android、iOS、UWP、.NET Standard の各ライブラリを含め、**すべて** のプロジェクトにパッケージをインストールします。
 
     # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-    ソリューション エクスプローラー パネルでプロジェクト名を右クリックし、 **[追加] > [Add NuGet Packages...]\(NuGet パッケージの追加...\)** を選択します。 **Xamarin.Essentials** を検索し、Android、iOS、.NET Standard の各ライブラリを含む**すべて**のプロジェクトにパッケージをインストールします。
+    ソリューション エクスプローラー パネルでプロジェクト名を右クリックし、 **[追加] > [Add NuGet Packages...]\(NuGet パッケージの追加...\)** を選択します。 **Xamarin.Essentials** を検索し、Android、iOS、.NET Standard の各ライブラリを含む **すべて** のプロジェクトにパッケージをインストールします。
 
     -----
 
@@ -93,7 +93,7 @@ Xamarin.Essentials は、NuGet パッケージとして入手でき、Visual Stu
 
 6. [Xamarin.Essentials のガイド](index.md)に従ってください。各機能に対するコード スニペットをコピーして貼り付けることができます。
 
-## <a name="no-locxamarinessentials---cross-platform-apis-for-mobile-apps-video"></a>Xamarin.Essentials - モバイル アプリ用のクロスプラットフォーム API (ビデオ)。
+## <a name="xamarinessentials---cross-platform-apis-for-mobile-apps-video"></a>Xamarin.Essentials - モバイル アプリ用のクロスプラットフォーム API (ビデオ)。
 
 > [!Video https://channel9.msdn.com/Shows/XamarinShow/Snack-Pack-XamarinEssentials-Cross-Platform-APIs-for-Mobile-Apps/player]
 

@@ -10,12 +10,12 @@ ms.date: 07/18/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6e53fdc689c15b3495af838f4788c1a50ad7a989
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: 7eb555530f96a56b78087b64393e2c57efdb6d95
+ms.sourcegitcommit: e7a5d1ec9e50a09b3b24f4c57850a4763c3406d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97940344"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101087479"
 ---
 # <a name="summary-of-chapter-3-deeper-into-text"></a>第 3 章の概要。 テキストの詳細
 
@@ -106,7 +106,7 @@ ms.locfileid: "97940344"
 `Color.Default` は、プラットフォームの配色を適用するためのものなので、プラットフォームごとに異なるコンテキストで異なる意味を持ちます。 既定では、プラットフォームの配色は次のとおりです。
 
 - iOS:明るい背景に暗いテキスト
-- Android:暗い背景に明るいテキスト (本書)、または明るい背景に暗いテキスト (サンプル コード リポジトリの **マスター** ブランチの AppCompat によるマテリアル デザインの場合)
+- Android: 暗い背景に明るいテキスト (本書)、または明るい背景に暗いテキスト (サンプル コード リポジトリのメイン ブランチの AppCompat によるマテリアル デザインの場合)
 - UWP:明るい背景に暗いテキスト
 
 `Color.Accent` 値により、暗い背景または明るい背景に表示されるプラットフォーム固有の (場合によってはユーザーが選択可能な) 色になります。

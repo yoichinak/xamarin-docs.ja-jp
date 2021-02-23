@@ -6,18 +6,18 @@ ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
-ms.date: 12/03/2020
+ms.date: 02/12/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1dad280ee8253d4ef627c5ab7ec9c8dcfa0408a2
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: 2ebc226e865bbf3e482857b9c99fdda5d4922a44
+ms.sourcegitcommit: 0a6b19004932c1ac82e16c95d5d3d5eb35a5b17f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97940448"
+ms.lasthandoff: 02/12/2021
+ms.locfileid: "100255381"
 ---
-# <a name="local-notifications-in-no-locxamarinforms"></a>Xamarin.Forms でのローカル通知
+# <a name="local-notifications-in-xamarinforms"></a>Xamarin.Forms でのローカル通知
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/local-notifications)
 
@@ -47,7 +47,7 @@ public interface INotificationManager
 
 このインターフェイスは、各プラットフォームのプロジェクトで実装されます。 `NotificationReceived` イベントを使うと、アプリケーションで受信した通知を処理できるようになります。 `Initialize` メソッドでは、通知システムを準備するために必要なネイティブ プラットフォームのロジックをすべて実行する必要があります。 `SendNotification` メソッドでは、省略可能な `DateTime` に通知を送信する必要があります。 `ReceiveNotification` メソッドは、メッセージを受信したときに基になるプラットフォームによって呼び出される必要があります。
 
-## <a name="consume-the-interface-in-no-locxamarinforms"></a>Xamarin.Forms でのインターフェイスの使用
+## <a name="consume-the-interface-in-xamarinforms"></a>Xamarin.Forms でのインターフェイスの使用
 
 作成されたインターフェイスは、プラットフォームの実装がまだ作成されていない場合でも、Xamarin.Forms の共有プロジェクトで使用することができます。 サンプル アプリケーションには、次の内容が記載された **MainPage.xaml** という `ContentPage` が含まれています。
 
@@ -179,10 +179,15 @@ namespace LocalNotifications.Droid
 
         public static AndroidNotificationManager Instance { get; private set; }
 
+        public AndroidNotificationManager() => Initialize();
+
         public void Initialize()
         {
-            CreateNotificationChannel();
-            Instance = this;
+            if (Instance == null)
+            {
+                CreateNotificationChannel();
+                Instance = this;
+            }
         }
 
         public void SendNotification(string title, string message, DateTime? notifyTime = null)
@@ -284,14 +289,15 @@ public class AlarmHandler : BroadcastReceiver
             string title = intent.GetStringExtra(AndroidNotificationManager.TitleKey);
             string message = intent.GetStringExtra(AndroidNotificationManager.MessageKey);
 
-            AndroidNotificationManager.Instance.Show(title, message);
+            AndroidNotificationManager manager = AndroidNotificationManager.Instance ?? new AndroidNotificationManager();
+            manager.Show(title, message);
         }
     }
 }
 ```
 
 > [!IMPORTANT]
-> 既定では、`AlarmManager` クラスを使用してスケジュール設定された通知は、デバイスを再起動すると無効になります。 ただし、デバイスが再起動された場合に自動的に通知を再スケジュール設定するようにアプリケーションを設計することができます。 詳細については、developer.android.com の「[反復アラームのスケジュール設定](https://developer.android.com/training/scheduling/alarms)」の「[デバイスの再起動時にアラームを開始する](https://developer.android.com/training/scheduling/alarms#boot)」を参照してください。 Android でのバックグラウンド処理の詳細については、developer.android.com の「[バックグラウンド処理ガイド](https://developer.android.com/guide/background)」を参照してください。
+> 既定では、`AlarmManager` クラスを使用してスケジュール設定された通知は、デバイスを再起動すると無効になります。 ただし、デバイスが再起動された場合に自動的に通知を再スケジュール設定するようにアプリケーションを設計することができます。 詳細については、developer.android.com の「[反復アラームのスケジュール設定](https://developer.android.com/training/scheduling/alarms)」の「[デバイスの再起動時にアラームを開始する](https://developer.android.com/training/scheduling/alarms#boot)」と、[サンプル](/samples/xamarin/xamarin-forms-samples/local-notifications)を参照してください。 Android でのバックグラウンド処理の詳細については、developer.android.com の「[バックグラウンド処理ガイド](https://developer.android.com/guide/background)」を参照してください。
 
 ブロードキャスト レシーバーの詳細については、「[Xamarin.Android でのブロードキャスト レシーバー](~/android/app-fundamentals/broadcast-receivers.md)」を参照してください。
 
@@ -460,18 +466,23 @@ public class iOSNotificationReceiver : UNUserNotificationCenterDelegate
 {
     public override void WillPresentNotification(UNUserNotificationCenter center, UNNotification notification, Action<UNNotificationPresentationOptions> completionHandler)
     {
-        DependencyService.Get<INotificationManager>().ReceiveNotification(notification.Request.Content.Title, notification.Request.Content.Body);
-
-        // alerts are always shown for demonstration but this can be set to "None"
-        // to avoid showing alerts if the app is in the foreground
+        ProcessNotification(notification);
         completionHandler(UNNotificationPresentationOptions.Alert);
     }
+
+    void ProcessNotification(UNNotification notification)
+    {
+        string title = notification.Request.Content.Title;
+        string message = notification.Request.Content.Body;
+
+        DependencyService.Get<INotificationManager>().ReceiveNotification(title, message);
+    }    
 }
 ```
 
 このクラスでは、`iOSNotificationManager` クラスのインスタンスを取得するために `DependencyService` が使用され、受信した通知のデータが `ReceiveNotification` メソッドに渡されています。
 
-`AppDelegate` クラスでは、アプリケーションの起動時にカスタム デリゲートを指定する必要があります。 `AppDelegate` クラスでは、アプリケーションの起動時に、`UNUserNotificationCenter` デリゲートとして `iOSNotificationReceiver` オブジェクトを指定する必要があります。 これは `FinishedLaunching` メソッド内で行われます。
+`AppDelegate` クラスでは、アプリケーションの起動時に、`UNUserNotificationCenter` デリゲートとして `iOSNotificationReceiver` オブジェクトを指定する必要があります。 これは `FinishedLaunching` メソッド内で行われます。
 
 ```csharp
 public override bool FinishedLaunching(UIApplication app, NSDictionary options)

@@ -10,14 +10,14 @@ ms.date: 07/19/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: af6da36e242ae2d967d795b61d65a38e5e43e22b
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 0f04037941cb73af2f6cb9987c7cd4525477720b
+ms.sourcegitcommit: e7a5d1ec9e50a09b3b24f4c57850a4763c3406d2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557284"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "101087476"
 ---
-# <a name="creating-mobile-apps-with-no-locxamarinforms-book"></a>書籍『Creating Mobile Apps with Xamarin.Forms』
+# <a name="creating-mobile-apps-with-xamarinforms-book"></a>書籍『Creating Mobile Apps with Xamarin.Forms』
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples)
 
@@ -29,11 +29,11 @@ ms.locfileid: "91557284"
 
 Microsoft Virtual Academy から、お好きな電子ブック形式をダウンロードしてください。
 
-- [**PDF (56 MB)** ](https://aka.ms/xamformsebook)
+- [**PDF (56 MB)**](https://aka.ms/xamformsebook)
 
-- [**ePub (151 MB)** ](https://aka.ms/xamebook/epub)
+- [**ePub (151 MB)**](https://aka.ms/xamebook/epub)
 
-- [**Kindle 版 (325 MB)** ](https://aka.ms/xamebook/mobi)
+- [**Kindle 版 (325 MB)**](https://aka.ms/xamebook/mobi)
 
 PDF ファイルとして[章ごとにダウンロードする](#download-chapters-and-summaries)こともできます。
 
@@ -127,7 +127,7 @@ Xamarin.Forms には、[Mac](~/xamarin-forms/platform/other/mac.md)、[WPF](~/xa
 
 ### <a name="samples"></a>サンプル
 
-[**xamarin-forms-book-samples**](https://github.com/xamarin/xamarin-forms-book-samples) GitHub リポジトリの **original-code-from-book** ブランチには、書籍と一致するプログラム サンプルが含まれます。 **master** ブランチには、非推奨の API が削除され、拡張 API が反映されているアップグレードされたプロジェクトが含まれます。 さらに、**master** ブランチの Android プロジェクトは、Android の [AppCompat によるマテリアル設計](~/xamarin-forms/platform/android/index.md)対応にアップグレードされており、通常、黒いテキストが白い背景に表示されます。
+[**xamarin-forms-book-samples**](https://github.com/xamarin/xamarin-forms-book-samples) GitHub リポジトリの **original-code-from-book** ブランチには、書籍と一致するプログラム サンプルが含まれます。 メイン ブランチには、非推奨の API が削除され、拡張された API が反映されている、アップグレードされたプロジェクトが含まれます。 さらに、メイン ブランチの Android プロジェクトは、Android の [AppCompat によるマテリアル設計](~/xamarin-forms/platform/android/index.md)対応にアップグレードされており、通常、黒いテキストが白い背景に表示されます。
 
 ## <a name="related-links"></a>関連リンク
 

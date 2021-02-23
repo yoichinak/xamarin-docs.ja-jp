@@ -5,16 +5,16 @@ ms.assetid: B3342772-FB88-4B7F-BC15-8BC78EED749E
 author: JonDouglas
 ms.author: jodou
 ms.date: 09/17/2019
-ms.openlocfilehash: d3e04daeb3957e0006f5746a730488ff455da18d
-ms.sourcegitcommit: d1980b2251999224e71c1289e4b4097595b7e261
+ms.openlocfilehash: b3e4b21e9bf760380a655dd78a1a69cff70719cb
+ms.sourcegitcommit: a0de974875f8fa1a29f7abc990137246789ad85a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92928569"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100630203"
 ---
 # <a name="android-10-with-xamarin"></a>Xamarin を使用する Android 10
 
-" _Xamarin.Android を使用して Android 10 用アプリの開発を始める方法。_ "
+"_Xamarin.Android を使用して Android 10 用アプリの開発を始める方法。_ "
 
 Android 10 を Google から入手できるようになりました。 このリリースでは、多数の新機能と API が提供されており、その多くは最新の Android デバイスで新しいハードウェア機能を利用するために必要です。
 
@@ -29,7 +29,7 @@ Xamarin.Android 10.0 では、Android 10 のサポートが提供されます。
 Xamarin ベースのアプリで Android 10 の機能を使用するために必要なリストを以下に示します。
 
 - **Visual Studio** - Visual Studio 2019 をお勧めします。 Windows 上では、Visual Studio 2019 バージョン 16.3 以降に更新します。 macOS 上では、Visual Studio 2019 for Mac バージョン 8.3 以降に更新します。
-- **Xamarin.Android** - Xamarin.Android 10.0 以降を Visual Studio と共にインストールする必要があります (Xamarin.Android は、Windows 上で **[.NET によるモバイル開発]** ワークロードの一部として、また、 **Visual Studio for Mac インストーラー** の一部として自動的にインストールされます)
+- **Xamarin.Android** - Xamarin.Android 10.0 以降を Visual Studio と共にインストールする必要があります (Xamarin.Android は、Windows 上で **[.NET によるモバイル開発]** ワークロードの一部として、また、**Visual Studio for Mac インストーラー** の一部として自動的にインストールされます)
 - **Java Developer Kit** - Xamarin.Android 10.0 の開発には JDK 8 が必要です。 Microsoft の OpenJDK ディストリビューションは、Visual Studio の一部として自動的にインストールされます。
 - **Android SDK** - Android SDK マネージャーを使用して、Android SDK API 29 をインストールする必要があります。
 
@@ -37,8 +37,8 @@ Xamarin ベースのアプリで Android 10 の機能を使用するために必
 
 Xamarin.Android を使用して Android 10 アプリの開発を始めるには、最初の Android 10 プロジェクトを作成する前に、最新のツールと SDK パッケージをダウンロードしてインストールする必要があります。
 
-1. **Visual Studio 2019 をお勧めします** 。 Visual Studio 2019 バージョン 16.3 以降に更新します。 Visual Studio for Mac 2019 を使用している場合は、Visual Studio 2019 for Mac バージョン 8.3 以降に更新します。
-2. SDK マネージャーを使用して、 **Android 10 (API 29)** パッケージとツールをインストールします。
+1. **Visual Studio 2019 をお勧めします**。 Visual Studio 2019 バージョン 16.3 以降に更新します。 Visual Studio for Mac 2019 を使用している場合は、Visual Studio 2019 for Mac バージョン 8.3 以降に更新します。
+2. SDK マネージャーを使用して、**Android 10 (API 29)** パッケージとツールをインストールします。
     - Android 10 (API 29) SDK Platform
     - Android 10 (API 29) System Image
     - Android SDK Build-Tools 29.0.0 以降
@@ -57,14 +57,14 @@ Visual Studio 2019 を使用している場合は、Visual Studio 2019 バージ
 
 ### <a name="install-the-android-sdk"></a>Android SDK をインストールする
 
-Xamarin.Android 10.0 でプロジェクトを作成するには、最初に Android SDK マネージャーを使用して、 **Android 10 (API レベル 29)** 用の SDK プラットフォームをインストールする必要があります。
+Xamarin.Android 10.0 でプロジェクトを作成するには、最初に Android SDK マネージャーを使用して、**Android 10 (API レベル 29)** 用の SDK プラットフォームをインストールする必要があります。
 
 1. SDK マネージャーを起動します。 Visual Studio では、 **[ツール] > [Android] > [Android SDK マネージャー]** の順にクリックします。 Visual Studio for Mac では、 **[ツール] > [SDK マネージャー]** の順にクリックします。
 2. 右下隅の歯車アイコンをクリックして、 **[リポジトリ] > [Google (サポート対象外)]** の順に選択します。
 
     ![Android SDK マネージャーのリポジトリの選択](~/android/platform/android-10-images/sdkrepository.png)
 
-3. **Android 10 SDK Platform** パッケージをインストールします。これらは、 **[プラットフォーム]** タブで **[Android SDK Platform 29]** としてリストされます (SDK マネージャーの使用の詳細については、 [Android SDK セットアップ](../get-started/installation/android-sdk.md)に関するページを参照してください)。
+3. **Android 10 SDK Platform** パッケージをインストールします。これらは、 **[プラットフォーム]** タブで **[Android SDK Platform 29]** としてリストされます (SDK マネージャーの使用の詳細については、[Android SDK セットアップ](../get-started/installation/android-sdk.md)に関するページを参照してください)。
 
     ![Android SDK マネージャーの [プラットフォーム] タブ](~/android/platform/android-10-images/sdkplatforms.png)
 
@@ -72,7 +72,7 @@ Xamarin.Android 10.0 でプロジェクトを作成するには、最初に Andr
 
 新しい Xamarin.Android プロジェクトを作成します。 Xamarin を使用した Android の開発を初めて行う場合は、「[Hello, Android](../get-started/hello-android/index.md)」を参照して、Xamarin.Android プロジェクトの作成について学習してください。
 
-Android プロジェクトを作成するときは、Android 10.0 以降をターゲットとするようにバージョン設定を構成する必要があります。 たとえば、Android 10 をプロジェクトのターゲットとするには、プロジェクトのターゲット Android API レベルを **Android 10.0 (API 29)** に構成する必要があります。 これには、 **ターゲット フレームワークのバージョン** と **ターゲット Android SDK バージョン** の両方を API 29 以降にすることが含まれます。 Android API レベルの構成の詳細については、「[Android API レベルの理解](../app-fundamentals/android-api-levels.md)」を参照してください。
+Android プロジェクトを作成するときは、Android 10.0 以降をターゲットとするようにバージョン設定を構成する必要があります。 たとえば、Android 10 をプロジェクトのターゲットとするには、プロジェクトのターゲット Android API レベルを **Android 10.0 (API 29)** に構成する必要があります。 これには、**ターゲット フレームワークのバージョン** と **ターゲット Android SDK バージョン** の両方を API 29 以降にすることが含まれます。 Android API レベルの構成の詳細については、「[Android API レベルの理解](../app-fundamentals/android-api-levels.md)」を参照してください。
 
 ![Xamarin Android のターゲット フレームワーク](~/android/platform/android-10-images/targetframework.png)
 
@@ -102,7 +102,7 @@ Android 10 には、さまざまな新機能が導入されています。 こ�
 
 - **フォルダブルの最適化:** [フォルダブルを最適化する](https://developer.android.com/guide/topics/ui/foldables)ことで、現在の革新的なデバイスでシームレスなエッジツーエッジのエクスペリエンスを提供します。
 
-![フォルダブル](~/android/platform/android-10-images/foldable.png)
+![図では、フォルダブル モバイル デバイスが示されています。](~/android/platform/android-10-images/foldable.png)
 
 アプリに関連する場合は、これらの機能をお勧めします。
 
@@ -110,7 +110,7 @@ Android 10 には、さまざまな新機能が導入されています。 こ�
 - **生体認証の向上:** 生体認証を使用する場合は、最新のデバイスで指紋認証をサポートするための推奨される方法である、[BiometricPrompt](https://developer.android.com/reference/androidx/biometric/BiometricPrompt) に移行します。
 - **強化された記録:** キャプションまたはゲームプレイの記録をサポートするには、[オーディオ再生キャプチャ](https://developer.android.com/preview/features/playback-capture)を有効にします。 これは、より多くのユーザーにリーチし、アプリにさらにアクセスしやすくするための優れた方法です。
 - **コーデックの向上:** メディア アプリの場合、ビデオ ストリーミングに対しては [AV1](https://en.wikipedia.org/wiki/AV1) を試し、ハイ ダイナミック レンジ ビデオについては [HDR10+](https://en.wikipedia.org/wiki/High-dynamic-range_video#HDR10+) を試してください。 音声および音楽ストリーミングについては [Opus](http://opus-codec.org/) エンコードを使用でき、ミュージシャンの場合は[ネイティブ MIDI API](https://developer.android.com/preview/features/midi) を使用できます。
-- **ネットワーク API の向上:** アプリで IoT デバイスを Wi-Fi 経由で管理している場合は、構成、ダウンロード、印刷などの機能については新しい[ネットワーク接続 API](https://developer.android.com/preview/features#peer2peer) を試してください。
+- **ネットワーク API の向上:** アプリで IoT デバイスを Wi-Fi 経由で管理している場合は、構成、ダウンロード、印刷などの機能については新しい [ネットワーク接続 API](https://developer.android.com/preview/features#peer2peer) を試してください。
 
 これらは、Android 10 での多くの新しい機能と API のほんの一部です。 これらすべてを確認するには、[開発者向けの Android 10 のサイト](https://developer.android.com/about/versions/10/highlights)にアクセスしてください。
 

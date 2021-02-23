@@ -10,12 +10,12 @@ ms.date: 05/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 708a310ea015f9e678d534898fde18abc3848120
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8c89a71de12fcd21ee907b6478d7a616f0d5337f
+ms.sourcegitcommit: 1f391667869a4541dd9b42d78862dc01d69ed160
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84198328"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99818060"
 ---
 # <a name="what-is-xamarin"></a>Xamarin とは
 
@@ -49,7 +49,7 @@ Xamarin は .NET 上に構築されています。このため、メモリの割
 
 ### <a name="added-features"></a>追加された機能
 
-Xamarin には、ネイティブ プラットフォームの機能が組み合わされたうえ、次のような機能が多数追加されています。
+Xamarin にネイティブ プラットフォームの機能が組み合わされ、次のような機能が追加されています。
 
 1. **基になる SDK の完全なバインディング** – Xamarin には iOS と Android の両方の基になるプラットフォーム SDK のほぼ全体を対象としたバインディングが含まれています。 さらに、これらのバインディングは厳密に型指定されています。つまり、ナビゲーションや使用が簡単で、開発時に堅牢なコンパイル時の型チェックが行われます。 厳密に型指定されたバインディングは、ランタイム エラーの削減とアプリケーションの品質向上につながります。
 1. **Objective-C、Java、C、および C++ の相互運用** – Xamarin は Objective-C、Java、C、C++ ライブラリを直接呼び出す機能を提供しているため、サード パーティ製の豊富なコードを使用できます。 この機能により、Objective-C、Java、C/C++ で記述された既存の iOS および Android のライブラリを使用できるようになります。 さらに、Xamarin は宣言型の構文を使用してネイティブの Objective-C および Java のライブラリをバインドできるバインド プロジェクトも提供しています。
@@ -70,7 +70,7 @@ Xamarin.Android アプリケーションでは、アプリケーションの起�
 
 [![Xamarin.iOS アーキテクチャ ダイアグラム](what-is-xamarin-images/ios-architecture-cropped.png)](what-is-xamarin-images/ios-architecture.png#lightbox)
 
-Xamarin.iOS アプリケーションは、C# からネイティブ ARM アセンブリ コードに完全に **Ahead-of-Time (AOT)** コンパイルされます。 Xamarin では、**セレクター**を使用して Objective-C がマネージド C# に公開され、**レジストラー**を使用してマネージド C# コードが Objective-C に公開されます。 セレクターとレジストラーは、総称して "バインド" と呼ばれ、Objective-C と C# 間の通信を可能にします。
+Xamarin.iOS アプリケーションは、C# からネイティブ ARM アセンブリ コードに完全に **Ahead-of-Time (AOT)** コンパイルされます。 Xamarin では、**セレクター** を使用して Objective-C がマネージド C# に公開され、**レジストラー** を使用してマネージド C# コードが Objective-C に公開されます。 セレクターとレジストラーは、総称して "バインド" と呼ばれ、Objective-C と C# 間の通信を可能にします。
 
 詳細については、[Xamarin.iOS のアーキテクチャ](~/ios/internals/architecture.md)に関するページをご覧ください。
 

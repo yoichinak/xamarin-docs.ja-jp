@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: FD8FE199-898B-4841-8041-CC9CA1A00917
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/29/2020
-ms.openlocfilehash: 2b289e5ffe4fba5c2f20caf0cf1d59cd277767f9
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.date: 02/04/2021
+ms.openlocfilehash: 6c9e91d8c434a0deea8c419def7dc3f1800b1d06
+ms.sourcegitcommit: 3b6eec7841868f50827271105577ecdc6766c162
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93373420"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99606577"
 ---
 # <a name="connect-to-local-web-services-from-ios-simulators-and-android-emulators"></a>iOS シミュレーターと Android エミュレーターからローカル Web サービスに接続する
 
@@ -83,15 +83,17 @@ Android エミュレーターの各インスタンスは、開発用コンピュ
 
 ただし、各エミュレーターの仮想ルーターで、事前に割り当てられたアドレスを含む特殊なネットワーク空間が管理されます。ここで、`10.0.2.2` アドレスはホスト ループバック インターフェイス (開発用コンピューター上の 127.0.0.1) の別名です。 そのため、相対 URI `/api/todoitems/` を使って GET 操作を公開しているローカルのセキュリティで保護された Web サービスがある場合、Android エミュレーターで実行されているアプリケーションでは、`https://10.0.2.2:<port>/api/todoitems/` に GET 要求を送信することでその操作を使用できます。
 
-### <a name="xamarinforms-example"></a>Xamarin.Forms の例
+### <a name="detect-the-operating-system"></a>オペレーティング システムを検出する
 
-Xamarin.Forms アプリケーションで、[`Device`](xref:Xamarin.Forms.Device) クラスを使って、アプリケーションが実行されているプラットフォームを検出することができます。 次に、ローカルのセキュリティで保護された Web サービスへのアクセスを実現する適切なホスト名は、次のように設定できます。
+[`DeviceInfo`](xref:Xamarin.Essentials.DeviceInfo) クラスを使用して、アプリケーションが実行されているプラットフォームを検出することができます。 次に、ローカルのセキュリティで保護された Web サービスへのアクセスを実現する適切なホスト名は、次のように設定できます。
 
 ```csharp
 public static string BaseAddress =
-    Device.RuntimePlatform == Device.Android ? "https://10.0.2.2:5001" : "https://localhost:5001";
+    DeviceInfo.Platform == DevicePlatform.Android ? "https://10.0.2.2:5001" : "https://localhost:5001";
 public static string TodoItemsUrl = $"{BaseAddress}/api/todoitems/";
 ```
+
+`DeviceInfo` クラスの詳細については、「[Xamarin.Essentials: デバイス情報](~/essentials/device-information.md)」を参照してください。
 
 ## <a name="bypass-the-certificate-security-check"></a>証明書のセキュリティ チェックをバイパスする
 
@@ -124,9 +126,58 @@ public HttpClientHandler GetInsecureHandler()
 #endif
 ```
 
+## <a name="enable-http-clear-text-traffic"></a>HTTP クリアテキスト トラフィックを有効にする
+
+必要に応じて、クリアテキストの HTTP トラフィックを許可するように、iOS と Android のプロジェクトを構成できます。 バックエンド サービスが HTTP トラフィックを許可するように構成されている場合は、ベース URL で HTTP を指定した後、クリアテキスト トラフィックを許可するようにプロジェクトを構成できます。
+
+```csharp
+public static string BaseAddress =
+    DeviceInfo.Platform == DevicePlatform.Android ? "http://10.0.2.2:5000" : "http://localhost:5000";
+public static string TodoItemsUrl = $"{BaseAddress}/api/todoitems/";
+```
+
+### <a name="ios-ats-opt-out"></a>iOS ATS のオプトアウト
+
+iOS でクリアテキストのローカル トラフィックを有効にするには、以下を **Info.plist** ファイルに追加することにより、[ATS をオプトアウトする](~/ios/app-fundamentals/ats.md#optout)必要があります。
+
+```xml
+<key>NSAppTransportSecurity</key>    
+<dict>
+    <key>NSAllowsLocalNetworking</key>
+    <true/>
+</dict>
+```
+
+### <a name="android-network-security-configuration"></a>Android のネットワーク セキュリティ構成
+
+Android でクリアテキストのローカル トラフィックを有効にするには、**Resources/xml** フォルダーに **network_security_config.xml** という名前の新しい XML ファイルを追加することにより、ネットワーク セキュリティ構成を作成する必要があります。 その XML ファイルで、次の構成を指定する必要があります。
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+  <domain-config cleartextTrafficPermitted="true">
+    <domain includeSubdomains="true">10.0.2.2</domain>
+  </domain-config>
+</network-security-config>
+```
+
+その後、Android マニフェストの **application** ノードで **networkSecurityConfig** プロパティを構成します。
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest>
+    <application android:networkSecurityConfig="@xml/network_security_config">
+        ...
+    </application>
+</manifest>
+```
+
 ## <a name="related-links"></a>関連リンク
 
 - [TodoREST (サンプル)](/samples/xamarin/xamarin-forms-samples/webservices-todorest/)
 - [ローカル HTTPS を有効にする](/aspnet/core/getting-started#enable-local-https)
 - [iOS/macOS 用の HttpClient と SSL/TLS の実装セレクター](~/cross-platform/macios/http-stack.md)
 - [Android 用の HttpClient スタックと SSL/TLS の実装セレクター](~/android/app-fundamentals/http-stack.md)
+- [Android のネットワーク セキュリティ構成](https://devblogs.microsoft.com/xamarin/cleartext-http-android-network-security/)
+- [iOS アプリのトランスポート セキュリティ](~/ios/app-fundamentals/ats.md)
+- [Xamarin.Essentials: デバイス情報](~/essentials/device-information.md)

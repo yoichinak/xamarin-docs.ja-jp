@@ -6,34 +6,34 @@ ms.technology: xamarin-forms
 ms.assetid: 3318B8F8-3B24-489E-8E7B-28FA948796F8
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/06/2020
+ms.date: 01/28/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 03d20114fb84bf17be40d9166e32c3d631786069
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a8a3aa070b061eec48cd17fb07ca264b813e4822
+ms.sourcegitcommit: 1f391667869a4541dd9b42d78862dc01d69ed160
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84132510"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99818202"
 ---
 # <a name="xamarinforms-quickstarts"></a>Xamarin.Forms のクイックスタート
 
 _Xamarin.Forms を使用してモバイル アプリケーションを作成する方法について説明します。_
 
-## <a name="create-a-single-page-xamarinforms-applicationsingle-pagemd"></a>[単一ページの Xamarin.Forms アプリケーションを作成する](single-page.md)
+## <a name="create-a-xamarinforms-application"></a>[Xamarin.Forms アプリケーションを作成する](app.md)
 
-単一ページのクロスプラットフォーム Xamarin.Forms アプリケーションを作成する方法について説明します。このアプリにより、メモを入力し、デバイス ストレージに保持できるようになります。
+クロスプラットフォームの Xamarin.Forms アプリケーションを作成する方法について説明します。メモを入力し、デバイス ストレージに保持できるようになります。
 
-## <a name="perform-navigation-in-a-multi-page-xamarinforms-applicationmulti-pagemd"></a>Xamarin.Forms複数ページの [ アプリケーションでナビゲーションを実行する](multi-page.md)
+## <a name="perform-navigation-in-a-xamarinforms-application"></a>[Xamarin.Forms アプリケーションでナビゲーションを実行する](navigation.md)
 
-単一のメモを格納できるシングル ページ アプリケーションを、複数のメモを格納できるマルチページ アプリケーションにする方法について学習します。
+単一のメモを格納できるアプリケーションを、複数のメモを格納できるアプリケーションにする方法について説明します。
 
 ## <a name="store-data-in-a-local-sqlitenet-database"></a>[ローカルの SQLite.NET データベースにデータを格納する](database.md)
 
 ローカルの SQLite.NET データベースにデータを格納する方法を学習します。
 
-## <a name="style-a-cross-platform-xamarinforms-applicationstylingmd"></a>[クロスプラットフォーム Xamarin.Forms アプリケーションのスタイルを設定する](styling.md)
+## <a name="style-a-cross-platform-xamarinforms-application"></a>[クロスプラットフォーム Xamarin.Forms アプリケーションのスタイルを設定する](styling.md)
 
 XAML スタイルで、クロスプラットフォーム Xamarin.Forms アプリケーションのスタイルを設定する方法を学習します。
 
