@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93371509"
 ---
-# <a name="no-locxamarinforms-dependencyservice-introduction"></a>Xamarin.Forms の DependencyService の概要
+# <a name="xamarinforms-dependencyservice-introduction"></a>Xamarin.Forms の DependencyService の概要
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/dependencyservice/)
 

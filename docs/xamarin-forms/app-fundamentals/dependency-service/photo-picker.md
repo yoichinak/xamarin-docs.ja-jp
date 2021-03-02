@@ -43,7 +43,7 @@ namespace DependencyServiceDemos
 
 ## <a name="ios-implementation"></a>iOS での実装
 
-iOS での `IPhotoPickerService` インターフェイスの実装では、「 [**Choose a Photo from the Gallery**](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)」(ギャラリーから写真を選択する) レシピと [サンプル コード](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)で説明されているように、 [`UIImagePickerController`](xref:UIKit.UIImagePickerController) が使用されます。
+iOS での `IPhotoPickerService` インターフェイスの実装では、「[**Choose a Photo from the Gallery**](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)」(ギャラリーから写真を選択する) レシピと [サンプル コード](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)で説明されているように、[`UIImagePickerController`](xref:UIKit.UIImagePickerController) が使用されます。
 
 iOS での実装は、サンプル コードの iOS プロジェクト内の [`PhotoPickerService`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.iOS/Services/PhotoPickerService.cs) クラスに含まれます。 このクラスを `DependencyService` マネージャーで認識できるようにするには、クラスが `Dependency` 型の [`assembly`] 属性で識別されていて、パブリックとして指定され、`IPhotoPickerService` インターフェイスを明示的に実装している必要があります。
 
@@ -154,7 +154,7 @@ iOS アプリケーションが電話のフォト ライブラリにアクセス
 
 ## <a name="android-implementation"></a>Android での実装
 
-Android での実装では、 [**イメージ選択**](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)レシピと [サンプル コード](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)で説明されている手法が使用されます。 ただし、ユーザーが画像ライブラリから画像を選択したときに呼び出されるメソッドは、`OnActivityResult` の派生クラスでの `Activity` のオーバーライドです。 このため、Android プロジェクトの通常の [`MainActivity`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.Android/MainActivity.cs) クラスは、フィールド、プロパティ、および `OnActivityResult` メソッドのオーバーライドで補完されています。
+Android での実装では、[**イメージ選択**](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)レシピと [サンプル コード](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)で説明されている手法が使用されます。 ただし、ユーザーが画像ライブラリから画像を選択したときに呼び出されるメソッドは、`OnActivityResult` の派生クラスでの `Activity` のオーバーライドです。 このため、Android プロジェクトの通常の [`MainActivity`](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceDemos.Android/MainActivity.cs) クラスは、フィールド、プロパティ、および `OnActivityResult` メソッドのオーバーライドで補完されています。
 
 ```csharp
 public class MainActivity : FormsAppCompatActivity
