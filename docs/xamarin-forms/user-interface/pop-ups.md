@@ -10,12 +10,12 @@ ms.date: 12/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 09cffb4e5c7d8f6b78d5ab1de6ec9839c3969e87
-ms.sourcegitcommit: 044e8d7e2e53f366942afe5084316198925f4b03
+ms.openlocfilehash: 05ad6af1b094a980f5e226bcde22b43764576652
+ms.sourcegitcommit: 322e7bcf9fb8c1ad52ab8e929bea95d45e280834
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97940115"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101751518"
 ---
 # <a name="display-pop-ups"></a>ポップアップを表示する
 
@@ -31,7 +31,7 @@ Xamarin.Formsサポートされているすべてのプラットフォームに�
 await DisplayAlert ("Alert", "You have been alerted", "OK");
 ```
 
-![1 つのボタン付きのアラート ダイアログ](pop-ups-images/alert.png)
+[![IOS と Android での1つのボタンを使用したアラートダイアログ](pop-ups-images/simple-alert.png)](pop-ups-images/simple-alert-large.png#lightbox)
 
 この例は、ユーザーから情報を収集しません。 アラートはモーダルとして表示され、一度無視するとユーザーは引き続きアプリケーションとやり取りできるようになります。
 
@@ -45,7 +45,7 @@ async void OnAlertYesNoClicked (object sender, EventArgs e)
 }
 ```
 
-[![2つのボタンを含むアラートダイアログ](pop-ups-images/alert2-sml.png)](pop-ups-images/alert2.png#lightbox)
+[![2つのボタンを含むアラートダイアログ](pop-ups-images/two-button-alert.png)](pop-ups-images/two-button-alert.png#lightbox)
 
 [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*)また、メソッドには、 [`FlowDirection`](xref:Xamarin.Forms.FlowDirection) 警告内で UI 要素がフローする方向を指定する引数を受け取るオーバーロードもあります。 フローの方向の詳細については、「 [右から左へのローカライズ](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)」を参照してください。
 
@@ -66,9 +66,9 @@ async void OnActionSheetSimpleClicked (object sender, EventArgs e)
 }
 ```
 
-![ActionSheet ダイアログ](pop-ups-images/action.png)
+[![IOS と Android の ActionSheet ダイアログ](pop-ups-images/simple-actionsheet.png)](pop-ups-images/simple-actionsheet-large.png#lightbox)
 
-`destroy` ボタンの表示は他のボタンとは異なり、`null` のままにするか、3 つ目の文字列パラメーターとして指定できます。 次の例では、`destroy` ボタンを使用します。
+`destroy`ボタンは、iOS の他のボタンとは異なる方法で表示され `null` ます。また、3番目の文字列パラメーターとして、左または指定することができます。 次の例では、`destroy` ボタンを使用します。
 
 ```csharp
 async void OnActionSheetCancelDeleteClicked (object sender, EventArgs e)
@@ -78,7 +78,7 @@ async void OnActionSheetCancelDeleteClicked (object sender, EventArgs e)
 }
 ```
 
-[![DisplayActionSheet](pop-ups-images/action2-sml.png "[破棄] ボタンがある操作シートダイアログ")](pop-ups-images/action2.png#lightbox "[破棄] ボタンがある操作シートダイアログ")
+[![IOS と Android での [破棄] ボタンがある ActionSheet ダイアログ](pop-ups-images/actionsheet-destroy-button.png)](pop-ups-images/actionsheet-destroy-button-large.png#lightbox)
 
 [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*)また、メソッドには、 [`FlowDirection`](xref:Xamarin.Forms.FlowDirection) アクションシート内で UI 要素がフローする方向を指定する引数を受け取るオーバーロードもあります。 フローの方向の詳細については、「 [右から左へのローカライズ](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)」を参照してください。
 

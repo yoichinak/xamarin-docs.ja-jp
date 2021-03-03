@@ -6,18 +6,18 @@ ms.assetid: F687B24B-7DF0-4F8E-A21A-A9BB507480EB
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
-ms.date: 12/05/2019
+ms.date: 03/01/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4331b29c54b5f7c59daf0a9e04cd398693e79201
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: a7dd5ea8963fed079c82ac6944d571176002486e
+ms.sourcegitcommit: 322e7bcf9fb8c1ad52ab8e929bea95d45e280834
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93374707"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101751445"
 ---
-# <a name="no-locxamarinforms-local-databases"></a>Xamarin.Forms ローカルデータベース
+# <a name="xamarinforms-local-databases"></a>Xamarin.Forms ローカルデータベース
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/todo)
 
@@ -45,7 +45,7 @@ NuGet パッケージマネージャーを使用して、 **sqlite-pcl** を検�
 - **NuGet リンク:** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 > [!NOTE]
-> パッケージ名に関係なく、 **sqlite-net-pcl** NuGet パッケージを .NET Standard プロジェクトでも使用します。
+> パッケージ名に関係なく、**sqlite-net-pcl** NuGet パッケージを .NET Standard プロジェクトでも使用します。
 
 ## <a name="configure-app-constants"></a>アプリ定数の構成
 
@@ -96,93 +96,70 @@ public static class Constants
 
 ### <a name="lazy-initialization"></a>限定的な初期化
 
-は、 `TodoItemDatabase` 最初にアクセスされるまで、.net クラスを使用して `Lazy` データベースの初期化を遅延させます。 遅延初期化を使用すると、データベースの読み込みプロセスによってアプリの起動が遅れることがなくなります。 詳細については、「 [Lazy &lt; T &gt; クラス](xref:System.Lazy`1)」を参照してください。
+は、 `TodoItemDatabase` `AsyncLazy<T>` 最初にアクセスされるまでデータベースの初期化を遅延させるために、カスタムクラスによって表される非同期の遅延初期化を使用します。
 
 ```csharp
 public class TodoItemDatabase
 {
-    static readonly Lazy<SQLiteAsyncConnection> lazyInitializer = new Lazy<SQLiteAsyncConnection>(() =>
-    {
-        return new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
-    });
+    static SQLiteAsyncConnection Database;
 
-    static SQLiteAsyncConnection Database => lazyInitializer.Value;
-    static bool initialized = false;
+    public static readonly AsyncLazy<TodoItemDatabase> Instance = new AsyncLazy<TodoItemDatabase>(async () =>
+    {
+        var instance = new TodoItemDatabase();
+        CreateTableResult result = await Database.CreateTableAsync<TodoItem>();
+        return instance;
+    });
 
     public TodoItemDatabase()
     {
-        InitializeAsync().SafeFireAndForget(false);
-    }
-
-    async Task InitializeAsync()
-    {
-        if (!initialized)
-        {
-            if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(TodoItem).Name))
-            {
-                await Database.CreateTablesAsync(CreateFlags.None, typeof(TodoItem)).ConfigureAwait(false);
-            }
-            initialized = true;
-        }
+        Database = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
     }
 
     //...
 }
 ```
 
-データベース接続は静的なフィールドで、アプリケーションの有効期間中は1つのデータベース接続が使用されます。 永続的な静的接続を使用すると、単一のアプリセッション中に複数回接続を開始したり閉じたりするよりもパフォーマンスが向上します。
+フィールドは、 `Instance` オブジェクトのデータベーステーブルが存在しない場合に作成するために使用され、 `TodoItem` シングルトンと `TodoItemDatabase` してを返します。 `Instance`型のフィールドは、 `AsyncLazy<TodoItemDatabase>` 最初に待機したときに構築されます。 複数のスレッドが同時にフィールドにアクセスしようとすると、すべてのスレッドで1つの構築が使用されます。 次に、構築が完了すると、すべての `await` 操作が完了します。 また、 `await` 構築が完了した後の操作は、値が使用可能であるため、すぐに続行されます。
 
-`InitializeAsync`メソッドは、オブジェクトを格納するテーブルが既に存在するかどうかを確認し `TodoItem` ます。 このメソッドでは、テーブルが存在しない場合は自動的に作成されます。
+> [!NOTE]
+> データベース接続は静的なフィールドで、アプリケーションの有効期間中は1つのデータベース接続が使用されます。 永続的な静的接続を使用すると、単一のアプリセッション中に複数回接続を開始したり閉じたりするよりもパフォーマンスが向上します。
 
-### <a name="the-safefireandforget-extension-method"></a>Safe焼討 And忘れる拡張メソッド
+### <a name="asynchronous-lazy-initialization"></a>非同期の遅延初期化
 
-`TodoItemDatabase`クラスがインスタンス化されるときは、非同期プロセスであるデータベース接続を初期化する必要があります。 ただし、
-
-- クラスコンストラクターを非同期にすることはできません。
-- 待機されていない非同期メソッドは、例外をスローしません。
-- メソッドを使用する `Wait` と、スレッド _と_ 飲み込まよって例外が許可されます。
-
-非同期の初期化を開始するために、実行のブロックを避け、例外をキャッチする機会がある場合、サンプルアプリケーションではという拡張メソッドを使用し `SafeFireAndForget` ます。 `SafeFireAndForget`拡張メソッドは、クラスに追加の機能を提供し `Task` ます。
+データベースの初期化を開始するために、ブロックの実行を避け、例外をキャッチすることができます。サンプルアプリケーションでは、クラスによって表される非同期のレイジー初期化が使用され `AsyncLazy<T>` ます。
 
 ```csharp
-public static class TaskExtensions
+public class AsyncLazy<T> : Lazy<Task<T>>
 {
-    // NOTE: Async void is intentional here. This provides a way
-    // to call an async method from the constructor while
-    // communicating intent to fire and forget, and allow
-    // handling of exceptions
-    public static async void SafeFireAndForget(this Task task,
-        bool returnToCallingContext,
-        Action<Exception> onException = null)
-    {
-        try
-        {
-            await task.ConfigureAwait(returnToCallingContext);
-        }
+    readonly Lazy<Task<T>> instance;
 
-        // if the provided action is not null, catch and
-        // pass the thrown exception
-        catch (Exception ex) when (onException != null)
-        {
-            onException(ex);
-        }
+    public AsyncLazy(Func<T> factory)
+    {
+        instance = new Lazy<Task<T>>(() => Task.Run(factory));
+    }
+
+    public AsyncLazy(Func<Task<T>> factory)
+    {
+        instance = new Lazy<Task<T>>(() => Task.Run(factory));
+    }
+
+    public TaskAwaiter<T> GetAwaiter()
+    {
+        return instance.Value.GetAwaiter();
     }
 }
 ```
 
-メソッドは、 `SafeFireAndForget` 指定されたオブジェクトの非同期実行を待機 `Task` し、 `Action` 例外がスローされた場合に呼び出されるをアタッチできるようにします。
-
-詳細については、「 [タスクベースの非同期パターン (TAP)](/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)」を参照してください。
+クラスは、 `AsyncLazy` 型と型を組み合わせて、 `Lazy<T>` `Task<T>` リソースの初期化を表す遅延初期化タスクを作成します。 コンストラクターに渡されるファクトリデリゲートは、同期または非同期のどちらでもかまいません。 ファクトリデリゲートはスレッドプールのスレッドで実行され、複数のスレッドが同時に起動しようとしても、複数回実行されることはありません。 ファクトリデリゲートが完了すると、遅延初期化された値が使用可能になり、インスタンスを待機しているすべてのメソッドが `AsyncLazy<T>` 値を受け取ります。 詳しくは、「[AsyncLazy](https://devblogs.microsoft.com/pfxteam/asynclazyt/)」をご覧ください。
 
 ### <a name="data-manipulation-methods"></a>データ操作方法
 
 クラスには、 `TodoItemDatabase` 作成、読み取り、編集、および削除の4種類のデータ操作のためのメソッドが含まれています。 SQLite.NET ライブラリには、SQL ステートメントを記述せずにオブジェクトを格納および取得するための単純なオブジェクトリレーショナルマップ (ORM) が用意されています。
 
 ```csharp
-public class TodoItemDatabase {
-
+public class TodoItemDatabase
+{
     // ...
-
     public Task<List<TodoItem>> GetItemsAsync()
     {
         return Database.Table<TodoItem>().ToListAsync();
@@ -218,35 +195,20 @@ public class TodoItemDatabase {
 }
 ```
 
-## <a name="access-data-in-no-locxamarinforms"></a>データへのアクセス Xamarin.Forms
+## <a name="access-data-in-xamarinforms"></a>データへのアクセス Xamarin.Forms
 
-クラスは、 Xamarin.Forms `App` クラスのインスタンスを公開し `TodoItemDatabase` ます。
-
-```csharp
-static TodoItemDatabase database;
-public static TodoItemDatabase Database
-{
-    get
-    {
-        if (database == null)
-        {
-            database = new TodoItemDatabase();
-        }
-        return database;
-    }
-}
-```
-
-このプロパティを使用 Xamarin.Forms すると、コンポーネントは、 `Database` ユーザーの操作に応じてインスタンスのデータの取得と操作のメソッドを呼び出すことができます。 次に例を示します。
+クラスは、 `TodoItemDatabase` `Instance` クラス内のデータアクセス操作を `TodoItemDatabase` 呼び出すことができるフィールドを公開します。
 
 ```csharp
-var saveButton = new Button { Text = "Save" };
-saveButton.Clicked += async (sender, e) =>
+async void OnSaveClicked(object sender, EventArgs e)
 {
     var todoItem = (TodoItem)BindingContext;
-    await App.Database.SaveItemAsync(todoItem);
+    TodoItemDatabase database = await TodoItemDatabase.Instance;
+    await database.SaveItemAsync(todoItem);
+
+    // Navigate backwards
     await Navigation.PopAsync();
-};
+}
 ```
 
 ## <a name="advanced-configuration"></a>詳細な構成
@@ -271,7 +233,7 @@ await Database.EnableWriteAheadLoggingAsync();
 
 詳細については、「 [SQLite Write-Ahead Logging](https://www.sqlite.org/wal.html) on sqlite.org」を参照してください。
 
-### <a name="copying-a-database"></a>データベースのコピー
+### <a name="copy-a-database"></a>データベースをコピーする
 
 SQLite データベースのコピーが必要になる場合があります。
 
@@ -293,5 +255,4 @@ SQLite データベースのコピーが必要になる場合があります。
 - [SQLite のドキュメント](https://www.sqlite.org/docs.html)
 - [Android での SQLite の使用](~/android/data-cloud/data-access/using-sqlite-orm.md)
 - [IOS での SQLite の使用](~/ios/data-cloud/data/using-sqlite-orm.md)
-- [タスク ベースの非同期パターン (TAP)](/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)
-- [Lazy &lt; T &gt; クラス](xref:System.Lazy`1)
+- [AsyncLazy](https://devblogs.microsoft.com/pfxteam/asynclazyt/)

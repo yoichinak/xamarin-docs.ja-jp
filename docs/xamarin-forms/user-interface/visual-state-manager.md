@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms ビジュアル状態マネージャー
+title: Xamarin.Forms Visual State Manager
 description: Visual State Manager を使用して、コードから設定されたビジュアルの状態に基づいて XAML 要素を変更します。
 ms.prod: xamarin
 ms.assetid: 17296F14-640D-484B-A24C-A4E9B7013E4F
@@ -11,14 +11,14 @@ ms.date: 05/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f1ceadb6d7985f5d448fe729a42e0cf0a3d5d6f6
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 2c69dc4373a2fe98d61b123daf63d54e129e8426
+ms.sourcegitcommit: 322e7bcf9fb8c1ad52ab8e929bea95d45e280834
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93374473"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101751432"
 ---
-# <a name="no-locxamarinforms-visual-state-manager"></a>Xamarin.Forms ビジュアル状態マネージャー
+# <a name="xamarinforms-visual-state-manager"></a>Xamarin.Forms Visual State Manager
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)
 
@@ -404,17 +404,17 @@ VSM マークアップの残りの部分は、以前と同じです。
 
 [![VSM (スタイル)](vsm-images/VsmInStyle.png "VSM (スタイル)")](vsm-images/VsmInStyle-Large.png#lightbox)
 
-## <a name="visual-states-in-no-locxamarinforms"></a>表示状態 Xamarin.Forms
+## <a name="visual-states-in-xamarinforms"></a>表示状態 Xamarin.Forms
 
 次の表に、で定義されている表示状態の一覧を示し Xamarin.Forms ます。
 
-| クラス | 状態 | 説明 |
+| インスタンス | 状態 | 詳細情報 |
 | ----- | ------ | ---------------- |
 | `Button` | `Pressed` | [ボタンの表示状態](~/xamarin-forms/user-interface/button.md#button-visual-states) |
 | `CheckBox` | `IsChecked` | [チェックボックスの表示状態](~/xamarin-forms/user-interface/checkbox.md#checkbox-visual-states) |
 | `CarouselView` | `DefaultItem`, `CurrentItem`, `PreviousItem`, `NextItem` | [CarouselView の視覚的状態](~/xamarin-forms/user-interface/carouselview/interaction.md#define-visual-states) |
 | `ImageButton` | `Pressed` | [ImageButton ビジュアルの状態](~/xamarin-forms/user-interface/imagebutton.md#imagebutton-visual-states) |
-| `RadioButton` | `IsChecked` | [RadioButton の表示状態](~/xamarin-forms/user-interface/radiobutton.md#radiobutton-visual-states) |
+| `RadioButton` | `Checked`, `Unchecked` | [RadioButton の表示状態](~/xamarin-forms/user-interface/radiobutton.md#radiobutton-visual-states) |
 | `Switch` | `On`, `Off` | [ビジュアル状態の切り替え](~/xamarin-forms/user-interface/switch.md#switch-visual-states) |
 | `VisualElement` | `Normal`, `Disabled`, `Focused`, `Selected` | [一般的な状態](#common-states) |
 

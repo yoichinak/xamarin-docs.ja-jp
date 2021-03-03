@@ -1,42 +1,40 @@
 ---
-title: XAML ホットリロード () Xamarin.Forms
+title: Xamarin.Forms の XAML ホット リロード
 description: 実行中のアプリケーションに直ちに XAML ファイルへの変更を再度読み込みます。これにより、XAML を変更するたびにプロジェクトをビルドする必要がなくなり Xamarin.Forms ます。
 ms.prod: xamarin
 ms.assetid: E220F054-32EE-424C-A7E5-6156BE271519
 ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
-ms.date: 01/14/2021
+ms.date: 03/01/2021
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 62c7be9bd737b4d1860dca9f75cdde6acfadaa96
-ms.sourcegitcommit: 99e340360e8615fbc2971f48d6856f8701594825
+ms.openlocfilehash: 7a0eb6eadb43fd191c5939270dca70a8c0ac7f3e
+ms.sourcegitcommit: 3aa9bdcaaedca74ab5175cb2338a1df122300243
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98204100"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101749370"
 ---
-# <a name="xaml-hot-reload-for-no-locxamarinforms"></a>XAML ホットリロード () Xamarin.Forms
+# <a name="xaml-hot-reload-for-xamarinforms"></a>Xamarin.Forms の XAML ホット リロード
 
 XAML ホットリロードは、生産性を向上させ、時間を節約するために、既存のワークフローにプラグインします。 Xaml のホットリロードを使用しない場合は、XAML の変更を確認するたびに、アプリをビルドして配置する必要があります。 ホットリロードでは、XAML ファイルを保存すると、実行中のアプリに変更が反映されます。 また、ナビゲーションの状態とデータが保持されるため、アプリ内の場所を失うことなく、UI をすばやく繰り返すことができます。 そのため、XAML のホットリロードでは、UI の変更を検証するためのアプリの再構築とデプロイにかかる時間が短縮されます。
 
-> [!NOTE]
-> WPF または UWP アプリを作成する場合は、「 [uwp と wpf の XAML ホットリロード](/visualstudio/debugger/xaml-hot-reload)」を参照してください。
->
-> の XAML ホットリロード Xamarin.Forms は、現在 UWP プロジェクトに対しては機能し _ません_ Xamarin.Forms 。
+[!NOTE]
+を使用せずにネイティブの UWP または WPF アプリを作成している場合は Xamarin.Forms 、「 [UWP と Wpf の XAML ホットリロード](/visualstudio/debugger/xaml-hot-reload)」を参照してください。
 
 ## <a name="system-requirements"></a>システム要件
 
-| IDE/フレームワーク | バージョンが必要です |
+| IDE/フレームワーク | 必要な最小バージョン |
 |------|------------------|
-|Visual Studio 2019 | 16.4 以上
-Visual Studio 2019 for Mac | 8.4 以上
-Xamarin.Forms | 4.1 以上
+|Visual Studio 2019 | 16.9 の変更のみのモード、全ページモードの場合は16.4
+Visual Studio 2019 for Mac | 8.9 の変更のみのモード、全ページモードの場合は8.4
+Xamarin.Forms | 5.0 の変更のみのモード。4.1 全ページモードの場合
 
-## <a name="enable-xaml-hot-reload-for-no-locxamarinforms"></a>XAML ホットリロードを有効にする Xamarin.Forms
+## <a name="enable-xaml-hot-reload-for-xamarinforms"></a>XAML ホットリロードを有効にする Xamarin.Forms
 
-テンプレートから開始する場合は、XAML ホットリロードが既定で有効になり、プロジェクトは追加設定なしで動作するように構成されます。 Android または iOS エミュレーター、シミュレーター、または物理デバイスでアプリをデバッグし、XAML を変更して、XAML ホットリロードをトリガーするようにファイルを保存します。
+テンプレートから開始する場合は、XAML ホットリロードが既定で有効になり、プロジェクトは追加設定なしで動作するように構成されます。 エミュレーターまたは物理デバイスで Android、iOS、または UWP アプリをデバッグし、xaml を変更して XAML ホットリロードをトリガーします。
 
 既存のソリューションから作業している場合は Xamarin.Forms 、XAML ホットリロードを使用するための追加のインストールは必要ありませんが、最適なエクスペリエンスを得るために構成を再確認する必要がある場合があります。 まず、IDE の設定で有効にします。
 
@@ -51,33 +49,53 @@ Xamarin.Forms | 4.1 以上
 
 ![XAML ホットリロードセットアップ](hot-reload-images/hotreloadflowchart.png "XAML ホットリロードセットアップのフローチャート")
 
-## <a name="resilient-reloading"></a>回復力のある再読み込み
+<!-- https://aka.ms/xamarin-hot-reload-mode points to this section -->
+## <a name="hot-reload-modes"></a>ホットリロードモード
 
-XAML ホットリロードで再読み込みできないように変更すると、IntelliSense を使用してエラーメッセージが表示されます。 これらの変更 (ルード編集と呼ばれます) には、XAML のミスの修正や、存在しないイベントハンドラーへのコントロールの接続などがあります。 ルード編集の場合でも、アプリを再起動せずに再度読み込むことができます。 XAML ファイル内の別の場所で別の変更を行い、保存してください。 ルードエディットは再読み込みされませんが、その他の変更は引き続き適用されます。
+XAML ホットリロードは2つの異なるモードで動作します。新しい *変更モード* は、モードと古い *全ページモード* のみです。
+
+Visual Studio 16.9 および Visual Studio for Mac 8.9 からは、既定の動作は、5.0 以降を使用するすべてのアプリに対して、[変更のみ] モードが使用されることです Xamarin.Forms 。 以前のバージョンので Xamarin.Forms は、全ページモードが使用されます。 ただし、すべてのアプリに対してフルページモードを強制的に使用することができます (Windows の場合は [**ツール**  >  **オプション]**、  >    >  [Windows の場合は **ホットリロード**、Xamarin XAML の場合は **Visual Studio**  >  の **基本設定** ツール] を選択  >    >  します)。
+
+*変更のみのモード* では、XAML を解析して編集を行ったときに何が変更されたかを正確に確認し、その変更だけを実行中のアプリに送信します。 これは、WPF および UWP ホットリロードに使用されるテクノロジと同じです。 UI の状態を保持します。これは、ページ全体の UI を再作成せず、編集の影響を受けるコントロールの変更されたプロパティを更新するだけであるためです。 変更のみのモードでは、 [ライブビジュアルツリー](live-visual-tree.md)を使用することもできます。
+
+既定では、[変更のみ] モードでは、ファイルを保存して変更内容を確認する必要はありません。入力時に更新プログラムが直ちに適用されます。
+ただし、この動作は、ファイルの保存時にのみ更新するように変更できます。 これを行うには、[ **ドキュメントの保存時に XAML のホットリロードを適用** する] チェックボックスをオンにします (現在は Windows でのみ使用できます)。 XAML の更新を大きくして、完了するまで表示したくない場合は、ドキュメントの保存時にのみ更新すると便利な場合があります。 
+
+*ページ全体モード* では、編集して保存した後、実行中のアプリに完全な XAML ファイルが送信されます。 実行中のアプリはページを再読み込みし、コントロールを再作成します。 UI の更新が表示されます。
+
+変更のみのモードは、ホットリロードの未来であるため、可能な限り使用することをお勧めします。 高速で、UI の状態を保持し、 [ライブビジュアルツリー](live-visual-tree.md)をサポートしています。 まだ5.0 に更新されていないアプリの場合、全ページモードが提供され Xamarin.Forms ます。 
+
+> [!NOTE]
+> モードを切り替えるときには、デバッグセッションを再起動する必要があります。
+
+## <a name="xaml-errors"></a>XAML エラー
+
+*変更のみのモード*: 変更を加えると、ホットリロードの XAML パーサーは無効であると認識し、エディターに表示されているエラーを表示し、エラーウィンドウに含めます。 これらのホットリロードエラーには、"XHR" で始まるエラーコード (XAML ホットリロード用) があります。 ページにこのようなエラーがある場合は、ページの他の部分でもホットリロードによって変更が適用されることはありません。 ホットリロードのすべてのエラーを修正して、ページで再び動作を開始します。
+
+*全ページモード*: XAML ホットリロードを再度読み込むことができないように変更すると、エディターにエラーが表示され、[エラー] ウィンドウに追加されます。 これらの変更 (ルード編集と呼ばれます) には、XAML のミスの修正や、存在しないイベントハンドラーへのコントロールの接続などがあります。 ルード編集の場合でも、アプリを再起動せずに再度読み込むことができます。 XAML ファイル内の別の場所で別の変更を行い、保存してください。 ルードエディットは再読み込みされませんが、その他の変更は引き続き適用されます。
 
 ## <a name="reload-on-multiple-platforms-at-once"></a>複数のプラットフォームで一度に再読み込みする
 
 XAML ホットリロードは、Visual Studio と Visual Studio for Mac での同時デバッグをサポートしています。 Android と iOS ターゲットを同時にデプロイすると、両方のプラットフォームに同時に反映された変更を確認できます。 複数のプラットフォームでデバッグするには、次を参照してください。
+
 * **Windows** [方法: 複数のスタートアッププロジェクトを設定する](/visualstudio/ide/how-to-set-multiple-startup-projects?view=vs-2019)
 * **Mac** で [複数のスタートアッププロジェクトを設定](/visualstudio/mac/set-startup-projects?view=vsmac-2019)する
 
 ## <a name="known-limitations"></a>既知の制限事項
 
-* UWP や macOS などの他の Xamarin.Forms ターゲットは、まだサポートされて *いません* 。 UWP サポートの進行状況は [ここで](https://developercommunity.visualstudio.com/idea/661682/xaml-hot-reload-for-xamarinforms-on-uwp.html)追跡できます。
+* Xamarin.Forms Android、iOS、UWP (macOS など) を超えるターゲットは、現在サポートされていません。
+* [XamlCompilation (XamlCompilationOptions)] の使用は、XAML のコンパイルを無効にすることはサポートされていないため、ライブビジュアルツリーで問題が発生する可能性があります。
 * XAML ホットリロードセッション中に、ファイルまたは NuGet パッケージを追加、削除、または名前変更することはできません。 ファイルまたは NuGet パッケージを追加または削除する場合は、アプリケーションをリビルドして再デプロイし、引き続き XAML ホットリロードを使用します。
 * 最適なエクスペリエンスを得るには、 **リンクしない** ようにリンカーを設定するか、または **リンク** しないようにします。 [ **SDK のみをリンク** する] の設定はほとんどの場合に機能しますが、特定の場合には失敗する可能性があります。 リンカーの設定は、Android および iOS のビルドオプションにあります。
 * 物理的な iPhone でデバッグを行うには、インタープリターで XAML ホットリロードを使用する必要があります。 これを行うには、プロジェクト設定を開き、[iOS ビルド] タブを選択し、[ **Mono インタープリターを有効にする** ] 設定が有効になっていることを確認します。 場合によっては、プロパティページの上部にある **プラットフォーム** オプションを **iPhone** に変更する必要があります。
-* 値を使用してコントロールを別のフィールドまたはプロパティに割り当てることによって作成された参照は、再 `x:Name` 読み込みされません。
-* AppShell でシェルアプリケーションのビジュアル階層を更新すると、アプリケーションの状態を維持する際に問題が発生する可能性があります。 問題が発生した場合は、アプリをリビルドして再読み込みを続行します。
 * XAML ホットリロードでは、イベントハンドラー、カスタムコントロール、ページ分離コード、およびその他のクラスを含む C# コードを再読み込みすることはできません。
 
-## <a name="more-resources"></a>その他のリソース
-
-* [XAML ホットリロードのヒントとコツ](https://devblogs.microsoft.com/xamarin/tips-tricks-xaml-hot-reload/)
-* [詳細については、XAML のホットリロード Xamarin.Forms : Xamarin の表示](https://www.youtube.com/watch?v=crhjjPjzknk)
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
+* XAML ホットリロード出力を表示してステータスメッセージを確認します。これは、トラブルシューティングに役立ちます。
+  * **Windows**: 出力を **表示** して出力を表示  >  し、上部にある [**出力の表示**] で [ **Xamarin ホットリロード**] を選択します。   
+  * **Mac**: ステータスバーの **XAML ホットリロード** にマウスポインターを合わせると、そのパッドが表示されます。
 * XAML ホットリロードが初期化に失敗した場合:
   * Xamarin.Formsバージョンを更新します。
   * 最新バージョンの IDE を使用していることを確認します。
@@ -86,3 +104,9 @@ XAML ホットリロードは、Visual Studio と Visual Studio for Mac での�
 * 物理 iPhone でデバッグしているときに、アプリが応答しなくなった場合は、インタープリターが有効になっていることを確認します。 有効にするには、iOS のビルド設定で [ **Mono インタープリターを有効に** する (visual studio 16.4/8.4 以上)] または [追加の **mtouch 引数**] フィールド (visual studio 16.3/8.3 以前) に [ **-インタープリター** ] をオンにします。
 
 バグを報告するには、**ヘルプ** を使用して  >    >  Windows で **問題** を報告し、   >  Mac で **問題を報告** してください。
+
+## <a name="related-links"></a>関連リンク
+
+- [ライブ ビジュアル ツリー](live-visual-tree.md)
+- [XAML ホットリロードのヒントとコツ](https://devblogs.microsoft.com/xamarin/tips-tricks-xaml-hot-reload/)
+- [詳細については、XAML のホットリロード Xamarin.Forms : Xamarin の表示](https://www.youtube.com/watch?v=crhjjPjzknk)

@@ -112,6 +112,8 @@ items:
         items:
           - name: XAML ホット リロード
             href: xaml/hot-reload.md
+          - name: ライブ ビジュアル ツリー
+            href: xaml/live-visual-tree.md
           - name: XAML ツールボックス
             href: xaml/toolbox.md
           - name: XAML プレビューアー
