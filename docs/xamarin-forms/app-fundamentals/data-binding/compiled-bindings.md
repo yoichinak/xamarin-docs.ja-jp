@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93373394"
 ---
-# <a name="no-locxamarinforms-compiled-bindings"></a>Xamarin.Forms のコンパイル済みのバインド
+# <a name="xamarinforms-compiled-bindings"></a>Xamarin.Forms のコンパイル済みのバインド
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
@@ -38,7 +38,7 @@ _コンパイル済みのバインドは、従来のバインドより迅速に�
 > [!NOTE]
 > [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) が設定されているのと同じレベルで、ビュー階層に `x:DataType` 属性を設定することをお勧めします。 ただし、この属性は、ビュー階層の任意の場所で再定義できます。
 
-コンパイルされたバインドを使用するには、`x:DataType` 属性を文字列リテラル、または `x:Type` マークアップ拡張機能を使用する型に設定する必要があります。 XAML のコンパイル時に、無効なバインド式はすべてビルド エラーとして報告されます。 しかし、XAML コンパイラでは、最初に見つかった無効なバインド式についてのみ、ビルド エラーが報告されます。 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) が XAML またはコードで設定されているかどうかに関係なく、`VisualElement` またはその子で定義されている有効なバインド式はすべてコンパイルされます。 バインド式をコンパイルすると、コンパイル済みのコードが生成され、 *ソース* のプロパティから値が取得されて、マークアップで指定されている *ターゲット* のプロパティに設定されます。 さらに、バインド式に応じて、生成されるコードでは、 *ソース* プロパティの値の変更が監視され、 *ターゲット* プロパティが更新される場合があります。また、 *ターゲット* から *ソース* に変更がプッシュ バックされる場合があります。
+コンパイルされたバインドを使用するには、`x:DataType` 属性を文字列リテラル、または `x:Type` マークアップ拡張機能を使用する型に設定する必要があります。 XAML のコンパイル時に、無効なバインド式はすべてビルド エラーとして報告されます。 しかし、XAML コンパイラでは、最初に見つかった無効なバインド式についてのみ、ビルド エラーが報告されます。 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) が XAML またはコードで設定されているかどうかに関係なく、`VisualElement` またはその子で定義されている有効なバインド式はすべてコンパイルされます。 バインド式をコンパイルすると、コンパイル済みのコードが生成され、*ソース* のプロパティから値が取得されて、マークアップで指定されている *ターゲット* のプロパティに設定されます。 さらに、バインド式に応じて、生成されるコードでは、*ソース* プロパティの値の変更が監視され、*ターゲット* プロパティが更新される場合があります。また、*ターゲット* から *ソース* に変更がプッシュ バックされる場合があります。
 
 > [!IMPORTANT]
 > コンパイル済みのバインドは現在、[`Source`](xref:Xamarin.Forms.Binding.Source) プロパティを定義するどのバインド式でも無効になっています。 これは、コンパイル時に解決できない、`x:Reference` マークアップ拡張を使用して、`Source` プロパティが常に設定されるためです。
@@ -92,7 +92,7 @@ _コンパイル済みのバインドは、従来のバインドより迅速に�
 
 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) でのバインドは、テンプレート化されているオブジェクトのコンテキストで解釈されます。 そのため、`DataTemplate` でコンパイル済みのバインドを使用するときには、`DataTemplate` で `x:DataType` 属性を使用して、そのデータ オブジェクトの型を宣言する必要があります。
 
-**[Compiled Color List]\(コンパイル済みのカラー リスト\)** ページでは、 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) でのコンパイル済みのバインドの使用について説明します。
+**[Compiled Color List]\(コンパイル済みのカラー リスト\)** ページでは、[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) でのコンパイル済みのバインドの使用について説明します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

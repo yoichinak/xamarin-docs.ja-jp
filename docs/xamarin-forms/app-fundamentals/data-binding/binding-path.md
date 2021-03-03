@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93373615"
 ---
-# <a name="no-locxamarinforms-binding-path"></a>Xamarin.Forms のバインド パス
+# <a name="xamarinforms-binding-path"></a>Xamarin.Forms のバインド パス
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 

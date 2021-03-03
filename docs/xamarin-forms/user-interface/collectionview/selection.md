@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93375344"
 ---
-# <a name="no-locxamarinforms-collectionview-selection"></a>Xamarin.Forms CollectionView の選択
+# <a name="xamarinforms-collectionview-selection"></a>Xamarin.Forms CollectionView の選択
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 

@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93373121"
 ---
-# <a name="no-locxamarinforms-activityindicator"></a>Xamarin.Forms ActivityIndicator
+# <a name="xamarinforms-activityindicator"></a>Xamarin.Forms ActivityIndicator
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-activityindicatordemos/)
 
 コントロールには、 Xamarin.Forms [`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator) アプリケーションが長時間のアクティビティに関与していることを示すアニメーションが表示されます。 とは異なり、で [`ProgressBar`](xref:Xamarin.Forms.ProgressBar) は `ActivityIndicator` 進行状況が示されません。 は、 `ActivityIndicator` から継承さ [`View`](xref:Xamarin.Forms.View) れます。

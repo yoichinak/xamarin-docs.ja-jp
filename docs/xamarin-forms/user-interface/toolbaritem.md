@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93371210"
 ---
-# <a name="no-locxamarinforms-toolbaritem"></a>Xamarin.Forms ToolbarItem
+# <a name="xamarinforms-toolbaritem"></a>Xamarin.Forms ToolbarItem
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
 

@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/13/2020
 ms.locfileid: "94590416"
 ---
-# <a name="no-locxamarinforms-collectionview-scrolling"></a>Xamarin.Forms CollectionView スクロール
+# <a name="xamarinforms-collectionview-scrolling"></a>Xamarin.Forms CollectionView スクロール
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 

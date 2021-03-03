@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93371288"
 ---
-# <a name="no-locxamarinforms-map-initialization-and-configuration"></a>Xamarin.Forms マップの初期化と構成
+# <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin.Forms マップの初期化と構成
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
@@ -79,7 +79,7 @@ IOS 11 以前をサポートするには、、、およびの3つのキーすべ
 <string>Can we use your location at all times?</string>
 ```
 
-また **、情報の plist ファイルを** 編集しているときに、 **ソース** ビューで **情報** を追加することもできます。
+また **、情報の plist ファイルを** 編集しているときに、**ソース** ビューで **情報** を追加することもできます。
 
 ![IOS 8 用情報 plist](setup-images/ios8-map-permissions.png "iOS 8 必須情報. plist エントリ")
 
@@ -245,8 +245,8 @@ UWP では、マップを表示してマップサービスを使用する前に�
 
 また、アプリケーションがユーザーの場所にアクセスする必要がある場合は、パッケージマニフェストで場所の機能を有効にする必要があります。 これは次のようにして実装します。
 
-1. **ソリューション エクスプローラー** で、 **package.appxmanifest** をダブルクリックし、 **[機能]** タブを選びます。
-1. **[機能]** ボックスの一覧で、 **[位置情報]** チェックボックスをオンにします。 これにより、 `location` デバイスの機能がパッケージマニフェストファイルに追加されます。
+1. **ソリューション エクスプローラー** で、**package.appxmanifest** をダブルクリックし、**[機能]** タブを選びます。
+1. **[機能]** ボックスの一覧で、**[位置情報]** チェックボックスをオンにします。 これにより、 `location` デバイスの機能がパッケージマニフェストファイルに追加されます。
 
     ```xml
     <Capabilities>

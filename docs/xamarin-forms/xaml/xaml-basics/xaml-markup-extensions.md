@@ -398,7 +398,7 @@ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 xmlns:local="clr-namespace:XamlSamples"
 ```
 
-また、.NET Standard ライブラリが参照する任意のアセンブリの .NET 名前空間の XML 名前空間宣言を定義することもできます。 たとえば、次に示すのは、 `sys` `System` **netstandard.library** アセンブリに含まれる標準の .net 名前空間のプレフィックスです。 これは別のアセンブリなので、アセンブリ名も指定する必要があります。この場合、 **netstandard.library** :
+また、.NET Standard ライブラリが参照する任意のアセンブリの .NET 名前空間の XML 名前空間宣言を定義することもできます。 たとえば、次に示すのは、 `sys` `System` **netstandard.library** アセンブリに含まれる標準の .net 名前空間のプレフィックスです。 これは別のアセンブリなので、アセンブリ名も指定する必要があります。この場合、 **netstandard.library**:
 
 ```csharp
 xmlns:sys="clr-namespace:System;assembly=netstandard"

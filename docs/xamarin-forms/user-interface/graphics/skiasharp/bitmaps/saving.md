@@ -238,7 +238,7 @@ public class PhotoLibrary : IPhotoLibrary
 }
 ```
 
-**Package.appxmanifest** ファイルの **Capabilities** セクションには、 **画像ライブラリ** が必要です。
+**Package.appxmanifest** ファイルの **Capabilities** セクションには、**画像ライブラリ** が必要です。
 
 ## <a name="exploring-the-image-formats"></a>イメージ形式の検証
 
@@ -283,7 +283,7 @@ using (SKManagedWStream wstream = new SKManagedWStream(memStream))
 
 `SKManagedWStream`クラスはから派生 `SKWStream` します ("書き込み可能なストリーム" を意味します)。 メソッドは、エンコードされ `Encode` たビットマップファイルをそのストリームに書き込みます。 そのコード内のコメントは、実行する必要のあるエラーチェックを指しています。
 
-[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)アプリケーションの [ **ファイル形式の保存** ] ページでは、同様のコードを使用して、さまざまな形式でビットマップを保存する方法を試すことができます。
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)アプリケーションの [**ファイル形式の保存**] ページでは、同様のコードを使用して、さまざまな形式でビットマップを保存する方法を試すことができます。
 
 XAML ファイルにはビットマップを表示するが含まれていますが、 `SKCanvasView` ページの残りの部分には、アプリケーションがメソッドを呼び出すために必要なすべてが含まれてい `Encode` `SKBitmap` ます。 これには、 `Picker` 列挙体のメンバーのがあります。これには、 `SKEncodedImageFormat` `Slider` 高損失のビットマップ形式の quality 引数の、 `Entry` ファイル名とフォルダー名の2つのビュー、およびファイルを保存するためのがあり `Button` ます。
 
@@ -474,7 +474,7 @@ public partial class SaveFileFormatsPage : ContentPage
 
 [**SkiaSharp 記事のフィンガーペイントで**](../paths/finger-paint.md)は、タッチ追跡を使用して、基本的な指描画プログラムを実装する方法を示しています。 このプログラムでサポートされるのは、1つの色と1つのストローク幅のみですが、オブジェクトのコレクションに描画全体を保持し `SKPath` ます。
 
-[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの [ **Save を使用したフィンガーペイント** ] ページでは、描画全体がオブジェクトのコレクションにも保持され `SKPath` ますが、ビットマップで描画がレンダリングされ、写真ライブラリに保存することができます。
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの [ **Save を使用したフィンガーペイント**] ページでは、描画全体がオブジェクトのコレクションにも保持され `SKPath` ますが、ビットマップで描画がレンダリングされ、写真ライブラリに保存することができます。
 
 このプログラムの多くは、オリジナルの **フィンガーペイント** プログラムに似ています。 1つの拡張機能として、XAML ファイルで **Clear** および **Save** というラベルのボタンがインスタンス化されるようになりました。
 
@@ -705,7 +705,7 @@ public partial class FingerPaintSavePage : ContentPage
 
 [![スピン描画](saving-images/SpinPaint.png "スピン描画")](saving-images/SpinPaint-Large.png#lightbox)
 
-クラスの [ **保存** ] ボタン `SpinPaint` は、イメージを固定フォルダー名 ( **spainpaint** ) に保存し、日付と時刻から構築されたファイル名を保存するという点で、 **フィンガーペイント** に似ています。
+クラスの [**保存**] ボタン `SpinPaint` は、イメージを固定フォルダー名 (**spainpaint**) に保存し、日付と時刻から構築されたファイル名を保存するという点で、**フィンガーペイント** に似ています。
 
 ## <a name="related-links"></a>関連リンク
 

@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93373108"
 ---
-# <a name="no-locxamarinforms-data-templates"></a>Xamarin.Forms のデータ テンプレート
+# <a name="xamarinforms-data-templates"></a>Xamarin.Forms のデータ テンプレート
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
 

@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93369429"
 ---
-# <a name="no-locxamarinforms-dual-screen-design-patterns"></a>Xamarin.Forms のデュアル画面の設計パターン
+# <a name="xamarinforms-dual-screen-design-patterns"></a>Xamarin.Forms のデュアル画面の設計パターン
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 

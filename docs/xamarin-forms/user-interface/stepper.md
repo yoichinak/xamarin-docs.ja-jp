@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93369793"
 ---
-# <a name="no-locxamarinforms-stepper"></a>Xamarin.Forms ステッパ
+# <a name="xamarinforms-stepper"></a>Xamarin.Forms ステッパ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)
 
@@ -49,7 +49,7 @@ _値の範囲から数値を選択するには、ステッパを使用します�
 
 ### <a name="creating-a-stepper-in-code"></a>コードでのステッパの作成
 
-[**Stepperdemos**](/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)サンプルの「 **基本的なステッパコード** 」ページでは、 [`Stepper`](xref:Xamarin.Forms.Stepper) コード内にとの2つのオブジェクトを作成する方法を示してい [`Label`](xref:Xamarin.Forms.Label) ます。
+[**Stepperdemos**](/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)サンプルの「**基本的なステッパコード**」ページでは、 [`Stepper`](xref:Xamarin.Forms.Stepper) コード内にとの2つのオブジェクトを作成する方法を示してい [`Label`](xref:Xamarin.Forms.Label) ます。
 
 ```csharp
 public class BasicStepperCodePage : ContentPage
@@ -103,7 +103,7 @@ public class BasicStepperCodePage : ContentPage
 
 ### <a name="creating-a-stepper-in-xaml"></a>XAML でのステッパの作成
 
-**基本的なステッパ xaml** ページは、 **基本的なステッパコード** と機能的には同じですが、ほとんどの xaml で実装されています。
+**基本的なステッパ xaml** ページは、**基本的なステッパコード** と機能的には同じですが、ほとんどの xaml で実装されています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

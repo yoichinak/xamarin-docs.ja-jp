@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93375383"
 ---
-# <a name="generics-in-no-locxamarinforms-xaml"></a>XAML のジェネリック Xamarin.Forms
+# <a name="generics-in-xamarinforms-xaml"></a>XAML のジェネリック Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/xaml-generics/)
 

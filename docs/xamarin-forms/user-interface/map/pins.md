@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93375435"
 ---
-# <a name="no-locxamarinforms-map-pins"></a>Xamarin.Forms ピンのマップ
+# <a name="xamarinforms-map-pins"></a>Xamarin.Forms ピンのマップ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 

@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93374213"
 ---
-# <a name="no-locxamarinforms-button"></a>Xamarin.Forms ;
+# <a name="xamarinforms-button"></a>Xamarin.Forms ;
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)
 
@@ -90,7 +90,7 @@ public partial class BasicButtonClickPage : ContentPage
 
 XAML では、をインスタンス化するのが一般的です `Button` が、コードでを作成することもでき `Button` ます。 これは、アプリケーションで、ループで列挙可能なデータに基づいて複数のボタンを作成する必要がある場合に便利です `foreach` 。
 
-**コードボタンのクリック** ページは、 **基本的なボタンクリック** ページと機能的に同等のページを作成する方法を示していますが、完全に C# では次のようになります。
+**コードボタンのクリック** ページは、**基本的なボタンクリック** ページと機能的に同等のページを作成する方法を示していますが、完全に C# では次のようになります。
 
 ```csharp
 public class CodeButtonClickPage : ContentPage
@@ -142,7 +142,7 @@ button.Clicked += OnButtonClicked;
 ## <a name="disabling-the-button"></a>ボタンを無効にする
 
 アプリケーションが特定の状態にある場合、特定の `Button` クリックが有効な操作ではないことがあります。 そのような場合は、 `Button` プロパティをに設定することで、を無効にする必要があり `IsEnabled` `false` ます。 従来の例とし `Entry` ては、ファイルオープンを伴うファイル名のコントロールがあります `Button` 。は、に `Button` 入力されたテキストがある場合にのみ有効にする必要があり `Entry` ます。
-`DataTrigger`このタスクには、 [**データトリガー**](~/xamarin-forms/app-fundamentals/triggers.md#data-triggers)に関する記事に示されているように、を使用できます。
+`DataTrigger`このタスクには、[**データトリガー**](~/xamarin-forms/app-fundamentals/triggers.md#data-triggers)に関する記事に示されているように、を使用できます。
 
 ## <a name="using-the-command-interface"></a>コマンドインターフェイスの使用
 
@@ -155,7 +155,7 @@ button.Clicked += OnButtonClicked;
 
 MVVM アプリケーションでは、ビューモデルは、 `ICommand` データバインディングを使用して XAML 要素に接続される型のプロパティを定義し `Button` ます。 Xamarin.Forms また、 [`Command`](xref:Xamarin.Forms.Command) は、インターフェイスを実装するクラスとクラスを定義し、 [`Command<T>`](xref:Xamarin.Forms.Command`1) `ICommand` 型のプロパティを定義する際にビューモデルを支援し `ICommand` ます。
 
-コマンド実行の詳細については、「 [**コマンドインターフェイス**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)」を参照してください。ただし、 [**Buttondemos**](/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)サンプルの **基本的なボタンコマンド** ページでは、基本的な方法を示しています。
+コマンド実行の詳細については、「[**コマンドインターフェイス**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)」を参照してください。ただし、 [**Buttondemos**](/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)サンプルの **基本的なボタンコマンド** ページでは、基本的な方法を示しています。
 
 クラスは、という `CommandDemoViewModel` 名前の型のプロパティ `double` と、 `Number` `ICommand` という名前の型の2つの `MultiplyBy2Command` プロパティ `DivideBy2Command` を定義する、非常に単純なビューモデルです。
 
@@ -269,7 +269,7 @@ class CommandDemoViewModel : INotifyPropertyChanged
 
 [![基本ボタンコマンド-変更済み](button-images/BasicButtonCommandModified.png "基本ボタンコマンド-変更済み")](button-images/BasicButtonCommandModified-Large.png#lightbox)
 
-2つ以上の `Button` 要素が同じプロパティにバインドされる可能性があり `ICommand` ます。 要素は、 `Button` のプロパティを使用して区別でき [`CommandParameter`](xref:Xamarin.Forms.Button.CommandParameter) `Button` ます。 この場合は、ジェネリッククラスを使用し [`Command<T>`](xref:Xamarin.Forms.Command`1) ます。 オブジェクトは、 `CommandParameter` メソッドおよびメソッドに引数として渡され `execute` `canExecute` ます。 この手法の詳細については、 [**コマンドインターフェイス**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md#basic-commanding)の記事の「 [**基本的な**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md#basic-commanding)コマンド実行」セクションを参照してください。
+2つ以上の `Button` 要素が同じプロパティにバインドされる可能性があり `ICommand` ます。 要素は、 `Button` のプロパティを使用して区別でき [`CommandParameter`](xref:Xamarin.Forms.Button.CommandParameter) `Button` ます。 この場合は、ジェネリッククラスを使用し [`Command<T>`](xref:Xamarin.Forms.Command`1) ます。 オブジェクトは、 `CommandParameter` メソッドおよびメソッドに引数として渡され `execute` `canExecute` ます。 この手法の詳細については、[**コマンドインターフェイス**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md#basic-commanding)の記事の「[**基本的な**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md#basic-commanding)コマンド実行」セクションを参照してください。
 
 [**Buttondemos**](/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)のサンプルでは、クラスでもこの手法を使用し `MainPage` ます。 **Mainpage.xaml** ファイルには、 `Button` サンプルの各ページのが含まれています。
 
@@ -349,7 +349,7 @@ public partial class MainPage : ContentPage
 
 イベント以外 `Clicked` にも、イベント `Button` とイベントが定義され [`Pressed`](xref:Xamarin.Forms.Button.Pressed) [`Released`](xref:Xamarin.Forms.Button.Released) ます。 イベントは、指がで押され `Pressed` たとき、 `Button` またはマウスボタンが上にポインターを置いた状態で押されると発生し `Button` ます。 `Released`イベントは、指またはマウスボタンが離されたときに発生します。 一般に、イベントは `Clicked` イベントと同時に発生し `Released` ますが、指またはマウスポインターがの表面から離れ `Button` てから離されると、イベントは発生し `Clicked` ない可能性があります。
 
-`Pressed`イベントとイベントは頻繁には使用され `Released` ませんが、[ **プレスアンドリリース] ボタン** ページで説明されているように、特殊な目的で使用できます。 XAML ファイルには、および `Label` `Button` イベントにアタッチされたハンドラーを持つとが含まれてい `Pressed` `Released` ます。
+`Pressed`イベントとイベントは頻繁には使用され `Released` ませんが、[**プレスアンドリリース] ボタン** ページで説明されているように、特殊な目的で使用できます。 XAML ファイルには、および `Label` `Button` イベントにアタッチされたハンドラーを持つとが含まれてい `Pressed` `Released` ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -434,7 +434,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
 
 これらの6つのプロパティ (およびを除く) の効果は、 `FontFamily` `FontAttributes` ボタンの **外観** ページで説明されています。 もう1つのプロパティに [`Image`](xref:Xamarin.Forms.Button.ImageSource) ついては、「 [**ボタンを使用したビットマップの使用**](#using-bitmaps-with-buttons)」セクションで説明します。
 
-**[ボタンの外観** ] ページのすべてのビューとデータバインディングは、XAML ファイルで定義されています。
+**[ボタンの外観**] ページのすべてのビューとデータバインディングは、XAML ファイルで定義されています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

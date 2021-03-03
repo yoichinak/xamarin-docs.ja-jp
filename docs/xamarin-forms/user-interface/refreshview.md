@@ -19,7 +19,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93372879"
 ---
-# <a name="no-locxamarinforms-no-locrefreshview"></a>Xamarin.Forms RefreshView
+# <a name="xamarinforms-refreshview"></a>Xamarin.Forms RefreshView
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
 
@@ -37,7 +37,7 @@ ms.locfileid: "93372879"
 > [!NOTE]
 > では、 Universal Windows Platform のプル方向を `RefreshView` プラットフォーム固有ので設定できます。 詳細については、「 [ RefreshView プル方向](~/xamarin-forms/platform/windows/refreshview-pulldirection.md)」を参照してください。
 
-## <a name="create-a-no-locrefreshview"></a>認証要求の処理に使用する RefreshView
+## <a name="create-a-refreshview"></a>認証要求の処理に使用する RefreshView
 
 次の例は、XAML でをインスタンス化する方法を示してい `RefreshView` ます。
 
@@ -84,7 +84,7 @@ refreshView.Content = scrollView;
 > [!NOTE]
 > 手動で `IsRefreshing` プロパティをに設定する `true` と、更新の視覚化がトリガーされ、プロパティによって定義されたが実行され `ICommand` `Command` ます。
 
-## <a name="no-locrefreshview-appearance"></a>RefreshView 内容
+## <a name="refreshview-appearance"></a>RefreshView 内容
 
 は、クラスから継承されるプロパティに加えて `RefreshView` [`VisualElement`](xref:Xamarin.Forms.VisualElement) 、 `RefreshView` プロパティも定義し `RefreshColor` ます。 このプロパティを設定して、更新中に表示される進行状況の円の色を定義できます。
 
@@ -102,7 +102,7 @@ refreshView.Content = scrollView;
 > [!NOTE]
 > IOS では、 `BackgroundColor` プロパティは、進行状況の円を含むの背景色を設定し `UIView` ます。
 
-## <a name="disable-a-no-locrefreshview"></a>を無効にする RefreshView
+## <a name="disable-a-refreshview"></a>を無効にする RefreshView
 
 アプリケーションは、pull to refresh が有効な操作ではない状態になる場合があります。 このような場合は、 `RefreshView` プロパティをに設定することで、を無効にすることができ `IsEnabled` `false` ます。 これにより、ユーザーがプルをトリガーして更新できなくなります。
 

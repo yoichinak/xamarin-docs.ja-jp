@@ -16,7 +16,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93373433"
 ---
-# <a name="skiasharp-graphics-in-no-locxamarinforms"></a>SkiaSharp のグラフィック Xamarin.Forms
+# <a name="skiasharp-graphics-in-xamarinforms"></a>SkiaSharp のグラフィック Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 

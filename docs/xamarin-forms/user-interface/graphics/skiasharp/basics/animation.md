@@ -27,7 +27,7 @@ _SkiaSharp グラフィックスをアニメーション化する方法を見つ
 
 ![中心から拡張された複数の同心円の円](animation-images/animationexample.png)
 
-[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムの2つの軸をアニメーション化して、その楕円の2つの軸をアニメーション **化します** 。これにより、この pulsation の速度を制御することもできます。 [**PulsatingEllipsePage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml)ファイルは、 Xamarin.Forms `Slider` `Label` スライダーの現在の値を表示するためにとをインスタンス化します。 これは、を `SKCanvasView` 他のビューと統合する一般的な方法です Xamarin.Forms 。
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムの2つの軸をアニメーション化して、その楕円の2つの軸をアニメーション **化します**。これにより、この pulsation の速度を制御することもできます。 [**PulsatingEllipsePage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml)ファイルは、 Xamarin.Forms `Slider` `Label` スライダーの現在の値を表示するためにとをインスタンス化します。 これは、を `SKCanvasView` 他のビューと統合する一般的な方法です Xamarin.Forms 。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

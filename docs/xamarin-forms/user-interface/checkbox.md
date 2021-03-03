@@ -6,7 +6,7 @@ ms. 製品: xamarin ms. assetid: B8B9268B-BCB8-42B9-B08C-C0F22C137238: xamarin-f
 
 ---
 
-# <a name="no-locxamarinforms-checkbox"></a>Xamarin.Forms CheckBox
+# <a name="xamarinforms-checkbox"></a>Xamarin.Forms CheckBox
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
 

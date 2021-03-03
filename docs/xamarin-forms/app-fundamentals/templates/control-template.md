@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93374616"
 ---
-# <a name="no-locxamarinforms-control-templates"></a>Xamarin.Forms のコントロール テンプレート
+# <a name="xamarinforms-control-templates"></a>Xamarin.Forms のコントロール テンプレート
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/templates-controltemplatedemos)
 
@@ -122,7 +122,7 @@ public class CardView : ContentView
 </ContentPage>
 ```
 
-[`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) がリソースとして宣言される場合、リソース ディクショナリで識別できるように、`x:Key` 属性を使用して指定したキーが必要です。 この例では、`CardViewControlTemplate` のルート要素は [`Frame`](xref:Xamarin.Forms.Frame) オブジェクトです。 `Frame` オブジェクトでは、`RelativeSource` マークアップ拡張機能を使用して、その `BindingContext` をテンプレートが適用されるランタイム オブジェクト インスタンスに設定します。これは、" *テンプレート化された親* " と呼ばれます。 `CardView` オブジェクトのビジュアル構造を定義するために、`Frame` オブジェクトには [`Grid`](xref:Xamarin.Forms.Grid)、`Frame`、[`Image`](xref:Xamarin.Forms.Image)、[`Label`](xref:Xamarin.Forms.Label)、および [`BoxView`](xref:Xamarin.Forms.BoxView) の組み合わせが使用されます。 このようなオブジェクトのバインド式を使うと、ルート `Frame` エレメントから `BindingContext` が継承されるため、`CardView` プロパティに対して解決されます。 `RelativeSource` マークアップ拡張機能の詳細については、「[Xamarin.Forms の相対的なバインディング](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)」を参照してください。
+[`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) がリソースとして宣言される場合、リソース ディクショナリで識別できるように、`x:Key` 属性を使用して指定したキーが必要です。 この例では、`CardViewControlTemplate` のルート要素は [`Frame`](xref:Xamarin.Forms.Frame) オブジェクトです。 `Frame` オブジェクトでは、`RelativeSource` マークアップ拡張機能を使用して、その `BindingContext` をテンプレートが適用されるランタイム オブジェクト インスタンスに設定します。これは、"*テンプレート化された親*" と呼ばれます。 `CardView` オブジェクトのビジュアル構造を定義するために、`Frame` オブジェクトには [`Grid`](xref:Xamarin.Forms.Grid)、`Frame`、[`Image`](xref:Xamarin.Forms.Image)、[`Label`](xref:Xamarin.Forms.Label)、および [`BoxView`](xref:Xamarin.Forms.BoxView) の組み合わせが使用されます。 このようなオブジェクトのバインド式を使うと、ルート `Frame` エレメントから `BindingContext` が継承されるため、`CardView` プロパティに対して解決されます。 `RelativeSource` マークアップ拡張機能の詳細については、「[Xamarin.Forms の相対的なバインディング](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)」を参照してください。
 
 ## <a name="consume-a-controltemplate"></a>ControlTemplate を使用する
 
@@ -177,7 +177,7 @@ public class CardView : ContentView
 `TemplateBinding` マークアップ拡張機能を使うと、次のプロパティを定義できます。
 
 - `Path` (`string` 型)。プロパティのパス。
-- `Mode` (`BindingMode` 型)。" *ソース* " と " *ターゲット* " の間で変更が反映される方向。
+- `Mode` (`BindingMode` 型)。"*ソース*" と "*ターゲット*" の間で変更が反映される方向。
 - `Converter` (`IValueConverter` 型)。バインディング値コンバーター。
 - `ConverterParameter` (`object` 型)。バインディング値コンバーターへのパラメーター。
 - `StringFormat` (`string` 型)。バインディングの文字列形式。
@@ -260,9 +260,9 @@ public class CardView : ContentView
 
 ## <a name="apply-a-controltemplate-with-a-style"></a>スタイルを使用して ControlTemplate を適用する
 
-コントロール テンプレートは、スタイルを使用して適用することもできます。 これを実行するには、 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) を使用する " *暗黙的* " または " *明示的* " なスタイルを作成します。
+コントロール テンプレートは、スタイルを使用して適用することもできます。 これを実行するには、[`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) を使用する "*暗黙的*" または "*明示的*" なスタイルを作成します。
 
-次の XAML の例は、`CardViewControlTemplate` を使用する " *暗黙的* " なスタイルを示します。
+次の XAML の例は、`CardViewControlTemplate` を使用する "*暗黙的*" なスタイルを示します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -299,7 +299,7 @@ public class CardView : ContentView
 </ContentPage>
 ```
 
-この例では、" *暗黙的な* " [`Style`](xref:Xamarin.Forms.Style) は各 `CardView` オブジェクトに自動的に適用され、各 `CardView` の [`ControlTemplate`](xref:Xamarin.Forms.TemplatedView.ControlTemplate) プロパティは `CardViewControlTemplate` に設定されます。
+この例では、"*暗黙的な*" [`Style`](xref:Xamarin.Forms.Style) は各 `CardView` オブジェクトに自動的に適用され、各 `CardView` の [`ControlTemplate`](xref:Xamarin.Forms.TemplatedView.ControlTemplate) プロパティは `CardViewControlTemplate` に設定されます。
 
 スタイルの詳細については、[Xamarin.Forms のスタイル](~/xamarin-forms/user-interface/styles/index.md)に関するページを参照してください。
 

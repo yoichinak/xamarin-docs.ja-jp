@@ -21,13 +21,13 @@ ms.locfileid: "93374889"
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-SkiaSharp ビットマップの件名は、 **[SkiaSharp の「ビットマップの基礎](../basics/bitmaps.md)** 」で導入されました。 この記事では、ビットマップを読み込む3つの方法と、ビットマップを表示する3つの方法について説明しました。 この記事では、ビットマップを読み込み、のメソッドの使用方法について詳しく説明し `DrawBitmap` `SKCanvas` ます。
+SkiaSharp ビットマップの件名は、 **[SkiaSharp の「ビットマップの基礎](../basics/bitmaps.md)**」で導入されました。 この記事では、ビットマップを読み込む3つの方法と、ビットマップを表示する3つの方法について説明しました。 この記事では、ビットマップを読み込み、のメソッドの使用方法について詳しく説明し `DrawBitmap` `SKCanvas` ます。
 
 ![サンプルの表示](displaying-images/DisplayingSample.png "サンプルの表示")
 
 `DrawBitmapLattice`メソッドと `DrawBitmapNinePatch` メソッドについては、 **[SkiaSharp ビットマップのセグメント](segmented.md)** 化された表示に関する記事で説明されています。
 
-このページのサンプルは、 **[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションからのものです。 そのアプリケーションのホームページで、[ **SkiaSharp ビットマップ** ] を選択し、[ **ビットマップの表示** ] セクションにアクセスします。
+このページのサンプルは、 **[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションからのものです。 そのアプリケーションのホームページで、[ **SkiaSharp ビットマップ**] を選択し、[ **ビットマップの表示** ] セクションにアクセスします。
 
 ## <a name="loading-a-bitmap"></a>ビットマップの読み込み
 
@@ -147,7 +147,7 @@ paint.Color = SKColors.Red.WithAlpha(0x80);
 
 また、オブジェクトは、 `SKPaint` blend モードまたはフィルター効果を使用してビットマップを表示するときにも役割を果たします。 これらの情報については、「 [SkiaSharp 合成」と「blend モード](../effects/blend-modes/index.md) と [SkiaSharp イメージフィルター](../effects/image-filters.md)」の記事で説明されています。
 
-**[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** サンプルプログラムの [ **ピクセルディメンション** ] ページには、320ピクセル、高さが240ピクセルのビットマップリソースが表示されます。
+**[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** サンプルプログラムの [**ピクセルディメンション**] ページには、320ピクセル、高さが240ピクセルのビットマップリソースが表示されます。
 
 ```csharp
 public class PixelDimensionsPage : ContentPage

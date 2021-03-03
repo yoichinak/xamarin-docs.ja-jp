@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93374590"
 ---
-# <a name="no-locxamarinforms-relative-bindings"></a>Xamarin.Forms の相対的なバインディング
+# <a name="xamarinforms-relative-bindings"></a>Xamarin.Forms の相対的なバインディング
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 

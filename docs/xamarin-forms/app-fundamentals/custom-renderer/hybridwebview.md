@@ -209,7 +209,7 @@ public partial class HybridWebViewPage : ContentPage
 
 `invokeCSharpAction` JavaScript 関数は Web ページで定義されておらず、各カスタム レンダラーによって挿入されます。
 
-iOS の場合、この HTML ファイルは、 **BundleResource** のビルド アクションと一緒に、プラットフォーム プロジェクトの Content フォルダーに置かれます。 Android の場合、この HTML ファイルは、 **AndroidAsset** のビルド アクションと一緒にプラットフォーム プロジェクトの Assets/Content フォルダーに置かれます。
+iOS の場合、この HTML ファイルは、**BundleResource** のビルド アクションと一緒に、プラットフォーム プロジェクトの Content フォルダーに置かれます。 Android の場合、この HTML ファイルは、**AndroidAsset** のビルド アクションと一緒にプラットフォーム プロジェクトの Assets/Content フォルダーに置かれます。
 
 ### <a name="invoke-c-from-javascript"></a>JavaScript から C# を呼び出す
 
@@ -300,7 +300,7 @@ namespace CustomRenderer.iOS
 > [!NOTE]
 > `WKWebView` クラスは、iOS 8 以降でのみサポートされています。
 
-さらに、次の値を含むように、 **Info.plist** を更新する必要があります。
+さらに、次の値を含むように、**Info.plist** を更新する必要があります。
 
 ```xml
 <key>NSAppTransportSecurity</key>

@@ -145,7 +145,7 @@ using (SKPaint textPaint = new SKPaint())
 
 ただし、ハンドラーの1回の呼び出しから次の呼び出しへの変換について心配する必要はありません `PaintSurface` 。 の新しい呼び出しごとに `PaintSurface` 、既定の変換で新しいオブジェクトが提供さ `SKCanvas` れます。
 
-変換のもう1つの一般的な用途 `Translate` は、描画に便利な座標を使用して最初に作成されたビジュアルオブジェクトをレンダリングすることです。 たとえば、ポイント (0, 0) の中心を持つアナログクロックの座標を指定することができます。 変換を使用して、必要な場所に時計を表示できます。 この手法については、[ **Hendecagram Array** ] ページで説明します。 クラスは、 [`HendecagramArrayPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramArrayPage.cs) 最初に、 `SKPath` 11 ポイントの星のオブジェクトを作成します。 `HendecagramPath`オブジェクトは、他のデモンストレーションプログラムからアクセスできるように、パブリック、静的、および読み取り専用として定義されます。 静的コンストラクターに作成されます。
+変換のもう1つの一般的な用途 `Translate` は、描画に便利な座標を使用して最初に作成されたビジュアルオブジェクトをレンダリングすることです。 たとえば、ポイント (0, 0) の中心を持つアナログクロックの座標を指定することができます。 変換を使用して、必要な場所に時計を表示できます。 この手法については、[**Hendecagram Array**] ページで説明します。 クラスは、 [`HendecagramArrayPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramArrayPage.cs) 最初に、 `SKPath` 11 ポイントの星のオブジェクトを作成します。 `HendecagramPath`オブジェクトは、他のデモンストレーションプログラムからアクセスできるように、パブリック、静的、および読み取り専用として定義されます。 静的コンストラクターに作成されます。
 
 ```csharp
 public class HendecagramArrayPage : ContentPage

@@ -1089,7 +1089,7 @@ public partial class BitmapScatterViewPage : ContentPage
 </ContentPage>
 ```
 
-[**SingleFingerCornerScalePage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SingleFingerCornerScalePage.xaml.cs)ファイルは、 **メディア** ディレクトリからビットマップリソースを読み込み、 `SKMatrix` フィールドとして定義されたオブジェクトを使用して表示します。
+[**SingleFingerCornerScalePage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SingleFingerCornerScalePage.xaml.cs)ファイルは、**メディア** ディレクトリからビットマップリソースを読み込み、 `SKMatrix` フィールドとして定義されたオブジェクトを使用して表示します。
 
 ```csharp
 public partial class SingleFingerCornerScalePage : ContentPage

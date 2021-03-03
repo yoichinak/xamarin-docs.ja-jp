@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93373030"
 ---
-# <a name="creating-a-no-locxamarinforms-datatemplate"></a>Xamarin.Forms DataTemplate の作成
+# <a name="creating-a-xamarinforms-datatemplate"></a>Xamarin.Forms DataTemplate の作成
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
 

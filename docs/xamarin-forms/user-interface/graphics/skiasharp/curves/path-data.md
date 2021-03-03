@@ -103,13 +103,13 @@ Z
 A rx ry rotation-angle large-arc-flag sweep-flag x y ...
 ```
 
-*Rx* との *パラメーターは* 、楕円の水平方向と垂直方向の半径です。 *回転角度* は時計回りに回転します。
+*Rx* との *パラメーターは*、楕円の水平方向と垂直方向の半径です。 *回転角度* は時計回りに回転します。
 
 大きな弧の場合は、 *大きい* 円弧の場合は1に、小さい場合は0に設定します。
 
 時計回りの場合は *スイープフラグ* を1、反時計回りの場合は0に設定します。
 
-弧は、新しい現在位置になる点 ( *x* , *y* ) に描画されます。
+弧は、新しい現在位置になる点 (*x*, *y*) に描画されます。
 
 ## <a name="cubicto"></a>**CubicTo**
 
@@ -117,7 +117,7 @@ A rx ry rotation-angle large-arc-flag sweep-flag x y ...
 C x1 y1 x2 y2 x3 y3 ...
 ```
 
-このコマンドは、現在の位置から ( *x3* , *y3* ) に3次ベジエ曲線を追加します。これは、新しい現在位置になります。 ポイント ( *x1* , *y1* ) と ( *x2* , *y2* ) は制御ポイントです。
+このコマンドは、現在の位置から (*x3*, *y3*) に3次ベジエ曲線を追加します。これは、新しい現在位置になります。 ポイント (*x1*, *y1*) と (*x2*, *y2*) は制御ポイントです。
 
 1つのコマンドで複数のベジエ曲線を指定でき `C` ます。 ポイント数は3の倍数である必要があります。
 
@@ -135,7 +135,7 @@ S x2 y2 x3 y3 ...
 Q x1 y1 x2 y2 ...
 ```
 
-2次ベジエ曲線の場合、ポイント数は2の倍数である必要があります。 制御点は ( *x1* , *y1* ) で、終了点 (および新しい現在の位置) は ( *x2* , *y2* ) です。
+2次ベジエ曲線の場合、ポイント数は2の倍数である必要があります。 制御点は (*x1*, *y1*) で、終了点 (および新しい現在の位置) は (*x2*, *y2*) です。
 
 Smooth 2 次曲線コマンドもあります。
 
@@ -297,7 +297,7 @@ public class PathDataCatPage : ContentPage
 
 通常、オブジェクトがフィールドとして定義されている場合、その `SKPath` パスの輪郭は、コンストラクターまたは別のメソッドで定義されている必要があります。 ただし、SVG パスデータを使用する場合は、フィールド定義でパスを完全に指定できることがわかりました。
 
-[ [**変換の回転**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md)」では、前に見た見 **づらいアナログクロック** サンプルが、時計の針を単純な線として表示していました。 次 **の例の** ように、これらの行 `SKPath` は、クラスのフィールドとして定義されているオブジェクトとオブジェクトに置き換えられてい [`PrettyAnalogClockPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs) `SKPaint` ます。
+[[**変換の回転**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md)」では、前に見た見 **づらいアナログクロック** サンプルが、時計の針を単純な線として表示していました。 次 **の例の** ように、これらの行 `SKPath` は、クラスのフィールドとして定義されているオブジェクトとオブジェクトに置き換えられてい [`PrettyAnalogClockPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs) `SKPaint` ます。
 
 ```csharp
 public class PrettyAnalogClockPage : ContentPage

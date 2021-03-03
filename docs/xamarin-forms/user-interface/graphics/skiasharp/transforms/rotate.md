@@ -258,7 +258,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-`revolveDegrees`フィールドと `rotateDegrees` フィールドはアニメーション化されます。 このプログラムでは、クラスに基づくさまざまなアニメーション手法を使用 Xamarin.Forms [`Animation`](xref:Xamarin.Forms.Animation) します。 (このクラスについては、「 [*を使用 Xamarin.Forms した Mobile Apps の作成* 」の22章](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf)で説明されてい `OnAppearing` ます)。オーバーライドは、コールバックメソッドを持つ2つのオブジェクトを作成し、 `Animation` それらのオブジェクトに対してアニメーションの `Commit` 継続時間を
+`revolveDegrees`フィールドと `rotateDegrees` フィールドはアニメーション化されます。 このプログラムでは、クラスに基づくさまざまなアニメーション手法を使用 Xamarin.Forms [`Animation`](xref:Xamarin.Forms.Animation) します。 (このクラスについては、「 [*を使用 Xamarin.Forms した Mobile Apps の作成*」の22章](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf)で説明されてい `OnAppearing` ます)。オーバーライドは、コールバックメソッドを持つ2つのオブジェクトを作成し、 `Animation` それらのオブジェクトに対してアニメーションの `Commit` 継続時間を
 
 ```csharp
 protected override void OnAppearing()

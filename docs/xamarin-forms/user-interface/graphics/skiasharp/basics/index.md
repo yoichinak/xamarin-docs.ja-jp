@@ -25,13 +25,13 @@ _SkiaSharp グラフィックスの概念と座標の基本について説明し
 
 SkiaSharp NuGet パッケージをアプリケーションに追加したら Xamarin.Forms 、SkiaSharp グラフィックスの使用を開始できます。 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)ソリューションには、より高度なレッスンで SkiaSharp プログラミング手法を示す多くのページが含まれています。
 
-このセクションのすべてのサンプルプログラムは、 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムのホームページとソリューションの [ [**基本**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics)] フォルダーにある [ **SkiaSharp Drawing の基本** ] という見出しの下に表示されます。
+このセクションのすべてのサンプルプログラムは、 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムのホームページとソリューションの [[**基本**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics)] フォルダーにある [ **SkiaSharp Drawing の基本**] という見出しの下に表示されます。
 
 ## <a name="drawing-a-simple-circle"></a>[単純な円を描画](circle.md)
 
 キャンバスオブジェクトや paint オブジェクトなど、SkiaSharp drawing の基本について説明します。
 
-## <a name="integrating-with-no-locxamarinforms"></a>[との統合 Xamarin.Forms](integration.md)
+## <a name="integrating-with-xamarinforms"></a>[との統合 Xamarin.Forms](integration.md)
 
 タッチ入力に応答し、要素と統合して、対話型の SkiaSharp グラフィックスを作成し Xamarin.Forms ます。
 

@@ -18,7 +18,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93365867"
 ---
-# <a name="no-locxamarinforms-xaml-basics"></a>Xamarin.Forms XAML の基礎
+# <a name="xamarinforms-xaml-basics"></a>Xamarin.Forms XAML の基礎
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
@@ -54,7 +54,7 @@ XAML は基本的に XML ですが、XAML にはいくつかの固有の構文�
 
 ## <a name="requirements"></a>必要条件
 
-この記事では、に関する知識があることを前提としてい Xamarin.Forms ます。 また、この記事では、xml 名前空間宣言の使用方法、 *要素* 、 *タグ* 、 *属性* などの xml について理解していることも前提としています。
+この記事では、に関する知識があることを前提としてい Xamarin.Forms ます。 また、この記事では、xml 名前空間宣言の使用方法、 *要素*、 *タグ*、 *属性* などの xml について理解していることも前提としています。
 
 と XML に慣れている場合 Xamarin.Forms は、パート1の読み取りを開始 [します。XAML ではじめに](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)します。
 

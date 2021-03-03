@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93374384"
 ---
-# <a name="no-locxamarinforms-shell-page-configuration"></a>Xamarin.Forms シェルのページ構成
+# <a name="xamarinforms-shell-page-configuration"></a>Xamarin.Forms シェルのページ構成
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 

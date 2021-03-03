@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93371236"
 ---
-# <a name="no-locxamarinforms-tableview"></a>Xamarin.Forms TableView
+# <a name="xamarinforms-tableview"></a>Xamarin.Forms TableView
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-tableview)
 

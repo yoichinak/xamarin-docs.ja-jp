@@ -36,7 +36,7 @@ SkiaSharp の変換は、次の操作をサポートします。
 
 SkiaSharp は、標準の 3-3 変換行列に基づいて、非アフィン変換 ( *射影* または *パースペクティブ* 変換とも呼ばれます) もサポートしています。 非アフィン変換を使用すると、四角形を任意の凸形に変換できます。これは、すべての内側の角度が180°未満の4つの辺を持つ図です。 非アフィン変換は、座標またはサイズが無限になる可能性がありますが、3D 効果にとっては重要です。
 
-## <a name="differences-between-skiasharp-and-no-locxamarinforms-transforms"></a>SkiaSharp と変換の違い Xamarin.Forms
+## <a name="differences-between-skiasharp-and-xamarinforms-transforms"></a>SkiaSharp と変換の違い Xamarin.Forms
 
 Xamarin.Forms では、SkiaSharp の変換に似た変換もサポートされています。 クラスは、 Xamarin.Forms [`VisualElement`](xref:Xamarin.Forms.VisualElement) 次の変換プロパティを定義します。
 

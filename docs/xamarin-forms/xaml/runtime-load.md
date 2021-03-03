@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93374278"
 ---
-# <a name="loading-xaml-at-runtime-in-no-locxamarinforms"></a>実行時の XAML の読み込み Xamarin.Forms
+# <a name="loading-xaml-at-runtime-in-xamarinforms"></a>実行時の XAML の読み込み Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/xaml-loadruntimexaml)
 
@@ -37,7 +37,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Visual Studio は、XAML ファイルを含むプロジェクトをビルドするときに、メソッドの定義を含む C# コードファイル (たとえば、 **MainPage.xaml.g.cs** ) を生成するために xaml ファイルを解析し `InitializeComponent` ます。
+Visual Studio は、XAML ファイルを含むプロジェクトをビルドするときに、メソッドの定義を含む C# コードファイル (たとえば、 **MainPage.xaml.g.cs**) を生成するために xaml ファイルを解析し `InitializeComponent` ます。
 
 ```csharp
 private void InitializeComponent()

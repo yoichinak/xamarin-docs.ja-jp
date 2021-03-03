@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93372614"
 ---
-# <a name="no-locxamarinforms-shell-tabs"></a>Xamarin.Forms シェルのタブ
+# <a name="xamarinforms-shell-tabs"></a>Xamarin.Forms シェルのタブ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 

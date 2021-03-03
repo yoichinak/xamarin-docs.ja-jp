@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93368545"
 ---
-# <a name="no-locxamarinforms-slider"></a>Xamarin.Forms Slider
+# <a name="xamarinforms-slider"></a>Xamarin.Forms Slider
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
 
@@ -120,7 +120,7 @@ IOS デバイスと Android デバイスで実行されているプログラム�
 
 ### <a name="creating-a-slider-in-xaml"></a>XAML でのスライダーの作成
 
-**基本的なスライダーの xaml** ページは、 **基本的なスライダーコード** と同じですが、主に xaml で実装されています。
+**基本的なスライダーの xaml** ページは、**基本的なスライダーコード** と同じですが、主に xaml で実装されています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

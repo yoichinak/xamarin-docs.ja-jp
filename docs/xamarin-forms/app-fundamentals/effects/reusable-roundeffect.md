@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93374265"
 ---
-# <a name="no-locxamarinforms-reusable-roundeffect"></a>Xamarin.Forms の再利用可能な RoundEffect
+# <a name="xamarinforms-reusable-roundeffect"></a>Xamarin.Forms の再利用可能な RoundEffect
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/effects-roundeffect/)
 
@@ -223,7 +223,7 @@ image.Effects.Add(new RoundEffect());
 `RoundEffect` クラスは、`VisualElement` から派生するすべてのコントロールに適用できます。
 
 > [!NOTE]
-> 効果で正しい半径を計算するには、それが適用されるコントロールに明示的なサイズ設定を与える必要があります。 そのため、`HeightRequest` プロパティと `WidthRequest` プロパティを定義する必要があります。 影響を受けるコントロールが `StackLayout` に表示される場合、その `HorizontalOptions` プロパティでは、`LayoutOptions.CenterAndExpand` など、 **Expand** 値を使用しないでください。使用した場合、寸法が精確になりません。
+> 効果で正しい半径を計算するには、それが適用されるコントロールに明示的なサイズ設定を与える必要があります。 そのため、`HeightRequest` プロパティと `WidthRequest` プロパティを定義する必要があります。 影響を受けるコントロールが `StackLayout` に表示される場合、その `HorizontalOptions` プロパティでは、`LayoutOptions.CenterAndExpand` など、**Expand** 値を使用しないでください。使用した場合、寸法が精確になりません。
 
 ## <a name="related-links"></a>関連リンク
 

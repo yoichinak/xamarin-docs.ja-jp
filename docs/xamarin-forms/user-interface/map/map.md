@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93375461"
 ---
-# <a name="no-locxamarinforms-map-control"></a>Xamarin.Forms マップ コントロール
+# <a name="xamarinforms-map-control"></a>Xamarin.Forms マップ コントロール
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 

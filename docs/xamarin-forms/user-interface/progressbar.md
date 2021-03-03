@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93370521"
 ---
-# <a name="no-locxamarinforms-progressbar"></a>Xamarin.Forms プログレス
+# <a name="xamarinforms-progressbar"></a>Xamarin.Forms プログレス
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-progressbardemos/)
 
 このコントロールは、 Xamarin.Forms [`ProgressBar`](xref:Xamarin.Forms.ProgressBar) 進行状況を、値によって表されるパーセントに設定された水平バーとして視覚的に表し `float` ます。 クラスは、 `ProgressBar` から継承さ [`View`](xref:Xamarin.Forms.View) れます。

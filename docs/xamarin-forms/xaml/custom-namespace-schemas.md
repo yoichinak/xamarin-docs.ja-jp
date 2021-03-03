@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93374070"
 ---
-# <a name="xaml-custom-namespace-schemas-in-no-locxamarinforms"></a>の XAML カスタム名前空間スキーマ Xamarin.Forms
+# <a name="xaml-custom-namespace-schemas-in-xamarinforms"></a>の XAML カスタム名前空間スキーマ Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/xaml-customnamespaceschemas)
 

@@ -152,7 +152,7 @@ xmlns:sys="clr-namespace:System;assembly=netstandard"
 
 `x:Reference`マークアップ拡張機能はクラスによってサポートされてい [`ReferenceExtension`](xref:Xamarin.Forms.Xaml.ReferenceExtension) ます。 クラスには、という名前の単一のプロパティがあります。このプロパティには、 [`Name`](xref:Xamarin.Forms.Xaml.ReferenceExtension.Name) という名前が付けられた `string` ページ上の要素の名前を設定し `x:Name` ます。 この `Name` プロパティはのコンテンツプロパティであるため、中 `ReferenceExtension` `Name=` かっこで囲まれている場合は必要ありません `x:Reference` 。
 
-`x:Reference`マークアップ拡張機能は、データバインディングで排他的に使用されます。詳細については、「 [**データバインディング**](~/xamarin-forms/app-fundamentals/data-binding/index.md)」を参照してください。
+`x:Reference`マークアップ拡張機能は、データバインディングで排他的に使用されます。詳細については、「[**データバインディング**](~/xamarin-forms/app-fundamentals/data-binding/index.md)」を参照してください。
 
 **X:Reference Demo** ページでは、データバインディングを使用したの2つの使用方法が示されています `x:Reference` 。最初に、オブジェクトのプロパティを設定するために使用します。2つ目は、 `Source` `Binding` `BindingContext` 2 つのデータバインディングのプロパティを設定するために使用されます。
 

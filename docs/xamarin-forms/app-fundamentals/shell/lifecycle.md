@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93373277"
 ---
-# <a name="no-locxamarinforms-shell-lifecycle"></a>Xamarin.Forms シェルのライフサイクル
+# <a name="xamarinforms-shell-lifecycle"></a>Xamarin.Forms シェルのライフサイクル
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 

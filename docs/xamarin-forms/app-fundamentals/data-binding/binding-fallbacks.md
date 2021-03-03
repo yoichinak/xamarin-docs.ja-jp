@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93366322"
 ---
-# <a name="no-locxamarinforms-binding-fallbacks"></a>Xamarin.Forms でのバインドのフォールバック
+# <a name="xamarinforms-binding-fallbacks"></a>Xamarin.Forms でのバインドのフォールバック
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
@@ -30,7 +30,7 @@ ms.locfileid: "93366322"
 
 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) プロパティを使用すると、バインディング *ソース* を解決できない場合に使用されるフォールバック値を定義できます。 このプロパティを設定する一般的なシナリオは、バインドされた異種型コレクション内のすべてのオブジェクトに存在しない可能性のあるソース プロパティにバインドする場合です。
 
-次の **MonkeyDetail** ページは、 [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) プロパティの設定例を示します。
+次の **MonkeyDetail** ページは、[`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) プロパティの設定例を示します。
 
 ```xaml
 <Label Text="{Binding Population, FallbackValue='Population size unknown'}"
@@ -53,7 +53,7 @@ ms.locfileid: "93366322"
 
 ![FallbackValue のバインド](binding-fallbacks-images/bindingunavailable-detail-cropped.png "FallbackValue のバインド")
 
-バインド式に `FallbackValue` プロパティが設定されておらず、バインド パスまたはその一部が解決されない場合、ターゲットでは、[`BindableProperty.DefaultValue`](xref:Xamarin.Forms.BindableProperty.DefaultValue) が設定されます。 一方、バインド式に `FallbackValue` プロパティが設定されており、バインド パスまたはその一部が解決されない場合、ターゲットでは、`FallbackValue` 値プロパティの値が設定されます。 したがって、 **MonkeyDetail** ページでは、バインドされたオブジェクトに `Population` プロパティがないため、 [`Label`](xref:Xamarin.Forms.Label) により、"Population size unknown" (作成サイズが不明) が表示されます。
+バインド式に `FallbackValue` プロパティが設定されておらず、バインド パスまたはその一部が解決されない場合、ターゲットでは、[`BindableProperty.DefaultValue`](xref:Xamarin.Forms.BindableProperty.DefaultValue) が設定されます。 一方、バインド式に `FallbackValue` プロパティが設定されており、バインド パスまたはその一部が解決されない場合、ターゲットでは、`FallbackValue` 値プロパティの値が設定されます。 したがって、**MonkeyDetail** ページでは、バインドされたオブジェクトに `Population` プロパティがないため、[`Label`](xref:Xamarin.Forms.Label) により、"Population size unknown" (作成サイズが不明) が表示されます。
 
 > [!IMPORTANT]
 > [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) プロパティが設定されている場合、バインド式で、定義済みの値コンバーターは実行されません。
@@ -62,7 +62,7 @@ ms.locfileid: "93366322"
 
 [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) プロパティを使用すると、バインド *ソース* は解決できても値が `null` である場合に使用される置換値を定義できます。 このプロパティを設定する一般的なシナリオは、値が `null` である可能性のある、バインド コレクション内のソース プロパティにバインドする場合です。
 
-次の **Monkeys** ページは、 [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) プロパティの設定例を示します。
+次の **Monkeys** ページは、[`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) プロパティの設定例を示します。
 
 ```xaml
 <ListView ItemsSource="{Binding Monkeys}"

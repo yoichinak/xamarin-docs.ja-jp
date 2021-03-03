@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93374785"
 ---
-# <a name="no-locxamarinforms-map-polygons-and-polylines"></a>Xamarin.Forms 多角形とポリラインのマップ
+# <a name="xamarinforms-map-polygons-and-polylines"></a>Xamarin.Forms 多角形とポリラインのマップ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 

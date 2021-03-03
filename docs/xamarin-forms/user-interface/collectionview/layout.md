@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93371483"
 ---
-# <a name="no-locxamarinforms-collectionview-layout"></a>Xamarin.Forms CollectionView レイアウト
+# <a name="xamarinforms-collectionview-layout"></a>Xamarin.Forms CollectionView レイアウト
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 

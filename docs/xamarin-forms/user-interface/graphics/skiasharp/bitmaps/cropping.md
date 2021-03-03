@@ -739,7 +739,7 @@ public partial class PhotoPuzzlePage3 : ContentPage
 
 **Done** ボタンハンドラーは、トリミングされたビットマップの幅と高さ (これらの2つの値は同じである必要があります) を取得し、それを15個の個別のビットマップに分割します。それぞれの幅と高さは1/4 です。 (16 ビットマップの最後のビットマップは作成されません)。 `DrawBitmap` コピー元とコピー先の四角形を持つメソッドを使用すると、大きなビットマップのサブセットに基づいてビットマップを作成できます。
 
-## <a name="converting-to-no-locxamarinforms-bitmaps"></a>変換 ( Xamarin.Forms ビットマップに)
+## <a name="converting-to-xamarinforms-bitmaps"></a>変換 ( Xamarin.Forms ビットマップに)
 
 メソッドで `OnDoneButtonClicked` は、15ビットマップ用に作成された配列の型は次のようになり [`ImageSource`](xref:Xamarin.Forms.ImageSource) ます。
 

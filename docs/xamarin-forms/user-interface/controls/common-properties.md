@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/04/2020
 ms.locfileid: "93330963"
 ---
-# <a name="no-locxamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Forms コモンコントロールのプロパティ、メソッド、およびイベント
+# <a name="xamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Forms コモンコントロールのプロパティ、メソッド、およびイベント
 
 クラスは、 Xamarin.Forms `VisualElement` アプリケーションで使用されるほとんどのコントロールの基本クラスです Xamarin.Forms 。 クラスは、 `VisualElement` 派生クラスで使用される多くの [プロパティ](#properties)、 [メソッド](#methods)、および [イベント](#events) を定義します。
 

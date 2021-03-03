@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93368246"
 ---
-# <a name="launch-the-native-map-app-from-no-locxamarinforms"></a>からネイティブマップアプリを起動します。 Xamarin.Forms
+# <a name="launch-the-native-map-app-from-xamarinforms"></a>からネイティブマップアプリを起動します。 Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 

@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93368701"
 ---
-# <a name="no-locxamarinforms-modal-pages"></a>Xamarin.Forms モーダル ページ
+# <a name="xamarinforms-modal-pages"></a>Xamarin.Forms モーダル ページ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/navigation-modal)
 

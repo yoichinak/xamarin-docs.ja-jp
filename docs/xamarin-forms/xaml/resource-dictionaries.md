@@ -18,7 +18,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/13/2020
 ms.locfileid: "94590267"
 ---
-# <a name="no-locxamarinforms-resource-dictionaries"></a>Xamarin.Forms リソースディクショナリ
+# <a name="xamarinforms-resource-dictionaries"></a>Xamarin.Forms リソースディクショナリ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
 

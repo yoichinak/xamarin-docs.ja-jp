@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93374083"
 ---
-# <a name="no-locxamarinforms-bindable-properties"></a>Xamarin.Forms バインド可能なプロパティ
+# <a name="xamarinforms-bindable-properties"></a>Xamarin.Forms バインド可能なプロパティ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
 

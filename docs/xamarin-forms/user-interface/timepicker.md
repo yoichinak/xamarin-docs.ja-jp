@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93371886"
 ---
-# <a name="no-locxamarinforms-timepicker"></a>Xamarin.Forms TimePicker
+# <a name="xamarinforms-timepicker"></a>Xamarin.Forms TimePicker
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-timepicker)
 

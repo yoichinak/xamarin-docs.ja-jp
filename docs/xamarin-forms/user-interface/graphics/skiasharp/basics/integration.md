@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93366621"
 ---
-# <a name="integrating-with-no-locxamarinforms"></a>との統合 Xamarin.Forms
+# <a name="integrating-with-xamarinforms"></a>との統合 Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
@@ -28,7 +28,7 @@ SkiaSharp グラフィックスは、いくつかの方法で、の残りの部�
 ![スライダーを使用して色を選択する](integration-images/integrationexample.png)
 
 で対話型の SkiaSharp グラフィックスを作成するもう1つの方法は、タッチを使用すること Xamarin.Forms です。
-[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムの2番目のページには、[ **塗りつぶし** の設定/解除] があります。 この例では、塗りつぶしのない2つの方法で、 &mdash; &mdash; タップによって塗りつぶしが切り替わります。 クラスは、 [`TapToggleFillPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs) ユーザー入力に応じて SkiaSharp グラフィックスを変更する方法を示しています。
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムの2番目のページには、[**塗りつぶし** の設定/解除] があります。 この例では、塗りつぶしのない2つの方法で、 &mdash; &mdash; タップによって塗りつぶしが切り替わります。 クラスは、 [`TapToggleFillPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs) ユーザー入力に応じて SkiaSharp グラフィックスを変更する方法を示しています。
 
 このページでは、 `SKCanvasView` クラスは [TapToggleFill](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml) ファイルでインスタンス化されます。このファイルは Xamarin.Forms ビューにもを設定します [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) 。
 

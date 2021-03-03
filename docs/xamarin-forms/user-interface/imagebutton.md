@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93375073"
 ---
-# <a name="no-locxamarinforms-imagebutton"></a>Xamarin.Forms ImageButton
+# <a name="xamarinforms-imagebutton"></a>Xamarin.Forms ImageButton
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/formsgallery)
 

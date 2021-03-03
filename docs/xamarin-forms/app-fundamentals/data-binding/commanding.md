@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93369832"
 ---
-# <a name="the-no-locxamarinforms-command-interface"></a>Xamarin.Forms コマンド インターフェイス
+# <a name="the-xamarinforms-command-interface"></a>Xamarin.Forms コマンド インターフェイス
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
@@ -91,7 +91,7 @@ Windows と Xamarin.Forms の間で ViewModel を共有する必要がない場�
 
 [**Data Binding Demos**](/samples/xamarin/xamarin-forms-samples/databindingdemos) プログラムの **Person Entry** ページでは、ViewModel に実装されたいくつかの簡単なコマンドのデモが行われます。
 
-`PersonViewModel` では、人を定義する `Name`、`Age`、`Skills` という名前の 3 つのプロパティが定義されています。 このクラスには、`ICommand` プロパティは含まれて " *いません* "。
+`PersonViewModel` では、人を定義する `Name`、`Age`、`Skills` という名前の 3 つのプロパティが定義されています。 このクラスには、`ICommand` プロパティは含まれて "*いません*"。
 
 ```csharp
 public class PersonViewModel : INotifyPropertyChanged
@@ -193,7 +193,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 
 この要約されたリストには、クラスのコンストラクターは含まれていません。`ICommand` 型の 3 つのプロパティが定義されているコンストラクターは後で示します。 `ICommand` 型の 3 つのプロパティおよび `Persons` プロパティが変更されても、`PropertyChanged` イベントが生成されないことに注意してください。 これらのプロパティはすべて、クラスが最初に作成されるときに設定され、その後は変更されません。
 
-`PersonCollectionViewModel` クラスのコンストラクターを調べる前に、 **Person Entry** プログラムの XAML ファイルを見てみましょう。 これには、`BindingContext` プロパティが `PersonCollectionViewModel` に設定された `Grid` が含まれています。 `Grid` には、ViewModel の `NewCommand` プロパティに `Command` プロパティがバインドされていて **New** というテキストが表示される `Button`、プロパティが `IsEditing` にバインドされている入力フォーム、`PersonViewModel` のプロパティ、および ViewModel の `SubmitCommand` プロパティと `CancelCommand` プロパティにバインドされている他の 2 つのボタンが含まれます。 最終的な `ListView` には、既に入力された人のコレクションが表示されます。
+`PersonCollectionViewModel` クラスのコンストラクターを調べる前に、**Person Entry** プログラムの XAML ファイルを見てみましょう。 これには、`BindingContext` プロパティが `PersonCollectionViewModel` に設定された `Grid` が含まれています。 `Grid` には、ViewModel の `NewCommand` プロパティに `Command` プロパティがバインドされていて **New** というテキストが表示される `Button`、プロパティが `IsEditing` にバインドされている入力フォーム、`PersonViewModel` のプロパティ、および ViewModel の `SubmitCommand` プロパティと `CancelCommand` プロパティにバインドされている他の 2 つのボタンが含まれます。 最終的な `ListView` には、既に入力された人のコレクションが表示されます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -691,7 +691,7 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
 
 ## <a name="asynchronous-commanding-for-navigation-menus"></a>ナビゲーション メニューのための非同期コマンド実行
 
-コマンド実行は、 [**Data Binding Demos**](/samples/xamarin/xamarin-forms-samples/databindingdemos) プログラム自体のように、ナビゲーション メニューを実装する場合に便利です。 **MainPage.xaml** の一部を次に示します。
+コマンド実行は、[**Data Binding Demos**](/samples/xamarin/xamarin-forms-samples/databindingdemos) プログラム自体のように、ナビゲーション メニューを実装する場合に便利です。 **MainPage.xaml** の一部を次に示します。
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -757,7 +757,7 @@ public partial class MainPage : ContentPage
 
 また、コンストラクターでは、バインドがこのクラスの `NavigateCommand` を参照するように、ページの `BindingContext` がそれ自体に設定されます。
 
-このコンストラクターのコードの順序により違いが生じます。`InitializeComponent` の呼び出しでは XAML が解析されますが、その時点では、`BindingContext` が `null` に設定されているため、`NavigateCommand` という名前のプロパティに対するバインドを解決することはできません。 `NavigateCommand` が設定される " *前に* " `BindingContext` がコンストラクターで設定される場合は、`BindingContext` が設定されているときはバインドを解決できますが、その時点では、`NavigateCommand` がまだ `null` です。 `BindingContext` の後で `NavigateCommand` を設定すると、`NavigateCommand` に対する変更によって `PropertyChanged` イベントが発生せず、`NavigateCommand` が有効になったことをバインドが認識しないため、バインドに対する効果はありません。
+このコンストラクターのコードの順序により違いが生じます。`InitializeComponent` の呼び出しでは XAML が解析されますが、その時点では、`BindingContext` が `null` に設定されているため、`NavigateCommand` という名前のプロパティに対するバインドを解決することはできません。 `NavigateCommand` が設定される "*前に*" `BindingContext` がコンストラクターで設定される場合は、`BindingContext` が設定されているときはバインドを解決できますが、その時点では、`NavigateCommand` がまだ `null` です。 `BindingContext` の後で `NavigateCommand` を設定すると、`NavigateCommand` に対する変更によって `PropertyChanged` イベントが発生せず、`NavigateCommand` が有効になったことをバインドが認識しないため、バインドに対する効果はありません。
 
 `InitializeComponent` を呼び出す前に `NavigateCommand` と `BindingContext` の両方を (任意の順序で) 設定すると動作します。これは、XAML パーサーがバインド定義を検出した時点で、バインドの両方のコンポーネントが設定されているためです。
 

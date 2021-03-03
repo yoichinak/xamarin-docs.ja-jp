@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93372016"
 ---
-# <a name="no-locxamarinforms-listview"></a>Xamarin.Forms 大きい
+# <a name="xamarinforms-listview"></a>Xamarin.Forms 大きい
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/workingwithlistview)
 

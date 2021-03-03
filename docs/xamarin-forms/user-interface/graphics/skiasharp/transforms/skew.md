@@ -115,7 +115,7 @@ y ' = ySkew ·(x – px) + y
 
 100ピクセルの垂直方向への150ピクセルシフトの比率は、その角度のタンジェント (この例では56.3 度) です。
 
-**傾斜角度実験** ページの XAML ファイルは、[ **傾斜角度** ] ページと似ていますが、 `Slider` 要素の範囲が-90 °から90度になっている点が異なります。 [`SkewAngleExperiment`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewAngleExperimentPage.xaml.cs)分離コードファイルは、ページ上にテキストを配置し、を使用して、 `Translate` ページの中央に傾斜の中心を設定します。 `SkewDegrees`コードの一番下にある短いメソッドは、角度を傾斜値に変換します。
+**傾斜角度実験** ページの XAML ファイルは、[**傾斜角度**] ページと似ていますが、 `Slider` 要素の範囲が-90 °から90度になっている点が異なります。 [`SkewAngleExperiment`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewAngleExperimentPage.xaml.cs)分離コードファイルは、ページ上にテキストを配置し、を使用して、 `Translate` ページの中央に傾斜の中心を設定します。 `SkewDegrees`コードの一番下にある短いメソッドは、角度を傾斜値に変換します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

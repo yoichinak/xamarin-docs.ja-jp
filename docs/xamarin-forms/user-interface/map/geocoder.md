@@ -17,7 +17,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/05/2020
 ms.locfileid: "93375448"
 ---
-# <a name="no-locxamarinforms-map-geocoding"></a>Xamarin.Forms マップジオコーディング
+# <a name="xamarinforms-map-geocoding"></a>Xamarin.Forms マップジオコーディング
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
