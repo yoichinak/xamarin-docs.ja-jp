@@ -4,29 +4,22 @@ description: この記事では、アプリケーション インデックス作
 ms.prod: xamarin
 ms.assetid: 410C5D19-AA3C-4E0D-B799-E288C5803226
 ms.technology: xamarin-forms
-ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 99da232d13202aadc338ff419042998f646b7c28
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 1eb2bd3f6b996ece3388c3ce8ad8fceca4c31957
+ms.sourcegitcommit: 322e7bcf9fb8c1ad52ab8e929bea95d45e280834
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93373069"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101751354"
 ---
 # <a name="application-indexing-and-deep-linking"></a>アプリケーション インデックス作成とディープ リンクの設定
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/deeplinking)
-
-_アプリケーション インデックス作成を使用すると、何度か使用した後に忘れてしまいそうなアプリケーションを検索結果に表示することで、関連性を保つことができます。ディープ リンクの設定を使用すると、アプリケーションのデータが含まれている検索結果にアプリケーションが応答するようにできます。通常の応答では、ディープ リンクから参照されているページに移動します。この記事では、アプリケーション インデックス作成とディープ リンクの設定を使用して、Xamarin.Forms アプリケーションのコンテンツを iOS および Android のデバイス上で検索できるようにする方法について説明します。_
-
-> [!VIDEO https://youtube.com/embed/UJv4jUs7cJw]
-
-**Xamarin.Forms と Azure でのディープ リンク設定のビデオ**
 
 Xamarin.Forms のアプリケーション インデックス作成とディープ リンクの設定では、ユーザーがアプリケーション間を移動するときにアプリケーション インデックス作成用のメタデータを発行する API が提供されます。 インデックスが付けられたコンテンツは、Spotlight 検索、Google 検索、または Web 検索で検索することができます。 ディープ リンクが含まれている検索結果をタップすると、アプリケーションによって処理できるイベントが開始されます。これは、通常、ディープ リンクから参照されているページに移動するために使用されます。
 
@@ -244,10 +237,6 @@ pageLink.KeyValues.Add("companyName", "Xamarin");
 > `KeyValues` コレクションは、Android プラットフォームでは使用されません。
 
 ハンドオフの詳細については、[ハンドオフの概要](~/ios/platform/handoff.md)に関するページを参照してください。
-
-## <a name="summary"></a>まとめ
-
-この記事では、アプリケーション インデックス作成とディープ リンクの設定を使用して、Xamarin.Forms アプリケーションのコンテンツを iOS および Android のデバイス上で検索できるようにする方法について説明しました。 アプリケーション インデックス作成を使用すると、何度か使用した後に忘れてしまいそうなアプリケーションを検索結果に表示することで、関連性を保つことができます。
 
 ## <a name="related-links"></a>関連リンク
 
