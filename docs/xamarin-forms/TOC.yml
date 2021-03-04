@@ -308,8 +308,8 @@ items:
             href: app-fundamentals/shell/flyout.md
           - name: タブ
             href: app-fundamentals/shell/tabs.md
-          - name: ページの構成
-            href: app-fundamentals/shell/configuration.md
+          - name: ページ
+            href: app-fundamentals/shell/pages.md
           - name: ナビゲーション
             href: app-fundamentals/shell/navigation.md
           - name: 検索
